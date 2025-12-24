@@ -9,3 +9,6 @@
 - sens 2 - autonomie "technique" : utilisé pour les machines, des systèmes ou tout ce qui fonctionne de manière automatique, sans intervention humaine
 
 \+ création des fichiers `be_sens1_autanamia.txt` et `be_sens2_autanamnast.txt`+ ajout de 50 liens pour le sens 1
+
+## Mercredi 24 décembre
+**Yeji** : création d’un script 'urls-to-table' pour récupérer des informations telles que le code HTTP, l’encodage, etc

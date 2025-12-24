@@ -12,3 +12,10 @@
 
 ## Mercredi 24 décembre
 **Yeji** : création d’un script 'urls-to-table' pour récupérer des informations telles que le code HTTP, l’encodage, etc
+
+Cependant, lorsque j'ai lancé le script sur la liste d'URLs coréennes, tous les codes HTTP s'affichaient comme 000. Ensuite, j'ai testé directement la commande suivante dans le terminal : 
+curl -I https://www.ohmynews.com 
+
+Et le résultat était le suivant :
+curl: (60) SSL certificate problem: self signed certificate in certificate chain
+

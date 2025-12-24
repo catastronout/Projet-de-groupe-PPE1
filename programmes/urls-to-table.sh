@@ -1,8 +1,12 @@
-output_dir="tableaux"
-output_file="$output_dir/.html"
-fichier_urls="urls.txt"
+#!/bin/bash
 
-mkdir -p "$output_dir"
+if [ $# -ne 1 ]; then
+	echo "Usage: $0 fichier_urls"
+	exit 1
+fi
+
+fichier_urls=$1
+mkdir -p tableaux
 
 {
     echo "<html>"
@@ -13,15 +17,28 @@ mkdir -p "$output_dir"
     
     lineno=1
     while read -r line; do
-        read http_code content_type <<< $(curl -s -L -o /dev/null -w "%{http_code} %{content_type}" "$line")
-        encoding=$(echo "$content_type" | grep -o "charset=\S+" | cut -d= -f2)
-        encoding=${encoding:-"N/A"}
-    
-        echo "<tr><td>$lineno</td><td>$line</td><td>$http_code</td><td>$encoding</td></tr>"
+	read http_code content_type <<< $(
+  	 curl -s -L \
+        	-k \
+        	-A "Mozilla/5.0" \
+        	-o /dev/null \
+       		-w "%{http_code} %{content_type}" \
+        	"$line"
+	)
+    	encoding=$(echo "$content_type" | grep -o "charset=\S+" | cut -d= -f2)
+   	encoding=${encoding:-"N/A"}
+
+        echo "<tr>"
+        echo "  <td>$lineno</td>"
+        echo "  <td>$line</td>"
+        echo "  <td>$http_code</td>"
+        echo "  <td>$encoding</td>"
+        echo "</tr>"
+
         lineno=$((lineno+1))
     done < "$fichier_urls"
 
     echo "</table>"
     echo "</body>"
     echo "</html>"
-} > "$output_file"
+}

@@ -19,3 +19,6 @@ curl -I https://www.ohmynews.com
 Et le résultat était le suivant :
 curl: (60) SSL certificate problem: self signed certificate in certificate chain
 
+
+## Jeudi 25 décembre
+**Sarah** : ajout du script `main.sh` qui permet, pour le moment, d'aspirer le contenu des pages web et de récupérer le code HTTP, l'encodage et le nombre de mots pour chaque page, et de générer une page web avec un style Bulma. J'ai testé le script sur le corpus de bélarussien sens 1 et de coréen. RAS pour le premier. Pour le second en revanche, les colonnes de code HTTP, d'encodage et de nombre de mots étaient vides. Après vérification, le fichier `kr.txt` contenant les URLs contenait des `\r\`, que j'ai supprimé grâce à la commande `sed -i '' 's/\r$//' ../URLs/kr.txt`. 

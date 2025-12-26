@@ -21,4 +21,9 @@ curl: (60) SSL certificate problem: self signed certificate in certificate chain
 
 
 ## Jeudi 25 décembre
-**Sarah** : ajout du script `main.sh` qui permet, pour le moment, d'aspirer le contenu des pages web et de récupérer le code HTTP, l'encodage et le nombre de mots pour chaque page, et de générer une page web avec un style Bulma. J'ai testé le script sur le corpus de bélarussien sens 1 et de coréen. RAS pour le premier. Pour le second en revanche, les colonnes de code HTTP, d'encodage et de nombre de mots étaient vides. Après vérification, le fichier `kr.txt` contenant les URLs contenait des `\r\`, que j'ai supprimé grâce à la commande `sed -i '' 's/\r$//' ../URLs/kr.txt`. 
+**Sarah** : ajout du script `main.sh` qui permet, pour le moment, d'aspirer le contenu des pages web et de récupérer le code HTTP, l'encodage et le nombre de mots pour chaque page, et de générer une page web avec un style Bulma. J'ai testé le script sur le corpus de bélarussien sens 1 et de coréen. RAS pour le premier. Pour le second en revanche, les colonnes de code HTTP, d'encodage et de nombre de mots étaient vides. Après vérification, le fichier `kr.txt` contenant les URLs contenait des `\r\`, que j'ai supprimé grâce à la commande `sed -i '' 's/\r$//' ../URLs/kr.txt` (`main.sh` est basé sur le travail que j'avais effectué pour le miniprojet)
+
+## Vendredi 26 décembre
+**Sarah** : 
+- ajout de la page d'accueil de notre site (`index.html`) et déploiement du site à l'adresse suivante : https://catastronout.github.io/Projet-de-groupe-PPE1/index.html (`index.html` est basé sur le travail que j'avais effectué pour le miniprojet)
+- recherches pour constituer le corpus pour le sens 2 du mot 'autonomie' en bélarussien ('autonomnast') : il existe peu de page Web spécifiquement consacrée à ce concept, j'ai donc choisi de garder cette langue et de rassembler 65 pages Web au lieu de 50, afin que les résultats soient un peu plus significatifs et l'analyse un peu plus pertinente

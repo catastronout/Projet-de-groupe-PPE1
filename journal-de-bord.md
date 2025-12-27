@@ -27,3 +27,7 @@ curl: (60) SSL certificate problem: self signed certificate in certificate chain
 **Sarah** : 
 - ajout de la page d'accueil de notre site (`index.html`) et déploiement du site à l'adresse suivante : https://catastronout.github.io/Projet-de-groupe-PPE1/index.html (`index.html` est basé sur le travail que j'avais effectué pour le miniprojet)
 - recherches pour constituer le corpus pour le sens 2 du mot 'autonomie' en bélarussien ('autonomnast') : il existe peu de page Web spécifiquement consacrée à ce concept, j'ai donc choisi de garder cette langue et de rassembler 65 pages Web au lieu de 50, afin que les résultats soient un peu plus significatifs et l'analyse un peu plus pertinente
+
+## Dimanche 28 décembre
+**Yeji** :
+- J'ai ajouté un troisième argument FICHIER_MOTS au script. En coréen, le mot "autonomie" se traduit soit par "자율" soit par "자립". J'ai donc créé un fichier autonomie_kr.txt qui contient ces deux traductions (une par ligne). Le script lit ce fichier et compte toutes les occurrences des mots listés dans chaque page.

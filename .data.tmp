@@ -1,0 +1,182 @@
+HTTP/2 200 
+server: nginx
+date: Wed, 24 Dec 2025 09:26:07 GMT
+content-type: text/html; charset=euc-kr
+vary: Accept-Encoding
+pragma: no-cache
+cache-control: max-age=0
+x-proxy-cache: MISS
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+    <head>
+	<meta name="google-site-verification" content="0j2FtyOhSMPTuQTUR5RA87AdwZ53VEe_ULUkay3WnB8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	<meta name="viewport" content="width=device-width, initial-scale=1" />
+					 
+	
+	<title>국토안전관리원, 청년자율방재단과 삼천포대교 합동안전점검 : 네이트 뉴스</title>
+	<link rel="canonical" href="https://news.nate.com/view/20251203n08922" /> 
+	<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.news.nate.com/view/20251203n08922" /> 
+	<link rel="shortcut icon" href="//news.nate.com/icon/favicon.ico" />
+	<link rel="apple-touch-icon-precomposed" href="//nimg.nate.com/ui/uidev/images/mnews/common/nate_news_114.png" />
+    <link rel="stylesheet" type="text/css" href="//nimg.nate.com/ui/uidev/pc/release/css/pcsnb.css?202508271319" />
+    <link rel="stylesheet" type="text/css" href="//nimg.nate.com/ui/uidev/pc/release/css/sisa/snb.css?202508271319" />
+    <link rel="stylesheet" type="text/css" href="//nimg.nate.com/ui/uidev/pc/release/css/sisa/news_common.css?202508271319" />
+    <link rel="stylesheet" type="text/css" href="//nimg.nate.com/ui/uidev/pc/release/css/sisa/section_news.css?202508271319" />        	<script type="text/javascript" src="//news.nate.com/js/common.js?202507171441"></script>	<script type="text/javascript" src="//news.nate.com/js/stat.js?202507171441" charset="euc-kr"></script>	<script type="text/javascript" src="//news.nate.com/js/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="//news.nate.com/etc/mobileAgentJs"></script>
+	<script type="text/javascript" src="//common.nate.com/textGNB/commonTextGNBV1"></script>
+	<script type="text/javascript" src="//comm.news.nate.com/userJS?r=791529624"></script>	<script type="text/javascript">
+	//<![CDATA[
+
+				// 좌우 여백 광고
+		function execAdScript() {
+			try {
+				var leftAd	= document.getElementById('ad_newsMarginCube_left');
+				if (leftAd) {
+					leftAd.innerHTML = '<iframe title="광고-IfrAdWing" marginWidth="0" marginHeight="0" src="//news.nate.com/etc/adLeftSpace?mid=n1101" frameBorder="0" width="120" height="600" scrolling="no"></iframe>';
+				}
+				var rightAd	= document.getElementById('ad_newsMarginCube_right');
+				if (rightAd) {
+					rightAd.innerHTML = '<iframe title="광고-IfrAdWing" marginWidth="0" marginHeight="0" src="//news.nate.com/etc/adRightSpace?mid=n1101" frameBorder="0" width="120" height="600" scrolling="no"></iframe>';
+				}
+			} catch(e) {}
+		}
+
+		function loadEvent2(func){
+			if (document.addEventListener) {
+				document.addEventListener("DOMContentLoaded", func,false);
+			} else {
+				document.attachEvent("onreadystatechange", func, false);
+			}
+		}
+
+		loadEvent2(execAdScript);
+		//document.addEventListener('DOMContentLoaded',function(){execAdScript();},false);
+		
+		var agent = navigator.userAgent.toLowerCase();
+	    if ((navigator.appName === 'Netscape' && agent.indexOf('trident') !== -1) || (agent.indexOf("msie") !== -1)) {
+	        // ie일 경우
+	        var deleteHash = function(evt) {
+	            var isHash = document.title.split("#");
+	            if (isHash.length > 1) {
+	                document.title = isHash[0];  }
+	        };
+
+	        if (window.addEventListener) {
+	            window.addEventListener("load", deleteHash, false);
+	        } else {
+	            // ie하위버젼
+	            document.attachEvent('onpropertychange', deleteHash);
+	        }
+	    }
+	//]]>
+	</script>
+	
+	<script type="text/javascript" src="//news.nate.com/js/cross-origin-message.min.js?v=202507171441"></script>
+<script type="text/javascript">
+//<!CDATA[
+	jQuery(document).ready(function() {
+		// CrossOrigin 초기 세팅
+		crsMsg.init({
+			path: [
+				  "*.nate.com", // nate.com 관련
+				  "*.news.nate.com", // news.nate.com 관련
+				  "*.comm.news.nate.com", // news.nate.com 관련
+				  "*.sports.news.nate.com", // news.nate.com 관련
+				  "*.googlesyndication.com", // 광고 관련
+				  "*.googletagservices.com", // 광고 관련
+				  "*.g.doubleclick.net", // 광고 관련
+				  "*.googlevideo.com", // 광고 관련
+				  "*.google.com", // 광고 관련
+				  "*.googleapis.com", // 광고 관련
+				  "*.equativ.com", // 애드매니저 오픈비딩 파트너(선택사항)
+				  "*.fluct.jp", // 애드매니저 오픈비딩 파트너(선택사항)
+				  "*.inmobi.com", // 애드매니저 오픈비딩 파트너(선택사항)
+				  "*.onetag-sys.com", // 애드매니저 오픈비딩 파트너(선택사항)
+				  "*.pubmatic.com", // 애드매니저 오픈비딩 파트너(선택사항)
+				  "*.triplelift.com", // 애드매니저 오픈비딩 파트너(선택사항)
+				  "*.securepubads.g.doubleclick.net", // 광고 관련 추가
+				  "*.safeframe.google.com", // 광고 관련 추가
+				  "*.safeframe.googlesyndication.com", // 광고 관련 추가
+				  "*.2mdn.net", // 광고 관련 추가
+				  "*.gliastudios.com", // 광고 관련 추가
+				  "*.trvdp.com", // 광고 관련 추가
+				  "*.doubleverify.com", // 광고 관련 추가
+				  "*.moatads.com", // 광고 관련 추가
+				  "*.adsafeprotected.com", // 광고 관련 추가
+				  "*.gstatic.com", // 광고 관련 추가
+				  "*.smartadserver.com" // 광고 관련 추가
+			],
+			type: 'parent',
+			func: null
+		});
+	});
+
+	function callFnct (parmas) { 
+
+		var target = (typeof parmas.target === 'undefined') ? '' : parmas.target;
+
+		if(target == 'sns_count') { // params 규격 {target: '실행구분', elementId: 'snsCmtCnt', dataJson: 'json 형태 입력 데이터'}
+		// 기사 상단의 댓글count
+			
+			var dataJson = (typeof parmas.dataJson === 'undefined') ? '' : parmas.dataJson;
+			var elementId = (typeof parmas.elementId === 'undefined') ? '' : parmas.elementId;
+
+			if(dataJson != '' && elementId != ''){
+				
+				var _element = document.querySelector(elementId);
+				if(_element){
+					_element.value = dataJson;
+				}
+			}
+		} else if (target == 'move_url') { // params 규격 {target: '실행구분', url: '이동 페이지 주소'}
+		// 페이지 이동
+		
+			var url = (typeof parmas.url === 'undefined') ? '' : parmas.url;
+			
+			if(url != ''){
+				location.href=url;
+			}
+		} else if (target == 'move_login') { // params 규격 {target: '실행구분', url: '이동 페이지 주소', params: '로그인 파라미터'}
+		// 로그인 페이지 이동
+
+			var url = (typeof parmas.url === 'undefined') ? '' : parmas.url;
+			var params = (typeof parmas.params === 'undefined') ? '' : parmas.params;
+			
+			if(url != ''){
+				location.href=url+encodeURIComponent(document.location.href)+params;
+			}
+		} else if (target == 'youtube_resize_iframe') { // params 규격 {target: '실행구분', elementClass: 'dom.php에서 youtube를 iframe으로 감싼 클래스명', height: '높이값', idx: 'youtube iframe 순번'}
+		// 기사 내 youtube 플레이 셋팅
+
+			var elementClass = (typeof parmas.elementClass === 'undefined') ? '' : parmas.elementClass;
+			var height = (typeof parmas.height === 'undefined') ? '' : parmas.height;
+			var idx = (typeof parmas.idx === 'undefined') ? '' : parseInt(parmas.idx);
+			
+			if(elementId != '' && height != ''){
+
+				var _elementClassAll = document.querySelectorAll(elementClass);
+				if(_elementClassAll){			
+					if(typeof _elementClassAll[idx] !== 'undefined'){
+						_elementClassAll[idx].style.height = height +'px';
+					}
+				}
+			}
+		} else if (target == 'move_scroll') { // params 규격 {target: '실행구분', x_pos: 0, y_pos: 0}
+		// 페이지 스크롤 이동
+		
+			var x_pos = (typeof parmas.x_pos === 'undefined') ? '' : parseInt(parmas.x_pos);
+			var y_pos = (typeof parmas.y_pos === 'undefined') ? '' : parseInt(parmas.y_pos);
+
+			if (!isNaN(x_pos) && !isNaN(y_pos)) {
+				window.scroll(x_pos, y_pos);
+			}
+		} else if (target == 'move_realname') { // params 규격 {target: '실행구분', check_url: '실명인증 url'}
+			// 실명 인증 이동
+				var check_url = (typeof parmas.check_url === 'undefined') ? '' : parmas.check_url;
+
+				if(check_url != ''){
+
+					var thisdomain = document.domain;
+					if ( document.do

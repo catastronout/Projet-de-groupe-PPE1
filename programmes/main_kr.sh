@@ -32,6 +32,7 @@ UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Ge
 # Créer les répertoires pour les dumps
 mkdir -p "../dumps-text/${FICHIER_URLS}"
 mkdir -p "../aspirations/${FICHIER_URLS}"
+mkdir -p "../contextes/${FICHIER_URLS}"
 
 # === Fonction pour générer le badge du code HTTP ===
 generer_badge_code() {
@@ -159,9 +160,25 @@ do
 		while IFS= read -r mot; do
 			mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
 			[[ -z "$mot" ]] && continue
-			count=$(grep -o "$mot" "$FICHIER_TEXTE" | wc -l)
+			# Compter aussi les mots collés (ex: 자율주행차 contient 자율)
+			count=$(grep -o ".*$mot.*" "$FICHIER_TEXTE" | grep -o "$mot" | wc -l)
 			OCCURRENCES=$((OCCURRENCES + count))
 		done < "$FICHIER_MOTS"
+		
+		# Extraire les contextes si on a trouvé des occurrences
+		if [[ "$OCCURRENCES" -gt 0 ]]; then
+			FICHIER_CONTEXTE="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
+			> "$FICHIER_CONTEXTE"  # Créer le fichier vide
+			
+			while IFS= read -r mot; do
+				mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+				[[ -z "$mot" ]] && continue
+				# Extraire contexte : mot + mot à gauche + mot à droite (avec ou sans espace)
+				# \S*\s* permet de capturer les mots collés (ex: 자율주행차)
+				grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE" 2>/dev/null || \
+				grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE"
+			done < "$FICHIER_MOTS"
+		fi
 	
 	# === SINON : essayer de convertir ===
 	else
@@ -193,9 +210,25 @@ do
 				while IFS= read -r mot; do
 					mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
 					[[ -z "$mot" ]] && continue
-					count=$(grep -o "$mot" "$FICHIER_TEXTE" | wc -l)
+					# Compter aussi les mots collés (ex: 자율주행차 contient 자율)
+					count=$(grep -o ".*$mot.*" "$FICHIER_TEXTE" | grep -o "$mot" | wc -l)
 					OCCURRENCES=$((OCCURRENCES + count))
 				done < "$FICHIER_MOTS"
+				
+				# Extraire les contextes si on a trouvé des occurrences
+				if [[ "$OCCURRENCES" -gt 0 ]]; then
+					FICHIER_CONTEXTE="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
+					> "$FICHIER_CONTEXTE"  # Créer le fichier vide
+					
+					while IFS= read -r mot; do
+						mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+						[[ -z "$mot" ]] && continue
+						# Extraire contexte : mot + mot à gauche + mot à droite (avec ou sans espace)
+						# \S*\s* permet de capturer les mots collés (ex: 자율주행차)
+						grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE" 2>/dev/null || \
+						grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE"
+					done < "$FICHIER_MOTS"
+				fi
 				
 				rm -f "$FICHIER_UTF8"
 			fi

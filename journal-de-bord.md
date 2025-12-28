@@ -30,4 +30,17 @@ curl: (60) SSL certificate problem: self signed certificate in certificate chain
 
 ## Dimanche 28 décembre
 **Yeji** :
-- J'ai ajouté un troisième argument FICHIER_MOTS au script. En coréen, le mot "autonomie" se traduit soit par "자율" soit par "자립". J'ai donc créé un fichier autonomie_kr.txt qui contient ces deux traductions (une par ligne). Le script lit ce fichier et compte toutes les occurrences des mots listés dans chaque page.
+- Occurrences de mot :
+J'ai ajouté un troisième argument FICHIER_MOTS au script. En coréen, le mot "autonomie" se traduit soit par "자율" soit par "자립". J'ai donc créé un fichier autonomie_kr.txt qui contient ces deux traductions (une par ligne). Le script lit ce fichier et compte toutes les occurrences des mots listés dans chaque page.\
+- Problèmes de dumps-text :
+Quand on récupère le texte brut avec la commande lynx, le résultat s'affiche comme "Copyright ? 2011 ???. All rights reserved." (les caractères coréens sont remplacés par des ?).
+Pour régler ce problème d'encodage, j'ai ajouté les options -assume_charset=utf-8 et -display_charset=utf-8 à la commande lynx, ce qui spécifie que l'entrée et la sortie du fichier sont encodées en UTF-8.
+- Contexte du mot 'autonomie':
+En coréen, le mot "autonomie" est souvent attaché à d'autres mots sans espace. Par exemple, le terme "véhicule autonome" se traduit par "자율주행차", où "자율" (autonome) et "주행차" (véhicule) sont collés sans espace.
+J'ai donc utilisé grep avec le pattern (\S+\s*)?mot\S*(\s*\S+)? pour extraire :
+
+Le mot à gauche (avec ou sans espace)
+Le mot cible (avec d'éventuels caractères attachés)
+Le mot à droite (avec ou sans espace)
+
+Cela permet de capturer aussi bien "자율 주행" (avec espace) que "자율주행차" (sans espace).

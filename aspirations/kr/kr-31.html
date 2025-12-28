@@ -1,0 +1,2151 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+<html lang="ko">
+<head>
+    <script>
+        if(document.location.protocol == 'http:'){
+            document.location.href = document.location.href.replace('http:','https:');
+        }
+        var newUrl = window.location.href;
+        if(newUrl.indexOf("www")==-1){
+            window.location.href = newUrl.replace('//', '//www.');
+        }
+    </script>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+    
+    
+    
+    <meta name="title" content="자립준비청년 자립지원 &lt; 아동보호자립 &lt; 인구아동 &lt; 정책 : 보건복지부 대표홈페이지">
+
+<meta name="description" content="모든 국민의 건강, 삶의 질 향상을 위해 노력하는 보건복지부 홈페이지입니다.">
+    <meta name="keyword" content="보건복지부, 복지부, 보건의료, 공공보건, 한의약, 건강보험, 보건산업, 복지, 사회서비스, 장애인, 인구아동, 출산정책, 아동복지정책, 아동수당, 아동학대, 노인정책, 보육정책, 국민연금, 기초연금">
+    <meta name="author" content="모든 국민의 건강, 삶의 질 향상을 위해 노력하는 보건복지부 홈페이지입니다.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="보건복지부 대표홈페이지">
+    <meta property="og:title" content="자립준비청년 자립지원 &lt; 아동보호자립 &lt; 인구아동 &lt; 정책 : 보건복지부 대표홈페이지">
+    
+    
+    
+    
+    
+    
+    
+    
+    <meta property="og:url" content="https://www.mohw.go.kr/menu.es?mid=a10711041000">
+    <meta property="og:description" content="모든 국민의 건강, 삶의 질 향상을 위해 노력하는 보건복지부 홈페이지입니다.">
+    <meta property="og:image" content="/kor/img/homeimg.png">
+    <meta property="og:image:width" content="420">
+    <meta property="og:image:height" content="210">
+
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://www.mohw.go.kr/menu.es?mid=a10711041000">
+    <meta name="twitter:title" content="자립준비청년 자립지원 &lt; 아동보호자립 &lt; 인구아동 &lt; 정책 : 보건복지부 대표홈페이지">
+    <meta name="twitter:description" content="모든 국민의 건강, 삶의 질 향상을 위해 노력하는 보건복지부 홈페이지입니다.">
+    <meta name="twitter:image" content="/kor/img/homeimg.png">
+    <meta name="theme-color" content="#E82856">
+
+    <title>자립준비청년 자립지원 &lt; 아동보호자립 &lt; 인구아동 &lt; 정책 : 힘이 되는 평생 친구, 보건복지부</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="/kor/css/krds_default.css">
+    <link rel="stylesheet" href="/kor/css/krds_board.css">
+    <link rel="stylesheet" href="/font/xeicon.css">
+    <link rel="stylesheet" href="/font/PretendardGOV.css">
+    <link rel="stylesheet" href="/css/printArea.css" media="print">
+
+    <link rel="stylesheet" href="/kor/css/krds_layout.css">    
+    
+    <!-- 서브 CSS -->
+    <link rel="stylesheet" href="/kor/css/krds_sub.css">  
+<link rel="stylesheet" href="/kor/css/daterangepicker.css">
+    
+    <link rel="stylesheet" href="/kor/css/sub07.css">
+    
+    
+    
+
+    <!-- 공통 JS -->
+    <script src="/jquery/js/jquery-3.2.1.min.js"></script>
+    <!--script src="/jquery/js/swiper.min.js"></script-->
+	<script src="/jquery/js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/jquery/css/swiper.css">
+    <script src="/js/global.js"></script>
+    <script src="/js/kakao.min.js"></script>
+    <script src="/js/func.js?version=20250812"></script>
+
+    <!--[if IE 9]>
+    <link rel="stylesheet" href="/kor/css/ie9.css">
+    <![endif]-->
+
+    <script>
+        Kakao.init('f7b908913f047df6f092f69625e99f4c');
+
+        function ts_recommendHide(){
+            $(".ts_recommend_wrap").hide();
+        }
+
+        $(function () {
+            $('#searchForm').on('submit', function (e) {
+                var searchTerm = $('#query').val();
+                var rules = /[~!@#$%^&*()+|`=\\\[\]\{\};:'\".<>/?]/g;
+
+                if (rules.test(searchTerm)) {
+                    alert("특수문자는 제외하고 검색해주시기 바랍니다.");
+                    $('#query').val('')
+                    return false;
+                } else {
+                    return true;
+                }
+            })
+
+        })
+
+        /** 카카오톡 공유하기(뷰 페이지 링크주소 다른경우 url을 넘겨받아 처리한다.) **/
+        function sendKakaoTalk(url) {
+
+            var UserAgent = navigator.userAgent;
+            var shareUrl = document.location.href;
+
+            if ( UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) == null) {
+                alert("카카오톡 공유는 모바일에서만 사용 가능합니다.");
+                return false;
+            }
+
+            // 모바일인 경우 카카오톡 버튼 생성
+            var tempPage = "https://www.mohw.go.kr/kor/pageLink.jsp";
+
+            Kakao.Link.sendScrap({
+                requestUrl: tempPage+"?url="+encodeURIComponent(shareUrl)
+	   // requestUrl: shareUrl
+            });
+
+        }
+        $(function (){
+            var mid = "a10711041000";
+            mid = mid.substring(3,4);
+           $("#gnb1 > #head_menu > li.lnb" + mid).addClass("on");
+        });
+    </script>
+
+    <!-- Google tag (gtag.js) https-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J77WFD3S74"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-J77WFD3S74');
+    </script>
+
+    
+        <!-- 서브 JS -->
+        <script src="/ease_src/sEditor/js/HuskyEZCreator.js"></script>
+        
+        
+    
+</head>
+<body>
+<p id="skip_nav">
+    <a href="#contents">본문으로 바로가기</a>
+    <a href="#gnb1">주메뉴 바로가기</a>
+    <a href="#snb">서브메뉴 바로가기</a>
+</p>
+
+<div id="hiddenLayer" style="display:none"></div>
+<div class="mw" id="mw_temp" style="display:none;"></div>
+
+<div id="wrap">
+    <div id="header-top">
+        <div class="inner">
+            <span class="nuri-txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+        </div>
+    </div>
+    <!-- //상단 배너영역  -->
+
+    <header id="header" class="header">
+        <!-- 헤더 컨텐츠 영역  -->
+        <div class="header-in">
+        
+        
+
+<!-- 헤더 상단 기타메뉴 -->
+<div class="head-body">
+    <div class="inner">
+        <h1 class="logo">
+            <a href="/" title="메인페이지로 이동">
+                <img src="/kor/img/layout/header/h_logo_1.png" class="logo-im" alt="보건복지부 로고">
+            </a>
+        </h1>
+        <div class="right">
+            <div class="head-etc">
+                <ul class="etc-ul">
+                    <li class="li"><a href="/kids/index.jsp" class="btn btn-txt ico-go xsm" target="_blank" title="보건복지부 어린이 홈페이지 새창열림">어린이</a></li>
+                    <li class="li m-hide"><a onclick="window.open(this.href, 'popupName', 'width=905,height=725,scrollbars=yes'); return false;" href="http://www.mois.go.kr/frt/sub/popup/p_taegugki_banner/screen.do" class="btn btn-txt ico-go xsm" target="_blank" title="행안부 국가상징팝업 새창열기">국가상징</a></li>
+                    <li class="li">
+                        <div class="drop-wrap zoom-drop">
+                            <button type="button" class="btn btn-txt ico-arr-down xsm drop-btn" aria-haspopup="listbox">화면크기</button>
+                            <div class="drop-menu">
+                                <div class="drop-in">
+                                    <ul class="drop-list" role="listbox">
+                                        <li><button class="item-link xsm" role="option">작게</button></li>
+                                        <li><button class="item-link sm"  role="option">보통</button></li>
+                                        <li><button class="item-link md" role="option">조금 크게</button></li>
+                                        <li><button class="item-link lg" role="option">크게</button></li>
+                                        <li><button class="item-link xlg" role="option">가장크게</button></li>
+                                    </ul>
+                                    <div class="drop-btm-btn">
+                                        <button type="button" class="btn sm btn-txt ico-reset ico-before">초기화</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li">
+                        <div class="drop-wrap lang-drop">
+                            <button type="button" class="btn btn-txt ico-arr-down xsm drop-btn" aria-haspopup="listbox">Language</button>
+                            <div class="drop-menu">
+                                <div class="drop-in">
+                                    <ul class="drop-list" role="listbox">
+                                        <li><a href="/eng/index.jsp" class="item-link ico-go" target="_blank" title="보건복지부 영문홈페이지 새창 열림">English</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-navi-wrap">
+				<form id="searchForm" action="/react/search/search.jsp" method="post">
+                    <div class="srch_wrap">
+                        <button type="button" class="btn open"><i class="xi-search"></i><span class="sr_only">통합검색</span><span class="hdn">창 열기</span></button>
+                        <div class="srch">
+                            <div class="form_inner">
+                                <input type="text" name="searchTerm" id="query" style="ime-mode:active" placeholder="정책명 또는 검색어를 입력해주세요" title="검색어 입력">
+                                <button type="button" class="btn btn-ico ico-del sm" style="display:none;"><span class="sr-only">삭제</span></button>
+                                <button type="submit"><i class="xi-search"></i><span class="sr_only">검색버튼</span></button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn close"><i class="xi-close"></i><span class="sr_only">통합검색창 닫기</span></button>
+                    </div>
+                </form> 
+                
+                <a href="/menu.es?mid=a10810000000" class="btn-navi navi-row all"  id="m-gnb-open">전체메뉴</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //헤더 상단 기타메뉴 -->
+
+
+        
+            <!-- 웹 : 메뉴 영역 -->
+            <nav id="gnb1" class="head-gnb">
+                <div class="inner">
+                
+                
+
+<ul id="head_menu" class="topmenu">
+	<li class="lnb1 mnfirst">
+		<a href="/menu.es?mid=a10101030000">정보공개</a>
+		<div class="submenu" style="display:none;">
+			
+
+			<ul class="sub01">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10101030000">정보공개</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="https://www.open.go.kr/infOthbc/infOthbc/infOthbc.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">정보공개제도안내</a></li>
+							<li class="lnb-detail-item"><a href="https://www.open.go.kr/com/main/mainView.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">정보공개 청구</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10101030100">정보목록</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10101050100">비공개 대상정보 세부기준</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10101060000">업무위탁</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10107010000">사전정보공표</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10107010100">사전정보공표</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10107020000">자주찾는 사전정보</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub02"><a href="/menu.es?mid=a10102010000">정책실명제</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10102010000">정책실명제</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10102020000">국민신청실명제</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub03"><a href="/menu.es?mid=a10103010000">공공누리</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10103010100">공공누리제도안내</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10103020100">공공누리유형안내</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10104010000">공공데이터개방</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10104010100">보건복지 공공데이터</a></li>
+							<li class="lnb-detail-item"><a href="https://www.mohw.go.kr/meta/metasvc.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">메타데이터 제공서비스</a></li>
+							<li class="lnb-detail-item"><a href="http://data.go.kr/tcs/dor/insertDataOfferReqstProcssView.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">공공데이터 제공신청</a></li>
+							<li class="lnb-detail-item"><a href="http://data.go.kr/ugs/selectPublicDataUseGuideView.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">이용안내</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10105010000">정보보호</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10105010000">개인정보관리현황</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06 sublast"><a href="/menu.es?mid=a10106000000">보건복지 모바일앱 종합안내</a></li>
+			</ul>
+			
+
+		</div>
+	</li>
+	<li class="lnb2">
+		<a href="/menu.es?mid=a10201000000">민원</a>
+		<div class="submenu" style="display:none;">
+			
+
+			<ul class="sub02">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10201010000">민원이용안내</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10201010000">민원이용안내</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10201020000">민원신청</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10201030000">나의민원확인</a></li>
+							<li class="lnb-detail-item"><a href="https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">유사민원검색</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub02"><a href="http://lic.mohw.go.kr/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">보건의료인 면허(자격) 민원</a></li>
+				<li class="sub03"><a href="http://hi.simpan.go.kr/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">건강보험분쟁조정위원회</a></li>
+				<li class="sub04"><a href="/menu.es?mid=a10204010000">부정비리·공익신고센터</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10204010000">부정비리·공익신고센터</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10204020100">공익신고</a></li>
+							<li class="lnb-detail-item"><a href="http://www.longtermcare.or.kr/npbs/g/m/108/openIjstDmdDcltMain.web?menuId=npe0000000590" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">노인장기요양기관 부당청구 신고포상금제</a></li>
+							<li class="lnb-detail-item"><a href="https://ncp.clean.go.kr/cmn/secCtfcKMC.do?menuCode=acs&mapAcs=Y&insttCd=1352000" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">의약품 유통 부정 비리 신고</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10204050000">공직자부조리신고</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10205010000">부정청탁 및 금품 등 수수 신고</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10205010000">신고</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10205020000">신고내용확인(19.11.21 이전)</a></li>
+							<li class="lnb-detail-item"><a href="https://www.clean.go.kr/menu.es?mid=a11201000000" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">신고내용확인(19.11.21 이후)</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="https://www.epeople.go.kr/nep/bdgtWst/selectBdgtWstStmntCntr.npaid" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">예산낭비신고</a></li>
+				<li class="sub07"><a href="https://www.safetyreport.go.kr/api?apiKey=135200000RIT6SJUZ0TTF3T2FD9" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">안전신문고</a></li>
+				<li class="sub08"><a href="https://www.110.go.kr/consult/manual.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">110화상/수화/채팅상담</a></li>
+				<li class="sub09"><a href="/menu.es?mid=a10209000000">민원행정서비스헌장</a></li>
+				<li class="sub10"><a href="http://www.giro.or.kr/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">온라인지로</a></li>
+				<li class="sub11 sublast"><a href="/menu.es?mid=a10211000000">국민연금재심사위원회</a></li>
+			</ul>
+			
+
+		</div>
+	</li>
+	<li class="lnb3">
+		<a href="/menu.es?mid=a10301000000">참여</a>
+		<div class="submenu" style="display:none;">
+			
+
+			<ul class="sub03">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10301010000">제안신청</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10301010000">제안신청</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10301020000">나의제안확인</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10301030000">공개제안</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub02"><a href="/menu.es?mid=a10302010000">적극행정</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10302010000">제도소개</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10302020000">적극행정 자료실</a></li>
+							<li class="lnb-detail-item"><a href="http://www.mpm.go.kr/proactivePublicService/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">적극행정 국민추천</a></li>
+							<li class="lnb-detail-item"><a href="https://www.epeople.go.kr/nep/pttn/negativePttn/NegativePttnCotents.npaid" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">소극행정 신고</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub03"><a href="/menu.es?mid=a10303020000">규제개혁</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10303020000">규제개혁건의</a></li>
+							<li class="lnb-detail-item"><a href="https://www.better.go.kr/zz.main.PortalMain" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">규제정보포털</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10303040000">규제혁신과제</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10303050000">규제입증요청</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10304010000">설문/토론/공청회</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10304010000">설문조사</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10304020000">정책토론</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10304030000">전자공청회</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10305010000">장관과의 대화</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10305010000">글작성</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10305020000">답글확인</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10306010000">모범공직자추천</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10306010000">글작성</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10306020000">답글확인</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10307000000">정부포상공개검증</a></li>
+				<li class="sub08"><a href="/menu.es?mid=a10308010000">나눔문화</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10308010000">대한민국 나눔국민대상</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10308020000">대한민국 나눔국민대상 국민공모</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10308030000">홍보영상</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub13 sublast"><a href="/menu.es?mid=a10313000000">전공의 보호·신고센터</a></li>
+			</ul>
+			
+
+		</div>
+	</li>
+	<li class="lnb4">
+		<a href="/menu.es?mid=a10401000000">정보</a>
+		<div class="submenu" style="display:none;">
+			
+
+			<ul class="sub04">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10401000000">주요계획</a></li>
+				<li class="sub02"><a href="/menu.es?mid=a10402000000">사업</a></li>
+				<li class="sub03"><a href="/menu.es?mid=a10403000000">예결산</a></li>
+				<li class="sub04"><a href="/menu.es?mid=a10404000000">계약</a></li>
+				<li class="sub05"><a href="/menu.es?mid=a10405010000">감사</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10405010100">감사결과</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10405020000">청렴부패방지</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10406010000">통계</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10406010100">승인통계</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10406020000">e-나라지표</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10406030000">관련주요사이트</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub08"><a href="/menu.es?mid=a10408010000">복지행정지원</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10408010100">지역사회보장계획</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10408020000">공공복지전달체계</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub09"><a href="/menu.es?mid=a10409010000">법령</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10409010000">법률/시행령/시행규칙</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10409020000">훈령/예규/고시/지침</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10409030000">입법/행정예고 전자공청회</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub10"><a href="/menu.es?mid=a10410020000">홍보자료</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10410020000">카드뉴스</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10410030100">간행물</a></li>
+							<li class="lnb-detail-item"><a href="http://www.youtube.com/channel/UCRsetXyMdNsR4M9KvA-a_fg" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">영상</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10410050000">영상으로 보는 소식</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub11"><a href="/menu.es?mid=a10411010100">연구/조사/발간자료</a></li>
+				<li class="sub12"><a href="/menu.es?mid=a10412000000">현황</a></li>
+				<li class="sub13"><a href="/menu.es?mid=a10413000000">법인/시설/단체</a></li>
+				<li class="sub14"><a href="/menu.es?mid=a10414000000">업무추진비</a></li>
+				<li class="sub15 sublast"><a href="/menu.es?mid=a10415010000">인구교육</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10415010000">소개</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10415020000">인구교육알림</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10415030000">인구교육자료</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			
+
+		</div>
+	</li>
+	<li class="lnb5">
+		<a href="/menu.es?mid=a10501000000">알림</a>
+		<div class="submenu" style="display:none;">
+			
+
+			<ul class="sub05">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10501010100">공지사항</a></li>
+				<li class="sub02"><a href="/menu.es?mid=a10502000000">입찰안내</a></li>
+				<li class="sub03"><a href="/menu.es?mid=a10503010000">보도자료</a></li>
+				<li class="sub04"><a href="/menu.es?mid=a10504000000">보도설명</a></li>
+				<li class="sub05"><a href="/menu.es?mid=a10505000000">포토뉴스</a></li>
+				<li class="sub06"><a href="/menu.es?mid=a10506010000">요양기관 현지조사</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10506010000">요양기관현지조사안내</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10506020000">현지조사사전예고</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10507010100">명단공표</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10507010100">건강보험 거짓청구 요양기관 명단공표</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10507030100">보조금부정수급자 명단공표</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10507040100">불법 개설 의료기관 실태조사 결과 공표</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub08"><a href="/menu.es?mid=a10508010000">협동조합경영공시</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="http://www.coop.go.kr/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">협동조합경영공시</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10508020000">경영공시 조회</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub09"><a href="/menu.es?mid=a10509000000">팝업존</a></li>
+				<li class="sub10 sublast"><a href="/menu.es?mid=a10510000000">배너모음</a></li>
+			</ul>
+			
+
+		</div>
+	</li>
+	<li class="lnb6">
+		<a href="/menu.es?mid=a10602000000">소개</a>
+		<div class="submenu" style="display:none;">
+			
+
+			<ul class="sub06">
+				<li class="sub02 subfirst"><a href="/menu.es?mid=a10602000000">연혁</a></li>
+				<li class="sub03"><a href="/menu.es?mid=a10603010000">정부상징</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10603010000">정부상징</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10603020000">색상/시그니처</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10603030000">그래픽모티프</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10603040000">활용</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10604010000">조직</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10604010000">조직도</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10604020000">소속기관</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10604030000">산하 공공기관</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10604040000">부서안내</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10605010000">장관소개</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605010000">인사말</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605020000">장관약력</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605030000">장관일정</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605040000">현장앨범</a></li>
+							<li class="lnb-detail-item"><a href="https://www.youtube.com/playlist?list=PL_-Emxqwow0DoI2Wi2w9sijwakXuyu2yx" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">현장방문</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605060000">역대장관</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10606010000">제1차관소개</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10606010000">차관약력</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10606020000">차관일정</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10606030000">현장앨범</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10606040000">역대차관</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10607010000">제2차관소개</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10607010000">차관약력</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10607020000">차관일정</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10607030000">현장앨범</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10607040000">역대차관</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub08"><a href="/menu.es?mid=a10608000000">오시는길</a></li>
+				<li class="sub09 sublast"><a href="/menu.es?mid=a10609000000">후원명칭 사용승인 현황</a></li>
+			</ul>
+			
+
+		</div>
+	</li>
+	<li class="lnb7">
+		<a href="/menu.es?mid=a10701000000">정책</a>
+		<div class="submenu" style="display:none;">
+			
+
+			<ul class="sub07">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10701000000">업무계획</a></li>
+				<li class="sub15"><a href="/menu.es?mid=a10715060000">의료개혁</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715060000">추진배경 및 방향</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715020000">의료개혁 4대 과제</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715090000">의사인력 확대 방안 및 일일브리핑</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715100000">제2차 국민건강보험 종합 계획</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715030000">Q&A</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715040000">팩트체크 및 입장</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715050000">정책소통자료</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub02"><a href="/menu.es?mid=a10702010000">보건의료</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702010000">보건의료정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702020000">의료자원정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702030000">의료기관정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702040000">약무정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702060100">의사인력 수급추계위원회</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub03"><a href="/menu.es?mid=a10703010000">공공보건</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703010000">질병정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703020000">공공의료</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703030000">응급의료</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703040000">생명윤리정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703050000">혈액장기정책</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10704010000">한의약</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10704010000">한의약정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10704020000">한의약산업</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10705010000">건강보험</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10705010000">보험정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10705020000">보험급여</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10705030000">보험약제</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10705040000">보험평가</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10706010000">건강</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10706010000">건강정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10706020000">건강증진</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10706030000">구강건강</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10706040000">정신건강정책</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10707010000">보건산업</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10707010000">보건산업정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10707020000">보건의료기술개발</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub08"><a href="/menu.es?mid=a10708010000">복지</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10708010000">기초생활보장</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10708020000">자활정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10708030000">기초의료보장</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10708040000">지역복지</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub09"><a href="/menu.es?mid=a10709010000">사회서비스</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10709010000">사회서비스 정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10709020000">사회서비스 사업</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub10"><a href="/menu.es?mid=a10710010000">장애인</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710010000">장애인정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710020000">장애인권익지원</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710030000">장애인자립기반</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710040000">장애인서비스</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710060000">장애인건강</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710050000">알림마당</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub11"><a href="/menu.es?mid=a10711010000">인구아동</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711010000">인구정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711020000">출산정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711030000">아동복지정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711040000">아동보호자립</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711050000">아동학대</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub12"><a href="/menu.es?mid=a10712010000">노인</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10712010000">노인정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10712020000">노인지원</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10712030000">요양보험제도</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10712040000">요양보험운영</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub14 sublast"><a href="/menu.es?mid=a10714010000">연금</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714010000">국민연금정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714020000">국민연금재정계산</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714030000">국민연금재정</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714040000">기초연금</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714050100">자료실</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714060000">연금개혁 Q&A</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			
+
+		</div>
+	</li>
+	<li class="lnb8 mnlast">
+		<a href="/menu.es?mid=a10801000000">이용안내</a>
+		<div class="submenu" style="display:none;">
+			
+
+			<ul class="sub08">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10801000000">홈페이지이용안내</a></li>
+				<li class="sub02"><a href="/menu.es?mid=a10802000000">자주 묻는 질문</a></li>
+				<li class="sub03"><a href="/menu.es?mid=a10803010000">개인정보처리방침</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10803010000">보건복지부 개인정보처리방침</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10803020000">이전 처리방침</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10804010000">고정형 영상정보처리기기 운영방침</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10804010000">고정형 영상정보처리기기 운영방침</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10804020000">이전 처리방침</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10806000000">뷰어다운로드</a></li>
+				<li class="sub07"><a href="/menu.es?mid=a10807000000">정보구독</a></li>
+				<li class="sub08"><a href="/menu.es?mid=a10808000000">장애인이용안내</a></li>
+				<li class="sub09"><a href="/menu.es?mid=a10809000000">홈페이지 기능오류신고</a></li>
+				<li class="sub10"><a href="/menu.es?mid=a10810000000">전체보기</a></li>
+				<li class="sub11 sublast"><a href="/menu.es?mid=a10811000000">ㄱ~ㅎ 색인</a></li>
+			</ul>
+			
+
+		</div>
+	</li>
+</ul>
+
+
+                
+                </div>
+            </nav>
+            <!-- //웹 : 메뉴 영역 -->
+        </div>
+        <!-- //헤더 컨텐츠 영역  -->
+
+        <!-- 모바일 : 전체메뉴 -->
+        <nav id="m-gnb" class="m-gnb-wrap">
+            <div class="m-gnb-in type1">
+                <div class="m-gnb-head">
+                    <div class="m-gnb-top-etc">
+                    </div>
+                </div>
+                <div class="m-gnb-body">
+                    <div class="m-gnb-menu type1">
+                    
+                    
+
+<ul id="head_menu_all" class="topmenu_all">
+	<li class="lnb1 mnfirst">
+		<a href="/menu.es?mid=a10101030000">정보공개</a>
+		<div class="submenu">
+			<ul class="sub01">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10101030000">정보공개</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="https://www.open.go.kr/infOthbc/infOthbc/infOthbc.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">정보공개제도안내</a></li>
+							<li class="lnb-detail-item"><a href="https://www.open.go.kr/com/main/mainView.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">정보공개 청구</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10101030100">정보목록</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10101050100">비공개 대상정보 세부기준</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10101060000">업무위탁</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10107010000">사전정보공표</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10107010100">사전정보공표</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10107020000">자주찾는 사전정보</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub02"><a href="/menu.es?mid=a10102010000">정책실명제</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10102010000">정책실명제</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10102020000">국민신청실명제</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub03"><a href="/menu.es?mid=a10103010000">공공누리</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10103010100">공공누리제도안내</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10103020100">공공누리유형안내</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10104010000">공공데이터개방</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10104010100">보건복지 공공데이터</a></li>
+							<li class="lnb-detail-item"><a href="https://www.mohw.go.kr/meta/metasvc.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">메타데이터 제공서비스</a></li>
+							<li class="lnb-detail-item"><a href="http://data.go.kr/tcs/dor/insertDataOfferReqstProcssView.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">공공데이터 제공신청</a></li>
+							<li class="lnb-detail-item"><a href="http://data.go.kr/ugs/selectPublicDataUseGuideView.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">이용안내</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10105010000">정보보호</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10105010000">개인정보관리현황</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06 sublast"><a href="/menu.es?mid=a10106000000">보건복지 모바일앱 종합안내</a></li>
+			</ul>
+		</div>
+	</li>
+	<li class="lnb2">
+		<a href="/menu.es?mid=a10201000000">민원</a>
+		<div class="submenu">
+			<ul class="sub02">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10201010000">민원이용안내</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10201010000">민원이용안내</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10201020000">민원신청</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10201030000">나의민원확인</a></li>
+							<li class="lnb-detail-item"><a href="https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">유사민원검색</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub02"><a href="http://lic.mohw.go.kr/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">보건의료인 면허(자격) 민원</a></li>
+				<li class="sub03"><a href="http://hi.simpan.go.kr/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">건강보험분쟁조정위원회</a></li>
+				<li class="sub04"><a href="/menu.es?mid=a10204010000">부정비리·공익신고센터</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10204010000">부정비리·공익신고센터</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10204020100">공익신고</a></li>
+							<li class="lnb-detail-item"><a href="http://www.longtermcare.or.kr/npbs/g/m/108/openIjstDmdDcltMain.web?menuId=npe0000000590" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">노인장기요양기관 부당청구 신고포상금제</a></li>
+							<li class="lnb-detail-item"><a href="https://ncp.clean.go.kr/cmn/secCtfcKMC.do?menuCode=acs&mapAcs=Y&insttCd=1352000" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">의약품 유통 부정 비리 신고</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10204050000">공직자부조리신고</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10205010000">부정청탁 및 금품 등 수수 신고</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10205010000">신고</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10205020000">신고내용확인(19.11.21 이전)</a></li>
+							<li class="lnb-detail-item"><a href="https://www.clean.go.kr/menu.es?mid=a11201000000" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">신고내용확인(19.11.21 이후)</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="https://www.epeople.go.kr/nep/bdgtWst/selectBdgtWstStmntCntr.npaid" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">예산낭비신고</a></li>
+				<li class="sub07"><a href="https://www.safetyreport.go.kr/api?apiKey=135200000RIT6SJUZ0TTF3T2FD9" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">안전신문고</a></li>
+				<li class="sub08"><a href="https://www.110.go.kr/consult/manual.do" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">110화상/수화/채팅상담</a></li>
+				<li class="sub09"><a href="/menu.es?mid=a10209000000">민원행정서비스헌장</a></li>
+				<li class="sub10"><a href="http://www.giro.or.kr/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">온라인지로</a></li>
+				<li class="sub11 sublast"><a href="/menu.es?mid=a10211000000">국민연금재심사위원회</a></li>
+			</ul>
+		</div>
+	</li>
+	<li class="lnb3">
+		<a href="/menu.es?mid=a10301000000">참여</a>
+		<div class="submenu">
+			<ul class="sub03">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10301010000">제안신청</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10301010000">제안신청</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10301020000">나의제안확인</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10301030000">공개제안</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub02"><a href="/menu.es?mid=a10302010000">적극행정</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10302010000">제도소개</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10302020000">적극행정 자료실</a></li>
+							<li class="lnb-detail-item"><a href="http://www.mpm.go.kr/proactivePublicService/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">적극행정 국민추천</a></li>
+							<li class="lnb-detail-item"><a href="https://www.epeople.go.kr/nep/pttn/negativePttn/NegativePttnCotents.npaid" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">소극행정 신고</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub03"><a href="/menu.es?mid=a10303020000">규제개혁</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10303020000">규제개혁건의</a></li>
+							<li class="lnb-detail-item"><a href="https://www.better.go.kr/zz.main.PortalMain" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">규제정보포털</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10303040000">규제혁신과제</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10303050000">규제입증요청</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10304010000">설문/토론/공청회</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10304010000">설문조사</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10304020000">정책토론</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10304030000">전자공청회</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10305010000">장관과의 대화</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10305010000">글작성</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10305020000">답글확인</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10306010000">모범공직자추천</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10306010000">글작성</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10306020000">답글확인</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10307000000">정부포상공개검증</a></li>
+				<li class="sub08"><a href="/menu.es?mid=a10308010000">나눔문화</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10308010000">대한민국 나눔국민대상</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10308020000">대한민국 나눔국민대상 국민공모</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10308030000">홍보영상</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub13 sublast"><a href="/menu.es?mid=a10313000000">전공의 보호·신고센터</a></li>
+			</ul>
+		</div>
+	</li>
+	<li class="lnb4">
+		<a href="/menu.es?mid=a10401000000">정보</a>
+		<div class="submenu">
+			<ul class="sub04">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10401000000">주요계획</a></li>
+				<li class="sub02"><a href="/menu.es?mid=a10402000000">사업</a></li>
+				<li class="sub03"><a href="/menu.es?mid=a10403000000">예결산</a></li>
+				<li class="sub04"><a href="/menu.es?mid=a10404000000">계약</a></li>
+				<li class="sub05"><a href="/menu.es?mid=a10405010000">감사</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10405010100">감사결과</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10405020000">청렴부패방지</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10406010000">통계</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10406010100">승인통계</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10406020000">e-나라지표</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10406030000">관련주요사이트</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub08"><a href="/menu.es?mid=a10408010000">복지행정지원</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10408010100">지역사회보장계획</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10408020000">공공복지전달체계</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub09"><a href="/menu.es?mid=a10409010000">법령</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10409010000">법률/시행령/시행규칙</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10409020000">훈령/예규/고시/지침</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10409030000">입법/행정예고 전자공청회</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub10"><a href="/menu.es?mid=a10410020000">홍보자료</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10410020000">카드뉴스</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10410030100">간행물</a></li>
+							<li class="lnb-detail-item"><a href="http://www.youtube.com/channel/UCRsetXyMdNsR4M9KvA-a_fg" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">영상</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10410050000">영상으로 보는 소식</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub11"><a href="/menu.es?mid=a10411010100">연구/조사/발간자료</a></li>
+				<li class="sub12"><a href="/menu.es?mid=a10412000000">현황</a></li>
+				<li class="sub13"><a href="/menu.es?mid=a10413000000">법인/시설/단체</a></li>
+				<li class="sub14"><a href="/menu.es?mid=a10414000000">업무추진비</a></li>
+				<li class="sub15 sublast"><a href="/menu.es?mid=a10415010000">인구교육</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10415010000">소개</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10415020000">인구교육알림</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10415030000">인구교육자료</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</li>
+	<li class="lnb5">
+		<a href="/menu.es?mid=a10501000000">알림</a>
+		<div class="submenu">
+			<ul class="sub05">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10501010100">공지사항</a></li>
+				<li class="sub02"><a href="/menu.es?mid=a10502000000">입찰안내</a></li>
+				<li class="sub03"><a href="/menu.es?mid=a10503010000">보도자료</a></li>
+				<li class="sub04"><a href="/menu.es?mid=a10504000000">보도설명</a></li>
+				<li class="sub05"><a href="/menu.es?mid=a10505000000">포토뉴스</a></li>
+				<li class="sub06"><a href="/menu.es?mid=a10506010000">요양기관 현지조사</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10506010000">요양기관현지조사안내</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10506020000">현지조사사전예고</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10507010100">명단공표</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10507010100">건강보험 거짓청구 요양기관 명단공표</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10507030100">보조금부정수급자 명단공표</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10507040100">불법 개설 의료기관 실태조사 결과 공표</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub08"><a href="/menu.es?mid=a10508010000">협동조합경영공시</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="http://www.coop.go.kr/" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">협동조합경영공시</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10508020000">경영공시 조회</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub09"><a href="/menu.es?mid=a10509000000">팝업존</a></li>
+				<li class="sub10 sublast"><a href="/menu.es?mid=a10510000000">배너모음</a></li>
+			</ul>
+		</div>
+	</li>
+	<li class="lnb6">
+		<a href="/menu.es?mid=a10602000000">소개</a>
+		<div class="submenu">
+			<ul class="sub06">
+				<li class="sub02 subfirst"><a href="/menu.es?mid=a10602000000">연혁</a></li>
+				<li class="sub03"><a href="/menu.es?mid=a10603010000">정부상징</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10603010000">정부상징</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10603020000">색상/시그니처</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10603030000">그래픽모티프</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10603040000">활용</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10604010000">조직</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10604010000">조직도</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10604020000">소속기관</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10604030000">산하 공공기관</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10604040000">부서안내</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10605010000">장관소개</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605010000">인사말</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605020000">장관약력</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605030000">장관일정</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605040000">현장앨범</a></li>
+							<li class="lnb-detail-item"><a href="https://www.youtube.com/playlist?list=PL_-Emxqwow0DoI2Wi2w9sijwakXuyu2yx" target="_blank" rel="noopener noreferrer" title="새창으로 이동" class="linkWindow">현장방문</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10605060000">역대장관</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10606010000">제1차관소개</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10606010000">차관약력</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10606020000">차관일정</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10606030000">현장앨범</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10606040000">역대차관</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10607010000">제2차관소개</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10607010000">차관약력</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10607020000">차관일정</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10607030000">현장앨범</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10607040000">역대차관</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub08"><a href="/menu.es?mid=a10608000000">오시는길</a></li>
+				<li class="sub09 sublast"><a href="/menu.es?mid=a10609000000">후원명칭 사용승인 현황</a></li>
+			</ul>
+		</div>
+	</li>
+	<li class="lnb7">
+		<a href="/menu.es?mid=a10701000000">정책</a>
+		<div class="submenu">
+			<ul class="sub07">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10701000000">업무계획</a></li>
+				<li class="sub15"><a href="/menu.es?mid=a10715060000">의료개혁</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715060000">추진배경 및 방향</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715020000">의료개혁 4대 과제</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715090000">의사인력 확대 방안 및 일일브리핑</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715100000">제2차 국민건강보험 종합 계획</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715030000">Q&A</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715040000">팩트체크 및 입장</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10715050000">정책소통자료</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub02"><a href="/menu.es?mid=a10702010000">보건의료</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702010000">보건의료정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702020000">의료자원정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702030000">의료기관정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702040000">약무정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10702060100">의사인력 수급추계위원회</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub03"><a href="/menu.es?mid=a10703010000">공공보건</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703010000">질병정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703020000">공공의료</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703030000">응급의료</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703040000">생명윤리정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10703050000">혈액장기정책</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10704010000">한의약</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10704010000">한의약정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10704020000">한의약산업</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub05"><a href="/menu.es?mid=a10705010000">건강보험</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10705010000">보험정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10705020000">보험급여</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10705030000">보험약제</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10705040000">보험평가</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10706010000">건강</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10706010000">건강정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10706020000">건강증진</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10706030000">구강건강</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10706040000">정신건강정책</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub07"><a href="/menu.es?mid=a10707010000">보건산업</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10707010000">보건산업정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10707020000">보건의료기술개발</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub08"><a href="/menu.es?mid=a10708010000">복지</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10708010000">기초생활보장</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10708020000">자활정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10708030000">기초의료보장</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10708040000">지역복지</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub09"><a href="/menu.es?mid=a10709010000">사회서비스</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10709010000">사회서비스 정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10709020000">사회서비스 사업</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub10"><a href="/menu.es?mid=a10710010000">장애인</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710010000">장애인정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710020000">장애인권익지원</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710030000">장애인자립기반</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710040000">장애인서비스</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710060000">장애인건강</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10710050000">알림마당</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub11"><a href="/menu.es?mid=a10711010000">인구아동</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711010000">인구정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711020000">출산정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711030000">아동복지정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711040000">아동보호자립</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10711050000">아동학대</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub12"><a href="/menu.es?mid=a10712010000">노인</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10712010000">노인정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10712020000">노인지원</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10712030000">요양보험제도</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10712040000">요양보험운영</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub14 sublast"><a href="/menu.es?mid=a10714010000">연금</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714010000">국민연금정책</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714020000">국민연금재정계산</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714030000">국민연금재정</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714040000">기초연금</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714050100">자료실</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10714060000">연금개혁 Q&A</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</li>
+	<li class="lnb8 mnlast">
+		<a href="/menu.es?mid=a10801000000">이용안내</a>
+		<div class="submenu">
+			<ul class="sub08">
+				<li class="sub01 subfirst"><a href="/menu.es?mid=a10801000000">홈페이지이용안내</a></li>
+				<li class="sub02"><a href="/menu.es?mid=a10802000000">자주 묻는 질문</a></li>
+				<li class="sub03"><a href="/menu.es?mid=a10803010000">개인정보처리방침</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10803010000">보건복지부 개인정보처리방침</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10803020000">이전 처리방침</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub04"><a href="/menu.es?mid=a10804010000">고정형 영상정보처리기기 운영방침</a>
+					<div>
+						<ul class="lnb-detail">
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10804010000">고정형 영상정보처리기기 운영방침</a></li>
+							<li class="lnb-detail-item"><a href="/menu.es?mid=a10804020000">이전 처리방침</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="sub06"><a href="/menu.es?mid=a10806000000">뷰어다운로드</a></li>
+				<li class="sub07"><a href="/menu.es?mid=a10807000000">정보구독</a></li>
+				<li class="sub08"><a href="/menu.es?mid=a10808000000">장애인이용안내</a></li>
+				<li class="sub09"><a href="/menu.es?mid=a10809000000">홈페이지 기능오류신고</a></li>
+				<li class="sub10"><a href="/menu.es?mid=a10810000000">전체보기</a></li>
+				<li class="sub11 sublast"><a href="/menu.es?mid=a10811000000">ㄱ~ㅎ 색인</a></li>
+			</ul>
+		</div>
+	</li>
+</ul>
+
+
+                    
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-ico ico-close">
+                    <span class="sr-only">전체메뉴 닫기</span>
+                </button>
+            </div>
+        </nav>       
+        
+
+    </header>
+    <!-- //헤더 영역 -->
+
+    <main id="main" class="main">
+        <div class="main_wrap">
+
+
+
+
+
+
+
+
+
+		<!--  -->
+
+		<section id="snb" class="sub07">
+   			<h2 class="title"><span>정책</span></h2>
+			<nav class="list">
+		
+			
+
+<ul id="left_menu_top" class="head_menu_depth">
+	<li id="li0701000000" class="first"><a href="/menu.es?mid=a10701000000" onclick="detailSubMenu('smenu1');">업무계획</a>
+	</li>
+	<li id="li0715000000"><a href="/menu.es?mid=a10715060000" onclick="detailSubMenu('smenu2');">의료개혁</a>
+		<ul id="smenu2" class="ul0715000000" style="display:none;">
+			<li id="li0715060000"><a href="/menu.es?mid=a10715060000">추진배경 및 방향</a></li>
+			<li id="li0715020000"><a href="/menu.es?mid=a10715020000">의료개혁 4대 과제</a></li>
+			<li id="li0715090000"><a href="/menu.es?mid=a10715090000">의사인력 확대 방안 및 일일브리핑</a></li>
+			<li id="li0715100000"><a href="/menu.es?mid=a10715100000">제2차 국민건강보험 종합 계획</a></li>
+			<li id="li0715030000"><a href="/menu.es?mid=a10715030000">Q&A</a></li>
+			<li id="li0715040000"><a href="/menu.es?mid=a10715040000">팩트체크 및 입장</a></li>
+			<li id="li0715050000" class="last"><a href="/menu.es?mid=a10715050000">정책소통자료</a></li>
+		</ul>
+	</li>
+	<li id="li0702000000"><a href="/menu.es?mid=a10702010000" onclick="detailSubMenu('smenu3');">보건의료</a>
+		<ul id="smenu3" class="ul0702000000" style="display:none;">
+			<li id="li0702010000"><a href="/menu.es?mid=a10702010000">보건의료정책</a></li>
+			<li id="li0702020000"><a href="/menu.es?mid=a10702020000">의료자원정책</a></li>
+			<li id="li0702030000"><a href="/menu.es?mid=a10702030000">의료기관정책</a></li>
+			<li id="li0702040000"><a href="/menu.es?mid=a10702040000">약무정책</a></li>
+			<li id="li0702060000" class="last"><a href="/menu.es?mid=a10702060100">의사인력 수급추계위원회</a></li>
+		</ul>
+	</li>
+	<li id="li0703000000"><a href="/menu.es?mid=a10703010000" onclick="detailSubMenu('smenu4');">공공보건</a>
+		<ul id="smenu4" class="ul0703000000" style="display:none;">
+			<li id="li0703010000"><a href="/menu.es?mid=a10703010000">질병정책</a></li>
+			<li id="li0703020000"><a href="/menu.es?mid=a10703020000">공공의료</a></li>
+			<li id="li0703030000"><a href="/menu.es?mid=a10703030000">응급의료</a></li>
+			<li id="li0703040000"><a href="/menu.es?mid=a10703040000">생명윤리정책</a></li>
+			<li id="li0703050000" class="last"><a href="/menu.es?mid=a10703050000">혈액장기정책</a></li>
+		</ul>
+	</li>
+	<li id="li0704000000"><a href="/menu.es?mid=a10704010000" onclick="detailSubMenu('smenu5');">한의약</a>
+		<ul id="smenu5" class="ul0704000000" style="display:none;">
+			<li id="li0704010000"><a href="/menu.es?mid=a10704010000">한의약정책</a></li>
+			<li id="li0704020000" class="last"><a href="/menu.es?mid=a10704020000">한의약산업</a></li>
+		</ul>
+	</li>
+	<li id="li0705000000"><a href="/menu.es?mid=a10705010000" onclick="detailSubMenu('smenu6');">건강보험</a>
+		<ul id="smenu6" class="ul0705000000" style="display:none;">
+			<li id="li0705010000"><a href="/menu.es?mid=a10705010000">보험정책</a></li>
+			<li id="li0705020000"><a href="/menu.es?mid=a10705020000">보험급여</a></li>
+			<li id="li0705030000"><a href="/menu.es?mid=a10705030000">보험약제</a></li>
+			<li id="li0705040000" class="last"><a href="/menu.es?mid=a10705040000">보험평가</a></li>
+		</ul>
+	</li>
+	<li id="li0706000000"><a href="/menu.es?mid=a10706010000" onclick="detailSubMenu('smenu7');">건강</a>
+		<ul id="smenu7" class="ul0706000000" style="display:none;">
+			<li id="li0706010000"><a href="/menu.es?mid=a10706010000">건강정책</a></li>
+			<li id="li0706020000"><a href="/menu.es?mid=a10706020000">건강증진</a></li>
+			<li id="li0706030000"><a href="/menu.es?mid=a10706030000">구강건강</a></li>
+			<li id="li0706040000" class="last"><a href="/menu.es?mid=a10706040000">정신건강정책</a></li>
+		</ul>
+	</li>
+	<li id="li0707000000"><a href="/menu.es?mid=a10707010000" onclick="detailSubMenu('smenu8');">보건산업</a>
+		<ul id="smenu8" class="ul0707000000" style="display:none;">
+			<li id="li0707010000"><a href="/menu.es?mid=a10707010000">보건산업정책</a></li>
+			<li id="li0707020000" class="last"><a href="/menu.es?mid=a10707020000">보건의료기술개발</a></li>
+		</ul>
+	</li>
+	<li id="li0708000000"><a href="/menu.es?mid=a10708010000" onclick="detailSubMenu('smenu9');">복지</a>
+		<ul id="smenu9" class="ul0708000000" style="display:none;">
+			<li id="li0708010000"><a href="/menu.es?mid=a10708010000">기초생활보장</a></li>
+			<li id="li0708020000"><a href="/menu.es?mid=a10708020000">자활정책</a></li>
+			<li id="li0708030000"><a href="/menu.es?mid=a10708030000">기초의료보장</a></li>
+			<li id="li0708040000" class="last"><a href="/menu.es?mid=a10708040000">지역복지</a></li>
+		</ul>
+	</li>
+	<li id="li0709000000"><a href="/menu.es?mid=a10709010000" onclick="detailSubMenu('smenu10');">사회서비스</a>
+		<ul id="smenu10" class="ul0709000000" style="display:none;">
+			<li id="li0709010000"><a href="/menu.es?mid=a10709010000">사회서비스 정책</a></li>
+			<li id="li0709020000" class="last"><a href="/menu.es?mid=a10709020000">사회서비스 사업</a></li>
+		</ul>
+	</li>
+	<li id="li0710000000"><a href="/menu.es?mid=a10710010000" onclick="detailSubMenu('smenu11');">장애인</a>
+		<ul id="smenu11" class="ul0710000000" style="display:none;">
+			<li id="li0710010000"><a href="/menu.es?mid=a10710010000">장애인정책</a></li>
+			<li id="li0710020000"><a href="/menu.es?mid=a10710020000">장애인권익지원</a></li>
+			<li id="li0710030000"><a href="/menu.es?mid=a10710030000">장애인자립기반</a></li>
+			<li id="li0710040000"><a href="/menu.es?mid=a10710040000">장애인서비스</a></li>
+			<li id="li0710060000"><a href="/menu.es?mid=a10710060000">장애인건강</a></li>
+			<li id="li0710050000" class="last"><a href="/menu.es?mid=a10710050000">알림마당</a></li>
+		</ul>
+	</li>
+	<li id="li0711000000"><a href="/menu.es?mid=a10711010000" onclick="detailSubMenu('smenu12');">인구아동</a>
+		<ul id="smenu12" class="ul0711000000" style="display:none;">
+			<li id="li0711010000"><a href="/menu.es?mid=a10711010000">인구정책</a></li>
+			<li id="li0711020000"><a href="/menu.es?mid=a10711020000">출산정책</a></li>
+			<li id="li0711030000"><a href="/menu.es?mid=a10711030000">아동복지정책</a></li>
+			<li id="li0711040000"><a href="/menu.es?mid=a10711040000">아동보호자립</a></li>
+			<li id="li0711050000" class="last"><a href="/menu.es?mid=a10711050000">아동학대</a></li>
+		</ul>
+	</li>
+	<li id="li0712000000"><a href="/menu.es?mid=a10712010000" onclick="detailSubMenu('smenu13');">노인</a>
+		<ul id="smenu13" class="ul0712000000" style="display:none;">
+			<li id="li0712010000"><a href="/menu.es?mid=a10712010000">노인정책</a></li>
+			<li id="li0712020000"><a href="/menu.es?mid=a10712020000">노인지원</a></li>
+			<li id="li0712030000"><a href="/menu.es?mid=a10712030000">요양보험제도</a></li>
+			<li id="li0712040000" class="last"><a href="/menu.es?mid=a10712040000">요양보험운영</a></li>
+		</ul>
+	</li>
+	<li id="li0714000000" class="last"><a href="/menu.es?mid=a10714010000" onclick="detailSubMenu('smenu14');">연금</a>
+		<ul id="smenu14" class="ul0714000000" style="display:none;">
+			<li id="li0714010000"><a href="/menu.es?mid=a10714010000">국민연금정책</a></li>
+			<li id="li0714020000"><a href="/menu.es?mid=a10714020000">국민연금재정계산</a></li>
+			<li id="li0714030000"><a href="/menu.es?mid=a10714030000">국민연금재정</a></li>
+			<li id="li0714040000"><a href="/menu.es?mid=a10714040000">기초연금</a></li>
+			<li id="li0714050000"><a href="/menu.es?mid=a10714050100">자료실</a></li>
+			<li id="li0714060000" class="last"><a href="/menu.es?mid=a10714060000">연금개혁 Q&A</a></li>
+		</ul>
+	</li>
+</ul>
+
+
+		
+			</nav>
+			
+<div class="quick_service">
+    <div class="qs_title"><strong>Quick Menu</strong></div>
+    <ul>
+        <li><a href="/menu.es?mid=a10201010000"><em class="icon01"></em><span>민원신청</span></a></li>
+        <li><a href="/menu.es?mid=a10604010000"><em class="icon02"></em><span>조직도</span></a></li>
+        <li><a href="/orgSearch.es?mid=a10604040000"><em class="icon03"></em><span>부서안내</span></a></li>
+        <li><a href="/menu.es?mid=a10608000000"><em class="icon04"></em><span>오시는 길</span></a></li>
+        <li><a href="https://www.129.go.kr" target="_blank" title="새창-보건복지 상담센터 129"><em class="icon05"></em><span>상담센터 129</span></a></li>
+        <li><a href="/menu.es?mid=a10204010000"><em class="icon06"></em><span>부정비리·공익신고센터</span></a></li>
+    </ul>
+</div>
+		</section>
+
+		<section id="contents" class="sub07 sub0711">
+			<div class="contents_util">
+				<nav class="location">
+					<ol class="path">
+						<li class="icon"><a href="/index.es?sid=a1">홈</a></li>
+						
+							
+								
+									
+										<li><a href="/menu.es?mid=a10700000000" aria-current="true" >정책</a></li>
+									
+								
+									
+										<li><a href="/menu.es?mid=a10711000000" aria-current="true" >인구아동</a></li>
+									
+								
+									
+										<li><a href="/menu.es?mid=a10711040000" aria-current="true" >아동보호자립</a></li>
+									
+								
+									
+										<li><a href="/menu.es?mid=a10711041000" aria-current="true"  class="active">자립준비청년 자립지원</a></li>
+									
+								
+							
+						
+					</ol>
+				</nav>
+				
+			</div>
+
+			
+			<h2 id="contents_title" class="contents_title">
+			
+				
+				
+					자립준비청년 자립지원
+				
+			
+			</h2>
+			
+			<div id="contents_body">
+
+			
+			
+
+
+<!-- 콘텐츠 시작 -->
+
+                        <h5 class="cont_title2 bltR mgt25">목적</h5>
+                        <p class="indent_box cont_text1">보호대상아동(아동복지시설, 가정위탁)의 자립준비 역량 강화 및 보호종료 후 자립준비청년의 안정적인 사회적응과 자립실현</p>
+
+						<h5 class="cont_title2 bltR mgt25">지원근거</h5>
+                        <p class="indent_box cont_text1">「아동복지법」제38조(자립지원), 제39조(자립지원계획의 수립 등), 제39조의2(자립지원전담기관의 설치·운영), 제40조(자립지원 관련 업무의 위탁) 등</p>
+
+						
+                        <h5 class="cont_title2 bltR mgt25">지원대상</h5>
+                        <ul class="indent_box cont_list1">
+                        	<li>아동복지시설 및 위탁가정에서 아동 본인의 의사에 따라 18세 이후 24세까지 보호기간을 연장한 사람
+                            	<p>* 대학 재학 등 아동복지법 제16조의3 및 시행령 제22조에 규정된 별도 사유가 있을 시 25세 이후에도 보호기간 추가 연장 가능(관련 법 조항 참고)</p>
+                            </li>
+                            <li>아동복지시설, 가정위탁 보호종료 5년 이내 자립준비청년
+                            	<p>* 아동복지시설: 아동복지법 제52조 상 아동양육시설, 공동생활가정, 아동일시보호시설, 학대피해아동쉼터, 아동보호치료시설</p>
+                                <p>** 단, 소년법 제32조제1항제6호에 따른 보호처분으로 아동복지시설에서 보호종료된 경우에는 아동복지법 제15조 제1항, 제3호, 제4호에 따른 보호조치 이력이 있는 자에 한정</p>
+                            </li>
+                            <li>18세 또는 연장 보호종료된 경우 보호종료로부터 5년간 지원
+                            	<p>* ’23년부터 보호연장아동도 자립지원통합서비스(맞춤형 사례관리) 지원대상자에 포함</p>
+                            </li>
+                            <li>15세 이후 조기 보호종료된 경우 18세가 된 때로부터 5년간 지원
+                            	<p>* 단, 개정된 아동복지법 시행일(‘24.2.9.) 이후 18세가 된 자부터 적용</p>
+                            </li>
+                        </ul>
+						
+                        <h5 class="cont_title2 bltR mgt25">주요사업</h5>
+						<p class="indent_box cont_text1">시설이나 위탁가정을 떠난 후에도 안정적으로 사회에 정착하여 자립할 수 있도록 각종 생활·주거·교육·취업·의료·심리정서 등 지원</p>
+						<p>* (‘24.2월) 15세 이후 18세 이전에 보호종료되거나, 아동복지시설 보호 후 아동복지시설이 아닌 청소년쉼터 등에서 퇴소한 경우에도 자립지원을 받을 수 있도록 대상 확대</p>
+                        
+                        <ul class="indent_box cont_list1">
+                        	<li><strong>자립수당</strong>
+                            	<p>아동복지시설, 가정위탁 보호종료 아동 중 보호종료일 기준으로 과거 2년 이상 연속하여 보호받은 자립준비청년 대상 보호종료 후 5년 간 자립수당 월 50만원 지급</p>
+                            </li>
+                            <li><strong>자립정착금</strong>
+                            	<p>만 18세 이후 보호종료된 자립준비청년 대상 전국 17개 시·도에서 자립정착금 1,000만원 이상 지급</p>
+                            	<p class="ta_r"> (’25년 기준)</p>
+                                <div class="tb_scroll">
+                                 <table class="tb_base">
+                                 <caption>자립정착금-서울, 대전 경기 제주, 경남, 그외로 구성된 표</caption>
+                                 <thead>
+                                    <tr>
+                                      <th scope="col">서울</th>
+                                      <th scope="col">대전·경기·제주·경남</th>
+                                      <th scope="col">부산</th>
+                                      <th scope="col">그 외</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="tb_center">
+                                    <tr>
+                                      <td>2,000만원</td>
+                                      <td>1,500만원</td>
+                                      <td>1,200만원</td>
+                                      <td>1,000만원</td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                            </li>
+                            <li><strong>디딤씨앗통장</strong>
+                            	<p>0세부터 만 18세 미만의 보호대상아동이 매월 일정 금액을 저축하면 국가(지자체)에서 1:2 비율로 정부지원금(월 10만원 한도)를 매칭하여 18세 이후 사회진출 초기 비용으로 지급</p>
+                                <p>* 자세한 내용은 아동권리보장원 홈페이지 (http://www.ncrc.or.kr) 에서 참고</p>
+                            </li>
+                            <li><strong>국민기초생활보장</strong>
+                            	<p>자립준비청년 대상 생계급여 수습 자격완화, 시설 외 거주 보호연장아동 대상 개별급여 전환 지원</p>
+                                <p>* 보호종료 5년 간 소득조사시 사업근로소득 공제(60만원+나머지 소득의 30% 공제)</p>
+                            </li>
+                            <li><strong>지지체계</strong>
+                            	<p>자립준비청년으로 구성되어 보호아동 대상 자립교육·멘토링을 수행하는 바람개비서포터즈(자립멘토단) ·자조모임 운영 및 활동비 지원</p>
+                                <p>* 바람개비서포터즈는 보건복지부에서 운영하는 만 29세 이하 아동복지시설 및 가정위탁 보호연장아동 및 보호종료 자립준비청년의 자조모임</p>
+                            </li>
+                            <li><strong>심리상담</strong>
+                            	<p>전국민 마음투자 지원사업 참여 시 자립준비청년, 보호연장아동 본인부담금 제외</p>
+                            </li>
+                            <li><strong>의료비 지원</strong>
+                            	<p>건강보험 가입 자립준비청년 대상으로 의료급여와 유사한 수준에서 의료서비스 이용이 가능하도록 요양급여비용 본인일부부담금을 경감 지원</p>
+                            </li>
+                        </ul>
+                        
+                        <!-- //콘텐츠 끝 -->
+
+
+
+			
+			
+			
+				<div class="list_btn_wrap">
+					<a href="/menu.es?mid=a10711040000" class="btn_basic btn_line">목록</a>
+				</div>
+			
+			
+				<div class="foot_author">
+					<ul>
+						
+							
+							
+								<li>
+									
+										
+											
+										
+										
+									
+									<p><strong class="">담당부서</strong>청년정책팀</p>
+								</li>
+								<li>
+									<p><strong class="">전화번호</strong>044-202-3361</p>
+								</li>
+							
+						
+
+						<li>
+							
+							
+								
+							
+							
+								
+							
+							<p><strong class="">최종수정일</strong>2025년 03월 21일</p>
+						</li>
+					</ul>
+					<a href="/menu.es?mid=a10809000000" class="btn_basic btn_secondary small"><span class="btn_bln">홈페이지 기능오류신고</span></a>
+				</div>
+			
+			
+				<div class="satisfy_group">
+						<article id="satisfy" class="item">
+							
+<script>
+//<![CDATA[
+	function satisfy_confirm(){
+		var fm = document.s_form;
+		var selChk = document.getElementsByName("chk_point");
+		for(var i = 0 ; i < selChk.length ; i++){
+			if(selChk[i].checked == true){
+				fm.point.value = selChk[i].value;
+			}
+		}
+		fm.action = "/satisfy.es?mid=a10711041000&act=ins";
+		fm.submit();
+	}
+//]]>
+</script>
+
+<fieldset>
+	<legend>콘텐츠 만족도 조사</legend>
+	<h2 class="title">
+		
+		<strong>이 페이지에서 제공하는 정보에 대하여 만족하십니까?</strong>
+		
+	</h2>
+	<div class="cont">
+		
+		
+		
+		<form id="command" name="s_form" action="/satisfy.es" method="post">
+		<input type="hidden" name="mid" value="a10711041000">
+		<input type="hidden" name="act" value="ins">
+		<input type="hidden" name="point" value="5">
+		<ul class="list">
+			<li class="form_radio"><input type="radio" name="chk_point" id="q1" value="5" checked="checked"><label for="q1"> 매우만족</label></li>
+			<li class="form_radio"><input type="radio" name="chk_point" id="q2" value="4"><label for="q2"> 만족</label></li>
+			<li class="form_radio"><input type="radio" name="chk_point" id="q3" value="3"><label for="q3"> 보통</label></li>
+			<li class="form_radio"><input type="radio" name="chk_point" id="q4" value="2"><label for="q4"> 불만족</label></li>
+			<li class="form_radio"><input type="radio" name="chk_point" id="q5" value="1"><label for="q5"> 매우불만족</label></li>
+		</ul>
+		<p class="form">
+			<input type="submit" class="btn_basic btn_tertiary medium" onclick="satisfy_confirm(); return false;" value="확인">
+		</p>
+		</form>
+		
+		
+	</div>
+</fieldset>
+
+						</article>
+				</div>
+			
+			</div>
+			<!--//contents_body -->
+		</section>
+
+						
+		</div>
+		
+			<a href="#wrap" class="go-top"><i class="xi-angle-up-min"></i>TOP<span class="sr-only">문서 처음으로 이동</span></a>
+		
+	</main>
+	<footer id="footer">
+		
+
+
+<div class="related">
+	<div class="container">
+		<div class="group group1">
+			<!-- <a href="#none" class="label">사업별 홈페이지<em class="sr_only">목록 열기</em></a> -->
+			<button class="label" data-id="popFootLink" title="사업별 홈페이지 레이어">
+				사업별 홈페이지<em class="sr_only">목록 열기</em>
+			</button>
+			<div class="popup-wrap" data-type="full" id="popFootLink">
+				<div class="popup-in">
+					<div class="popup">
+						<div class="popup-head">
+							<h1 class="pop-tit">사업별 홈페이지</h1>
+						</div>
+						<div class="popup-body">
+							<ul class="list">
+								
+
+
+	
+		<li><a href="https://basicpension.mohw.go.kr" target="_blank" title="새창 - 기초연금">기초연금</a></li>
+	
+		<li><a href="http://www.longtermcare.or.kr/" target="_blank" title="새창 - 노인장기요양보험">노인장기요양보험</a></li>
+	
+		<li><a href="https://www.socialservice.or.kr:444" target="_blank" title="새창 - 사회서비스전자바우처">사회서비스전자바우처</a></li>
+	
+		<li><a href="http://www.ehaneul.go.kr/" target="_blank" title="새창 - e하늘 장사종합정보">e하늘 장사종합정보</a></li>
+	
+		<li><a href="http://www.129.go.kr" target="_blank" title="새창 - 보건복지상담센터">보건복지상담센터</a></li>
+	
+		<li><a href="http://library.mohw.go.kr" target="_blank" title="새창 - 보건복지부 자료실">보건복지부 자료실</a></li>
+	
+		<li><a href="http://www.e-health.go.kr/" target="_blank" title="새창 - 공공보건포털">공공보건포털</a></li>
+	
+		<li><a href="http://khiss.go.kr/" target="_blank" title="새창 - 보건산업통계 홈페이지">보건산업통계 홈페이지</a></li>
+	
+		<li><a href="https://health.kdca.go.kr" target="_blank" title="새창 - 국가건강정보포털">국가건강정보포털</a></li>
+	
+		<li><a href="http://lic.mohw.go.kr" target="_blank" title="새창 - 보건복지부 인·허가 민원신청">보건복지부 인·허가 민원신청</a></li>
+	
+		<li><a href="http://www.ableservice.or.kr" target="_blank" title="새창 - 장애인사회활동지원">장애인사회활동지원</a></li>
+	
+		<li><a href="http://www.childcare.go.kr" target="_blank" title="새창 - 임신육아종합포털 아이사랑">임신육아종합포털 아이사랑</a></li>
+	
+		<li><a href="https://www.bokjiro.go.kr/" target="_blank" title="새창 - 복지로">복지로</a></li>
+	
+		<li><a href="http://www.ssc.go.kr" target="_blank" title="새창 - 사회보장위원회">사회보장위원회</a></li>
+	
+		<li><a href="https://www.mohw.go.kr/memorial" target="_blank" title="새창 - 의사자추모관">의사자추모관</a></li>
+	
+		<li><a href="https://emrcert.mohw.go.kr/" target="_blank" title="새창 - 전자의무기록시스템(EMR) 인증">전자의무기록시스템(EMR) 인증</a></li>
+	
+
+
+
+
+								
+							</ul>
+						</div>
+						<button type="button" class="popup-close">
+							<span class="sr-only">레이어 닫기</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="group group2">
+			<!-- <a href="#none" class="label">외청 및 소속기관 홈페이지<em class="sr_only">목록 열기</em></a> -->
+			<button class="label" data-id="popFootLink2"
+				title="외청 및 소속기관 홈페이지 레이어">
+				외청 및 소속기관 홈페이지<em class="sr_only">목록 열기</em>
+			</button>
+			<div class="popup-wrap" data-type="full" id="popFootLink2">
+				<div class="popup-in">
+					<div class="popup">
+						<div class="popup-head">
+							<h1 class="pop-tit">외청 및 소속기관 홈페이지</h1>
+						</div>
+						<div class="popup-body">
+							<ul class="list">
+								
+
+
+	
+		<li><a href="http://www.kdca.go.kr/" target="_blank" title="새창 - 질병관리청">질병관리청</a></li>
+	
+		<li><a href="http://www.ncmh.go.kr/" target="_blank" title="새창 - 국립정신건강센터">국립정신건강센터</a></li>
+	
+		<li><a href="http://www.najumh.go.kr/" target="_blank" title="새창 - 국립나주병원">국립나주병원</a></li>
+	
+		<li><a href="http://www.bgnmh.go.kr/" target="_blank" title="새창 - 국립부곡병원">국립부곡병원</a></li>
+	
+		<li><a href="http://www.cnmh.go.kr/" target="_blank" title="새창 - 국립춘천병원">국립춘천병원</a></li>
+	
+		<li><a href="http://www.knmh.go.kr/" target="_blank" title="새창 - 국립공주병원">국립공주병원</a></li>
+	
+		<li><a href="http://www.sorokdo.go.kr/" target="_blank" title="새창 - 국립소록도병원">국립소록도병원</a></li>
+	
+		<li><a href="http://www.nrc.go.kr/" target="_blank" title="새창 - 국립재활원">국립재활원</a></li>
+	
+		<li><a href="https://www.konos.go.kr" target="_blank" title="새창 - 국립장기조직혈액관리원">국립장기조직혈액관리원</a></li>
+	
+		<li><a href="http://osong.mohw.go.kr" target="_blank" title="새창 - 오송생명과학단지지원센터">오송생명과학단지지원센터</a></li>
+	
+		<li><a href="http://www.nmhc.go.kr" target="_blank" title="새창 - 국립망향의동산관리원">국립망향의동산관리원</a></li>
+	
+		<li><a href="http://hi.simpan.go.kr" target="_blank" title="새창 - 건강보험분쟁조정위원회사무국">건강보험분쟁조정위원회사무국</a></li>
+	
+
+
+
+
+
+							</ul>
+						</div>
+						<button type="button" class="popup-close">
+							<span class="sr-only">레이어 닫기</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="group group3">
+			<!-- <a href="#none" class="label">관련기관 홈페이지<em class="sr_only">목록 열기</em></a> -->
+			<button class="label" data-id="popFootLink3" title="관련기관 홈페이지 레이어">
+				관련기관 홈페이지<em class="sr_only">목록 열기</em>
+			</button>
+			<div class="popup-wrap" data-type="full" id="popFootLink3">
+				<div class="popup-in">
+					<div class="popup">
+						<div class="popup-head">
+							<h1 class="pop-tit">관련기관 홈페이지</h1>
+						</div>
+						<div class="popup-body">
+							<ul class="list">
+								
+
+
+	
+		<li><a href="http://www.nps.or.kr" target="_blank" title="새창 - 국민연금공단">국민연금공단</a></li>
+	
+		<li><a href="http://www.hira.or.kr" target="_blank" title="새창 - 건강보험심사평가원">건강보험심사평가원</a></li>
+	
+		<li><a href="http://www.nhis.or.kr/" target="_blank" title="새창 - 국민건강보험공단">국민건강보험공단</a></li>
+	
+		<li><a href="http://ssis.or.kr" target="_blank" title="새창 - 한국사회보장정보원">한국사회보장정보원</a></li>
+	
+		<li><a href="https://www.nibp.kr" target="_blank" title="새창 - 국가생명윤리정책원">국가생명윤리정책원</a></li>
+	
+		<li><a href="https://www.ncc.re.kr" target="_blank" title="새창 - 국립암센터">국립암센터</a></li>
+	
+		<li><a href="http://www.nmc.or.kr" target="_blank" title="새창 - 국립중앙의료원">국립중앙의료원</a></li>
+	
+		<li><a href="http://www.dgmif.re.kr/" target="_blank" title="새창 - 대구경북첨단의료산업진흥재단">대구경북첨단의료산업진흥재단</a></li>
+	
+		<li><a href="https://www.redcross.or.kr" target="_blank" title="새창 - 대한적십자사">대한적십자사</a></li>
+	
+		<li><a href="http://www.ncrc.or.kr" target="_blank" title="새창 - 아동권리보장원">아동권리보장원</a></li>
+	
+		<li><a href="http://www.kbiohealth.kr/" target="_blank" title="새창 - 오송첨단의료산업진흥재단">오송첨단의료산업진흥재단</a></li>
+	
+		<li><a href="http://www.koiha.or.kr" target="_blank" title="새창 - 의료기관평가인증원">의료기관평가인증원</a></li>
+	
+		<li><a href="http://www.khealth.or.kr" target="_blank" title="새창 - 한국건강증진개발원">한국건강증진개발원</a></li>
+	
+		<li><a href="https://kptb.kr/" target="_blank" title="새창 - 한국공공조직은행">한국공공조직은행</a></li>
+	
+		<li><a href="http://www.kofih.org/" target="_blank" title="새창 - 한국국제보건의료재단">한국국제보건의료재단</a></li>
+	
+		<li><a href="http://www.kordi.or.kr" target="_blank" title="새창 - 한국노인인력개발원">한국노인인력개발원</a></li>
+	
+		<li><a href="http://www.kohi.or.kr/" target="_blank" title="새창 - 한국보건복지인재원">한국보건복지인재원</a></li>
+	
+		<li><a href="http://www.khidi.or.kr/kps" target="_blank" title="새창 - 한국보건산업진흥원">한국보건산업진흥원</a></li>
+	
+		<li><a href="http://neca.re.kr" target="_blank" title="새창 - 한국보건의료연구원">한국보건의료연구원</a></li>
+	
+		<li><a href="http://www.kuksiwon.or.kr" target="_blank" title="새창 - 한국보건의료인국가시험원">한국보건의료인국가시험원</a></li>
+	
+		<li><a href="http://k-his.or.kr" target="_blank" title="새창 - 한국보건의료정보원">한국보건의료정보원</a></li>
+	
+		<li><a href="http://www.bokji.net" target="_blank" title="새창 - 한국사회복지협의회">한국사회복지협의회</a></li>
+	
+		<li><a href="http://www.kfsp.org" target="_blank" title="새창 - 한국생명존중희망재단">한국생명존중희망재단</a></li>
+	
+		<li><a href="http://www.k-medi.or.kr" target="_blank" title="새창 - 한국의료분쟁조정중재원">한국의료분쟁조정중재원</a></li>
+	
+		<li><a href="http://kdissw.or.kr" target="_blank" title="새창 - 한국자활복지개발원">한국자활복지개발원</a></li>
+	
+		<li><a href="http://www.koda1458.kr" target="_blank" title="새창 - 한국장기조직기증원">한국장기조직기증원</a></li>
+	
+		<li><a href="http://www.koddi.or.kr/" target="_blank" title="새창 - 한국장애인개발원">한국장애인개발원</a></li>
+	
+		<li><a href="http://www.nikom.or.kr" target="_blank" title="새창 - 한국한의약진흥원">한국한의약진흥원</a></li>
+	
+		<li><a href="http://www.kfcpi.or.kr" target="_blank" title="새창 - (재)한국장례문화진흥원">(재)한국장례문화진흥원</a></li>
+	
+		<li><a href="https://kcpass.or.kr" target="_blank" title="새창 - 중앙사회서비스원">중앙사회서비스원</a></li>
+	
+		<li><a href="http://www.kihasa.re.kr" target="_blank" title="새창 - 한국보건사회연구원">한국보건사회연구원</a></li>
+	
+		<li><a href="http://rikorea.or.kr" target="_blank" title="새창 - 한국장애인재활협회">한국장애인재활협회</a></li>
+	
+		<li><a href="https://oecdkorea.org" target="_blank" title="새창 - OECD대한민국정책포털">OECD대한민국정책포털</a></li>
+	
+
+
+
+
+
+							</ul>
+						</div>
+						<button type="button" class="popup-close">
+							<span class="sr-only">레이어 닫기</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="group group4">
+			<!-- <a href="#none" class="label">관련국외기관 홈페이지<em class="sr_only">목록열기</em></a> -->
+			<button class="label" data-id="popFootLink4" title="관련국외기관 홈페이지 레이어">
+				관련국외기관 홈페이지<em class="sr_only">목록 열기</em>
+			</button>
+			<div class="popup-wrap" data-type="full" id="popFootLink4">
+				<div class="popup-in">
+					<div class="popup">
+						<div class="popup-head">
+							<h1 class="pop-tit">관련국외기관 홈페이지</h1>
+						</div>
+						<div class="popup-body">
+							<ul class="list">
+								
+
+
+	
+		<li><a href="http://www.who.int/" target="_blank" title="새창 - 세계보건기구 WHO">세계보건기구 WHO</a></li>
+	
+		<li><a href="http://www.unicef.org" target="_blank" title="새창 - 국제아동구호기금 UNICEF">국제아동구호기금 UNICEF</a></li>
+	
+		<li><a href="http://www.hhs.gov" target="_blank" title="새창 - 미국 보건복지부">미국 보건복지부</a></li>
+	
+		<li><a href="http://www.fda.gov/" target="_blank" title="새창 - 미국 식품의약국">미국 식품의약국</a></li>
+	
+		<li><a href="http://www.samhsa.gov" target="_blank" title="새창 - 미국 약물남용 및 정신건강청">미국 약물남용 및 정신건강청</a></li>
+	
+		<li><a href="http://www.nlm.nih.gov" target="_blank" title="새창 - 미국 의학도서관">미국 의학도서관</a></li>
+	
+		<li><a href="http://www.drugfree.org/" target="_blank" title="새창 - 약물중독 예방단체">약물중독 예방단체</a></li>
+	
+		<li><a href="http://www.cancer.org/" target="_blank" title="새창 - 미국 암협회">미국 암협회</a></li>
+	
+		<li><a href="http://www.childrenscancercenter.org/" target="_blank" title="새창 - 어린이암센터">어린이암센터</a></li>
+	
+		<li><a href="http://www.pop.org" target="_blank" title="새창 - 미국 인구연구소">미국 인구연구소</a></li>
+	
+		<li><a href="http://www.ccsa.ca/" target="_blank" title="새창 - 캐나다 약물남용 센터">캐나다 약물남용 센터</a></li>
+	
+		<li><a href="http://www.mhlw.go.jp" target="_blank" title="새창 - 일본 후생노동성">일본 후생노동성</a></li>
+	
+		<li><a href="http://www.health.gov.au/" target="_blank" title="새창 - 호주 보건복지부">호주 보건복지부</a></li>
+	
+		<li><a href="https://www.mohw.gov.tw" target="_blank" title="새창 - 대만 보건부">대만 보건부</a></li>
+	
+
+
+
+
+
+							</ul>
+						</div>
+						<button type="button" class="popup-close">
+							<span class="sr-only">레이어 닫기</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--//container-->
+</div>
+<!-- related end -->
+<div class="container">
+
+	<div class="footer_top">
+		<a href="/" class="logo"><img src="../../kor/img/layout/footer/f_logo_1.png" alt="보건복지부" style="width: 16rem"></a>
+	</div>
+	<div class="footer_info">
+		<div id="siteinfo">
+			<address>(30113) 세종특별자치시 도움4로 13 보건복지부 (정부세종청사 10동)</address>
+			<span class="mgt20">안내전화 : <a href="tel:129">보건복지상담센터 국번없이 129(무료)</a> / 평일 09:00~18:00, 긴급지원상담은 24시</span><br> 
+			<span>당직실 : <a href="tel:044-202-2118">044-202-2118</a></span>
+			<span>FAX : 044-202-3910</span>
+		</div>
+		<div class="util">
+			<ul class="link_lst">
+				<li><a href="/menu.es?mid=a10608000000">오시는길<i class="xi-angle-right-min"></i></a></li>
+				<li><a href="/index-search.es?mid=a10811000000">ㄱ~ㅎ색인<i class="xi-angle-right-min"></i></a></li>
+			</ul>
+			<ul class="list mgt20">
+				<li class="facebook"><a href="https://facebook.com/mohwpr" target="_blank" title="새창 - 보건복지부 페이스북"><i class="xi-facebook"></i><span class="hdn">페이스북</span></a></li>
+				<li><a href="https://twitter.com/mohwpr" target="_blank" title="새창 - 보건복지부 x"><i class="sns_x"></i><span class="hdn">x</span></a></li>
+				<li class="youtube"><a href="https://youtube.com/user/mohwpr" target="_blank" title="새창 -Youtube"><i class="xi-youtube-play"></i><span class="hdn">유튜브</span></a></li>
+				<li class="naverblog"><a href="https://blog.naver.com/mohw2016" target="_blank" title="새창 - 보건복지부 네이버 블로그"><i class="xi-naver"></i><span class="hdn">네이버블로그</span></a></li>		
+				<li class="instar"><a href="https://instargram.com/mohw_kr/" target="_blank" title="새창 - 보건복지부 인스타그램"><i class="xi-instagram"></i><span class="hdn">인스타그램</span></a></li>
+				<!--<li class="rss"><a href="/menu.es?mid=a10807000000"><i class="xi-rss"></i><span class="hdn">정보구독</span></a></li>-->
+			</ul>
+			<!--
+                    <div class="mark">
+                        <ul>
+                            <li class="clean_logo"><span class="hdn">청럼복지부 슬로건</span></li>
+                            <li class="open"><a href="https://www.kogl.or.kr/" target="_blank" title="OPEN 공공누리 공공저작물 자유이용허락 사이트 이동 - 새창"><span class="hdn">OPEN 공공누리 공공저작물 자유이용허락</span></a></li>
+                            <li class="wa"><a href="http://www.kwacc.or.kr/CertificationSite/WA/List?Seq=890&SearchSiteName=%EB%B3%B4%EA%B1%B4%EB%B3%B5%EC%A7%80%EB%B6%80&Page=1" target="_blank" title="새창_한국웹접근성평가센터 홈페이지로 이동"><span class="hdn">과학기술정보통신부 WEB ACCESSIBILITY (사)한국시각장애인연합회 한국웹접근성평가센터</span></a></li>
+                        </ul>
+                    </div>
+                    -->
+		</div>
+	</div>
+	<div class="footer_bottom">
+		<ul id="fnb">
+			<li><a href="/menu.es?mid=a10801000000"><span>이용안내</span></a></li>
+			<li class="point"><a href="/menu.es?mid=a10803000000"><span><strong>개인정보처리방침</strong></span></a></li>
+			<li><a href="/menu.es?mid=a10103010400"><span>저작권정책</span></a></li>
+			<!--<li><a href="/menu.es?mid=a10608000000"><span>오시는길</span></a></li>-->
+			<li><a href="/menu.es?mid=a10807000000"><span>정보구독</span></a></li>
+			<!--<li><a href="/index-search.es?mid=a10811000000"><span>ㄱ~ㅎ색인</span></a></li>-->
+			<li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List?Seq=890&SearchSiteName=%EB%B3%B4%EA%B1%B4%EB%B3%B5%EC%A7%80%EB%B6%80&Page=1" target="_blank" title="새창_한국웹접근성평가센터 홈페이지로 이동"><span>웹 접근성 품질인증</span></a></li>
+		</ul>
+		<p class="copyright">COPYRIGHT MOHW. ALL RIGHTS RESERVED</p>
+	</div>
+
+
+</div>
+<!--// container end  -->
+
+
+
+	</footer>
+
+</div>
+
+<!-- 공통 JS -->
+<script src="/kor/js/layout.js"></script>
+
+<!-- 서브 JS -->
+<script src="/kor/js/sub.js"></script>
+ <script src="/kor/js/daterangepicker.js"></script>
+
+
+	
+
+	
+<script>
+	try { initNavigation('07'); } catch (e) { /*console.log("");*/ }	// 메인메뉴 활성화
+	try { initNavigationMbl('07'); } catch (e) { /*console.log("");*/ }	// 모바일 메인메뉴 활성화
+	try { initLeftMenuLI('0711', '071104'); } catch (e) { /*console.log("");*/ }	// 서브메뉴 활성화
+	try { init3DepthMenu('071104'); } catch (e) { /*console.log("");*/ }
+	try { init4DepthMenu('07110410'); } catch (e) { /*console.log("");*/ }
+	try { init5DepthMenu('0711041000'); } catch (e) { /*console.log("");*/ }
+	try { init1DepthComboMenu('07'); } catch (e) { /*console.log("");*/ }
+	try { init2DepthComboMenu('0711'); } catch (e) { /*console.log("");*/ }
+	try { init3DepthComboMenu('071104'); } catch (e) { /*console.log("");*/ }
+	try { init4DepthComboMenu('07110410'); } catch (e) { /*console.log("");*/ }
+	try { init5DepthComboMenu('0711041000'); } catch (e) { /*console.log("");*/ }
+	
+</script>
+	
+	
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

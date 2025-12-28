@@ -3,7 +3,7 @@
 # --- UTILISATION ---
 # 1. Se mettre dans le répertoire miniprojet/programmes
 # 2. Lancer la commande suivante : bash main.sh nom_du_fichier_URLs nom_du_tableau fichier_liste_mots
-# Exemple : bash main.sh be_sens1_autanomia tableau-be1 liste_mots.txt
+# Exemple : bash main.sh kr tableau-kr1 data.txt
 
 FICHIER_URLS=$1
 FICHIER_SORTIE=$2
@@ -29,6 +29,10 @@ fi
 n=1
 UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
+# Créer les répertoires pour les dumps
+mkdir -p "../dumps-text/${FICHIER_URLS}"
+mkdir -p "../aspirations/${FICHIER_URLS}"
+
 # === Fonction pour générer le badge du code HTTP ===
 generer_badge_code() {
 	local code=$1
@@ -41,23 +45,8 @@ generer_badge_code() {
 	fi
 }
 
-# === Fonction pour compter les occurrences des mots ===
-compter_mots() {
-	local contenu=$1
-	local total=0
-	
-	while IFS= read -r mot; do
-		[[ -z "$mot" ]] && continue
-		# Compte les occurrences (insensible à la casse)
-		count=$(echo "$contenu" | grep -o -i "$mot" | wc -l)
-		total=$((total + count))
-	done < "$FICHIER_MOTS"
-	
-	echo "$total"
-}
-
 {
-# === Génération du head et du début du tableau (première ligne) ===
+# === Génération du head et du début du tableau ===
 cat << 'HEADER'
 <!DOCTYPE html>
 <html>
@@ -69,7 +58,7 @@ cat << 'HEADER'
 		<style>
 			.hero {
 				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-				}
+			}
 			.card {
 				border-radius: 8px;
 				box-shadow: 0 2px 15px rgba(0,0,0,0.1)
@@ -77,7 +66,7 @@ cat << 'HEADER'
 			.table thead th {
 				background-color: #f8f9fa;
 				color: #4a5568;
-				border-bottom: 2px solid #667eea
+				border-bottom: 2px solid #667eea;
 			}
 			.table tbody tr:hover {
 				background-color: #f5f3ff
@@ -125,8 +114,10 @@ cat << 'HEADER'
 										<th>URL</th>
 										<th>Code HTTP</th>
 										<th>Encodage</th>
-										<th>Nombre de mots</th>
+										<th>Nb mots</th>
 										<th>Occurrences</th>
+										<th>Dump HTML</th>
+										<th>Dump Text</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -143,17 +134,72 @@ do
 	ENCODAGE=$(curl -sIL -A "$UA" "$line" | tr -d '\r' | grep -i "charset" | head -n1 | cut -d= -f2)
 	[[ -z "$ENCODAGE" ]] && ENCODAGE="-"
 
-	# Récupération du contenu de la page
-	CONTENU=$(curl -sL -A "$UA" "$line")
-	
-	NB_MOTS=$(echo "$CONTENU" | wc -w)
-	
-	# Comptage des occurrences
+	NB_MOTS="-"
 	OCCURRENCES="-"
-	if [[ "$CODE" != "-" && "$ENCODAGE" != "-" ]]; then
-		OCCURRENCES=$(compter_mots "$CONTENU")
+	LIEN_HTML="-"
+	LIEN_TEXT="-"
+	
+	# === SI LA PAGE EST EN UTF-8 ===
+	if [[ "$ENCODAGE" =~ [Uu][Tt][Ff]-8 ]]; then
+		# Sauvegarder le HTML brut
+		FICHIER_HTML="../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html"
+		curl -sL -A "$UA" "$line" > "$FICHIER_HTML"
+		LIEN_HTML="<a href='../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html' style='color: #667eea;'>HTML</a>"
+		
+		# Extraire le texte avec lynx et sauvegarder
+		FICHIER_TEXTE="../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
+		lynx -dump -nolist -assume_charset=utf-8 -display_charset=utf-8 "$FICHIER_HTML" > "$FICHIER_TEXTE" 2>/dev/null
+		LIEN_TEXT="<a href='../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt' style='color: #667eea;'>TXT</a>"
+		
+		# Compter les mots
+		NB_MOTS=$(wc -w < "$FICHIER_TEXTE")
+		
+		# Compter les occurrences
+		OCCURRENCES=0
+		while IFS= read -r mot; do
+			mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+			[[ -z "$mot" ]] && continue
+			count=$(grep -o "$mot" "$FICHIER_TEXTE" | wc -l)
+			OCCURRENCES=$((OCCURRENCES + count))
+		done < "$FICHIER_MOTS"
+	
+	# === SINON : essayer de convertir ===
 	else
-		NB_MOTS="-"
+		# Sauvegarder le HTML brut
+		FICHIER_HTML="../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html"
+		curl -sL -A "$UA" "$line" > "$FICHIER_HTML"
+		LIEN_HTML="<a href='../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html' style='color: #667eea;'>HTML</a>"
+		
+		# Détecter l'encodage avec file
+		ENCODAGE_DETECTE=$(file -b --mime-encoding "$FICHIER_HTML")
+		
+		# Si l'encodage est reconnu
+		if [[ -n "$ENCODAGE_DETECTE" && "$ENCODAGE_DETECTE" != "binary" && "$ENCODAGE_DETECTE" != "unknown-8bit" ]]; then
+			# Convertir en UTF-8
+			FICHIER_UTF8="../dumps-text/${FICHIER_URLS}/temp-utf8-${n}.html"
+			iconv -f "$ENCODAGE_DETECTE" -t UTF-8 "$FICHIER_HTML" > "$FICHIER_UTF8" 2>/dev/null
+			
+			if [[ -s "$FICHIER_UTF8" ]]; then
+				# Extraire le texte avec lynx et sauvegarder
+				FICHIER_TEXTE="../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
+				lynx -dump -nolist -assume_charset=utf-8 -display_charset=utf-8 "$FICHIER_UTF8" > "$FICHIER_TEXTE" 2>/dev/null
+				LIEN_TEXT="<a href='../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt' style='color: #667eea;'>TXT</a>"
+				
+				# Compter les mots
+				NB_MOTS=$(wc -w < "$FICHIER_TEXTE")
+				
+				# Compter les occurrences
+				OCCURRENCES=0
+				while IFS= read -r mot; do
+					mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+					[[ -z "$mot" ]] && continue
+					count=$(grep -o "$mot" "$FICHIER_TEXTE" | wc -l)
+					OCCURRENCES=$((OCCURRENCES + count))
+				done < "$FICHIER_MOTS"
+				
+				rm -f "$FICHIER_UTF8"
+			fi
+		fi
 	fi
 
 	BADGE_CODE=$(generer_badge_code "$CODE")	
@@ -164,6 +210,8 @@ do
 			<td>${ENCODAGE}</td>
 			<td>${NB_MOTS}</td>
 			<td class=\"count-cell\">${OCCURRENCES}</td>
+			<td>${LIEN_HTML}</td>
+			<td>${LIEN_TEXT}</td>
 		</tr>"
 
     echo -ne "Progression : $n/$TOTAL\r" >&2

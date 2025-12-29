@@ -61,5 +61,6 @@ python3 cooccurrents.py \
   --target "^자율.*" \
   --match-mode regex \
   > pals/cooccurrents_kr_autonomie.txt
+
 Et La même commande a été utilisée pour le mot « 자립 », en modifiant uniquement la valeur de l’option --target.
 

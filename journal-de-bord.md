@@ -44,3 +44,22 @@ Le mot cible (avec d'éventuels caractères attachés)
 Le mot à droite (avec ou sans espace)
 
 Cela permet de capturer aussi bien "자율 주행" (avec espace) que "자율주행차" (sans espace).
+
+## Lundi 29 décembre
+**Yeji**:
+[1] Tokenisation : Un script make_pals_corpus.sh a été créé afin de tokeniser le corpus coréen avant l’utilisation des scripts PALS.
+La tokenisation repose sur trois conditions, définies à l’aide d’expressions régulières :
+— [가-힣]+ pour les mots en coréen
+— [A-Za-z]+ pour les mots en alphabet latin (anglais)
+— [0-9]+ pour les formes numériques
+ => Cette étape est nécessaire afin de garantir un format compatible avec les scripts PALS
+
+[2] Cooccurrences
+Après avoir créé deux fichiers - contextes-kr.txt et dumps-text-kr.txt - dans le répertoire pals, on a procédé à l’analyse des cooccurrences à l’aide du script cooccurrents.py. Les mots cibles « 자율 » et « 자립 » ont été traités séparément, afin de distinguer leurs champs lexicaux respectifs. Le script a été exécuté avec l’option --match-mode regex, par exemple : 
+python3 cooccurrents.py \
+  pals/contextes-kr.txt \
+  --target "^자율.*" \
+  --match-mode regex \
+  > pals/cooccurrents_kr_autonomie.txt
+Et La même commande a été utilisée pour le mot « 자립 », en modifiant uniquement la valeur de l’option --target.
+

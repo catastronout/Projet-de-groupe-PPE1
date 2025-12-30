@@ -1,7 +1,5 @@
    #alternate alternate alternate
 
-   [tr?id=593804601143628&ev=PageView&noscript=1]
-
    IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-5TQSTBW
 
    메뉴로 이동 콘텐츠로 이동

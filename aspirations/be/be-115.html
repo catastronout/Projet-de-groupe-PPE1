@@ -1,0 +1,490 @@
+<!DOCTYPE html><html lang="be" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.3",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseenter","mouseout","mouseleave","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input","visibilitychange"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),this.F("domReady"),await this.T(),await this.j(),await this.I(),this.F("windowLoad"),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise((t=>setTimeout(t,500-Date.now()+this.lastTouchEnd))),this.H(),this.F("all"),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))}),{isRocket:!0})}o(){window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0}),{isRocket:!0}),window.addEventListener("pagehide",(()=>{this.onFirstUserAction=null}),{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",(function i(o){Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1})),event.preventDefault(),window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}))}),{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),this.savedUserEvents.length>0&&(t.stopPropagation(),t.stopImmediatePropagation()),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach((t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})))}U(){this.userEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0}))),this.savedUserEvents.forEach((t=>{t.target.dispatchEvent(new window[t.constructor.name](t.type,t))}))}m(){this.eventsMutationObserver=new MutationObserver((t=>{const e="return false";for(const i of t){if("attributes"===i.type){const t=i.target.getAttribute(i.attributeName);t&&t!==e&&(i.target.setAttribute("data-rocket-"+i.attributeName,t),i.target["rocket"+i.attributeName]=new Function("event",t),i.target.setAttribute(i.attributeName,e))}"childList"===i.type&&i.addedNodes.forEach((t=>{if(t.nodeType===Node.ELEMENT_NODE)for(const i of t.attributes)this.attributeEvents.includes(i.name)&&i.value&&""!==i.value&&(t.setAttribute("data-rocket-"+i.name,i.value),t["rocket"+i.name]=new Function("event",i.value),t.setAttribute(i.name,e))}))}})),this.eventsMutationObserver.observe(document,{subtree:!0,childList:!0,attributeFilter:this.attributeEvents})}H(){this.eventsMutationObserver.disconnect(),this.attributeEvents.forEach((t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach((e=>{e.setAttribute(t,e.getAttribute("data-rocket-"+t)),e.removeAttribute("data-rocket-"+t)}))}))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o})},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}F(t){"all"===t&&(EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener),this.savedEventListeners=this.savedEventListeners.filter((e=>{let i=e.type,o=e.target||window;return"domReady"===t&&"DOMContentLoaded"!==i&&"readystatechange"!==i||("windowLoad"===t&&"load"!==i&&"readystatechange"!==i&&"pageshow"!==i||(this.B(i,o)&&(i="rocket-"+i),e.remove?o.removeEventListener(i,e.func,e.options):o.addEventListener(i,e.func,e.options),!1))}))}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,(()=>{e[t].forEach((t=>t()))}),{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout((()=>i.bind(document)(o))):i.bind(document)(o)}return t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise((t=>{this.userActionTriggered?t():this.onFirstUserAction=t}))}async L(){return new Promise((t=>{document.addEventListener("DOMContentLoaded",(()=>{this.realDomReadyFired=!0,t()}),{isRocket:!0})}))}async I(){return this.realWindowLoadedFired?Promise.resolve():new Promise((t=>{window.addEventListener("load",t,{isRocket:!0})}))}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver((t=>{for(const e of t)e.addedNodes.forEach((t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise((e=>{const i=()=>{const i=this.pendingScripts.findIndex((e=>e.script===t));i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)}))})}))})),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async j(){await this.J(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.j()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.N(t,"preconnect")}async $(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",(()=>{i.setAttribute("data-rocket-status","failed-network"),e()}),{isRocket:!0}),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.$(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())}),{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.$(e),this.C(t)):Promise.resolve()}O(){this.N([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}N(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach((t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}})),document.head.appendChild(o)}W(){this.trash.forEach((t=>t.remove()))}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async G(){Date.now()-this.lastBreath>45&&(await this.J(),this.lastBreath=Date.now())}async J(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="uri-translation" content="on"><link rel="alternate" hreflang="es" href="https://www.drivingeco.com/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="ar" href="https://www.drivingeco.com/ar/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="eu" href="https://www.drivingeco.com/eu/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="be" href="https://www.drivingeco.com/be/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="ca" href="https://www.drivingeco.com/ca/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.drivingeco.com/zh-CN/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="zh-TW" href="https://www.drivingeco.com/zh-TW/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="hr" href="https://www.drivingeco.com/hr/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="cs" href="https://www.drivingeco.com/cs/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="da" href="https://www.drivingeco.com/da/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="nl" href="https://www.drivingeco.com/nl/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="en" href="https://www.drivingeco.com/en/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="et" href="https://www.drivingeco.com/et/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="fr" href="https://www.drivingeco.com/fr/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="gl" href="https://www.drivingeco.com/gl/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="de" href="https://www.drivingeco.com/de/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="hu" href="https://www.drivingeco.com/hu/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="it" href="https://www.drivingeco.com/it/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="ja" href="https://www.drivingeco.com/ja/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="ko" href="https://www.drivingeco.com/ko/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="ku" href="https://www.drivingeco.com/ku/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="pl" href="https://www.drivingeco.com/pl/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="pt" href="https://www.drivingeco.com/pt/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="pa" href="https://www.drivingeco.com/pa/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="ro" href="https://www.drivingeco.com/ro/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="ru" href="https://www.drivingeco.com/ru/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="sk" href="https://www.drivingeco.com/sk/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="sl" href="https://www.drivingeco.com/sl/hyundai-autonomia-wltp-kona-ev/">
+<link rel="alternate" hreflang="tr" href="https://www.drivingeco.com/tr/hyundai-autonomia-wltp-kona-ev/">
+
+	<!-- This site is optimized with the Yoast SEO plugin v25.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Hyundai таксама вымушаны перагледзець аўтаномнасць Kona EV па WLTP у бок памяншэння</title>
+	<meta name="description" content="Як гэта здарылася з Kia e-Niro, афіцыйная аўтаномнасць WLTP Hyundai Kona EV таксама будзе некалькі менш, чым было заяўлена першапачаткова.">
+	<link rel="canonical" href="https://www.drivingeco.com/be/hyundai-autonomy-wltp-kona-ev/">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Hyundai таксама вымушаны перагледзець аўтаномнасць Kona EV па WLTP у бок памяншэння">
+	<meta property="og:description" content="Як гэта здарылася з Kia e-Niro, афіцыйная аўтаномнасць WLTP Hyundai Kona EV таксама будзе некалькі менш, чым было заяўлена першапачаткова.">
+	<meta property="og:url" content="https://www.drivingeco.com/be/hyundai-autonomy-wltp-kona-ev/">
+	<meta property="og:site_name" content="Driving ECO">
+	<meta property="article:published_time" content="2018-12-08T08:11:03+00:00">
+	<meta property="og:image" content="https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside.jpg">
+	<meta property="og:image:width" content="1900">
+	<meta property="og:image:height" content="1267">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="Javier Cantagalli">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@Cantagalli">
+	<meta name="twitter:label1" content="аўтар">
+	<meta name="twitter:data1" content="Хаўер Кантагалі">
+	<meta name="twitter:label2" content="Прыл. час чытання">
+	<meta name="twitter:data2" content="3 Minutos">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.drivingeco.com\/hyundai-autonomia-wltp-kona-ev\/","url":"https:\/\/www.drivingeco.com/be\/hyundai-autonomy-wltp-kona-ev\/","name":"Hyundai таксама вымушаны перагледзець аўтаномнасць Kona EV па WLTP у бок памяншэння","isPartOf":{"@id":"https:\/\/www.drivingeco.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.drivingeco.com\/hyundai-autonomia-wltp-kona-ev\/#primaryimage"},"image":{"@id":"https:\/\/www.drivingeco.com\/hyundai-autonomia-wltp-kona-ev\/#primaryimage"},"thumbnailUrl":"https:\/\/i.bstr.es\/drivingeco\/2018\/11\/hyundaikonaevside.jpg","datePublished":"2018-12-08T08:11:03+00:00","author":{"@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/a1e763aeef06335d35964698bef86c57"},"description":"Як гэта здарылася з Kia e-Niro, афіцыйная аўтаномнасць WLTP Hyundai Kona EV таксама будзе некалькі менш, чым было заяўлена першапачаткова.","breadcrumb":{"@id":"https:\/\/www.drivingeco.com\/hyundai-autonomia-wltp-kona-ev\/#breadcrumb"},"inLanguage":"be","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.drivingeco.com\/hyundai-autonomia-wltp-kona-ev\/"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/hyundai-autonomia-wltp-kona-ev\/#primaryimage","url":"https:\/\/i.bstr.es\/drivingeco\/2018\/11\/hyundaikonaevside.jpg","contentUrl":"https:\/\/i.bstr.es\/drivingeco\/2018\/11\/hyundaikonaevside.jpg","width":1900,"height":1267},{"@type":"BreadcrumbList","@id":"https:\/\/www.drivingeco.com\/hyundai-autonomia-wltp-kona-ev\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Галоўная","item":"https:\/\/www.drivingeco.com\/"},{"@type":"ListItem","position":2,"name":"Hyundai таксама вымушаны перагледзець аўтаномнасць Kona EV па WLTP у бок памяншэння"}]},{"@type":"WebSite","@id":"https:\/\/www.drivingeco.com\/#website","url":"https:\/\/www.drivingeco.com/be\/","name":"Driving ECO","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.drivingeco.com/be\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"be"},{"@type":"Person","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/a1e763aeef06335d35964698bef86c57","name":"Javier Cantagalli","image":{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/image\/","url":"https:\/\/secure.gravatar.com\/avatar\/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=96&d=mm&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=96&d=mm&r=g","caption":"Javier Cantagalli"},"sameAs":["https:\/\/x.com\/Cantagalli"],"url":"https:\/\/www.drivingeco.com/be\/%D0%B0%D1%9E%D1%82%D0%B0%D1%80\/jsunyer\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="https://i.bstr.es/">
+
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.drivingeco.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.1" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://www.drivingeco.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://www.drivingeco.com/wp-json/wp/v2/posts/2386">
+
+	<link rel="icon" type="image/png" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco-16x16.png">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco76x76.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco152x152.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco144x144.png">	
+<!-- incrementa -->	    <script type="rocketlazyloadscript" async="" data-rocket-type="text/javascript">
+            var a = new XMLHttpRequest();
+            a.open("GET","https://www.drivingeco.com/be/wp-content/themes/comun9/incrementa.php?id=2386&bd=drivingeco");
+            a.send(null);
+	   </script>
+				
+			<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.drivingeco.com\/hyundai-autonomia-wltp-kona-ev\/"},"headline":"","image":"https:\/\/i.bstr.es\/drivingeco\/2018\/11\/hyundaikonaevside-880x587.jpg","datePublished":"2018-12-08","dateModified":"2018-12-08","author":{"@type":"Person","name":"Javier Cantagalli"},"publisher":{"@type":"Organization","name":"drivingeco","logo":{"@type":"ImageObject","url":"https:\/\/www.drivingeco.com\/favicon.ico"}},"description":""}</script>	
+		<!-- ## NXS/OG ## --><!-- ## NXSOGTAGS ## --><!-- ## NXS/OG ## -->
+
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+
+
+
+
+
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MGNRFSQ');</script>
+<!-- End Google Tag Manager -->
+
+
+<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGNRFSQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<script type="rocketlazyloadscript">var adTarget="marca=hyundai;modelo=kona;precio=11;";</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://tmadspot.s3.eu-west-3.amazonaws.com/ads/250199.js"></script>
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://t.seedtag.com/t/7860-6497-01.js"></script>
+
+
+		
+	
+	<!-- google adsense + adspot -->
+	<script type="rocketlazyloadscript">
+		var currentLang = document.getElementsByTagName('html')[0].getAttribute('lang');
+		console.log(currentLang);
+		if ( currentLang !== 'es' && currentLang !== 'es-ES' &&  currentLang !== 'pt' && currentLang !== 'pt-PT') {
+			var script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0089260600075656';
+			script.crossOrigin = 'anonymous';
+			document.head.appendChild(script);
+		}
+		else{
+			var script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://ssm.codes/smart-tag/drivingeco.js';
+			document.head.appendChild(script);
+
+		}
+	</script>
+	<!-- google adsense -->
+
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-CE3ZWTD17F"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+	gtag('config', 'G-CE3ZWTD17F', {
+	   'custom_map': {
+	     'dimension1': 'domain'
+	   }
+	});
+	
+	gtag('event', 'set_domain', {'domain': 'drivingeco.com'});
+</script>
+
+
+
+    
+
+         
+	
+  <meta name="generator" content="WP Rocket 3.18.3" data-wpr-features="wpr_delay_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_minify_css wpr_preload_links wpr_desktop"></head>
+  <body class="wp-singular post-template-default single single-post postid-2386 single-format-standard wp-theme-comun9 wp-child-theme-drivingeco hyundai-autonomia-wltp-kona-ev">
+  
+	
+	
+
+	
+	
+<nav class="navbar navbar-default" role="navigation">
+	<div class="row">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+   	<button class="navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="sr-only">Дысплей навігацыі</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://www.drivingeco.com/be/" aria-label="logo cabecera"></a>
+  </div>
+ 
+  <div id="navbar" class="navbar-collapse collapse">
+          <div class="menu-navbar-container"><ul id="menu-navbar" class="nav navbar-nav"><li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-135"><a href="https://www.drivingeco.com/be/">ініцыяванне</a></li>
+<li id="menu-item-56116" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56116"><a href="https://www.drivingeco.com/be/%D1%9E%D1%81%D1%82%D0%BE%D0%B9%D0%BB%D1%96%D0%B2%D0%B0%D1%81%D1%86%D1%8C/">Устойлівасць</a></li>
+<li id="menu-item-56118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56118"><a href="https://www.drivingeco.com/be/%D0%B4%D0%BE%D0%BC%D0%B0/">Хогар</a></li>
+<li id="menu-item-56229" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-56229"><a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/">мабільнасць</a></li>
+<li id="menu-item-56117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56117"><a href="https://www.drivingeco.com/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%BD%D1%8B-%D0%B3%D0%BE%D1%80%D0%B0%D0%B4/">Smart City</a></li>
+<li id="menu-item-16671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16671"><a href="https://www.drivingeco.com/be/%D0%BF%D0%BE%D1%88%D1%83%D0%BA-a/">пошук</a></li>
+<li id="menu-item-26509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26509"><a href="https://www.drivingeco.com/be/%D1%85%D1%82%D0%BE-%D0%BC%D1%8B/">Аб кампаніі</a></li>
+</ul></div>        </div><!--/.navbar-collapse -->
+    </div><!--/.row -->
+</nav>
+  
+
+    <div data-rocket-location-hash="5bf0ec333859a32fa2bfd31ef7ed9e58" class="main-content">
+	<section data-rocket-location-hash="64a84e63ca689b70a3879703310620a1">
+		
+	
+	<div data-rocket-location-hash="6f50bb234f8cd4b4d13a68903aead8b8" class="container-fluid single" id="content-single">
+		<article>
+			<div class="row">
+					
+                                
+				<p class="gt-block etiquetas">
+					<a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/Hyundai/" rel="tag"><span class="icon-price-tag"></span>Hyundai</a> <a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/Hyundai/%D0%9A%D0%BE%D0%BD%D0%B0/" rel="tag"><span class="icon-price-tag"></span>Кона</a> <a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/" rel="tag">Трэнеры</a> 				</p>
+                
+                
+                <h1 data-url="https://www.drivingeco.com/hyundai-autonomia-wltp-kona-ev/">Hyundai таксама вымушаны перагледзець аўтаномнасць Kona EV па WLTP у бок памяншэння</h1>
+                
+                	<div class="meta">
+		<div class="meta-post">
+			<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=30&amp;d=mm&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=60&amp;d=mm&amp;r=g 2x" class="avatar avatar-30 photo" height="30" width="30" decoding="async"><noscript><img alt='' src='https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=30&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=60&#038;d=mm&#038;r=g 2x' class='avatar avatar-30 photo' height='30' width='30' decoding='async'/></noscript> Хаўер Кантагалі			&nbsp;&nbsp;&nbsp;<span class="icon-twitter"><a href="https://twitter.com/Cantagalli" target="_blank">@Cantagalli</a></span>&nbsp;&nbsp;&nbsp;
+			<span class="icon-calendar"></span> 8 снежня 2018&nbsp;&nbsp;&nbsp;&nbsp;
+			<span class="icon-stopwatch"></span>3 мін.		</div>
+
+		<div class="social-likes">
+			<a href="https://www.facebook.com/share.php?u=https://www.drivingeco.com/hyundai-autonomia-wltp-kona-ev/" class="fa fa-facebook" target="_blank" aria-label="facebook"></a>
+			<a href="https://twitter.com/share?text=Hyundai también se ve obligada a revisar a la baja la autonomía WLTP del Kona EV&amp;url=https://www.drivingeco.com/hyundai-autonomia-wltp-kona-ev/" class="fa fa-twitter" target="_blank" aria-label="twitter"></a>		
+			<a href="whatsapp://send?text=https://www.drivingeco.com/hyundai-autonomia-wltp-kona-ev/" class="fa fa-whatsapp" target="_blank" aria-label="whatsapp"></a>					
+		</div>
+	</div>
+
+		
+
+                
+                	                <div class="col-md-12">
+	                	<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-1220x814.jpg" srcset="https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-1220x814.jpg 1220w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-880x587.jpg 880w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-768x512.jpg 768w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-1024x683.jpg 1024w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-1600x1067.jpg 1600w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-700x467.jpg 700w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-400x267.jpg 400w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-212x141.jpg 212w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-270x180.jpg 270w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-220x146.jpg 220w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside-182x121.jpg 182w, https://i.bstr.es/drivingeco/2018/11/hyundaikonaevside.jpg 1900w" sizes="(max-width: 1210px) 100vw, 1210px" alt="Hyundai таксама вымушаны перагледзець аўтаномнасць Kona EV па WLTP у бок памяншэння" class="img-responsive aligncenter featured-image" width="1220" height="814">
+					</div>
+								
+                <div class="center fullpubli">
+                	<div id="mega-sup"></div><div id="interstitial"></div><div id="sky-left"></div><div id="sky-right"></div>                 </div>
+			<!--</div> end .row 
+				
+			<div class="row"> -->			
+                <div class="contenedor-ajustable">
+                    <div id="row">
+                        <div class="contenido-autoajustable-tres">
+
+							
+							<div class="content-single">
+								
+									
+
+								<div id="botones-hc"></div>								
+								<p class="entradilla">Як і ў выпадку з Kia e-Niro, афіцыйная аўтаномнасць WLTP Hyundai Kona EV таксама будзе крыху меншай, чым было заяўлена першапачаткова</p>
+<p class="gt-block">Тыдзень таму мы гэта даведаліся <a href="https://www.drivingeco.com/be/autonomy-wltp-%D0%BF%D0%B0%D0%BC%D1%8B%D0%BB%D0%BA%D0%B0-kia-e-niro/">Kia прыйшлося скараціць афіцыйны дыяпазон WLTP для e-Niro</a> пасля выяўлення памылкі ў тэстах вымярэнняў. Мяркуючы па ўсім, карэйскі вытворца не нясе адказнасці за гэтую памылку, <strong>але знешняе агенцтва, якому была даручана гэтая задача</strong>. </p>
+<p class="gt-block">Памылка магла б узнікнуць з-за невыканання правільнай метадалогіі пры правядзенні тэстаў, бо тэсты ў гарадскім цыкле <strong>праводзіліся на працягу большага за прадугледжанага перыяду часу</strong>. Як следства, канчатковы вынік быў вышэй, чым павінен быў быць. </p>
+<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2018/12/kiaeniroback.jpg" fetchpriority="high" decoding="async" alt="" width="1500" height="1029" class="aligncenter size-full wp-image-2249 img-responsive" srcset="https://i.bstr.es/drivingeco/2018/12/kiaeniroback.jpg 1500w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-880x604.jpg 880w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-768x527.jpg 768w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-1024x702.jpg 1024w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-1220x837.jpg 1220w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-700x480.jpg 700w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-400x274.jpg 400w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-270x185.jpg 270w" sizes="(max-width: 1500px) 100vw, 1500px"><noscript><img fetchpriority="high" decoding="async" src="https://i.bstr.es/drivingeco/2018/12/kiaeniroback.jpg" alt="" width="1500" height="1029" class="aligncenter size-full wp-image-2249 img-responsive" srcset="https://i.bstr.es/drivingeco/2018/12/kiaeniroback.jpg 1500w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-880x604.jpg 880w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-768x527.jpg 768w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-1024x702.jpg 1024w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-1220x837.jpg 1220w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-700x480.jpg 700w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-400x274.jpg 400w, https://i.bstr.es/drivingeco/2018/12/kiaeniroback-270x185.jpg 270w" sizes="(max-width: 1500px) 100vw, 1500px" /></noscript></p>
+<p class="gt-block">Такім чынам, Kia была вымушана скараціць дыяпазон WLTP, які яна рэкламавала для e-Niro. Версія з акумулятарам на 64 кВт/г, якая першапачаткова анансавала 485 км аўтаномнасці, <strong>Стала 454 км</strong>. У той час як e-Niro з акумулятарам на 39 кВт/гадз, які першапачаткова абвяшчаў прабег у 311 км, <strong>цяпер мае 288 км афіцыйнай аўтаноміі ў адпаведнасці з цыклам сертыфікацыі WLTP</strong>. </p>
+<h2>Аўтаномнасць Kona EV па WLTP таксама зніжана</h2>
+<p class="gt-block">Што ж, цяпер мы ведаем, што гэты інцыдэнт закрануў не толькі Kia e-Niro. <strong>Hyundai збіраецца прытрымлівацца тых жа крокаў з Kona EV</strong>, і ў гэтым выпадку дапушчаная памылка будзе сапраўды такой жа. Пасля няправільнага правядзення тэстаў на аўтаномнасць па той жа працэдуры карэйскі вытворца заявіў, што Kona EV з акумулятарам ёмістасцю 39 кВт/гадз прапануе запас ходу WLTP 305 км. У той час як версія з акумулятарам на 64 кВт.гадз забяспечвала запас ходу ў 502 км. </p>
+<p class="gt-block">Скарачэнне перыяду часу знаходжання ў гарадскім цыкле пры паўторных выпрабаваннях, як гэта ўстаноўлена пратаколам, таксама азначала памяншэнне афіцыйнай аўтаномнасці Kona EV па WLTP, якая цяпер <strong>290 км для версіі з акумулятарам 39 кВт.гадз і 449 км для версіі з акумулятарам 64 кВт.гадз</strong>. </p>
+<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2018/11/hyundaikonaevchargingplug.jpg" decoding="async" alt="" width="1900" height="1267" class="aligncenter size-full wp-image-2019 img-responsive"><noscript><img decoding="async" src="https://i.bstr.es/drivingeco/2018/11/hyundaikonaevchargingplug.jpg" alt="" width="1900" height="1267" class="aligncenter size-full wp-image-2019 img-responsive" /></noscript></p>
+<h2>Не ўдалося пацвердзіць, ці была памылка зроблена тым жа знешнім агенцтвам</h2>
+<p>Нягледзячы на ​​​​тое, што дапушчаная памылка сапраўды такая ж, ні адна з дзвюх карэйскіх фірмаў не згадала, ці была гэтая памылка зроблена адным і тым жа знешнім агенцтвам у абодвух выпадках, хоць здаецца цалкам верагодным, што так і было. </p>
+<p class="gt-block">Цыкл амалагізацыі WLTP - гэта цыкл, якому павінны прытрымлівацца ўсе аўтамабілі, якія прадаюцца ў Еўропе, пачынаючы з 1 верасня 2018 г. Вынікі, атрыманыя з дапамогай гэтага новага цыкла амалагізацыі, больш блізкія да рэальнасці, чым са старым цыклам NEDC. Нягледзячы на ​​​​гэта, аўтаномнасць, якой аўтамабіль з электрычнай сілавой сістэмай можа дасягнуць на адной зарадцы, <strong>Звычайна яна некалькі ніжэйшая штодзённа, чым афіцыйная аўтаномнасць WLTP, рэкламуемая вытворцам.</strong>. </p>
+
+								<div id="widget"></div>		<!-- /1282139/WIDGET_HIGHMOTOR_700X365_2015 -->
+		<div id="div-gpt-ad-1666707087634-0" style="min-width: 600px; min-height: 300px;">
+		  <script type="rocketlazyloadscript">
+		    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1666707087634-0'); });
+		  </script>
+		</div>
+    
+    	
+										
+							</div><!-- fin .content-single -->
+									
+							
+	<div class="navigation-single">	<!-- NAVEGACION  -->			
+			        <div class="post-previous">
+	            <a href="https://www.drivingeco.com/be/Lexus-%D0%BF%D0%B0%D0%BB%D1%8F%D0%BF%D1%88%D0%B0%D0%B5-%D1%81%D0%B2%D0%B0%D0%B5-%D0%BA%D0%B0%D0%BC%D0%B5%D1%80%D1%86%D1%8B%D0%B9%D0%BD%D1%8B%D1%8F-%D1%80%D1%8D%D0%BA%D0%BE%D1%80%D0%B4%D1%8B-%D1%9E-%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%96-%D1%9E-%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D0%BD%D0%BD%D1%96-%D0%B7-2017-%D0%B3%D0%BE%D0%B4%D0%B0%D0%BC/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" class="img-responsive" alt="Lexus паляпшае свае камерцыйныя рэкорды ў Іспаніі ў параўнанні з 2017 годам" data-lazy-src="https://i.bstr.es/drivingeco/2018/12/lexus-3-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2018/12/lexus-3-135x100.jpg" width="135" height="100" class="img-responsive" alt="Lexus mejora sus registros comerciales en España respecto a 2017"/></noscript></a>
+	            <div class="title"><a href="https://www.drivingeco.com/be/Lexus-%D0%BF%D0%B0%D0%BB%D1%8F%D0%BF%D1%88%D0%B0%D0%B5-%D1%81%D0%B2%D0%B0%D0%B5-%D0%BA%D0%B0%D0%BC%D0%B5%D1%80%D1%86%D1%8B%D0%B9%D0%BD%D1%8B%D1%8F-%D1%80%D1%8D%D0%BA%D0%BE%D1%80%D0%B4%D1%8B-%D1%9E-%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%96-%D1%9E-%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D0%BD%D0%BD%D1%96-%D0%B7-2017-%D0%B3%D0%BE%D0%B4%D0%B0%D0%BC/">Lexus паляпшае свае камерцыйныя рэкорды ў Іспаніі ў параўнанні з 2017 годам</a></div>
+	        </div>
+			        <div class="post-next">
+	            <a href="https://www.drivingeco.com/be/%D0%B2%D0%B5%D1%80%D1%81%D1%96%D1%8F-audi-performance-e-tron-%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8Bsuv/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" class="img-responsive" alt="Audi выпусціць на рынак версію Performance і больш базавую версію новага пазадарожніка e-tron" data-lazy-src="https://i.bstr.es/drivingeco/2018/10/audietronfront-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2018/10/audietronfront-135x100.jpg" width="135" height="100" class="img-responsive" alt="Audi comercializará una versión Performance y otra más básica del nuevo e-tron SUV"/></noscript></a>
+	            <div class="title"><a href="https://www.drivingeco.com/be/%D0%B2%D0%B5%D1%80%D1%81%D1%96%D1%8F-audi-performance-e-tron-%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8Bsuv/">Audi выпусціць на рынак версію Performance і больш базавую версію новага пазадарожніка e-tron</a></div>
+	        </div>
+				</div>
+	
+	<div style="clear:both"></div>
+
+
+						
+													
+
+						</div>
+						
+						
+<div class="bloque-publicidad-ajustable-tres">
+	
+	
+
+	<div id="roba1"></div>
+	
+	
+
+	
+	    <div class="destacados-sidebar">
+		<p class="gt-block titulo-sidebar"><span class="icon-pin"></span>Папулярныя</p>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/probando-smartgyro-crossover-x2-pro-fusion-potencia-estilo/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					Prueba Smartgyro Crossover X2 Pro: зліццё магутнасці і стылю                </a>
+			</div>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/caldera-gas-bomba-calor-descubre-cual-mas-eficiente-contamina-menos/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="ацяпленне-цеплавой помпа-300х90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg" alt="calefaccion-bomba-calor-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					¿Caldera de gas or bomba de calor? Descubre cuál es más eficiente y contamina menos                </a>
+			</div>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/paneles-solares-inversion-sostenible-vale-pena-hacer/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="сонечныя панэлі-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg" alt="paneles-solares-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					Paneles solares: una inversión rentable y sostenible para el futuro                </a>
+			</div>
+		    </div>
+
+	
+		
+	<div id="roba2"></div>	<br>
+	<div id="roba3"></div>
+	<div id="roba4"></div>
+	
+</div>
+
+                    </div><!-- end #row -->
+                </div><!-- end .contenedor-ajustable -->
+                
+				<div class="col-md-12">
+					<div id="comentarios">
+
+
+
+			<p>Каментары закрыты</p>
+
+	
+
+
+</div> <!-- end id comentarios-->											<!-- <div class="titulo-ancho">TE PUEDE INTERESAR</div> -->
+						
+
+
+									</div>
+
+
+				<div id="mega-inf"></div>
+            </div><!--fin de .row-->
+    	</article>
+
+
+
+	</div><!--fin de .container-fluid .single-->
+
+</section>
+</div> <!-- end main-content -->
+
+	<footer data-rocket-location-hash="d8d170033ea958f3538208caa1adc50a">
+	
+		<div data-rocket-location-hash="66bb0135a95e6e923d1519a7a3b45a5d" class="tono">
+			<div data-rocket-location-hash="e34054dedc881748ea475e180cbaa267" class="row institucional"><ul id="menu-legal-pie" class=""><li id="menu-item-16547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16547"><a href="https://www.highmotor.com/">высокарухальныя</a></li>
+<li id="menu-item-21507" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21507"><a href="https://www.topventascoches.com/">Самыя папулярныя аўтамабілі</a></li>
+<li id="menu-item-51179" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51179"><a href="https://www.espaciofurgo.com/">Espacio Furgo</a></li>
+<li id="menu-item-32051" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32051"><a href="https://www.drivingeco.com/be/%D1%8E%D1%80%D1%8B%D0%B4%D1%8B%D1%87%D0%BD%D0%B0%D0%B5-%D0%B0%D0%BF%D0%B0%D0%B2%D1%8F%D1%88%D1%87%D1%8D%D0%BD%D0%BD%D0%B5/">Юрыдычнае паведамленне</a></li>
+<li id="menu-item-51824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51824"><a href="https://www.drivingeco.com/be/%D0%BF%D0%B0%D0%BB%D1%96%D1%82%D1%8B%D0%BA%D0%B0-%D0%BF%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D0%BD%D0%B0%D1%81%D1%86%D1%96/">палітыка прыватнасці</a></li>
+</ul></div>		</div>
+	</footer>
+
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="rocketlazyloadscript">//window.jQuery || document.write('<script data-minify="1" async src="https://www.drivingeco.com/be/wp-content/cache/min/1/ajax/libs/jquery/3.1.1/jquery.min.js?ver=1764074335"><\/script>')</script>
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js?ver=1764074336" crossorigin="anonymous"></script>
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js?ver=1764074336" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="rocketlazyloadscript" data-minify="1" async="" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/ie10-viewport-bug-workaround.min.js?ver=1764074336"></script>
+   
+ 
+
+	
+
+
+   <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/drivingeco\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/drivingeco\/*","\/wp-content\/themes\/comun9\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div data-rocket-location-hash="7cd72ef477a72fa98032e02c3c41a52e" class="gtranslate_wrapper" id="gt-wrapper-57872282"></div><link data-minify="1" rel="stylesheet" id="fonts-kyalami-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/fonts-kyalami.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="bootstrap-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/bootstrap.min.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/comun9/style.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="child-style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/style.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="fontawesome-css" href="https://www.drivingeco.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1764074335" type="text/css" media="all">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.drivingeco.com/be","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" id="author-tracking-js-extra">
+/* <![CDATA[ */
+var author = {"name":"Javier Cantagalli"};
+var date = {"my":"December 2018"};
+var category = {"name":"Coches"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/js/analytics.js?ver=1764074336" id="author-tracking-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/jquery.sonar.min.js?ver=1764074336" id="jquery-sonar-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/lazy-load.min.js?ver=1764074336" id="wpcom-lazy-load-images-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script type="text/javascript" id="infinitedScrollHighmotor_js-js-extra">
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"https:\/\/www.drivingeco.com/be\/wp-admin\/admin-ajax.php","id_post":"2386","title_origin":"Hyundai tambi\u00e9n se ve obligada a revisar a la baja la autonom\u00eda WLTP del Kona EV","url_origin":"https:\/\/www.drivingeco.com/be\/hyundai-autonomia-wltp-kona-ev\/"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/plugins/infinite-scroll-highmotor/includes/js/infiniteScrollHighmotor.js?ver=1764074336" id="infinitedScrollHighmotor_js-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/comment-reply.min.js?ver=6.8.1" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="gt_widget_script_57872282-js-before">
+/* <![CDATA[ */
+window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['57872282'] = {"default_language":"es","languages":["ar","eu","be","ca","zh-CN","zh-TW","hr","cs","da","nl","en","et","fr","gl","de","hu","it","ja","ko","ku","pl","pt","pa","ro","ru","sk","sl","es","tr"],"url_structure":"sub_directory","native_language_names":1,"detect_browser_language":1,"flag_style":"3d","wrapper_selector":"#gt-wrapper-57872282","alt_flags":[],"float_switcher_open_direction":"bottom","switcher_horizontal_position":"right","switcher_vertical_position":"bottom","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+/* ]]> */
+</script><script type="rocketlazyloadscript" data-rocket-src="https://www.drivingeco.com/wp-content/plugins/gtranslate/js/float.js?ver=6.8.1" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/hyundai-autonomia-wltp-kona-ev/" data-gt-orig-domain="www.drivingeco.com" data-gt-widget-id="57872282" defer=""></script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="Play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script>
+
+<script type="rocketlazyloadscript">
+	new PerformanceObserver((entryList) => {
+	  for (const entry of entryList.getEntries()) {
+	    console.log('Layout shift:', entry);
+	  }
+	}).observe({type: 'layout-shift', buffered: true});		
+</script>
+
+  <script>var rocket_beacon_data = {"ajax_url":"https:\/\/www.drivingeco.com/be\/wp-admin\/admin-ajax.php","nonce":"6e19a5e15a","url":"https:\/\/www.drivingeco.com/be\/hyundai-autonomia-wltp-kona-ev","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800}</script><script data-name="wpr-wpr-beacon" src="https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js" async=""></script>
+
+ 
+
+<script data-cfasync="false" src="https://tdns4.gtranslate.net/tdn-bin/queue.js"></script></body></html><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

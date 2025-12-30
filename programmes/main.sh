@@ -2,21 +2,41 @@
 
 # --- UTILISATION ---
 # 1. Se mettre dans le répertoire miniprojet/programmes
-# 2. Lancer la commande suivante : bash main.sh nom_du_fichier_URLs nom_du_tableau, par exemple : bash main.sh be_sens1_autanomia tableau-be1
+# 2. Lancer la commande suivante : bash main.sh ENTRÉE_fichier_URLs SORTIE_fichier_tableau ENTRÉE_fichier_liste_mots
+## Exemples : 
+### bash main.sh be_sens1_autanomia tableau-be1 data_be.txt
+### bash main.sh kr tableau-kr1 data_kr.txt
 
 FICHIER_URLS=$1
 FICHIER_SORTIE=$2
+FICHIER_MOTS=$3
 
-if (( $# != 2 )); 
+if (( $# != 3 )); 
 then
-	echo "Ce script a besoin de deux arguments pour fonctionner !"
+	echo "Ce script a besoin de trois arguments pour fonctionner !"
+	echo "Usage: $0 <ENTRÉE_fichier_URLs> <SORTIE_fichier_tableau> <ENTRÉE_fichier_liste_mots>"
+	exit 1
+fi
+
+if [[ ! -f "../URLs/$FICHIER_URLS.txt" ]]; then
+	echo "Erreur : le fichier ../URLs/$FICHIER_URLS.txt n'existe pas !"
+	exit 1
+fi
+
+if [[ ! -f "$FICHIER_MOTS" ]]; then
+	echo "Erreur : le fichier $FICHIER_MOTS n'existe pas !"
 	exit 1
 fi
 
 n=1
 UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
-# === Fonction pour générer le badge du code HTTM ===
+# Créer les répertoires pour les dumps
+mkdir -p "../dumps-text/${FICHIER_URLS}"
+mkdir -p "../aspirations/${FICHIER_URLS}"
+mkdir -p "../contextes/${FICHIER_URLS}"
+
+# === Fonction pour générer le badge du code HTTP ===
 generer_badge_code() {
 	local code=$1
 	if [[ "$code" == "200" ]]; then
@@ -29,7 +49,7 @@ generer_badge_code() {
 }
 
 {
-# === Génération du head et du début du tableau (première ligne) ===
+# === Génération du head et du début du tableau ===
 cat << 'HEADER'
 <!DOCTYPE html>
 <html>
@@ -49,7 +69,7 @@ cat << 'HEADER'
 			.table thead th {
 				background-color: #f8f9fa;
 				color: #4a5568;
-				border-bottom: 2px solid #667eea
+				border-bottom: 2px solid #667eea;
 			}
 			.table tbody tr:hover {
 				background-color: #f5f3ff
@@ -66,6 +86,10 @@ cat << 'HEADER'
 			}
 			.back-link:hover {
 				color: #764ba2
+			}
+			.count-cell {
+				font-weight: bold;
+				color: #667eea
 			}
 		</style>	
 	</head>
@@ -93,7 +117,10 @@ cat << 'HEADER'
 										<th>URL</th>
 										<th>Code HTTP</th>
 										<th>Encodage</th>
-										<th>Nombre de mots</th>
+										<th>Nb mots</th>
+										<th>Occurrences</th>
+										<th>Dump HTML</th>
+										<th>Dump Text</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -108,15 +135,106 @@ do
 	[[ -z "$CODE" || "$CODE" == "000" ]] && CODE="-"
 
 	ENCODAGE=$(curl -sIL -A "$UA" "$line" | tr -d '\r' | grep -i "charset" | head -n1 | cut -d= -f2)
-	# Encodage UTF-8 = oui ou non 
-
 	[[ -z "$ENCODAGE" ]] && ENCODAGE="-"
 
-	NB_MOTS=$(curl -sL -A "$UA" "$line" | wc -w)
-	# NB_MOTS=$(cat "tmp.txt" | lynx -dump -stdin -nolist | wc -w)
-	if [[ "$CODE" == "-" && "$ENCODAGE" == "-" ]];
-	then
-		NB_MOTS="-"
+	NB_MOTS="-"
+	OCCURRENCES="-"
+	LIEN_HTML="-"
+	LIEN_TEXT="-"
+	
+	# === SI LA PAGE EST EN UTF-8 ===
+	if [[ "$ENCODAGE" =~ [Uu][Tt][Ff]-8 ]]; then
+		# Sauvegarder le HTML brut
+		FICHIER_HTML="../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html"
+		curl -sL -A "$UA" "$line" > "$FICHIER_HTML"
+		LIEN_HTML="<a href='../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html' style='color: #667eea;'>HTML</a>"
+		
+		# Extraire le texte avec lynx et sauvegarder
+		FICHIER_TEXTE="../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
+		lynx -dump -nolist -assume_charset=utf-8 -display_charset=utf-8 "$FICHIER_HTML" > "$FICHIER_TEXTE" 2>/dev/null
+		LIEN_TEXT="<a href='../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt' style='color: #667eea;'>TXT</a>"
+		
+		# Compter les mots
+		NB_MOTS=$(wc -w < "$FICHIER_TEXTE")
+		
+		# Compter les occurrences
+		OCCURRENCES=0
+		while IFS= read -r mot; do
+			mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+			[[ -z "$mot" ]] && continue
+			# Compter aussi les mots collés (ex: 자율주행차 contient 자율)
+			count=$(grep -o ".*$mot.*" "$FICHIER_TEXTE" | grep -o "$mot" | wc -l)
+			OCCURRENCES=$((OCCURRENCES + count))
+		done < "$FICHIER_MOTS"
+		
+		# Extraire les contextes si on a trouvé des occurrences
+		if [[ "$OCCURRENCES" -gt 0 ]]; then
+			FICHIER_CONTEXTE="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
+			> "$FICHIER_CONTEXTE"  # Créer le fichier vide
+			
+			while IFS= read -r mot; do
+				mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+				[[ -z "$mot" ]] && continue
+				# Extraire contexte : mot + mot à gauche + mot à droite (avec ou sans espace)
+				# \S*\s* permet de capturer les mots collés (ex: 자율주행차)
+				grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE" 2>/dev/null || \
+				grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE"
+			done < "$FICHIER_MOTS"
+		fi
+	
+	# === SINON : essayer de convertir ===
+	else
+		# Sauvegarder le HTML brut
+		FICHIER_HTML="../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html"
+		curl -sL -A "$UA" "$line" > "$FICHIER_HTML"
+		LIEN_HTML="<a href='../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html' style='color: #667eea;'>HTML</a>"
+		
+		# Détecter l'encodage avec file
+		ENCODAGE_DETECTE=$(file -b --mime-encoding "$FICHIER_HTML")
+		
+		# Si l'encodage est reconnu
+		if [[ -n "$ENCODAGE_DETECTE" && "$ENCODAGE_DETECTE" != "binary" && "$ENCODAGE_DETECTE" != "unknown-8bit" ]]; then
+			# Convertir en UTF-8
+			FICHIER_UTF8="../dumps-text/${FICHIER_URLS}/temp-utf8-${n}.html"
+			iconv -f "$ENCODAGE_DETECTE" -t UTF-8 "$FICHIER_HTML" > "$FICHIER_UTF8" 2>/dev/null
+			
+			if [[ -s "$FICHIER_UTF8" ]]; then
+				# Extraire le texte avec lynx et sauvegarder
+				FICHIER_TEXTE="../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
+				lynx -dump -nolist -assume_charset=utf-8 -display_charset=utf-8 "$FICHIER_UTF8" > "$FICHIER_TEXTE" 2>/dev/null
+				LIEN_TEXT="<a href='../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt' style='color: #667eea;'>TXT</a>"
+				
+				# Compter les mots
+				NB_MOTS=$(wc -w < "$FICHIER_TEXTE")
+				
+				# Compter les occurrences
+				OCCURRENCES=0
+				while IFS= read -r mot; do
+					mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+					[[ -z "$mot" ]] && continue
+					# Compter aussi les mots collés (ex: 자율주행차 contient 자율)
+					count=$(grep -o ".*$mot.*" "$FICHIER_TEXTE" | grep -o "$mot" | wc -l)
+					OCCURRENCES=$((OCCURRENCES + count))
+				done < "$FICHIER_MOTS"
+				
+				# Extraire les contextes si on a trouvé des occurrences
+				if [[ "$OCCURRENCES" -gt 0 ]]; then
+					FICHIER_CONTEXTE="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
+					> "$FICHIER_CONTEXTE"  # Créer le fichier vide
+					
+					while IFS= read -r mot; do
+						mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+						[[ -z "$mot" ]] && continue
+						# Extraire contexte : mot + mot à gauche + mot à droite (avec ou sans espace)
+						# \S*\s* permet de capturer les mots collés (ex: 자율주행차)
+						grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE" 2>/dev/null || \
+						grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE"
+					done < "$FICHIER_MOTS"
+				fi
+				
+				rm -f "$FICHIER_UTF8"
+			fi
+		fi
 	fi
 
 	BADGE_CODE=$(generer_badge_code "$CODE")	
@@ -126,6 +244,9 @@ do
 			<td>${BADGE_CODE}</td>
 			<td>${ENCODAGE}</td>
 			<td>${NB_MOTS}</td>
+			<td class=\"count-cell\">${OCCURRENCES}</td>
+			<td>${LIEN_HTML}</td>
+			<td>${LIEN_TEXT}</td>
 		</tr>"
 
     echo -ne "Progression : $n/$TOTAL\r" >&2

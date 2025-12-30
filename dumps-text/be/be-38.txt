@@ -1,0 +1,163 @@
+   #alternate alternate alternate alternate alternate alternate alternate
+   alternate alternate alternate alternate alternate alternate alternate
+   alternate alternate alternate alternate alternate alternate alternate
+   alternate alternate alternate alternate alternate alternate alternate
+   alternate JSON oEmbed (JSON) oEmbed (XML)
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-MGNRFSQ
+
+   (BUTTON) Desplegar navegación
+     * Inicio
+     * Sostenibilidad
+     * Hogar
+     * Movilidad
+     * Smart City
+     * Buscar
+     * Quiénes somos
+
+   Coches
+
+Una estrategia inédita para frenar la resistencia a antibióticos emerge desde
+Harvard
+
+   Alberto Noriega     21 noviembre 2025     5 min.
+   Una estrategia inédita para frenar la resistencia a antibióticos emerge
+   desde Harvard
+
+   Harvard desarrolla un método para rastrear competencia entre plásmidos,
+   abriendo nuevas vías para combatir la resistencia a antibióticos.
+
+   Investigadores de la Facultad de Medicina de Harvard han desarrollado
+   un nuevo método para rastrear cómo las bacterias adquieren resistencia
+   a los antibióticos. El estudio, publicado en Science el 20 de
+   noviembre, se llevó a cabo en Boston mediante herramientas
+   microfluídicas avanzadas. La investigación revela cómo la competencia
+   entre plásmidos puede explotarse para limitar la propagación de genes
+   resistentes. El avance abre una vía potencial para combatir una crisis
+   global que ya provoca más de 1,3 millones de muertes al año.
+
+Un mapa celular para entender cómo evoluciona la resistencia
+
+   La resistencia a los antibióticos constituye una de las amenazas
+   sanitarias más urgentes del siglo XXI, con proyecciones que estiman 39
+   millones de muertes entre 2025 y 2050 si no se adoptan medidas
+   efectivas. En este contexto, el trabajo de Harvard representa un punto
+   de inflexión: por primera vez, científicos han capturado en tiempo real
+   cómo los plásmidos, los pequeños elementos genéticos móviles
+   responsables de diseminar resistencia, compiten dentro de una misma
+   célula bacteriana.
+
+   El sistema fue desarrollado por investigadores de los laboratorios de
+   Michael Baym, especialista en informática biomédica, y Johan Paulsson,
+   referente mundial en biología de sistemas. Su desafío era doble:
+   generar condiciones donde cada bacteria contuviera una proporción
+   idéntica de dos plásmidos incompatibles y, además, observar su
+   competencia en aislamiento total. Para ello, diseñaron dímeros de
+   plásmidos sintéticos capaces de dividirse de forma controlada y
+   utilizaron dispositivos microfluídicos que capturan células
+   individuales en diminutas cámaras de observación.
+
+   El autor principal, Fernando Rossine, quienes describes el trabajo
+   experimental como “una ventana única para observar la evolución en
+   cámara lenta”. Gracias a su sistema, el equipo descubrió que los
+   plásmidos incompatibles pueden coexistir durante largos periodos, un
+   hallazgo sorprendente dado que tradicionalmente se consideraba que uno
+   debía desplazar al otro rápidamente. La explicación radica en un
+   mecanismo de control de replicación basado en metilación, capaz de
+   ralentizar la competencia genética.
+
+   Pexels Einfoto 2305098 Pexels Einfoto 2305098
+
+   El estudio también reveló que, dentro de la célula, los plásmidos menos
+   activos transcripcionalmente –aquellos que expresan menos genes–
+   cuentan con una ventaja inesperada: consumen menos recursos y ejercen
+   menos presión sobre la maquinaria celular, lo que les permite persistir
+   más tiempo. Esta observación cuestiona modelos evolutivos simplificados
+   y sugiere que la resistencia no siempre es un juego de “el más fuerte
+   gana”, sino un equilibrio dinámico entre presión selectiva y coste
+   metabólico.
+
+   Los resultados permiten reconstruir la dinámica de la resistencia desde
+   una perspectiva molecular precisa. En lugar de centrarse únicamente en
+   cómo los antibióticos favorecen cepas resistentes, este enfoque muestra
+   cómo la competencia intracelular puede moldear qué genes se transmiten,
+   cuáles se pierden y cómo las bacterias equilibran su propia
+   supervivencia genética.
+
+Convertir la evolución en una herramienta médica
+
+   El equipo de Harvard sostiene que estas observaciones pueden
+   convertirse en estrategias prácticas para combatir la resistencia. Si
+   se identifica qué plásmidos poseen desventajas naturales y cuáles
+   pueden ser inducidos a perder estabilidad bajo ciertas condiciones,
+   podrían desarrollarse intervenciones para perturbar la evolución
+   bacteriana desde dentro, reduciendo la probabilidad de que genes
+   resistentes se propaguen.
+
+   Rossine lo resume con claridad: “Podemos armamentizar la competencia
+   intracelular entre los propios elementos genéticos móviles”. En otras
+   palabras, ya no se trata solo de matar bacterias, sino de forzar que su
+   material genético compita de manera desventajosa para los plásmidos de
+   resistencia.
+
+   Pexels Chokniti Khongchum 1197604 2280571 Pexels Chokniti Khongchum
+   1197604 2280571
+
+   El estudio, respaldado por el Instituto Nacional de Ciencias Médicas
+   Generales y varias fundaciones científicas, abre múltiples caminos. Uno
+   de ellos es la posibilidad de diseñar moléculas que interrumpan la
+   metilación involucrada en la replicación, acelerando la pérdida
+   espontánea de plásmidos resistentes. Otro es introducir plásmidos
+   artificiales de baja actividad, que compitan eficazmente contra los
+   resistentes y los obliguen a retirarse del ecosistema celular.
+
+   Más allá de su aplicación clínica, la investigación ilumina conceptos
+   fundamentales sobre cómo opera la evolución en diferentes niveles. La
+   coexistencia de plásmidos incompatibles muestra que la selección
+   natural puede trabajar a escalas paralelas: lo que beneficia a un gen
+   puede no beneficiar a la célula, y lo que beneficia a la célula puede
+   no beneficiar a la población. Rossine señala que este fenómeno es clave
+   para entender “cómo la vida compleja está construida sobre capas
+   evolutivas que a veces están en conflicto”.
+
+   La Organización Mundial de la Salud advirtió recientemente que una de
+   cada seis infecciones bacterianas confirmadas en laboratorio ya es
+   resistente a los antibióticos, una cifra que subraya la urgencia de
+   desarrollar nuevas herramientas. Los investigadores de Harvard creen
+   que esta estrategia basada en competencia genética puede complementar
+   los esfuerzos actuales para descubrir nuevos antibióticos y reducir el
+   uso indiscriminado de los existentes.
+
+   En un contexto donde los nuevos fármacos antibacterianos tardan entre
+   10 y 15 años en llegar al mercado, interferir con la evolución
+   bacteriana podría ofrecer soluciones mucho más inmediatas. No
+   sustituirá a los antibióticos, pero sí puede evitar que sus efectos se
+   desgasten tan rápido como hasta ahora.
+   Baterías más baratas y limpias: un hallazgo atómico abre camino a la
+   era post-litio Baterías más baratas y limpias: un hallazgo atómico abre
+   camino a la era post-litio
+   Baterías más baratas y limpias: un hallazgo atómico abre camino a la
+   era post-litio
+   Musk asegura que la IA hará opcional el trabajo y borrará el dinero del
+   futuro Musk asegura que la IA hará opcional el trabajo y borrará el
+   dinero del futuro
+   Musk asegura que la IA hará opcional el trabajo y borrará el dinero del
+   futuro
+
+   Destacados
+   smartgyro-crossover-x2-pro-drivingeco-13-300x90
+   smartgyro-crossover-x2-pro-drivingeco-13-300x90 Prueba Smartgyro
+   Crossover X2 Pro: una fusión de potencia y estilo
+   calefaccion-bomba-calor-300x90 calefaccion-bomba-calor-300x90 ¿Caldera
+   de gas o bomba de calor? Descubre cuál es más eficiente y contamina
+   menos
+   paneles-solares-300x90 paneles-solares-300x90 Paneles solares: una
+   inversión rentable y sostenible para el futuro
+
+   Comentarios cerrados
+
+     * Highmotor
+     * Top Ventas Coches
+     * Espacio Furgo
+     * Aviso Legal
+     * Política de Privacidad

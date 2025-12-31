@@ -11,6 +11,19 @@
 VERBOSE=0
 DEBUG=0
 
+log() {
+  (( VERBOSE )) && echo "[INFO] $*" >&2
+}
+
+log_step() {
+  (( VERBOSE )) && echo "       ↳ $*" >&2
+}
+
+die() {
+  echo "[ERREUR] $*" >&2
+  exit 1
+}
+
 usage() {
   echo "Usage:"
   echo "  $0 [-v] [-d] <urls> <tableau> [fichier_sens1 fichier_sens2]"
@@ -28,9 +41,6 @@ while getopts ":vd" opt; do
   esac
 done
 shift $((OPTIND-1))
-
-log() { (( VERBOSE )) && echo "[INFO] $*" >&2; }
-die() { echo "[ERREUR] $*" >&2; exit 1; }
 
 if (( DEBUG )); then
   # Affiche: fichier:ligne:fonction: commande
@@ -274,6 +284,8 @@ do
 	ENCODAGE=$(curl -sIL -A "$UA" "$line" | tr -d '\r' | grep -i "charset" | head -n1 | cut -d= -f2)
 	[[ -z "$ENCODAGE" ]] && ENCODAGE="-"
 
+	log_step "Header charset (serveur) : $ENCODAGE"
+
 	NB_MOTS="-"
 	OCC_SENS1="-"
 	OCC_SENS2="-"
@@ -284,7 +296,7 @@ do
 	if [[ "$ENCODAGE" =~ [Uu][Tt][Ff]-8 ]]; then
 		# Sauvegarder le HTML brut
 		FICHIER_HTML="../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html"
-		curl -sL -A "$UA" "$line" > "$FICHIER_HTML"
+		curl -sL --compressed -A "$UA" "$line" > "$FICHIER_HTML"
 		LIEN_HTML="<a href='../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html' style='color: #667eea;'>HTML</a>"
 		
 		# Extraire le texte avec lynx et sauvegarder
@@ -345,6 +357,7 @@ do
 		
 		# Détecter l'encodage avec file
 		ENCODAGE_DETECTE=$(file -b --mime-encoding "$FICHIER_HTML")
+		log_step "Encodage détecté par file : $ENCODAGE_DETECTE"
 		
 		# Si l'encodage est reconnu
 		if [[ -n "$ENCODAGE_DETECTE" && "$ENCODAGE_DETECTE" != "binary" && "$ENCODAGE_DETECTE" != "unknown-8bit" ]]; then

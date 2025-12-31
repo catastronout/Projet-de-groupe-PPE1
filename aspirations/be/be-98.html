@@ -1,68 +1,70 @@
-<!DOCTYPE html><html lang="be" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.3",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseenter","mouseout","mouseleave","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input","visibilitychange"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),this.F("domReady"),await this.T(),await this.j(),await this.I(),this.F("windowLoad"),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise((t=>setTimeout(t,500-Date.now()+this.lastTouchEnd))),this.H(),this.F("all"),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))}),{isRocket:!0})}o(){window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0}),{isRocket:!0}),window.addEventListener("pagehide",(()=>{this.onFirstUserAction=null}),{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",(function i(o){Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1})),event.preventDefault(),window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}))}),{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),this.savedUserEvents.length>0&&(t.stopPropagation(),t.stopImmediatePropagation()),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach((t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})))}U(){this.userEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0}))),this.savedUserEvents.forEach((t=>{t.target.dispatchEvent(new window[t.constructor.name](t.type,t))}))}m(){this.eventsMutationObserver=new MutationObserver((t=>{const e="return false";for(const i of t){if("attributes"===i.type){const t=i.target.getAttribute(i.attributeName);t&&t!==e&&(i.target.setAttribute("data-rocket-"+i.attributeName,t),i.target["rocket"+i.attributeName]=new Function("event",t),i.target.setAttribute(i.attributeName,e))}"childList"===i.type&&i.addedNodes.forEach((t=>{if(t.nodeType===Node.ELEMENT_NODE)for(const i of t.attributes)this.attributeEvents.includes(i.name)&&i.value&&""!==i.value&&(t.setAttribute("data-rocket-"+i.name,i.value),t["rocket"+i.name]=new Function("event",i.value),t.setAttribute(i.name,e))}))}})),this.eventsMutationObserver.observe(document,{subtree:!0,childList:!0,attributeFilter:this.attributeEvents})}H(){this.eventsMutationObserver.disconnect(),this.attributeEvents.forEach((t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach((e=>{e.setAttribute(t,e.getAttribute("data-rocket-"+t)),e.removeAttribute("data-rocket-"+t)}))}))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o})},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}F(t){"all"===t&&(EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener),this.savedEventListeners=this.savedEventListeners.filter((e=>{let i=e.type,o=e.target||window;return"domReady"===t&&"DOMContentLoaded"!==i&&"readystatechange"!==i||("windowLoad"===t&&"load"!==i&&"readystatechange"!==i&&"pageshow"!==i||(this.B(i,o)&&(i="rocket-"+i),e.remove?o.removeEventListener(i,e.func,e.options):o.addEventListener(i,e.func,e.options),!1))}))}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,(()=>{e[t].forEach((t=>t()))}),{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout((()=>i.bind(document)(o))):i.bind(document)(o)}return t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise((t=>{this.userActionTriggered?t():this.onFirstUserAction=t}))}async L(){return new Promise((t=>{document.addEventListener("DOMContentLoaded",(()=>{this.realDomReadyFired=!0,t()}),{isRocket:!0})}))}async I(){return this.realWindowLoadedFired?Promise.resolve():new Promise((t=>{window.addEventListener("load",t,{isRocket:!0})}))}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver((t=>{for(const e of t)e.addedNodes.forEach((t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise((e=>{const i=()=>{const i=this.pendingScripts.findIndex((e=>e.script===t));i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)}))})}))})),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async j(){await this.J(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.j()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.N(t,"preconnect")}async $(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",(()=>{i.setAttribute("data-rocket-status","failed-network"),e()}),{isRocket:!0}),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.$(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())}),{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.$(e),this.C(t)):Promise.resolve()}O(){this.N([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}N(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach((t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}})),document.head.appendChild(o)}W(){this.trash.forEach((t=>t.remove()))}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async G(){Date.now()-this.lastBreath>45&&(await this.J(),this.lastBreath=Date.now())}async J(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+<!DOCTYPE html><html lang="be" class="no-js"><head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.3",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseenter","mouseout","mouseleave","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input","visibilitychange"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),this.F("domReady"),await this.T(),await this.j(),await this.I(),this.F("windowLoad"),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise((t=>setTimeout(t,500-Date.now()+this.lastTouchEnd))),this.H(),this.F("all"),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))}),{isRocket:!0})}o(){window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0}),{isRocket:!0}),window.addEventListener("pagehide",(()=>{this.onFirstUserAction=null}),{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",(function i(o){Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1})),event.preventDefault(),window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}))}),{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),this.savedUserEvents.length>0&&(t.stopPropagation(),t.stopImmediatePropagation()),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach((t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})))}U(){this.userEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0}))),this.savedUserEvents.forEach((t=>{t.target.dispatchEvent(new window[t.constructor.name](t.type,t))}))}m(){this.eventsMutationObserver=new MutationObserver((t=>{const e="return false";for(const i of t){if("attributes"===i.type){const t=i.target.getAttribute(i.attributeName);t&&t!==e&&(i.target.setAttribute("data-rocket-"+i.attributeName,t),i.target["rocket"+i.attributeName]=new Function("event",t),i.target.setAttribute(i.attributeName,e))}"childList"===i.type&&i.addedNodes.forEach((t=>{if(t.nodeType===Node.ELEMENT_NODE)for(const i of t.attributes)this.attributeEvents.includes(i.name)&&i.value&&""!==i.value&&(t.setAttribute("data-rocket-"+i.name,i.value),t["rocket"+i.name]=new Function("event",i.value),t.setAttribute(i.name,e))}))}})),this.eventsMutationObserver.observe(document,{subtree:!0,childList:!0,attributeFilter:this.attributeEvents})}H(){this.eventsMutationObserver.disconnect(),this.attributeEvents.forEach((t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach((e=>{e.setAttribute(t,e.getAttribute("data-rocket-"+t)),e.removeAttribute("data-rocket-"+t)}))}))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o})},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}F(t){"all"===t&&(EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener),this.savedEventListeners=this.savedEventListeners.filter((e=>{let i=e.type,o=e.target||window;return"domReady"===t&&"DOMContentLoaded"!==i&&"readystatechange"!==i||("windowLoad"===t&&"load"!==i&&"readystatechange"!==i&&"pageshow"!==i||(this.B(i,o)&&(i="rocket-"+i),e.remove?o.removeEventListener(i,e.func,e.options):o.addEventListener(i,e.func,e.options),!1))}))}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,(()=>{e[t].forEach((t=>t()))}),{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout((()=>i.bind(document)(o))):i.bind(document)(o)}return t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise((t=>{this.userActionTriggered?t():this.onFirstUserAction=t}))}async L(){return new Promise((t=>{document.addEventListener("DOMContentLoaded",(()=>{this.realDomReadyFired=!0,t()}),{isRocket:!0})}))}async I(){return this.realWindowLoadedFired?Promise.resolve():new Promise((t=>{window.addEventListener("load",t,{isRocket:!0})}))}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver((t=>{for(const e of t)e.addedNodes.forEach((t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise((e=>{const i=()=>{const i=this.pendingScripts.findIndex((e=>e.script===t));i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)}))})}))})),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async j(){await this.J(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.j()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.N(t,"preconnect")}async $(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",(()=>{i.setAttribute("data-rocket-status","failed-network"),e()}),{isRocket:!0}),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.$(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())}),{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.$(e),this.C(t)):Promise.resolve()}O(){this.N([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}N(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach((t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}})),document.head.appendChild(o)}W(){this.trash.forEach((t=>t.remove()))}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async G(){Date.now()-this.lastBreath>45&&(await this.J(),this.lastBreath=Date.now())}async J(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
     
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://www.espaciofurgo.com/xmlrpc.php">
+    <meta name="robots" content="max-image-preview:large">
 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
-	<meta name="uri-translation" content="on"><link rel="alternate" hreflang="es" href="https://www.drivingeco.com/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="ar" href="https://www.drivingeco.com/ar/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="eu" href="https://www.drivingeco.com/eu/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="be" href="https://www.drivingeco.com/be/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="ca" href="https://www.drivingeco.com/ca/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="zh-CN" href="https://www.drivingeco.com/zh-CN/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="zh-TW" href="https://www.drivingeco.com/zh-TW/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="hr" href="https://www.drivingeco.com/hr/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="cs" href="https://www.drivingeco.com/cs/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="da" href="https://www.drivingeco.com/da/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="nl" href="https://www.drivingeco.com/nl/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="en" href="https://www.drivingeco.com/en/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="et" href="https://www.drivingeco.com/et/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="fr" href="https://www.drivingeco.com/fr/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="gl" href="https://www.drivingeco.com/gl/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="de" href="https://www.drivingeco.com/de/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="hu" href="https://www.drivingeco.com/hu/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="it" href="https://www.drivingeco.com/it/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="ja" href="https://www.drivingeco.com/ja/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="ko" href="https://www.drivingeco.com/ko/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="ku" href="https://www.drivingeco.com/ku/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="pl" href="https://www.drivingeco.com/pl/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="pt" href="https://www.drivingeco.com/pt/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="pa" href="https://www.drivingeco.com/pa/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="ro" href="https://www.drivingeco.com/ro/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="ru" href="https://www.drivingeco.com/ru/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="sk" href="https://www.drivingeco.com/sk/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="sl" href="https://www.drivingeco.com/sl/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-<link rel="alternate" hreflang="tr" href="https://www.drivingeco.com/tr/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">
-
-	<!-- This site is optimized with the Yoast SEO plugin v25.1 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў</title>
-	<meta name="description" content="Уступленне ў сілу новага цыкла WLTP выклікала агульнае зніжэнне паказчыкаў аўтаномнасці электрамабіляў.">
-	<link rel="canonical" href="https://www.drivingeco.com/be/%D0%92%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-%D1%86%D1%8B%D0%BA%D0%BB-WLTP-%D1%83%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E/">
-	<meta property="og:locale" content="es_ES">
-	<meta property="og:type" content="article">
-	<meta property="og:title" content="Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў">
-	<meta property="og:description" content="Уступленне ў сілу новага цыкла WLTP выклікала агульнае зніжэнне паказчыкаў аўтаномнасці электрамабіляў.">
-	<meta property="og:url" content="https://www.drivingeco.com/be/%D0%92%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-%D1%86%D1%8B%D0%BA%D0%BB-WLTP-%D1%83%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E/">
-	<meta property="og:site_name" content="Driving ECO">
-	<meta property="article:published_time" content="2018-09-05T11:47:13+00:00">
-	<meta property="article:modified_time" content="2018-09-05T11:49:25+00:00">
-	<meta property="og:image" content="https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2.jpg">
-	<meta property="og:image:width" content="1920">
-	<meta property="og:image:height" content="1080">
-	<meta property="og:image:type" content="image/jpeg">
-	<meta name="author" content="Nacho Salvador">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:label1" content="аўтар">
-	<meta name="twitter:data1" content="Начо Сальвадор">
-	<meta name="twitter:label2" content="Прыл. час чытання">
-	<meta name="twitter:data2" content="2 Minutos">
-	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.drivingeco.com\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos\/","url":"https:\/\/www.drivingeco.com/be\/%D0%92%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-%D1%86%D1%8B%D0%BA%D0%BB-WLTP-%D1%83%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E\/","name":"Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў","isPartOf":{"@id":"https:\/\/www.drivingeco.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.drivingeco.com\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos\/#primaryimage"},"image":{"@id":"https:\/\/www.drivingeco.com\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos\/#primaryimage"},"thumbnailUrl":"https:\/\/i.bstr.es\/drivingeco\/2018\/09\/renault-zoe-01-2.jpg","datePublished":"2018-09-05T11:47:13+00:00","dateModified":"2018-09-05T11:49:25+00:00","author":{"@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/4130a307ccd7132a779454b0dd1b7c1b"},"description":"Уступленне ў сілу новага цыкла WLTP выклікала агульнае зніжэнне паказчыкаў аўтаномнасці электрамабіляў.","breadcrumb":{"@id":"https:\/\/www.drivingeco.com\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos\/#breadcrumb"},"inLanguage":"be","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.drivingeco.com\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos\/"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos\/#primaryimage","url":"https:\/\/i.bstr.es\/drivingeco\/2018\/09\/renault-zoe-01-2.jpg","contentUrl":"https:\/\/i.bstr.es\/drivingeco\/2018\/09\/renault-zoe-01-2.jpg","width":1920,"height":1080,"caption":"Renault ZOE - цыкл WLTP"},{"@type":"BreadcrumbList","@id":"https:\/\/www.drivingeco.com\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Галоўная","item":"https:\/\/www.drivingeco.com\/"},{"@type":"ListItem","position":2,"name":"Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў"}]},{"@type":"WebSite","@id":"https:\/\/www.drivingeco.com\/#website","url":"https:\/\/www.drivingeco.com/be\/","name":"Driving ECO","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.drivingeco.com/be\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"be"},{"@type":"Person","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/4130a307ccd7132a779454b0dd1b7c1b","name":"Nacho Salvador","image":{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/image\/","url":"https:\/\/secure.gravatar.com\/avatar\/44c1680d1479d3457dbfe040813b82f844848e83ccd13367526915c0da8fadca?s=96&d=mm&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/44c1680d1479d3457dbfe040813b82f844848e83ccd13367526915c0da8fadca?s=96&d=mm&r=g","caption":"Nacho Salvador"},"url":"https:\/\/www.drivingeco.com/be\/%D0%B0%D1%9E%D1%82%D0%B0%D1%80\/%D0%BD%D0%B0%D1%87%D0%BE%D1%81-%D0%B2%D1%8B%D1%80%D0%B0%D1%82%D0%B0%D0%B2%D0%B0%D0%BB%D1%8C%D0%BD%D1%96%D0%BA\/"}]}</script>
-	<!-- / Yoast SEO plugin. -->
+	<meta name="uri-translation" content="on"><link rel="alternate" hreflang="es" href="https://www.espaciofurgo.com/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="ar" href="https://www.espaciofurgo.com/ar/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="eu" href="https://www.espaciofurgo.com/eu/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="be" href="https://www.espaciofurgo.com/be/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.espaciofurgo.com/zh-CN/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="zh-TW" href="https://www.espaciofurgo.com/zh-TW/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="hr" href="https://www.espaciofurgo.com/hr/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="cs" href="https://www.espaciofurgo.com/cs/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="da" href="https://www.espaciofurgo.com/da/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="nl" href="https://www.espaciofurgo.com/nl/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="en" href="https://www.espaciofurgo.com/en/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="et" href="https://www.espaciofurgo.com/et/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="fr" href="https://www.espaciofurgo.com/fr/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="gl" href="https://www.espaciofurgo.com/gl/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="de" href="https://www.espaciofurgo.com/de/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="hu" href="https://www.espaciofurgo.com/hu/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="it" href="https://www.espaciofurgo.com/it/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="ja" href="https://www.espaciofurgo.com/ja/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="ko" href="https://www.espaciofurgo.com/ko/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="ku" href="https://www.espaciofurgo.com/ku/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="pl" href="https://www.espaciofurgo.com/pl/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="pt" href="https://www.espaciofurgo.com/pt/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="pa" href="https://www.espaciofurgo.com/pa/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="ro" href="https://www.espaciofurgo.com/ro/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="ru" href="https://www.espaciofurgo.com/ru/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="sk" href="https://www.espaciofurgo.com/sk/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="sl" href="https://www.espaciofurgo.com/sl/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="sv" href="https://www.espaciofurgo.com/sv/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
+<link rel="alternate" hreflang="tr" href="https://www.espaciofurgo.com/tr/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/">
 
 
+
+<!-- comienza SEO TVC -->
+<title>Sustaineer: такім уяўляе Mercedes-Benz фургон будучыні</title>
+<meta name="description" content="Mercedes-Benz Sustaineer - гэта прататып, заснаваны на eSprinter, які мае шэраг сапраўды цікавых новых функцый: вы хочаце іх ведаць?">
+<meta name="robots" content="index,follow,noodp,noydir">
+<meta property="og:site_name" content="Espacio Furgo">
+<meta property="og:title" content="Sustaineer: такім уяўляе Mercedes-Benz фургон будучыні">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.espaciofurgo.com/be/sustaineer-%D0%B2%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-mercedes-benz-%D1%9E%D1%8F%D1%9E%D0%BB%D1%8F%D0%B5-%D1%81%D0%B0%D0%B1%D0%B5-%D1%84%D1%83%D1%80%D0%B3%D0%BE%D0%BD-%D0%B1%D1%83%D0%B4%D1%83%D1%87%D1%8B%D0%BD%D1%96/">
+<meta property="og:description" content="Mercedes-Benz Sustaineer - гэта прататып, заснаваны на eSprinter, які мае шэраг сапраўды цікавых новых функцый: вы хочаце іх ведаць?">
+<meta property="og:image" content="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-3-1024x682.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="682">
+<meta name="twitter:image" content="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-3-1024x682.jpg">
+<meta name="twitter:title" content="Sustaineer: такім уяўляе Mercedes-Benz фургон будучыні">
+<meta name="twitter:url" content="https://www.espaciofurgo.com/be/sustaineer-%D0%B2%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-mercedes-benz-%D1%9E%D1%8F%D1%9E%D0%BB%D1%8F%D0%B5-%D1%81%D0%B0%D0%B1%D0%B5-%D1%84%D1%83%D1%80%D0%B3%D0%BE%D0%BD-%D0%B1%D1%83%D0%B4%D1%83%D1%87%D1%8B%D0%BD%D1%96/">
+<meta name="twitter:description" content="Mercedes-Benz Sustaineer - гэта прататып, заснаваны на eSprinter, які мае шэраг сапраўды цікавых новых функцый: вы хочаце іх ведаць?">
+<meta name="twitter:card" content="summary">
+<link rel="hub" href="https://pubsubhubbub.appspot.com/">
+<!-- fin SEO TVC -->
+
+
+<link rel="dns-prefetch" href="https://static.addtoany.com/">
+<link rel="dns-prefetch" href="https://developers.google.com/">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
 <link rel="dns-prefetch" href="https://i.bstr.es/">
-
+<link rel="alternate" type="application/rss+xml" title="Espacio Furgo - Furgonetas, camper, comerciales &amp;raquo; Feed" href="https://www.espaciofurgo.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Espacio Furgo - Furgonetas, camper, comerciales &amp;raquo; Feed de los comentarios" href="https://www.espaciofurgo.com/comments/feed/">
 <style id="wp-emoji-styles-inline-css" type="text/css">
 
 	img.wp-smiley, img.emoji {
@@ -77,7 +79,7 @@
 		padding: 0 !important;
 	}
 </style>
-<link rel="stylesheet" id="wp-block-library-css" href="https://www.drivingeco.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.espaciofurgo.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.1" type="text/css" media="all">
 <style id="classic-theme-styles-inline-css" type="text/css">
 /*! This file is auto-generated */
 .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
@@ -88,405 +90,635 @@
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
 :root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
 </style>
-<style id="rocket-lazyload-inline-css" type="text/css">
-.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
-</style>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
-<link rel="https://api.w.org/" href="https://www.drivingeco.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://www.drivingeco.com/wp-json/wp/v2/posts/488">
+<link rel="stylesheet" id="font-awesome-css" href="https://www.espaciofurgo.com/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=6.0.5" type="text/css" media="all">
+<link rel="stylesheet" id="owl.carousel-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/owl.carousel.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-grid-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/grid.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="listings-frontend-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/frontend_styles.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="listings-add-car-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/add_a_car.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="light-gallery-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/lightgallery.min.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="stm_default_google_font-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C600%2C700%7COpen+Sans%3A300%2C400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/bootstrap.min.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-select2-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/select2.min.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-datetimepicker-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/jquery.stmdatetimepicker.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-jquery-ui-css-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/jquery-ui.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-default-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/fonts/default-icon-font/stm-icon.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-service-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/service-icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-boat-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/boat-icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-moto-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/motorcycle/icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-rental-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/rental/icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-magazine-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/magazine/magazine-icon-style.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-listing-two-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/listing_two/icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-auto-parts-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/auto-parts/style.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-style-sass-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/app.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-style-dealer-two-sass-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/dealer_two/app.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-frontend-customizer-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/frontend_customizer.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-style-animation-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/animation.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-style-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/style.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="recent-posts-widget-with-thumbnails-public-style-css" href="https://www.espaciofurgo.com/wp-content/plugins/recent-posts-widget-with-thumbnails/public.css?ver=7.1.1" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='vc_lte_ie9-css' href='https://www.espaciofurgo.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css?ver=6.0.5' type='text/css' media='screen' />
+<![endif]-->
+<link rel="stylesheet" id="addtoany-css" href="https://www.espaciofurgo.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16" type="text/css" media="all">
+<link rel="stylesheet" id="colorbox-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo-child/css/colorbox.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="parent-style-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/style.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="child-style-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo-child/style.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="wpb-google-fonts-css" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro%3Aital%2Cwght%400%2C200%3B0%2C300%3B0%2C400%3B0%2C600%3B0%2C700%3B0%2C900%3B1%2C200%3B1%2C300%3B1%2C400%3B1%2C600%3B1%2C700%3B1%2C900&amp;display=swap&amp;ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="https://i.bstr.es/comun/fontawesome/css/all.min.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="nouislider-css" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.css?ver=6.8.1" type="text/css" media="all">
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="addtoany-core-js-before">
+/* <![CDATA[ */
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_localize = {
+	Share: "Share",
+	Save: "Save",
+	Subscribe: "Subscribe",
+	Email: "Email",
+	Bookmark: "Bookmark",
+	ShowAll: "Show all",
+	ShowLess: "Show less",
+	FindServices: "Find service(s)",
+	FindAnyServiceToAddTo: "Instantly find any service to add to",
+	PoweredBy: "Powered by",
+	ShareViaEmail: "Share via email",
+	SubscribeViaEmail: "Subscribe via email",
+	BookmarkInYourBrowser: "Bookmark in your browser",
+	BookmarkInstructions: "Press Ctrl+D or \u2318+D to bookmark this page",
+	AddToYourFavorites: "Add to your favorites",
+	SendFromWebOrProgram: "Send from any email address or email program",
+	EmailProgram: "Email program",
+	More: "More&#8230;",
+	ThanksForSharing: "Thanks for sharing!",
+	ThanksForFollowing: "Thanks for following!"
+};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer="" data-rocket-src="https://static.addtoany.com/menu/page.js" id="addtoany-core-js"></script>
+<script type="text/javascript" defer="" src="https://www.espaciofurgo.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1" id="addtoany-jquery-js"></script>
+<script type="text/javascript" id="dsidefcv_js-js-extra">
+/* <![CDATA[ */
+var ajax_usuarios = {"url":"https:\/\/www.espaciofurgo.com/be\/wp-json\/lead\/usuarios"};
+/* ]]> */
+</script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/js/form_coche_vista.js?ver=1761218051" id="dsidefcv_js-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="sidefcv_js-js-extra">
+/* <![CDATA[ */
+var ajax_musuarios = {"url":"https:\/\/www.espaciofurgo.com/be\/wp-json\/lead\/musuarios"};
+/* ]]> */
+</script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/js/movil_form_coche_vista.js?ver=1761218051" id="sidefcv_js-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/classie.js?ver=1761218051" id="stm-classie-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo-child/js/popper.min.js?ver=6.8.1" id="popper-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo-child/js/bootstrap.min.js?ver=6.8.1" id="bootstrap-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/vivus.min.js?ver=2.5" id="vivus-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/jquery.cookie.js?ver=1761218051" id="jquery-cookie-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/jquery.cascadingdropdown.js?ver=1761218051" id="stm-cascadingdropdown-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/js/colorbox.js?ver=1761218051" id="colorbox-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/js/custom.js?ver=1761218051" id="ef-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/ajax/libs/noUiSlider/15.6.1/nouislider.min.js?ver=1761218051" id="nouislider-js" data-rocket-defer="" defer=""></script>
+<link rel="https://api.w.org/" href="https://www.espaciofurgo.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://www.espaciofurgo.com/wp-json/wp/v2/posts/4929"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.espaciofurgo.com/xmlrpc.php?rsd">
+<link rel="canonical" href="https://www.espaciofurgo.com/be/sustaineer-%D0%B2%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-mercedes-benz-%D1%9E%D1%8F%D1%9E%D0%BB%D1%8F%D0%B5-%D1%81%D0%B0%D0%B1%D0%B5-%D1%84%D1%83%D1%80%D0%B3%D0%BE%D0%BD-%D0%B1%D1%83%D0%B4%D1%83%D1%87%D1%8B%D0%BD%D1%96/">
+<link rel="shortlink" href="https://www.espaciofurgo.com/be/?p=4929">
 
-	<link rel="icon" type="image/png" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco-16x16.png">
-	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco76x76.png">
-	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
-	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco152x152.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco144x144.png">	
-<!-- incrementa -->	    <script type="rocketlazyloadscript" async="" data-rocket-type="text/javascript">
-            var a = new XMLHttpRequest();
-            a.open("GET","https://www.drivingeco.com/be/wp-content/themes/comun9/incrementa.php?id=488&bd=drivingeco");
-            a.send(null);
-	   </script>
-				
-			<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.drivingeco.com\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos\/"},"headline":"","image":"https:\/\/i.bstr.es\/drivingeco\/2018\/09\/renault-zoe-01-2-880x495.jpg","datePublished":"2018-09-05","dateModified":"2018-09-05","author":{"@type":"Person","name":"Nacho Salvador"},"publisher":{"@type":"Organization","name":"drivingeco","logo":{"@type":"ImageObject","url":"https:\/\/www.drivingeco.com\/favicon.ico"}},"description":""}</script>	
-		<!-- ## NXS/OG ## --><!-- ## NXSOGTAGS ## --><!-- ## NXS/OG ## -->
 
-<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+        <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+            var stm_lang_code = 'es';
+                        var ajaxurl = 'https://www.espaciofurgo.com/be/wp-admin/admin-ajax.php';
+            var stm_site_blog_id = "1";
+            var stm_added_to_compare_text = "Añadido para comparar";
+            var stm_removed_from_compare_text = "fue eliminado de comparación";
 
-
-
-
-
+                        var stm_already_added_to_compare_text = "You have already added 3 cars";
+                    </script>
+        
 <!-- Google Tag Manager -->
 <script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MGNRFSQ');</script>
+})(window,document,'script','dataLayer','GTM-TZNFXXL');</script>
 <!-- End Google Tag Manager -->
 
-
-<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGNRFSQ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-
-<script type="rocketlazyloadscript">var adTarget="";</script>
-<script type="rocketlazyloadscript" data-rocket-src="https://tmadspot.s3.eu-west-3.amazonaws.com/ads/250199.js"></script>
-<script type="rocketlazyloadscript" async="" data-rocket-src="https://t.seedtag.com/t/7860-6497-01.js"></script>
-
-
-		
-	
-	<!-- google adsense + adspot -->
-	<script type="rocketlazyloadscript">
-		var currentLang = document.getElementsByTagName('html')[0].getAttribute('lang');
-		console.log(currentLang);
-		if ( currentLang !== 'es' && currentLang !== 'es-ES' &&  currentLang !== 'pt' && currentLang !== 'pt-PT') {
-			var script = document.createElement('script');
-			script.async = true;
-			script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0089260600075656';
-			script.crossOrigin = 'anonymous';
-			document.head.appendChild(script);
-		}
-		else{
-			var script = document.createElement('script');
-			script.async = true;
-			script.src = 'https://ssm.codes/smart-tag/drivingeco.js';
-			document.head.appendChild(script);
-
-		}
-	</script>
-	<!-- google adsense -->
-
-
-
-
-
-<!-- Google tag (gtag.js) -->
-<script type="rocketlazyloadscript" async="" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-CE3ZWTD17F"></script>
+<!-- Google tag (gtag.js) GA4 -->
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-HSRFHGJ3J7"></script>
 <script type="rocketlazyloadscript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-	gtag('config', 'G-CE3ZWTD17F', {
-	   'custom_map': {
-	     'dimension1': 'domain'
-	   }
-	});
-	
-	gtag('event', 'set_domain', {'domain': 'drivingeco.com'});
+  gtag('config', 'G-HSRFHGJ3J7');
 </script>
 
+<meta name="facebook-domain-verification" content="6020pd7i1uoz6bx6pwncxlz2ej9iap">
 
 
-    
 
-         
+
+
+	<script type="rocketlazyloadscript">var adTarget="tipo=combustion;";</script>
 	
-  <meta name="generator" content="WP Rocket 3.18.3" data-wpr-features="wpr_delay_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_minify_css wpr_preload_links wpr_desktop"></head>
-  <body class="wp-singular post-template-default single single-post postid-488 single-format-standard wp-theme-comun9 wp-child-theme-drivingeco asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos">
-  
-	
-	
-
+	<script type="rocketlazyloadscript" data-rocket-src="https://tmadspot.s3.eu-west-3.amazonaws.com/ads/408590.js"></script>  
 	
 	
-<nav class="navbar navbar-default" role="navigation">
-	<div class="row">
-  <!-- El logotipo y el icono que despliega el menú se agrupan
-       para mostrarlos mejor en los dispositivos móviles -->
-  <div class="navbar-header">
-   	<button class="navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="sr-only">Дысплей навігацыі</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
 
-    <a class="navbar-brand" href="https://www.drivingeco.com/be/" aria-label="logo cabecera"></a>
-  </div>
- 
-  <div id="navbar" class="navbar-collapse collapse">
-          <div class="menu-navbar-container"><ul id="menu-navbar" class="nav navbar-nav"><li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-135"><a href="https://www.drivingeco.com/be/">ініцыяванне</a></li>
-<li id="menu-item-56116" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56116"><a href="https://www.drivingeco.com/be/%D1%9E%D1%81%D1%82%D0%BE%D0%B9%D0%BB%D1%96%D0%B2%D0%B0%D1%81%D1%86%D1%8C/">Устойлівасць</a></li>
-<li id="menu-item-56118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56118"><a href="https://www.drivingeco.com/be/%D0%B4%D0%BE%D0%BC%D0%B0/">Хогар</a></li>
-<li id="menu-item-56229" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-56229"><a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/">мабільнасць</a></li>
-<li id="menu-item-56117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56117"><a href="https://www.drivingeco.com/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%BD%D1%8B-%D0%B3%D0%BE%D1%80%D0%B0%D0%B4/">Smart City</a></li>
-<li id="menu-item-16671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16671"><a href="https://www.drivingeco.com/be/%D0%BF%D0%BE%D1%88%D1%83%D0%BA-a/">пошук</a></li>
-<li id="menu-item-26509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26509"><a href="https://www.drivingeco.com/be/%D1%85%D1%82%D0%BE-%D0%BC%D1%8B/">Аб кампаніі</a></li>
-</ul></div>        </div><!--/.navbar-collapse -->
-    </div><!--/.row -->
-</nav>
-  
+        <!-- google adsense + adspot -->
+        <script type="rocketlazyloadscript">
+                var currentLang = document.getElementsByTagName('html')[0].getAttribute('lang');
+                console.log(currentLang);
+                if ( currentLang !== 'es' && currentLang !== 'es-ES' &&  currentLang !== 'pt' && currentLang !== 'pt-PT') {
+                        var script = document.createElement('script');
+                        script.async = true;
+                        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6543774410994713';
+                        script.crossOrigin = 'anonymous';
+                        document.head.appendChild(script);
+                        console.log('adsense');
+                }
+                else{
+                        var script = document.createElement('script');
+                        script.async = true;
+                        script.src = 'https://ssm.codes/smart-tag/espaciofurgo.js';
+                        document.head.appendChild(script);
+                        console.log('semseo');
 
-    <div data-rocket-location-hash="5bf0ec333859a32fa2bfd31ef7ed9e58" class="main-content">
-	<section data-rocket-location-hash="64a84e63ca689b70a3879703310620a1">
+                }
+        </script>
+        <!-- google adsense -->
+
+
+
+
+<!-- publicidad --><!-- incrementa -->	    <script async="" type="text/javascript">
+            var a = new XMLHttpRequest();
+            a.open("GET","https://www.espaciofurgo.com/be/wp-content/themes/espaciofurgo-child/incrementa.php?id=4929&bd=espaciofurgo");
+            a.send(null);
+	   </script>
+	<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
+<style type="text/css" title="dynamic-css" class="options-output">.header-main{background-color: #514741;}#footer-main{background-color: #524740;}#footer-copyright{background-color: #524740;}</style>
+<!-- ## NXS/OG ## --><!-- ## NXSOGTAGS ## --><!-- ## NXS/OG ## -->
+
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+    <script type="rocketlazyloadscript">
+	    
+	    
+	    
+		// Función para extraer un valor por clave de un string tipo "clave=valor;"
+		function getValorClave(cadena, clave) {
+			let match = cadena.match(new RegExp(clave + "=([^;]+)"));
+			return match ? match[1] : null;
+		}
 		
-	
-	<div data-rocket-location-hash="6f50bb234f8cd4b4d13a68903aead8b8" class="container-fluid single" id="content-single">
-		<article>
-			<div class="row">
-					
-                                
-				<p class="gt-block etiquetas">
-					<a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/" rel="tag">Трэнеры</a> 				</p>
-                
-                
-                <h1 data-url="https://www.drivingeco.com/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/">Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў</h1>
-                
-                	<div class="meta">
-		<div class="meta-post">
-			<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/44c1680d1479d3457dbfe040813b82f844848e83ccd13367526915c0da8fadca?s=30&amp;d=mm&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/44c1680d1479d3457dbfe040813b82f844848e83ccd13367526915c0da8fadca?s=60&amp;d=mm&amp;r=g 2x" class="avatar avatar-30 photo" height="30" width="30" decoding="async"><noscript><img alt='' src='https://secure.gravatar.com/avatar/44c1680d1479d3457dbfe040813b82f844848e83ccd13367526915c0da8fadca?s=30&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/44c1680d1479d3457dbfe040813b82f844848e83ccd13367526915c0da8fadca?s=60&#038;d=mm&#038;r=g 2x' class='avatar avatar-30 photo' height='30' width='30' decoding='async'/></noscript> Начо Сальвадор			&nbsp;&nbsp;&nbsp;
-			<span class="icon-calendar"></span> 5 верасня 2018&nbsp;&nbsp;&nbsp;&nbsp;
-			<span class="icon-stopwatch"></span>2 мін.		</div>
+		var marca = getValorClave(adTarget, "marca");
+		var tiempoRefresh = (marca === "toyota") ? 180 : 180;
+		
+		setTimeout(function () {
+			location.reload();
+		}, tiempoRefresh * 1000);	  
+		
+	</script>
 
-		<div class="social-likes">
-			<a href="https://www.facebook.com/share.php?u=https://www.drivingeco.com/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/" class="fa fa-facebook" target="_blank" aria-label="facebook"></a>
-			<a href="https://twitter.com/share?text=Así afecta el ciclo WLTP a la autonomía de los EV&amp;url=https://www.drivingeco.com/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/" class="fa fa-twitter" target="_blank" aria-label="twitter"></a>		
-			<a href="whatsapp://send?text=https://www.drivingeco.com/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/" class="fa fa-whatsapp" target="_blank" aria-label="whatsapp"></a>					
-		</div>
+	<meta name="generator" content="WP Rocket 3.18.3" data-wpr-features="wpr_delay_js wpr_defer_js wpr_minify_js wpr_image_dimensions wpr_preload_links wpr_desktop"></head>
+
+
+<body class="wp-singular post-template-default single single-post postid-4929 single-format-standard wp-theme-espaciofurgo wp-child-theme-espaciofurgo-child no_margin stm-template-car_dealer_two stm-user-not-logged-in header_remove_cart wpb-js-composer js-comp-ver-6.0.5 vc_responsive" ontouchstart="">
+		<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZNFXXL"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->	
+	<div data-rocket-location-hash="99bb46786fd5bd31bcd7bdc067ad247a" id="wrapper">
+                                    <div data-rocket-location-hash="ad5d2704be9f8ed6d3e8fb43045bc962" id="stm-boats-header">
+
+
+					                
+            
+                                                        <div data-rocket-location-hash="14cb77cabf1af5e0e20c8ad093bcb08a" id="header">
+                        
+<div class="header-listing  listing-nontransparent-header">
+
+    <div class="container header-inner-content">
+        <!--Logo-->
+        <div class="listing-logo-main" style="margin-top: 4px;">
+                            <a class="bloglogo" href="https://www.espaciofurgo.com/be/">
+                    <img width="418" height="126" src="https://www.espaciofurgo.com/wp-content/uploads/2021/02/logo_ESPACIO-FURGO_home-02.png" style="width: 200px;" title="Галоўная" alt="лагатып">
+                </a>
+                    </div>
+
+        <div class="listing-service-right clearfix">
+
+            <div class="listing-right-actions">
+
+                
+                                    <div class="pull-right">
+                        <a class="lOffer-compare" href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D1%86%D1%8C/" title="Глядзець у параўнанні">
+                            <span class="heading-font">параўнаць</span>
+                            <i class="list-icon stm-boats-icon-compare-boats"></i>
+                            <span class="list-badge"><span class="stm-current-cars-in-compare"></span></span>
+                        </a>
+                    </div>
+                
+            </div>
+
+            <ul class="listing-menu clearfix">
+                <li id="menu-item-1151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1151"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D1%86%D1%8F%D0%BF%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D1%96/">Уявіць</a></li>
+<li id="menu-item-1174" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1174"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BD%D0%BE%D0%B2%D1%8B%D1%8F-%D0%BC%D0%B0%D0%B4%D1%8D%D0%BB%D1%96/">Новыя мадэлі</a></li>
+<li id="menu-item-942" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-942"><a href="https://www.espaciofurgo.com/be/%D1%88%D1%82%D1%8D%D0%BA%D0%B5%D1%80/">Фіхас</a></li>
+<li id="menu-item-985" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-985"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/Prueba/">Тэсты</a></li>
+<li id="menu-item-68" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-68"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BA%D1%96%D1%80%D0%B0%D1%9E%D0%BD%D1%96%D1%86%D1%82%D0%B2%D0%B0-%D0%BF%D0%B0-%D0%BA%D1%83%D0%BF%D0%BB%D1%96/">Кіраўніцтва па куплі</a></li>
+<li id="menu-item-1363" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1363"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BA%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D1%96%D0%BD%D0%B3/">Караванінг</a></li>
+            </ul>
+        </div>
+    </div>
+</div>                    </div> <!-- id header -->
+                
+                            </div>
+                
+<div data-rocket-location-hash="247ed6f803b0dadb3af57e0a16849864" class="stm-boats-mobile-header">
+			<a class="bloglogo" href="https://www.espaciofurgo.com/be/">
+			<img width="418" height="126" src="https://www.espaciofurgo.com/wp-content/uploads/2021/02/logo_ESPACIO-FURGO_home-02.png" style="width: 200px;" title="Галоўная" alt="лагатып">
+		</a>
+	
+	<div data-rocket-location-hash="07c0548e1fd15e1a1a23e94e73001734" class="stm-menu-boats-trigger">
+		<span></span>
+		<span></span>
+		<span></span>
 	</div>
-
-		
-
-                
-                	                <div class="col-md-12">
-	                	<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2-1220x686.jpg" srcset="https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2-1220x686.jpg 1220w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2-880x495.jpg 880w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2-768x432.jpg 768w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2-1024x576.jpg 1024w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2-1600x900.jpg 1600w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2-700x394.jpg 700w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2-400x225.jpg 400w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2-270x152.jpg 270w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-2.jpg 1920w" sizes="(max-width: 1210px) 100vw, 1210px" alt="Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў" class="img-responsive aligncenter featured-image" width="1220" height="686">
-					</div>
-								
-                <div class="center fullpubli">
-                	<div id="mega-sup"></div><div id="interstitial"></div><div id="sky-left"></div><div id="sky-right"></div>                 </div>
-			<!--</div> end .row 
-				
-			<div class="row"> -->			
-                <div class="contenedor-ajustable">
-                    <div id="row">
-                        <div class="contenido-autoajustable-tres">
-
-							
-							<div class="content-single">
-								
-									
-
-								<div id="botones-hc"></div>								
-								<p class="entradilla">Уступленне ў сілу новага цыкла WLTP выклікала агульнае зніжэнне паказчыкаў аўтаномнасці электрамабіляў.</p>
-<p class="gt-block">1 верасня ст <strong>новыя правілы зацвярджэння WLTP</strong>, цыкл, які палегчыць некаторыя <strong>значна больш рэалістычныя лічбы спажывання і выкідаў</strong>. Выпрабаванні, якія праводзяцца для цыкла амалагізацыі WLTP, больш працяглыя і надзейныя, чым для старога і больш дапушчальнага цыкла NEDC. <strong>электрамабілі </strong>таксама будзе відаць <strong>закрануты гэтай зменай</strong> <strong>што будзе мець непасрэдны ўплыў на паказчыкі вашай аўтаноміі</strong>, адзін з ключавых элементаў пры куплі электрамабіля.</p>
-<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up.jpg" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-489 img-responsive" alt="Цыкл WLTP" width="1920" height="990" srcset="https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up.jpg 1920w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-880x454.jpg 880w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-768x396.jpg 768w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-1024x528.jpg 1024w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-1220x629.jpg 1220w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-1600x825.jpg 1600w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-700x361.jpg 700w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-400x206.jpg 400w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-270x139.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px"><noscript><img fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-489 img-responsive" src="https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up.jpg" alt="Ciclo WLTP" width="1920" height="990" srcset="https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up.jpg 1920w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-880x454.jpg 880w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-768x396.jpg 768w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-1024x528.jpg 1024w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-1220x629.jpg 1220w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-1600x825.jpg 1600w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-700x361.jpg 700w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-400x206.jpg 400w, https://i.bstr.es/drivingeco/2018/09/2018-nissan-leaf-backing-up-270x139.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px" /></noscript></p>
-<h2>Што такое цыкл WLTP і як ён працуе?</h2>
-<p class="gt-block">Праводзіцца новы цыкл амалагізацыі WLTP <strong>тэсты ў рэальным трафіку</strong>, чаго не адбылося са старым цыклам NEDC. Новае зацвярджэнне <strong>Выпрабоўвае аўтамабілі на нізкіх, сярэдніх і высокіх хуткасцях</strong>, гэта значыць упершыню ён улічвае фазы паскарэння, тармажэння і прыпынку, нешта такое <strong>аказвае ўплыў на значна больш рэальнае спажыванне</strong>, The <strong>лічбы спажывання будуць вышэй, чым раней</strong>, што не азначае, што аўтамабілі будуць спажываць больш, яны будуць спажываць роўна столькі ж. Лічбы будуць вышэйшымі з-за простага факту, што спажыванне будзе здабывацца з дапамогай значна больш строгага працэсу, чым дагэтуль.</p>
-<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2018/09/renault-zoe-01.jpg" decoding="async" class="aligncenter size-full wp-image-490 img-responsive" alt="Цыкл WLTP" width="1920" height="1080"><noscript><img decoding="async" class="aligncenter size-full wp-image-490 img-responsive" src="https://i.bstr.es/drivingeco/2018/09/renault-zoe-01.jpg" alt="Ciclo WLTP" width="1920" height="1080" /></noscript></p>
-<p class="gt-block">Акрамя таго, новы цыкл WLTP <strong>патрабуе амалагізацыі кожнага варыянту мадэлі для яе абсталявання</strong>. Напрыклад, калі мы ўсталюем шыны большага памеру, чым стандартныя, гэта паўплывае на расход, што патрабуе іншай амалагічнасці аўтамабіля.</p>
-<h2>Як новы цыкл WLTP паўплывае на электрамабілі?</h2>
-<p class="gt-block">Цыкл WLTP <strong>не закране электрамабілі на ўзроўні падатку</strong>. Электромабілі не вылучаюць C02 <strong>па-ранейшаму будуць вызваленыя ад выплаты падатку на рэгістрацыю</strong>. Тым не менш, новыя правілы зацвярджэння <strong>так, гэта паўплывае на спажыванне электрамабіляў</strong>, і, такім чынам, яго аўтаномнасць, адзін з фактараў, які найбольш уплывае на продаж электрамабіляў.</p>
-<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3.jpg" decoding="async" class="aligncenter size-full wp-image-491 img-responsive" alt="Цыкл WLTP" width="1500" height="843" srcset="https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3.jpg 1500w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-880x495.jpg 880w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-768x432.jpg 768w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-1024x575.jpg 1024w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-1220x686.jpg 1220w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-700x393.jpg 700w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-400x225.jpg 400w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-270x152.jpg 270w" sizes="(max-width: 1500px) 100vw, 1500px"><noscript><img decoding="async" class="aligncenter size-full wp-image-491 img-responsive" src="https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3.jpg" alt="Ciclo WLTP" width="1500" height="843" srcset="https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3.jpg 1500w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-880x495.jpg 880w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-768x432.jpg 768w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-1024x575.jpg 1024w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-1220x686.jpg 1220w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-700x393.jpg 700w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-400x225.jpg 400w, https://i.bstr.es/drivingeco/2018/09/renault-zoe-01-3-270x152.jpg 270w" sizes="(max-width: 1500px) 100vw, 1500px" /></noscript></p>
-<p class="gt-block">Электрамабілі будуць працягваць прапаноўваць тыя ж акумулятары, і іх рэальная аўтаномнасць не будзе залежаць ад новага цыкла WLTP, а <strong>Паказчыкі аўтаноміі будуць меншымі, чым раней</strong>, таму што ўмовы яго разліку будуць больш жорсткімі.</p>
-<p>Ніжэй мы разбіраем змены ў аўтаномнасці самых прадаваных электрамабіляў у Іспаніі:</p>
-<table>
-<tbody>
-<tr>
-<td width="141"></td>
-<td width="141"><strong>Цыкл NEDC</strong></td>
-<td width="142"><strong>Цыкл WLTP</strong></td>
-</tr>
-<tr>
-<td width="141"><strong>Renault Zoe</strong></td>
-<td width="141">300 км</td>
-<td width="142">300 км (паводле першых ацэнак Renault)</td>
-</tr>
-<tr>
-<td width="141"><strong>Nissan Leaf</strong></td>
-<td width="141">378 км</td>
-<td width="142">270-285 км</td>
-</tr>
-<tr>
-<td width="141"><strong>Tesla Model S</strong></td>
-<td width="141">480 км</td>
-<td width="142">350 км</td>
-</tr>
-<tr>
-<td width="141"><strong>Volkswagen eGolf</strong></td>
-<td width="141">300 км</td>
-<td width="142">219 км</td>
-</tr>
-<tr>
-<td width="141"><strong>BMW i3</strong></td>
-<td width="141">300 км</td>
-<td width="142">219 км</td>
-</tr>
-<tr>
-<td width="141"><strong>Hyundai Ioniq EV</strong></td>
-<td width="141">280 км</td>
-<td width="142">204 км</td>
-</tr>
-<tr>
-<td width="141"><strong>Smart forFour</strong></td>
-<td width="141">160 км</td>
-<td width="142">Прыбл. 150 км.</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-
-								<div id="widget"></div>		<!-- /1282139/WIDGET_HIGHMOTOR_700X365_2015 -->
-		<div id="div-gpt-ad-1666707087634-0" style="min-width: 600px; min-height: 300px;">
-		  <script type="rocketlazyloadscript">
-		    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1666707087634-0'); });
-		  </script>
-		</div>
-    
-    	
-										
-							</div><!-- fin .content-single -->
-									
-							
-	<div class="navigation-single">	<!-- NAVEGACION  -->			
-			        <div class="post-previous">
-	            <a href="https://www.drivingeco.com/be/%D0%BD%D0%BE%D0%B2%D1%8B-Audi-e-tron-%E2%80%8B%E2%80%8B%D0%BF%D0%B0%D1%87%D1%8B%D0%BD%D0%B0%D0%B5-%D0%B2%D1%8B%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D0%B0%D0%B3%D0%B0-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA%D0%B0/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" class="img-responsive" alt="Новы Audi e-tron не за гарамі: пачынаецца вытворчасць першага электрычнага пазадарожніка брэнда" data-lazy-src="https://i.bstr.es/drivingeco/2018/09/produccion-audi-e-tron-01-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2018/09/produccion-audi-e-tron-01-135x100.jpg" width="135" height="100" class="img-responsive" alt="El nuevo Audi e-tron a la vuelta de la esquina: comienza la producción del primer SUV eléctrico de la marca"/></noscript></a>
-	            <div class="title"><a href="https://www.drivingeco.com/be/%D0%BD%D0%BE%D0%B2%D1%8B-Audi-e-tron-%E2%80%8B%E2%80%8B%D0%BF%D0%B0%D1%87%D1%8B%D0%BD%D0%B0%D0%B5-%D0%B2%D1%8B%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D0%B0%D0%B3%D0%B0-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA%D0%B0/">Новы Audi e-tron не за гарамі: пачынаецца вытворчасць першага электрычнага пазадарожніка брэнда</a></div>
-	        </div>
-			        <div class="post-next">
-	            <a href="https://www.drivingeco.com/be/bmw-%D0%BF%D0%B0%D1%87%D1%8B%D0%BD%D0%B0%D0%B5-%D0%BF%D1%80%D1%8B%D0%BC%D0%B0%D1%86%D1%8C-ix3-%D0%B1%D1%80%D0%B0%D0%BD%D1%96%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D0%BD%D0%B5/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" class="img-responsive" alt="BMW пачне прымаць браніраванне iX3 праз два гады" data-lazy-src="https://i.bstr.es/drivingeco/2018/08/ix3side-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2018/08/ix3side-135x100.jpg" width="135" height="100" class="img-responsive" alt="BMW empieza a aceptar reservas del iX3 a dos años vista"/></noscript></a>
-	            <div class="title"><a href="https://www.drivingeco.com/be/bmw-%D0%BF%D0%B0%D1%87%D1%8B%D0%BD%D0%B0%D0%B5-%D0%BF%D1%80%D1%8B%D0%BC%D0%B0%D1%86%D1%8C-ix3-%D0%B1%D1%80%D0%B0%D0%BD%D1%96%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D0%BD%D0%B5/">BMW пачне прымаць браніраванне iX3 праз два гады</a></div>
-	        </div>
-				</div>
-	
-	<div style="clear:both"></div>
-
-
-						
-													
-
-						</div>
-						
-						
-<div class="bloque-publicidad-ajustable-tres">
-	
-	
-
-	<div id="roba1"></div>
-	
-	
-
-	
-	    <div class="destacados-sidebar">
-		<p class="gt-block titulo-sidebar"><span class="icon-pin"></span>Папулярныя</p>
-		    		<div class="destacado-sidebar">
-            	<a href="https://www.drivingeco.com/be/probando-smartgyro-crossover-x2-pro-fusion-potencia-estilo/" rel="nofollow">
-                    <picture class="img-responsive">
-<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg.webp">
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90"/></noscript>
-</picture>
-
-					Prueba Smartgyro Crossover X2 Pro: зліццё магутнасці і стылю                </a>
-			</div>
-		    		<div class="destacado-sidebar">
-            	<a href="https://www.drivingeco.com/be/caldera-gas-bomba-calor-descubre-cual-mas-eficiente-contamina-menos/" rel="nofollow">
-                    <picture class="img-responsive">
-<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg.webp">
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="ацяпленне-цеплавой помпа-300х90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg" alt="calefaccion-bomba-calor-300x90" width="300" height="90"/></noscript>
-</picture>
-
-					¿Caldera de gas or bomba de calor? Descubre cuál es más eficiente y contamina menos                </a>
-			</div>
-		    		<div class="destacado-sidebar">
-            	<a href="https://www.drivingeco.com/be/paneles-solares-inversion-sostenible-vale-pena-hacer/" rel="nofollow">
-                    <picture class="img-responsive">
-<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg.webp">
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="сонечныя панэлі-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg" alt="paneles-solares-300x90" width="300" height="90"/></noscript>
-</picture>
-
-					Paneles solares: una inversión rentable y sostenible para el futuro                </a>
-			</div>
-		    </div>
-
-	
-		
-	<div id="roba2"></div>	<br>
-	<div id="roba3"></div>
-	<div id="roba4"></div>
-	
 </div>
 
-                    </div><!-- end #row -->
-                </div><!-- end .contenedor-ajustable -->
+<div data-rocket-location-hash="d2c026d278d91876ffc0002c71a8b61a" class="stm-boats-mobile-menu">
+	<div data-rocket-location-hash="c4961c3de85874c8c83c21082f8fa42b" class="inner">
+		<div class="inner-content">
+			<ul class="listing-menu heading-font clearfix">
+				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1151"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D1%86%D1%8F%D0%BF%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D1%96/">Уявіць</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1174"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BD%D0%BE%D0%B2%D1%8B%D1%8F-%D0%BC%D0%B0%D0%B4%D1%8D%D0%BB%D1%96/">Новыя мадэлі</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-942"><a href="https://www.espaciofurgo.com/be/%D1%88%D1%82%D1%8D%D0%BA%D0%B5%D1%80/">Фіхас</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-985"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/Prueba/">Тэсты</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-68"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BA%D1%96%D1%80%D0%B0%D1%9E%D0%BD%D1%96%D1%86%D1%82%D0%B2%D0%B0-%D0%BF%D0%B0-%D0%BA%D1%83%D0%BF%D0%BB%D1%96/">Кіраўніцтва па куплі</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1363"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BA%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D1%96%D0%BD%D0%B3/">Караванінг</a></li>
                 
-				<div class="col-md-12">
-					<div id="comentarios">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a class="lOffer-compare" href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D1%86%D1%8C/" title="Глядзець у параўнанні">
+                            <span>параўнаць</span>
+                                                    </a>
+                    </li>
+                			</ul>
+					</div>
+	</div>
+</div>                            
+        	
+	<div data-rocket-location-hash="241382cab125432d637e78e638f09023" class="menu-stellantis">
+		<div data-rocket-location-hash="fabefb70abafd7f7298d8a8468759172" class="container-menu-stellantis">
+			<ul>
+				<li><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D0%BC%D0%B5%D1%80%D1%86%D1%8B%D0%B9%D0%BD%D1%8B%D1%8F-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B%D1%8F-%D0%B0%D1%9E%D1%82%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%96/">Камерцыйныя электрамабілі FIAT PROFESSIONAL</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	
+	
+        
+        
+	<div data-rocket-location-hash="0a3695be2558864060713a6b033fb773" class="logo-espacio-toyota-prev1">
+	<a href="https://www.espaciofurgo.com/be/Espacio-Toyota/">
+	<div class="img-portada-espacio-toyota-banner">
+		<!-- <div class="tit-espacio-toyota"><img src="https://i.bstr.es/espaciofurgo/2023/10/logo-toyota-professional-grey.png" class="logo-banner-espacio-toyota-izq"/>ESPACIO <strong>TOYOTA</strong></div> -->
+		
+	</div>
+	</a>
+	</div>
 
+        
+        
+        
+		<div id="main">
 
+		<div data-rocket-location-hash="697a3df6a872e4f7fc9f4a0975b2157e" class="megabanner" id="mega_sup"></div>
 
-			<p>Каментары закрыты</p>
+	<div data-rocket-location-hash="36c50f489f9b321f61ecc97db11d20a1" id="post-4929" class="post-4929 post type-post status-publish format-standard has-post-thumbnail hentry category-actualidad category-comerciales-ligeros category-electrico">
+		<div class="stm-single-post sticky-content">
+			<div data-rocket-location-hash="1806b05ffcaa004c636fdfa1e266739b" class="container">
+				
 
 	
+	<div data-rocket-location-hash="72871746a3910c6bdb4473fc1e93bb77" class="row">
+		<div class="col-md-9 col-sm-12 col-xs-12"><div class="sidebar-margin-top clearfix"></div>
+			<!--Title-->
+			<h1 class="post-title">Sustaineer: такім уяўляе Mercedes-Benz фургон будучыні</h1>
 
+			<!--Post thumbnail-->
+							<div class="post-thumbnail">
+					<picture class="img-responsive wp-post-image" decoding="async" fetchpriority="high">
+<source type="image/webp" srcset="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-3-1110x577.jpg.webp 1110w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-3-350x181.jpg.webp 350w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-3-398x206.jpg.webp 398w" sizes="(max-width: 1110px) 100vw, 1110px">
+<img width="1110" height="577" src="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-3-1110x577.jpg" alt="" decoding="async" fetchpriority="high" srcset="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-3-1110x577.jpg 1110w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-3-350x181.jpg 350w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-3-398x206.jpg 398w" sizes="(max-width: 1110px) 100vw, 1110px">
+</picture>
+				</div>
+			
+			<!--Blog meta-->
+			<div class="blog-meta clearfix">
+				<div class="left">
+					<div class="clearfix">
+						<div class="blog-meta-unit h6">
+							<i class="stm-icon-date"></i>
+							<span>19 Верасень 2022</span>
+						</div>
+						<div class="blog-meta-unit h6">
+							<i class="stm-icon-author"></i>
+							<span>Пар Альвара Авілес</span>
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="blog-meta-unit h6">
+						<a href="https://www.espaciofurgo.com/be/sustaineer-%D0%B2%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-mercedes-benz-%D1%9E%D1%8F%D1%9E%D0%BB%D1%8F%D0%B5-%D1%81%D0%B0%D0%B1%D0%B5-%D1%84%D1%83%D1%80%D0%B3%D0%BE%D0%BD-%D0%B1%D1%83%D0%B4%D1%83%D1%87%D1%8B%D0%BD%D1%96/#respond" class="post_comments h6">
+							<i class="stm-icon-message"></i> Няма каментарыяў						</a>
+					</div>
+				</div>
+			</div>
 
-</div> <!-- end id comentarios-->											<!-- <div class="titulo-ancho">TE PUEDE INTERESAR</div> -->
+                            <div class="stm-excerpt">
+                    <p>Mercedes-Benz Sustaineer - гэта прататып, заснаваны на eSprinter, які мае шэраг сапраўды цікавых новых функцый: вы хочаце іх ведаць?</p>
+                </div>
+            
+			<div class="post-content">
+				<p class="gt-block">La <strong>Mercedes-Benz Sprinter</strong> Гэта адзін з цяжкавагавікоў у сегменце лёгкіх камерцыйных аўтамабіляў, а фургон зорнай маркі здолеў стаць эталонам пасля больш чым чвэрці стагоддзя і трох пакаленняў ззаду.</p>
+<p class="gt-block">Бо інакш і быць не магло, Sprinter развіваўся, каб прапанаваць добрую дозу тэхналогій, каб палегчыць працу сваім пасажырам. Не толькі гэта, але некалькі месяцаў таму мы даведаліся, што <a href="https://www.espaciofurgo.com/be/mercedes-esprinter-proxima-generacion-con-mas-de-340-km-de-autonomia/" target="_blank" rel="noopener">наступнае пакаленне eSprinter</a>, яго 100% электрычная версія, выйдзе на стол з a <strong>аўтаномнасць больш за 340 кіламетраў</strong>.</p>
+<p style="text-align: center;" class="gt-block">Не прапусціце: <a href="https://www.espaciofurgo.com/be/guia-de-compra-las-mejores-furgonetas-electricas-para-comprar-en-2022/" target="_blank" rel="noopener">Лепшыя электрычныя фургоны для пакупкі ў 2022 годзе</a></p>
+<p class="gt-block">Падзел в <strong>Камерцыйныя аўтамабілі Mercedes-Benz</strong> Кампанія працягвае працаваць над удасканаленнем сваёй легендарнай мадэлі, таму праз прататып, заснаваны на eSprinter, яна паказала, як яна ўяўляе сабе гарадскі грузавы транспарт будучыні.</p>
+<p class="gt-block">Гэты прататып, наз<strong> Mercedes-Benz Sustaineer</strong>, прадставіў тры цікавыя рашэнні, якія накіраваны не толькі на паляпшэнне якасці жыцця ў вялікіх гарадах, але і на паляпшэнне паўсядзённага жыцця тых, хто за рулём.</p>
+<p><picture decoding="async" class="alignnone size-full wp-image-4930">
+<source type="image/webp" srcset="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1.jpg.webp 1600w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-642x428.jpg.webp 642w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-1024x683.jpg.webp 1024w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-180x120.jpg.webp 180w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-768x512.jpg.webp 768w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-1536x1024.jpg.webp 1536w" sizes="(max-width: 1600px) 100vw, 1600px">
+<img decoding="async" src="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1.jpg" alt="" width="1600" height="1067" srcset="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1.jpg 1600w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-642x428.jpg 642w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-1024x683.jpg 1024w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-180x120.jpg 180w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-768x512.jpg 768w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-1-1536x1024.jpg 1536w" sizes="(max-width: 1600px) 100vw, 1600px">
+</picture>
+</p>
+<h2>Інавацыйныя рашэнні Mercedes-Benz Sustaineer</h2>
+<h3>Інтэлектуальная сістэма кандыцыянавання паветра</h3>
+<p class="gt-block">El <strong>сістэма ацяплення</strong> Гэта важны элемент, калі тэмпература пачынае падаць. Тым не менш, гэта прылада павінна працаваць значна цяжэй у фургоне, так як вельмі вялікая прастора, якую любы транспартны сродак гэтага стылю прапануе ў сваім салоне, абцяжарвае дасягненне аптымальнай тэмпературы.</p>
+<p class="gt-block">Гэтая залішняя праца яшчэ больш важная ў электрычным фургоне, паколькі гэта празмернае напружанне відавочна пагаршае поўную аўтаномнасць аўтамабіля. Для барацьбы з гэтай важнай праблемай, <strong>Mercedes-Benz Sustaineer мае інтэлектуальную сістэму клімат-кантролю</strong> які факусуе цяпло толькі там, дзе гэта неабходна.</p>
+<p>Такім чынам, ён здольны самастойна абаграваць бліжэйшыя да кіроўцы месцы: сядзенне, руль, рамень бяспекі, паверхню дзвярэй, месца для ног або абліцоўванне рулявой калонкі.</p>
+<p><picture decoding="async" class="alignnone wp-image-4934 size-full">
+<source type="image/webp" srcset="https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999.jpg.webp 1600w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-642x428.jpg.webp 642w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-1024x683.jpg.webp 1024w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-180x120.jpg.webp 180w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-768x512.jpg.webp 768w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-1536x1024.jpg.webp 1536w" sizes="(max-width: 1600px) 100vw, 1600px">
+<img decoding="async" src="https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999.jpg" alt="" width="1600" height="1067" srcset="https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999.jpg 1600w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-642x428.jpg 642w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-1024x683.jpg 1024w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-180x120.jpg 180w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-768x512.jpg 768w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-sprinter-sustaineer-1021-01-617a85e987999-1536x1024.jpg 1536w" sizes="(max-width: 1600px) 100vw, 1600px">
+</picture>
+</p>
+<h3>Інструктаж кіроўцы: персанальны трэнер у фургоне</h3>
+<p class="gt-block">Кампанія Mercedes-Benz распрацавала новае прыкладанне, якое <strong>запісвае і аналізуе стыль кіравання</strong> карыстальніка, каб праз прапановы аптымізаваць свой стыль ваджэння. Дзякуючы гэтаму ўдасканаленню аператары аўтапаркаў змогуць даваць шэраг рэкамендацый сваім кіроўцам, каб яны адаптавалі свой спосаб кіравання і, такім чынам, павялічылі аўтаномнасць сваіх аўтамабіляў і іх прадукцыйнасць.</p>
+<p class="gt-block">Не толькі гэта, але і дадатак <strong>Вы будзеце вучыцца ў кіроўцы і дапамагаць вам у працоўны дзень</strong> каб, напрыклад, планаваць маршруты або выкарыстоўваць тыповы час прастою пры пагрузцы і разгрузцы аўтамабіля.</p>
+<h3>Аптымізаваная аэрадынаміка</h3>
+<p class="gt-block">Адным з фактараў, які больш за ўсё абмяжоўвае запас ходу электрычнага фургона, з'яўляецца яго аэрадынамічны каэфіцыент, слабое месца гэтых «вялікіх хлопцаў» на дарозе. Каб палепшыць супраціў паветра,<strong> Mercedes-Benz Sustaineer мае ніжні абцякальнік</strong> Выраблены з перапрацаванага поліпрапілена, які забяспечвае бесперашкодны паток паветра праз ніжнюю частку аўтамабіля.</p>
+<p><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-4933">
+<source type="image/webp" srcset="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4.jpg.webp 1600w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-642x428.jpg.webp 642w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-1024x683.jpg.webp 1024w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-180x120.jpg.webp 180w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-768x512.jpg.webp 768w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-1536x1024.jpg.webp 1536w" sizes="auto, (max-width: 1600px) 100vw, 1600px">
+<img loading="lazy" decoding="async" src="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4.jpg" alt="" width="1600" height="1067" srcset="https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4.jpg 1600w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-642x428.jpg 642w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-1024x683.jpg 1024w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-180x120.jpg 180w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-768x512.jpg 768w, https://i.bstr.es/espaciofurgo/2022/09/mercedes-benz-sustaineer-4-1536x1024.jpg 1536w" sizes="auto, (max-width: 1600px) 100vw, 1600px">
+</picture>
+</p>
+<p class="gt-block">Яшчэ адна навінка гэтага тэхналагічнага вундэркінда, прадстаўленая Mercedes-Benz - гэта<strong> актыўная аэрадынаміка</strong>a, рашэнне, якое да гэтага часу выкарыстоўвалася толькі ў суперкарах. Sustaineer мае паветразаборнікі спераду, якія аўтаматычна зачыняюцца, калі хуткасць перавышае 60 км/г. Такім чынам, ёсць цалкам роўная паверхня без паглыбленняў, у якіх вецер можа ствараць турбулентнасць, што спрыяе аэрадынаміцы і, адпаведна, павялічваючы поўную аўтаномію.</p>
+<p class="gt-block">Нягледзячы на ​​тое, што гэтыя новаўвядзенні ўсё яшчэ знаходзяцца ў зачаткавай фазе, інжынеры at <strong>Фургоны Mercedes-Benz</strong> Яны працягнуць працаваць над імі, каб мець магчымасць усталёўваць іх у наступныя пакаленні сваіх камерцыйных аўтамабіляў.</p>
+				<div class="clearfix"></div>
+			</div>
+
+			
+			<div class="blog-meta-bottom">
+				<div class="clearfix">
+					<div class="left">
+						<!--Categories-->
+
+													<div class="post-metas">
+																<a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D1%86%D1%8F%D0%BF%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D1%96/"><span>Уявіць</span></a>	
+																
+																<a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D1%81%D0%B5%D0%B3%D0%BC%D0%B5%D0%BD%D1%82-b/%D0%BB%D1%91%D0%B3%D0%BA%D0%B0%D1%8F-%D1%80%D1%8D%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0/"><span>Камерцыйныя гульні</span></a>	
+																
+																<a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D1%82%D1%8B%D0%BF/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-e/"><span>электрычны</span></a>	
+																
+														</div> <!-- .post-metas -->
 						
+					</div>
+
+					<div class="right">
+						<div class="stm-shareble stm-single-car-link">
+							<a href="#" class="car-action-unit stm-share" title="Адправіць гэтую" download="">
+								<i class="stm-icon-share"></i>
+								Адправіць гэтую							</a>
+															<div class="stm-a2a-popup">
+									<div class="addtoany_shortcode"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://www.espaciofurgo.com/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/" data-a2a-title="Sustaineer: así es como Mercedes-Benz imagina la furgoneta del futuro"><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.espaciofurgo.com%2Fsustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro%2F&amp;amp;linkname=Sustaineer%3A%20as%C3%AD%20es%20como%20Mercedes-Benz%20imagina%20la%20furgoneta%20del%20futuro" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.espaciofurgo.com%2Fsustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro%2F&amp;amp;linkname=Sustaineer%3A%20as%C3%AD%20es%20como%20Mercedes-Benz%20imagina%20la%20furgoneta%20del%20futuro" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.espaciofurgo.com%2Fsustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro%2F&amp;amp;linkname=Sustaineer%3A%20as%C3%AD%20es%20como%20Mercedes-Benz%20imagina%20la%20furgoneta%20del%20futuro" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fwww.espaciofurgo.com%2Fsustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro%2F&amp;amp;linkname=Sustaineer%3A%20as%C3%AD%20es%20como%20Mercedes-Benz%20imagina%20la%20furgoneta%20del%20futuro" title="E-mail" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div></div>								</div>
+													</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Author info-->
+							<div class="stm-author-box clearfix">
+					<div class="author-image">
+						<img alt="" src="https://secure.gravatar.com/avatar/ccda265a568375f5056fcfdebfbebc3e7be079ba21da354cbbd170debf11a2da?s=86&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/ccda265a568375f5056fcfdebfbebc3e7be079ba21da354cbbd170debf11a2da?s=172&amp;d=mm&amp;r=g 2x" class="avatar avatar-86 photo" height="86" width="86" loading="lazy" decoding="async">					</div>
+					<div class="author-content">
+						<h6>аўтар:</h6>
+						<h4>аавілес</h4>
+						<div class="author-description"><a href="https://adamwills.io/">Crot4d</a>
+<a href="https://pay4d.adamwills.io/">pay4d</a>
+<a href="https://dumpstermail.com">Crot4d</a>
+<a href="http://nclexstat.com/">Crot4d</a>
+<a href="https://crot4d.org.uk/">Crot4d</a>
+<a href="https://www.crot4d.co.uk/">Crot4d</a>
+<a href="https://crot4d.sbs/">Crot4d</a>
+<a href="https://www.crot4d.co.uk/">Crot4d</a>
+<a href="https://linkcrot4d.xyz/">Crot4d</a>
+<a href="https://hebat4d.net/">hebat4d</a>
+<a href="https://hebat4d.com/">hebat4d</a>
+<a href="https://mahong4d.cam/">mahong4d</a>
+<a href="https://terios4d.net/">terios4d</a>
+<a href="https://raja88bet.net/">raja88bet</a>
+<a href="https://raja88bet.com/">raja88bet</a>
+<a href="https://raja88bet.org/">raja88bet</a>
+<a href="https://loyal88.com/">верны88</a>
+<a href="https://loyal88.net/">верны88</a>
+<a href="https://loyal88.org/">верны88</a>
+<a href="https://otto4d.com/">otto4d</a>
+<a href="https://otto4d.org/">otto4d</a>
+<a href="https://pub-cd4735e7ea764b3fa6a565c0014925ab.r2.dev/crot4d-amp.html">Crot4d</a>
+<a href="https://pub-26a55b749b624209a7635af7b32fbcc5.r2.dev/crot4d.html">Crot4d</a>
+<a href="https://www.crot4d.co.uk/">Crot4d</a>
+<a href="https://clashroyalehome.com/">Crot4d</a>
+<a href="https://slotdepositdana.com/">Crot4d</a>
+<a href="https://tokatdepo.com/">Crot4d</a>
+<a href="https://ug505.com/">UG505</a>
+<a href="https://www.realug505.pro/">UG505</a></div>
+					</div>
+				</div>
+			
+			<!--Comments-->
+			
+		</div>
+
+		<!--Sidebar-->
+		<div class="col-md-3 hidden-sm hidden-xs"><div id="sticky-sidebar">
+<aside id="execphp-4" class="widget widget-default widget_execphp">			<div class="execphpwidget">
+	<div class="robapaginas" id="roba_sup"></div>
 
 
-									</div>
+</div>
+		</aside>
+		<aside id="recent-posts-3" class="widget widget-default widget_recent_entries">
+		<div class="widget-title"><h4>Апошнія паведамленні</h4></div>
+		<ul>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%97%D1%96%D0%BC%D0%BE%D0%B2%D1%8B%D1%8F-%D1%88%D1%8B%D0%BD%D1%8B-%D1%96-%D0%BB%D0%B0%D0%BD%D1%86%D1%83%D0%B3%D1%96-%D0%B4%D0%BB%D1%8F-%D0%B0%D1%9E%D1%82%D0%B0%D1%84%D1%83%D1%80%D0%B3%D0%BE%D0%BD%D0%B0%D1%9E%3A-%D0%BA%D1%96%D1%80%D0%B0%D1%9E%D0%BD%D1%96%D1%86%D1%82%D0%B2%D0%B0-%D0%BF%D0%B0-%D0%B2%D1%8B%D0%B1%D0%B0%D1%80%D1%8B-%D0%BF%D0%B0%D0%BC%D1%96%D0%B6-MS-%D1%96-3PMSF-%D0%BD%D0%B0-2026-%D0%B3%D0%BE%D0%B4--%D1%82%D1%8B%D0%BF%D1%8B-%D0%BC%D0%B0%D1%86%D0%B0%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F--%D1%86%D1%96%D1%81%D0%BA-%D1%96-%D1%88%D1%82%D1%80%D0%B0%D1%84%D1%8B/">Зімовыя шыны і ланцугі для фургонаў/кемпераў: кіраўніцтва па выбары паміж M+S і 3PMSF на 2026 год, тыпы, мантаж, ціск і штрафы</a>
+									</li>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%90%D1%86%D1%8F%D0%BF%D0%BB%D0%B5%D0%BD%D0%BD%D0%B5-%D0%BF%D0%B5%D1%80%D0%B0%D0%B4-%D1%81%D0%BD%D0%BE%D0%BC-%D1%83-%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%85--%D0%B0%D1%9E%D1%82%D0%B0%D0%B4%D0%BE%D0%BC%D0%B0%D1%85-%D1%96-%D0%BA%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D0%B0%D1%85%3A-%D1%8D%D1%84%D0%B5%D0%BA%D1%82%D1%8B%D1%9E%D0%BD%D0%B0%D1%81%D1%86%D1%8C--%D0%B1%D1%8F%D1%81%D0%BF%D0%B5%D0%BA%D0%B0-%D1%96-%D0%BD%D0%B0%D0%B9%D0%BB%D0%B5%D0%BF%D1%88%D1%8B%D1%8F-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D1%8B%D0%BA%D1%96/">Ацяпленне перад сном у кемперах, аўтадомах і караванах: эфектыўнасць, бяспека і найлепшыя практыкі</a>
+									</li>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%A3%D1%81%D1%91--%D1%88%D1%82%D0%BE-%D0%B7%D0%BC%D0%B5%D0%BD%D1%96%D1%86%D1%86%D0%B0-%D0%B4%D0%BB%D1%8F-%D1%80%D1%8D%D0%B3%D1%96%D1%81%D1%82%D1%80%D0%B0%D1%86%D1%8B%D1%96-%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0-%D1%9E-2026-%D0%B3%D0%BE%D0%B4%D0%B7%D0%B5-%D1%9E-%D0%B3%D1%8D%D1%82%D1%8B%D0%BC-%D0%BD%D0%BE%D0%B2%D1%8B%D0%BC-%D0%BF%D0%B0%D0%BA%D1%80%D0%BE%D0%BA%D0%B0%D0%B2%D1%8B%D0%BC-%D0%BA%D1%96%D1%80%D0%B0%D1%9E%D0%BD%D1%96%D1%86%D1%82%D0%B2%D0%B5%3A-%D0%BC%D0%B0%D0%B4%D1%8B%D1%84%D1%96%D0%BA%D0%B0%D1%86%D1%8B%D1%96--%D1%82%D1%8D%D1%85%D0%B0%D0%B3%D0%BB%D1%8F%D0%B4-%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D0%B3%D0%B0-%D1%81%D1%80%D0%BE%D0%B4%D0%BA%D1%83-%28ITV%/">Усё, што зменіцца для рэгістрацыі кемпера ў 2026 годзе ў гэтым новым пакрокавым кіраўніцтве: мадыфікацыі, тэхагляд транспартнага сродку (ITV), тэхнічны пашпарт, дарожнае ўпраўленне (DGT) і страхаванне</a>
+									</li>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%A8%D0%BC%D0%B0%D1%82%D0%BC%D1%8D%D1%82%D0%B0%D0%B2%D1%8B-%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D1%8B-%D1%81%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%3A-%D0%BF%D1%80%D0%B0%D0%B2%D1%96%D0%BB%D1%8B-%D1%9E-%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%96--%D0%BF%D0%B5%D1%80%D0%B0%D0%B2%D0%B0%D0%B3%D1%96-%D1%96-%D1%80%D1%8D%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%8F-%D0%BF%D1%80%D1%8B%D0%BA%D0%BB%D0%B0%D0%B4%D1%8B/">Шматмэтавы транспартны сродак: што гэта такое, правілы ў Іспаніі, перавагі і рэальныя прыклады</a>
+									</li>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%9F%D0%B0%D1%80%D0%BA%D0%BE%D1%9E%D0%BA%D0%B0-%D1%96-%D0%BD%D0%B0%D1%87%D0%BB%D0%B5%D0%B3-%D1%83-%D0%B0%D1%9E%D1%82%D0%B0%D0%B4%D0%BE%D0%BC%D0%B5-%D0%B0%D0%B1%D0%BE-%D0%BA%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D0%B0%D1%85-%D0%B7%D1%96%D0%BC%D0%BE%D0%B9-2025-%D0%B3%D0%BE%D0%B4%D0%B0%3A-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D1%8B%D1%87%D0%BD%D1%8B-%D1%8E%D1%80%D1%8B%D0%B4%D1%8B%D1%87%D0%BD%D1%8B-%D0%B4%D0%B0%D0%BF%D0%B0%D0%BC%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-%D0%BF%D0%B0-%D0%BA%D0%B0%D0%BD%D0%B4%D1%8B%D1%86%D1%8B%D1%8F%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%BD%D1%96-%D0%BF%D0%B0%D0%B2%D0%B5%D1%82%D1%80%D0%B0-%D1%96-%D1%88%D1%82%D1%80%D0%B0%D1%84%D0%B0%D1%85/">Паркоўка (і начлег) з аўтадомам або караванам зімой: юрыдычны, практычны дапаможнік, інфармацыя аб клімат-кантролі... і штрафы</a>
+									</li>
+					</ul>
+
+		</aside><aside id="execphp-3" class="widget widget-default widget_execphp">			<div class="execphpwidget">	<div class="robapaginas" id="roba_inf"></div>
+
+</div>
+		</aside></div></div>	</div>
+			</div>
+		</div>
+	</div>
+		<div data-rocket-location-hash="866884786a7ee0d25daf4eaa431433e6" class="megabanner" id="mega_inf"></div>
+
+</div> <!--main-->
+</div> <!--wrapper-->
+    <footer data-rocket-location-hash="3a34d16accfc999eb0a37d7b009cfdae" id="footer">
+        	
+		<div data-rocket-location-hash="f83e9ed5286d6faf22ad020610b2d3c4" id="footer-main">
+			<div data-rocket-location-hash="d4f1c52ff51a8355ea5f2f2904a7e627" class="footer_widgets_wrapper less_4">
+				<div class="container">
+					<div class="widgets cols_3 clearfix">
+						<aside id="text-2" class="widget widget_text"><div class="widget-wrapper">			<div class="textwidget"><p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3586" src="https://www.espaciofurgo.com/wp-content/uploads/2021/02/logo_ESPACIO-FURGO_home-02.png" alt="" width="145" height="67"></p>
+<p>EspacioFurgo te ofrece toda la información del sector de los Comerciales ligeros, los furgones y los pickups, con fichas de todos los modelos que se venden en España, guías de compra, actualidad, novedades, pruebas y un comparador para que aciertes al elegir cualquier транспартны сродак.</p>
+<p style="text-align:center;">
+	¡Síguenos en redes sociales!</p>
+<p style="text-align:center;">
+	<a style="margin-right:10px;" href="https://www.facebook.com/EspacioFurgo" target="_blank"><i class="fab fa-facebook fa-2x"> </i></a> <a style="margin-right:10px;" href="https://twitter.com/espaciofurgo" target="_blank"> <i class="fab fa-twitter fa-2x"></i> </a></p>
+</div>
+		</div></aside><aside id="nav_menu-2" class="widget widget_nav_menu"><div class="widget-wrapper"><div class="menu-footer-derecha-container"><ul id="menu-footer-derecha" class="menu"><li id="menu-item-1172" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1172"><a href="https://www.espaciofurgo.com/be/%D0%B7%D0%B2%D1%8F%D0%B7%D0%B0%D1%86%D1%86%D0%B0/">Кантакт</a></li>
+<li id="menu-item-1167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1167"><a href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D1%86%D1%8C/">Параўнайце</a></li>
+<li id="menu-item-6119" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6119"><a rel="privacy-policy" href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D0%BB%D1%96%D1%82%D1%8B%D0%BA%D0%B0-%D0%BF%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D0%BD%D0%B0%D1%81%D1%86%D1%96/">Палітыка прыватнасці</a></li>
+<li id="menu-item-6120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6120"><a href="https://www.espaciofurgo.com/be/%D1%8E%D1%80%D1%8B%D0%B4%D1%8B%D1%87%D0%BD%D0%B0%D0%B5-%D0%B0%D0%BF%D0%B0%D0%B2%D1%8F%D1%88%D1%87%D1%8D%D0%BD%D0%BD%D0%B5/">Юрыдычнае паведамленне</a></li>
+<li id="menu-item-6017" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6017"><a href="https://www.highmotor.com">высокарухальныя</a></li>
+<li id="menu-item-6018" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6018"><a href="https://www.drivingeco.com">DrivingECO</a></li>
+<li id="menu-item-6019" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6019"><a href="https://www.topventascoches.com">Самыя папулярныя аўтамабілі</a></li>
+</ul></div></div></aside>					</div>
+				</div>
+			</div>
+		</div>
+
+        
 
 
-				<div id="mega-inf"></div>
-            </div><!--fin de .row-->
-    	</article>
+				<div id="footer-copyright" style="background-color:#524740">
+
+			
+			<div data-rocket-location-hash="b7861c08de8ab0e311c8ce72dbbd2375" class="container footer-copyright">
+				<div class="row">
+                    					<div class="col-md-8 col-sm-8">
+						<div class="clearfix">
+															<div class="copyright-text">© 2024 Espacio Furgo - Усе захаваныя правы</div>
+													</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="clearfix">
+							<div class="pull-right xs-pull-left">
+																<!-- Header top bar Socials -->
+															</div>
+						</div>
+					</div>
+                    				</div>
+			</div>
+		</div>
+	        <div data-rocket-location-hash="666ebecb51416d3813aff5bff2b0496b" class="global-alerts"></div>        <!-- Searchform -->
+        <div data-rocket-location-hash="4c37f3255b68238cb96b88677d199df5" class="modal" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal">
+	<div data-rocket-location-hash="71e58200c2db087cf8ac9664c0ab210b" class="modal-dialog" role="document">
+		<div class="modal-content">
+		
+			<div class="modal-body heading_font">
+				<div class="search-title">пошук</div>
+				<form method="get" id="searchform" action="https://www.espaciofurgo.com/be/">
+				    <div class="search-wrapper">
+				        <input placeholder="Пачніце друкаваць тут ..." type="text" class="form-control search-input" value="" name="s" id="s">
+				        <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+				    </div>
+				</form>
+			</div>
+		
+		</div>
+	</div>
+</div>    </footer>
 
 
-
-	</div><!--fin de .container-fluid .single-->
-
-</section>
-</div> <!-- end main-content -->
-
-	<footer data-rocket-location-hash="d8d170033ea958f3538208caa1adc50a">
-	
-		<div data-rocket-location-hash="66bb0135a95e6e923d1519a7a3b45a5d" class="tono">
-			<div data-rocket-location-hash="e34054dedc881748ea475e180cbaa267" class="row institucional"><ul id="menu-legal-pie" class=""><li id="menu-item-16547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16547"><a href="https://www.highmotor.com/">высокарухальныя</a></li>
-<li id="menu-item-21507" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21507"><a href="https://www.topventascoches.com/">Самыя папулярныя аўтамабілі</a></li>
-<li id="menu-item-51179" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51179"><a href="https://www.espaciofurgo.com/">Espacio Furgo</a></li>
-<li id="menu-item-32051" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32051"><a href="https://www.drivingeco.com/be/%D1%8E%D1%80%D1%8B%D0%B4%D1%8B%D1%87%D0%BD%D0%B0%D0%B5-%D0%B0%D0%BF%D0%B0%D0%B2%D1%8F%D1%88%D1%87%D1%8D%D0%BD%D0%BD%D0%B5/">Юрыдычнае паведамленне</a></li>
-<li id="menu-item-51824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51824"><a href="https://www.drivingeco.com/be/%D0%BF%D0%B0%D0%BB%D1%96%D1%82%D1%8B%D0%BA%D0%B0-%D0%BF%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D0%BD%D0%B0%D1%81%D1%86%D1%96/">палітыка прыватнасці</a></li>
-</ul></div>		</div>
-	</footer>
-
-   <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="rocketlazyloadscript">//window.jQuery || document.write('<script data-minify="1" async src="https://www.drivingeco.com/be/wp-content/cache/min/1/ajax/libs/jquery/3.1.1/jquery.min.js?ver=1764074335"><\/script>')</script>
-    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js?ver=1764074336" crossorigin="anonymous"></script>
-    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js?ver=1764074336" crossorigin="anonymous"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script type="rocketlazyloadscript" data-minify="1" async="" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/ie10-viewport-bug-workaround.min.js?ver=1764074336"></script>
-   
- 
-
-	
-
-
-   <script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/drivingeco\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/drivingeco\/*","\/wp-content\/themes\/comun9\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/espaciofurgo\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/espaciofurgo-child\/*","\/wp-content\/themes\/espaciofurgo\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
-<div data-rocket-location-hash="08456ca62859d0d659ee768c83516255" class="gtranslate_wrapper" id="gt-wrapper-36987937"></div><link data-minify="1" rel="stylesheet" id="fonts-kyalami-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/fonts-kyalami.css?ver=1764074335" type="text/css" media="all">
-<link data-minify="1" rel="stylesheet" id="bootstrap-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/bootstrap.min.css?ver=1764074335" type="text/css" media="all">
-<link data-minify="1" rel="stylesheet" id="style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/comun9/style.css?ver=1764074335" type="text/css" media="all">
-<link data-minify="1" rel="stylesheet" id="child-style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/style.css?ver=1764074335" type="text/css" media="all">
-<link data-minify="1" rel="stylesheet" id="fontawesome-css" href="https://www.drivingeco.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1764074335" type="text/css" media="all">
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+<div data-rocket-location-hash="53a2c607032caa554f94520b2ad87cdd" class="gtranslate_wrapper" id="gt-wrapper-51637803"></div>    <script type="rocketlazyloadscript">
+        var currentAjaxUrl = 'https://www.espaciofurgo.com/be/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/';
+        var resetAllTxt = 'Reset All';
+        var prevText = 'Previous';
+        var nextText = 'Next';
+        var is_rental = '';
+        var file_type = 'file type noimg';
+        var file_size = 'file size big';
+        var max_img_quant = 'max imgs 3';
+        var currentLocale = 'es';
+        var noFoundSelect2      = 'No results found';
+
+
+        var filterRemoveHidden = 'e78973c003';
+        var addToCompare       = 'c37d233d31';
+        var addTestDrive       = 'a8ebf8ebd7';
+        var addTradeOffer      = '487a6286f4';
+        var loadMoreCars       = '2453d4c430';
+        var getCarPrice        = '69279a2aa4';
+        var addToFav           = 'd124ff90ca';
+        var getFav             = 'f87c544c33';
+        var dealerLoadCars     = '7e056af83b';
+        var dealerLoadReviews  = '519710ac72';
+        var submitReview       = '768182ccc5';
+        var restorePassword    = 'f28cc3846d';
+        var reportReview       = '10efd2fc88';
+        var loadDealersList    = '15a4b8747e';
+        var addACar            = '1f42f29ba9';
+        var getCarsInvtMap     = '8c9c103a7a';
+        var sellerPhone        = '7016307705';
+        var rentalCheckCar     = '85eb5ab271';
+        var availableCarDate   = '8aefafea92';
+        var stickyPostsMagazn  = 'a9dba66074';
+        var getEvents          = 'ec85230b6d';
+        var testDriveModal     = '9a84f1b81b';
+        var clearData          = 'ae5012c47f';
+        var invNoFilter        = 'cdd7ea5af9';
+        var valueMyCar         = 'b318a390c4';
+        var getFileSize        = 'f2445c9c2d';
+    </script>
+    <link rel="stylesheet" id="glg-photobox-style-css" href="https://www.espaciofurgo.com/wp-content/plugins/gallery-lightbox-slider/css/photobox/photobox.min.css?ver=1.0.0.41" type="text/css" media="">
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/jquery.cookie.js?ver=1761218051" id="jquery_cookie-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/owl.carousel.js?ver=1761218052" id="owl.carousel-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/lightgallery.min.js" id="light-gallery-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.3" id="jquery-ui-mouse-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/draggable.min.js?ver=1.13.3" id="jquery-ui-draggable-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/droppable.min.js?ver=1.13.3" id="jquery-ui-droppable-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/add_a_car.js?ver=1761218051" id="listings-add-car-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/slider.min.js?ver=1.13.3" id="jquery-ui-slider-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/init.js?ver=1761218051" id="listings-init-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/filter.js?ver=1761218051" id="listings-filter-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="rocket-browser-checker-js-after">
 /* <![CDATA[ */
 "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
 /* ]]> */
 </script>
 <script type="text/javascript" id="rocket-preload-links-js-extra">
 /* <![CDATA[ */
-var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.drivingeco.com/be","onHoverDelay":"100","rateThrottle":"3"};
+var RocketPreloadLinksConfig = {"excludeUris":"\/comparar\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.espaciofurgo.com/be","onHoverDelay":"100","rateThrottle":"3"};
 /* ]]> */
 </script>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+<script type="text/javascript" id="rocket-preload-links-js-after">
 /* <![CDATA[ */
 (function() {
 "use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
@@ -495,41 +727,193 @@ var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$
 </script>
 <script type="text/javascript" id="author-tracking-js-extra">
 /* <![CDATA[ */
-var author = {"name":"Nacho Salvador"};
-var date = {"my":"September 2018"};
-var category = {"name":"Coches"};
+var author = {"name":"\u00c1lvaro Avil\u00e9s"};
+var date = {"my":"September 2022"};
+var category = {"name":"Actualidad | Comerciales ligeros | El\u00e9ctrico"};
 /* ]]> */
 </script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/js/analytics.js?ver=1764074336" id="author-tracking-js"></script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/jquery.sonar.min.js?ver=1764074336" id="jquery-sonar-js"></script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/lazy-load.min.js?ver=1764074336" id="wpcom-lazy-load-images-js"></script>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
-<script type="text/javascript" id="infinitedScrollHighmotor_js-js-extra">
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/analytics.js?ver=1761218051" id="author-tracking-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.13.3" id="jquery-effects-core-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/effect-slide.min.js?ver=1.13.3" id="jquery-effects-slide-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery-migrate-1.2.1.min.js?ver=2.5" id="stm-jquerymigrate-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=6.0.5" id="isotope-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery.lazyload.min.js?ver=2.5" id="lazyload-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery.touch.punch.min.js?ver=2.5" id="stm-jquery-touch-punch-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/select2.full.min.js?ver=2.5" id="stm-select2-js-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery.uniform.min.js?ver=2.5" id="uniform-js-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/stm_dt_picker.js?ver=1761218051" id="stm-datetimepicker-js-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/typeahead.jquery.min.js?ver=2.5" id="typeahead-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/lg-video.js?ver=1761218051" id="lg-video-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="stm-theme-scripts-js-extra">
 /* <![CDATA[ */
-var ajax_object = {"ajax_url":"https:\/\/www.drivingeco.com/be\/wp-admin\/admin-ajax.php","id_post":"488","title_origin":"As\u00ed afecta el ciclo WLTP a la autonom\u00eda de los EV","url_origin":"https:\/\/www.drivingeco.com/be\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos\/"};
+var stm_i18n = {"remove_from_compare":"Remove from compare","remove_from_favorites":"Remove from favorites"};
 /* ]]> */
 </script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/plugins/infinite-scroll-highmotor/includes/js/infiniteScrollHighmotor.js?ver=1764074336" id="infinitedScrollHighmotor_js-js"></script>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/comment-reply.min.js?ver=6.8.1" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="gt_widget_script_36987937-js-before">
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/app.js?ver=1761218051" id="stm-theme-scripts-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/app-ajax.js?ver=1761218051" id="stm-theme-scripts-ajax-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/load-image.all.min.js?ver=2.5" id="stm-load-image-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/sell-a-car.js?ver=1761218051" id="stm-theme-sell-a-car-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/filter.js?ver=1761218051" id="stm-theme-script-filter-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js?ver=1761218051" id="stm_marker_cluster-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery.mCustomScrollbar.concat.min.js?ver=2.5" id="custom_scrollbar-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/mystickysidebar/js/detectmobilebrowser.js?ver=1761218051" id="detectmobilebrowser-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="mystickysidebar-js-extra">
 /* <![CDATA[ */
-window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['36987937'] = {"default_language":"es","languages":["ar","eu","be","ca","zh-CN","zh-TW","hr","cs","da","nl","en","et","fr","gl","de","hu","it","ja","ko","ku","pl","pt","pa","ro","ru","sk","sl","es","tr"],"url_structure":"sub_directory","native_language_names":1,"detect_browser_language":1,"flag_style":"3d","wrapper_selector":"#gt-wrapper-36987937","alt_flags":[],"float_switcher_open_direction":"bottom","switcher_horizontal_position":"right","switcher_vertical_position":"bottom","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+var mystickyside_name = {"mystickyside_string":"#sticky-sidebar","mystickyside_content_string":".sticky-content","mystickyside_margin_top_string":"90","mystickyside_margin_bot_string":"0","mystickyside_update_sidebar_height_string":"false","mystickyside_min_width_string":"795","device_desktop":"1","device_mobile":"1"};
 /* ]]> */
-</script><script type="rocketlazyloadscript" data-rocket-src="https://www.drivingeco.com/wp-content/plugins/gtranslate/js/float.js?ver=6.8.1" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos/" data-gt-orig-domain="www.drivingeco.com" data-gt-widget-id="36987937" defer=""></script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
-if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
-images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
-if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="Play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script>
-
-<script type="rocketlazyloadscript">
-	new PerformanceObserver((entryList) => {
-	  for (const entry of entryList.getEntries()) {
-	    console.log('Layout shift:', entry);
-	  }
-	}).observe({type: 'layout-shift', buffered: true});		
 </script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/mystickysidebar/js/theia-sticky-sidebar.js?ver=1761218051" id="mystickysidebar-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/plugins/gallery-lightbox-slider/js/jquery/photobox/jquery.photobox.min.js?ver=1.0.0.41" id="glg-photobox-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="gt_widget_script_51637803-js-before">
+/* <![CDATA[ */
+window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['51637803'] = {"default_language":"es","languages":["ar","eu","be","zh-CN","zh-TW","hr","cs","da","nl","en","et","fr","gl","de","hu","it","ja","ko","ku","pl","pt","pa","ro","ru","sk","sl","es","sv","tr"],"url_structure":"sub_directory","native_language_names":1,"detect_browser_language":1,"flag_style":"3d","wrapper_selector":"#gt-wrapper-51637803","alt_flags":[],"float_switcher_open_direction":"bottom","switcher_horizontal_position":"right","switcher_vertical_position":"top","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+/* ]]> */
+</script><script src="https://www.espaciofurgo.com/wp-content/plugins/gtranslate/js/float.js?ver=6.8.1" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro/" data-gt-orig-domain="www.espaciofurgo.com" data-gt-widget-id="51637803" defer=""></script>
+<!--[if lt IE 9]><link rel="stylesheet" href="https://www.espaciofurgo.com/wp-content/plugins/gallery-lightbox-slider '/css/photobox/photobox.ie.css'.'"><![endif]-->
 
-  <script>var rocket_beacon_data = {"ajax_url":"https:\/\/www.drivingeco.com/be\/wp-admin\/admin-ajax.php","nonce":"7caa53ab31","url":"https:\/\/www.drivingeco.com/be\/asi-afecta-el-ciclo-wltp-a-la-autonomia-de-los-coches-electricos","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800}</script><script data-name="wpr-wpr-beacon" src="https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js" async=""></script>
+<style type="text/css">
+#pbOverlay { background:rgba(0,0,0,.90)  none repeat scroll 0% 0% !important; }
+	.gallery-caption, .blocks-gallery-item figcaption { display: none !important; }	.pbWrapper > img{display: inline;}
+	#pbThumbsToggler {display: none !important;}
+</style>
 
- 
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">// <![CDATA[
+jQuery(document).ready(function($) {
+	/* START --- Gallery Lightbox Lite --- */
+	
+	/* Replace default title to more fancy :) */
+	$('.gallery img').each(function(i) {
 
-<script data-cfasync="false" src="https://tdns4.gtranslate.net/tdn-bin/queue.js"></script></body></html><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
+		$alt = $(this).attr('alt');
+
+		$(this).attr('alt', $alt.replace(/-|_/g, ' '));
+
+		$altnew = $(this).attr('alt').replace(/\b[a-z]/g, function(letter) {
+
+			    return letter.toUpperCase();
+
+			});
+
+		$(this).attr('alt', $altnew );
+
+	});
+
+		
+    function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+	/* Gutenberg Adaptive */
+	$('.blocks-gallery-item, .wp-block-image').each(function(i) {
+
+		var $blck = $(this).find('img'),
+		$isSrc = $blck.attr('src');
+
+		if (! $blck.closest('a').length) {
+			$blck.wrap('<a class="glg-a-custom-wrap" href="'+$isSrc+'"></a>');
+		}
+		else {
+			$blck.closest('a').addClass('glg-a-custom-wrap');
+		}
+
+        /* Sanitize */
+        if (typeof $blck.attr('alt') !== 'undefined' && $blck.attr('alt') !== '') {
+            $blck.attr('alt', escapeHtml($blck.attr('alt')));
+        }
+
+	});
+
+	
+	/* Initialize!
+	.glg-a-custom-wrap (Block Gallery)
+	.carousel-item:not(".bx-clone") > a:not(".icp_custom_link") (Image Carousel)
+	.gallery-item > dt > a (Native Gallery) */
+	$('.gallery, .ghozylab-gallery, .wp-block-gallery')
+		.photobox('.carousel-item > a:not(".icp_custom_link"),a.glg-a-custom-wrap, .gallery-item > dt > a, .gallery-item > div > a',{
+			autoplay: false,
+			time: 3000,
+			thumbs: true,
+			counter: ''
+		}, callback);
+		function callback(){
+		};
+
+});
+
+/* END --- Gallery Lightbox Lite --- */
+
+// ]]></script>
+
+
+    
+<div data-rocket-location-hash="9b43cd9174ee86c7ad6dd42ee3d88f09" class="modal" id="get-car-price" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<form id="get-car-price-form" action="https://www.espaciofurgo.com/be/" method="post">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header modal-header-iconed">
+					<i class="stm-icon-steering_wheel"></i>
+					<h3 class="modal-title" id="myModalLabel">Запытаць цану аўтамабіля</h3>
+					<div class="test-drive-car-name">Sustaineer: такім уяўляе Mercedes-Benz фургон будучыні</div>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<div class="form-modal-label">Імя</div>
+								<input name="name" type="text">
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<div class="form-modal-label">E-mail</div>
+								<input name="email" type="email">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<div class="form-modal-label">Тэлефон</div>
+								<input name="phone" type="tel">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+                        <div class="col-md-7 col-sm-7">
+                                                    </div>
+						<div class="col-md-5 col-sm-5">
+							<button type="submit" class="stm-request-test-drive">Запыт</button>
+							<div class="stm-ajax-loader" style="margin-top:10px;">
+								<i class="stm-icon-load1"></i>
+							</div>
+						</div>
+					</div>
+					<div class="mg-bt-25px"></div>
+					<input name="vehicle_id" type="hidden" value="4929">
+				</div>
+			</div>
+		</div>
+	</form>
+</div><div data-rocket-location-hash="3ff0afe4fea93d0f91f1da7bbb921251" class="single-add-to-compare">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-9">
+				<div class="single-add-to-compare-left">
+					<i class="add-to-compare-icon stm-icon-speedometr2"></i>
+					<span class="stm-title h5"></span>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<a href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D1%86%D1%8C/" class="compare-fixed-link pull-right heading-font">
+					параўнаць				</a>
+			</div>
+		</div>
+	</div>
+</div>        <div data-rocket-location-hash="c9977370cb5cad85d8c0b7b4175d3160" class="modal_content"></div>
+<script>var rocket_beacon_data = {"ajax_url":"https:\/\/www.espaciofurgo.com/be\/wp-admin\/admin-ajax.php","nonce":"e674f608ab","url":"https:\/\/www.espaciofurgo.com/be\/sustaineer-asi-es-como-mercedes-benz-imagina-la-furgoneta-del-futuro","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800}</script><script data-name="wpr-wpr-beacon" src="https://www.espaciofurgo.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js" async=""></script>
+
+<script data-cfasync="false" src="https://tdns5.gtranslate.net/tdn-bin/queue.js"></script></body></html><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1767168781 -->

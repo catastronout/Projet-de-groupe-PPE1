@@ -1,1167 +1,1196 @@
-
 <!DOCTYPE html>
-<html lang="be" dir="ltr" class="no-js">
-<head>
-<link href="/Content/responsive/RFE/be-BY/RFE-be-BY.css?&amp;av=0.0.0.0&amp;cb=370" rel="stylesheet"/>
-<script src="https://tags.svaboda.org/rferl-pangea/prod/utag.sync.js"></script> <script type='text/javascript' src='https://www.youtube.com/iframe_api' async></script>
-<link rel="manifest" href="/manifest.json">
-<script type="text/javascript">
-//a general 'js' detection, must be on top level in <head>, due to CSS performance
-document.documentElement.className = "js";
-var cacheBuster = "370";
-var appBaseUrl = "/";
-var imgEnhancerBreakpoints = [0, 144, 256, 408, 650, 1023, 1597];
-var isLoggingEnabled = false;
-var isPreviewPage = false;
-var isLivePreviewPage = false;
-if (!isPreviewPage) {
-window.RFE = window.RFE || {};
-window.RFE.cacheEnabledByParam = window.location.href.indexOf('nocache=1') === -1;
-const url = new URL(window.location.href);
-const params = new URLSearchParams(url.search);
-// Remove the 'nocache' parameter
-params.delete('nocache');
-// Update the URL without the 'nocache' parameter
-url.search = params.toString();
-window.history.replaceState(null, '', url.toString());
-} else {
-window.addEventListener('load', function() {
-const links = window.document.links;
-for (let i = 0; i < links.length; i++) {
-links[i].href = '#';
-links[i].target = '_self';
-}
-})
-}
-var pwaEnabled = false;
-var swCacheDisabled;
+<html lang="be-BY">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<title>Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй | dev.by</title>
+<meta name="description" content="Даследчыкі Dxomark высветлілі, наколькі функцыя Always on, то-бок уключанага экрана, уплывае на аўтаномнасць смартфона.">
+<link rel="canonical" href="https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573">
+<link rel="alternate" href="https://devby.io/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree" hreflang="ru-BY">
+<link rel="alternate" href="https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573" hreflang="be-BY">
+<link rel="amphtml" href="https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573.amp">
+<meta property="og:title" content="Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй">
+<meta property="og:description" content="
+Даследчыкі Dxomark высветлілі, наколькі функцыя Always on, то-бок уключанага экрана, уплывае на аўтаномнасць смартфона.
+">
+<meta property="og:site_name" content="dev.by">
+<meta property="og:image" content="https://devby.io/storage/images/34/41/27/82/derived/0fb8230c038b0f4625613da2fa9d81e8.jpg">
+<meta property="og:type" content="article">
+<meta property="fb:admins" content="1588103531">
+<meta property="fb:app_id" content="561548633983781">
+<meta name="twitter:site" content="@devby">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="alternate-url:ru" content="https://devby.io/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree">
+<meta name="alternate-url:be" content="https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573">
+<meta name="recaptcha-v3-site-key" content="6LdJuVAfAAAAABPOeSd_bXmje6ZbX79gKJBcDOHb">
+<meta name="verify-admitad" content="57a9b3c9d0">
+<meta name="pmail-verification" content="14e251d704b61dc46bc85ee2a05e8e48">
+<meta name="facebook-domain-verification" content="pta9x81s830d35twayb26eg7ydvdst">
+<meta name="alternate-locale" content="ru">
+<meta name="host" content="devby.io">
+<meta name="data-layer" content="{}">
+<meta name="onthe-io-config" content="{&quot;page_url&quot;:&quot;https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573&quot;,&quot;page_url_canonical&quot;:null,&quot;page_title&quot;:&quot;Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй&quot;,&quot;page_type&quot;:&quot;article&quot;,&quot;page_language&quot;:&quot;ru&quot;,&quot;article_authors&quot;:[&quot;5oRzSu&quot;],&quot;article_categories&quot;:null,&quot;article_type&quot;:&quot;news&quot;,&quot;article_word_count&quot;:177,&quot;article_publication_date&quot;:&quot;2022-12-21T14:05:00.000+03:00&quot;}">
+
+
+    <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573"
+    },
+    "url": "https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573",
+    "datePublished": "2022-12-21T14:05:00+03:00",
+    "dateModified": "2022-12-21T14:02:53+03:00",
+    "headline": "Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй",
+    "description": "
+<p>Даследчыкі Dxomark высветлілі, наколькі функцыя Always on, то-бок уключанага экрана, уплывае на&nbsp;аўтаномнасць смартфона.</p>
+",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://devby.io/storage/images/34/41/27/82/derived/0fb8230c038b0f4625613da2fa9d81e8.jpg"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Николай Чикишев"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "dev.by",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/logo-6fb2e86b23f09204944b25927b96125ad76f3039b51a85296f963f0f9c49c30a.png",
+        "width": 83,
+        "height": 32
+      }
+    }
+  }
 </script>
-<meta charset="utf-8" />
-<title>Эфэкт кулі.</title>
-<meta name="description" content="Аўтар Сяргей Дубавец, Вільня
-Калi нейкiя рэакцыi iншых людзей падаюцца нам неадэкватнымi, прычынаю гэтага можа быць i наша ўласнае неадэкватнае ўспрыманьне. Напрыклад, часам мы кажам: гэты чалавек не скарыстаў свой шанец. А ведаеш, падхоплiвае мае развагi сябра, нiчога дзiўнага. Ён не скарыстаў..." />
-<meta name="keywords" content="Вострая брама" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="robots" content="max-image-preview:large"><meta name="google-site-verification" content="5Mz_Kk58TB70UjzJ7dT4vgK_WYtXvz14arGonoSIVtw" />
-<meta name="yandex-verification" content="831c33864193ff5b" />
-<link href="https://www.svaboda.org/a/24866877.html" rel="canonical" />
-<meta name="apple-mobile-web-app-title" content="Радыё Свабода" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta name="apple-itunes-app" content="app-id=1528138495, app-argument=//24866877.ltr" />
-<meta content="Эфэкт кулі." property="og:title" />
-<meta content="Аўтар Сяргей Дубавец, Вільня
-Калi нейкiя рэакцыi iншых людзей падаюцца нам неадэкватнымi, прычынаю гэтага можа быць i наша ўласнае неадэкватнае ўспрыманьне. Напрыклад, часам мы кажам: гэты чалавек не скарыстаў свой шанец. А ведаеш, падхоплiвае мае развагi сябра, нiчога дзiўнага. Ён не скарыстаў..." property="og:description" />
-<meta content="article" property="og:type" />
-<meta content="https://www.svaboda.org/a/24866877.html" property="og:url" />
-<meta content="Радыё Свабода" property="og:site_name" />
-<meta content="https://www.facebook.com/svaboda.org" property="article:publisher" />
-<meta content="https://www.svaboda.org/Content/responsive/RFE/be-BY/img/top_logo_news.png" property="og:image" />
-<meta content="1200" property="og:image:width" />
-<meta content="675" property="og:image:height" />
-<meta content="site logo" property="og:image:alt" />
-<meta content="639500409416371" property="fb:app_id" />
-<meta content="summary_large_image" name="twitter:card" />
-<meta content="@svaboda" name="twitter:site" />
-<meta content="https://www.svaboda.org/Content/responsive/RFE/be-BY/img/top_logo_news.png" name="twitter:image" />
-<meta content="Эфэкт кулі." name="twitter:title" />
-<meta content="Аўтар Сяргей Дубавец, Вільня
-Калi нейкiя рэакцыi iншых людзей падаюцца нам неадэкватнымi, прычынаю гэтага можа быць i наша ўласнае неадэкватнае ўспрыманьне. Напрыклад, часам мы кажам: гэты чалавек не скарыстаў свой шанец. А ведаеш, падхоплiвае мае развагi сябра, нiчога дзiўнага. Ён не скарыстаў..." name="twitter:description" />
-<link rel="amphtml" href="https://www.svaboda.org/amp/24866877.html" />
-<script type="application/ld+json">{"articleSection":"Вострая брама","isAccessibleForFree":true,"headline":"Эфэкт кулі.","inLanguage":"be-BY","keywords":"Вострая брама","author":{"@type":"Person","name":"Радыё Свабода"},"datePublished":"1998-07-12 12:00:00Z","dateModified":"2013-01-16 22:14:30Z","publisher":{"logo":{"width":512,"height":220,"@type":"ImageObject","url":"https://www.svaboda.org/Content/responsive/RFE/be-BY/img/logo.png"},"@type":"NewsMediaOrganization","url":"https://www.svaboda.org","sameAs":["https://www.facebook.com/svaboda.org","https://twitter.com/svaboda","https://www.youtube.com/channel/UC5rVi7GRsGLGNK2T2JzwoFA?sub_confirmation=1","https://soundcloud.com/svaboda","https://www.instagram.com/radiosvaboda/","https://t.me/radiosvaboda"],"name":"Радыё Свабода || Радио Свобода","alternateName":""},"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":"https://www.svaboda.org/a/24866877.html","url":"https://www.svaboda.org/a/24866877.html","description":"Аўтар Сяргей Дубавец, Вільня\r\nКалi нейкiя рэакцыi iншых людзей падаюцца нам неадэкватнымi, прычынаю гэтага можа быць i наша ўласнае неадэкватнае ўспрыманьне. Напрыклад, часам мы кажам: гэты чалавек не скарыстаў свой шанец. А ведаеш, падхоплiвае мае развагi сябра, нiчога дзiўнага. Ён не скарыстаў...","image":{"width":1080,"height":608,"@type":"ImageObject","url":"https://gdb.rferl.org/00000000-0000-0000-0000-000000000000_w1080_h608.gif"},"name":"Эфэкт кулі."}</script>
-<script src="/Scripts/responsive/infographics.b?v=dVbZ-Cza7s4UoO3BqYSZdbxQZVF4BOLP5EfYDs4kqEo1&amp;av=0.0.0.0&amp;cb=370"></script>
-<script src="/Scripts/responsive/loader.b?v=Q26XNwrL6vJYKjqFQRDnx01Lk2pi1mRsuLEaVKMsvpA1&amp;av=0.0.0.0&amp;cb=370"></script>
-<link rel="icon" type="image/svg+xml" href="/Content/responsive/RFE/img/webApp/favicon.svg" />
-<link rel="alternate icon" href="/Content/responsive/RFE/img/webApp/favicon.ico" />
-<link rel="mask-icon" color="#ea6903" href="/Content/responsive/RFE/img/webApp/favicon_safari.svg" />
-<link rel="apple-touch-icon" sizes="152x152" href="/Content/responsive/RFE/img/webApp/ico-152x152.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/Content/responsive/RFE/img/webApp/ico-144x144.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/Content/responsive/RFE/img/webApp/ico-114x114.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/Content/responsive/RFE/img/webApp/ico-72x72.png" />
-<link rel="apple-touch-icon-precomposed" href="/Content/responsive/RFE/img/webApp/ico-57x57.png" />
-<link rel="icon" sizes="192x192" href="/Content/responsive/RFE/img/webApp/ico-192x192.png" />
-<link rel="icon" sizes="128x128" href="/Content/responsive/RFE/img/webApp/ico-128x128.png" />
-<meta name="msapplication-TileColor" content="#ffffff" />
-<meta name="msapplication-TileImage" content="/Content/responsive/RFE/img/webApp/ico-144x144.png" />
-<link rel="preload" href="/Content/responsive/fonts/Skolar-Lt_LatnCyrl_v2.4.woff" type="font/woff" as="font" crossorigin="anonymous" />
-<link rel="alternate" type="application/rss+xml" title="RFE/RL - Top Stories [RSS]" href="/api/" />
-<link rel="sitemap" type="application/rss+xml" href="/sitemap.xml" />
-</head>
-<body class=" nav-no-loaded cc_theme pg-article print-lay-article js-category-to-nav nojs-images ">
-<script type="text/javascript" >
-var analyticsData = {url:"https://www.svaboda.org/a/24866877.html",property_id:"423",article_uid:"24866877",page_title:"Эфэкт кулі.",page_type:"article",content_type:"article",subcontent_type:"article",last_modified:"2013-01-16 22:14:30Z",pub_datetime:"1998-07-12 12:00:00Z",pub_year:"1998",pub_month:"07",pub_day:"12",pub_hour:"12",pub_weekday:"Sunday",section:"вострая брама",english_section:"vostraya_brama",byline:"",categories:"vostraya_brama",domain:"www.svaboda.org",language:"Belarusian",language_service:"RFERL Belarusian",platform:"web",copied:"no",copied_article:"",copied_title:"",runs_js:"Yes",cms_release:"8.44.0.0.370",enviro_type:"prod",slug:"",entity:"RFE",short_language_service:"BEL",platform_short:"W",page_name:"Эфэкт кулі."};
+
+
+
+
+
+  <link rel="dns-prefetch" href="https://www.google.com"><link rel="preconnect" href="https://www.google.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="dns-prefetch" href="https://www.gstatic.com"><link rel="preconnect" href="https://www.gstatic.com">
+  <link rel="dns-prefetch" href="https://connect.facebook.net"><link rel="preconnect" href="https://connect.facebook.net">
+  <link rel="dns-prefetch" href="static.hotjar.com"><link rel="preconnect" href="static.hotjar.com">
+
+
+  <script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WTXK2ZV');
 </script>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXZBPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script type="text/javascript" data-cookiecategory="analytics">
-var gtmEventObject = Object.assign({}, analyticsData, {event: 'page_meta_ready'});window.dataLayer = window.dataLayer || [];window.dataLayer.push(gtmEventObject);
-if (top.location === self.location) { //if not inside of an IFrame
-var renderGtm = "true";
-if (renderGtm === "true") {
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WXZBPZ');
-}
-}
+
+<script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // TODO: refact
+    var articleFormat = '';
+    var tagsList = '[]';
+    var groupNames = ['AF', 'Mic', 'Беларусь', 'World'];
+    var groupValue = '';
+
+    groupNames.forEach(function (groupName) {
+      if (tagsList.includes(groupName) && !groupValue) {
+        groupValue = 'News — ' + groupName;
+      }
+    })
+
+    if (!groupValue) groupValue = 'News — Not identified';
+
+    if (articleFormat == 'long') {
+      gtag('set', { 'content_group4': groupValue });
+    } else {
+      gtag('set', { 'content_group5': groupValue });
+    }
+    gtag('set', { 'dimension5': '2022-12-21' });
+
+  gtag('config', 'G-FBEEKRSEQ5');
 </script>
-<!--Analytics tag js version start-->
-<script type="text/javascript" data-cookiecategory="analytics">
-var utag_data = Object.assign({}, analyticsData, {});
-if(typeof(TealiumTagFrom)==='function' && typeof(TealiumTagSearchKeyword)==='function') {
-var utag_from=TealiumTagFrom();var utag_searchKeyword=TealiumTagSearchKeyword();
-if(utag_searchKeyword!=null && utag_searchKeyword!=='' && utag_data["search_keyword"]==null) utag_data["search_keyword"]=utag_searchKeyword;if(utag_from!=null && utag_from!=='') utag_data["from"]=TealiumTagFrom();}
-if(window.top!== window.self&&utag_data.page_type==="snippet"){utag_data.page_type = 'iframe';}
-try{if(window.top!==window.self&&window.self.location.hostname===window.top.location.hostname){utag_data.platform = 'self-embed';utag_data.platform_short = 'se';}}catch(e){if(window.top!==window.self&&window.self.location.search.includes("platformType=self-embed")){utag_data.platform = 'cross-promo';utag_data.platform_short = 'cp';}}
-(function(a,b,c,d){ a="https://tags.svaboda.org/rferl-pangea/prod/utag.js"; b=document;c="script";d=b.createElement(c);d.src=a;d.type="text/java"+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); })();
+
+<script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '534068271518810');
+      fbq('track', 'PageView');
+    }, 5000);
+  })
 </script>
-<!--Analytics tag js version end-->
-<!-- Analytics tag management NoScript -->
-<noscript>
-<img style="position: absolute; border: none;" src="https://ssc.svaboda.org/b/ss/bbgprod,bbgentityrferl/1/G.4--NS/706664557?pageName=rfe%3abel%3aw%3aarticle%3a%d0%ad%d1%84%d1%8d%d0%ba%d1%82%20%d0%ba%d1%83%d0%bb%d1%96.&amp;c6=%d0%ad%d1%84%d1%8d%d0%ba%d1%82%20%d0%ba%d1%83%d0%bb%d1%96.&amp;v36=8.44.0.0.370&amp;v6=D=c6&amp;g=https%3a%2f%2fwww.svaboda.org%2fa%2f24866877.html&amp;c1=D=g&amp;v1=D=g&amp;events=event1,event52&amp;c16=rferl%20belarusian&amp;v16=D=c16&amp;c5=vostraya_brama&amp;v5=D=c5&amp;ch=%d0%92%d0%be%d1%81%d1%82%d1%80%d0%b0%d1%8f%20%d0%b1%d1%80%d0%b0%d0%bc%d0%b0&amp;c15=belarusian&amp;v15=D=c15&amp;c4=article&amp;v4=D=c4&amp;c14=24866877&amp;v14=D=c14&amp;v20=no&amp;c17=web&amp;v17=D=c17&amp;mcorgid=518abc7455e462b97f000101%40adobeorg&amp;server=www.svaboda.org&amp;pageType=D=c4&amp;ns=bbg&amp;v29=D=server&amp;v25=rfe&amp;v30=423&amp;v105=D=User-Agent " alt="analytics" width="1" height="1" /></noscript>
-<!-- End of Analytics tag management NoScript -->
-<div class="google-translate-container">
-<div id="google_translate_element" data-page-language="be" data-included-languages="ru,be"></div>
+
+
+  <!-- Hotjar Tracking Code for https://devby.io/ -->
+  <script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:3671579,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+
+  <script src="https://cdn.admixer.net/scripts3/loader2.js" async data-inv="//inv-nets.admixer.net" data-r="single" data-sender="admixer" data-bundle="desktop" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+
+  <script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+    (window.globalAmlAds = window.globalAmlAds || []).push(function() {
+      const banners = [
+        {
+          z: 'c00cc299-ca5d-4324-b7c1-fe672393721b',
+          ph: 'admixer_c00cc299ca5d4324b7c1fe672393721b_zone_100342_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '888cbc33-db54-4a91-821f-bbd85b923bc4',
+          ph: 'admixer_888cbc33db544a91821fbbd85b923bc4_zone_100344_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '21fcc4b3-7c74-48d3-bd1a-f9ad76c11569',
+          ph: 'admixer_21fcc4b37c7448d3bd1af9ad76c11569_zone_100416_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '2f21cc3d-efbf-408e-af09-1233b408d5e1',
+          ph: 'admixer_2f21cc3defbf408eaf091233b408d5e1_zone_100417_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: 'c30d6770-ae93-43b3-8ffe-878f78f95497',
+          ph: 'admixer_c30d6770ae9343b38ffe878f78f95497_zone_100418_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: 'bfcc2f9d-8c1a-4c28-bd3d-62216f991caa',
+          ph: 'admixer_bfcc2f9d8c1a4c28bd3d62216f991caa_zone_100419_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: 'add7ffc1-c8f0-4ad9-a7eb-234d741e57bd',
+          ph: 'admixer_add7ffc1c8f04ad9a7eb234d741e57bd_zone_100420_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '217bcfb4-051d-4c38-b4a5-75217e1fb82e',
+          ph: 'admixer_217bcfb4051d4c38b4a575217e1fb82e_zone_101208_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '380cbeee-2993-4036-b160-d072819287f1',
+          ph: 'admixer_380cbeee29934036b160d072819287f1_zone_101212_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '48c648d0-a35a-4cc6-9991-c38ab171f5d3',
+          ph: 'admixer_48c648d0a35a4cc69991c38ab171f5d3_zone_101213_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '1133deda-1708-41b8-8e0c-4f5260945363',
+          ph: 'admixer_1133deda170841b88e0c4f5260945363_zone_101285_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '478f3fec-2206-4415-a38e-f72d4a1e4797',
+          ph: 'admixer_478f3fec22064415a38ef72d4a1e4797_zone_101992_sect_44574_site_38177',
+          i: 'inv-nets',
+          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: 'fb27fbce-99e8-48c5-9c31-788cfb0d25ee',
+          ph: 'admixer_fb27fbce99e848c59c31788cfb0d25ee_zone_105089_sect_48295_site_38177',
+          i: 'inv-nets',
+          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '1c2176b8-46d6-4372-82bd-40745f7c12a3',
+          ph: 'admixer_1c2176b846d6437282bd40745f7c12a3_zone_105090_sect_48295_site_38177',
+          i: 'inv-nets',
+          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '52195f29-f66b-4e54-9e3f-4500ea39a3fe',
+          ph: 'admixer_52195f29f66b4e549e3f4500ea39a3fe_zone_105091_sect_48295_site_38177',
+          i: 'inv-nets',
+          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '3acbe3b6-2ca2-4fd4-80d5-83a45c0a84ea',
+          ph: 'admixer_3acbe3b62ca24fd480d583a45c0a84ea_zone_105092_sect_48295_site_38177',
+          i: 'inv-nets',
+          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '8608bacb-d8e5-4a29-b64f-2ce55473cad4',
+          ph: 'admixer_8608bacbd8e54a29b64f2ce55473cad4_zone_105093_sect_48295_site_38177',
+          i: 'inv-nets',
+          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: 'a3b6d4a0-e317-49e8-b30d-d93464a0940a',
+          ph: 'admixer_a3b6d4a0e31749e8b30dd93464a0940a_zone_105094_sect_48295_site_38177',
+          i: 'inv-nets',
+          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: 'b26fac30-050c-4a46-b0db-194109f4409d',
+          ph: 'admixer_b26fac30050c4a46b0db194109f4409d_zone_105096_sect_48295_site_38177',
+          i: 'inv-nets',
+          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        {
+          z: '1c1869df-2876-4a12-9b96-57ef9f15f81c',
+          ph: 'admixer_1c1869df28764a129b9657ef9f15f81c_zone_106623_sect_44574_site_38177',
+          i: 'inv-nets',
+          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        { z: '661b3075-bea6-4a87-8aa2-24e18d203205',
+          ph: 'admixer_661b3075bea64a878aa224e18d203205_zone_109799_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        { z: '33cdd89e-dcff-4187-b7d0-f2b4cb12bb40',
+          ph: 'admixer_33cdd89edcff4187b7d0f2b4cb12bb40_zone_114355_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        { z: 'ee5feda1-e7a0-4291-a922-dfb164506819',
+          ph: 'admixer_ee5feda1e7a04291a922dfb164506819_zone_100343_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        { z: '8d33db9c-429a-4c99-9f4d-c0593f769614',
+          ph: 'admixer_8d33db9c429a4c999f4dc0593f769614_zone_100340_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        },
+        { z: '6e9ba6ec-f1d2-4856-9f07-ab844f50783d',
+          ph: 'admixer_6e9ba6ecf1d248569f07ab844f50783d_zone_100341_sect_44574_site_38177',
+          i: 'inv-nets',
+          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
+          sender: 'admixer'
+        }
+      ];
+
+      banners.forEach(banner => {
+        const id = banner.ph
+        const containerElement = document.querySelector('#' + id)
+
+        if (containerElement) globalAml.defineSlot(banner)
+      })
+
+      globalAml.singleRequest('admixer');
+    })
+  </script>
+
+
+  <script src="https://cdn.onthe.io/io.js/ngjaOM5bE3cf" async type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+
+
+  <script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+    function ioConfigFields () {
+      try {
+        return JSON.parse(document.head.querySelector('meta[name=onthe-io-config]').content)
+      } catch(e) {
+        return {}
+      }
+    }
+    window._io_config = window._io_config || {};
+    window._io_config["0.2.0"] = window._io_config["0.2.0"] || [];
+    window._io_config["0.2.0"].push(ioConfigFields());
+  </script>
+
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Галоўная","item":"https://devby.io/be/"},{"@type":"ListItem","position":2,"name":"Навіны","item":"https://devby.io/be/news"},{"@type":"ListItem","position":3,"name":"Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй","item":"https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573"}]}
+  </script>
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href=/assets/favicons/favicon-16x16-156fc4a9afe92038931bb0d2c93e3292df7fdf8c7f25974a70aa6cca8abeab3e.png sizes="16x16">
+  <link rel="icon" type="image/png" sizes="32x32" href=/assets/favicons/favicon-32x32-f124a7353b6e6297669848fe34ca7fdb4b549e6d85d0340769dea1c7ccc20cf3.png sizes="32x32">
+  <link rel="apple-touch-icon" sizes="180x180" href=/assets/favicons/apple-touch-icon-180x180-c5ce585d8366ab7febcea20387dc139777b1c36c0cd7f62ba4f18d38f92d3509.png sizes="180x180">
+  <link rel="mask-icon" href=/assets/favicons/mask-icon-ad962fe4b73195284e5975c86e048c966d44a4b01187304da2903c512df35488.svg color="#283cdc">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="hVaS4MLpXhoi4HuZgci3z0ju+fi2ETYUVWA0CkVSYkr38VVUu5X0WMZUw7GeiT2ZJkEd2jzb6hJZ97FpCN3J0Q==" />
+    <meta name="csp-nonce" />
+    <link rel="stylesheet" media="all" href="/assets/application-f3a5182bacbd09a24138dbfbbfbc1eae71a7f9273dbd9436cc43df7010b9a65d.css" />
+    <script src="/packs/js/runtime~application-5b58628620caecc5b203.js" defer="defer" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+<script src="/packs/js/0-b5a11488da9151ffd383.chunk.js" defer="defer" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+<script src="/packs/js/5-fe3065873dd34271c642.chunk.js" defer="defer" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+<script src="/packs/js/application-235e1166903e1bbf3293.chunk.js" defer="defer" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+  </head>
+  <body
+    data-controller="rotate-block"
+    class="">
+
+    
+    <div class="wrap">
+
+      
+<header class="navbar" data-controller="navbar">
+  <div class="navbar__row">
+    <div class="navbar__toggler" data-navbar-target="toggler" data-action="click->navbar#handleClick"></div>
+    <span class="led led_success"></span>
+
+      <a href="https://devby.io/be/" class="navbar__brand">
+          <img class="navbar__brand-img" alt="dev.by" src="/assets/logo-global-230ce1d5f23ef4ac8fec244416de277c85a05545ce132e8a20c7e98c35f8df5b.svg" />
+          <div class="popover-overlay d-none popover-overlay_desktop"
+     data-controller="notification-ge"
+     data-notification-ge-hidden-class="d-none"
+     data-notification-ge-name-value="is_notification_ge_closed"
+     data-notification-ge-lifetime-value="3650">
+  <div class="popover bs-popover-bottom">
+    <a role="button"
+      title="Закрыть"
+      class="popover-close"
+      data-action="click->notification-ge#handleClickButtonClose">
+    </a>
+    <div class="popover-body">
+      <p>Рэлацыраваліся? Цяпер вы&nbsp;можаце каментаваць без верыфікацыі акаўнта.</p>
+
+    </div>
+  </div>
 </div>
-<!--*** Accessibility links - For ScreenReaders only ***-->
-<section>
-<div class="sr-only">
-<h2>Лінкі ўнівэрсальнага доступу</h2>
-<ul>
-<li><a href="#content" data-disable-smooth-scroll="1">Перайсьці да галоўнага зьместу</a></li>
-<li><a href="#navigation" data-disable-smooth-scroll="1">Перайсьці да галоўнай навігацыі</a></li>
-<li><a href="#txtHeaderSearch" data-disable-smooth-scroll="1">Перайсьці да пошуку</a></li>
-</ul>
+
+      </a>
+
+    <nav class="navbar__nav navbar__nav_desktop">
+      
+    <a class="navbar__nav-item navbar__nav-item_support btn_danger" href="https://devby.io/be/pages/support?utm_source=devby&utm_medium=header&utm_content=donation&utm_campaign=test_b">
+    <svg class="d-inline-block mr-2" height="16" width="16" aria-hidden="true">
+      <use href="/assets/icons-8ea6c281b62be027c50472211c0c667bed8ae0032ca21b9312b6b61e5d2c9f23.svg#heartIcon"></use>
+    </svg>
+    <span>Падтрымаць</span>
+  </a>
+
+  <a class="navbar__nav-item navbar__nav-item_active" href="https://devby.io/be/news">Стужка</a>
+  <a class="navbar__nav-item" href="https://devby.io/be/news?tag=%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C">#Беларусь</a>
+  <a class="navbar__nav-item" href="https://devby.io/blogs">
+    Суполка
+    <span class="led led_success ml-2"></span>
+  </a>
+  <a class="navbar__nav-item" href="https://devby.io/be/news?category=research">#Рэсёрчы</a>
+  <a class="navbar__nav-item" href="https://devby.io/be/news?category=you-can-help">Вы можаце дапамагчы</a>
+  <a class="navbar__nav-item" href="https://devby.io/be/adviser">Adviser</a>
+
+
+
+
+
+    </nav>
+
+    <div class="navbar__nav navbar__nav_aside"
+      data-controller="locales"
+      data-locales-default-locale-value="ru"
+      data-locales-host-value="https://devby.io"
+      data-locales-domain-value="devby.io">
+      
+
+<div class="navbar__nav-item d-none d-lg-flex">
+  
+  
+  
+  <button
+    type="button"
+    class="navbar__button mr-4 mr-lg-3"
+    data-action="click->locales#handleClick"
+    data-locale-url="ru">
+    
+    РУС
+  </button>
+
+
 </div>
-</section>
-<div class="fb-quote"></div>
-<div dir="ltr">
-<div id="page">
-<aside>
-<div class="c-lightbox overlay-modal">
-<div class="c-lightbox__intro">
-<h2 class="c-lightbox__intro-title"></h2>
-<button class="btn btn--rounded c-lightbox__btn c-lightbox__intro-next" title="Наступная старонка">
-<span class="ico ico--rounded ico-chevron-forward"></span>
-<span class="sr-only">Наступная старонка</span>
-</button>
+
+
+  
+    <a href="https://id.devby.io/@/hello" class="navbar__nav-item">
+      <svg class="d-inline-block" height="24" width="24" aria-hidden="true">
+        <use href="/assets/icons-8ea6c281b62be027c50472211c0c667bed8ae0032ca21b9312b6b61e5d2c9f23.svg#authIcon"></use>
+      </svg>
+    </a>
+  
+
+
+    </div>
+  </div>
+
+  <div class="menu border-top-0" data-navbar-target="menu">
+      <div class="d-lg-none mx-4 px-2 mb-4 pb-2">
+    <a class="btn btn_md btn_danger w-100 d-flex justify-content-center align-items-center rounded" href="https://devby.io/be/pages/support?utm_source=devby&utm_medium=header&utm_content=donation&utm_campaign=test_b">
+      <svg class="d-inline-block mr-3" height="20" width="20" aria-hidden="true">
+        <use href="/assets/icons-8ea6c281b62be027c50472211c0c667bed8ae0032ca21b9312b6b61e5d2c9f23.svg#heartIcon"></use>
+      </svg>
+      <span class="text-bolder ">Падтрымаць</span>
+    </a>
+  </div>
+
+
+    
+  <div class="menu__row menu__row_lg"
+    data-controller="locales"
+    data-locales-default-locale-value="ru"
+    data-locales-host-value="https://devby.io"
+    data-locales-domain-value="devby.io">
+    
+  
+  
+  <button
+    type="button"
+    class="navbar__button h-100 w-100"
+    data-action="click->locales#handleClick"
+    data-locale-url="ru">
+    
+    РУС
+  </button>
+
+
+  </div>
+
+
+
+
+
+<div class="menu__header">
+  <form class="menu__form-search form-inline h-100" action="https://www.google.com/cse" method="get">
+  <input class="menu__input-search form-control-plaintext h-100 w-100 d-block" name="q" type="text"
+    placeholder=Пошук aria-label="Поиск" autocomplete="off">
+  <button class="menu__button-search" type="submit">
+    <img alt="Search" src="/assets/icons/search-3305d5b892f14dbebc7340f4ffa90c7a5519b95a0e6ef493ab1fca0e8f1d5da2.svg" />
+  </button>
+  <input type="hidden" name="cx" value="017818143311378779828:hkz7dyja5dc">
+  <input type="hidden" name="ie" value="UTF-8">
+</form>
+
 </div>
-<div class="c-lightbox__nav">
-<button class="btn btn--rounded c-lightbox__btn c-lightbox__btn--close" title="Зачыніць">
-<span class="ico ico--rounded ico-close"></span>
-<span class="sr-only">Зачыніць</span>
-</button>
-<button class="btn btn--rounded c-lightbox__btn c-lightbox__btn--prev" title="Папярэдняя старонка">
-<span class="ico ico--rounded ico-chevron-backward"></span>
-<span class="sr-only">Папярэдняя старонка</span>
-</button>
-<button class="btn btn--rounded c-lightbox__btn c-lightbox__btn--next" title="Наступная старонка">
-<span class="ico ico--rounded ico-chevron-forward"></span>
-<span class="sr-only">Наступная старонка</span>
-</button>
+
+<nav class="menu__body">
+  <div class="menu__col">
+  
+    <a class="menu__nav-item navbar__nav-item_active" href="https://devby.io/be/news">Стужка</a>
+    <a class="menu__nav-item" href="https://devby.io/be/news?tag=%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C">#Беларусь</a>
+    <a class="menu__nav-item" href="https://devby.io/be/news?category=research">#Рэсёрчы</a>
+    <a class="menu__nav-item" href="https://devby.io/be/news?category=you-can-help">Вы можаце дапамагчы</a>
+    <a class="menu__nav-item" href="https://devby.io/be/adviser">Adviser</a>
+  
 </div>
-<div class="c-lightbox__content-wrap">
-<figure class="c-lightbox__content">
-<span class="c-spinner c-spinner--lightbox">
-<img src="/Content/responsive/img/player-spinner.png"
-alt="пачакайце"
-title="пачакайце" />
-</span>
-<div class="c-lightbox__img">
-<div class="thumb">
-<img src="" alt="" />
+
+<div class="menu__col">
+  
+    <a class="menu__nav-item" href="https://devby.io/blogs">
+      Суполка
+      <span class="led led_success ml-2"></span>
+    </a>
+
+    <a class="menu__nav-item menu__nav-item_label" data-label="18" href="https://jobs.devby.io">Вакансіі</a>
+    <a class="menu__nav-item" href="https://companies.devby.io">Кампаніі</a>
+    <a class="menu__nav-item" target="_blank" rel="noopener" href="https://courses.thedev.io/">Курсы</a>
+    <a class="menu__nav-item" href="https://salaries.devby.io">Зарплаты</a>
+  
+
+  
+  
 </div>
-</div>
-<figcaption>
-<div class="c-lightbox__info c-lightbox__info--foot">
-<span class="c-lightbox__counter"></span>
-<span class="caption c-lightbox__caption"></span>
-</div>
-</figcaption>
-</figure>
-</div>
-<div class="hidden">
-<div class="content-advisory__box content-advisory__box--lightbox">
-<span class="content-advisory__box-text">Асьцярожна! Гэтае фота можа шакаваць і выклікаць стрэс.</span>
-<button class="btn btn--transparent content-advisory__box-btn m-t-md" value="text" type="button">
-<span class="btn__text">
-Націсьніце, каб пабачыць
-</span>
-</button>
-</div>
-</div>
-</div>
-<div class="print-dialogue">
-<div class="container">
-<h3 class="print-dialogue__title section-head">Print Options:</h3>
-<div class="print-dialogue__opts">
-<ul class="print-dialogue__opt-group">
-<li class="form__group form__group--checkbox">
-<input class="form__check " id="checkboxImages" name="checkboxImages" type="checkbox" checked="checked" />
-<label for="checkboxImages" class="form__label m-t-md">Images</label>
-</li>
-<li class="form__group form__group--checkbox">
-<input class="form__check " id="checkboxMultimedia" name="checkboxMultimedia" type="checkbox" checked="checked" />
-<label for="checkboxMultimedia" class="form__label m-t-md">Multimedia</label>
-</li>
-</ul>
-<ul class="print-dialogue__opt-group">
-<li class="form__group form__group--checkbox">
-<input class="form__check " id="checkboxEmbedded" name="checkboxEmbedded" type="checkbox" checked="checked" />
-<label for="checkboxEmbedded" class="form__label m-t-md">Embedded Content</label>
-</li>
-<li class="hidden">
-<input class="form__check " id="checkboxComments" name="checkboxComments" type="checkbox" />
-<label for="checkboxComments" class="form__label m-t-md"> Comments</label>
-</li>
-</ul>
-</div>
-<div class="print-dialogue__buttons">
-<button class="btn btn--secondary close-button" type="button" title="Адмяніць">
-<span class="btn__text ">Адмяніць</span>
-</button>
-<button class="btn btn-cust-print m-l-sm" type="button" title="Друкаваць">
-<span class="btn__text ">Друкаваць</span>
-</button>
-</div>
-</div>
-</div>
-<div class="ctc-message pos-fix">
-<div class="ctc-message__inner">Спасылка скапіявалася</div>
-</div>
-</aside>
-<div class="hdr-20 hdr-20--big">
-<div class="hdr-20__inner">
-<div class="hdr-20__max pos-rel">
-<div class="hdr-20__side hdr-20__side--primary d-flex">
-<label data-for="main-menu-ctrl" data-switcher-trigger="true" data-switch-target="main-menu-ctrl" class="burger hdr-trigger pos-rel trans-trigger" data-trans-evt="click" data-trans-id="menu">
-<span class="ico ico-close hdr-trigger__ico hdr-trigger__ico--close burger__ico burger__ico--close"></span>
-<span class="ico ico-menu hdr-trigger__ico hdr-trigger__ico--open burger__ico burger__ico--open"></span>
-</label>
-<div class="menu-pnl pos-fix trans-target" data-switch-target="main-menu-ctrl" data-trans-id="menu">
-<div class="menu-pnl__inner">
-<nav class="main-nav menu-pnl__item menu-pnl__item--first">
-<ul class="main-nav__list accordeon" data-analytics-tales="false" data-promo-name="link" data-location-name="nav,secnav">
-<li class="main-nav__item accordeon__item" data-switch-target="menu-item-612">
-<label class="main-nav__item-name main-nav__item-name--label accordeon__control-label" data-switcher-trigger="true" data-for="menu-item-612">
-Навіны
-<span class="ico ico-chevron-down main-nav__chev"></span>
-</label>
-<div class="main-nav__sub-list">
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/naviny" title="Усе навіны" data-item-name="all-news" >Усе навіны</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/video-photo" title="Відэа і фота" data-item-name="videa" >Відэа і фота</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/people" title="Людзі" data-item-name="Society" >Людзі</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/politics" title="Палітыка" data-item-name="Politics" >Палітыка</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/economy" title="Эканоміка" data-item-name="Economics" >Эканоміка</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/russian-aggression-against-ukraine" title="Вайна" data-item-name="ahresija-raseji" >Вайна</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/belarusians-at-war" title="Беларусы на вайне" data-item-name="belarusy-na-vajnie" >Беларусы на вайне</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/political-prisoners" title="Палітвязьні" data-item-name="palitviazni" >Палітвязьні</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/culture" title="Культура" data-item-name="Culture" >Культура</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/calendar" title="Каляндар" data-item-name="uzo-sionnia" >Каляндар</a>
-</div>
-</li>
-<li class="main-nav__item accordeon__item" data-switch-target="menu-item-3364">
-<label class="main-nav__item-name main-nav__item-name--label accordeon__control-label" data-switcher-trigger="true" data-for="menu-item-3364">
-Толькі на свабодзе
-<span class="ico ico-chevron-down main-nav__chev"></span>
-</label>
-<div class="main-nav__sub-list">
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/testy" title="Тэсты" data-item-name="Quizzes" >Тэсты</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/opinion" title="Блогі" data-item-name="blog" >Блогі</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/history-on-liberty" title="ГІСТОРЫЯ НА СВАБОДЗЕ" data-item-name="history-on-liberty" >ГІСТОРЫЯ НА СВАБОДЗЕ</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="https://www.svaboda.org/padkasty" title="падкасты" data-item-name="podcasts" >падкасты</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/library" title="Кнігі" data-item-name="books" >Кнігі</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="https://www.svaboda.org/a/32183339.html" title="Аўдыёкнігі" >Аўдыёкнігі</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="https://www.youtube.com/channel/UCQtg_BBCxa_iGaddhQ7_jyg" title="PREMIUM" >PREMIUM</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/Belarusian-language" title="МОВА" data-item-name="mova" >МОВА</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/z/622" title="НА ХВАЛЯХ СВАБОДЫ" data-item-name="_60thanniversary" >НА ХВАЛЯХ СВАБОДЫ</a>
-</div>
-</li>
-<li class="main-nav__item accordeon__item" data-switch-target="menu-item-3365">
-<label class="main-nav__item-name main-nav__item-name--label accordeon__control-label" data-switcher-trigger="true" data-for="menu-item-3365">
-Сувязь
-<span class="ico ico-chevron-down main-nav__chev"></span>
-</label>
-<div class="main-nav__sub-list">
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/circumvent-censorship" title="Абысьці блякаваньне" data-item-name="how-to-circumvent-censorship" >Абысьці блякаваньне</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/suviaz-z-redakcyjaj" title="Падзяліцца інфармацыяй" data-item-name="Contact us safely" >Падзяліцца інфармацыяй</a>
-</div>
-</li>
-<li class="main-nav__item accordeon__item" data-switch-target="menu-item-1453">
-<label class="main-nav__item-name main-nav__item-name--label accordeon__control-label" data-switcher-trigger="true" data-for="menu-item-1453">
-ПАДПІСАЦЦА
-<span class="ico ico-chevron-down main-nav__chev"></span>
-</label>
-<div class="main-nav__sub-list">
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="/rss.html?tab=Rss" title="RSS" >RSS</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="https://www.svaboda.org/padkasty" title="падкасты" >падкасты</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="http://facebook.com/svaboda.org" title="facebook" target="_blank" rel="noopener">facebook</a>
-<a class="main-nav__item-name main-nav__item-name--link main-nav__item-name--sub" href="http://twitter.com/svaboda" title="twitter" target="_blank" rel="noopener">twitter</a>
-</div>
-</li>
-</ul>
+
 </nav>
-<div class="menu-pnl__item menu-pnl__item--social">
-<h5 class="menu-pnl__sub-head">Сачыце за абнаўленьнямі</h5>
-<a href="https://www.facebook.com/svaboda.org" title="Мы на Фэйсбуку" data-analytics-text="follow_on_facebook" class="btn btn--rounded btn--social-inverted menu-pnl__btn js-social-btn btn-facebook" target="_blank" rel="noopener">
-<span class="ico ico-facebook-alt ico--rounded"></span>
-</a>
-<a href="https://twitter.com/svaboda" title="Мы на Твітэры" data-analytics-text="follow_on_twitter" class="btn btn--rounded btn--social-inverted menu-pnl__btn js-social-btn btn-twitter" target="_blank" rel="noopener">
-<span class="ico ico-twitter ico--rounded"></span>
-</a>
-<a href="https://www.youtube.com/channel/UC5rVi7GRsGLGNK2T2JzwoFA?sub_confirmation=1" title="Мы на Youtube" data-analytics-text="follow_on_youtube" class="btn btn--rounded btn--social-inverted menu-pnl__btn js-social-btn btn-youtube" target="_blank" rel="noopener">
-<span class="ico ico-youtube ico--rounded"></span>
-</a>
-<a href="https://soundcloud.com/svaboda" title="Мы на SoundCloud" data-analytics-text="follow_on_soundcloud" class="btn btn--rounded btn--social-inverted menu-pnl__btn js-social-btn btn-soundcloud" target="_blank" rel="noopener">
-<span class="ico ico-soundcloud ico--rounded"></span>
-</a>
-<a href="https://www.instagram.com/radiosvaboda/" title="Мы на Instagram" data-analytics-text="follow_on_instagram" class="btn btn--rounded btn--social-inverted menu-pnl__btn js-social-btn btn-instagram" target="_blank" rel="noopener">
-<span class="ico ico-instagram ico--rounded"></span>
-</a>
-<a href="https://t.me/radiosvaboda" title="Мы на Telegram" data-analytics-text="follow_on_telegram" class="btn btn--rounded btn--social-inverted menu-pnl__btn js-social-btn btn-telegram" target="_blank" rel="noopener">
-<span class="ico ico-telegram ico--rounded"></span>
-</a>
+
+<div class="menu__footer">
+  
+  <a class="menu__footer-item" target="_blank" rel="noopener" href="https://mediakit.devby.io">Рэкламныя магчымасці</a>
+  
+  <a class="menu__footer-item" href="https://devby.io/be/pages/about">Аб праекце</a>
+  <a class="menu__footer-item" href="https://devby.io/be/pages/contacts">Кантакты</a>
+  <a class="menu__footer-item" href="https://devby.io/be/pages/editorial">Рэд палітыка</a>
+  <a class="menu__footer-item" href="https://devby.io/be/pages/polzovatelskoe-soglashenie">Карыстальніцкае пагадненне</a>
+  <a class="menu__footer-item" href="https://devby.io/be/pages/faq">Частыя пытанні</a>
+  
+  <a class="menu__footer-item" target="_blank" rel="noopener" href="https://dev.media/work-at-devmedia-1">Вакансіі ў нас</a>
+  <a class="menu__footer-item" href="https://devby.io/be/pages/privacy-policy">Палітыка прыватнасці</a>
+  <a class="menu__footer-item" href="https://devby.io/be/pages/agreement">Публічны дагавор</a>
+
+
 </div>
-<div class="menu-pnl__item">
-<a href="/navigation/allsites" class="menu-pnl__item-link">
-<span class="ico ico-languages "></span>
-Усе сайты РС/РСЭ
-</a>
+
+
+  </div>
+</header>
+
+      
+  <!--After header widget START-->
+<div class="afterheader-widget afterheader-widget_cherry rotation-0">
+  <div class="afterheader-widget__text">
+Дапамажыце dev.by 🤍
+  </div>
+  <a class="afterheader-widget__ref" href="https://bit.ly/3U85uIL" target="_blank" rel="noopener"></a>
 </div>
-</div>
-</div>
-<label data-for="top-search-ctrl" data-switcher-trigger="true" data-switch-target="top-search-ctrl" class="top-srch-trigger hdr-trigger">
-<span class="ico ico-close hdr-trigger__ico hdr-trigger__ico--close top-srch-trigger__ico top-srch-trigger__ico--close"></span>
-<span class="ico ico-search hdr-trigger__ico hdr-trigger__ico--open top-srch-trigger__ico top-srch-trigger__ico--open"></span>
-</label>
-<div class="srch-top srch-top--in-header" data-switch-target="top-search-ctrl">
-<div class="container">
-<form action="/s" class="srch-top__form srch-top__form--in-header" id="form-topSearchHeader" method="get" role="search"><label for="txtHeaderSearch" class="sr-only">Шукаць</label>
-<input type="text" id="txtHeaderSearch" name="k" placeholder="шукаць тэкст..." accesskey="s" value="" class="srch-top__input analyticstag-event" onkeydown="if (event.keyCode === 13) { FireAnalyticsTagEventOnSearch('search', $dom.get('#txtHeaderSearch')[0].value) }" />
-<button title="Шукаць" type="submit" class="btn btn--top-srch analyticstag-event" onclick="FireAnalyticsTagEventOnSearch('search', $dom.get('#txtHeaderSearch')[0].value) ">
-<span class="ico ico-search"></span>
-</button></form>
-</div>
-</div>
-<a href="/" class="main-logo-link">
-<img src="/Content/responsive/RFE/be-BY/img/logo-compact.svg" class="main-logo main-logo--comp" alt="site logo">
-<img src="/Content/responsive/RFE/be-BY/img/logo.svg" class="main-logo main-logo--big" alt="site logo">
-</a>
-</div>
-<div class="hdr-20__side hdr-20__side--secondary d-flex">
-<a href="/z/16621" title="НАВІНЫ" class="hdr-20__secondary-item hdr-20__secondary-item--lang" data-item-name="satellite">
-НАВІНЫ
-</a>
-<a href="https://www.svaboda.org/testy" title="ТЭСТЫ" class="hdr-20__secondary-item hdr-20__secondary-item--lang" data-item-name="satellite">
-ТЭСТЫ
-</a>
-<a href="/s" title="Шукаць" class="hdr-20__secondary-item hdr-20__secondary-item--search" data-item-name="search">
-<span class="ico ico-search hdr-20__secondary-icon hdr-20__secondary-icon--search"></span>
-</a>
-<div class="srch-bottom">
-<form action="/s" class="srch-bottom__form d-flex" id="form-bottomSearch" method="get" role="search"><label for="txtSearch" class="sr-only">Шукаць</label>
-<input type="search" id="txtSearch" name="k" placeholder="шукаць тэкст..." accesskey="s" value="" class="srch-bottom__input analyticstag-event" onkeydown="if (event.keyCode === 13) { FireAnalyticsTagEventOnSearch('search', $dom.get('#txtSearch')[0].value) }" />
-<button title="Шукаць" type="submit" class="btn btn--bottom-srch analyticstag-event" onclick="FireAnalyticsTagEventOnSearch('search', $dom.get('#txtSearch')[0].value) ">
-<span class="ico ico-search"></span>
-</button></form>
-</div>
-</div>
-<img src="/Content/responsive/RFE/be-BY/img/logo-print.gif" class="logo-print" alt="site logo">
-<img src="/Content/responsive/RFE/be-BY/img/logo-print_color.png" class="logo-print logo-print--color" alt="site logo">
-</div>
-</div>
-</div>
-<script>
-if (document.body.className.indexOf('pg-home') > -1) {
-var nav2In = document.querySelector('.hdr-20__inner');
-var nav2Sec = document.querySelector('.hdr-20__side--secondary');
-var secStyle = window.getComputedStyle(nav2Sec);
-if (nav2In && window.pageYOffset < 150 && secStyle['position'] !== 'fixed') {
-nav2In.classList.add('hdr-20__inner--big')
-}
-}
-</script>
-<div class="c-hlights c-hlights--breaking c-hlights--no-item" data-hlight-display="mobile,desktop">
-<div class="c-hlights__wrap container p-0">
-<div class="c-hlights__nav">
-<a role="button" href="#" title="Папярэдняя старонка">
-<span class="ico ico-chevron-backward m-0"></span>
-<span class="sr-only">Папярэдняя старонка</span>
-</a>
-<a role="button" href="#" title="Наступная старонка">
-<span class="ico ico-chevron-forward m-0"></span>
-<span class="sr-only">Наступная старонка</span>
-</a>
-</div>
-<span class="c-hlights__label">
-<span class="">Гарачыя навіны!</span>
-<span class="switcher-trigger">
-<label data-for="more-less-1" data-switcher-trigger="true" class="switcher-trigger__label switcher-trigger__label--more p-b-0" title="Паказаць яшчэ">
-<span class="ico ico-chevron-down"></span>
-</label>
-<label data-for="more-less-1" data-switcher-trigger="true" class="switcher-trigger__label switcher-trigger__label--less p-b-0" title="Паказаць менш">
-<span class="ico ico-chevron-up"></span>
-</label>
-</span>
-</span>
-<ul class="c-hlights__items switcher-target" data-switch-target="more-less-1">
-</ul>
-</div>
-</div> <div id="content">
-<main class="container">
-<div class="hdr-container">
-<div class="row">
-<div class="col-category col-xs-12 col-md-2 pull-left"> <div class="category js-category">
-<a class="" href="/z/15810">Вострая брама</a> </div>
-</div><div class="col-title col-xs-12 col-md-10 pull-right"> <h1 class="title pg-title">
-Эфэкт кулі.
-</h1>
-</div><div class="col-publishing-details col-xs-12 col-sm-12 col-md-2 pull-left"> <div class="publishing-details ">
-<div class="published">
-<span class="date" >
-<time pubdate="pubdate" datetime="1998-07-12T15:00:00+03:00">
-12 ліпень 1998, 15:00
-</time>
-</span>
-</div>
-</div>
-</div><div class="col-lg-12 separator"> <div class="separator">
-<hr class="title-line" />
-</div>
-</div>
-</div>
-</div>
-<div class="body-container">
-<div class="row">
-<div class="col-xs-12 col-md-2 pull-left article-share">
-<div class="share--box">
-<div class="sticky-share-container" style="display:none">
-<div class="container">
-<a href="https://www.svaboda.org" id="logo-sticky-share">&nbsp;</a>
-<div class="pg-title pg-title--sticky-share">
-Эфэкт кулі.
-</div>
-<div class="sticked-nav-actions">
-<!--This part is for sticky navigation display-->
-<p class="buttons link-content-sharing p-0 ">
-<button class="btn btn--link btn-content-sharing p-t-0 " id="btnContentSharing" value="text" role="Button" type="" title="Паказаць больш варыянтаў падзяліцца">
-<span class="ico ico-share ico--l"></span>
-<span class="btn__text ">
-Падзяліцца
-</span>
-</button>
+<!--After header widget END-->
+
+
+      
+
+
+
+
+
+
+
+  <div class="d-lg-none mx-4 px-2 mb-4 pb-2">
+    <a class="btn btn_md btn_danger w-100 d-flex justify-content-center align-items-center rounded" href="https://devby.io/be/pages/support?utm_source=devby&utm_medium=header&utm_content=donation&utm_campaign=test_b">
+      <svg class="d-inline-block mr-3" height="20" width="20" aria-hidden="true">
+        <use href="/assets/icons-8ea6c281b62be027c50472211c0c667bed8ae0032ca21b9312b6b61e5d2c9f23.svg#heartIcon"></use>
+      </svg>
+      <span class="text-bolder ">Падтрымаць</span>
+    </a>
+  </div>
+
+
+
+<main class="main">
+  <div class="island">
+    <div class="island__body">
+        <div class="island__body-row">
+          <div class="island__body-main">
+            
+
+
+<article class="article" data-article-author-token=5oRzSu    data-format=news data-io-article-url=https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573>
+  <div class="article__header">
+  <div class="article__container">
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    <div class="article-meta article-meta_semibold">
+      
+        <span class="article-meta__item">Николай Чикишев</span>
+      
+
+      
+
+      
+
+      
+        <span id="publishedAt" class="article-meta__item">
+          21 снежня 2022, 14:05
+        </span>
+      
+
+      
+    </div>
+
+    <h1>Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй</h1>
+
+    
+      <p>
+<p>Даследчыкі Dxomark высветлілі, наколькі функцыя Always on, то-бок уключанага экрана, уплывае на&nbsp;аўтаномнасць смартфона.</p>
 </p>
-<aside class="content-sharing js-content-sharing js-content-sharing--apply-sticky content-sharing--sticky"
-role="complementary"
-data-share-url="https://www.svaboda.org/a/24866877.html" data-share-title="Эфэкт кулі." data-share-text="">
-<div class="content-sharing__popover">
-<h6 class="content-sharing__title">Падзяліцца</h6>
-<button href="#close" id="btnCloseSharing" class="btn btn--text-like content-sharing__close-btn">
-<span class="ico ico-close ico--l"></span>
-</button>
-<ul class="content-sharing__list">
-<li class="content-sharing__item">
-<div class="ctc ">
-<input type="text" class="ctc__input" readonly="readonly">
-<a href="" js-href="https://www.svaboda.org/a/24866877.html" class="content-sharing__link ctc__button">
-<span class="ico ico-copy-link ico--rounded ico--s"></span>
-<span class="content-sharing__link-text">Капіяваць спасылку</span>
-</a>
+    
+
+    <div class="article__reference article__reference_header">
+      
+        <a href="#comments" class="article__reference-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentcolor" d="M13 0h-10c-1.7 0-3 1.3-3 3v13l5-4h8c1.7 0 3-1.3 3-3v-6c0-1.7-1.3-3-3-3zm1 9c0 .6-.4 1-1 1h-8.7l-2.3 1.8v-8.8c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v6z"/></svg>
+          Пакінуць каментарый
+        </a>
+      
+
+      <div class="share" data-controller="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573" class="share__item" target="_blank" rel="noopener">
+          <img alt="Facebook" src="/assets/icons/facebook-ee75275658d0cbb3de71d03a67f6f315492d3b1bc43ec17b65180ada5c1401b5.svg" />
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573&text=Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй" class="share__item" target="_blank" rel="noopener">
+          <img alt="Twitter" src="/assets/icons/twitter-dc9d7c63168d6531b44f3675ac54eeccf7f8d850e25b3422751e8db3ce5fa25c.svg" />
+        </a>
+        <a href="https://telegram.me/share/url?url=https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573&text=Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй" class="share__item" target="_blank" rel="noopener">
+          <img alt="Telegram" src="/assets/icons/telegram-fill-60c4099b9814a00012446d2d501f5a5dec2cd519e640d4291fb519c069a07f29.svg" />
+        </a>
+
+        
+      </div>
+    </div>
+  </div>
 </div>
-</li>
-<li class="content-sharing__item">
-<a href="https://facebook.com/sharer.php?u=https%3a%2f%2fwww.svaboda.org%2fa%2f24866877.html"
-data-analytics-text="share_on_facebook"
-title="Facebook" target="_blank"
-class="content-sharing__link js-social-btn">
-<span class="ico ico-facebook ico--rounded ico--s"></span>
-<span class="content-sharing__link-text">Facebook</span>
-</a>
-</li>
-<li class="content-sharing__item">
-<a href="https://twitter.com/share?url=https%3a%2f%2fwww.svaboda.org%2fa%2f24866877.html&amp;text=%d0%ad%d1%84%d1%8d%d0%ba%d1%82+%d0%ba%d1%83%d0%bb%d1%96."
-data-analytics-text="share_on_twitter"
-title="X (Twitter)" target="_blank"
-class="content-sharing__link js-social-btn">
-<span class="ico ico-twitter ico--rounded ico--s"></span>
-<span class="content-sharing__link-text">X (Twitter)</span>
-</a>
-</li>
-<li class="content-sharing__item">
-<a href="https://telegram.me/share/url?url=https%3a%2f%2fwww.svaboda.org%2fa%2f24866877.html"
-data-analytics-text="share_on_telegram"
-title="Telegram" target="_blank"
-class="content-sharing__link js-social-btn">
-<span class="ico ico-telegram ico--rounded ico--s"></span>
-<span class="content-sharing__link-text">Telegram</span>
-</a>
-</li>
-<li class="content-sharing__item">
-<a href="mailto:?body=https%3a%2f%2fwww.svaboda.org%2fa%2f24866877.html&amp;subject=Эфэкт кулі."
-title="Email"
-class="content-sharing__link ">
-<span class="ico ico-email ico--rounded ico--s"></span>
-<span class="content-sharing__link-text">Email</span>
-</a>
-</li>
-</ul>
+
+
+  <div
+  class="article__body"
+  data-controller="article-global-incut"
+  data-gtm-track="article-referral-click">
+
+  
+    <figure class="image">
+      <img
+        src="/storage/images/34/41/27/82/derived/e4aa36012ea9b3afa1421bafef6284ff.jpg"
+        sizes="(min-width: 1024px) 868px, 480px"
+        srcset="
+          /storage/images/34/41/27/82/derived/e4aa36012ea9b3afa1421bafef6284ff.jpg 480w,
+          /storage/images/34/41/27/82/derived/0fb8230c038b0f4625613da2fa9d81e8.jpg 868w,
+        "
+        alt="Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй"
+        title="Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй"
+        fetchpriority="high"
+      >
+    </figure>
+  
+
+  <div class="article__container " data-article-global-incut-target="content">
+    <figure>
+<div class="article__lead ">
+<p>Даследчыкі Dxomark высветлілі, наколькі функцыя Always on, то-бок уключанага экрана, уплывае на&nbsp;аўтаномнасць смартфона.</p>
 </div>
-</aside>
-</div>
-</div>
-</div>
-<div class="links">
-<p class="buttons link-content-sharing p-0 ">
-<button class="btn btn--link btn-content-sharing p-t-0 " id="btnContentSharing" value="text" role="Button" type="" title="Паказаць больш варыянтаў падзяліцца">
-<span class="ico ico-share ico--l"></span>
-<span class="btn__text ">
-Падзяліцца
-</span>
-</button>
-</p>
-<aside class="content-sharing js-content-sharing " role="complementary"
-data-share-url="https://www.svaboda.org/a/24866877.html" data-share-title="Эфэкт кулі." data-share-text="">
-<div class="content-sharing__popover">
-<h6 class="content-sharing__title">Падзяліцца</h6>
-<button href="#close" id="btnCloseSharing" class="btn btn--text-like content-sharing__close-btn">
-<span class="ico ico-close ico--l"></span>
-</button>
-<ul class="content-sharing__list">
-<li class="content-sharing__item">
-<div class="ctc ">
-<input type="text" class="ctc__input" readonly="readonly">
-<a href="" js-href="https://www.svaboda.org/a/24866877.html" class="content-sharing__link ctc__button">
-<span class="ico ico-copy-link ico--rounded ico--l"></span>
-<span class="content-sharing__link-text">Капіяваць спасылку</span>
-</a>
-</div>
-</li>
-<li class="content-sharing__item">
-<a href="https://facebook.com/sharer.php?u=https%3a%2f%2fwww.svaboda.org%2fa%2f24866877.html"
-data-analytics-text="share_on_facebook"
-title="Facebook" target="_blank"
-class="content-sharing__link js-social-btn">
-<span class="ico ico-facebook ico--rounded ico--l"></span>
-<span class="content-sharing__link-text">Facebook</span>
-</a>
-</li>
-<li class="content-sharing__item">
-<a href="https://twitter.com/share?url=https%3a%2f%2fwww.svaboda.org%2fa%2f24866877.html&amp;text=%d0%ad%d1%84%d1%8d%d0%ba%d1%82+%d0%ba%d1%83%d0%bb%d1%96."
-data-analytics-text="share_on_twitter"
-title="X (Twitter)" target="_blank"
-class="content-sharing__link js-social-btn">
-<span class="ico ico-twitter ico--rounded ico--l"></span>
-<span class="content-sharing__link-text">X (Twitter)</span>
-</a>
-</li>
-<li class="content-sharing__item">
-<a href="https://telegram.me/share/url?url=https%3a%2f%2fwww.svaboda.org%2fa%2f24866877.html"
-data-analytics-text="share_on_telegram"
-title="Telegram" target="_blank"
-class="content-sharing__link js-social-btn">
-<span class="ico ico-telegram ico--rounded ico--l"></span>
-<span class="content-sharing__link-text">Telegram</span>
-</a>
-</li>
-<li class="content-sharing__item">
-<a href="mailto:?body=https%3a%2f%2fwww.svaboda.org%2fa%2f24866877.html&amp;subject=Эфэкт кулі."
-title="Email"
-class="content-sharing__link ">
-<span class="ico ico-email ico--rounded ico--l"></span>
-<span class="content-sharing__link-text">Email</span>
-</a>
-</li>
-</ul>
-</div>
-</aside>
-<p class="link-print visible-md visible-lg buttons p-0">
-<button class="btn btn--link btn-print p-t-0" onclick="if (typeof FireAnalyticsTagEvent === 'function') {FireAnalyticsTagEvent({ on_page_event: 'print_story' });}return false" title="(CTRL+P)">
-<span class="ico ico-print"></span>
-<span class="btn__text">Друкаваць</span>
-</button>
-</p>
+</figure>
+<p>Паводле даных вытворцаў, функцыя ўключанага экрана не&nbsp;моцна адбіваецца на&nbsp;зарадцы, максімум на&nbsp;20-25%. Для даследавання ўзялі чатыры мадэлі смартфонаў: iPhone 14 Pro Max, Google Pixel 7 Pro, Xiaomi 12S Ultra і Galaxy S22 Ultra. Усе прылады змясцілі ў клетку Фарадэя пры тэмпературы 22 градусы. На&nbsp;смартфонах уключылі рэжым палёту, пакінулі аўтаяркасць, адключылі Wi-Fi, Bluetooth, GPS, сотавую сувязь, а&nbsp;таксама пакінулі адаптыўную частату абнаўлення экрана.</p>
+<figure class="image image_caption ">
+<div><img src="https://devby.io/storage/images/15/08/02/85/original/58cfbe1bad803d2d39d4adff42dbbe4d.png" alt="" loading="lazy" data-insert="img"></div>
+<figcaption class="image__caption "></figcaption>
+</figure>
+<p>У&nbsp;такім выглядзе смартфоны адпрацавалі ад&nbsp;367 да&nbsp;495 гадзін. Пры актывацыі функцыі аўтаномнасць склала ад&nbsp;103 да&nbsp;139 гадзін. Такім чынам, заўжды актыўны экран разраджае смартфоны прыкладна ў чатыры разы хутчэй у&nbsp;параўнанні з&nbsp;адключанай функцыяй. Даследчыкі адзначылі, што лепш за&nbsp;ўсё над аптымізацыяй энергаспажывання функцыі папрацавалі ў Apple, а&nbsp;больш за&nbsp;ўсё энергіі выдаткоўвае Xiaomi 12S Ultra.</p>
+<figure class="incut ">
+<div class="card card_media" data-template-id="relatedArticle">
+<div class="card__img-wrap"><img class="card__img" src="https://devby.io/storage/images/97/38/32/14/derived/356c179c5a3c3852ead88f1091c0fc97.jpg" alt="ЕС хоча забараніць смартфоны без зменнага акумулятара"></div>
+<div class="card__info">
+<div class="card__body"><a class="card__link" href="https://devby.io/be/news/es-hochet-zapretit-smartfony-bez-smennogo-akkumulyatora-1671612821" target="_blank" rel="noopener"> ЕС&nbsp;хоча забараніць смартфоны без зменнага акумулятара </a>
+<div class="card__meta">Па&nbsp;тэме</div>
+<div class="card__title">ЕС&nbsp;хоча забараніць смартфоны без зменнага акумулятара</div>
 </div>
 </div>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 pull-right">
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 pull-left bottom-offset content-offset">
-<div id="article-content" class="content-floated-wrap fb-quotable">
-<div class="wsw">
-<div class="author">Аўтар Сяргей Дубавец, Вільня</div><br />Калi нейкiя рэакцыi iншых людзей падаюцца нам неадэкватнымi, прычынаю гэтага можа быць i наша ўласнае неадэкватнае ўспрыманьне. Напрыклад, часам мы кажам: гэты чалавек не скарыстаў свой шанец. А ведаеш, падхоплiвае мае развагi сябра, нiчога дзiўнага. Ён не скарыстаў свой шанец, бо ўсе ад яго нечага чакалi, а ён проста трава. Ёсьць людзi, якiя — трава. Яны жывуць як цела, а не як розум. Гэтаксама як i народ — гэта трава. Частка жывое прыроды. Змагары за народнае шчасьце апэлююць да грамадзтва, а грамадзтва, аказваецца, яшчэ няма, ёсьць толькi народ, трава. Гэта значыць, i падыходзiць да яго трэба адэкватна, i лячыць, калi хворы, — адпаведна.
-<br />
-<br />I тут мне на вочы трапляецца апошняя публiкацыя знакамiтага псыхатэрапеўта Кашпіроўскага пра несьвядомае цi, дакладней, непадуладнае розуму цела i пра тое, як такое цела трэба лячыць. Ага! — усклiкнуў я сам сабе. Дык гэта ж пра наш народ таксама гаворыцца. Мэтодыкi Кашпiроўскага зусiм дарэчна выглядаюць у кантэксьце беларускага народа i нацыянальнага адраджэньня. Кашпiроўскi кажа:
-<br />
-<br />«Я хацеў, каб ў арганiзме людзей зьявiлiся новыя, аздараўляльныя рэчывы, каб уключылася ўласная «ўнутраная» аптэка... Нашае цела зусiм аўтаномнае — яно нiяк не залежыць ад нашых пажаданьняў. У нейкi момант страўнiк раптам пачынае песьцiць у сабе, напрыклад, пухлiну. I гэта нiяк не залежыць ад нашага розуму. Гэта жорсткi закон прыроды — чалавек ня можа ўплываць на арганiчную матэрыю. А я знайшоў, што на цела, насуперак спрадвечным стэрэатыпам, уплываць можна — праз розум iншага чалавека, празь ягоныя пачуцьцi. Што лепей —выдалiць пухлiну апэратыўным шляхам цi прымусiць арганiзм зьесьцi яе?»
-<br />
-<br />Магчыма, мае параўнаньнi пададуцца неадэкватнымi, але хiба ня нам трэба казаць пра ўласную ўнутраную аптэку нацыi i пра аўтаномнасьць народа ад ягоных правадыроў? Кашпiроўскi працягвае:
-<br />
-<br />«Нашым целам кiруе сфэра несьвядомага «я». I самае страшнае для нас — не хваробы розуму, а хваробы цела. Ад iх мы памiраем. У кагосьцi пасьля сумоўя з мною нечакана зьнiкла пухлiна! Чаму? Ды таму, што арганiзм «памятае» часы, калi нiякай пухлiны не было. Сiвыя косы набываюць ранейшы колер, шнары разыходзяцца. Чаму? Ды таму, што матрыца памяцi нормы вельмi дужая i надзвычай жывучая».
-<br />
-<br />Па вялiкiм рахунку, гутарка iдзе пра генную памяць, голас крывi, пра тое, адкуль у вынiку бярэцца пашана да роднае мовы i да гiстарычнае славы краiны. Можна глыбока ня ведаць гiсторыю i яе пэрсанажаў, але пры гэтым ставiцца да iх зь пiетэтам. Так ёсьць ва ўсiм сьвеце, дзе сфармавалiся нацыi. Больш за тое, Кашпiроўскi настойвае, што нават i ня трэба ведаць тыя гiстарычныя падзеi i тых пэрсанажаў. I ў дачыненьнi да травы, да прыроды, да цела зусiм верагодна, што гэта так.
-<br />
-<br />«Да мяне многiя зьвяртаюцца i кажуць: «Вазьмiцеся нас лячыць, мы вам верым». Але чым вераць? Розумам. А якое ўзьдзеяньне можа аказаць розум на, дапусьцiм, парэзаны палец? Нiякага! Мне вера непатрэбная. Гэта яшчэ адзiн стэрэатып, што лекару трэба верыць.
-<br />
-<br />Iндусы напiсалi выдатную працу «Вызвалiцца ад вядомага». Вось i мая праца на тэлеэкране была спробай вызвалiць людзей ад вядомага. Нiякага гiпнозу не было. Я спадзяваўся вызвалiць мiлiёны ад iлжывых уяўленьняў, у тым лiку i пра патрэбу наркозу. Iнфармацыя, якая ўкараняецца ў чалавека, павiнна быць нябачнай i нячутнай. Тады яна дзейнiчае больш эфэктыўна. Паспрабуйце ўхiлiцца ад кулi — не атрымаецца, бо куля нябачная.
-<br />
-<br />Целу пра цела вядома ўсё! Але целу невядома, з чым трэба змагацца. Калi ёсьць пухлiна, целу патрэбны сыгнал — зьнiшчыць яе! А ўжо цела само разьбярэцца з сабой».
-<br />
-<br />Разглядаючы гэтыя словы ў якасьцi мэтодыкi нацыянальнага адраджэньня, можна зрабiць нечаканыя высновы:
-<br />
-<br />па-першае, цi ёсьць сэнс у асьветнiцкай працы, у навучаньнi народа? Можа быць, паважнае стаўленьне да гiсторыi i мовы сапраўды павiнна пранiкаць у народ як куля — нябачна i бясшумна? Але хто тады i адкуль мусiць тую кулю выпусьцiць? Магчыма, новы прэзыдэнт. Бо хiба не нагадвае дзейнасьць сёньняшняга такiя вось стрэлы ў несьвядомае цела?
-<br />
-<br />Па-другое, што ёсьць матрыца памяцi нормы, якая схаваная ў целе народа? Тут дастаткова аднаго слова, каб задумацца над сытуацыяй. Гэтае слова ўсё радзей гучыць у Беларусi ў дачыненьнi да грамадзкiх працэсаў. I гэтае слова — норма.
-<br />
-<br />(Зьміцер Бартосік: ) &quot;Менш за ўсё 3 лiпеня мне хацелася выходзiць на вулiцу. «Ну, што я туды папруся, — думалася мне. На халеру я буду псаваць людзям настрой сваiм цяжкiм поглядам на ўсё iхнае баляваньне. У iх сьвята. Iм сёньня дазволяць бадзяцца па ўсёй галоўнай вулiцы, ад броўкi да броўкi. На ўсiх кутах дзеля iхных вушэй будуць танчыць народныя калектывы ды сьпяваць iх любiмыя песьнi зоркi раённых ДК. Дзеля iхных глотак будзе ракою лiцца пiва з гарэлкаю ды смажыцца мяса. Дзеля iхных вачэй неба ўвечары будзе расквечанае агнямi фэервэркаў. Яны гэта ўсё заслужылi. Сваёю вераю ды працаю на сваё пахмельле. Ты — не. Ты лiчыш гэты рэжым акупацыйным. Гэтую дату — днём, калi 54 гады таму ў горад увайшлi чужыя танкi, каб зруйнаваць яго й перайначыць пад свае парады. Табе не даспадобы iх песьнi й сьцягi. Што табе рабiць сярод iх? Але адседзецца ў хаце за чытаньнем любiмага Томаса Мана ў мяне ня выйшла. Сьвята лезла скрозь муры й шыбы ўзмоцненымi да дурноты звонкiмi гукамi дзявочых галаскоў — «Я люблю цебя Дзiма, што мне так неабхадзiма». Пад такiя заклiкi, далiбог, нiяк не пераварваюцца Манавы прароцтвы падзеньня Нямеччыны. Ды й чаму б чужому сьвяту раптам не абернуцца маiм, дзякуючы якой рамантычнай сустрэчы?.. Я раптам прыгадаў аднаго няўдалага Дона Жуана.
-<br />
-<br />Неяк мне давялося выслухаць безьлiч камплiмэнтаў на адрас Беларусi й беларусак ад аднаго маскоўскага кiроўцы-перагоншчыка. Ён прыехаў сюды, каб забраць набыты ягонымi гаспадарамi МАЗ. Па атрыманьнi машыны маскоўскаму госьцю захацелася разьняволiцца. Пакаштаваць беларускага каханьня. Час быў самы прыдатны — 23 гадзiны, i масквiч, узяўшы таксоўку, паехаў па Менску, прадчуваючы незабыўную беларускую ноч у абдымках адной з прыгажуняў, ад колькасьцi якiх на менскiх вулiцах расейская галава пайшла кругам. Запрашэньне да раману ў расейца не адзначалася вытанчанасьцю. Спыняючы таксоўку, ён высоўваў галаву й крычаў сваёй абраньнiцы ледзь не на ўсю вулiцу адну толькi фразу: «Эй, трахацца пайдзём!» Няцяжка было адгадаць рэакцыю «непрадзьвiнутых» менскiх дзяўчатак на такую стыльную маскоўскую прэлюдыю. Паматаўшыся бяз вынiку па вулiцах чужой сталiцы ды пакiнуўшы менскаму таксi суму, за якую можна было б спакусiць, бадай, Шахерэзаду, зьбянтэжаны масквiч накiраваўся на сваю стаянку. «Але што яны ўсе робяць на вулiцы?» —запытаў ён у таксiста на разьвiтаньне. «Гуляюць», — адказаў той. «I ўсё? — разгубiўся маскоўскi госьць, — а першай гадзiне ночы?! Загадкавая, блiн, краiна».
-<br />
-<br />Гэтую фразу — загадкавая краiна — масквiч будзе паўтараць да самага ад'езду. «Вы не разумееце, у якой чыстай краiне вы жывяцё. У вас жа школьнiцы газоны граблямi капаюць. На свае вочы бачыў. I якiя школьнiцы! Кожная — гатовая фотамадэль. Нашы ж двоечнiцы, здаецца, усе даўно на трасах па чырвонцу аддаюцца. А граблi й за сотню ў рукi ня возьмуць. Якi тут, не хер, край балот. Рай некранутых Еваў. А вы й не заўважаеце». Ён пакiнуў Беларусь зь няўцямнай усьмешкаю на твары, так i не паспытаўшы беларускага каханьня. Павез у свой дзесяцiдаляравы рай сьветлыя ўражаньнi ад загадкавай краiны. Разгадкi пакiнуўшы мне.
-<br />
-<br />У гэтыя днi прыгожых жанчын на менскiх вулiцах было шмат, як нiколi. На любы густ i запыт. Выпускнiцы, дзевачкi-трасьцiначкi ў клёшах i на цяжкiх, а-ля хунта, падэшвах; навучэнкi ПТВ, iнтрыгуючыя караценькiмi спаднiцамi ды лайкравымi панчохамi; нашыя нязломныя бiзнэс-лэдзi ў кофтачках i пiнжаках ад мсье Дынама; маладзяшчыеся перакiсьсю вадарода ды чаравiчкамi-шпiлькамi каралевы плянавых аддзелаў, бухгальтэрыяў ды iншых адмiнiстрацыяў. Беларусаў можна зразумець. Навошта напружвацца, жывучы ў гатовым раi? Гэта быў сапраўды грандыёзны парад. О, калi б я злавiў у Сьвiслачы залатую рыбку, мне бы не спатрэбiлася дакучаць жывёлiнцы трыма жаданьнямi. Мне б хапiла й аднаго. На ўсё б жыцьцё, бадай, хапiла. Ды замест рыбкi да мяне з глыбiнь шашлычнае чаргi падплыў знаёмы беларускi нацыяналiст. Каб засьведчыць мне, старанна пражоўваючы мясцо, сваё незадавальненьне «лукашысцкiм» сьвятам. Божа, падумаў я з жахам, няўжо ж да канца маiх дзён я буду прыцягваць увагу адно нацыянальна заклапочаных сяброў БНФ? Не карай, Стваральнiк!
-<br />
-<br />Пасьля порцыi пiва з гарэлкай мая хада значна пашпарчэла ў пошуках зусiм не жаночых вабнотаў. Але, патрапiўшы да запаветных дзьвярэй зь лiтарай «М», я быў зноўку зьбянтэжаны колькасьцю стройных ног, пяшчотных шыяў ды iгрывых вачэй. На iмгненьне здалося, што ў парыве страсьцi я пераблытаў дзьверы. Ля кожнай кабiнкi ўтварылася вясёлая дзявочая чарга. Засяродзiўшы ўвагу на пiсуары ды слухаючы бесклапотнае шчабятаньне за сьпiнаю, я адчуў сябе сiбiрскiм селянiнам у Эўропах, дзiкiм занзiбарцам у чэраве заходняй цывiлiзацыi.
-<br />
-<br />Вось куды было б цiкава запрасiць таго маскоўскага пiжона. Маўляў, у вас у Маскве зь дзяўчынкаю ў туалеце не пазнаёмiсься. А ў нас — хоць спатканьнi прызначай. Калiсьцi, дарэчы, мне вельмi хацелася выглядаць сапраўдным iншаземцам у вачах менавiта расейцаў. Для беларусаў, думалася, толькi Расея можа служыць лепшым i агромнiстым люстрам нашай эўрапейскасьцi. А перад кiм жа яшчэ казыраць рэшткамi готыкi ды барока, гiстарычнай спадчынай Вялiкае Лiтвы й Рэчы Паспалiтай, урэшце, шляхетнымi дамкамi, заходнiмi аўтамабiлямi ды добрымi, зноў жа, у параўнаньнi з расейскiмi, дарогамi. Але большасьць маiх суайчыньнiкаў захацела цi то растварыцца ў гэтым люстры, цi то схавацца за iм. Толькi атрымалася наадварот. Для расейца я стаў iншаземцам. Ды радасьцi ад гэтага не паболела. У ягоных вачах я, напэўна, выглядаю адданым вырабляльнiкам танных МАЗаў, якога можна па-сваяцку паляпаць па плячы, маўляў, «харошая рэспублiка, бедна, но чыста» i кiраваць у сапраўдную Расею, «бязь месных страннасьцей». Для эўрапейца ж я так i ня стаў сваiм. Але эўрапеец, нарэшце, заўважыў мяне дзякуючы чырвонай пляме не майго сьцяга.
-<br />
-<br />Мiж тым, разгуляева на галоўнай нашай вулiцы набiрала абароты. Адчуваньне было такое, што гульбiшча iдзе «за канец сьвету». Пiлася й пажыралася ўсё, што прадавалася, але неяк без натхненьня. Савецкая Беларусь гуляла незразумелы сьвету баль. Нарэшце, далi доўгачаканы салют, што ненадоўга прымусiла публiку прыўзьняць галовы. Самi сабою на памяць прыходзiлi кадры з «Тытанiка», дзе таксама народ забаўлялi яркай стралянiнаю. Не без захапленьня майстэрствам пiратэхнiкаў назiраючы за агнямi, што прыгожа пераўтваралiся то ў чырвоныя зоркi, то ў чырвона-зялёныя кругi, мне менш за ўсё хацелася прыкiдваць — колькi яшчэ нас чакае пераможных чырвоных салютаў. Пяць цi, можа, трынаццаць. Канец гэтай азлобленай на ўвесь сьвет дзяржаўкi будзе мала адрозьнiвацца ад канца вялiкага судна.
-<br />
-<br />Памятаю, зь якою крыўдаю распавядаў мой сябра-бiзнэсовец пра тэлефонны званок з далёкае Эстонii. Эстонскi фiрмач, зацiкаўлены ва ўсё тых жа МАЗах, удосталь даў волю свайму досьцiпу з нагоды «такой чудеснай рэспублiкi, на каторую весь мiр смотрыт с надзеждай». «Включайте факс», — адказаў сябра. «О, в вашей рэспублiке дажэ факс есть!» — данеслася зь безь пяцi хвiлiнаў Эўропы. Але сябра дарэмна крыўдаваў на свайго балтыйскага калегу. Нас павiнны нелюбiць. Можа, хоць гэта паслужыць нагодаю для зацiкаўленьня самiмi сабой.
-<br />
-<br />Вось за гэтымi сьветлымi думкамi я i ўбачыў тую, каго шукаў. Я ўбачыў пад ненатуральна белаю чолкаю неверагодна сiнiя вочы, ад погляду якiх не была страшнаю думка, што жысьць прайшла дарэмна, i ня вернеш. Я ўбачыў вусны, якiя яшчэ не згубiлi дзiцячай пульхнасьцi, але ўжо навучылiся складацца ў цынiчную ўсьмешку. Толькi пасьля я зьвярнуў увагу на яе ногi, ад сузiраньня якiх думка пра мiнулае жыцьцё губляла надрыў таннага рамансу. Такiх ног я й на самой справе яшчэ не цалаваў. Адным словам, я ўбачыў курву, прафуру, самадайку, лахудру, цi як там яшчэ яе пасьпелi нарачы тыя, каму валоданьне ёю падалося занадта дарагiм. Я ўбачыў тую, наблiжэньне да якой хоць на крок пагражала няўцямнай небясьпекаю. Тую, што, нават калi яна была самою цнотаю, адным паваротам шыi абуджала згадкi аб раi. Дзе яе першым i галоўным абавязкам было Даць. Цана, некалi заплочаная першаадкрывальнiкам Адамам вядомая. Я, у адрозьненьне ад яго, быў у нашмат менш спрыяльных абставiнах. Гiтары пад рукой не было, у кiшэнi — пошлая зялёная дваццатка. Каб чытаць ёй беларускiя вершы ў такi сьвяточны дзень, я не настолькi многа прыняў. Ня мог жа я зь ёй абысьцiся так, як абышоўся адзiн менскi актор з прастытуткаю ў беластоцкiм гатэлi. На прапанову каханьня менчук адказаў згодаю, але з умоваю «Як я хачу». «Ого!», — заiнтрыгавалася панi, — як жа пан хоча?» «У доўг», — быў адказ гордага беларуса.
-<br />
-<br />Я абраў самы дурацкi варыянт з усiх магчымых. Пасьля апошняга сьвяточнага стрэлу я маўклiвым ценем, гэткiм бязмоўным рыцарам паплёўся ў сьлед за ёю ў надзеi, годнай пiянэра, да яе пад'езду знайсьцi тыя словы, ад якiх яна растане i ў якiя паверыць назаўжды. Мой маршрут скончыўся ля гатэлю «Плянэта», дзе яна, вядома ж, не жыла.
-<br />
-<br />Як нам не варочаецца язык гаварыць i думаць аб радзiме, ня дай бог, не высокiмi словамi. А радзiма тым часам, стамiўшыся чакаць нашых даўгоў, сама шукае сабе адэкватнае цаны. Калi радзiма — гэта тое, што здольнае радзiць. А ня толькi даваць. I калi-небудзь яна адкрыецца сьвету. Адкрыецца ня дранiкамi, ня МАЗамi i ня танкамi. А сьвет адкрые для сябе новы славянскi Тайлянд. Ня можа тое, што каштуе дорага, доўга заставацца без належнай увагi. Беларусы са сваiм «толькi б не было вайны», як заўжды, зразумеюць гэта занадта позна. Нямецкi пiсьменьнiк, што прадракаў i нават жадаў пад бамбардоўкамi савецкiх танкаў краху сваёй краiны, на шчасьце, памылiўся. I шанец вярнуцца на ўсходнiя рубяжы выглядае вельмi спакусьлiва. Гэта будзе новая вайна, у якой кроў не пралiваецца, а наадварот — выцiскае аджылую. Але цi ня ў новай, вольнай донарскай крывi выратаваньне нашага раю?&quot;
-<br />
-<br />(Сяргей Харэўскі: ) &quot;Праглядаючы новую кнiгу з цытатнiкам Лукашэнкi, я зьвярнуў увагу на ягоныя словы пра жанчын: «Апошнюю капейку я аддаю, калi яна ў мяне ёсьць, людзям, i, перадусiм, жанчынам. Я зь вялiкай павагай стаўлюся да жанчыны». Праўда, не напiсана, да якой. А вось i жанчына пра Лукашэнку, Тамара Дудко: у яго, высьвятляецца, «адсутнiчае тыповы мужчынскi стэрэатып аб другаснай ролi жанчыны»... Як бачым, на нашых вачох фармуецца пэўная сэксуальная палiтыка, чарговая спроба «спарадкаваць» узаемаадносiны плоцяў у адной асобна ўзятай дзяржаве. I Лукашэнка першым з мужчын пазбавiўся «стэрэатыпаў».
-<br />
-<br />Сэксуальнасьць у розныя часы была чыньнiкам ня толькi бiялягiчным, аб'ектыўным, але й культуратворчым i нават палiтычным. Таталiтарныя рэжымы заўсёды ймкнулiся навязваць нацыям свае ўяўленьнi пра ролю плоцi i рэглямэнтаваць яе адпаведна з сваiмi ўяўленьнямi i магчымасьцямi. Пра эпохi, культуры, моды й норавы можна дакладна меркаваць i з таго, якое месца ў iх займае плоць. Памятаеце крык жанчыны з эпохi «перестройки»: «Сэкса ў нас няма!»?..
-<br />
-<br />У сёньняшняй Беларусi кiраўнiцтва iмкнецца сачыць за «традыцыйнымi» каштоўнасьцямi, праўда нетрадыцыйнымi мэтадамi. Здавалася б, што атэiстам, хоць i праваслаўным, да Хрыста й ягонае бiяграфii? Але вось ня мусiць беларускi народ бачыць, як жывога Хрыста спакушае жывая жанчына. А таму аматараў творчасьцi Скарсэзэ ля тэлевiзараў чакаў сюрпрыз —рэтрансляцыя фiльма «Апошняя спакуса Iсуса» была перапыненая. Праваслаўная царква падзякавала рэжыму, хай сабе й атэiстычнаму...
-<br />
-<br />На нядаўняй сустрэчы з расейскiмi лiтаратарамi Лукашэнка сьцьвердзiў, што палiграфiя i кнiгагандаль мусяць быць на сто адсоткаў дзяржаўнымi хоць бы ўжо таму, што сёньня ледзь не паўсюль у Менску гандлююць парнагарафiяй. Трэба думаць, што неўзабаве мы станем сьведкамi новай порцыi дакумэнтаў, якiя нараджаюцца ў нетрах Адмiнiстрацыi. Яшчэ ня вызначылiся, праўда, колькi працэнтаў чалавечага цела можна паказваць 6 цi 25...
-<br />
-<br />Перад другой сусьветнай вайною жорсткiя меры супраць абортаў i кантрацэпцыi, прастытуцыi й эротыкi пракацiлiся па ўсёй Эўропе. Нацыi нiбы прадчувалi немiнучыя ваенныя страты людзтва. Натуральна, наперадзе ўсёй Эўропы былi таталiтарныя рэжымы. Мусалiнi адным указам закрыў публiчныя дамы, казiно, i... офiсы камунiстаў i заклiкаў павысiць нараджальнасьць. Камунiсты ў Расеi ў 1936 годзе забаранiлi аборты i, фактычна, разводы. Праўда, Сталiн нараджаць не заклiкаў. А вось Гiтлер спалiў унiкальныя зборы бэрлiнскага Сэксалягiчнага iнстытуту i заклiкаў павысiць нараджальнасьць. Былi нават выдадзеныя мэтадычкi са схемкамi, як гэта рабiць...
-<br />
-<br />Сочачы за лёгiкай разьвiцьця аўтарытарызму ў Беларусi, ужо сёньня можна прадбачыць далейшае абмежаваньне эротыкi, больш жорсткае заканадаўства ў дачыненьнi да прастытуцыi. А нядаўнiя абмежаваньнi абортаў, — гэта, хутчэй за ўсё, толькi пачатак шырокае кампанii павялiчэньня нараджальнасьцi. Дыктатуры ня мiрацца са зьмяншэньнем колькасьцi сваiх падданых. У гэтым сэнсе Лукашэнкавая цiкавасьць да працэсу дзетанараджэньня неарыгiнальная. Арыгiнальнае тое, што ён асабiста вырашыў наведваць радзiльнi, з шампанскiм i цукеркамi. Праўда, у апэрацыйныя яго пакуль не пускалi. Пакуль...&quot;
-<br />
-<br />(Севярын Квяткоўскі: ) «Не люблю я вёску» — такiмi словамi адзiн мой прыяцель спрабаваў пачаць свой нарыс. Асабiста я недаверлiва стаўлюся да людзей, якiя ня любяць вёску. Асаблiва ў электрычцы «Менск — Асiповiчы».
-<br />
-<br />Электрычка амаль заўжды забiтая, бо цi ня большасьць пасажыраў — пэнсiянэры-безьбiлетнiкi. Скразная нiтка iхных падарожных развагаў — «мы сваё аджылi». Але разам з тым пэнсiянэры —самая жыцьцярадасная частка пасажыраў. Яны ня п'юць а палове на сёмую, едучы на працу, ня ныюць з-за падзеньня курсу «зайчыка»... Хiба што жаляцца на малую пэнсiю i атсутнасьць прадуктаў у вясковай краме, ды самi ж з радасьцю тлумачаць, што раней бывала i горш...
-<br />
-<br />Вясковыя-местачковыя пэнсiянэры езьдзяць у Менск на рынкi альбо ў госьцi. Iхныя дзецi iмкнуцца ў горад, каб «людзьмi звацца». Ня трэба быць Фройдам, каб зразумець, чаму, «зачапiўшыся» ў горадзе, яны пачынаюць ненавiдзець вёску — сымбаль заняпаду й безнадзейнасьцi. У той час, як у горадзе можна ня толькi «стаць чалавекам», але, нават, ператварыцца ў прэзыдэнта краiны.
-<br />
-<br />У адрозьненьне ад большасьцi беларускiх грамадзянаў, мой прыяцель-журналiст нiколi ў жыцьцi не бываў у вёсцы. Але ня любiць ён яе з тае ж прычыны, што й астатнiя. Найперш ён даведаўся аб гэтым знаку безнадзейнасьцi зь беларускiх кнiжак: дзiцячых i дарослых. Пра «куток цемнаты»...
-<br />
-<br />Я беларус. Таму мне ў поўнай меры ўласьцiвая беларуская нацыянальная рыса — недаверлiвасьць. Я не давяраю людзям, якiя нiколi не былi ў вёсцы. Яшчэ ў большай ступенi не давяраю вяскоўцам, якiя ператварылiся ў гараджанаў...
-<br />
-<br />Горад — месца самоты асобы i вялiкiх магчымасьцяў для сэксуальных кантактаў. Вёска — знак супольнага ладу i жыцьця «на вачох». Штораз электрычка вязе пасажыраў ад «кутка цемнаты» да месца, дзе можна «людзьмi звацца». На памяць прыходзяць славутыя словы Зянона Пазьняка аб тым, што, маўляў, раней у беларусаў не было сэксу, бо трэба было шмат працаваць, каб зарабiць ежу, якой усё роўна не хапала. Але чаму ж тады такiя жыцьцярадасныя ў нас пэнсiянэры, i такiя абыякавыя да жыцьця маладзёны?..
-<br />
-<br />Я люблю вёску, i ведаю, якiм мусiць быць сапраўдны горад. Яны вернуцца ў Беларусь разам з даверам. Калi зьнiкне страх жыцьця на вачох&quot;.
-<br />
+</figure>
+<figure class="incut ">
+<div class="card card_media" data-template-id="relatedArticle">
+<div class="card__img-wrap"><img class="card__img" src="https://devby.io/storage/images/60/05/25/81/derived/f21458094bf94696fb1b25628ae18959.jpg" alt="Стартап былога дызайнера Apple анансаваў прыладу якая прыйдзе на змену смартфонам. Што гэта — незразумела"></div>
+<div class="card__info">
+<div class="card__body"><a class="card__link" href="https://devby.io/be/news/startap-dyzajnera-apple" target="_blank" rel="noopener"> Стартап былога дызайнера Apple анансаваў прыладу, якая прыйдзе на&nbsp;змену смартфонам. Што гэта&nbsp;— незразумела </a>
+<div class="card__meta">Па&nbsp;тэме</div>
+<div class="card__title">Стартап былога дызайнера Apple анансаваў прыладу, якая прыйдзе на&nbsp;змену смартфонам. Што гэта&nbsp;— незразумела</div>
 </div>
 </div>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 pull-left design-top-offset"> <div class="region">
-<div class="media-block-wrap" id="wrowblock-47537_21" data-area-id=R1_1>
-<h2 class="section-head">
-<a href="http://www.svaboda.org/z/3555.html" onclick="window.open(&#39;http://www.svaboda.org/z/3555.html&#39;);return false;" target="_blank"><span class="ico ico-chevron-forward pull-right flip"></span>Апошнія навіны</a> </h2>
-<div class="row">
-<ul>
-<li class="col-xs-12 col-sm-6 col-md-12 col-lg-12 mb-grid">
-<div class="media-block ">
-<div class="media-block__content">
-<span class="date date--mb date--size-4" >21:55</span>
-<a href="/a/33637404.html">
-<h4 class="media-block__title media-block__title--size-4" title="Ізраіль у&#160;2026 годзе забароніць дзейнасьць дзясяткаў гуманітарных арганізацый у&#160;сэктары Газа">
-Ізраіль у&#160;2026 годзе забароніць дзейнасьць дзясяткаў гуманітарных арганізацый у&#160;сэктары Газа
-</h4>
-</a>
+</figure>
+<figure class="incut ">
+<div class="card card_media" data-template-id="relatedArticle">
+<div class="card__img-wrap"><img class="card__img" src="https://devby.io/storage/images/65/70/98/21/derived/035113023902ec89587fe7de3a7a6137.jpg" alt="Samsung распрацоўвае праграму для самастойнага рамонту смартфонаў"></div>
+<div class="card__info">
+<div class="card__body"><a class="card__link" href="https://devby.io/be/news/samsung-samastojny-ramont" target="_blank" rel="noopener"> Samsung распрацоўвае праграму для самастойнага рамонту смартфонаў </a>
+<div class="card__meta">Па&nbsp;тэме</div>
+<div class="card__title">Samsung распрацоўвае праграму для самастойнага рамонту смартфонаў</div>
 </div>
 </div>
-</li>
-<li class="col-xs-12 col-sm-6 col-md-12 col-lg-12 mb-grid">
-<div class="media-block ">
-<div class="media-block__content">
-<span class="date date--mb date--size-4" >21:13</span>
-<a href="/a/33637400.html">
-<h4 class="media-block__title media-block__title--size-4" title="Урад Беларусі пашырыў сьпіс тавараў, на&#160;якія можна ўзяць ільготны крэдыт">
-Урад Беларусі пашырыў сьпіс тавараў, на&#160;якія можна ўзяць ільготны крэдыт
-</h4>
-</a>
 </div>
-</div>
-</li>
-<li class="col-xs-12 col-sm-6 col-md-12 col-lg-12 mb-grid">
-<div class="media-block ">
-<div class="media-block__content">
-<span class="date date--mb date--size-4" >19:18</span>
-<a href="/a/33637375.html">
-<h4 class="media-block__title media-block__title--size-4" title="У&#160;Фінскай затоцы раніцай 31 сьнежня пашкодзілі тэлекамунікацыйны кабэль">
-У&#160;Фінскай затоцы раніцай 31 сьнежня пашкодзілі тэлекамунікацыйны кабэль
-</h4>
-</a>
-</div>
-</div>
-</li>
-<li class="col-xs-12 col-sm-6 col-md-12 col-lg-12 mb-grid">
-<div class="media-block ">
-<div class="media-block__content">
-<span class="date date--mb date--size-4" >18:05</span>
-<a href="/a/33637344.html">
-<h4 class="media-block__title media-block__title--size-4" title="Эўразьвяз за&#160;год уклаў у&#160;адукацыйныя праграмы для беларусаў звыш 2&#160;млн эўра">
-Эўразьвяз за&#160;год уклаў у&#160;адукацыйныя праграмы для беларусаў звыш 2&#160;млн эўра
-</h4>
-</a>
-</div>
-</div>
-</li>
-</ul>
-</div><a class="link-more" href="http://www.svaboda.org/z/3555.html" onclick="window.open(&#39;http://www.svaboda.org/z/3555.html&#39;);return false;" target="_blank">усе навіны за дзень &gt;</a>
-</div>
-<div class="media-block-wrap" id="wrowblock-32649_21" data-area-id=R2_1>
-<div class="wsw">
-<div class="clear"></div>
-<div class="wsw__embed">
-<div class="infgraphicsAttach" >
-<script type="text/javascript">
-initInfographics(
-{
-groups:[],
-params:[],
-isMobile:true
-});
+</figure>
+
+    
+      <figure class="global-incut" data-article-global-incut-target="incut">
+  
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+<!-- devby. by version global incut -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1094641317759535"
+     data-ad-slot="2452734217"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<style>
-#GR-1870 {
-position: relative;
-overflow: hidden;
-display: block; /* because of <a> */
-}
-#GR-1870 .banner__badge {
-position: absolute;
-z-index: 30;
-top: -15px;
-left: 5%;
-width: 15%;
-}
-#GR-1870 .banner__text {
-position: absolute;
-z-index: 20;
-font-size: 19px;
-color: #222;
-bottom: 12px;
-left: 0;
-}
-#GR-1870 .banner__text span {
-display: inline-block;
-padding: 6px 8px 4px;
-background: #dadada;
-}
-#GR-1870 .banner__text span:first-of-type {
-padding-bottom: 0;
-}
-#GR-1870 .slideshow__container:before {
-content: "";
-position: absolute;
-z-index: 11;
-top: 50%;
-bottom: 0;
-left: 0;
-right: 0;
-background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,0) 100%);
-}
-#GR-1870 .slideshow__container {
-position: relative;
-}
-#GR-1870 .slideshow-item {
-position: absolute;
-top: 0;
-left: 0;/**/
-opacity: 0;
-transition: all .5s ease-out;
-}
-#GR-1870 .slideshow-item--active {
-position: relative;
-display: block; /* because of bottom border */
-z-index: 10;
-opacity: 1;
-}
-@media (min-width: 520px) and (max-width: 991px) {
-#GR-1870 .banner__text {
-font-size: 32px;
-bottom: 24px;
-}
-}
-</style>
-<a id="GR-1870" href="/a/30943068.html?int_cid=banner:imprisoned-journalists-GR-1870:rferl-belarusian:1col-region">
-<div class="banner__badge">
-<svg enable-background="new 0 0 40 80" version="1.1" viewBox="0 0 40 80" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-<style type="text/css">
-.st0{fill:#FFFFFF;}
-</style>
-<path class="st0" d="m24.04 29.07h-8.17v-10.55h8.17v10.55z"/>
-<path class="st0" d="m32.91 77.66h-25.14c-3 0-5.43-2.43-5.43-5.43v-40.12c0-3 2.43-5.43 5.43-5.43h25.14c3 0 5.43 2.43 5.43 5.43v40.12c0 3-2.43 5.43-5.43 5.43z"/>
-<path d="m14.46 25.14c0-1.49 0.04-2.77-0.03-4.04-0.02-0.31-0.31-0.71-0.59-0.9-1.55-1.07-2.19-2.45-2.11-4.38 0.12-2.86-0.02-5.73-0.04-8.6-0.01-1.39 0-2.79-0.01-4.18-0.02-0.93 0.38-1.65 1.32-1.66 0.97-0.02 1.37 0.77 1.39 1.64 0.04 1.64 0.01 3.27 0.01 4.91-0.01 2.91-0.03 5.83-0.04 8.74 0 0.19 0.05 0.38 0.05 0.37 3.74-0.44 7.41-0.5 11.21 0.05 0-0.02 0.09-0.27 0.09-0.53-0.03-3.25-0.08-6.51-0.11-9.76-0.01-1.23-0.02-2.46 0-3.69 0.02-0.98 0.7-1.84 1.44-1.75 0.96 0.1 1.36 0.81 1.37 1.68 0.03 2.75 0.01 5.5 0 8.24-0.01 1.63-0.1 3.27-0.06 4.9 0.04 1.72-0.67 3.03-2.07 3.91-0.6 0.38-0.79 0.79-0.77 1.44 0.03 1.15 0.01 2.3 0.01 3.6h6.59c2.1-0.01 3.9 0.69 5.39 2.19 1.36 1.37 2.08 3.06 2.09 4.95 0.04 10.43 0.02 20.85 0.02 31.28 0 2.72-0.03 5.43 0 8.15 0.06 4.88-3.17 7.98-8.02 7.88-5.15-0.1-10.3 0.01-15.44 0.02-3.03 0-6.07-0.04-9.1-0.04-3.27-0.02-6.74-3.56-6.56-7.25 0.14-2.85-0.09-5.71-0.09-8.57 0-2.9 0.1-5.79 0.11-8.69 0.01-1.67-0.1-3.33-0.11-5 0-1.75 0.06-3.49 0.08-5.24 0.02-1.59 0.03-3.18 0.03-4.76 0.01-2.02-0.04-4.04 0.02-6.06 0.04-1.33 0-2.73 0.39-3.98 0.95-3.04 3.76-4.9 6.94-4.89 2.15 0.02 4.3 0.02 6.6 0.02zm-11.33 20.89c0 2.13-0.01 4.12 0 6.1 0.02 2.91 0.07 5.82 0.07 8.72 0 4.02-0.09 8.05-0.06 12.07 0.02 2.43 1.71 3.98 4.14 3.98h25.42c2.66 0 4.32-1.87 4.22-4.54-0.1-2.58-0.04-5.18-0.03-7.76 0.01-2.91 0.05-5.81 0.04-8.72 0-2.87-0.12-5.74-0.01-8.6 0.05-1.12-0.23-1.34-1.27-1.33-10.43 0.03-20.86 0.02-31.3 0.02-0.33 0-0.68 0.03-1.22 0.06zm11.27-18.18c-2.68 0-5.32-0.22-7.91 0.06-2.35 0.26-3.41 2.05-3.32 4.48 0.06 1.51-0.03 3.02-0.04 4.53-0.01 2.09 0 4.19 0 6.34h33.81c0-3.97 0.12-7.86-0.04-11.75-0.09-2.27-1.97-3.75-4.21-3.75-1.96-0.01-3.91 0.03-5.87-0.02-0.95-0.03-1.42 0.24-1.33 1.27 0.1 1.05-0.45 1.54-1.5 1.54-2.71 0.01-5.41 0.07-8.12 0.06-0.83 0-1.29-0.56-1.4-1.37-0.05-0.43-0.05-0.86-0.07-1.39zm8.4-0.03v-8.37h-5.63v8.37h5.63z"/>
-<path d="m32.53 61.55c0 3.63 0.01 7.26-0.01 10.89 0 1.08-0.67 1.64-1.78 1.64-4.34 0-8.67 0.02-13.01 0.01-2.9-0.01-5.81-0.06-8.71-0.1-1.1-0.02-1.57-0.65-1.57-1.69v-13.86-7.65c0-1.34 0.47-1.77 1.78-1.77 3.99-0.01 7.97-0.06 11.96-0.07 3.35-0.01 6.7 0.02 10.04 0.06 0.99 0.01 1.25 0.67 1.25 1.54v9.45 1.56c0.03-0.01 0.04-0.01 0.05-0.01zm-22.37-9.83v19.18c1.03-3.12 2.97-5.47 5.81-7.06-2.52-3.57-1.4-6.01 0.51-7.82 1.97-1.87 4.54-2.03 6.73-0.23 0.93 0.76 1.66 1.94 2.1 3.08 0.71 1.82-0.17 3.46-1.3 4.99 3.03 1.64 4.9 4.04 5.8 7.25v-19.38c-6.6-0.01-13.09-0.01-19.65-0.01zm2.88 19.53h13.85c-0.53-3.27-3.11-5.49-6.42-5.65-3.7-0.18-6.4 1.81-7.43 5.65zm9.83-11.12c0.01-1.86-1.02-2.94-2.83-2.95-1.76-0.01-2.93 1.15-2.93 2.91 0 1.73 1.21 2.91 2.96 2.9 1.73-0.01 2.78-1.09 2.8-2.86z"/>
-<path d="m9.24 33.09c1.81 0 2.76 0.76 2.76 2.14 0 1.43-1 2.48-2.7 2.48-0.16 0-0.36-0.01-0.55-0.03v2.21h-1.24v-6.64c0.55-0.1 1.18-0.16 1.73-0.16zm-0.49 1.12v2.43c0.18 0.02 0.35 0.03 0.48 0.03 0.35 0 0.68-0.07 0.9-0.21 0.33-0.18 0.56-0.54 0.56-1.11 0-0.85-0.5-1.18-1.33-1.18-0.17 0-0.39 0.01-0.61 0.04z"/>
-<path d="m14.83 33.09c1.68 0 2.71 0.69 2.71 2.03 0 0.88-0.45 1.58-1.17 1.98l1.11 2.1c0.12 0.23 0.24 0.51 0.27 0.69h-1.26l-1.25-2.46c-0.12 0.01-0.24 0.02-0.36 0.02-0.16 0-0.38-0.01-0.58-0.02v2.46h-1.24v-6.64c0.53-0.09 1.22-0.16 1.77-0.16zm-0.53 1.12v2.19c0.15 0.01 0.31 0.01 0.45 0.01 0.4 0 0.7-0.06 0.93-0.19 0.3-0.16 0.55-0.47 0.55-1 0-0.69-0.44-1.05-1.3-1.05-0.16 0-0.4 0.02-0.63 0.04z"/>
-<path d="m22.65 39.89h-3.86v-6.7h3.85l-0.05 1.04h-2.56v1.71h2.02v1.04h-2.02v1.87h2.58l0.04 1.04z"/>
-<path d="m25.88 33.06c0.63 0 1.24 0.17 1.71 0.42l-0.36 0.92c-0.35-0.14-0.82-0.25-1.3-0.25-0.57 0-1.09 0.18-1.09 0.75 0 0.53 0.48 0.78 1.07 1.06 0.94 0.45 1.85 0.86 1.85 2.06 0 1.28-1 2-2.4 2-0.84 0-1.57-0.27-2.01-0.55l0.43-0.93c0.45 0.23 1.02 0.39 1.56 0.39 0.63 0 1.12-0.25 1.12-0.8 0-0.54-0.5-0.79-1.12-1.08-0.9-0.42-1.79-0.85-1.79-2.04 0-1.34 1.1-1.95 2.33-1.95z"/>
-<path d="m30.94 33.06c0.63 0 1.24 0.17 1.71 0.42l-0.36 0.92c-0.35-0.14-0.82-0.25-1.3-0.25-0.57 0-1.09 0.18-1.09 0.75 0 0.53 0.48 0.78 1.07 1.06 0.94 0.45 1.85 0.86 1.85 2.06 0 1.28-1 2-2.4 2-0.84 0-1.57-0.27-2.01-0.55l0.43-0.93c0.45 0.23 1.02 0.39 1.56 0.39 0.63 0 1.12-0.25 1.12-0.8 0-0.54-0.5-0.79-1.12-1.08-0.9-0.42-1.79-0.85-1.79-2.04 0-1.34 1.1-1.95 2.33-1.95z"/>
-</svg>
+  
+</figure>
+
+    
+
+    
+    
+  </div>
+
+  
 </div>
-<h2 class="banner__text font-2">
-<span>ЗА КРАТАМІ</span><br>
-<span>БО ЖУРНАЛІСТЫ</span>
-</h2>
-<div class="slideshow__container">
-<img class="slideshow-item" alt="Кацярына Андрэева" title="Кацярына Андрэева" src="https://gdb.rferl.org/88dd577d-3820-4c5c-8b30-badfbf6cbeba_cx7_cy11_cw65_w300_r1.jpg" data-src="https://gdb.rferl.org/88dd577d-3820-4c5c-8b30-badfbf6cbeba_cx7_cy11_cw65_w300_r1.jpg"/>
-<img class="slideshow-item" alt="Андрэй Аляксандраў" title="Андрэй Аляксандраў" src="https://gdb.rferl.org/2e7efc28-7933-47a7-9ce2-5ccc2811dfb9_cx0_cy9_cw73_w300_r1.jpg" data-src="https://gdb.rferl.org/2e7efc28-7933-47a7-9ce2-5ccc2811dfb9_cx0_cy9_cw73_w300_r1.jpg"/>
-<img class="slideshow-item" alt="Людміла Чэкіна" title="Людміла Чэкіна" src="https://gdb.rferl.org/8969a44d-97b3-4a23-d142-08dd975778e9_cx15_cy7_cw43_w300_r1.jpg" data-src="https://gdb.rferl.org/8969a44d-97b3-4a23-d142-08dd975778e9_cx15_cy7_cw43_w300_r1.jpg"/>
+
+
+  
+
+  <div class="article__footer">
+  <div class="article__container">
+    <div class="article__reference article__reference_footer">
+      
+        <a href="#comments" class="article__reference-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentcolor" d="M13 0h-10c-1.7 0-3 1.3-3 3v13l5-4h8c1.7 0 3-1.3 3-3v-6c0-1.7-1.3-3-3-3zm1 9c0 .6-.4 1-1 1h-8.7l-2.3 1.8v-8.8c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v6z"/></svg>
+          Пакінуць каментарый
+        </a>
+      
+
+      <div class="share" data-controller="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573" class="share__item" target="_blank" rel="noopener">
+          <img alt="Facebook" src="/assets/icons/facebook-ee75275658d0cbb3de71d03a67f6f315492d3b1bc43ec17b65180ada5c1401b5.svg" />
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573&text=Функцыя Always on Display разраджае смартфоны ў чатыры разы хутчэй" class="share__item" target="_blank" rel="noopener">
+          <img alt="Twitter" src="/assets/icons/twitter-dc9d7c63168d6531b44f3675ac54eeccf7f8d850e25b3422751e8db3ce5fa25c.svg" />
+        </a>
+        <a href="https://telegram.me/share/url?url=https://devby.io/be/news/funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573" class="share__item" target="_blank" rel="noopener">
+          <img alt="Telegram" src="/assets/icons/telegram-fill-60c4099b9814a00012446d2d501f5a5dec2cd519e640d4291fb519c069a07f29.svg" />
+        </a>
+
+        
+      </div>
+    </div>
+
+    <div class="article-meta article-meta_col">
+      
+        <span class="article-meta__item">Тэкст: Николай Чикишев</span>
+      
+
+      
+
+      
+
+      
+    </div>
+
+    <span class="article-meta__item d-none d-lg-block">
+      Знайшлі памылку ў тэксце-вылучыце яе і націсніце Ctrl+Enter.
+    </span>
+    <span class="article-meta__item d-lg-none">
+      Знайшлі памылку ў тэксце-вылучыце яе і націсніце кнопку «Паведаміць пра памылку».
+    </span>
+  </div>
 </div>
-</a>
-<script>
-(function(){
-var imgs = document.getElementsByClassName('slideshow-item'),
-count = 0,
-timer,
-previous,
-nextImg,
-firstLoop = true;
-function next(){
-previous = count > 0 ? count - 1 : 0;
-imgs[ previous ].classList.remove('slideshow-item--active');
-if( count < imgs.length ){
-imgs[ count ].classList.add('slideshow-item--active');
-count++;
-//console.log("showing image #" + count);
-}
-else{
-count = 0;
-next();
-}
-}
-function preload(){
-if (count == imgs.length) {
-firstLoop = false;
-//console.log("loop = " + firstLoop);
-}
-if (firstLoop == true && count != 0 && count < imgs.length) {
-nextImg = count + 1;
-//console.log("preload #" + nextImg);
-imgs[count].setAttribute('src', (imgs[count].dataset.src));
-//console.log("use URL" +imgs[count].dataset.src);
-//console.log("loop = " + firstLoop);
-}
-}
-next();
-timer = setInterval(function(){
-next();
-preload();
-}, 3000);
-})();
+
+</article>
+
+          </div>
+
+          <div class="island__body-aside">
+              <div class="partners partners_xl">
+  
+    
+    <div class="partners__item ">
+      <img src="https://devby.io/storage/images/25/35/72/85/original/af1aee16947ccba976338eb8066032a3.jpg" class="partners__item-img" alt="">
+      <div class="partners__item-links">
+        <a
+          href="https://companies.devby.io/currency-com"
+          target="_blank"
+          rel="noopener">
+          Сайт компании
+        </a>
+        <a
+          href="https://jobs.devby.io/?filter[companies_ids][]=76959"
+          target="_blank"
+          rel="noopener">
+          Вакансии
+        </a>
+      </div>
+     </div>
+  
+    
+    <div class="partners__item ">
+      <img src="https://devby.io/storage/images/50/47/61/88/original/ea7ac5b151dcc48c6a94522a50ec4951.png" class="partners__item-img" alt="">
+      <div class="partners__item-links">
+        <a
+          href="https://companies.devby.io/klats-klats"
+          target="_blank"
+          rel="noopener">
+          Сайт компании
+        </a>
+        <a
+          href="https://jobs.devby.io/?filter[companies_ids][]=77777"
+          target="_blank"
+          rel="noopener">
+          Вакансии
+        </a>
+      </div>
+     </div>
+  
+
+  <div class="partners__item partners__item_fallback"></div>
+</div>
+
+
+              
+
+            <div class="section-aside section-aside_sticky">
+                  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+<!-- aside devby by version -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1094641317759535"
+     data-ad-slot="3083289604"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+
+
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+      <div class="island d-none_desktop" style="padding: 2rem 0;">
+  <div class="island__body">
+    
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+<!-- devby. by version global incut -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1094641317759535"
+     data-ad-slot="2452734217"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    
+
+    <div class="custom-block__link"><a href="https://mediakit.devby.io" target="_blank" rel="noopener">Размяшчэнне рэкламы</a></div>
+  </div>
 </div>
-</div> </div>
+<div class="island d-none_mobile" style="padding: 2rem 0;">
+  <div class="island__body">
+    
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="6c1ef4630e7e12ec69b66b9a-text/javascript"></script>
+<!-- devby. by version global incut -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1094641317759535"
+     data-ad-slot="2452734217"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="6c1ef4630e7e12ec69b66b9a-text/javascript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    
+
+    <div class="custom-block__link"><a href="https://mediakit.devby.io" target="_blank" rel="noopener">Размяшчэнне рэкламы</a></div>
+  </div>
 </div>
-<div class="media-block-wrap" id="wrowblock-3961_21" data-area-id=R4_1>
-<div class="row">
-<ul>
-<li class="col-xs-12 col-sm-6 col-md-12 col-lg-12 mb-grid">
-<div class="media-block ">
-<a href="/a/year-in-photos-rferl-2025-highlights/33635380.html" class="img-wrap img-wrap--t-spac img-wrap--size-4 img-wrap--float" title="2025: Год Беларусі і сьвету&#160;— у&#160;фота">
-<div class="thumb thumb16_9">
-<noscript class="nojs-img">
-<img src="https://gdb.rferl.org/b29ef5a9-6d21-4e04-89bf-08dde5383204_cx11_cy41_cw68_w100_r1.jpg" alt="Belarus - border of Belarus an Lithuania, webcam" />
-</noscript>
-<img data-src="https://gdb.rferl.org/b29ef5a9-6d21-4e04-89bf-08dde5383204_cx11_cy41_cw68_w33_r1.jpg" src="" alt="Belarus - border of Belarus an Lithuania, webcam" class=""/>
+
+
+
+
+  <div class="island island_overflow-hidden telegram-widget">
+  <div class="telegram-widget__item">
+    <a
+      class="telegram-widget__ref"
+      href="https://t.me/devby_insight_bot"
+      target="_blank"
+      rel="noopener"></a>
+    <div class="telegram-widget__icon">
+      <span class="icon icon_32 icon_volume"></span>
+    </div>
+    <div class="telegram-widget__content">
+      <p class="telegram-widget__text">
+        Хочаце паведаміць важную навіну? Пішыце ў&nbsp;Telegram-бот
+      </p>
+    </div>
+  </div>
+  <div class="telegram-widget__item">
+    <a
+      class="telegram-widget__ref"
+      href="https://t.me/devby"
+      target="_blank"
+      rel="noopener"></a>
+    <div class="telegram-widget__icon">
+      <span class="icon icon_32 icon_telegram"></span>
+    </div>
+    <div class="telegram-widget__content">
+      <p class="telegram-widget__text">
+        Галоўныя падзеі і&nbsp;карысныя спасылкі ў&nbsp;нашым Telegram-канале
+      </p>
+    </div>
+  </div>
 </div>
-<span class="ico ico-gallery ico--media-type"></span>
-</a>
-<div class="media-block__content media-block__content--h">
-<a class="category category--mb category--size-4" href="/z/24034" title="Вынікі 2025 году">
-Вынікі 2025 году
-</a>
-<a href="/a/year-in-photos-rferl-2025-highlights/33635380.html">
-<h4 class="media-block__title media-block__title--size-4" title="2025: Год Беларусі і сьвету&#160;— у&#160;фота">
-2025: Год Беларусі і сьвету&#160;— у&#160;фота
-</h4>
-</a>
+
+
+    <div class="island" id="comments">
+  <div class="island__header">
+    <div class="island__title">Абмеркаванне</div>
+  </div>
+  <div class="island__body">
+    <div class="island__body-row">
+      <div class="island__body-main">
+        
+        <div class="comments-container">
+  
+    <div class="comments-notification comments-notification_hidden mb-5"
+         data-controller="notification-ge"
+         data-notification-ge-hidden-class="comments-notification_hidden"
+         data-notification-ge-name-value="is_notification_ge_closed"
+         data-notification-ge-lifetime-value="3650">
+      <div class="comments-notification__header">
+        <img alt="" class="comments-notification__icon" src="/assets/globe-c85b1421a946bdf43b6f2c7db66a9c3f3d76ee1299070ccb7b61b8b565cbf89d.svg" />
+        <div class="comments-notification__title">
+          Каментуйце без абмежаванняў
+        </div>
+        <a role="button"
+           title="Закрыть"
+           class="comments-notification__close"
+           data-action="click->notification-ge#handleClickButtonClose">
+        </a>
+      </div>
+      <div class="comments-notification__body">
+        <p class="comments-notification__text">Рэлацыраваліся? Цяпер вы&nbsp;можаце каментаваць без верыфікацыі акаўнта.</p>
+
+        
+      </div>
+    </div>
+
+    <div class="comments-tree" id="commentsTree">
+      
+        <div class="comments-tree__none-comments">Каментарыяў пакуль няма.</div>
+      
+    </div>
+
+    <div class="comments-form">
+      
+        <a href="https://id.devby.io/@/hello?focus=comments&article=funktsiya-always-on-display-razryazhaet-smartfony-v-chetyre-raza-bystree-1671620573" class="btn btn-block btn_lg btn_outline-primary">Увайдзіце, каб пакінуць каментарый</a>
+
+      
+    </div>
+  
 </div>
+
+      </div>
+      <div class="island__body-aside"></div>
+    </div>
+  </div>
 </div>
-</li>
-<li class="col-xs-12 col-sm-6 col-md-12 col-lg-12 mb-grid">
-<div class="media-block ">
-<a href="/a/33626417.html" class="img-wrap img-wrap--t-spac img-wrap--size-4 img-wrap--float" title="Чалавек Трампа, якога слухаецца Лукашэнка/Тлумачым з Гурневічам">
-<div class="thumb thumb16_9">
-<noscript class="nojs-img">
-<img src="https://gdb.rferl.org/0aa4d6eb-0cc7-4482-fc8f-08de3bed1b26_w100_r1.jpg" alt="Чалавек Трампа, якога слухаецца Лукашэнка/Тлумачым з Гурневічам" />
-</noscript>
-<img data-src="https://gdb.rferl.org/0aa4d6eb-0cc7-4482-fc8f-08de3bed1b26_w33_r1.jpg" src="" alt="Чалавек Трампа, якога слухаецца Лукашэнка/Тлумачым з Гурневічам" class=""/>
+
+
+  <!-- Modal -->
+<div
+  class="modal fade"
+  tabindex="-1"
+  id="errorReportModal"
+  role="dialog"
+  aria-labelledby="errorReportModal"
+  aria-hidden="true"
+  data-controller="error-report-selection error-report-popup"
+  data-action="keydown@document->error-report-popup#handleKeyDown
+               selectionchange@document->error-report-selection#handleSelectionChange
+               selectstart@document->error-report-selection#handleSelectStart
+               error-report-button.buttonClick@window->error-report-selection#handleMobileButtonClick
+               error-report-selection.showPopup@window->error-report-popup#handleShow
+               error-report-popup.keyDown@window->error-report-selection#handleKeyDown"
+  data-error-report-popup-modal-id-value="#errorReportModal"
+  data-error-report-selection-areas-value='[".article__header", ".article__body"]'>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header align-items-center">
+        <div class="modal-title">Памылка ў тэксце</div>
+        <button type="button" class="modal__close" data-dismiss="modal" aria-label="Close">
+          <img alt="" class="modal__close-img" src="/assets/icons/close-9d0558d71b43e0639452918265692010da90b082b4e6066911c02e8dac0227b5.svg" />
+        </button>
+      </div>
+      <form id="error-report-form"
+            action="/postman/error-reports"
+            data-controller="error-report-form"
+            data-action="hidden.bs.modal@window->error-report-form#handleCloseModal
+                         shown.bs.modal@window->error-report-form#handleOpenModal"
+            data-error-report-form-modal-id-value="#errorReportModal"
+            accept-charset="UTF-8"
+            method="post">
+        <div data-error-report-form-target="notificationMessage"></div>
+        <div data-error-report-form-target="formContent">
+          <div class="modal-header d-block">
+          <span>...</span><span data-error-report-selection-target="selectedText"
+                data-error-report-form-target="selectedText"
+                name="error_report[content]">
+            </span><span>...</span>
+          </div>
+          <div class="modal-body border-bottom">
+            <input
+              type="hidden"
+              name="g-recaptcha-response"
+              data-error-report-form-target="recaptchaInput">
+            <input
+              type="hidden"
+              name="error_report[article_id]"
+              value="27397417">
+            <label class="form-label" for="textarea">
+              Каментар (неабавязкова):
+            </label>
+            <textarea class="form-control" data-error-report-form-target="comment" id="textarea" rows="2" name="error_report[comment]" maxlength="1000"></textarea>
+          </div>
+          <div class="modal-footer justify-content-start border-top-0">
+            <button class="btn btn-primary flex-lg-grow-0 flex-grow-1 mr-auto" type="submit" name="commit" data-action="click->error-report-form#handleFormSubmit" data-error-report-form-target="submitButton">
+              <span class="default">Адправіць</span>
+            </button>
+          </div>
+        </div>
+
+        <div data-error-report-form-target="successFormContent">
+          <div class="modal-footer justify-content-start border-top-0">
+            <button class="btn btn-primary flex-lg-grow-0 flex-grow-1 mr-auto" type="button" data-dismiss="modal" aria-label="Close">
+              <span class="success">Заўсёды калі ласка</span>
+            </button>
+          </div>
+        </div>
+
+        <template data-error-report-form-target="successMessage">
+          <div class="modal-header">
+            Дзякуй, што дапамагаеце рабіць гэта медыя яшчэ лепш!
+          </div>
+        </template>
+        <template data-error-report-form-target="errorMessage">
+          <div class="modal-header border-bottom-0 pb-0" style="margin-bottom: -6px;">
+            <div class="alert alert-danger mb-0">
+              Нешта пайшло не так. Калі ласка, паспрабуйце яшчэ раз.
+            </div>
+          </div>
+        </template>
+      </form>
+    </div>
+  </div>
 </div>
-<span class="ico ico-video ico--media-type"></span>
-</a>
-<div class="media-block__content media-block__content--h">
-<a class="category category--mb category--size-4" href="/z/2831" title="Мультымэдыя">
-Мультымэдыя
-</a>
-<a href="/a/33626417.html">
-<h4 class="media-block__title media-block__title--size-4" title="Чалавек Трампа, якога слухаецца Лукашэнка/Тлумачым з Гурневічам">
-Чалавек Трампа, якога слухаецца Лукашэнка/Тлумачым з Гурневічам
-</h4>
-</a>
-</div>
-</div>
-</li>
-<li class="col-xs-12 col-sm-6 col-md-12 col-lg-12 mb-grid">
-<div class="media-block ">
-<a href="/a/33625604.html" class="img-wrap img-wrap--t-spac img-wrap--size-4 img-wrap--float" title="Алесь Бяляцкі даў першае вялікае інтэрвію пасьля турмы">
-<div class="thumb thumb16_9">
-<noscript class="nojs-img">
-<img src="https://gdb.rferl.org/4fb9f4de-8d47-4e6e-3d10-08de3c91433d_w100_r1.jpg" alt="Алесь Бяляцкі даў першае вялікае інтэрвію пасьля турмы" />
-</noscript>
-<img data-src="https://gdb.rferl.org/4fb9f4de-8d47-4e6e-3d10-08de3c91433d_w33_r1.jpg" src="" alt="Алесь Бяляцкі даў першае вялікае інтэрвію пасьля турмы" class=""/>
-</div>
-<span class="ico ico-video ico--media-type"></span>
-</a>
-<div class="media-block__content media-block__content--h">
-<a class="category category--mb category--size-4" href="/z/2831" title="Мультымэдыя">
-Мультымэдыя
-</a>
-<a href="/a/33625604.html">
-<h4 class="media-block__title media-block__title--size-4" title="Алесь Бяляцкі даў першае вялікае інтэрвію пасьля турмы">
-Алесь Бяляцкі даў першае вялікае інтэрвію пасьля турмы
-</h4>
-</a>
-</div>
-</div>
-</li>
-</ul>
-</div><a class="link-more" href="/video-photo">больш відэа і фота</a>
-</div>
-<div class="media-block-wrap" id="wrowblock-3962_21" data-area-id=R5_1>
-<h2 class="section-head">
-Самае папулярнае </h2>
-<div class="row trends-wg">
-<a href="/a/33636495.html" class="col-xs-12 col-sm-6 col-md-12 col-lg-12 trends-wg__item mb-grid">
-<span class="trends-wg__item-inner">
-<span class="trends-wg__item-number">1</span>
-<h4 class="trends-wg__item-txt">
-Сотні людзей на&#160;марозе. У&#160;Варшаве прайшло разьвітаньне зь&#160;Мікітам Мелказёравым. ФОТА. ВІДЭА
-</h4>
-</span>
-</a>
-<a href="/a/33636233.html" class="col-xs-12 col-sm-6 col-md-12 col-lg-12 trends-wg__item mb-grid">
-<span class="trends-wg__item-inner">
-<span class="trends-wg__item-number">2</span>
-<h4 class="trends-wg__item-txt">
-Лукашэнка памілаваў яшчэ 22 зьняволеных, зь іх 20 палітвязьняў
-</h4>
-</span>
-</a>
-<a href="/a/33627872.html" class="col-xs-12 col-sm-6 col-md-12 col-lg-12 trends-wg__item mb-grid">
-<span class="trends-wg__item-inner">
-<span class="trends-wg__item-number">3</span>
-<h4 class="trends-wg__item-txt">
-Каго Беларусь страціла ў 2025 годзе
-</h4>
-</span>
-</a>
-<a href="/a/33631162.html" class="col-xs-12 col-sm-6 col-md-12 col-lg-12 trends-wg__item mb-grid">
-<span class="trends-wg__item-inner">
-<span class="trends-wg__item-number">4</span>
-<h4 class="trends-wg__item-txt">
-Гульня &#171;Раённы Аракул&#187; — як&#160;пройдзе ваш наступны год
-</h4>
-</span>
-</a>
-<a href="/a/33635286.html" class="col-xs-12 col-sm-6 col-md-12 col-lg-12 trends-wg__item mb-grid">
-<span class="trends-wg__item-inner">
-<span class="trends-wg__item-number">5</span>
-<h4 class="trends-wg__item-txt">
-Буданаў адрэагаваў на &#171;Арэшнік&#187; у Беларусі, вызваленьне зьняволеных і кантакты ЗША з Лукашэнкам
-</h4>
-</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
 </main>
-<a class="btn pos-abs p-0 lazy-scroll-load" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#ymla-section" data-ajax-url="/part/section/5/7377" href="/p/7377.html" loadonce="true" title="Выбар рэдакцыі">​</a> <div id="ymla-section" class="clear ymla-section"></div>
+
+
+  
+
+      <footer class="footer">
+  <div class="footer__social">
+    <a href="https://www.facebook.com/devbyby" class="footer__social-item" target="_blank" rel="noopener">
+      <img alt="Facebook" src="/assets/icons/facebook-ee75275658d0cbb3de71d03a67f6f315492d3b1bc43ec17b65180ada5c1401b5.svg" />
+    </a>
+    <a href="https://twitter.com/devby" class="footer__social-item" target="_blank" rel="noopener">
+      <img alt="Twitter" src="/assets/icons/twitter-dc9d7c63168d6531b44f3675ac54eeccf7f8d850e25b3422751e8db3ce5fa25c.svg" />
+    </a>
+    <a href="https://www.instagram.com/dev.by/" class="footer__social-item" target="_blank" rel="noopener">
+      <img alt="Instagram" src="/assets/icons/instagram-313d02ecf29c6c6209fa95b5e3f3d173ebb8297516af5e50bb9a7ec81127229d.svg" />
+    </a>
+    <a href="https://www.linkedin.com/company/dev-by/" class="footer__social-item" target="_blank" rel="noopener">
+      <img alt="Linkedin" src="/assets/icons/linkedin-fe31cc933375fc93c0a3ca5099dc8296a975ad509f0ad3f639f759c0efea3ea6.svg" />
+    </a>
+    <a href="https://t.me/devby" class="footer__social-item" target="_blank" rel="noopener">
+      <img alt="Telegram" src="/assets/icons/telegram-fill-60c4099b9814a00012446d2d501f5a5dec2cd519e640d4291fb519c069a07f29.svg" />
+    </a>
+    <a href="https://www.youtube.com/channel/UCEcf2oDuvT4gwwx2mLw_7nw" class="footer__social-item" target="_blank" rel="noopener">
+      <img alt="Youtube" src="/assets/icons/youtube-a9775261cd29991c56ffadb08a3ab537a127b174721d4244f7bb9e6d6b1929cb.svg" />
+    </a>
+    <a href="https://www.tiktok.com/@devby.media" class="footer__social-item" target="_blank" rel="noopener">
+      <img alt="TikTok" src="/assets/icons/tiktok-587ec2a2809c88d40fc19869bc7bef0c89ef1abe5b677dfce5a79f641e1ca8f8.svg" />
+    </a>
+    <a href="/rss" class="footer__social-item">
+      <img alt="Rss" src="/assets/icons/rss-69ab318220464ad294acc90024e4e1ccabf772d3fe421da937eed2ff16965f58.svg" />
+    </a>
+
+  </div>
+
+  <div class="footer__nav">
+  
+    <a class="footer__nav-link" href="https://devby.io/be/pages/support">Падтрымаць dev.by</a>
+    <a class="footer__nav-link" target="_blank" rel="noopener" href="https://mediakit.devby.io">Рэкламныя магчымасці</a>
+    
+    <a class="footer__nav-link" href="https://devby.io/be/pages/about">Аб праекце</a>
+    <a class="footer__nav-link" href="https://devby.io/be/pages/contacts">Кантакты</a>
+    <a class="footer__nav-link" href="https://devby.io/be/pages/adviser">Adviser</a>
+    <a class="footer__nav-link" href="https://devby.io/be/pages/editorial">Рэд палітыка</a>
+    <a class="footer__nav-link" href="https://devby.io/be/pages/faq">Частыя пытанні</a>
+    
+    <a class="footer__nav-link" href="https://dev.media/work-at-devmedia-1">Вакансіі ў нас</a>
+  
 </div>
-<footer role="contentinfo">
-<div id="foot" class="foot">
-<div class="container">
-<div class="foot-nav collapsed" id="foot-nav">
-<div class="menu">
-<ul class="items">
-<li class="socials block-socials">
-<span class="handler" id="socials-handler">
-Сачыце за абнаўленьнямі
-</span>
-<div class="inner">
-<ul class="subitems follow">
-<li>
-<a href="https://www.facebook.com/svaboda.org" title="Мы на Фэйсбуку" data-analytics-text="follow_on_facebook" class="btn btn--rounded js-social-btn btn-facebook" target="_blank" rel="noopener">
-<span class="ico ico-facebook-alt ico--rounded"></span>
-</a>
-</li>
-<li>
-<a href="https://twitter.com/svaboda" title="Мы на Твітэры" data-analytics-text="follow_on_twitter" class="btn btn--rounded js-social-btn btn-twitter" target="_blank" rel="noopener">
-<span class="ico ico-twitter ico--rounded"></span>
-</a>
-</li>
-<li>
-<a href="https://www.youtube.com/channel/UC5rVi7GRsGLGNK2T2JzwoFA?sub_confirmation=1" title="Мы на Youtube" data-analytics-text="follow_on_youtube" class="btn btn--rounded js-social-btn btn-youtube" target="_blank" rel="noopener">
-<span class="ico ico-youtube ico--rounded"></span>
-</a>
-</li>
-<li>
-<a href="https://www.svaboda.org/padkasty" title="Падпісацца на падкаст" data-analytics-text="follow_on_podcast" class="btn btn--rounded js-social-btn btn-podcast" >
-<span class="ico ico-podcast ico--rounded"></span>
-</a>
-</li>
-<li>
-<a href="https://soundcloud.com/svaboda" title="Мы на SoundCloud" data-analytics-text="follow_on_soundcloud" class="btn btn--rounded js-social-btn btn-soundcloud" target="_blank" rel="noopener">
-<span class="ico ico-soundcloud ico--rounded"></span>
-</a>
-</li>
-<li>
-<a href="https://www.instagram.com/radiosvaboda/" title="Мы на Instagram" data-analytics-text="follow_on_instagram" class="btn btn--rounded js-social-btn btn-instagram" target="_blank" rel="noopener">
-<span class="ico ico-instagram ico--rounded"></span>
-</a>
-</li>
-<li>
-<a href="https://t.me/radiosvaboda" title="Мы на Telegram" data-analytics-text="follow_on_telegram" class="btn btn--rounded js-social-btn btn-telegram" target="_blank" rel="noopener">
-<span class="ico ico-telegram ico--rounded"></span>
-</a>
-</li>
-<li>
-<a href="/rssfeeds" title="Падпісацца на RSS" data-analytics-text="follow_on_rss" class="btn btn--rounded js-social-btn btn-rss" >
-<span class="ico ico-rss ico--rounded"></span>
-</a>
-</li>
-</ul>
+
+<div class="footer__nav footer__nav_secondary">
+  <a class="footer__nav-link" href="https://devby.io/be/pages/polzovatelskoe-soglashenie">Карыстальніцкае пагадненне</a>
+  <a class="footer__nav-link" href="https://devby.io/be/pages/privacy-policy">Палітыка прыватнасці</a>
+  <a class="footer__nav-link" href="https://devby.io/be/pages/agreement">Публічны дагавор</a>
 </div>
-</li>
-<li class="block-primary collapsed collapsible item">
-<span class="handler">
-Разьдзелы сайту
-<span title="close tab" class="ico ico-chevron-up"></span>
-<span title="open tab" class="ico ico-chevron-down"></span>
-<span title="add" class="ico ico-plus"></span>
-<span title="remove" class="ico ico-minus"></span>
-</span>
-<div class="inner">
-<ul class="subitems">
-<li class="subitem">
-<a class="handler" href="/naviny" title="Стужка навінаў" >Стужка навінаў</a>
-</li>
-<li class="subitem">
-<a class="handler" href="https://www.svaboda.org/p/8807.html" title="Падкасты" >Падкасты</a>
-</li>
-<li class="subitem">
-<a class="handler" href="https://www.svaboda.org/library" title="Кнігі Свабоды" >Кнігі Свабоды</a>
-</li>
-<li class="subitem">
-<a class="handler" href="/programs-archive" title="Архіў перадачаў" >Архіў перадачаў</a>
-</li>
-<li class="subitem">
-<a class="handler" href="/video-photo" title="Фота / відэа" >Фота / відэа</a>
-</li>
-<li class="subitem">
-<a class="handler" href="https://www.svaboda.org/p/6066.html" title="Спэцпраекты" >Спэцпраекты</a>
-</li>
-</ul>
-</div>
-</li>
-<li class="block-primary collapsed collapsible item">
-<span class="handler">
-Інфармацыя
-<span title="close tab" class="ico ico-chevron-up"></span>
-<span title="open tab" class="ico ico-chevron-down"></span>
-<span title="add" class="ico ico-plus"></span>
-<span title="remove" class="ico ico-minus"></span>
-</span>
-<div class="inner">
-<ul class="subitems">
-<li class="subitem">
-<a class="handler" href="/about-us" title="Пра нас" >Пра нас</a>
-</li>
-<li class="subitem">
-<a class="handler" href="/circumvent-censorship" title="Абысьці блякаваньне" >Абысьці блякаваньне</a>
-</li>
-<li class="subitem">
-<a class="handler" href="https://www.svaboda.org/a/28395957.html" title="Мабільная праграма" >Мабільная праграма</a>
-</li>
-<li class="subitem">
-<a class="handler" href="/suviaz-z-redakcyjaj" title="Бясьпечная сувязь з рэдакцыяй" >Бясьпечная сувязь з рэдакцыяй</a>
-</li>
-<li class="subitem">
-<a class="handler" href="/kantakty" title="Нашы кантакты" >Нашы кантакты</a>
-</li>
-<li class="subitem">
-<a class="handler" href="/terms-of-use" title="Умовы карыстаньня" >Умовы карыстаньня</a>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="foot__item foot__item--copyrights">
-<p class="copyright">Радыё Свабода © 2025 РС | Усе правы захаваныя.</p>
-</div>
-</div>
-</div>
-</footer> </div>
-</div>
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-if (!isPreviewPage) {
-window.OneSignalDeferred = window.OneSignalDeferred || [];
-OneSignalDeferred.push(function(OneSignal) {
-OneSignal.init({
-appId: "8d26e48b-b4f5-4d6b-9008-6586a0651963",
-});
-});
-}
-</script> <script defer src="/Scripts/responsive/serviceWorkerInstall.js?cb=370"></script>
-<script type="text/javascript">
-// opera mini - disable ico font
-if (navigator.userAgent.match(/Opera Mini/i)) {
-document.getElementsByTagName("body")[0].className += " can-not-ff";
-}
-// mobile browsers test
-if (typeof RFE !== 'undefined' && RFE.isMobile) {
-if (RFE.isMobile.any()) {
-document.getElementsByTagName("body")[0].className += " is-mobile";
-}
-else {
-document.getElementsByTagName("body")[0].className += " is-not-mobile";
-}
-}
-</script>
-<script src="/conf.js?x=370" type="text/javascript"></script>
-<div class="responsive-indicator">
-<div class="visible-xs-block">XS</div>
-<div class="visible-sm-block">SM</div>
-<div class="visible-md-block">MD</div>
-<div class="visible-lg-block">LG</div>
-</div>
-<script type="text/javascript">
-var bar_data = {
-"apiId": "24866877",
-"apiType": "1",
-"isEmbedded": "0",
-"culture": "be-BY",
-"cookieName": "cmsLoggedIn",
-"cookieDomain": "www.svaboda.org"
-};
-</script>
-<div id="scriptLoaderTarget" style="display:none;contain:strict;"></div>
-</body>
+
+
+  <div class="footer__info">
+
+    <div class="footer__info-item">
+      Перадрук матэрыялаў dev.by магчымы толькі пры пісьмовай згодзе рэдакцыі. <br> Пры&nbsp;цытаванні абавязковая прамая спасылка на&nbsp;адпаведныя матэрыялы. Пішыце на&nbsp;<a href="/cdn-cgi/l/email-protection#f99c9d908d968bb99d9c8fd78c98"><span class="__cf_email__" data-cfemail="2a4f4e435e45586a4e4f5c045f4b">[email&#160;protected]</span></a>.
+    </div>
+
+  </div>
+</footer>
+
+    </div>
+
+    <button class="error-report-btn btn btn-primary"
+      data-controller="error-report-button"
+      data-action="click->error-report-button#handleButtonClick
+                   error-report-selection.changeSelection@window->error-report-button#handleChangeSelection
+                   error-report-selection.startSelection@window->error-report-button#handleStartSelection"
+      data-error-report-button-active-class="error-report-btn_active"
+      data-error-report-button-showed-class="error-report-btn-showed"
+      type="button"
+      data-toggle="modal"
+      data-target="#errorReportModal">
+      Паведаміць пра памылку
+    </button>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="6c1ef4630e7e12ec69b66b9a-|49" defer></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b6d2ec9cd743cf8',t:'MTc2NzIxOTgyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

@@ -1,1462 +1,500 @@
-<!DOCTYPE html>
-<html lang="be-BY">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html><html lang="be" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.3",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseenter","mouseout","mouseleave","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input","visibilitychange"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),this.F("domReady"),await this.T(),await this.j(),await this.I(),this.F("windowLoad"),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise((t=>setTimeout(t,500-Date.now()+this.lastTouchEnd))),this.H(),this.F("all"),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))}),{isRocket:!0})}o(){window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0}),{isRocket:!0}),window.addEventListener("pagehide",(()=>{this.onFirstUserAction=null}),{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",(function i(o){Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1})),event.preventDefault(),window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}))}),{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),this.savedUserEvents.length>0&&(t.stopPropagation(),t.stopImmediatePropagation()),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach((t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})))}U(){this.userEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0}))),this.savedUserEvents.forEach((t=>{t.target.dispatchEvent(new window[t.constructor.name](t.type,t))}))}m(){this.eventsMutationObserver=new MutationObserver((t=>{const e="return false";for(const i of t){if("attributes"===i.type){const t=i.target.getAttribute(i.attributeName);t&&t!==e&&(i.target.setAttribute("data-rocket-"+i.attributeName,t),i.target["rocket"+i.attributeName]=new Function("event",t),i.target.setAttribute(i.attributeName,e))}"childList"===i.type&&i.addedNodes.forEach((t=>{if(t.nodeType===Node.ELEMENT_NODE)for(const i of t.attributes)this.attributeEvents.includes(i.name)&&i.value&&""!==i.value&&(t.setAttribute("data-rocket-"+i.name,i.value),t["rocket"+i.name]=new Function("event",i.value),t.setAttribute(i.name,e))}))}})),this.eventsMutationObserver.observe(document,{subtree:!0,childList:!0,attributeFilter:this.attributeEvents})}H(){this.eventsMutationObserver.disconnect(),this.attributeEvents.forEach((t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach((e=>{e.setAttribute(t,e.getAttribute("data-rocket-"+t)),e.removeAttribute("data-rocket-"+t)}))}))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o})},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}F(t){"all"===t&&(EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener),this.savedEventListeners=this.savedEventListeners.filter((e=>{let i=e.type,o=e.target||window;return"domReady"===t&&"DOMContentLoaded"!==i&&"readystatechange"!==i||("windowLoad"===t&&"load"!==i&&"readystatechange"!==i&&"pageshow"!==i||(this.B(i,o)&&(i="rocket-"+i),e.remove?o.removeEventListener(i,e.func,e.options):o.addEventListener(i,e.func,e.options),!1))}))}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,(()=>{e[t].forEach((t=>t()))}),{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout((()=>i.bind(document)(o))):i.bind(document)(o)}return t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise((t=>{this.userActionTriggered?t():this.onFirstUserAction=t}))}async L(){return new Promise((t=>{document.addEventListener("DOMContentLoaded",(()=>{this.realDomReadyFired=!0,t()}),{isRocket:!0})}))}async I(){return this.realWindowLoadedFired?Promise.resolve():new Promise((t=>{window.addEventListener("load",t,{isRocket:!0})}))}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver((t=>{for(const e of t)e.addedNodes.forEach((t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise((e=>{const i=()=>{const i=this.pendingScripts.findIndex((e=>e.script===t));i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)}))})}))})),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async j(){await this.J(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.j()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.N(t,"preconnect")}async $(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",(()=>{i.setAttribute("data-rocket-status","failed-network"),e()}),{isRocket:!0}),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.$(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())}),{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.$(e),this.C(t)):Promise.resolve()}O(){this.N([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}N(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach((t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}})),document.head.appendChild(o)}W(){this.trash.forEach((t=>t.remove()))}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async G(){Date.now()-this.lastBreath>45&&(await this.J(),this.lastBreath=Date.now())}async J(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
     
-<title>Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек | dev.by</title>
-<meta name="description" content="Новы вірусны ролік з прэзентацыі Tesla зноў паставіў пад сумнеў аўтаномнасць гуманоіднага робата Optimus.">
-<link rel="canonical" href="https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by">
-<link rel="alternate" href="https://devby.io/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek" hreflang="ru-BY">
-<link rel="alternate" href="https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by" hreflang="be-BY">
-<link rel="amphtml" href="https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by.amp">
-<meta property="og:title" content="Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек">
-<meta property="og:description" content="
-Новы вірусны ролік з прэзентацыі Tesla зноў паставіў пад сумнеў аўтаномнасць гуманоіднага робата Optimus.
-">
-<meta property="og:site_name" content="dev.by">
-<meta property="og:image" content="https://devby.io/storage/images/30/57/78/19/derived/00748c8fc9edcc6e45888498b01bb7e4.jpg">
-<meta property="og:type" content="article">
-<meta property="fb:admins" content="1588103531">
-<meta property="fb:app_id" content="561548633983781">
-<meta name="twitter:site" content="@devby">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="alternate-url:ru" content="https://devby.io/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek">
-<meta name="alternate-url:be" content="https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by">
-<meta name="recaptcha-v3-site-key" content="6LdJuVAfAAAAABPOeSd_bXmje6ZbX79gKJBcDOHb">
-<meta name="verify-admitad" content="57a9b3c9d0">
-<meta name="pmail-verification" content="14e251d704b61dc46bc85ee2a05e8e48">
-<meta name="facebook-domain-verification" content="pta9x81s830d35twayb26eg7ydvdst">
-<meta name="alternate-locale" content="ru">
-<meta name="host" content="devby.io">
-<meta name="data-layer" content="{}">
-<meta name="onthe-io-config" content="{&quot;page_url&quot;:&quot;https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by&quot;,&quot;page_url_canonical&quot;:null,&quot;page_title&quot;:&quot;Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек&quot;,&quot;page_type&quot;:&quot;article&quot;,&quot;page_language&quot;:&quot;ru&quot;,&quot;article_authors&quot;:[&quot;5oRzSu&quot;],&quot;article_categories&quot;:[&quot;world&quot;],&quot;article_type&quot;:&quot;news&quot;,&quot;article_word_count&quot;:225,&quot;article_publication_date&quot;:&quot;2025-12-09T12:42:00.000+03:00&quot;}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="uri-translation" content="on"><link rel="alternate" hreflang="es" href="https://www.drivingeco.com/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="ar" href="https://www.drivingeco.com/ar/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="eu" href="https://www.drivingeco.com/eu/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="be" href="https://www.drivingeco.com/be/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="ca" href="https://www.drivingeco.com/ca/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.drivingeco.com/zh-CN/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="zh-TW" href="https://www.drivingeco.com/zh-TW/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="hr" href="https://www.drivingeco.com/hr/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="cs" href="https://www.drivingeco.com/cs/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="da" href="https://www.drivingeco.com/da/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="nl" href="https://www.drivingeco.com/nl/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="en" href="https://www.drivingeco.com/en/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="et" href="https://www.drivingeco.com/et/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="fr" href="https://www.drivingeco.com/fr/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="gl" href="https://www.drivingeco.com/gl/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="de" href="https://www.drivingeco.com/de/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="hu" href="https://www.drivingeco.com/hu/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="it" href="https://www.drivingeco.com/it/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="ja" href="https://www.drivingeco.com/ja/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="ko" href="https://www.drivingeco.com/ko/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="ku" href="https://www.drivingeco.com/ku/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="pl" href="https://www.drivingeco.com/pl/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="pt" href="https://www.drivingeco.com/pt/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="pa" href="https://www.drivingeco.com/pa/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="ro" href="https://www.drivingeco.com/ro/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="ru" href="https://www.drivingeco.com/ru/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="sk" href="https://www.drivingeco.com/sk/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="sl" href="https://www.drivingeco.com/sl/autonomia-audi-e-tron-explicacion/">
+<link rel="alternate" hreflang="tr" href="https://www.drivingeco.com/tr/autonomia-audi-e-tron-explicacion/">
+
+	<!-- This site is optimized with the Yoast SEO plugin v25.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Меншая аўтаномнасць Audi e-tron мае сваё тлумачэнне, і гэта нядрэнна</title>
+	<meta name="description" content="Інжынеры Audi вырашылі надаць большае значэнне надзейнасці e-tron нават за кошт зніжэння яго эфектыўнасці і аўтаномнасці.">
+	<link rel="canonical" href="https://www.drivingeco.com/be/%D0%A2%D0%BB%D1%83%D0%BC%D0%B0%D1%87%D1%8D%D0%BD%D0%BD%D0%B5-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%96-Audi-e-tron/">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Меншая аўтаномнасць Audi e-tron мае сваё тлумачэнне, і гэта нядрэнна">
+	<meta property="og:description" content="Інжынеры Audi вырашылі надаць большае значэнне надзейнасці e-tron нават за кошт зніжэння яго эфектыўнасці і аўтаномнасці.">
+	<meta property="og:url" content="https://www.drivingeco.com/be/%D0%A2%D0%BB%D1%83%D0%BC%D0%B0%D1%87%D1%8D%D0%BD%D0%BD%D0%B5-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%96-Audi-e-tron/">
+	<meta property="og:site_name" content="Driving ECO">
+	<meta property="article:published_time" content="2019-09-17T12:02:53+00:00">
+	<meta property="og:image" content="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34.jpg">
+	<meta property="og:image:width" content="1300">
+	<meta property="og:image:height" content="806">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="Javier Cantagalli">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@Cantagalli">
+	<meta name="twitter:label1" content="аўтар">
+	<meta name="twitter:data1" content="Хаўер Кантагалі">
+	<meta name="twitter:label2" content="Прыл. час чытання">
+	<meta name="twitter:data2" content="4 Minutos">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.drivingeco.com\/autonomia-audi-e-tron-explicacion\/","url":"https:\/\/www.drivingeco.com/be\/%D0%A2%D0%BB%D1%83%D0%BC%D0%B0%D1%87%D1%8D%D0%BD%D0%BD%D0%B5-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%96-Audi-e-tron\/","name":"Меншая аўтаномнасць Audi e-tron мае сваё тлумачэнне, і гэта нядрэнна","isPartOf":{"@id":"https:\/\/www.drivingeco.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.drivingeco.com\/autonomia-audi-e-tron-explicacion\/#primaryimage"},"image":{"@id":"https:\/\/www.drivingeco.com\/autonomia-audi-e-tron-explicacion\/#primaryimage"},"thumbnailUrl":"https:\/\/i.bstr.es\/drivingeco\/2019\/05\/audi-e-tron-34.jpg","datePublished":"2019-09-17T12:02:53+00:00","author":{"@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/a1e763aeef06335d35964698bef86c57"},"description":"Інжынеры Audi вырашылі надаць большае значэнне надзейнасці e-tron нават за кошт зніжэння яго эфектыўнасці і аўтаномнасці.","breadcrumb":{"@id":"https:\/\/www.drivingeco.com\/autonomia-audi-e-tron-explicacion\/#breadcrumb"},"inLanguage":"be","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.drivingeco.com\/autonomia-audi-e-tron-explicacion\/"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/autonomia-audi-e-tron-explicacion\/#primaryimage","url":"https:\/\/i.bstr.es\/drivingeco\/2019\/05\/audi-e-tron-34.jpg","contentUrl":"https:\/\/i.bstr.es\/drivingeco\/2019\/05\/audi-e-tron-34.jpg","width":1300,"height":806,"caption":"Audi электроннай электронаў"},{"@type":"BreadcrumbList","@id":"https:\/\/www.drivingeco.com\/autonomia-audi-e-tron-explicacion\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Галоўная","item":"https:\/\/www.drivingeco.com\/"},{"@type":"ListItem","position":2,"name":"Меншая аўтаномнасць Audi e-tron мае сваё тлумачэнне, і гэта нядрэнна"}]},{"@type":"WebSite","@id":"https:\/\/www.drivingeco.com\/#website","url":"https:\/\/www.drivingeco.com/be\/","name":"Driving ECO","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.drivingeco.com/be\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"be"},{"@type":"Person","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/a1e763aeef06335d35964698bef86c57","name":"Javier Cantagalli","image":{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/image\/","url":"https:\/\/secure.gravatar.com\/avatar\/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=96&d=mm&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=96&d=mm&r=g","caption":"Javier Cantagalli"},"sameAs":["https:\/\/x.com\/Cantagalli"],"url":"https:\/\/www.drivingeco.com/be\/%D0%B0%D1%9E%D1%82%D0%B0%D1%80\/jsunyer\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
 
 
-    <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "NewsArticle",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by"
-    },
-    "url": "https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by",
-    "datePublished": "2025-12-09T12:42:00+03:00",
-    "dateModified": "2025-12-09T12:38:47+03:00",
-    "headline": "Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек",
-    "description": "
-<p>Новы вірусны ролік з&nbsp;прэзентацыі Tesla зноў паставіў пад сумнеў аўтаномнасць гуманоіднага робата Optimus.</p>
-",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://devby.io/storage/images/30/57/78/19/derived/00748c8fc9edcc6e45888498b01bb7e4.jpg"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Николай Чикишев"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "dev.by",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "/assets/logo-6fb2e86b23f09204944b25927b96125ad76f3039b51a85296f963f0f9c49c30a.png",
-        "width": 83,
-        "height": 32
-      }
-    }
-  }
-</script>
+<link rel="dns-prefetch" href="https://i.bstr.es/">
+
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.drivingeco.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.1" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://www.drivingeco.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://www.drivingeco.com/wp-json/wp/v2/posts/8085">
+
+	<link rel="icon" type="image/png" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco-16x16.png">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco76x76.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco152x152.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco144x144.png">	
+<!-- incrementa -->	    <script type="rocketlazyloadscript" async="" data-rocket-type="text/javascript">
+            var a = new XMLHttpRequest();
+            a.open("GET","https://www.drivingeco.com/be/wp-content/themes/comun9/incrementa.php?id=8085&bd=drivingeco");
+            a.send(null);
+	   </script>
+				
+			<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.drivingeco.com\/autonomia-audi-e-tron-explicacion\/"},"headline":"","image":"https:\/\/i.bstr.es\/drivingeco\/2019\/05\/audi-e-tron-34-880x546.jpg","datePublished":"2019-09-17","dateModified":"2019-09-17","author":{"@type":"Person","name":"Javier Cantagalli"},"publisher":{"@type":"Organization","name":"drivingeco","logo":{"@type":"ImageObject","url":"https:\/\/www.drivingeco.com\/favicon.ico"}},"description":""}</script>	
+		<!-- ## NXS/OG ## --><!-- ## NXSOGTAGS ## --><!-- ## NXS/OG ## -->
+
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
 
 
 
 
 
-  <link rel="dns-prefetch" href="https://www.google.com"><link rel="preconnect" href="https://www.google.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.google-analytics.com">
-  <link rel="dns-prefetch" href="https://www.gstatic.com"><link rel="preconnect" href="https://www.gstatic.com">
-  <link rel="dns-prefetch" href="https://connect.facebook.net"><link rel="preconnect" href="https://connect.facebook.net">
-  <link rel="dns-prefetch" href="static.hotjar.com"><link rel="preconnect" href="static.hotjar.com">
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MGNRFSQ');</script>
+<!-- End Google Tag Manager -->
 
 
-  <script type="856a27db725025cf1c1d0813-text/javascript">
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WTXK2ZV');
-</script>
+<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
 
-<script type="856a27db725025cf1c1d0813-text/javascript">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGNRFSQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<script type="rocketlazyloadscript">var adTarget="marca=audi;modelo=e-tron;";</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://tmadspot.s3.eu-west-3.amazonaws.com/ads/250199.js"></script>
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://t.seedtag.com/t/7860-6497-01.js"></script>
+
+
+		
+	
+	<!-- google adsense + adspot -->
+	<script type="rocketlazyloadscript">
+		var currentLang = document.getElementsByTagName('html')[0].getAttribute('lang');
+		console.log(currentLang);
+		if ( currentLang !== 'es' && currentLang !== 'es-ES' &&  currentLang !== 'pt' && currentLang !== 'pt-PT') {
+			var script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6543774410994713';
+			script.crossOrigin = 'anonymous';
+			document.head.appendChild(script);
+		}
+		else{
+			var script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://ssm.codes/smart-tag/drivingeco.js';
+			document.head.appendChild(script);
+
+		}
+	</script>
+	<!-- google adsense -->
+
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-CE3ZWTD17F"></script>
+<script type="rocketlazyloadscript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  // TODO: refact
-    var articleFormat = '';
-    var tagsList = '[&quot;optimus&quot;,&quot;tesla&quot;,&quot;илон маск&quot;,&quot;робот&quot;,&quot;робототехника&quot;]';
-    var groupNames = ['AF', 'Mic', 'Беларусь', 'World'];
-    var groupValue = '';
-
-    groupNames.forEach(function (groupName) {
-      if (tagsList.includes(groupName) && !groupValue) {
-        groupValue = 'News — ' + groupName;
-      }
-    })
-
-    if (!groupValue) groupValue = 'News — Not identified';
-
-    if (articleFormat == 'long') {
-      gtag('set', { 'content_group4': groupValue });
-    } else {
-      gtag('set', { 'content_group5': groupValue });
-    }
-    gtag('set', { 'dimension5': '2025-12-09' });
-
-  gtag('config', 'G-FBEEKRSEQ5');
-</script>
-
-<script type="856a27db725025cf1c1d0813-text/javascript">
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      !function (f, b, e, v, n, t, s) {
-        if (f.fbq) return; n = f.fbq = function () {
-          n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-        };
-        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-        n.queue = []; t = b.createElement(e); t.async = !0;
-        t.src = v; s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s)
-      }(window, document, 'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '534068271518810');
-      fbq('track', 'PageView');
-    }, 5000);
-  })
+	gtag('config', 'G-CE3ZWTD17F', {
+	   'custom_map': {
+	     'dimension1': 'domain'
+	   }
+	});
+	
+	gtag('event', 'set_domain', {'domain': 'drivingeco.com'});
 </script>
 
 
-  <!-- Hotjar Tracking Code for https://devby.io/ -->
-  <script type="856a27db725025cf1c1d0813-text/javascript">
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:3671579,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
-
-
-  <script src="https://cdn.admixer.net/scripts3/loader2.js" async data-inv="//inv-nets.admixer.net" data-r="single" data-sender="admixer" data-bundle="desktop" type="856a27db725025cf1c1d0813-text/javascript"></script>
-
-  <script type="856a27db725025cf1c1d0813-text/javascript">
-    (window.globalAmlAds = window.globalAmlAds || []).push(function() {
-      const banners = [
-        {
-          z: 'c00cc299-ca5d-4324-b7c1-fe672393721b',
-          ph: 'admixer_c00cc299ca5d4324b7c1fe672393721b_zone_100342_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '888cbc33-db54-4a91-821f-bbd85b923bc4',
-          ph: 'admixer_888cbc33db544a91821fbbd85b923bc4_zone_100344_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '21fcc4b3-7c74-48d3-bd1a-f9ad76c11569',
-          ph: 'admixer_21fcc4b37c7448d3bd1af9ad76c11569_zone_100416_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '2f21cc3d-efbf-408e-af09-1233b408d5e1',
-          ph: 'admixer_2f21cc3defbf408eaf091233b408d5e1_zone_100417_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: 'c30d6770-ae93-43b3-8ffe-878f78f95497',
-          ph: 'admixer_c30d6770ae9343b38ffe878f78f95497_zone_100418_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: 'bfcc2f9d-8c1a-4c28-bd3d-62216f991caa',
-          ph: 'admixer_bfcc2f9d8c1a4c28bd3d62216f991caa_zone_100419_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: 'add7ffc1-c8f0-4ad9-a7eb-234d741e57bd',
-          ph: 'admixer_add7ffc1c8f04ad9a7eb234d741e57bd_zone_100420_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '217bcfb4-051d-4c38-b4a5-75217e1fb82e',
-          ph: 'admixer_217bcfb4051d4c38b4a575217e1fb82e_zone_101208_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '380cbeee-2993-4036-b160-d072819287f1',
-          ph: 'admixer_380cbeee29934036b160d072819287f1_zone_101212_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '48c648d0-a35a-4cc6-9991-c38ab171f5d3',
-          ph: 'admixer_48c648d0a35a4cc69991c38ab171f5d3_zone_101213_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '1133deda-1708-41b8-8e0c-4f5260945363',
-          ph: 'admixer_1133deda170841b88e0c4f5260945363_zone_101285_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '478f3fec-2206-4415-a38e-f72d4a1e4797',
-          ph: 'admixer_478f3fec22064415a38ef72d4a1e4797_zone_101992_sect_44574_site_38177',
-          i: 'inv-nets',
-          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: 'fb27fbce-99e8-48c5-9c31-788cfb0d25ee',
-          ph: 'admixer_fb27fbce99e848c59c31788cfb0d25ee_zone_105089_sect_48295_site_38177',
-          i: 'inv-nets',
-          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '1c2176b8-46d6-4372-82bd-40745f7c12a3',
-          ph: 'admixer_1c2176b846d6437282bd40745f7c12a3_zone_105090_sect_48295_site_38177',
-          i: 'inv-nets',
-          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '52195f29-f66b-4e54-9e3f-4500ea39a3fe',
-          ph: 'admixer_52195f29f66b4e549e3f4500ea39a3fe_zone_105091_sect_48295_site_38177',
-          i: 'inv-nets',
-          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '3acbe3b6-2ca2-4fd4-80d5-83a45c0a84ea',
-          ph: 'admixer_3acbe3b62ca24fd480d583a45c0a84ea_zone_105092_sect_48295_site_38177',
-          i: 'inv-nets',
-          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '8608bacb-d8e5-4a29-b64f-2ce55473cad4',
-          ph: 'admixer_8608bacbd8e54a29b64f2ce55473cad4_zone_105093_sect_48295_site_38177',
-          i: 'inv-nets',
-          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: 'a3b6d4a0-e317-49e8-b30d-d93464a0940a',
-          ph: 'admixer_a3b6d4a0e31749e8b30dd93464a0940a_zone_105094_sect_48295_site_38177',
-          i: 'inv-nets',
-          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: 'b26fac30-050c-4a46-b0db-194109f4409d',
-          ph: 'admixer_b26fac30050c4a46b0db194109f4409d_zone_105096_sect_48295_site_38177',
-          i: 'inv-nets',
-          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        {
-          z: '1c1869df-2876-4a12-9b96-57ef9f15f81c',
-          ph: 'admixer_1c1869df28764a129b9657ef9f15f81c_zone_106623_sect_44574_site_38177',
-          i: 'inv-nets',
-          s:'58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        { z: '661b3075-bea6-4a87-8aa2-24e18d203205',
-          ph: 'admixer_661b3075bea64a878aa224e18d203205_zone_109799_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        { z: '33cdd89e-dcff-4187-b7d0-f2b4cb12bb40',
-          ph: 'admixer_33cdd89edcff4187b7d0f2b4cb12bb40_zone_114355_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        { z: 'ee5feda1-e7a0-4291-a922-dfb164506819',
-          ph: 'admixer_ee5feda1e7a04291a922dfb164506819_zone_100343_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        { z: '8d33db9c-429a-4c99-9f4d-c0593f769614',
-          ph: 'admixer_8d33db9c429a4c999f4dc0593f769614_zone_100340_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        },
-        { z: '6e9ba6ec-f1d2-4856-9f07-ab844f50783d',
-          ph: 'admixer_6e9ba6ecf1d248569f07ab844f50783d_zone_100341_sect_44574_site_38177',
-          i: 'inv-nets',
-          s: '58d9200d-98a7-423c-abb3-e445b2b620d4',
-          sender: 'admixer'
-        }
-      ];
-
-      banners.forEach(banner => {
-        const id = banner.ph
-        const containerElement = document.querySelector('#' + id)
-
-        if (containerElement) globalAml.defineSlot(banner)
-      })
-
-      globalAml.singleRequest('admixer');
-    })
-  </script>
-
-
-  <script src="https://cdn.onthe.io/io.js/ngjaOM5bE3cf" async type="856a27db725025cf1c1d0813-text/javascript"></script>
-
-
-  <script type="856a27db725025cf1c1d0813-text/javascript">
-    function ioConfigFields () {
-      try {
-        return JSON.parse(document.head.querySelector('meta[name=onthe-io-config]').content)
-      } catch(e) {
-        return {}
-      }
-    }
-    window._io_config = window._io_config || {};
-    window._io_config["0.2.0"] = window._io_config["0.2.0"] || [];
-    window._io_config["0.2.0"].push(ioConfigFields());
-  </script>
-
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Галоўная","item":"https://devby.io/be/"},{"@type":"ListItem","position":2,"name":"Навіны","item":"https://devby.io/be/news"},{"@type":"ListItem","position":3,"name":"Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек","item":"https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by"}]}
-  </script>
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href=/assets/favicons/favicon-16x16-156fc4a9afe92038931bb0d2c93e3292df7fdf8c7f25974a70aa6cca8abeab3e.png sizes="16x16">
-  <link rel="icon" type="image/png" sizes="32x32" href=/assets/favicons/favicon-32x32-f124a7353b6e6297669848fe34ca7fdb4b549e6d85d0340769dea1c7ccc20cf3.png sizes="32x32">
-  <link rel="apple-touch-icon" sizes="180x180" href=/assets/favicons/apple-touch-icon-180x180-c5ce585d8366ab7febcea20387dc139777b1c36c0cd7f62ba4f18d38f92d3509.png sizes="180x180">
-  <link rel="mask-icon" href=/assets/favicons/mask-icon-ad962fe4b73195284e5975c86e048c966d44a4b01187304da2903c512df35488.svg color="#283cdc">
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="856a27db725025cf1c1d0813-text/javascript"></script>
-
-    <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="FmRQA+d64hshDO0d+4uXgpu2bQlyYR9cXyef7ucpNPMJ/icTxTRPiWQoq03sD/lkMhECSe7ANziwX25OQvL7hA==" />
-    <meta name="csp-nonce" />
-    <link rel="stylesheet" media="all" href="/assets/application-f3a5182bacbd09a24138dbfbbfbc1eae71a7f9273dbd9436cc43df7010b9a65d.css" />
-    <script src="/packs/js/runtime~application-5b58628620caecc5b203.js" defer="defer" type="856a27db725025cf1c1d0813-text/javascript"></script>
-<script src="/packs/js/0-b5a11488da9151ffd383.chunk.js" defer="defer" type="856a27db725025cf1c1d0813-text/javascript"></script>
-<script src="/packs/js/5-fe3065873dd34271c642.chunk.js" defer="defer" type="856a27db725025cf1c1d0813-text/javascript"></script>
-<script src="/packs/js/application-235e1166903e1bbf3293.chunk.js" defer="defer" type="856a27db725025cf1c1d0813-text/javascript"></script>
-  </head>
-  <body
-    data-controller="rotate-block"
-    class="">
 
     
-    <div class="wrap">
 
-      
-<header class="navbar" data-controller="navbar">
-  <div class="navbar__row">
-    <div class="navbar__toggler" data-navbar-target="toggler" data-action="click->navbar#handleClick"></div>
-    <span class="led led_success"></span>
-
-      <a href="https://devby.io/be/" class="navbar__brand">
-          <img class="navbar__brand-img" alt="dev.by" src="/assets/logo-global-230ce1d5f23ef4ac8fec244416de277c85a05545ce132e8a20c7e98c35f8df5b.svg" />
-          <div class="popover-overlay d-none popover-overlay_desktop"
-     data-controller="notification-ge"
-     data-notification-ge-hidden-class="d-none"
-     data-notification-ge-name-value="is_notification_ge_closed"
-     data-notification-ge-lifetime-value="3650">
-  <div class="popover bs-popover-bottom">
-    <a role="button"
-      title="Закрыть"
-      class="popover-close"
-      data-action="click->notification-ge#handleClickButtonClose">
-    </a>
-    <div class="popover-body">
-      <p>Рэлацыраваліся? Цяпер вы&nbsp;можаце каментаваць без верыфікацыі акаўнта.</p>
-
-    </div>
-  </div>
-</div>
-
-      </a>
-
-    <nav class="navbar__nav navbar__nav_desktop">
-      
-    <a class="navbar__nav-item navbar__nav-item_support btn_danger" href="https://devby.io/be/pages/support?utm_source=devby&utm_medium=header&utm_content=donation&utm_campaign=test_b">
-    <svg class="d-inline-block mr-2" height="16" width="16" aria-hidden="true">
-      <use href="/assets/icons-8ea6c281b62be027c50472211c0c667bed8ae0032ca21b9312b6b61e5d2c9f23.svg#heartIcon"></use>
-    </svg>
-    <span>Падтрымаць</span>
-  </a>
-
-  <a class="navbar__nav-item navbar__nav-item_active" href="https://devby.io/be/news">Стужка</a>
-  <a class="navbar__nav-item" href="https://devby.io/be/news?tag=%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C">#Беларусь</a>
-  <a class="navbar__nav-item" href="https://devby.io/blogs">
-    Суполка
-    <span class="led led_success ml-2"></span>
-  </a>
-  <a class="navbar__nav-item" href="https://devby.io/be/news?category=research">#Рэсёрчы</a>
-  <a class="navbar__nav-item" href="https://devby.io/be/news?category=you-can-help">Вы можаце дапамагчы</a>
-  <a class="navbar__nav-item" href="https://devby.io/be/adviser">Adviser</a>
-
-
-
-
-
-    </nav>
-
-    <div class="navbar__nav navbar__nav_aside"
-      data-controller="locales"
-      data-locales-default-locale-value="ru"
-      data-locales-host-value="https://devby.io"
-      data-locales-domain-value="devby.io">
-      
-
-<div class="navbar__nav-item d-none d-lg-flex">
+         
+	
+  <meta name="generator" content="WP Rocket 3.18.3" data-wpr-features="wpr_delay_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_minify_css wpr_preload_links wpr_desktop"></head>
+  <body class="wp-singular post-template-default single single-post postid-8085 single-format-standard wp-theme-comun9 wp-child-theme-drivingeco autonomia-audi-e-tron-explicacion">
   
-  
-  
-  <button
-    type="button"
-    class="navbar__button mr-4 mr-lg-3"
-    data-action="click->locales#handleClick"
-    data-locale-url="ru">
-    
-    РУС
-  </button>
-
-
-</div>
-
-
-  
-    <a href="https://id.devby.io/@/hello" class="navbar__nav-item">
-      <svg class="d-inline-block" height="24" width="24" aria-hidden="true">
-        <use href="/assets/icons-8ea6c281b62be027c50472211c0c667bed8ae0032ca21b9312b6b61e5d2c9f23.svg#authIcon"></use>
-      </svg>
-    </a>
-  
-
-
-    </div>
-  </div>
-
-  <div class="menu border-top-0" data-navbar-target="menu">
-      <div class="d-lg-none mx-4 px-2 mb-4 pb-2">
-    <a class="btn btn_md btn_danger w-100 d-flex justify-content-center align-items-center rounded" href="https://devby.io/be/pages/support?utm_source=devby&utm_medium=header&utm_content=donation&utm_campaign=test_b">
-      <svg class="d-inline-block mr-3" height="20" width="20" aria-hidden="true">
-        <use href="/assets/icons-8ea6c281b62be027c50472211c0c667bed8ae0032ca21b9312b6b61e5d2c9f23.svg#heartIcon"></use>
-      </svg>
-      <span class="text-bolder ">Падтрымаць</span>
-    </a>
-  </div>
-
-
-    
-  <div class="menu__row menu__row_lg"
-    data-controller="locales"
-    data-locales-default-locale-value="ru"
-    data-locales-host-value="https://devby.io"
-    data-locales-domain-value="devby.io">
-    
-  
-  
-  <button
-    type="button"
-    class="navbar__button h-100 w-100"
-    data-action="click->locales#handleClick"
-    data-locale-url="ru">
-    
-    РУС
-  </button>
-
-
-  </div>
-
-
-
-
-
-<div class="menu__header">
-  <form class="menu__form-search form-inline h-100" action="https://www.google.com/cse" method="get">
-  <input class="menu__input-search form-control-plaintext h-100 w-100 d-block" name="q" type="text"
-    placeholder=Пошук aria-label="Поиск" autocomplete="off">
-  <button class="menu__button-search" type="submit">
-    <img alt="Search" src="/assets/icons/search-3305d5b892f14dbebc7340f4ffa90c7a5519b95a0e6ef493ab1fca0e8f1d5da2.svg" />
-  </button>
-  <input type="hidden" name="cx" value="017818143311378779828:hkz7dyja5dc">
-  <input type="hidden" name="ie" value="UTF-8">
-</form>
-
-</div>
-
-<nav class="menu__body">
-  <div class="menu__col">
-  
-    <a class="menu__nav-item navbar__nav-item_active" href="https://devby.io/be/news">Стужка</a>
-    <a class="menu__nav-item" href="https://devby.io/be/news?tag=%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C">#Беларусь</a>
-    <a class="menu__nav-item" href="https://devby.io/be/news?category=research">#Рэсёрчы</a>
-    <a class="menu__nav-item" href="https://devby.io/be/news?category=you-can-help">Вы можаце дапамагчы</a>
-    <a class="menu__nav-item" href="https://devby.io/be/adviser">Adviser</a>
-  
-</div>
-
-<div class="menu__col">
-  
-    <a class="menu__nav-item" href="https://devby.io/blogs">
-      Суполка
-      <span class="led led_success ml-2"></span>
-    </a>
-
-    <a class="menu__nav-item menu__nav-item_label" data-label="18" href="https://jobs.devby.io">Вакансіі</a>
-    <a class="menu__nav-item" href="https://companies.devby.io">Кампаніі</a>
-    <a class="menu__nav-item" target="_blank" rel="noopener" href="https://courses.thedev.io/">Курсы</a>
-    <a class="menu__nav-item" href="https://salaries.devby.io">Зарплаты</a>
-  
-
-  
-  
-</div>
-
-</nav>
-
-<div class="menu__footer">
-  
-  <a class="menu__footer-item" target="_blank" rel="noopener" href="https://mediakit.devby.io">Рэкламныя магчымасці</a>
-  
-  <a class="menu__footer-item" href="https://devby.io/be/pages/about">Аб праекце</a>
-  <a class="menu__footer-item" href="https://devby.io/be/pages/contacts">Кантакты</a>
-  <a class="menu__footer-item" href="https://devby.io/be/pages/editorial">Рэд палітыка</a>
-  <a class="menu__footer-item" href="https://devby.io/be/pages/polzovatelskoe-soglashenie">Карыстальніцкае пагадненне</a>
-  <a class="menu__footer-item" href="https://devby.io/be/pages/faq">Частыя пытанні</a>
-  
-  <a class="menu__footer-item" target="_blank" rel="noopener" href="https://dev.media/work-at-devmedia-1">Вакансіі ў нас</a>
-  <a class="menu__footer-item" href="https://devby.io/be/pages/privacy-policy">Палітыка прыватнасці</a>
-  <a class="menu__footer-item" href="https://devby.io/be/pages/agreement">Публічны дагавор</a>
-
-
-</div>
-
-
-  </div>
-</header>
-
-      
-  <!--After header widget START-->
-<div class="afterheader-widget afterheader-widget_cherry rotation-0">
-  <div class="afterheader-widget__text">
-Дапамажыце dev.by 🤍
-  </div>
-  <a class="afterheader-widget__ref" href="https://bit.ly/3U85uIL" target="_blank" rel="noopener"></a>
-</div>
-<!--After header widget END-->
-
-
-      
-
-
-
-
-
-
-
-  <div class="d-lg-none mx-4 px-2 mb-4 pb-2">
-    <a class="btn btn_md btn_danger w-100 d-flex justify-content-center align-items-center rounded" href="https://devby.io/be/pages/support?utm_source=devby&utm_medium=header&utm_content=donation&utm_campaign=test_b">
-      <svg class="d-inline-block mr-3" height="20" width="20" aria-hidden="true">
-        <use href="/assets/icons-8ea6c281b62be027c50472211c0c667bed8ae0032ca21b9312b6b61e5d2c9f23.svg#heartIcon"></use>
-      </svg>
-      <span class="text-bolder ">Падтрымаць</span>
-    </a>
-  </div>
-
-
-
-<main class="main">
-  <div class="island">
-    <div class="island__body">
-        <div class="island__body-row">
-          <div class="island__body-main">
-            
-
-
-<article class="article" data-article-author-token=5oRzSu    data-format=news data-io-article-url=https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by>
-  <div class="article__header">
-  <div class="article__container">
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    <div class="article-meta article-meta_semibold">
-      
-        <span class="article-meta__item">Николай Чикишев</span>
-      
-
-      
-        <a class="article-meta__item" href="https://devby.io/be/news?category=world-1743501417">world</a>
-      
-
-      
-
-      
-        <span id="publishedAt" class="article-meta__item">
-          9 снежня 2025, 12:42
-        </span>
-      
-
-      
-    </div>
-
-    <h1>Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек</h1>
-
-    
-      <p>
-<p>Новы вірусны ролік з&nbsp;прэзентацыі Tesla зноў паставіў пад сумнеў аўтаномнасць гуманоіднага робата Optimus.</p>
-</p>
-    
-
-    <div class="article__reference article__reference_header">
-      
-        <a href="#comments" class="article__reference-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentcolor" d="M13 0h-10c-1.7 0-3 1.3-3 3v13l5-4h8c1.7 0 3-1.3 3-3v-6c0-1.7-1.3-3-3-3zm1 9c0 .6-.4 1-1 1h-8.7l-2.3 1.8v-8.8c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v6z"/></svg>
-          Пакінуць каментарый
-        </a>
-      
-
-      <div class="share" data-controller="share">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by" class="share__item" target="_blank" rel="noopener">
-          <img alt="Facebook" src="/assets/icons/facebook-ee75275658d0cbb3de71d03a67f6f315492d3b1bc43ec17b65180ada5c1401b5.svg" />
-        </a>
-        <a href="https://twitter.com/intent/tweet?url=https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by&text=Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек" class="share__item" target="_blank" rel="noopener">
-          <img alt="Twitter" src="/assets/icons/twitter-dc9d7c63168d6531b44f3675ac54eeccf7f8d850e25b3422751e8db3ce5fa25c.svg" />
-        </a>
-        <a href="https://telegram.me/share/url?url=https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by&text=Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек" class="share__item" target="_blank" rel="noopener">
-          <img alt="Telegram" src="/assets/icons/telegram-fill-60c4099b9814a00012446d2d501f5a5dec2cd519e640d4291fb519c069a07f29.svg" />
-        </a>
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <div
-  class="article__body"
-  data-controller="article-global-incut"
-  data-gtm-track="article-referral-click">
-
-  
-    <figure class="image">
-      <img
-        src="/storage/images/30/57/78/19/derived/1e62fa3fd2dff1d6b977aef422bce293.jpg"
-        sizes="(min-width: 1024px) 868px, 480px"
-        srcset="
-          /storage/images/30/57/78/19/derived/1e62fa3fd2dff1d6b977aef422bce293.jpg 480w,
-          /storage/images/30/57/78/19/derived/00748c8fc9edcc6e45888498b01bb7e4.jpg 868w,
-        "
-        alt="Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек"
-        title="Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек"
-        fetchpriority="high"
-      >
-    </figure>
-  
-
-  <div class="article__container " data-article-global-incut-target="content">
-    <figure>
-<div class="article__lead ">
-<p>Новы вірусны ролік з&nbsp;прэзентацыі Tesla зноў паставіў пад сумнеў аўтаномнасць гуманоіднага робата Optimus.</p>
-</div>
-</figure>
-<p>У&nbsp;сеціве з’явілася новае відэа, якое паказала, наколькі далёкія чалавекападобныя робаты Tesla Optimus ад&nbsp;рэальнай аўтаномнасці. На&nbsp;кадрах, знятых на&nbsp;мерапрыемстве Tesla ў&nbsp;Маямі, робат спакойна стаіць за&nbsp;сталом з&nbsp;бутэлькамі вады, пакуль раптоўна не&nbsp;падымае рукі да&nbsp;«скроняў», губляе раўнавагу і&nbsp;падае наўзнач.</p>
-<p>Карыстальнікі заўважылі, што рух амаль ідэальна паўтарае жэст чалавека, які ў&nbsp;гэты момант здымаў VR-гарнітуру і&nbsp;завяршаў сеанс кіравання.</p>
-<p>«Калі яшчэ заставаліся сумневы, што Optimus кіруюць па&nbsp;тэлемосце,&nbsp;— вось вам доказ»,&nbsp;— напісаў заснавальнік робататэхнічных кампаній REK Cix Liv, апублікаваны ролік якога сабраў тысячы праглядаў. «Максімальна пацешна»,&nbsp;— дадаў ён.</p>
-<blockquote class="twitter-tweet">
-<p dir="ltr" lang="en">If&nbsp;there was any question that Optimus uses teleop for their robots. Here one clearly has a&nbsp;guy take the headset off and it&nbsp;falls over.<br><br>Absolutely hilarious though. <a href="https://t.co/4gYVohjY00">pic.twitter.com/4gYVohjY00</a></p>
-—&nbsp;CIX 🦾 (@cixliv) <a href="https://twitter.com/cixliv/status/1997878834956525898?ref_src=twsrc%5Etfw">December 8, 2025</a></blockquote>
-<p>
-<script src="https://platform.twitter.com/widgets.js" async="" charset="utf-8" type="856a27db725025cf1c1d0813-text/javascript"></script>
-</p>
-<p>Журналісты таксама падхапілі тэму. «Не&nbsp;звяртайце ўвагі на&nbsp;нізкааплатнага супрацоўніка, які віртуальна кіруе вашым робатам Tesla»,&nbsp;— <a href="https://kotaku.com/tesla-robot-optimus-kojima-od-boys-season-5-trailer-2000651373" target="_blank" rel="nofollow noopener">пажартаваў</a> рэпарцёр Kotaku Ітан Гач, параўнаўшы сітуацыю з&nbsp;«Чараўніком краіны Оз», дзе «вялікі і&nbsp;жахлівы» аказваецца звычайным чалавекам за&nbsp;шырмай.</p>
-<p>Інцыдэнт дэманструе разрыў паміж узроўнем механікі сучасных чалавекападобных робатаў і праграмным забеспячэннем, неабходным для іх цалкам аўтаномнай працы. Аналітыкі адзначаюць, што падобныя цяжкасці адчуваюць і іншыя кампаніі: напрыклад, робат NEO ад&nbsp;1X таксама патрабуе ўдзелу аддаленага аператара, аб&nbsp;чым вытворца быў вымушаны афіцыйна заявіць.</p>
-<figure class="incut ">
-<div class="card card_media" data-template-id="relatedArticle">
-<div class="card__img-wrap"><img class="card__img" src="https://devby.io/storage/images/35/87/07/60/derived/1740fa2d687fbe32dcceadc5f83e5bfd.jpg" alt="Першы расійскі ШІ-робат дэбютаваў тварам у падлогу"></div>
-<div class="card__info">
-<div class="card__body"><a class="card__link" href="https://devby.io/be/news/pervyi-rossiiskii-ii-robot-debutiroval-litsom-v-pol-by" target="_blank" rel="noopener"> Першы расійскі ШІ-робат дэбютаваў тварам у&nbsp;падлогу </a>
-<div class="card__meta">Па&nbsp;тэме</div>
-<div class="card__title">Першы расійскі ШІ-робат дэбютаваў тварам у&nbsp;падлогу</div>
-</div>
-</div>
-</div>
-</figure>
-<figure class="incut ">
-<div class="card card_media" data-template-id="relatedArticle">
-<div class="card__img-wrap"><img class="card__img" src="https://devby.io/storage/images/63/79/59/57/derived/82fd2d20ba322d664b9437e74cf414b9.jpg" alt="Amazon вырашыла замяніць 600 000 супрацоўнікаў робатамі"></div>
-<div class="card__info">
-<div class="card__body"><a class="card__link" href="https://devby.io/be/news/amazon-reshila-zamenit-600-000-sotrudnikov-robotami-by" target="_blank" rel="noopener"> Amazon вырашыла замяніць 600 000 супрацоўнікаў робатамі </a>
-<div class="card__meta">Па&nbsp;тэме</div>
-<div class="card__title">Amazon вырашыла замяніць 600 000 супрацоўнікаў робатамі</div>
-</div>
-</div>
-</div>
-</figure>
-
-    
-      <figure class="global-incut" data-article-global-incut-target="incut">
-  
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="856a27db725025cf1c1d0813-text/javascript"></script>
-<!-- devby. by version global incut -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1094641317759535"
-     data-ad-slot="2452734217"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script type="856a27db725025cf1c1d0813-text/javascript">
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-  
-</figure>
-
-    
-
-    
-    
-  </div>
-
-  
-</div>
-
-
-  
-
-  <div class="article__footer">
-  <div class="article__container">
-    <div class="article__reference article__reference_footer">
-      
-        <a href="#comments" class="article__reference-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentcolor" d="M13 0h-10c-1.7 0-3 1.3-3 3v13l5-4h8c1.7 0 3-1.3 3-3v-6c0-1.7-1.3-3-3-3zm1 9c0 .6-.4 1-1 1h-8.7l-2.3 1.8v-8.8c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v6z"/></svg>
-          Пакінуць каментарый
-        </a>
-      
-
-      <div class="share" data-controller="share">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by" class="share__item" target="_blank" rel="noopener">
-          <img alt="Facebook" src="/assets/icons/facebook-ee75275658d0cbb3de71d03a67f6f315492d3b1bc43ec17b65180ada5c1401b5.svg" />
-        </a>
-        <a href="https://twitter.com/intent/tweet?url=https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by&text=Робат Tesla Optimus зноў спаліўся: усе думаюць, што ім кіруе чалавек" class="share__item" target="_blank" rel="noopener">
-          <img alt="Twitter" src="/assets/icons/twitter-dc9d7c63168d6531b44f3675ac54eeccf7f8d850e25b3422751e8db3ce5fa25c.svg" />
-        </a>
-        <a href="https://telegram.me/share/url?url=https://devby.io/be/news/robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek-by" class="share__item" target="_blank" rel="noopener">
-          <img alt="Telegram" src="/assets/icons/telegram-fill-60c4099b9814a00012446d2d501f5a5dec2cd519e640d4291fb519c069a07f29.svg" />
-        </a>
-
-        
-      </div>
-    </div>
-
-    <div class="article-meta article-meta_col">
-      
-        <span class="article-meta__item">Тэкст: Николай Чикишев</span>
-      
-
-      
-
-      
-        <span class="article-meta__item">
-          Крыніца: <a class="article-meta__item" rel="nofollow" target="_blank" href="https://futurism.com/future-society/tesla-teleoperator-headset-optimus-fall">Futurism</a>
-        </span>
-      
-
-      
-        
-        <span class="article-meta__item">Тэгі: <a class="article-meta__item" href="https://devby.io/be/news?tag=optimus">optimus</a>, <a class="article-meta__item" href="https://devby.io/be/news?tag=tesla">tesla</a>, <a class="article-meta__item" href="https://devby.io/be/news?tag=%D0%B8%D0%BB%D0%BE%D0%BD+%D0%BC%D0%B0%D1%81%D0%BA">илон маск</a>, <a class="article-meta__item" href="https://devby.io/be/news?tag=%D1%80%D0%BE%D0%B1%D0%BE%D1%82">робот</a>, <a class="article-meta__item" href="https://devby.io/be/news?tag=%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0">робототехника</a></span>
-      
-    </div>
-
-    <span class="article-meta__item d-none d-lg-block">
-      Знайшлі памылку ў тэксце-вылучыце яе і націсніце Ctrl+Enter.
-    </span>
-    <span class="article-meta__item d-lg-none">
-      Знайшлі памылку ў тэксце-вылучыце яе і націсніце кнопку «Паведаміць пра памылку».
-    </span>
-  </div>
-</div>
-
-</article>
-
-          </div>
-
-          <div class="island__body-aside">
-              <div class="partners partners_xl">
-  
-    
-    <div class="partners__item ">
-      <img src="https://devby.io/storage/images/25/35/72/85/original/af1aee16947ccba976338eb8066032a3.jpg" class="partners__item-img" alt="">
-      <div class="partners__item-links">
-        <a
-          href="https://companies.devby.io/currency-com"
-          target="_blank"
-          rel="noopener">
-          Сайт компании
-        </a>
-        <a
-          href="https://jobs.devby.io/?filter[companies_ids][]=76959"
-          target="_blank"
-          rel="noopener">
-          Вакансии
-        </a>
-      </div>
-     </div>
-  
-    
-    <div class="partners__item ">
-      <img src="https://devby.io/storage/images/50/47/61/88/original/ea7ac5b151dcc48c6a94522a50ec4951.png" class="partners__item-img" alt="">
-      <div class="partners__item-links">
-        <a
-          href="https://companies.devby.io/klats-klats"
-          target="_blank"
-          rel="noopener">
-          Сайт компании
-        </a>
-        <a
-          href="https://jobs.devby.io/?filter[companies_ids][]=77777"
-          target="_blank"
-          rel="noopener">
-          Вакансии
-        </a>
-      </div>
-     </div>
-  
-
-  <div class="partners__item partners__item_fallback"></div>
-</div>
-
-
-              
-
-            <div class="section-aside section-aside_sticky">
-                  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="856a27db725025cf1c1d0813-text/javascript"></script>
-<!-- aside devby by version -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1094641317759535"
-     data-ad-slot="3083289604"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script type="856a27db725025cf1c1d0813-text/javascript">
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
-
-      <div class="island d-none_desktop" style="padding: 2rem 0;">
-  <div class="island__body">
-    
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="856a27db725025cf1c1d0813-text/javascript"></script>
-<!-- devby. by version global incut -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1094641317759535"
-     data-ad-slot="2452734217"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script type="856a27db725025cf1c1d0813-text/javascript">
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    
-
-    <div class="custom-block__link"><a href="https://mediakit.devby.io" target="_blank" rel="noopener">Размяшчэнне рэкламы</a></div>
-  </div>
-</div>
-<div class="island d-none_mobile" style="padding: 2rem 0;">
-  <div class="island__body">
-    
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094641317759535" crossorigin="anonymous" type="856a27db725025cf1c1d0813-text/javascript"></script>
-<!-- devby. by version global incut -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1094641317759535"
-     data-ad-slot="2452734217"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script type="856a27db725025cf1c1d0813-text/javascript">
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    
-
-    <div class="custom-block__link"><a href="https://mediakit.devby.io" target="_blank" rel="noopener">Размяшчэнне рэкламы</a></div>
-  </div>
-</div>
-
-
-
-      <div class="island">
-  <div class="island__header">
-    <div class="island__title">Чытайце таксама</div>
-  </div>
-  <div class="island__body">
-    <div class="cards-group cards-group_items-4" data-gtm-track="see-also">
-      
-        
-
-
-
-<div class="card " data-gtm-track=world-news-main  data-vr-contentbox=mainpage-editorpicks_news_1 data-vr-contentbox-url=https://devby.io/be/news/sostoyanie-maska-perevalilo-za-600-mlrd-by>
-  <div class="card__img-wrap">
-    <img
-      class="card__img"
-      
-        src="/storage/images/54/31/28/81/derived/05304ca9c9fbfe570dc3837f468ceb05.jpg"
-        srcset="
-          /storage/images/54/31/28/81/derived/05304ca9c9fbfe570dc3837f468ceb05.jpg 1x,
-          /storage/images/54/31/28/81/derived/37b321d7360a066d684810fef2b90bc6.jpg 2x
-        "
-        alt="Багацце Маска перавысіла $600 млрд"
-        title="Багацце Маска перавысіла $600 млрд"
-      
-      loading="lazy"
-    >
-  </div>
-  <div class="card__info">
-    <div class="card__body">
-  
-  
-
-  
-    <a href="/be/news/sostoyanie-maska-perevalilo-za-600-mlrd-by" target="_self" class="card__link"><span>Багацце Маска перавысіла $600 млрд</span></a>
-  
-
-  <div class="card__title card__title_text-crop" data-vr-headline>
-    
-
-    
-
-    
-
-    Багацце Маска перавысіла $600 млрд
-  </div>
-
-  
-
-  
-</div>
-
-  <div class="card__footer">
-    
-      <a href="https://devby.io/be/news?category=world-1743501417">world</a>
-    
-
-    
-
-    
-
-    
-  </div>
-
-
-  </div>
-</div>
-
-      
-        
-
-
-
-<div class="card " data-gtm-track=world-news-main  data-vr-contentbox=mainpage-editorpicks_news_2 data-vr-contentbox-url=https://devby.io/be/news/mask-eto-buldozer-glava-microsoft-ai-otsenil-liderov-ii-industrii-by>
-  <div class="card__img-wrap">
-    <img
-      class="card__img"
-      
-        src="/storage/images/25/85/18/60/derived/57578f003247ef24bc50f91b7a771381.jpg"
-        srcset="
-          /storage/images/25/85/18/60/derived/57578f003247ef24bc50f91b7a771381.jpg 1x,
-          /storage/images/25/85/18/60/derived/79e7770bd5fe707182c05d2a52fbc1b5.jpg 2x
-        "
-        alt="«Маск — гэта бульдозер»: кіраўнік Microsoft AI ацаніў лідараў ШІ-індустрыі"
-        title="«Маск — гэта бульдозер»: кіраўнік Microsoft AI ацаніў лідараў ШІ-індустрыі"
-      
-      loading="lazy"
-    >
-  </div>
-  <div class="card__info">
-    <div class="card__body">
-  
-  
-
-  
-    <a href="/be/news/mask-eto-buldozer-glava-microsoft-ai-otsenil-liderov-ii-industrii-by" target="_self" class="card__link"><span>«Маск — гэта бульдозер»: кіраўнік Microsoft AI ацаніў лідараў ШІ-індустрыі</span></a>
-  
-
-  <div class="card__title card__title_text-crop" data-vr-headline>
-    
-
-    
-
-    
-
-    «Маск — гэта бульдозер»: кіраўнік Microsoft AI ацаніў лідараў ШІ-індустрыі
-  </div>
-
-  
-
-  
-</div>
-
-  <div class="card__footer">
-    
-      <a href="https://devby.io/be/news?category=world-1743501417">world</a>
-    
-
-    
-
-    
-
-    
-  </div>
-
-
-  </div>
-</div>
-
-      
-        
-
-
-
-<div class="card " data-gtm-track=world-news-main  data-vr-contentbox=mainpage-editorpicks_news_3 data-vr-contentbox-url=https://devby.io/be/news/ii-gendirektor-rasskazal-kak-v-ego-kompanii-razgrebaut-170k-zaprosov-na-rabotu-by>
-  <div class="card__img-wrap">
-    <img
-      class="card__img"
-      
-        src="/storage/images/46/66/18/35/derived/e08ecddd045ea4d881b88a8064c55bc9.jpg"
-        srcset="
-          /storage/images/46/66/18/35/derived/e08ecddd045ea4d881b88a8064c55bc9.jpg 1x,
-          /storage/images/46/66/18/35/derived/dac259bfc553571d65bdf23221724c50.jpg 2x
-        "
-        alt="«Як малпы»: ШІ-гендырэктар расказаў, як у яго кампаніі разграбаюць 170K запытаў на працу"
-        title="«Як малпы»: ШІ-гендырэктар расказаў, як у яго кампаніі разграбаюць 170K запытаў на працу"
-      
-      loading="lazy"
-    >
-  </div>
-  <div class="card__info">
-    <div class="card__body">
-  
-  
-
-  
-    <a href="/be/news/ii-gendirektor-rasskazal-kak-v-ego-kompanii-razgrebaut-170k-zaprosov-na-rabotu-by" target="_self" class="card__link"><span>«Як малпы»: ШІ-гендырэктар расказаў, як у яго кампаніі разграбаюць 170K запытаў на працу</span></a>
-  
-
-  <div class="card__title card__title_text-crop" data-vr-headline>
-    
-
-    
-
-    
-
-    «Як малпы»: ШІ-гендырэктар расказаў, як у яго кампаніі разграбаюць 170K запытаў на працу
-  </div>
-
-  
-
-  
-    
-      <a href="/be/news/ii-gendirektor-rasskazal-kak-v-ego-kompanii-razgrebaut-170k-zaprosov-na-rabotu-by#comments">1 каментарый</a>
-    
-  
-</div>
-
-  <div class="card__footer">
-    
-      <a href="https://devby.io/be/news?category=world-1743501417">world</a>
-    
-
-    
-
-    
-
-    
-  </div>
-
-
-  </div>
-</div>
-
-      
-        
-
-
-
-<div class="card " data-gtm-track=world-news-main  data-vr-contentbox=mainpage-editorpicks_news_4 data-vr-contentbox-url=https://devby.io/be/news/6-chasov-sna-s-telefonom-v-ruke-kak-mask-provodit-kazhdyi-den-by>
-  <div class="card__img-wrap">
-    <img
-      class="card__img"
-      
-        src="/storage/images/78/33/72/36/derived/a14147eca617f1744cd1f6b14f708068.jpg"
-        srcset="
-          /storage/images/78/33/72/36/derived/a14147eca617f1744cd1f6b14f708068.jpg 1x,
-          /storage/images/78/33/72/36/derived/1be1a591a4bf4a7839598719e7bc1ea8.jpg 2x
-        "
-        alt="6 гадзін сну з тэлефонам у руцэ: як Маск праводзіць кожны дзень"
-        title="6 гадзін сну з тэлефонам у руцэ: як Маск праводзіць кожны дзень"
-      
-      loading="lazy"
-    >
-  </div>
-  <div class="card__info">
-    <div class="card__body">
-  
-  
-
-  
-    <a href="/be/news/6-chasov-sna-s-telefonom-v-ruke-kak-mask-provodit-kazhdyi-den-by" target="_self" class="card__link"><span>6 гадзін сну з тэлефонам у руцэ: як Маск праводзіць кожны дзень</span></a>
-  
-
-  <div class="card__title card__title_text-crop" data-vr-headline>
-    
-
-    
-
-    
-
-    6 гадзін сну з тэлефонам у руцэ: як Маск праводзіць кожны дзень
-  </div>
-
-  
-
-  
-    
-      <a href="/be/news/6-chasov-sna-s-telefonom-v-ruke-kak-mask-provodit-kazhdyi-den-by#comments">4 каментарыя</a>
-    
-  
-</div>
-
-  <div class="card__footer">
-    
-      <a href="https://devby.io/be/news?category=world-1743501417">world</a>
-    
-
-    
-
-    
-
-    
-  </div>
-
-
-  </div>
-</div>
-
-      
-    </div>
-  </div>
-</div>
-
-
-  <div class="island island_overflow-hidden telegram-widget">
-  <div class="telegram-widget__item">
-    <a
-      class="telegram-widget__ref"
-      href="https://t.me/devby_insight_bot"
-      target="_blank"
-      rel="noopener"></a>
-    <div class="telegram-widget__icon">
-      <span class="icon icon_32 icon_volume"></span>
-    </div>
-    <div class="telegram-widget__content">
-      <p class="telegram-widget__text">
-        Хочаце паведаміць важную навіну? Пішыце ў&nbsp;Telegram-бот
-      </p>
-    </div>
-  </div>
-  <div class="telegram-widget__item">
-    <a
-      class="telegram-widget__ref"
-      href="https://t.me/devby"
-      target="_blank"
-      rel="noopener"></a>
-    <div class="telegram-widget__icon">
-      <span class="icon icon_32 icon_telegram"></span>
-    </div>
-    <div class="telegram-widget__content">
-      <p class="telegram-widget__text">
-        Галоўныя падзеі і&nbsp;карысныя спасылкі ў&nbsp;нашым Telegram-канале
-      </p>
-    </div>
-  </div>
-</div>
-
-
-    <div class="island" id="comments">
-  <div class="island__header">
-    <div class="island__title">Обсуждение</div>
-  </div>
-  <div class="island__body">
-    <div class="island__body-row">
-      <div class="island__body-main">
-        
-        <div class="comments-container">
-  
-    <div class="comments-notification comments-notification_hidden mb-5"
-         data-controller="notification-ge"
-         data-notification-ge-hidden-class="comments-notification_hidden"
-         data-notification-ge-name-value="is_notification_ge_closed"
-         data-notification-ge-lifetime-value="3650">
-      <div class="comments-notification__header">
-        <img alt="" class="comments-notification__icon" src="/assets/globe-c85b1421a946bdf43b6f2c7db66a9c3f3d76ee1299070ccb7b61b8b565cbf89d.svg" />
-        <div class="comments-notification__title">
-          Комментируйте без ограничений
-        </div>
-        <a role="button"
-           title="Закрыть"
-           class="comments-notification__close"
-           data-action="click->notification-ge#handleClickButtonClose">
-        </a>
-      </div>
-      <div class="comments-notification__body">
-        <p class="comments-notification__text">Релоцировались? Теперь вы можете комментировать без верификации аккаунта.</p>
-
-        
-      </div>
-    </div>
-
-    <div class="comments-tree" id="commentsTree">
-      
-        <div class="comments-tree__none-comments">Комментариев пока нет.</div>
-      
-    </div>
-
-    <div class="comments-form">
-      
-        <a href="https://id.devby.io/@/hello?focus=comments&article=robot-tesla-optimus-opyat-spalilsya-vse-dumaut-chto-im-upravlyaet-chelovek" class="btn btn-block btn_lg btn_outline-primary">Войдите, чтобы оставить комментарий</a>
-
-      
-    </div>
-  
-</div>
-
-      </div>
-      <div class="island__body-aside"></div>
-    </div>
-  </div>
-</div>
-
-
-  <!-- Modal -->
-<div
-  class="modal fade"
-  tabindex="-1"
-  id="errorReportModal"
-  role="dialog"
-  aria-labelledby="errorReportModal"
-  aria-hidden="true"
-  data-controller="error-report-selection error-report-popup"
-  data-action="keydown@document->error-report-popup#handleKeyDown
-               selectionchange@document->error-report-selection#handleSelectionChange
-               selectstart@document->error-report-selection#handleSelectStart
-               error-report-button.buttonClick@window->error-report-selection#handleMobileButtonClick
-               error-report-selection.showPopup@window->error-report-popup#handleShow
-               error-report-popup.keyDown@window->error-report-selection#handleKeyDown"
-  data-error-report-popup-modal-id-value="#errorReportModal"
-  data-error-report-selection-areas-value='[".article__header", ".article__body"]'>
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header align-items-center">
-        <div class="modal-title">Памылка ў тэксце</div>
-        <button type="button" class="modal__close" data-dismiss="modal" aria-label="Close">
-          <img alt="" class="modal__close-img" src="/assets/icons/close-9d0558d71b43e0639452918265692010da90b082b4e6066911c02e8dac0227b5.svg" />
-        </button>
-      </div>
-      <form id="error-report-form"
-            action="/postman/error-reports"
-            data-controller="error-report-form"
-            data-action="hidden.bs.modal@window->error-report-form#handleCloseModal
-                         shown.bs.modal@window->error-report-form#handleOpenModal"
-            data-error-report-form-modal-id-value="#errorReportModal"
-            accept-charset="UTF-8"
-            method="post">
-        <div data-error-report-form-target="notificationMessage"></div>
-        <div data-error-report-form-target="formContent">
-          <div class="modal-header d-block">
-          <span>...</span><span data-error-report-selection-target="selectedText"
-                data-error-report-form-target="selectedText"
-                name="error_report[content]">
-            </span><span>...</span>
-          </div>
-          <div class="modal-body border-bottom">
-            <input
-              type="hidden"
-              name="g-recaptcha-response"
-              data-error-report-form-target="recaptchaInput">
-            <input
-              type="hidden"
-              name="error_report[article_id]"
-              value="79372043">
-            <label class="form-label" for="textarea">
-              Каментар (неабавязкова):
-            </label>
-            <textarea class="form-control" data-error-report-form-target="comment" id="textarea" rows="2" name="error_report[comment]" maxlength="1000"></textarea>
-          </div>
-          <div class="modal-footer justify-content-start border-top-0">
-            <button class="btn btn-primary flex-lg-grow-0 flex-grow-1 mr-auto" type="submit" name="commit" data-action="click->error-report-form#handleFormSubmit" data-error-report-form-target="submitButton">
-              <span class="default">Адправіць</span>
-            </button>
-          </div>
-        </div>
-
-        <div data-error-report-form-target="successFormContent">
-          <div class="modal-footer justify-content-start border-top-0">
-            <button class="btn btn-primary flex-lg-grow-0 flex-grow-1 mr-auto" type="button" data-dismiss="modal" aria-label="Close">
-              <span class="success">Заўсёды калі ласка</span>
-            </button>
-          </div>
-        </div>
-
-        <template data-error-report-form-target="successMessage">
-          <div class="modal-header">
-            Дзякуй, што дапамагаеце рабіць гэта медыя яшчэ лепш!
-          </div>
-        </template>
-        <template data-error-report-form-target="errorMessage">
-          <div class="modal-header border-bottom-0 pb-0" style="margin-bottom: -6px;">
-            <div class="alert alert-danger mb-0">
-              Нешта пайшло не так. Калі ласка, паспрабуйце яшчэ раз.
-            </div>
-          </div>
-        </template>
-      </form>
-    </div>
-  </div>
-</div>
-
-</main>
-
-
-  
-
-      <footer class="footer">
-  <div class="footer__social">
-    <a href="https://www.facebook.com/devbyby" class="footer__social-item" target="_blank" rel="noopener">
-      <img alt="Facebook" src="/assets/icons/facebook-ee75275658d0cbb3de71d03a67f6f315492d3b1bc43ec17b65180ada5c1401b5.svg" />
-    </a>
-    <a href="https://twitter.com/devby" class="footer__social-item" target="_blank" rel="noopener">
-      <img alt="Twitter" src="/assets/icons/twitter-dc9d7c63168d6531b44f3675ac54eeccf7f8d850e25b3422751e8db3ce5fa25c.svg" />
-    </a>
-    <a href="https://www.instagram.com/dev.by/" class="footer__social-item" target="_blank" rel="noopener">
-      <img alt="Instagram" src="/assets/icons/instagram-313d02ecf29c6c6209fa95b5e3f3d173ebb8297516af5e50bb9a7ec81127229d.svg" />
-    </a>
-    <a href="https://www.linkedin.com/company/dev-by/" class="footer__social-item" target="_blank" rel="noopener">
-      <img alt="Linkedin" src="/assets/icons/linkedin-fe31cc933375fc93c0a3ca5099dc8296a975ad509f0ad3f639f759c0efea3ea6.svg" />
-    </a>
-    <a href="https://t.me/devby" class="footer__social-item" target="_blank" rel="noopener">
-      <img alt="Telegram" src="/assets/icons/telegram-fill-60c4099b9814a00012446d2d501f5a5dec2cd519e640d4291fb519c069a07f29.svg" />
-    </a>
-    <a href="https://www.youtube.com/channel/UCEcf2oDuvT4gwwx2mLw_7nw" class="footer__social-item" target="_blank" rel="noopener">
-      <img alt="Youtube" src="/assets/icons/youtube-a9775261cd29991c56ffadb08a3ab537a127b174721d4244f7bb9e6d6b1929cb.svg" />
-    </a>
-    <a href="https://www.tiktok.com/@devby.media" class="footer__social-item" target="_blank" rel="noopener">
-      <img alt="TikTok" src="/assets/icons/tiktok-587ec2a2809c88d40fc19869bc7bef0c89ef1abe5b677dfce5a79f641e1ca8f8.svg" />
-    </a>
-    <a href="/rss" class="footer__social-item">
-      <img alt="Rss" src="/assets/icons/rss-69ab318220464ad294acc90024e4e1ccabf772d3fe421da937eed2ff16965f58.svg" />
-    </a>
-
-  </div>
-
-  <div class="footer__nav">
-  
-    <a class="footer__nav-link" href="https://devby.io/be/pages/support">Падтрымаць dev.by</a>
-    <a class="footer__nav-link" target="_blank" rel="noopener" href="https://mediakit.devby.io">Рэкламныя магчымасці</a>
-    
-    <a class="footer__nav-link" href="https://devby.io/be/pages/about">Аб праекце</a>
-    <a class="footer__nav-link" href="https://devby.io/be/pages/contacts">Кантакты</a>
-    <a class="footer__nav-link" href="https://devby.io/be/pages/adviser">Adviser</a>
-    <a class="footer__nav-link" href="https://devby.io/be/pages/editorial">Рэд палітыка</a>
-    <a class="footer__nav-link" href="https://devby.io/be/pages/faq">Частыя пытанні</a>
-    
-    <a class="footer__nav-link" href="https://dev.media/work-at-devmedia-1">Вакансіі ў нас</a>
-  
-</div>
-
-<div class="footer__nav footer__nav_secondary">
-  <a class="footer__nav-link" href="https://devby.io/be/pages/polzovatelskoe-soglashenie">Карыстальніцкае пагадненне</a>
-  <a class="footer__nav-link" href="https://devby.io/be/pages/privacy-policy">Палітыка прыватнасці</a>
-  <a class="footer__nav-link" href="https://devby.io/be/pages/agreement">Публічны дагавор</a>
-</div>
-
-
-  <div class="footer__info">
-
-    <div class="footer__info-item">
-      Перадрук матэрыялаў dev.by магчымы толькі пры пісьмовай згодзе рэдакцыі. <br> Пры&nbsp;цытаванні абавязковая прамая спасылка на&nbsp;адпаведныя матэрыялы. Пішыце на&nbsp;<a href="/cdn-cgi/l/email-protection#b2d7d6dbc6ddc0f2d6d7c49cc7d3"><span class="__cf_email__" data-cfemail="7e1b1a170a110c3e1a1b08500b1f">[email&#160;protected]</span></a>.
-    </div>
-
-  </div>
-</footer>
-
-    </div>
-
-    <button class="error-report-btn btn btn-primary"
-      data-controller="error-report-button"
-      data-action="click->error-report-button#handleButtonClick
-                   error-report-selection.changeSelection@window->error-report-button#handleChangeSelection
-                   error-report-selection.startSelection@window->error-report-button#handleStartSelection"
-      data-error-report-button-active-class="error-report-btn_active"
-      data-error-report-button-showed-class="error-report-btn-showed"
-      type="button"
-      data-toggle="modal"
-      data-target="#errorReportModal">
-      Паведаміць пра памылку
+	
+	
+
+	
+	
+<nav class="navbar navbar-default" role="navigation">
+	<div class="row">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+   	<button class="navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="sr-only">Дысплей навігацыі</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
     </button>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="856a27db725025cf1c1d0813-|49" defer></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b6c9120895fd092',t:'MTc2NzIxMzM2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+    <a class="navbar-brand" href="https://www.drivingeco.com/be/" aria-label="logo cabecera"></a>
+  </div>
+ 
+  <div id="navbar" class="navbar-collapse collapse">
+          <div class="menu-navbar-container"><ul id="menu-navbar" class="nav navbar-nav"><li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-135"><a href="https://www.drivingeco.com/be/">ініцыяванне</a></li>
+<li id="menu-item-56116" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56116"><a href="https://www.drivingeco.com/be/%D1%9E%D1%81%D1%82%D0%BE%D0%B9%D0%BB%D1%96%D0%B2%D0%B0%D1%81%D1%86%D1%8C/">Устойлівасць</a></li>
+<li id="menu-item-56118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56118"><a href="https://www.drivingeco.com/be/%D0%B4%D0%BE%D0%BC%D0%B0/">Хогар</a></li>
+<li id="menu-item-56229" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-56229"><a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/">мабільнасць</a></li>
+<li id="menu-item-56117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56117"><a href="https://www.drivingeco.com/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%BD%D1%8B-%D0%B3%D0%BE%D1%80%D0%B0%D0%B4/">Smart City</a></li>
+<li id="menu-item-16671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16671"><a href="https://www.drivingeco.com/be/%D0%BF%D0%BE%D1%88%D1%83%D0%BA-a/">пошук</a></li>
+<li id="menu-item-26509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26509"><a href="https://www.drivingeco.com/be/%D1%85%D1%82%D0%BE-%D0%BC%D1%8B/">Аб кампаніі</a></li>
+</ul></div>        </div><!--/.navbar-collapse -->
+    </div><!--/.row -->
+</nav>
+  
+
+    <div data-rocket-location-hash="5bf0ec333859a32fa2bfd31ef7ed9e58" class="main-content">
+	<section data-rocket-location-hash="64a84e63ca689b70a3879703310620a1">
+		
+	
+	<div data-rocket-location-hash="6f50bb234f8cd4b4d13a68903aead8b8" class="container-fluid single" id="content-single">
+		<article>
+			<div class="row">
+					
+                                
+				<p class="gt-block etiquetas">
+					<a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/Audi/" rel="tag"><span class="icon-price-tag"></span>Audi</a> <a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/Audi/%D1%8D-%D1%82%D1%80%D0%BE%D0%BD/" rel="tag"><span class="icon-price-tag"></span>электронны трон</a> <a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/" rel="tag">Трэнеры</a> 				</p>
+                
+                
+                <h1 data-url="https://www.drivingeco.com/autonomia-audi-e-tron-explicacion/">Меншая аўтаномнасць Audi e-tron мае сваё тлумачэнне, і гэта нядрэнна</h1>
+                
+                	<div class="meta">
+		<div class="meta-post">
+			<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=30&amp;d=mm&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=60&amp;d=mm&amp;r=g 2x" class="avatar avatar-30 photo" height="30" width="30" decoding="async"><noscript><img alt='' src='https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=30&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=60&#038;d=mm&#038;r=g 2x' class='avatar avatar-30 photo' height='30' width='30' decoding='async'/></noscript> Хаўер Кантагалі			&nbsp;&nbsp;&nbsp;<span class="icon-twitter"><a href="https://twitter.com/Cantagalli" target="_blank">@Cantagalli</a></span>&nbsp;&nbsp;&nbsp;
+			<span class="icon-calendar"></span> 17 верасня 2019&nbsp;&nbsp;&nbsp;&nbsp;
+			<span class="icon-stopwatch"></span>4 мін.		</div>
+
+		<div class="social-likes">
+			<a href="https://www.facebook.com/share.php?u=https://www.drivingeco.com/autonomia-audi-e-tron-explicacion/" class="fa fa-facebook" target="_blank" aria-label="facebook"></a>
+			<a href="https://twitter.com/share?text=La menor autonomía del Audi e-tron tiene su explicación y no es algo malo&amp;url=https://www.drivingeco.com/autonomia-audi-e-tron-explicacion/" class="fa fa-twitter" target="_blank" aria-label="twitter"></a>		
+			<a href="whatsapp://send?text=https://www.drivingeco.com/autonomia-audi-e-tron-explicacion/" class="fa fa-whatsapp" target="_blank" aria-label="whatsapp"></a>					
+		</div>
+	</div>
+
+		
+
+                
+                	                <div class="col-md-12">
+	                	<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34-1220x756.jpg" srcset="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34-1220x756.jpg 1220w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34-880x546.jpg 880w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34-768x476.jpg 768w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34-1024x635.jpg 1024w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34-700x434.jpg 700w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34-400x248.jpg 400w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34-270x167.jpg 270w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34-323x200.jpg 323w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-34.jpg 1300w" sizes="(max-width: 1210px) 100vw, 1210px" alt="Меншая аўтаномнасць Audi e-tron мае сваё тлумачэнне, і гэта нядрэнна" class="img-responsive aligncenter featured-image" width="1220" height="756">
+					</div>
+								
+                <div class="center fullpubli">
+                	<div id="mega-sup"></div><div id="interstitial"></div><div id="sky-left"></div><div id="sky-right"></div>                 </div>
+			<!--</div> end .row 
+				
+			<div class="row"> -->			
+                <div class="contenedor-ajustable">
+                    <div id="row">
+                        <div class="contenido-autoajustable-tres">
+
+							
+							<div class="content-single">
+								
+									
+
+								<div id="botones-hc"></div>								
+								<p class="entradilla">Інжынеры Audi вырашылі надаць большае значэнне надзейнасці e-tron нават за кошт зніжэння яго эфектыўнасці і аўтаномнасці</p>
+<p class="gt-block">Прыбыццё першым на новы рынак дае вам перавагу ў тым, што вы ўсталёўваеце высокую планку для астатніх канкурэнтаў і, калі гэтага было недастаткова, для ўсіх, хто прыйдзе пасля вас. <strong>У выніку іх параўноўваюць з вашым прадуктам</strong>. Гэта менавіта тое, што адбываецца з еўрапейскімі вытворцамі з Tesla. Кожны новы электрамабіль, які выходзіць на рынак, непазбежна параўноўваюць з аналагам ад амерыканскага вытворцы.</p>
+<p class="gt-block">Гэта тое, што мы ўсе бачылі на мінулым тыдні. Пасля прэзентацыі <a href="https://www.drivingeco.com/be/%D0%B4%D0%B2%D1%83%D1%85%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96%D1%81%D1%82%D0%B0%D1%8F-%D1%81%D0%BA%D1%80%D1%8B%D0%BD%D0%BA%D0%B0-%D0%BF%D0%B5%D1%80%D0%B0%D0%B4%D0%B0%D1%87-porsche-taycan/" target="_blank" rel="noopener noreferrer">новага Porsche Taycan</a>, сацыяльныя сеткі <strong>Яны былі напоўнены параўнаннямі</strong> паміж электрычным спартыўным аўтамабілем Porsche і Tesla Model S; са спасылкай на паскарэнне, магутнасць, максімальную хуткасць і цану абедзвюх мадэляў.</p>
+<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41.jpg" fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-5337 img-responsive" alt="Audi электроннай электронаў" width="1300" height="866" srcset="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41.jpg 1300w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-880x586.jpg 880w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-768x512.jpg 768w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-1024x682.jpg 1024w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-1220x813.jpg 1220w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-700x466.jpg 700w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-400x266.jpg 400w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-212x141.jpg 212w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-270x180.jpg 270w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-220x146.jpg 220w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-182x121.jpg 182w" sizes="(max-width: 1300px) 100vw, 1300px"><noscript><img fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-5337 img-responsive" src="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41.jpg" alt="Audi e-tron" width="1300" height="866" srcset="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41.jpg 1300w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-880x586.jpg 880w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-768x512.jpg 768w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-1024x682.jpg 1024w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-1220x813.jpg 1220w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-700x466.jpg 700w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-400x266.jpg 400w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-212x141.jpg 212w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-270x180.jpg 270w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-220x146.jpg 220w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-41-182x121.jpg 182w" sizes="(max-width: 1300px) 100vw, 1300px" /></noscript></p>
+<p class="gt-block">Але гэта адбылося не толькі з Taycan. Гэта ўжо здаралася раней з Jaguar I-Pace, Mercedes EQC або Audi e-tron. Ва ўсіх гэтых выпадках найбольш распаўсюджаны каментарый тых, хто высмейваў, што гэтыя тры буйныя вытворцы з дзесяцігоддзямі гісторыі ў аўтамабільным сектары, <strong>Яны не змаглі прадаць электрамабіль з запасам ходу, падобным да мадэлі Tesla</strong>.</p>
+<h2>Audi e-tron займае апошняе месца па эфектыўнасці і аўтаномнасці</h2>
+<p class="gt-block">Самы прыкметны выпадак, верагодна, з Audi e-tron, які нават заслужыў славу «<strong>гастон</strong>», так як ён паказвае больш высокія паказчыкі спажывання энергіі, чым яго канкурэнты. Якія таксама суправаджаюцца меншай аўтаномнасцю, нягледзячы на ​​​​тое, што ёмістасць батарэі нават вышэй, чым у Jaguar I-Pace або Mercedes EQC.</p>
+<p class="gt-block">У любым выпадку, не падманвайце сябе, бо ў свеце электрамабіляў не ўсё чорнае ці белае. Цікавы артыкул, апублікаваны Jalopnik, раскрывае прычыну, чаму энергаспажыванне Audi e-tron вышэй, чым у яго канкурэнтаў, і паказвае, што інжынеры Audi, <strong>Яны проста надалі большае значэнне іншым фактарам</strong>.</p>
+<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31.jpg" decoding="async" class="aligncenter size-full wp-image-5327 img-responsive" alt="Audi электроннай электронаў" width="1300" height="709" srcset="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31.jpg 1300w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-880x480.jpg 880w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-768x419.jpg 768w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-1024x558.jpg 1024w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-1220x665.jpg 1220w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-700x382.jpg 700w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-400x218.jpg 400w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-270x147.jpg 270w" sizes="(max-width: 1300px) 100vw, 1300px"><noscript><img decoding="async" class="aligncenter size-full wp-image-5327 img-responsive" src="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31.jpg" alt="Audi e-tron" width="1300" height="709" srcset="https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31.jpg 1300w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-880x480.jpg 880w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-768x419.jpg 768w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-1024x558.jpg 1024w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-1220x665.jpg 1220w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-700x382.jpg 700w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-400x218.jpg 400w, https://i.bstr.es/drivingeco/2019/05/audi-e-tron-31-270x147.jpg 270w" sizes="(max-width: 1300px) 100vw, 1300px" /></noscript></p>
+<p class="gt-block">У Audi e-tron убудаваны акумулятар <strong>95 кВт * г</strong>, больш чым значная ёмістасць. Аднак яго аўтаномнасць па цыкле WLTP у 417 км ніжэй, чым у канкурэнтаў. І калі мы паглядзім на найбольш рэалістычныя дадзеныя, прадстаўленыя EPA, яна застаецца на ўзроўні 328 км. Такая меншая аўтаномнасць e-tron тлумачыцца, у прыватнасці, тым, што з гэтых 95 кВт.гадз яго батарэі, <strong>сапраўды можна выкарыстоўваць толькі 83.6 кВт/г</strong>. Audi вырашыла ўсталяваць a <em>буфера</em> даволі шырокі, з намерам павысіць бяспеку, паменшыць яго дэградацыю і, такім чынам, павялічыць яго даўгавечнасць.</p>
+<p>Гэта рашэнне растлумачыла б, чаму яго аўтаномнасць ніжэй, чым можна было чакаць, але яно не тлумачыць яго большага спажывання энергіі пры руху па дарозе.</p>
+<h2>Сумнеў вырашаны. Усяму ёсць прычына</h2>
+<p class="gt-block">Як апублікавана <em>Jalopnik</em>, інжынеры Audi вырашылі дасягнуць больш нізкай энергаэфектыўнасці, <strong>у абмен на магчымасць рэалізаваць значна больш агрэсіўную сістэму кантролю тэмпературы элементаў батарэі.</strong>.</p>
+<p class="gt-block">У Audi e-tron кожны з акумулятарных модуляў асобна кантралюецца, так што ўсе яны ўвесь час падтрымліваюцца пры тэмпературы <strong>ад 23.3 да 35 градусаў Цэльсія</strong>. Такая канструкцыя акумулятарнага блока, выкананая Audi, таксама дазваляе, калі адзін з модуляў выйдзе з ладу, яго можна замяніць асобна і не трэба замяняць увесь блок.</p>
+<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2019/09/audietronbattery.jpg" decoding="async" class="aligncenter size-full wp-image-8173 img-responsive" alt="Audi" width="1400" height="991" srcset="https://i.bstr.es/drivingeco/2019/09/audietronbattery.jpg 1400w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-880x623.jpg 880w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-768x544.jpg 768w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-1024x725.jpg 1024w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-1220x864.jpg 1220w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-700x496.jpg 700w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-400x283.jpg 400w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-270x191.jpg 270w" sizes="(max-width: 1400px) 100vw, 1400px"><noscript><img decoding="async" class="aligncenter size-full wp-image-8173 img-responsive" src="https://i.bstr.es/drivingeco/2019/09/audietronbattery.jpg" alt="Audi" width="1400" height="991" srcset="https://i.bstr.es/drivingeco/2019/09/audietronbattery.jpg 1400w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-880x623.jpg 880w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-768x544.jpg 768w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-1024x725.jpg 1024w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-1220x864.jpg 1220w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-700x496.jpg 700w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-400x283.jpg 400w, https://i.bstr.es/drivingeco/2019/09/audietronbattery-270x191.jpg 270w" sizes="(max-width: 1400px) 100vw, 1400px" /></noscript></p>
+<p class="gt-block">Складаная сістэма астуджэння батарэі <strong>дазваляе абразлівае і экстрэмальнае выкарыстанне</strong>, што тлумачыць, напрыклад, чаму e-tron здольны зараджаць акумулятар на 150 кВт, таксама робячы гэта пастаянна без зніжэння магутнасці зарадкі амаль на працягу ўсяго працэсу.</p>
+<p class="gt-block">З іншага боку, гэтая большая складанасць мае на ўвазе выкарыстанне лішніх элементаў, якія <strong>павялічыць вагу транспартнага сродку, а таксама патрабуюць большага спажывання энергіі</strong>, тым самым зніжаючы яго эфектыўнасць.</p>
+<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2019/09/audietronbatterypack.jpg" decoding="async" class="aligncenter size-full wp-image-8176 img-responsive" alt="Audi" width="1400" height="991"><noscript><img decoding="async" class="aligncenter size-full wp-image-8176 img-responsive" src="https://i.bstr.es/drivingeco/2019/09/audietronbatterypack.jpg" alt="Audi" width="1400" height="991" /></noscript></p>
+<h2>Вам вырашаць: нямецкая надзейнасць або больш кіламетраў аўтаномнасці</h2>
+<p class="gt-block">Карацей кажучы, як мы бачым, гэта выключна рашэнне інжынераў Audi, якія вырашылі ахвяраваць аўтаномнасцю аўтамабіля, а таксама эфектыўнасцю за некалькі кіламетраў, <strong>з мэтай захавання вядомай нямецкай надзейнасці</strong>.</p>
+<p>Затым кожны чалавек, набываючы новы аўтамабіль, сам вырашае, чаму надаецца большае значэнне і, адпаведна, выбірае тое ці іншае.</p>
+<p class="gt-block">Нам гэта ясна, і таму мы запрашаем вас прачытаць <a href="https://www.top10motor.com/audi-e-tron-probamos-suv-electrico-audi/">Audi e-tron тэст</a> які, з нашай роднаснай старонкі Top10Motor, мы зрабілі адзін з першых адзінак, якія распаўсюджваюцца ў Іспаніі.</p>
+
+								<div id="widget"></div>		<!-- /1282139/WIDGET_HIGHMOTOR_700X365_2015 -->
+		<div id="div-gpt-ad-1666707087634-0" style="min-width: 600px; min-height: 300px;">
+		  <script type="rocketlazyloadscript">
+		    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1666707087634-0'); });
+		  </script>
+		</div>
+    
+    	
+										
+							</div><!-- fin .content-single -->
+									
+							
+	<div class="navigation-single">	<!-- NAVEGACION  -->			
+			        <div class="post-previous">
+	            <a href="https://www.drivingeco.com/be/roborace-reta-tesla-laguna-seca/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" class="img-responsive" alt="Roborace кідае выклік Tesla ў адказ на рэкорд Laguna Seca з Model S" data-lazy-src="https://i.bstr.es/drivingeco/2019/09/roboracegreen-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2019/09/roboracegreen-135x100.jpg" width="135" height="100" class="img-responsive" alt="Roborace reta a Tesla en respuesta al récord en Laguna Seca con un Model S"/></noscript></a>
+	            <div class="title"><a href="https://www.drivingeco.com/be/roborace-reta-tesla-laguna-seca/">Roborace кідае выклік Tesla ў адказ на рэкорд Laguna Seca з Model S</a></div>
+	        </div>
+			        <div class="post-next">
+	            <a href="https://www.drivingeco.com/be/%D0%9F%D0%B5%D1%80%D1%88%D0%B0%D1%8F-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D0%B0%D1%8F-Mazda-%D0%B1%D1%83%D0%B4%D0%B7%D0%B5-%D0%BF%D1%80%D0%B0%D0%B4%D1%81%D1%82%D0%B0%D1%9E%D0%BB%D0%B5%D0%BD%D0%B0-%D1%9E-%D0%A2%D0%BE%D0%BA%D1%96%D0%BE-%D1%9E-%D0%BD%D0%B0%D1%81%D1%82%D1%83%D0%BF%D0%BD%D1%8B%D0%BC-%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D1%8B/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" class="img-responsive" alt="Першая электрычная Mazda будзе прадстаўлена ў Токіо ў наступным месяцы" data-lazy-src="https://i.bstr.es/drivingeco/2019/08/mazdatestunitcx5-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2019/08/mazdatestunitcx5-135x100.jpg" width="135" height="100" class="img-responsive" alt="El primer Mazda eléctrico será presentado en Tokyo el mes que viene"/></noscript></a>
+	            <div class="title"><a href="https://www.drivingeco.com/be/%D0%9F%D0%B5%D1%80%D1%88%D0%B0%D1%8F-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D0%B0%D1%8F-Mazda-%D0%B1%D1%83%D0%B4%D0%B7%D0%B5-%D0%BF%D1%80%D0%B0%D0%B4%D1%81%D1%82%D0%B0%D1%9E%D0%BB%D0%B5%D0%BD%D0%B0-%D1%9E-%D0%A2%D0%BE%D0%BA%D1%96%D0%BE-%D1%9E-%D0%BD%D0%B0%D1%81%D1%82%D1%83%D0%BF%D0%BD%D1%8B%D0%BC-%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D1%8B/">Першая электрычная Mazda будзе прадстаўлена ў Токіо ў наступным месяцы</a></div>
+	        </div>
+				</div>
+	
+	<div style="clear:both"></div>
+
+
+						
+													
+
+						</div>
+						
+						
+<div class="bloque-publicidad-ajustable-tres">
+	
+	
+
+	<div id="roba1"></div>
+	
+	
+
+	
+	    <div class="destacados-sidebar">
+		<p class="gt-block titulo-sidebar"><span class="icon-pin"></span>Папулярныя</p>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/probando-smartgyro-crossover-x2-pro-fusion-potencia-estilo/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					Prueba Smartgyro Crossover X2 Pro: зліццё магутнасці і стылю                </a>
+			</div>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/caldera-gas-bomba-calor-descubre-cual-mas-eficiente-contamina-menos/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="ацяпленне-цеплавой помпа-300х90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg" alt="calefaccion-bomba-calor-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					¿Caldera de gas or bomba de calor? Descubre cuál es más eficiente y contamina menos                </a>
+			</div>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/paneles-solares-inversion-sostenible-vale-pena-hacer/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="сонечныя панэлі-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg" alt="paneles-solares-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					Paneles solares: una inversión rentable y sostenible para el futuro                </a>
+			</div>
+		    </div>
+
+	
+		
+	<div id="roba2"></div>	<br>
+	<div id="roba3"></div>
+	<div id="roba4"></div>
+	
+</div>
+
+                    </div><!-- end #row -->
+                </div><!-- end .contenedor-ajustable -->
+                
+				<div class="col-md-12">
+					<div id="comentarios">
+
+
+
+			<p>Каментары закрыты</p>
+
+	
+
+
+</div> <!-- end id comentarios-->											<!-- <div class="titulo-ancho">TE PUEDE INTERESAR</div> -->
+						
+
+
+									</div>
+
+
+				<div id="mega-inf"></div>
+            </div><!--fin de .row-->
+    	</article>
+
+
+
+	</div><!--fin de .container-fluid .single-->
+
+</section>
+</div> <!-- end main-content -->
+
+	<footer data-rocket-location-hash="d8d170033ea958f3538208caa1adc50a">
+	
+		<div data-rocket-location-hash="66bb0135a95e6e923d1519a7a3b45a5d" class="tono">
+			<div data-rocket-location-hash="e34054dedc881748ea475e180cbaa267" class="row institucional"><ul id="menu-legal-pie" class=""><li id="menu-item-16547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16547"><a href="https://www.highmotor.com/">высокарухальныя</a></li>
+<li id="menu-item-21507" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21507"><a href="https://www.topventascoches.com/">Самыя папулярныя аўтамабілі</a></li>
+<li id="menu-item-51179" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51179"><a href="https://www.espaciofurgo.com/">Espacio Furgo</a></li>
+<li id="menu-item-32051" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32051"><a href="https://www.drivingeco.com/be/%D1%8E%D1%80%D1%8B%D0%B4%D1%8B%D1%87%D0%BD%D0%B0%D0%B5-%D0%B0%D0%BF%D0%B0%D0%B2%D1%8F%D1%88%D1%87%D1%8D%D0%BD%D0%BD%D0%B5/">Юрыдычнае паведамленне</a></li>
+<li id="menu-item-51824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51824"><a href="https://www.drivingeco.com/be/%D0%BF%D0%B0%D0%BB%D1%96%D1%82%D1%8B%D0%BA%D0%B0-%D0%BF%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D0%BD%D0%B0%D1%81%D1%86%D1%96/">палітыка прыватнасці</a></li>
+</ul></div>		</div>
+	</footer>
+
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="rocketlazyloadscript">//window.jQuery || document.write('<script data-minify="1" async src="https://www.drivingeco.com/be/wp-content/cache/min/1/ajax/libs/jquery/3.1.1/jquery.min.js?ver=1764074335"><\/script>')</script>
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js?ver=1764074336" crossorigin="anonymous"></script>
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js?ver=1764074336" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="rocketlazyloadscript" data-minify="1" async="" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/ie10-viewport-bug-workaround.min.js?ver=1764074336"></script>
+   
+ 
+
+	
+
+
+   <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/drivingeco\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/drivingeco\/*","\/wp-content\/themes\/comun9\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div data-rocket-location-hash="204f43c254bf71f43debd463d495bd73" class="gtranslate_wrapper" id="gt-wrapper-78058793"></div><link data-minify="1" rel="stylesheet" id="fonts-kyalami-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/fonts-kyalami.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="bootstrap-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/bootstrap.min.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/comun9/style.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="child-style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/style.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="fontawesome-css" href="https://www.drivingeco.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1764074335" type="text/css" media="all">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.drivingeco.com/be","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" id="author-tracking-js-extra">
+/* <![CDATA[ */
+var author = {"name":"Javier Cantagalli"};
+var date = {"my":"September 2019"};
+var category = {"name":"Coches"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/js/analytics.js?ver=1764074336" id="author-tracking-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/jquery.sonar.min.js?ver=1764074336" id="jquery-sonar-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/lazy-load.min.js?ver=1764074336" id="wpcom-lazy-load-images-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script type="text/javascript" id="infinitedScrollHighmotor_js-js-extra">
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"https:\/\/www.drivingeco.com/be\/wp-admin\/admin-ajax.php","id_post":"8085","title_origin":"La menor autonom\u00eda del Audi e-tron tiene su explicaci\u00f3n y no es algo malo","url_origin":"https:\/\/www.drivingeco.com/be\/autonomia-audi-e-tron-explicacion\/"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/plugins/infinite-scroll-highmotor/includes/js/infiniteScrollHighmotor.js?ver=1764074336" id="infinitedScrollHighmotor_js-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/comment-reply.min.js?ver=6.8.1" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="gt_widget_script_78058793-js-before">
+/* <![CDATA[ */
+window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['78058793'] = {"default_language":"es","languages":["ar","eu","be","ca","zh-CN","zh-TW","hr","cs","da","nl","en","et","fr","gl","de","hu","it","ja","ko","ku","pl","pt","pa","ro","ru","sk","sl","es","tr"],"url_structure":"sub_directory","native_language_names":1,"detect_browser_language":1,"flag_style":"3d","wrapper_selector":"#gt-wrapper-78058793","alt_flags":[],"float_switcher_open_direction":"bottom","switcher_horizontal_position":"right","switcher_vertical_position":"bottom","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+/* ]]> */
+</script><script type="rocketlazyloadscript" data-rocket-src="https://www.drivingeco.com/wp-content/plugins/gtranslate/js/float.js?ver=6.8.1" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/autonomia-audi-e-tron-explicacion/" data-gt-orig-domain="www.drivingeco.com" data-gt-widget-id="78058793" defer=""></script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="Play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script>
+
+<script type="rocketlazyloadscript">
+	new PerformanceObserver((entryList) => {
+	  for (const entry of entryList.getEntries()) {
+	    console.log('Layout shift:', entry);
+	  }
+	}).observe({type: 'layout-shift', buffered: true});		
+</script>
+
+  <script>var rocket_beacon_data = {"ajax_url":"https:\/\/www.drivingeco.com/be\/wp-admin\/admin-ajax.php","nonce":"7caa53ab31","url":"https:\/\/www.drivingeco.com/be\/autonomia-audi-e-tron-explicacion","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800}</script><script data-name="wpr-wpr-beacon" src="https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js" async=""></script>
+
+ 
+
+<script data-cfasync="false" src="https://tdns4.gtranslate.net/tdn-bin/queue.js"></script></body></html><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1767172207 -->

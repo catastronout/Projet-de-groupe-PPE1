@@ -1,2074 +1,497 @@
+<!DOCTYPE html><html lang="be" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.3",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseenter","mouseout","mouseleave","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input","visibilitychange"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),this.F("domReady"),await this.T(),await this.j(),await this.I(),this.F("windowLoad"),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise((t=>setTimeout(t,500-Date.now()+this.lastTouchEnd))),this.H(),this.F("all"),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))}),{isRocket:!0})}o(){window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0}),{isRocket:!0}),window.addEventListener("pagehide",(()=>{this.onFirstUserAction=null}),{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",(function i(o){Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1})),event.preventDefault(),window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}))}),{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),this.savedUserEvents.length>0&&(t.stopPropagation(),t.stopImmediatePropagation()),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach((t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})))}U(){this.userEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0}))),this.savedUserEvents.forEach((t=>{t.target.dispatchEvent(new window[t.constructor.name](t.type,t))}))}m(){this.eventsMutationObserver=new MutationObserver((t=>{const e="return false";for(const i of t){if("attributes"===i.type){const t=i.target.getAttribute(i.attributeName);t&&t!==e&&(i.target.setAttribute("data-rocket-"+i.attributeName,t),i.target["rocket"+i.attributeName]=new Function("event",t),i.target.setAttribute(i.attributeName,e))}"childList"===i.type&&i.addedNodes.forEach((t=>{if(t.nodeType===Node.ELEMENT_NODE)for(const i of t.attributes)this.attributeEvents.includes(i.name)&&i.value&&""!==i.value&&(t.setAttribute("data-rocket-"+i.name,i.value),t["rocket"+i.name]=new Function("event",i.value),t.setAttribute(i.name,e))}))}})),this.eventsMutationObserver.observe(document,{subtree:!0,childList:!0,attributeFilter:this.attributeEvents})}H(){this.eventsMutationObserver.disconnect(),this.attributeEvents.forEach((t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach((e=>{e.setAttribute(t,e.getAttribute("data-rocket-"+t)),e.removeAttribute("data-rocket-"+t)}))}))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o})},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}F(t){"all"===t&&(EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener),this.savedEventListeners=this.savedEventListeners.filter((e=>{let i=e.type,o=e.target||window;return"domReady"===t&&"DOMContentLoaded"!==i&&"readystatechange"!==i||("windowLoad"===t&&"load"!==i&&"readystatechange"!==i&&"pageshow"!==i||(this.B(i,o)&&(i="rocket-"+i),e.remove?o.removeEventListener(i,e.func,e.options):o.addEventListener(i,e.func,e.options),!1))}))}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,(()=>{e[t].forEach((t=>t()))}),{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout((()=>i.bind(document)(o))):i.bind(document)(o)}return t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise((t=>{this.userActionTriggered?t():this.onFirstUserAction=t}))}async L(){return new Promise((t=>{document.addEventListener("DOMContentLoaded",(()=>{this.realDomReadyFired=!0,t()}),{isRocket:!0})}))}async I(){return this.realWindowLoadedFired?Promise.resolve():new Promise((t=>{window.addEventListener("load",t,{isRocket:!0})}))}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver((t=>{for(const e of t)e.addedNodes.forEach((t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise((e=>{const i=()=>{const i=this.pendingScripts.findIndex((e=>e.script===t));i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)}))})}))})),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async j(){await this.J(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.j()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.N(t,"preconnect")}async $(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",(()=>{i.setAttribute("data-rocket-status","failed-network"),e()}),{isRocket:!0}),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.$(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())}),{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.$(e),this.C(t)):Promise.resolve()}O(){this.N([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}N(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach((t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}})),document.head.appendChild(o)}W(){this.trash.forEach((t=>t.remove()))}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async G(){Date.now()-this.lastBreath>45&&(await this.J(),this.lastBreath=Date.now())}async J(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<!DOCTYPE html>
-<html lang="be">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="uri-translation" content="on"><link rel="alternate" hreflang="es" href="https://www.drivingeco.com/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="ar" href="https://www.drivingeco.com/ar/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="eu" href="https://www.drivingeco.com/eu/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="be" href="https://www.drivingeco.com/be/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="ca" href="https://www.drivingeco.com/ca/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.drivingeco.com/zh-CN/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="zh-TW" href="https://www.drivingeco.com/zh-TW/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="hr" href="https://www.drivingeco.com/hr/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="cs" href="https://www.drivingeco.com/cs/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="da" href="https://www.drivingeco.com/da/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="nl" href="https://www.drivingeco.com/nl/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="en" href="https://www.drivingeco.com/en/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="et" href="https://www.drivingeco.com/et/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="fr" href="https://www.drivingeco.com/fr/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="gl" href="https://www.drivingeco.com/gl/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="de" href="https://www.drivingeco.com/de/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="hu" href="https://www.drivingeco.com/hu/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="it" href="https://www.drivingeco.com/it/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="ja" href="https://www.drivingeco.com/ja/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="ko" href="https://www.drivingeco.com/ko/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="ku" href="https://www.drivingeco.com/ku/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="pl" href="https://www.drivingeco.com/pl/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="pt" href="https://www.drivingeco.com/pt/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="pa" href="https://www.drivingeco.com/pa/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="ro" href="https://www.drivingeco.com/ro/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="ru" href="https://www.drivingeco.com/ru/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="sk" href="https://www.drivingeco.com/sk/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="sl" href="https://www.drivingeco.com/sl/cual-sera-realmente-autonomia-del-taycan/">
+<link rel="alternate" hreflang="tr" href="https://www.drivingeco.com/tr/cual-sera-realmente-autonomia-del-taycan/">
 
-<head>
-  <meta charset="UTF-8">
-    <title>pvgis.com - Пазасеткавае мадэляванне сонечнай сістэмы | Калькулятар поўнай энергетычнай аўтаноміі</title>
-  <meta name="description" content="Змадэлюйце поўную аўтаномную сонечную сістэму з акумулятарам для поўнай энергетычнай незалежнасці. Разлічыце неабходную ёмістасць акумулятара, сонечныя панэлі, хуткасць аўтаноміі і кошт сістэмы. Спампаваць падрабязна PVGIS Пазасеткавы справаздачу PDF.">
-  <meta name="keywords" content="поўная аўтаномнасць пазасеткавай сонечнай сістэмы, калькулятар поўнай энергетычнай незалежнасці, пазасеткавая акумулятарная сістэма, аўтаномная сонечная сістэма, поўнае мадэляванне аўтаноміі">
-  <meta name="robots" content="index,follow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes">
-  <link rel="canonical" href="https://pvgis.com/be/мадэляванне-поўнай-аўтаноміі-па-за-сеткай">
-  
-  
-  <link rel="alternate" hreflang="en" href="https://pvgis.com/en/total-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="fr" href="https://pvgis.com/fr/simulation-autonomie-totale-site-isole">
-<link rel="alternate" hreflang="de" href="https://pvgis.com/de/totale-autarkie-inselanlage-simulation">
-<link rel="alternate" hreflang="zh" href="https://pvgis.com/zh/完全自主离网模拟">
-<link rel="alternate" hreflang="es" href="https://pvgis.com/es/simulacion-autonomia-total-aislado">
-<link rel="alternate" hreflang="hi" href="https://pvgis.com/hi/पूर्ण-स्वायत्तता-ऑफ-ग्रिड-सिमुलेशन">
-<link rel="alternate" hreflang="ur" href="https://pvgis.com/ur/کل-آٹونومی-آف-گرڈ-سمولیشن">
-<link rel="alternate" hreflang="ar" href="https://pvgis.com/ar/محاكاة-الاستقلالية-الكاملة-منفصل-عن-الشبكة">
-<link rel="alternate" hreflang="pt" href="https://pvgis.com/pt/simulacao-autonomia-total-isolado">
-<link rel="alternate" hreflang="nl" href="https://pvgis.com/nl/totale-autonomie-off-grid-simulatie">
-<link rel="alternate" hreflang="ru" href="https://pvgis.com/ru/симуляция-полной-автономности-автономная-система">
-<link rel="alternate" hreflang="ro" href="https://pvgis.com/ro/simulare-autonomie-totala-izolat">
-<link rel="alternate" hreflang="it" href="https://pvgis.com/it/simulazione-autonomia-totale-off-grid">
-<link rel="alternate" hreflang="bn" href="https://pvgis.com/bn/সম্পূর্ণ-স্বায়ত্তশাসন-অফ-গ্রিড-সিমুলেশন">
-<link rel="alternate" hreflang="ja" href="https://pvgis.com/ja/完全自律型オフグリッド-シミュレーション">
-<link rel="alternate" hreflang="id" href="https://pvgis.com/id/simulasi-otonomi-total-di-luar-jaringan">
-<link rel="alternate" hreflang="tr" href="https://pvgis.com/tr/tam-ozerklik-sebeke-bagimsiz-simulasyonu">
-<link rel="alternate" hreflang="ko" href="https://pvgis.com/ko/완전한-자율성-오프-그리드-시뮬레이션">
-<link rel="alternate" hreflang="af" href="https://pvgis.com/af/totale-outonomie-buite-rooster-simulasie">
-<link rel="alternate" hreflang="sq" href="https://pvgis.com/sq/total-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="am" href="https://pvgis.com/am/አጠቃላይ-ገለልተኛ-ጠፍጣፋ-ፍርግርግ-ማስመሰል">
-<link rel="alternate" hreflang="hy" href="https://pvgis.com/hy/total-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="az" href="https://pvgis.com/az/ümumi-muxtar-off-grid-simulyasiya">
-<link rel="alternate" hreflang="eu" href="https://pvgis.com/eu/guztiz-autonomia-saretik-kanpo-simulazioa">
-<link rel="alternate" hreflang="be" href="https://pvgis.com/be/мадэляванне-поўнай-аўтаноміі-па-за-сеткай">
-<link rel="alternate" hreflang="bs" href="https://pvgis.com/bs/simulacija-totalne-autonomije-van-mreže">
-<link rel="alternate" hreflang="bg" href="https://pvgis.com/bg/симулация-на-пълна-автономия-извън-мрежата">
-<link rel="alternate" hreflang="ca" href="https://pvgis.com/ca/simulació-autonomia-total-fora-de-la-xarxa">
-<link rel="alternate" hreflang="co" href="https://pvgis.com/co/totale-autonomia-off-grid-simulation">
-<link rel="alternate" hreflang="hr" href="https://pvgis.com/hr/potpuna-autonomija-off-grid-simulacija">
-<link rel="alternate" hreflang="cs" href="https://pvgis.com/cs/total-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="da" href="https://pvgis.com/da/total-autonomi-off-grid-simulering">
-<link rel="alternate" hreflang="eo" href="https://pvgis.com/eo/totala-aŭtonomio-ekster-reto-simulado">
-<link rel="alternate" hreflang="et" href="https://pvgis.com/et/totaalne-autonoomia-välja-võrgu-simulatsioon">
-<link rel="alternate" hreflang="fi" href="https://pvgis.com/fi/total-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="fy" href="https://pvgis.com/fy/totale-autonomy-off-grid-simulaasje">
-<link rel="alternate" hreflang="gl" href="https://pvgis.com/gl/simulación-autonomía-total-fóra-da-rede">
-<link rel="alternate" hreflang="ka" href="https://pvgis.com/ka/ტოტალური-ავტონომია-გარე-ქსელის-სიმულაცია">
-<link rel="alternate" hreflang="el" href="https://pvgis.com/el/συνολική-αυτονομία-εκτός-πλέγμα-προσομοίωση">
-<link rel="alternate" hreflang="gu" href="https://pvgis.com/gu/સંપૂર્ણ-સ્વાયત્તતા-ઓફ-ગ્રીડ-સિમ્યુલેશન">
-<link rel="alternate" hreflang="ht" href="https://pvgis.com/ht/total-otonomi-off-grid-simulation">
-<link rel="alternate" hreflang="ha" href="https://pvgis.com/ha/jimillar-grid-grid-grid-sigul">
-<link rel="alternate" hreflang="hu" href="https://pvgis.com/hu/teljes-autonómia-off-grid-szimuláció">
-<link rel="alternate" hreflang="is" href="https://pvgis.com/is/heildar-sjálfræði-off-grid-hermun">
-<link rel="alternate" hreflang="ig" href="https://pvgis.com/ig/ngụkọta-akpachapụ-anya-grid">
-<link rel="alternate" hreflang="ga" href="https://pvgis.com/ga/iomlán-neamhspleáchas-as-greille-ionsamhalta">
-<link rel="alternate" hreflang="kn" href="https://pvgis.com/kn/ಒಟ್ಟು-ಸ್ವಾಯತ್ತತೆ-ಆಫ್-ಗ್ರಿಡ್-ಸಿಮ್ಯುಲೇಶನ್">
-<link rel="alternate" hreflang="kk" href="https://pvgis.com/kk/жалпы-автономия-тор-модельдеу">
-<link rel="alternate" hreflang="km" href="https://pvgis.com/km/ស្វ័យភាពអូឌីបអាកាស-បិទ-ក្រឡាចត្រង្គ-ការក្លែងធ្វើ">
-<link rel="alternate" hreflang="ku" href="https://pvgis.com/ku/total-otonomî-off-grid-simulation">
-<link rel="alternate" hreflang="ky" href="https://pvgis.com/ky/жалпы-автоматтык-тор-симуляция">
-<link rel="alternate" hreflang="lo" href="https://pvgis.com/lo/ທັງຫມົດ-ronomy-off-off-grid-simuinuince">
-<link rel="alternate" hreflang="la" href="https://pvgis.com/la/totalis-autonomiae-off-eget-simulationis">
-<link rel="alternate" hreflang="lv" href="https://pvgis.com/lv/total-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="lt" href="https://pvgis.com/lt/total-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="lb" href="https://pvgis.com/lb/total-autonomie-off-gitter-simulatioun">
-<link rel="alternate" hreflang="mk" href="https://pvgis.com/mk/тотална-автономија-надвор-од-мрежа-симулација">
-<link rel="alternate" hreflang="mg" href="https://pvgis.com/mg/total-aotona-off-grid-simulation">
-<link rel="alternate" hreflang="ms" href="https://pvgis.com/ms/jumlah-autonomi-off-grid-simulation">
-<link rel="alternate" hreflang="ml" href="https://pvgis.com/ml/മൊത്തം-സ്വയംഭരണം-ഓഫ്-ഗ്രിഡ്-സിമുലേഷൻ">
-<link rel="alternate" hreflang="mt" href="https://pvgis.com/mt/totali-awtonomija-off-grid-simulazzjoni">
-<link rel="alternate" hreflang="mi" href="https://pvgis.com/mi/tapeke-motuhake-aukati-gridilation">
-<link rel="alternate" hreflang="mr" href="https://pvgis.com/mr/संपूर्ण-स्वायत्तता-ऑफ-ग्रिड-सिम्युलेशन">
-<link rel="alternate" hreflang="mn" href="https://pvgis.com/mn/нийт-бие-даасан-байдал-гүү-сүлжээ-симуляци">
-<link rel="alternate" hreflang="my" href="https://pvgis.com/my/စုစုပေါင်းကိုယ်ပိုင်အုပ်ချုပ်ခွင့်-off-grid-simulation">
-<link rel="alternate" hreflang="ne" href="https://pvgis.com/ne/कुल-स्वायत्तता-अफ-ग्रिड-सिमुलेशन">
-<link rel="alternate" hreflang="no" href="https://pvgis.com/no/total-autonomi-off-grid-simulering">
-<link rel="alternate" hreflang="ny" href="https://pvgis.com/ny/chiwerengero-chonse-chodetsa-chodetsa">
-<link rel="alternate" hreflang="ps" href="https://pvgis.com/ps/بشپړ-خودمختاري-بند-ګرډ-سمولیشن">
-<link rel="alternate" hreflang="fa" href="https://pvgis.com/fa/شبیه-سازی-مستقل-از-شبکه">
-<link rel="alternate" hreflang="pl" href="https://pvgis.com/pl/symulacja-całkowitej-autonomii-poza-siecią">
-<link rel="alternate" hreflang="pa" href="https://pvgis.com/pa/ਕੁੱਲ-ਆਟੋਨੋਮੀ-ਆਫ-ਗਰਿੱਡ-ਸਿਮੂਲੇਸ਼ਨ">
-<link rel="alternate" hreflang="sm" href="https://pvgis.com/sm/aofai-autonomy-off-grid-faʻataʻitaʻiga">
-<link rel="alternate" hreflang="gd" href="https://pvgis.com/gd/atharrais-iomlan-neo-eisimeileach-far-grid">
-<link rel="alternate" hreflang="sr" href="https://pvgis.com/sr/симулација-тоталне-аутономије-ван-мреже">
-<link rel="alternate" hreflang="st" href="https://pvgis.com/st/kakaretso-ea-boitlamo">
-<link rel="alternate" hreflang="sn" href="https://pvgis.com/sn/yese-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="sd" href="https://pvgis.com/sd/مڪمل-خودمختاري-آف-گرڊ-سموليشن">
-<link rel="alternate" hreflang="si" href="https://pvgis.com/si/සම්පුර්ණ-ස්වයං-විරෝධී-ග්‍රිඩ්-සමාකරණය">
-<link rel="alternate" hreflang="sk" href="https://pvgis.com/sk/total-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="sl" href="https://pvgis.com/sl/popolna-avtonomija-off-grid-simulacija">
-<link rel="alternate" hreflang="so" href="https://pvgis.com/so/wadarta-is-miidaamin-of-off-jiilaalka">
-<link rel="alternate" hreflang="su" href="https://pvgis.com/su/total-otonom-off-beuleum">
-<link rel="alternate" hreflang="sw" href="https://pvgis.com/sw/jumla-ya-uhuru-wa-gridi-ya-taifa">
-<link rel="alternate" hreflang="sv" href="https://pvgis.com/sv/total-autonomy-off-grid-simulering">
-<link rel="alternate" hreflang="tl" href="https://pvgis.com/tl/kabuuan-autonomy-off-grid-simulation">
-<link rel="alternate" hreflang="tg" href="https://pvgis.com/tg/халқи-кишвариҳои">
-<link rel="alternate" hreflang="ta" href="https://pvgis.com/ta/மொத்த-தன்னாட்சி-ஆஃப்-கிரிட்-சிமுலேஷன்">
-<link rel="alternate" hreflang="te" href="https://pvgis.com/te/మొత్తం-స్వయంప్రతిపత్తి-ఆఫ్-గ్రిడ్-అనుకరణ">
-<link rel="alternate" hreflang="th" href="https://pvgis.com/th/การจำลองแบบนอกกริดทั้งหมด">
-<link rel="alternate" hreflang="uk" href="https://pvgis.com/uk/симуляція-повної-автономії-поза-мережею">
-<link rel="alternate" hreflang="uz" href="https://pvgis.com/uz/umumiy-avtonomiya-yopilish-simulyatsiya">
-<link rel="alternate" hreflang="vi" href="https://pvgis.com/vi/mô-phỏng-toàn-quyền-tự-chủ-ngoài-lưới-điện">
-<link rel="alternate" hreflang="cy" href="https://pvgis.com/cy/efelychiad-llwyr-ymreolaeth-oddi-ar-y-grid">
-<link rel="alternate" hreflang="xh" href="https://pvgis.com/xh/i-automid-i-aff-affidi">
-<link rel="alternate" hreflang="yi" href="https://pvgis.com/yi/גאַנץ-אויטאָנאָמיע-אַוועק-גריד-סימיאַליישאַן">
-<link rel="alternate" hreflang="yo" href="https://pvgis.com/yo/lapapọ-autony-pal-grid-simulation-fun">
-<link rel="alternate" hreflang="zu" href="https://pvgis.com/zu/ingqikithi-audence-off-off-of-grid-simulation">
-<link rel="alternate" hreflang="x-default" href="https://pvgis.com/en/total-autonomy-off-grid-simulation">
+	<!-- This site is optimized with the Yoast SEO plugin v25.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Якой будзе аўтаномнасць Taycan? Гэта тое, што мы ведаем</title>
+	<meta name="description" content="Спекуляцыі наконт аўтаномнасці Taycan апошнім часам разгараюцца. Аднак важна ўлічваць некаторыя меркаванні.">
+	<link rel="canonical" href="https://www.drivingeco.com/be/%D0%AF%D0%BA%D0%BE%D0%B9-%D0%BD%D0%B0-%D1%81%D0%B0%D0%BC%D0%B0%D0%B9-%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%B5-%D0%B1%D1%83%D0%B4%D0%B7%D0%B5-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-Taycan%3F/">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Якой будзе аўтаномнасць Taycan? Гэта тое, што мы ведаем">
+	<meta property="og:description" content="Спекуляцыі наконт аўтаномнасці Taycan апошнім часам разгараюцца. Аднак важна ўлічваць некаторыя меркаванні.">
+	<meta property="og:url" content="https://www.drivingeco.com/be/%D0%AF%D0%BA%D0%BE%D0%B9-%D0%BD%D0%B0-%D1%81%D0%B0%D0%BC%D0%B0%D0%B9-%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%B5-%D0%B1%D1%83%D0%B4%D0%B7%D0%B5-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-Taycan%3F/">
+	<meta property="og:site_name" content="Driving ECO">
+	<meta property="article:published_time" content="2019-08-26T07:47:50+00:00">
+	<meta property="og:image" content="https://i.bstr.es/drivingeco/2019/08/porschetaycanrange.jpg">
+	<meta property="og:image:width" content="1800">
+	<meta property="og:image:height" content="1065">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="Javier Cantagalli">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@Cantagalli">
+	<meta name="twitter:label1" content="аўтар">
+	<meta name="twitter:data1" content="Хаўер Кантагалі">
+	<meta name="twitter:label2" content="Прыл. час чытання">
+	<meta name="twitter:data2" content="3 Minutos">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.drivingeco.com\/cual-sera-realmente-autonomia-del-taycan\/","url":"https:\/\/www.drivingeco.com/be\/%D0%AF%D0%BA%D0%BE%D0%B9-%D0%BD%D0%B0-%D1%81%D0%B0%D0%BC%D0%B0%D0%B9-%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%B5-%D0%B1%D1%83%D0%B4%D0%B7%D0%B5-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-Taycan%3F\/","name":"Якой будзе аўтаномнасць Taycan? Гэта тое, што мы ведаем","isPartOf":{"@id":"https:\/\/www.drivingeco.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.drivingeco.com\/cual-sera-realmente-autonomia-del-taycan\/#primaryimage"},"image":{"@id":"https:\/\/www.drivingeco.com\/cual-sera-realmente-autonomia-del-taycan\/#primaryimage"},"thumbnailUrl":"https:\/\/i.bstr.es\/drivingeco\/2019\/08\/porschetaycanrange.jpg","datePublished":"2019-08-26T07:47:50+00:00","author":{"@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/a1e763aeef06335d35964698bef86c57"},"description":"Спекуляцыі наконт аўтаномнасці Taycan апошнім часам разгараюцца. Аднак важна ўлічваць некаторыя меркаванні.","breadcrumb":{"@id":"https:\/\/www.drivingeco.com\/cual-sera-realmente-autonomia-del-taycan\/#breadcrumb"},"inLanguage":"be","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.drivingeco.com\/cual-sera-realmente-autonomia-del-taycan\/"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/cual-sera-realmente-autonomia-del-taycan\/#primaryimage","url":"https:\/\/i.bstr.es\/drivingeco\/2019\/08\/porschetaycanrange.jpg","contentUrl":"https:\/\/i.bstr.es\/drivingeco\/2019\/08\/porschetaycanrange.jpg","width":1800,"height":1065},{"@type":"BreadcrumbList","@id":"https:\/\/www.drivingeco.com\/cual-sera-realmente-autonomia-del-taycan\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Галоўная","item":"https:\/\/www.drivingeco.com\/"},{"@type":"ListItem","position":2,"name":"Якой будзе аўтаномнасць у Porsche Taycan? Гэта тое, што мы ведаем"}]},{"@type":"WebSite","@id":"https:\/\/www.drivingeco.com\/#website","url":"https:\/\/www.drivingeco.com/be\/","name":"Driving ECO","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.drivingeco.com/be\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"be"},{"@type":"Person","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/a1e763aeef06335d35964698bef86c57","name":"Javier Cantagalli","image":{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/image\/","url":"https:\/\/secure.gravatar.com\/avatar\/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=96&d=mm&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=96&d=mm&r=g","caption":"Javier Cantagalli"},"sameAs":["https:\/\/x.com\/Cantagalli"],"url":"https:\/\/www.drivingeco.com/be\/%D0%B0%D1%9E%D1%82%D0%B0%D1%80\/jsunyer\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
 
-  <meta property="og:title" content="Пазасеткавае мадэляванне сонечнай сістэмы | Калькулятар поўнай энергетычнай аўтаноміі">
-<meta property="og:description" content="Змадэлюйце поўную аўтаномную сонечную сістэму з акумулятарам для поўнай энергетычнай незалежнасці. Разлічыце неабходную ёмістасць акумулятара, сонечныя панэлі, хуткасць аўтаноміі і кошт сістэмы. Спампаваць падрабязна PVGIS Пазасеткавы справаздачу PDF.">
-<meta property="og:image" content="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/og-off-grid-autonomy-simulation.jpg">
-<meta property="og:url" content="https://pvgis.com/be/мадэляванне-поўнай-аўтаноміі-па-за-сеткай">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Пазасеткавае мадэляванне сонечнай сістэмы | Калькулятар поўнай энергетычнай аўтаноміі">
-<meta name="twitter:description" content="Змадэлюйце поўную аўтаномную сонечную сістэму з акумулятарам для поўнай энергетычнай незалежнасці. Разлічыце неабходную ёмістасць акумулятара, сонечныя панэлі, хуткасць аўтаноміі і кошт сістэмы. Спампаваць падрабязна PVGIS Пазасеткавы справаздачу PDF.">
-<meta name="twitter:image" content="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/og-off-grid-autonomy-simulation.jpg">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="https://pvgis.com/assets/images/icon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://pvgis.com/assets/images/icon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://pvgis.com/assets/images/icon/favicon-16x16.png">
-  <link rel="manifest" href="https://pvgis.com/assets/images/icon/site.webmanifest">
 
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/jquery_ui.min.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/normalize.min.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/bootstrap.min.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/fonts.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/width_grid.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/loader.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/color.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/cookieconsent.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/header.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/footer.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/testimony.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/account.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/custom_radio_checkbox.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/css/intlTelInput.min.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/toastr.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/toast_popup.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/floating_action.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/floating_btn_connected_user.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/how_do_i_do.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/log_to_pdf_modal.css?v=231220251137">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://pvgis.com/assets/min-css/popup.css?v=231220251137">
-    <style>
-    /* ===========================
-   STYLES DE BASE (DESKTOP)
-   =========================== */
+<link rel="dns-prefetch" href="https://i.bstr.es/">
 
-.main {
-  margin-block: 40px 80px;
-  margin-inline: auto;
-}
+<style id="wp-emoji-styles-inline-css" type="text/css">
 
-.intro { 
-  margin-block-end: 22px;  
-  font-size: 22px;
-  line-height: normal;
-}
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.drivingeco.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.1" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://www.drivingeco.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://www.drivingeco.com/wp-json/wp/v2/posts/7349">
 
-.intro p {
-  font-weight: bold;
-  margin: 0 0 8px;
-  font-size: 22px;
-}
+	<link rel="icon" type="image/png" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco-16x16.png">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco76x76.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco152x152.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco144x144.png">	
+<!-- incrementa -->	    <script type="rocketlazyloadscript" async="" data-rocket-type="text/javascript">
+            var a = new XMLHttpRequest();
+            a.open("GET","https://www.drivingeco.com/be/wp-content/themes/comun9/incrementa.php?id=7349&bd=drivingeco");
+            a.send(null);
+	   </script>
+				
+			<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.drivingeco.com\/cual-sera-realmente-autonomia-del-taycan\/"},"headline":"","image":"https:\/\/i.bstr.es\/drivingeco\/2019\/08\/porschetaycanrange-880x521.jpg","datePublished":"2019-08-26","dateModified":"2019-08-26","author":{"@type":"Person","name":"Javier Cantagalli"},"publisher":{"@type":"Organization","name":"drivingeco","logo":{"@type":"ImageObject","url":"https:\/\/www.drivingeco.com\/favicon.ico"}},"description":""}</script>	
+		<!-- ## NXS/OG ## --><!-- ## NXSOGTAGS ## --><!-- ## NXS/OG ## -->
+
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
 
 
 
-.intro .highlight-line {
-  color: #e6893c;
-  font-weight: bold;
-  margin-block-start: 4px;
-}
-
-h1 {
-  margin: 0;
-  margin-block-end: 10px;
-  color: #0065a2;
-  font-size: 48px;
-  letter-spacing: 0.3px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.hero-img {
-  overflow: hidden;
-}
-
-.hero-img img {
-  width: 100%;
-  display: block;
-}
-
-.frame {
-  border: 1px solid #074a8b;
-  border-radius: 6px;
-  padding: 0;
-  margin-block-start: 18px;
-  background: #fff;
-}
-
-.frame-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 0;
-  margin: 0;
-}
-
-.frame-title {
-  background: #074a8b;
-  color: #fff;
-  font-weight: 800;
-  padding-block: 6px;
-  padding-inline: 14px;
-  border-radius: 3px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  font-size: 30px;
-}
-
-.download-btn {
-  background: #e6893c;
-  color: #fff;
-  border: none;
-  padding-block: 10px;
-  padding-inline: 14px;
-  border-radius: 3px;
-  font-weight: 400;
-  cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.16);
-  margin: 0;
-  font-size: 24px;
-}
-.download-btn:hover, .download-btn:active  {
-  text-decoration: none;
-  color: #fff;
-}
-
-.frame-body {
-  padding-block: 12px 16px;
-  padding-inline: 12px;
-}
-
-.bottom-btn {
-  text-align: end; /* end = droite en LTR, gauche en RTL */
-  margin-block-start: 10px;
-}
-
-.sections {
-  margin-block-start: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-block: 8px 12px;
-  padding-inline: 40px;
-}
-
-.section {
-  padding-block: 12px;
-  padding-inline: 4px;
-  display: grid;
-  grid-template-columns: 0.33fr 0.67fr;
-  gap: 12px 20px;
-  align-items: center;
-}
-
-.section .text,
-.section .text * {
-  font-size: 14px;
-  line-height: 1.22;
-  color: #0065a2;
-}
 
 
-.section .text strong {
-  display: block;
-  margin-block-end: 6px;
-  color: #0065a2;
-}
-
-.section img {
-  width: 100%;
-  display: block;
-  border-radius: 3px;
-  box-shadow: none;
-}
-
-footer {
-  text-align: center;
-  color: #5d6c85;
-  font-size: 13px;
-  margin-block-start: 28px;
-}
-
-/* ===========================
-   RESPONSIVE TABLETTE (< 960)
-   =========================== */
-
-@media (max-width: 960px) {
-
-  header {
-    position: static;
-  }
-
-  .cta {
-    width: 100%;
-    justify-content: flex-start;
-    margin-inline-start: 0;
-  }
-
-  .main {
-    margin-block: 30px 60px;
-    margin-inline: auto;
-    padding-inline: 20px;
-  }
-
-  h1 {
-    font-size: 32px;
-    text-align: center;
-  }
-
-  .intro {
-    text-align: center;
-  }
-
-  .sections {
-    padding-inline: 20px;
-  }
-
-  .section {
-    grid-template-columns: 1fr; /* 1 colonne */
-  }
-
-  /* texte au-dessus de l’image */
-  .section .text {
-    order: -1;
-    text-align: center;
-    font-size: 20px;
-  }
-
-  .section img {
-    margin-block-start: 12px;
-  }
-
-  .download-btn {
-    font-size: 20px;
-    padding-block: 8px;
-    padding-inline: 12px;
-  }
-}
-
-/* ===========================
-   RESPONSIVE MOBILE (< 768)
-   =========================== */
-
-@media (max-width: 768px) {
-
-  /* Marges globales */
-  .main {
-    margin-block: 20px 40px;
-    margin-inline: auto;
-    padding-inline: 12px;
-  }
-
-  h1 {
-    font-size: 28px;
-    margin-block-end: 12px;
-  }
-
-  .intro {
-    padding-inline: 6px;
-    margin-block-end: 18px;
-  }
-
-  .sections {
-    padding-inline: 10px;
-    gap: 22px;
-  }
-
-  .section {
-    gap: 14px;
-    padding-block: 14px 10px;
-  }
-
-  .section .text {
-    font-size: 18px;
-    line-height: 1.4;
-  }
-
-  .section img {
-    width: 100%;
-    margin-block-start: 8px;
-  }
-
-  /* Cartouches bleus / cadres */
-  .frame {
-    margin-block-start: 14px;
-    padding-inline: 0;
-  }
-
-  .frame-title {
-    width: 100%;
-    text-align: center;
-    font-size: 22px;
-    padding-block: 8px;
-  }
-
-  .frame-body {
-    padding-block: 12px;
-    padding-inline: 10px;
-  }
-
-  /* Boutons : empilés, centrés, larges */
-  .frame-header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-  }
-
-  .download-btn {
-    width: 100%;
-    font-size: 18px;
-    padding-block: 10px;
-    padding-inline: 12px;
-    text-align: center;
-  }
-
-  .bottom-btn {
-    margin-block-start: 12px;
-    text-align: center;
-  }
-
-  .bottom-btn button,
-  .frame-header button {
-    width: 100%;
-    max-width: 260px;
-    margin-inline: auto;
-  }
-}
-  </style>
-  
-<script>
-    window.env = {
-        UI_BASE_URL: "https://pvgis.com",
-        AUTH_API_URL: "https://auth.pvgis.com",
-        PVGIS_AUTH_API: "https://auth.pvgis.com",
-        BASE_URL: "https://api.pvgis.com",
-        TRANSLATION_API_URL: "https://ts.pvgis.com",
-        PRINT_URL: "https://print.pvgis.com/pvgis",
-        MAP_LAYER_URL: "https://gisco-services.ec.europa.eu/maps/tiles/OSMCartoBackground/EPSG3857/{z}/{x}/{y}.png",
-        LABEL_LAYER_URL: "https://gisco-services.ec.europa.eu/maps/tiles/OSMCartoLabels/EPSG3857/{z}/{x}/{y}.png",
-        SENTINEL_LAYER_URL: "https://tiles.maps.eox.at/",
-        SATELLITE_LAYER_URL: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        SOLAR_LAYER_URL: "https://re.jrc.ec.europa.eu/pvg_tiles/api5_2/{z}/{x}/{-y}.png",
-        ELEVATION_URL: "https://api.open-meteo.com/v1/elevation?",
-        GEOCODE_URL: "https://gisco-services.ec.europa.eu/api?lang=en&limit=1&q=",
-        GA_MEASUREMENT_ID: "G-7160PCEY5S",
-        KISS_2_PVGIS: "https://kiss2pvgis.com",
-        SOLAR_DROP_SHIPPING: "https://solardropshipping.com",
-        CMS_URL: "https://cms.pvgis.com/content-management-system",
-        CURRENT_CLIENT_IP: "88.171.52.213",
-        COUNTRY_LIST: "https://restcountries.com/v3.1/all",
-        PRODUCTION: true,
-        FILE_UPLOAD_URL: "https://fs.pvgis.com",
-        BROADCAST_URL: "https://bs.pvgis.com",
-        BP_BASE_URL: "https://bp.pvgis.com",
-        EXCHANGE_RATE_URL: "https://cs.pvgis.com",
-        LATEST_PVGIS_API_VERSION: "5.3",
-        MINIFY_CSS_JS: true,
-        CDN_URL: "https://cdn.pvgis.com",
-        SETTING_URL: "https://cfg.pvgis.com",
-        STRIPE_PUBLISHABLE_KEY: "pk_live_51Psh8RCNxPSZy3wjNk3YeGrTrJVP2vKEonxodiALZYaYhCbpukHxWITjoFqbaH5DxHhUx2ZuJNqRdFJzrwZH8eo800cpfHoWeG",
-        RESOURCE_VERSION: "231220251137",
-        GOOGLE_LABELS_LAYER_LINK: "https://mt1.google.com/vt/lyrs=h&x={x}&y={y}&z={zoom}",
-        GOOGLE_SATELLITE_LAYER_LINK: "https://khms2.google.com/kh/v=1000?x={x}&y={y}&z={zoom}",
-        GOOGLE_MAPS_API_KEY: "AIzaSyBGwuAzneXJqwq8ZQ4oJFb9-crInpddy2E",
-        GOOGLE_STATIC_MAPS_URL: "https://maps.googleapis.com/maps/api/staticmap?center={lat},{lng}&zoom={zoom}&size={size}&maptype={mapTypeId}&markers=color:red%7Clabel:+%7C{markerLat},{markerLng}&key=AIzaSyBGwuAzneXJqwq8ZQ4oJFb9-crInpddy2E",
-        GOOGLE_GEOCODE_URL: "https://maps.googleapis.com/maps/api/geocode/json?address={city},{country}&key=AIzaSyBGwuAzneXJqwq8ZQ4oJFb9-crInpddy2E",
-        GOOGLE_TIMEZONE_URL: "https://maps.googleapis.com/maps/api/timezone/json?language=es&location={lat},{lng}&timestamp={timestamp}&key=AIzaSyBGwuAzneXJqwq8ZQ4oJFb9-crInpddy2E",
-        ENABLE_STATIC_RESULTS_MAP: "true" === "true",
-        GOOGLE_MAPS_MAP_ID: "e1b4b31e9c1e44e9",
-        REDIRECT_TO_INVITATION_FORM_AT:  null,
-        PVGIS_API_VERSION: "5.3",
-        PVGIS_API_DATABASES: "PVGIS-SARAH3,PVGIS-ERA5",
-        PVGIS_LEGACY_API_VERSION: "5.2",
-        PVGIS_LEGACY_API_DATABASES: "PVGIS-SARAH2,PVGIS-ERA5",
-        HELPDESK_URL: "https://hd.pvgis.com",
-        URL_PREFIX: "/en/",
-        USE_FULL_24H: false,
-        ACCOUNT_TYPE_PARTICULIER: 2,
-        MAX_PROJECT_GPS_UPDATE: 3    };
-
-      
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MGNRFSQ');</script>
+<!-- End Google Tag Manager -->
 
 
-    window.simulatorPvgisMeta = {
-        apiVersion: "5.3",
-        databases: "PVGIS-SARAH3,PVGIS-ERA5".split(',')
-    };
-    window.clientIpInfo = {"countryName":"","countryCode":"","lat":"","lon":"","timezone":"","status":""};
-    window.userSettings = [];
+<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGNRFSQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<script type="rocketlazyloadscript">var adTarget="marca=porsche;modelo=taycan;precio=42;";</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://tmadspot.s3.eu-west-3.amazonaws.com/ads/250199.js"></script>
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://t.seedtag.com/t/7860-6497-01.js"></script>
+
+
+		
+	
+	<!-- google adsense + adspot -->
+	<script type="rocketlazyloadscript">
+		var currentLang = document.getElementsByTagName('html')[0].getAttribute('lang');
+		console.log(currentLang);
+		if ( currentLang !== 'es' && currentLang !== 'es-ES' &&  currentLang !== 'pt' && currentLang !== 'pt-PT') {
+			var script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6543774410994713';
+			script.crossOrigin = 'anonymous';
+			document.head.appendChild(script);
+		}
+		else{
+			var script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://ssm.codes/smart-tag/drivingeco.js';
+			document.head.appendChild(script);
+
+		}
+	</script>
+	<!-- google adsense -->
+
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-CE3ZWTD17F"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+	gtag('config', 'G-CE3ZWTD17F', {
+	   'custom_map': {
+	     'dimension1': 'domain'
+	   }
+	});
+	
+	gtag('event', 'set_domain', {'domain': 'drivingeco.com'});
 </script>
 
-  <!-- Google analytics Tags -->
-  <script class="g-tag-script" async src="https://www.googletagmanager.com/gtag/js?id=G-7160PCEY5S"></script>
-  <script class="g-tag-script">
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7160PCEY5S');
-  </script>
 
-  <script>
-    let isConnected = false;
-    const _SESSION = {};
 
-    function isSafari() {
-      return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    }
-
-    function isEpiphany() {
-      return /epiphany/i.test(navigator.userAgent);
-    }
-
-    if(isSafari() || isSafari()) {
-      addCSSLinkDynamically("safari.css");
-    }
-
-    function addCSSLinkDynamically(cssFile) {
-      let existingLink = document.querySelector(`link[href*="${cssFile}"]`);
-      if (existingLink) return;
-      let linkElem = document.createElement('link');
-      linkElem.rel = 'stylesheet';
-      linkElem.href = `https://pvgis.com/assets/min-css/${cssFile}?v=231220251137` ;
-      document.head.appendChild(linkElem);
-    }
-  </script>
-    <script defer src="https://pvgis.com/assets/min-js/loader.js?v=231220251137"></script>
-    <script defer type="module" src="https://pvgis.com/assets/min-js/cookieconsent.umd.js?v=231220251137"></script>
-    <script defer type="module" src="https://pvgis.com/assets/min-js/cookieconsent-config.js?v=231220251137"></script>
-    <script defer src="https://pvgis.com/assets/min-js/settings.utils.js?v=231220251137"></script>
-    <script>
-        window.customerSavedLanguage = window.customerSavedLanguage || "be";
-        window.cmsKey = "pvgis-simulation-total-autonomy-off-grid-simulation";
-    </script>
-
-    <script src="https://cdn.pvgis.com/assets/js/jquery.js?v=231220251137"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.min.js" integrity="sha512-Nonc2AqL1+VEN+97F3n4YxucBOAL5BgqNwEVc2uUjdKOWAmzwj5ChdJQvN2KldAxkCxE4OenuJ/RL18bWxGGzA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
-    <script src="https://pvgis.com/assets/min-js/global.js?v=231220251137"></script>
-    <script defer src="https://pvgis.com/assets/min-js/active-user.js?v=231220251137"></script>
-    <script defer src="https://pvgis.com/assets/min-js/translation/index.js?v=231220251137"></script>
-    <script defer src="https://pvgis.com/assets/min-js/modal/index.js?v=231220251137"></script>
-    <script defer src="https://cdn.socket.io/4.5.0/socket.io.min.js" ></script>
-    <script src="https://pvgis.com/assets/min-js/socket-config.js?v=231220251137"></script>
-    <!-- <script src="https://pvgis.com/assets/min-js/extranet/register_modal_pvgis24.js?v=231220251137" defer></script> -->
-    <script>
-        removeIndesirableTag();
-    </script>
-</head><body>
-    <div class="cssloader-container">
-  <div class="cssloader-speeding-wheel"></div>
-  <p>
-    <!-- <img width="285" height="44" src="http://ssdg.mu/wp-content/uploads/2021/08/cropped-logo-ssdg.mu_.png" alt="ssdg.mu"> -->
-    PVGIS.COM
-  </p>
-  <p id="custom-loader-text" class="custom-loader-text">
-    <span id="custom-loader-text-content">
-      Загрузка мадэлявання    </span>
-    <span class="dots">
-      <span>.</span>
-      <span>.</span>
-      <span>.</span>
-    </span>
-  </p>
-</div>
-
-    <div class="main-content">
-        <div id="loadingPdf"></div>
-        
-<div class="header" id="header">
-    <div class="header-top">
-        <div class="container-fluid c-header">
-            <div class="menu-btn-container">
-                <button class="menu-btn" aria-label="humbergerMenu"><i class="fas fa-bars"></i></button>
-            </div>
-            <div class="logo-content">
-                <div class="logo-title">
-                    <a href="/en" data-cms-link id="nav-link" class="logo-extranet">
-                        <img src="/assets/images/icon/logo_extranet_pvgis.com.png" alt="Logo PVGIS.COM" srcset="" width="113px" height="50px">
-                    </a>
-                </div>
-                <div class="description-container">
-                    <p class="title-header" data-ts="pvgis.header_title">ФОТАЭЛЕКТРЫЧНАЯ ГЕАГРАФІЧНАЯ ІНФАРМАЦЫЙНАЯ СІСТЭМА</p>
-                </div>
-            </div>
+    
 
          
-
-            <div class="h-top-right">
-                <div class="side-web-menu font-medium">
-                            <div class="currency-dropdown currency-switcher">
-            <span class="lang-label currency-label">
-                <span class="custom-span currency-selected" data-currency-code="USD" data-currency-label="USD $" data-currency-symbol="$">
-                    USD $                </span>
-                <i class="fas fa-sort-down icon icon-select-currency"></i>
-            </span>
-            <div class="currency-popover">
-                <div class="currency-options">
-                                            <div class="currency-option " data-currency-code="EUR" data-currency-symbol="€" data-currency-label="EUR €">
-                            <span class="currency-caret"></span>
-                            <a href="#" class="currency-upper" data-currency-code="EUR" data-currency-symbol="€">
-                                <span class="label-currency">EUR €</span>
-                            </a>
-                        </div>
-                                            <div class="currency-option active" data-currency-code="USD" data-currency-symbol="$" data-currency-label="USD $">
-                            <span class="currency-caret"><span class="fa-solid fa-caret-right"></span></span>
-                            <a href="#" class="currency-upper" data-currency-code="USD" data-currency-symbol="$">
-                                <span class="label-currency">USD $</span>
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-            <div class="dummy-link">
-            </div>
-        </div>
-                            <div class="side-menu-item-lang">
-                        <span class="lang-label">
-                            <span class="custom-span lang-selected">
-                                be                            </span>
-                            <i class="fas fa-sort-down icon icon-select-lang"></i>
-                        </span>
-                        <div class="lang-popover">
-                            <div class="back-lang">
-                                <span>&nbsp;&nbsp;<i class="fas fa-arrow-left"></i>&nbsp;&nbsp;<span class="back-button"></span></span>
-                            </div>
-                            <input type="text" id="searchLang" class="more-lang-input" placeholder="Пошук" data-tstype="placeholder" data-ts="pvgis.search">
-                            <div class="lang-options">
-                                <div class="more-lang-option more-languages">
-                                    <span>&nbsp;&nbsp;<i class="fas fa-ellipsis-h"></i>&nbsp;&nbsp;<span data-ts="pvgis.more_language">Іншыя мовы</span></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dummy-link">
-                        </div>
-                    </div>
-                    <div class="account-menu-container account-menu-large">
-                                                    <a href="/register" class="btn btn-outline-light" data-ts="pvgis.header.account_menu.subscribe">Зарэгіструйцеся</a>&nbsp;&nbsp;
-                            <a href="/login" class="btn btn-outline-light" data-ts="pvgis.header.account_menu.login">Увайсці</a>
-                                                </div>
-                    <div class="link-simulation">
-                        <a href="/en" data-cms-link rel="noopener noreferrer">
-                            <button class="btn btn-warning text-uppercase">pvgis24</button>
-                        </a>
-                                            </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="content-bottom">
-    <div class="header-bottom">
-        <div class="h-nav-container font-bold">
-            <div class="container-fluid selected-nav-container">
-                <!-- <div class="seleted-nav"></div> -->
-                        <div class="currency-dropdown currency-switcher">
-            <span class="lang-label currency-label">
-                <span class="custom-span currency-selected" data-currency-code="USD" data-currency-label="USD $" data-currency-symbol="$">
-                    USD $                </span>
-                <i class="fas fa-sort-down icon icon-select-currency"></i>
-            </span>
-            <div class="currency-popover">
-                <div class="currency-options">
-                                            <div class="currency-option " data-currency-code="EUR" data-currency-symbol="€" data-currency-label="EUR €">
-                            <span class="currency-caret"></span>
-                            <a href="#" class="currency-upper" data-currency-code="EUR" data-currency-symbol="€">
-                                <span class="label-currency">EUR €</span>
-                            </a>
-                        </div>
-                                            <div class="currency-option active" data-currency-code="USD" data-currency-symbol="$" data-currency-label="USD $">
-                            <span class="currency-caret"><span class="fa-solid fa-caret-right"></span></span>
-                            <a href="#" class="currency-upper" data-currency-code="USD" data-currency-symbol="$">
-                                <span class="label-currency">USD $</span>
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-            <div class="dummy-link">
-            </div>
-        </div>
-                        <div class="side-menu-item-lang">
-                    <span class="lang-label">
-                        <span class="custom-span lang-selected">be</span>
-                        <i class="fas fa-sort-down icon icon-select-lang"></i>
-                    </span>
-                    <div class="lang-popover">
-                    </div>
-                    <div class="more-lang-popover"></div>
-                </div>
-                <div class="account-menu-container account-menu-mobile">
-                                                <a href="/register" class="btn btn-outline-light" data-ts="pvgis.header.account_menu.subscribe">
-                            Зарэгіструйцеся                        </a>&nbsp;&nbsp;
-                        <a href="/login" class="btn btn-outline-light" data-ts="pvgis.header.account_menu.login">
-                            Увайсці                        </a>
-                                        </div>
-                <div class="system-link-container">
-                    <a class="nav-system-link" href="/en" data-cms-link rel="noopener noreferrer">
-                        <button class="btn btn-warning text-uppercase">pvgis24</button>
-                    </a>
-                </div>
-            </div>
-            <nav class="container-fluid nav-web-menu">
-                <ul class="navigation-menu-container nav-content">
-                    <li class="nav-button">
-                        <a class="nav-menu-item  h-default-btn" href="/en/pvgis24-features-benefits" data-cms-link>
-                            <span data-ts="pvgis.header.pvgis24_why">PVGIS24</span>
-                        </a>
-                    </li>
-                    <li class="nav-button">
-                        <a class="nav-menu-item h-default-btn" href="/en/solar-financial-simulator" data-cms-link>
-                            <span data-ts="pvgis.simulator.title">Фінансавае мадэляванне</span>
-                        </a>
-                    </li>
-                    <li class="nav-button">
-                        <a class="nav-menu-item btn btn-warning h-default-btn" href="/en/subscription" data-cms-link>
-                            <span data-ts="pvgis.subscription.label">Падпіска</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-button nav-dropdown">
-                        <a class="nav-menu-item h-default-btn nav-dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            <span data-ts="pvgis.header.simulations_menu.title">Мадэляванне PDF</span>
-                            <i class="fas fa-caret-down nav-dropdown-icon" aria-hidden="true"></i>
-                        </a>
-                        <ul class="nav-dropdown-menu">
-                            <li>
-                                <a class="nav-dropdown-link" data-cms-link href="/en/pvgis24-solar-production-simulation" data-ts="pvgis.header.simulations_menu.productible">PVGIS24 Ураджайнасць</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" data-cms-link href="/en/simple-self-consumption-simulation" data-ts="pvgis.header.simulations_menu.self_consumption_simple">Простае самаспажыванне</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" data-cms-link href="/en/self-consumption-surplus-grid-sale-simulation" data-ts="pvgis.header.simulations_menu.self_consumption_surplus">Самаспажыванне  <br>+ перапродаж лішкаў у сетку</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" data-cms-link href="/en/grid-tied-solar-simulation" data-ts="pvgis.header.simulations_menu.grid_sell_all">Поўная перапродаж у сетку</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" data-cms-link href="/en/grid-bill-savings-simulation" data-ts="pvgis.header.simulations_menu.grid_bill_savings">Эканомце на рахунках Grid</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" data-cms-link href="/en/autonomy-self-consumption-grid-hybrid-simulation" data-ts="pvgis.header.simulations_menu.autonomy_self_consumption">Аўтаномнасць + Самаспажыванне <br>+ Сетка</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" data-cms-link href="/en/total-autonomy-off-grid-simulation" data-ts="pvgis.header.simulations_menu.full_autonomy">Поўная аўтаномія</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-button">
-                        <a class="nav-menu-item  h-default-btn" href="/en/for-solar-installers-and-engineering-firms" data-cms-link>
-                            <span data-ts="pvgis.for_pros">Для ПЛЮСАЎ</span>
-                        </a>
-                    </li>
-                </ul>
-                </ul>
-                <div class="text-uppercase nav-content active-users-ga" style="white-space: nowrap;">
-                     {{user_count}} актыўныя карыстальнікі*                </div>
-            </nav>
-        </div>
-    </div>
-     <div class="simlulation_count">
-        <div class="container-fluid simlulation_content simlulation_content_main">
-            <span class="text-uppercase">
-                8,289 SIMULATIONS RÉALISÉES HIER
-            </span>
-            <span class="text-uppercase">
-                3,008,289 SIMULATIONS CUMULÉES
-            </span>
-        </div>
-    </div>
-    </div>
-    <div class="extra-header">
-        <div class="text-uppercase nav-content active-users-ga" style="white-space: nowrap;">
-             {{user_count}} актыўныя карыстальнікі*        </div>
-    </div>
-    <div class="simlulation_count_mobile simlulation_content_main">
-        <span class="text-uppercase">
-            8,289 SIMULATIONS RÉALISÉES HIER
-        </span>
-        <span class="text-uppercase">
-            3,008,289 SIMULATIONS CUMULÉES
-        </span>
-    </div>
-    <div class="menu-mobile">
-        <div class="menu-mobile-container">
-            <div class="menu-m-header"> 
-                <div class="m-logo-container">
-                    <a href="/en" data-cms-link>
-                        <img class="logo-internet" loading="lazy" width="200" src="/assets/images/icon/logo_internet_pvgis.com.png" alt="Logo PVGIS.COM" srcset="">
-                    </a>
-                    <button><i class="fas fa-times"></i></button>
-                </div>
-                <div class="m-title" data-ts="pvgis.header_title">
-                    ФОТАЭЛЕКТРЫЧНАЯ ГЕАГРАФІЧНАЯ ІНФАРМАЦЫЙНАЯ СІСТЭМА                </div>
-            </div>
-            <div class="menu-mobile-body">
-                <ul class="navigation-menu-container font-bold">
-                    <li class="nav-button">
-                        <a class="nav-menu-item  h-default-btn" href="/en/pvgis24-features-benefits" data-cms-link>
-                            <span data-ts="pvgis.header.pvgis24_why">PVGIS24</span>
-                        </a>
-                    </li>
-                    <li class="nav-button">
-                        <a class="nav-menu-item h-default-btn" href="/en/solar-financial-simulator" data-cms-link>
-                            <span data-ts="pvgis.simulator.title">Фінансавае мадэляванне</span>
-                        </a>
-                    </li>
-                    <li class="nav-button">
-                        <a class="nav-menu-item btn btn-warning h-default-btn" href="/en/subscription" data-cms-link>
-                            <span data-ts="pvgis.subscription.label">Падпіска</span>
-                        </a>
-                    </li>
-                    <li class="nav-button nav-dropdown">
-                        <a class="nav-menu-item h-default-btn nav-dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            <span data-ts="pvgis.header.simulations_menu.title">Мадэляванне PDF</span>
-                            <i class="fas fa-caret-down nav-dropdown-icon" aria-hidden="true"></i>
-                        </a>
-                        <ul class="nav-dropdown-menu">
-                            <li>
-                                <a class="nav-dropdown-link" href="/en/pvgis24-solar-production-simulation" data-ts="pvgis.header.simulations_menu.productible">PVGIS24 Ураджайнасць</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" href="/en/simple-self-consumption-simulation" data-ts="pvgis.header.simulations_menu.self_consumption_simple">Простае самаспажыванне</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" href="/en/self-consumption-surplus-grid-sale-simulation" data-ts="pvgis.header.simulations_menu.self_consumption_surplus">Самаспажыванне  <br>+ перапродаж лішкаў у сетку</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" href="/en/grid-tied-solar-simulation" data-ts="pvgis.header.simulations_menu.grid_sell_all">Поўная перапродаж у сетку</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" href="/en/grid-bill-savings-simulation" data-ts="pvgis.header.simulations_menu.grid_bill_savings">Эканомце на рахунках Grid</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" href="/en/autonomy-self-consumption-grid-hybrid-simulation" data-ts="pvgis.header.simulations_menu.autonomy_self_consumption">Аўтаномнасць + Самаспажыванне <br>+ Сетка</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" href="/en/total-autonomy-off-grid-simulation" data-ts="pvgis.header.simulations_menu.grid_only">Толькі сетка</a>
-                            </li>
-                            <li>
-                                <a class="nav-dropdown-link" href="/en/simulations/full-autonomy" data-ts="pvgis.header.simulations_menu.full_autonomy">Поўная аўтаномія</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-button">
-                        <a class="nav-menu-item h-default-btn" href="/en/for-solar-installers-and-engineering-firms" data-cms-link>
-                            <span data-ts="pvgis.for_pros">Для ПЛЮСАЎ</span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="separate"></div>
-                <ul class="side-menu-container font-medium"></ul>
-            </div>
-        </div>
-    </div>
-
-    <script>var customerIdToast = '';</script><div id="toast" class="toast-view-container">
-    <div class="toast-view">
-        <div class="toast-body">
-            <div class="toast-header">
-                <strong id="toast-title">
-                    Пацвердзіце інфармацыю профілю                </strong>
-                <!-- <button type="button" class="btn-close-toast" onclick="hideToast()">&times;</button>  -->
-            </div>
-            <span>
-                <p id="toast-message">
-                    Перш чым працягнуць, пацвердзіце некаторую інфармацыю профілю                </p>
-            </span>
-        </div>
-        <div class="toast-footer" id="confirm-toast">
-            <button type="button" class="btn-confirm-toast" onclick="redirectToAccountInfo()">
-                <span>
-                    Пацвердзіць                </span>
-            </button>
-        </div>
-    </div>
-</div>    <div id="toast_popup">
-    <div class="popup-overlay-container">
-        <div class="popup-container-wrapper">
-            <div class="popup-view-container popup-pro popup-white">
-                <div class="toat-popup-content" data-ts="pvgis.popup.pro_content">
-                    <div class="toast-popup-header">
-  <icon class="icon-close" id="close">&times;</icon>
-</div>
-<h3>«Я хачу працаваць больш эфектыўна і заваёўваць аўтарытэт»</h3>
-<p class="sub-title">Неабходны інструмент для прафесіяналаў у галіне сонечнай энергіі</p>
-<p class="sub-title">Больш чым {{user_count}} актыўныя карыстальнікі ўжо давяраюць нам.</p>
-<div> Рэгістрацыя бясплатная і без абавязацельстваў, вы атрымліваеце неадкладны доступ да фінансавага мадэлявання. </div>
-<button class="registerButton">РЭГІСТРАЦЫЯ ЗАРАЗ</button>                </div>
-            </div>
-            <div class="popup-view-container popup-part popup-blue">
-                <div class="toat-popup-content" data-ts="pvgis.popup.part_content">
-                    <div class="toast-popup-header">
-  <icon class="icon-close" id="close">&times;</icon>
-</div>
-<h3>«Я хачу зразумець, праверыць або падрыхтаваць свой сонечны праект»</h3>
-<p class="sub-title">Ваш сонечны праект заслугоўвае надзейных і незалежных інструментаў</p>
-<p class="sub-title">Больш чым {{user_count}} актыўныя карыстальнікі ўжо давяраюць нам.</p>
-<div>
-  Рэгістрацыя бясплатная і без абавязацельстваў, вы атрымліваеце неадкладны доступ да фінансавага мадэлявання.
-</div>
-<button class="registerButton">РЭГІСТРАЦЫЯ ЗАРАЗ</button>                </div>
-            </div>
-        </div>
-    </div>
-</div>    
-    
-    <div class="modal-extranet logout-modal">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-8">
-                <div class="popup-container">
-                    <div class="row modal-extranet-content">
-                        <p data-ts="pvgis.logout.confirm_text">Вы ўпэўнены, што хочаце адлучыцца?</p>
-                    </div>
-                    <div class="btn-container">
-                        <button type="button" class="btn cancel-btn" data-ts="pvgis.registration.cancel">Адмяніць</button>
-                        <button onclick="handlelogout()" class="btn save-btn" data-ts="pvgis.logout.logout">ВЫЙСЦІ</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    <script src="https://pvgis.com/assets/min-js/toast/toast.js?v=231220251137">
-    </script>
-    <script src="https://pvgis.com/assets/min-js/toast/popup.js?v=231220251137">
-    </script>
-    
-    <script>
-        // Global settings confirmation fetch for non-extranet pages
-        (function() {
-            const customerId = null;
-            if (!customerId) return;
-
-            function setConfirmed(val) {
-                const flag = !!val;
-                window.isSettingsConfirmed = flag;
-                try {
-                    localStorage.setItem('pvgisSettingsConfirmed', flag ? 'true' : 'false');
-                } catch (e) {}
-            }
-
-            function loadFromStorage() {
-                try {
-                    const saved = localStorage.getItem('pvgisSettingsConfirmed');
-                    if (saved === null) {
-                        localStorage.setItem('pvgisSettingsConfirmed', 'false');
-                        return false;
-                    }
-                    return saved === 'true';
-                } catch (e) {
-                    return false;
-                }
-            }
-
-            async function fetchConfirmation() {
-                const base = (window.env && (window.env.API_BASE_URL || window.env.BASE_URL)) || '';
-                if (!base || !customerId) return;
-                const requiredSections = [
-                    "base-settings",
-                    "residential-info-conso",
-                    "estimated_consumption_percentage",
-                    "commercial-info-conso",
-                    "info-finance-resale",
-                    "info-system",
-                    "info-finance-maintenance",
-                    "info-finance-administrative",
-                    "info-finance-state-aid",
-                    "info-finance-tax-subsidy",
-                    "info-financing-cash",
-                    "info-financing-loan-1",
-                    "info-financing-loan-2",
-                    "info-financing-leasing"
-                ];
-                try {
-                    const res = await fetch(`${base.replace(/\/$/, '')}/customers/${customerId}`, {
-                        method: 'GET',
-                        credentials: 'include'
-                    });
-                    if (!res.ok) return;
-                    const data = await res.json();
-                    const confirmedSections = data?.default_referential_info_json?.confirmedSections;
-                    if (Array.isArray(confirmedSections)) {
-                        const allRequired = requiredSections.every((section) => confirmedSections.includes(section));
-                        setConfirmed(allRequired);
-                        return;
-                    }
-                    if (typeof data?.settings_confirmed === 'boolean') {
-                        setConfirmed(data.settings_confirmed);
-                    }
-                } catch (e) {
-                    // ignore
-                }
-            }
-
-            if (typeof window.isSettingsConfirmed !== 'boolean') {
-                setConfirmed(loadFromStorage());
-            }
-
-            window.refreshSettingsConfirmation = fetchConfirmation;
-            fetchConfirmation();
-        })();
-    </script>
-
-    <!-- currency dropdown -->
-    <script>
-        window.userSettings = null;
-    </script>
-    <script src="https://pvgis.com/assets/min-js/currency-dropdown.js?v=231220251137"></script>
-    <!-- end currency dropdown -->
-
-</div>
-
-
-<div class="floating-btn-container intranet-container">
-    
-        </div>
-
-
-    
-                <div id='cms-container' class="container-fluid width-grid">
-            <div class="main">
-    <h1>Мадэляванне поўнай аўтаноміі па-за сеткай</h1>
-    <div class="intro">
-        <p>Сімулятары, прапанаваныя на PVGIS.COM таксама распрацаваны, каб задаволіць разнастайныя патрабаванні прафесіяналаў
-            як асобы ў сектары сонечнай энергіі. Гэтая паслуга падтрымліваецца кансорцыумам еўрапейскіх сонечных кампаній
-            экспертаў і інжынераў, забяспечваючы незалежную і нейтральную экспертызу. Вось асноўныя зацікаўленыя бакі і
-            мэты, ахопленыя мадэляваннем.</p>
-        <p class="highlight-line">Прыклад PDF ніжэй на англійскай мове.<br/>Ваша ўласная справаздача будзе створана аўтаматычна
-            на мове, якую вы абралі ў наладах акаўнта.</p>
-    </div>
-
-    <div class="frame">
-        <div class="frame-header">
-            <div class="frame-title">Мадэляванне поўнай аўтаноміі</div>
-            <a class="download-btn" target="_blank"
-                href="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/TOTAL_AUTONOMY_(ISOLATED_SITE)_V8641-14112025-13_12.pdf"
-                download>
-                Спампаваць узор PDF
-            </a>
-        </div>
-        <div class="sections">
-            <div class="section">
-                <div class="text">
-                    
-                </div>
-                <img alt="Visual 1" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/01-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                   
-                </div>
-                <img alt="Visual 2" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/02-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                    Сонечная радыяцыя і фотаэлектрычная вытворчасць будуць адрознівацца, калі ёсць мясцовыя пагоркі або
-                    горы, якія блакуюць сонечнае святло ў пэўны час сутак. PVGIS можна вылічыць іх
-                    эфект з выкарыстаннем даных аб вышыні зямлі з дазволам 3 вуглавыя секунды (каля 90
-                    метраў). Гэты разлік не ўлічвае цені ад вельмі блізкіх аб'ектаў, напрыклад
-                    дамы або дрэвы
-                </div>
-                <img alt="Visual 3" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/03-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                    <p>
-                        PVGIS 5.3 прадугледжвае значэнне па змаўчанні 14% для агульных страт у сонечнай энергіі
-                        сістэма выпрацоўкі электраэнергіі.
-                    </p>
-
-                    <p>
-                        PVGIS24 Сімулятар прапануе значэнне страт за першы год працы.
-                        Гэтая страта будзе развівацца з кожным годам. Гэта значэнне страт за першы год дазваляе а
-                        больш падрабязны тэхнічны і фінансавы аналіз, год за годам. Такім чынам, над а
-                        20-гадовы перыяд эксплуатацыі, агульныя страты вытворчасці блізкія да 13% да 14%.
-                    </p>
-
-                </div>
-                <img alt="Visual 4" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/04-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                    Вынік разліку фотаэлектрычнай энергіі: гэта сярэднямесячная вытворчасць энергіі і
-                    сярэднегадавая вытворчасць фотаэлектрычнай ўстаноўкі с
-                    выбраныя ўласцівасці. Міжгадавая зменлівасць - гэта стандартнае адхіленне гадавых значэнняў
-                    разлічваецца за перыяд, ахоплены абранай сонечнай радыяцыяй
-                    база дадзеных
-                </div>
-                <img alt="Visual 5" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/05-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                    Месячная сонечная радыяцыя вызначаецца для кожнай гадзіны дня для выбранага месяца, з
-                    сярэдняе значэнне разлічваецца па ўсіх днях гэтага месяца
-                    на працягу шматгадовага перыяду, за які PVGIS мае дадзеныя. У дадатак да разліку сярэдняга сонечнага
-                    радыяцыі, штодзённае прымяненне радыяцыі таксама
-                    вылічвае сутачныя змены радыяцыі пры ясным небе.
-                </div>
-                <img alt="Visual 6" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/06-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-               <div class="text">
-                    Гадзіны вытворчасці фотаэлектрычнай энергіі ў месяц уяўляюць сабой агульны час за месяц, які a
-                    сонечная ўстаноўка вырабляе электрычнасць, пад уплывам
-                    сонечнае святло, эфектыўнасць сістэмы і ўмовы эксплуатацыі. Гэта ключавы паказчык для ацэнкі
-                    прадукцыйнасць і энергетычная самадастатковасць
-                </div>
-                <img alt="Visual 7" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/07-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <!-- aligné sur px-18 du premier bloc -->
-            <div class="section">
-                <div class="text px-18">
-                    <p>
-                        Гэты аналіз выкарыстоўвае метад, прызначаны для ацэнкі спажывання энергіі і яе кошту ў параўнанні з вызначаным
-                        перыяд,
-                        сегментацыя даных на сярэднямесячныя і штодзённыя.
-                    </p>
-
-                    <ul>
-                        <li>
-                            <strong>Асноўныя дадзеныя:</strong> Агульнае гадавое спажыванне энергіі (кВт·гадз) размяркоўваецца па
-                            месяц абследаваць
-                            зменлівасць попыту; адпаведны кошт вызначаецца на аснове стаўкі пакупкі адзінкі.
-                        </li>
-                        <li>
-                            <strong>Часовая разбіўка:</strong> Штомесячныя і штодзённыя сярэднія даюць падрабязную інфармацыю
-                            разуменне
-                            ваганні спажывання на працягу года; сярэдні працэнт адлюстроўвае кожны месяц
-                            адносны ўклад у гадавую агульную суму.
-                        </li>
-                        <li>
-                            <strong>Мэта:</strong> Гэты метад дапамагае вызначыць перыяды высокага або нізкага спажывання і
-                            планаваць
-                            стратэгіі аптымізацыі энергіі або кіравання выдаткамі. Забяспечце яснае і дзейснае
-                            агляд
-                            спажывання энергіі для паляпшэння памераў сонечных установак або сістэм захоўвання дадзеных
-                            трымаць пад кантролем выдаткі энергіі.
-                        </li>
-                    </ul>
-
-                </div>
-                <img alt="Visual 8" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/08-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <!-- aligné sur px-17 du premier bloc -->
-            <div class="section">
-                <div class="text px-17">
-                    <p>
-                        Гэты аналіз заснаваны на тэарэтычным падыходзе, накіраваным на ацэнку фінансавай эканоміі
-                        звязаныя
-                        з самаспажываннем сонечнай энергіі, абапіраючыся на гадавое спажыванне і вытворчасць фотаэлектрыкі
-                        дадзеныя.
-                    </p>
-
-                    <p>
-                        <strong>Разбіўка спажывання энергіі:</strong> Агульнае спажыванне сегментавана па часе
-                        перыяды
-                        (будні, выхадныя, днём, вечарам, ноччу), каб ацаніць канкрэтныя энергетычныя патрэбы для кожнага
-                        прамежак часу.
-                        Такі падыход дапамагае вызначыць дзённае спажыванне, якое адлюстроўвае патэнцыял для
-                        самаспажыванне.
-                    </p>
-
-                    <p>
-                        <strong>Ацэнка патэнцыялу ўласнага спажывання:</strong> Вытворчасць сонечнай энергіі, ацэненая
-                        PVGIS параўноўваецца
-                        з дзённым спажываннем. Працэнт пакрыцця паказвае долю дзённага спажывання
-                        што можа быць
-                        непасрэдна забяспечваецца сонечнай энергіяй.
-                    </p>
-
-                    <p>
-                        <strong>Разлік фінансавай эканоміі:</strong> Уласнаспажытыя кВт.гадз ацэньваюцца на аснове
-                        купля энергіі
-                        тарыф для разліку гадавой эканоміі.
-                    </p>
-
-                    <p>
-                        Гэты аналіз забяспечвае колькасную аснову для ацэнкі фінансавых выгод
-                        самаспажыванне і
-                        аптымізацыя памераў сонечных установак. Гэты метад таксама дапамагае вызначыць ключавыя перыяды для
-                        максымізаваць
-                        выкарыстанне атрыманай энергіі.
-                    </p>
-
-                </div>
-                <img alt="Visual 9" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/09-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                    <h3>Сонечная вытворчасць</h3>
-                    <p>
-                        Паказвае, колькі ваша сістэма можа вырабляць і як гэтая вытворчасць змяняецца з цягам часу.
-                        Гэта дапамагае ацаніць вашы зберажэнні і любы магчымы прыбытак.
-                    </p>
-
-                    <h3>Спажыванне</h3>
-                    <p>
-                        Паказвае ўзровень спажывання электраэнергіі. Параўноўваючы гэта з сонечнай вытворчасцю,
-                        вы можаце візуалізаваць сваю магутнасць самаспажывання і вашу залежнасць ад сеткі.
-                    </p>
-
-                    <h3>Сеткавыя тарыфы</h3>
-                    <p>
-                        Дапамагчы вам зразумець карысць спажывання ўласнай электраэнергіі, а не яе пакупкі,
-                        і доўгатэрміновы ўплыў росту коштаў.
-                    </p>
-
-                    <h3>Кошт сістэмы</h3>
-                    <p>
-                        Прадстаўляе фактычную цану ўстаноўкі пасля субсідый і дапамагае вам ацаніць
-                        неабходныя інвестыцыі.
-                    </p>
-
-                    <h3>Фінансаванне</h3>
-                    <p>
-                        Тлумачыць даступныя варыянты аплаты і як планаваць свой бюджэт.
-                    </p>
-                </div>
-                <img alt="Visual 10" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/10-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                    <h3>→ Доўгатэрміновыя зберажэнні</h3>
-<p>Паказвае агульную эканомію сонечнай сістэмы за некалькі гадоў.</p>
-
-<h3>→ Норма ўласнага спажывання</h3>
-<p>Паказвае долю сонечнай энергіі, якая непасрэдна выкарыстоўваецца хатняй гаспадаркай.</p>
-
-<h3>→ IRR (унутраная норма прыбытку)</h3>
-<p>Вымярае агульную фінансавую эфектыўнасць інвестыцый.</p>
-
-<h3>→ ROI (рэнтабельнасць інвестыцый)</h3>
-<p>Паказвае, колькі часу патрабуецца для кампенсацыі першапачатковых інвестыцый.</p>
-
-                </div>
-                <img alt="Visual 11" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/11-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                    <h3>→ Рахунак за электраэнергію (рахунак за сетку)</h3>
-                    <p>
-                        У гэтым раздзеле паказана, як змяняўся ваш рахунак за электрычнасць на працягу многіх гадоў на аснове:
-                    </p>
-                    <ul>
-                        <li>ваша спажыванне,</li>
-                        <li>цана на электраэнергію,</li>
-                        <li>і штогадовае павелічэнне коштаў на сетку.</li>
-                    </ul>
-                    <p>
-                        Гэта дапамагае візуалізаваць паступовы рост кошту энергіі без сонечнай энергіі.
-                    </p>
-
-                    <h3>→ Страта пакупніцкай здольнасці (амартызацыі)</h3>
-                    <p>
-                        Гэтая табліца паказвае, як інфляцыя зніжае вашу пакупніцкую здольнасць з цягам часу.
-                        Гэта паказвае, што тая ж сума грошай з кожным годам каштуе менш.
-                    </p>
-
-                    <h3>→ Чаму Solar мае значэнне</h3>
-                    <p>Аб'яднаўшы абедзве табліцы, ключавы вынік становіцца зразумелым:</p>
-                    <ul>
-                        <li>цэны на электраэнергію растуць,</li>
-                        <li>ваша пакупніцкая здольнасць зніжаецца,</li>
-                    </ul>
-
-                    <p>→ вытворчасць уласнай энергіі становіцца формай фінансавай абароны.</p>
-
-                </div>
-                <img alt="Visual 12" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/12-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                </div>
-                <img alt="Visual 13" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/13-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                    Гістаграма, якая параўноўвае вытворчасць сонечнай энергіі і спажыванне энергіі, прапануе некалькі пераваг для аналізу
-                    і прыняцце рашэнняў, асабліва ў кантэксце энергетыкі
-                    аптымізацыя
-                </div>
-                <img alt="Visual 14" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/14-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <!-- aligné sur px-17 du premier bloc -->
-            <div class="section">
-                <div class="text px-17">
-                    <p>
-                        Гэты аналіз ілюструе гіпотэзу энергетычнай аўтаноміі для вытворчай пляцоўкі,
-                        на аснове агульнага спажывання, уласнага спажывання і аўтаноміі, якую забяспечвае сістэма.
-                    </p>
-
-                    <p>
-                        <strong>Ацэнка спажывання энергіі:</strong> Разлічваецца месячнае і сутачнае спажыванне
-                        каб зразумець энергетычныя патрэбы сайта за пэўны перыяд.
-                    </p>
-
-                    <p>
-                        <strong>Разлік уласнага спажывання:</strong> Энергія мясцовай вытворчасці і непасрэднага спажывання
-                        (самаспажыванне) ацэньваецца для ацэнкі долі вытворчасці, якая выкарыстоўваецца, не абапіраючыся на
-                        сетка.
-                    </p>
-
-                    <p>
-                        <strong>Энергетычная аўтаномія:</strong> Патэнцыял аўтаноміі (вырабленая і спажываная энергія
-                        на месцы)
-                        разлічваецца ў кВт/гадз за кожны месяц, што адлюстроўвае здольнасць сістэмы паменшыць залежнасць ад сеткі.
-                    </p>
-
-                    <p>
-                        Такі падыход дапамагае вымераць узровень энергетычнай аўтаноміі, дасягнуты фотаэлектрычнай сістэмай
-                        пры вызначэнні месяцаў, у якіх аптымізуецца ўласнае спажыванне і аўтаномнасць,
-                        што дазваляе прымаць рашэнні для павышэння агульнай прадукцыйнасці.
-                    </p>
-
-                </div>
-                <img alt="Visual 15" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/15-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <!-- aligné sur px-20 du premier bloc -->
-            <div class="section">
-                  <div class="text px-20">
-                    <p>
-                        Гэты аналіз абапіраецца на метад ацэнкі прадукцыйнасці батарэй з рознымі
-                        ёмістасці
-                        каб ацаніць іх гадавы энергетычны ўклад і адпаведнасць патрэбам.
-                    </p>
-
-                    <p>
-                        <strong>Ёмістасць і штомесячная даступнасць:</strong> Ёмістасць акумулятара параўноўваецца з
-                        неабходная аўтаномія
-                        кожны месяц, каб ацаніць іх энергазабеспячэнне.
-                    </p>
-
-                    <p>
-                        <strong>Агульнае гадавое спажыванне:</strong> Энергія, якую забяспечвае кожная батарэя на працягу аднаго года
-                        перыяд
-                        разлічваецца для вымярэння яго агульнай прадукцыйнасці.
-                    </p>
-
-                    <p>
-                        <strong>Аптымальнае выкарыстанне:</strong> Месячныя працэнты паказваюць перыяды, калі батарэі перавышаюць або
-                        дасягнуць сваіх межаў,
-                        дазваляе вызначыць, ці з'яўляюцца яны нізкагабарытнымі або вялікімі.
-                    </p>
-
-                    <p>
-                        Гэты метад накіраваны на правільны памер акумулятараў, каб максымізаваць эфектыўнасць, пазбягаючы марнавання энергіі
-                        або недастатковая аўтаномнасць.
-                    </p>
-
-                </div>
-                <img alt="Visual 16" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/16-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <!-- aligné sur px-22 du premier bloc -->
-            <div class="section">
-                 <div class="text px-22">
-                    <p>
-                        Аналіз спажывання акумулятараў на аснове іх ёмістасці і штомесячных патрэбаў у энергіі абапіраецца на:
-                    </p>
-
-                    <ul>
-                        <li>
-                            <strong>Разлік энергазабеспячэння:</strong> Мы ацэньваем, наколькі кожны памер батарэі адпавядае
-                            штомесячныя патрэбы.
-                        </li>
-                        <li>
-                            <strong>Сярэднегадавы:</strong> Дазваляе параўноўваць эфектыўнасць розных магутнасцяў
-                            больш за поўны год.
-                        </li>
-                        <li>
-                            <strong>Штомесячнае выкарыстанне:</strong> Вызначае перыяды, калі батарэя дасягае свайго максімуму
-                            ёмістасць або рэшткі
-                            недастаткова выкарыстаны. Такі падыход дапамагае падбіраць батарэі ў адпаведнасці з рэальнымі патрэбамі, балансуючы
-                            аўтаномія і
-                            аптымізацыя рэсурсаў.
-                        </li>
-                    </ul>
-
-                </div>
-                <img alt="Visual 17" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/17-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                     <p>
-                        У гэтай табліцы параўноўваецца ўплыў рознай ёмістасці акумулятара на энергетычную аўтаномію, кошт сеткі,
-                        і штогадовыя зберажэнні. Акумулятары з большай ёмістасцю забяспечваюць лепшую эканомію і далейшае зніжэнне
-                        залежнасць ад сеткі, але патрабуе большых першапачатковых інвестыцый.
-                    </p>
-                </div>
-                <img alt="Visual 18" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/18-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text px-22">
-                </div>
-                <img alt="Visual 19" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/19-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text px-22">
-                    <p><strong>Каб максымізаваць прыбытак:</strong> Фінансаванне наяўнымі з'яўляецца ідэальным, але патрабуе мабілізацыі сродкаў
-                        неадкладна.</p>
-
-                    <p><strong>Каб захаваць капітал:</strong> Крэдыт прапануе добрае рашэнне, з умераным фінансавым
-                        выдаткі, з першапачатковым узносам або без яго.</p>
-
-                    <p><strong>Для палягчэння фінансавання:</strong> Лізінг - хуткі і збалансаваны варыянт; аднак,
-                        нягледзячы на ​​некалькі больш нізкі IRR, высокі працэнт зніжае прыбытак.</p>
-                </div>
-                <img alt="Visual 20" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/20-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                </div>
-                <img alt="Visual 21" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/21-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <div class="section">
-                <div class="text">
-                </div>
-                <img alt="Visual 22" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/22-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <!-- aligné sur le bloc ROI du haut (sans px) -->
-            <div class="section">
-                <div class="text">
-                    <p><strong>Гэтая гістаграма, якая адлюстроўвае грашовыя патокі і рэнтабельнасць інвестыцый (ROI), дазваляе:</strong>
-                    </p>
-                    <ul>
-                        <li>Візуалізуйце фінансавыя руху за вызначаны перыяд, адрозніваючы станоўчыя слупкі
-                            (даход) і адмоўныя планкі (выдаткі).</li>
-                        <li>Вызначце кропку, дзе ROI становіцца станоўчай, што паказвае на аднаўленне першапачатковага
-                            інвестыцыі.</li>
-                        <li>Сачыце за змяненнем чыстага прыбытку, каб ацаніць доўгатэрміновую прыбытковасць праекта. Гэта
-                            гэта дакладны інструмент для разумення фінансавых паказчыкаў і дапамога ў прыняцці рашэнняў
-                            інвестары.</li>
-                    </ul>
-
-                </div>
-                <img alt="Visual 23" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/23-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <!-- aligné sur px-22 du bloc "country carbon footprint" -->
-            <div class="section">
-                 <div class="text px-22">
-                    <p><strong>Разлік вугляроднага следу краіны дазваляе:</strong></p>
-                    <ul>
-                        <li>Ацэнка агульных выкідаў парніковых газаў (ПГ), якія ўтвараюцца ў выніку яго дзейнасці, у т.л
-                            прамысловасць, транспарт, сельская гаспадарка, энергаспажыванне.</li>
-                        <li>Вызначэнне асноўных крыніц выкідаў для прыярытызацыі намаганняў па скарачэнні.</li>
-                        <li>Прымаючы пад увагу такія фактары, як вугляродны след імпарту і экспарту, каб атрымаць а
-                            поўны агляд.</li>
-                        <li>Гэта важны інструмент для маніторынгу прагрэсу ў дасягненні кліматычных мэт і арыентацыі грамадскасці
-                            палітыкі ў напрамку ўстойлівага пераходу.</li>
-                    </ul>
-
-                </div>
-                <img alt="Visual 24" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/24-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-
-            <!-- aligné sur px-22 du bloc "carbon balance solar installation" -->
-            <div class="section">
-                 <div class="text px-22">
-                    <p>Разлік вугляроднага балансу сонечнай ўстаноўкі дазваляе:</p>
-                    <ul>
-                        <li>Ацаніце выкіды, якіх пазбегнуць пры вытворчасці аднаўляльнай энергіі, у параўнанні з
-                            традыцыйныя пастаўкі праз сетку (часта на аснове выкапнёвага паліва).</li>
-                        <li>Колькасна ацаніце станоўчае ўздзеянне на навакольнае асяроддзе, асабліва ў тонах CO<sub>2</sub>
-                            захоўваецца на працягу ўсяго тэрміну службы сістэмы.</li>
-                        <li>Падкрэсліце, што кожны кВт.гадз сонечнай энергіі, спажыванай самастойна, непасрэдна спрыяе зніжэнню
-                            вугляродны след хатняй гаспадаркі.</li>
-                        <li>Гэта наглядная дэманстрацыя імкнення будучага вытворцы сонечнай энергіі да большага
-                            ўстойлівы лад жыцця.</li>
-                    </ul>
-                </div>
-                <img alt="Visual 25" class="pannel-image lazyLoad" data-cms-link data-cms-baseurl="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation" data-src="https://cdn.pvgis.com/images/pvgis-simulation-total-autonomy-off-grid-simulation/en/25-autonomie-totale.jpg" src="https://cdn.pvgis.com/images/loading-ps.svg" />
-            </div>
-            <div class="bottom-btn">
-                <a href="/en/subscription" data-cms-link>
-                    <button class="download-btn">Падпісвайцеся</button>
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-        </div>
-    </div>
-    <!-- LOGIN MODAL -->
-            <div class="logToPdfModal" id="log-to-download-modal" role="dialog">
-    <div class="logToPdfModal-dialog">
-        <div class="logToPdfModal-content">
-            <div class="logToPdfModal-header">
-                <img width="50px" height="50px" src="https://cdn.pvgis.com/images/pvgis24/info-icon.png?v=18102024" alt="" srcset="">
-                <h5 class="modal-title"><span  data-ts="pvgis.need_log_to_download"></span></h5>
-                <span onclick="hideLogForPdfModal()" class="logToPdfModal-close">&times;</span>
-            </div>
-
-            <div class="logToPdfModal-footer" id="logToPdfModal-log">
-                <button id="logToPdfModal-login-button" data-ts="pvgis.header.account_menu.login">Увайсці</button>
-                <span data-ts="pvgis.ou_or">або</span>
-                <button id="logToPdfModal-register-button" data-ts="pvgis.header.account_menu.subscribe">Зарэгіструйцеся</button>
-            </div>
-
-            <div class="logToPdfModal-body hidden" id="logToPdfModal-subscribe">
-                <a data-cms-link href="/en/subscription" id="logToPdfModal-subscribe-link"><span  data-ts="pvgis.subscribe_now">Падпішыцеся зараз</span></a>
-            </div>
-            <!-- HIDDEN BY CODE -->
-            <div class="logToPdfModal-body hidden" id="logToPdfModal-download-blurred">
-                <span data-ts="pvgis.download_blurred_pdf">Працягвайце загружаць размыты PDF?</span>
-                <button id="logToPdfModal-download-button"><span  data-ts="pvgis.simulation.continue">Працягнуць</span><span class="spinnerCont hidden"><i class="fas fa-spinner"></i></span></button>
-            </div>
-            <!--/ HIDDEN BY CODE -->
-        </div>
-    </div>
-</div>
-
-    <div id="auth-form-modal" class="form-modal">
-        <div class="auth-form-modal-dialog">
-                        <div id="term-condition-modal" class="modal-extranet cgu-ppolicy-modal">
-  <div class="modal modal-box-shadow">
-    <div class="container-fluid">
-      <div class="modal-title">
-        <i class="fas fa-times close-modal"></i>
-      </div>
-      <div class="scroll-container">
-        <div class="cms-container"></div>
-      </div>
-    </div>
+	
+  <meta name="generator" content="WP Rocket 3.18.3" data-wpr-features="wpr_delay_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_minify_css wpr_preload_links wpr_desktop"></head>
+  <body class="wp-singular post-template-default single single-post postid-7349 single-format-standard wp-theme-comun9 wp-child-theme-drivingeco cual-sera-realmente-autonomia-del-taycan">
+  
+	
+	
+
+	
+	
+<nav class="navbar navbar-default" role="navigation">
+	<div class="row">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+   	<button class="navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="sr-only">Дысплей навігацыі</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://www.drivingeco.com/be/" aria-label="logo cabecera"></a>
   </div>
-</div>            <div class="login-content">
-                <div class="log-header">
-                    <span class="log-header-title" data-ts="pvgis.header.account_menu.login">
-                        Login
-                    </span>
-                    <span class="close-button" onclick="hideFormModal('login')">&times;</span>
-                </div>
+ 
+  <div id="navbar" class="navbar-collapse collapse">
+          <div class="menu-navbar-container"><ul id="menu-navbar" class="nav navbar-nav"><li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-135"><a href="https://www.drivingeco.com/be/">ініцыяванне</a></li>
+<li id="menu-item-56116" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56116"><a href="https://www.drivingeco.com/be/%D1%9E%D1%81%D1%82%D0%BE%D0%B9%D0%BB%D1%96%D0%B2%D0%B0%D1%81%D1%86%D1%8C/">Устойлівасць</a></li>
+<li id="menu-item-56118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56118"><a href="https://www.drivingeco.com/be/%D0%B4%D0%BE%D0%BC%D0%B0/">Хогар</a></li>
+<li id="menu-item-56229" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-56229"><a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/">мабільнасць</a></li>
+<li id="menu-item-56117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56117"><a href="https://www.drivingeco.com/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%BD%D1%8B-%D0%B3%D0%BE%D1%80%D0%B0%D0%B4/">Smart City</a></li>
+<li id="menu-item-16671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16671"><a href="https://www.drivingeco.com/be/%D0%BF%D0%BE%D1%88%D1%83%D0%BA-a/">пошук</a></li>
+<li id="menu-item-26509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26509"><a href="https://www.drivingeco.com/be/%D1%85%D1%82%D0%BE-%D0%BC%D1%8B/">Аб кампаніі</a></li>
+</ul></div>        </div><!--/.navbar-collapse -->
+    </div><!--/.row -->
+</nav>
+  
+
+    <div data-rocket-location-hash="5bf0ec333859a32fa2bfd31ef7ed9e58" class="main-content">
+	<section data-rocket-location-hash="64a84e63ca689b70a3879703310620a1">
+		
+	
+	<div data-rocket-location-hash="6f50bb234f8cd4b4d13a68903aead8b8" class="container-fluid single" id="content-single">
+		<article>
+			<div class="row">
+					
+                                
+				<p class="gt-block etiquetas">
+					<a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/Porsche/" rel="tag"><span class="icon-price-tag"></span>Porsche</a> <a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/Porsche/taycan/" rel="tag"><span class="icon-price-tag"></span>Taycan</a> <a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/" rel="tag">Трэнеры</a> 				</p>
                 
+                
+                <h1 data-url="https://www.drivingeco.com/cual-sera-realmente-autonomia-del-taycan/">Якой будзе аўтаномнасць у Porsche Taycan? Гэта тое, што мы ведаем</h1>
+                
+                	<div class="meta">
+		<div class="meta-post">
+			<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=30&amp;d=mm&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=60&amp;d=mm&amp;r=g 2x" class="avatar avatar-30 photo" height="30" width="30" decoding="async"><noscript><img alt='' src='https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=30&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/00e65e7ad9671c1b62180ec15d9186d4159be321a66ae20ccfbdd8f33991bd85?s=60&#038;d=mm&#038;r=g 2x' class='avatar avatar-30 photo' height='30' width='30' decoding='async'/></noscript> Хаўер Кантагалі			&nbsp;&nbsp;&nbsp;<span class="icon-twitter"><a href="https://twitter.com/Cantagalli" target="_blank">@Cantagalli</a></span>&nbsp;&nbsp;&nbsp;
+			<span class="icon-calendar"></span> 26 Жнівень 2019&nbsp;&nbsp;&nbsp;&nbsp;
+			<span class="icon-stopwatch"></span>3 мін.		</div>
 
-<div class="container-fluid login-container-fluid">
-    <div class="bg-login"></div>
-    <div class="login-container">
-                <div class="create-account switch-auth-mode-container">
-                            <p> 
-                    <span data-ts="pvgis.login.no_account_question">У вас яшчэ няма акаўнта?</span>
-                    <a href="/register" class="switch-to-register">
-                        <span data-ts="pvgis.login.create_an_account">Стварыць уліковы запіс</span>
-                    </a>
-                </p>
-                    </div>
-        <!-- <div class="row">
-            <div class="col-md-8 "> -->
-        <div class="login-forms-container">
-                        <div class="box">
-                <form id="login-form" action="handleLogin" method="POST">
-                    <input type="hidden" name="redirectLink" value="">
-                    
-                    <div class="form-group-container">
-                        <div class="form-group" id="email-login-group">
-                            <label for="email_login" data-ts="pvgis.login.email">
-                                Электронны ліст                            </label>
+		<div class="social-likes">
+			<a href="https://www.facebook.com/share.php?u=https://www.drivingeco.com/cual-sera-realmente-autonomia-del-taycan/" class="fa fa-facebook" target="_blank" aria-label="facebook"></a>
+			<a href="https://twitter.com/share?text=¿Cuál será la autonomía del Porsche Taycan? Esto es lo que sabemos&amp;url=https://www.drivingeco.com/cual-sera-realmente-autonomia-del-taycan/" class="fa fa-twitter" target="_blank" aria-label="twitter"></a>		
+			<a href="whatsapp://send?text=https://www.drivingeco.com/cual-sera-realmente-autonomia-del-taycan/" class="fa fa-whatsapp" target="_blank" aria-label="whatsapp"></a>					
+		</div>
+	</div>
 
-                            <input
-                                type="text"
-                                class="form-control to-validate text-input"
-                                id="email_login"
-                                placeholder="robert.dupont@gmail.com"
-                                 
-                                required
-                            >
+		
 
-                            <div class="error-form-message" data-ts="pvgis.form.required">
-                                Гэта поле абавязковае.                            </div>
-                        </div>
-                         
-                        <div class="form-group">
-                            <label for="password_login" data-ts="pvgis.login.password">
-                                Пароль                            </label>
-                            <div class="pwd-input">
-                                <input name="password" type="password" class="form-control to-validate text-input" id="password_login" required>
-                                <span class="password-toggle" onclick="toggleLoginPasswordVisibility()"><i class="bi bi-eye"></i></span>
-                            </div>
-                            <div class="error-form-message" data-ts="pvgis.form.required">
-                                Гэта поле абавязковае.                            </div>
-                                                            <a href="/forgot-password" data-ts="pvgis.forgot_password" target="_blank">
-                                    Забыўся пароль                                </a>
-                                                    </div>
-                    </div>
-                                        <div class="message-container">
-                        <div class="error-message">
-                                                    </div>
-                        <div class="success-message">
-                                                    </div>
-                    </div>
-                    <div class="action-container">
-                        <button type="button"   class="btn cancel-button" onclick="cancelLogin()">
-                            <span data-ts="pvgis.cancel">
-                                Адмяніць                            </span>
-                        </button>
-                        <button type="submit" class="btn btn-primary login-button">
-                            <i class="fas fa-spinner"></i> <span data-ts="pvgis.login.login">
-                                Увайдзіце ў сістэму                            </span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div class="tiers-registration-container mb-15">
-                <h3 data-ts="pvgis.registration.signin">
-                    Увайдзіце ў сістэму                </h3>
-                <h3 class="uppercase" data-ts="pvgis.registration.quickly">
-                    ХУТКА                </h3>
-                <p data-ts="pvgis.registration.with_your_account">
-                    з вашым уліковым запісам                </p>
-                <div class="button-container">
-                    <button type="button" id="google-login-button" class="btn g-btn">
-                        <img src="https://cdn.pvgis.com/images/loading-ps.svg" data-src="https://cdn.pvgis.com/images/pvgis24/google.jpg" class="lazyLoad lazy-load-img" alt="S'inscrire a PVGIS avec Google"> 
-                        <span data-ts="pvgis.registration.google_sign_in">Звяжыцеся з маім уліковым запісам Google</span>
-                    </button>
-                      
-                     
-                    <!-- <div class="divider">
-                                <span data-ts="pvgis.registration.or">ou</span>
-                            </div>
-                            <button type="button" class="btn fb-btn"><img src="https://cdn.pvgis.com/images/pvgis24/facebook.jpg" alt="S'inscrire a PVGIS avec Facebook"> <span data-ts="pvgis.registration.fb_sign_in">S'inscrire avec Facebook</span></button> -->
-                </div>
-            </div>
-        </div>
-    </div>
+                
+                	                <div class="col-md-12">
+	                	<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2019/08/porschetaycanrange-1220x722.jpg" srcset="https://i.bstr.es/drivingeco/2019/08/porschetaycanrange-1220x722.jpg 1220w, https://i.bstr.es/drivingeco/2019/08/porschetaycanrange-880x521.jpg 880w, https://i.bstr.es/drivingeco/2019/08/porschetaycanrange-768x454.jpg 768w, https://i.bstr.es/drivingeco/2019/08/porschetaycanrange-1024x606.jpg 1024w, https://i.bstr.es/drivingeco/2019/08/porschetaycanrange-1600x947.jpg 1600w, https://i.bstr.es/drivingeco/2019/08/porschetaycanrange-700x414.jpg 700w, https://i.bstr.es/drivingeco/2019/08/porschetaycanrange-400x237.jpg 400w, https://i.bstr.es/drivingeco/2019/08/porschetaycanrange-270x160.jpg 270w, https://i.bstr.es/drivingeco/2019/08/porschetaycanrange.jpg 1800w" sizes="(max-width: 1210px) 100vw, 1210px" alt="Якой будзе аўтаномнасць у Porsche Taycan? Гэта тое, што мы ведаем" class="img-responsive aligncenter featured-image" width="1220" height="722">
+					</div>
+								
+                <div class="center fullpubli">
+                	<div id="mega-sup"></div><div id="interstitial"></div><div id="sky-left"></div><div id="sky-right"></div>                 </div>
+			<!--</div> end .row 
+				
+			<div class="row"> -->			
+                <div class="contenedor-ajustable">
+                    <div id="row">
+                        <div class="contenido-autoajustable-tres">
+
+							
+							<div class="content-single">
+								
+									
+
+								<div id="botones-hc"></div>								
+								<p class="entradilla">Апошнія выявы, апублікаваныя Porsche, выклікалі здагадкі аб рэальнай аўтаномнасці Taycan. Аднак важна ўлічваць некаторыя меркаванні</p>
+<p class="gt-block">На мінулым тыдні кампанія Porsche апублікавала некалькі малюнкаў <strong>Яны дазволілі дэталёва разгледзець салон новага Taycan</strong>. Абсалютна нечаканы крок з боку штутгартскай фірмы, бо мы ўсе меркавалі, што гэта тое, што яны збіраюцца захаваць да прэзентацыі, якая адбудзецца 4 верасня. </p>
+<p class="gt-block">Акрамя таго, Porsche таксама раскрыла некаторыя звесткі аб Taycan, якія мы не ведалі дагэтуль; пра што мы ўжо гаварылі <a href="https://www.drivingeco.com/be/%D1%96%D0%BD%D1%82%D1%8D%D1%80%27%D0%B5%D1%80-porsche-taycan-%D0%BF%D1%8F%D1%86%D1%8C-%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%D1%9E/">папярэдні пост</a>. </p>
+<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2019/08/porschetaycantrack.jpg" fetchpriority="high" decoding="async" alt="" width="1920" height="1080" class="aligncenter size-full wp-image-7208 img-responsive" srcset="https://i.bstr.es/drivingeco/2019/08/porschetaycantrack.jpg 1920w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-880x495.jpg 880w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-768x432.jpg 768w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-1024x576.jpg 1024w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-1220x686.jpg 1220w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-1600x900.jpg 1600w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-700x394.jpg 700w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-400x225.jpg 400w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-270x152.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px"><noscript><img fetchpriority="high" decoding="async" src="https://i.bstr.es/drivingeco/2019/08/porschetaycantrack.jpg" alt="" width="1920" height="1080" class="aligncenter size-full wp-image-7208 img-responsive" srcset="https://i.bstr.es/drivingeco/2019/08/porschetaycantrack.jpg 1920w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-880x495.jpg 880w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-768x432.jpg 768w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-1024x576.jpg 1024w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-1220x686.jpg 1220w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-1600x900.jpg 1600w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-700x394.jpg 700w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-400x225.jpg 400w, https://i.bstr.es/drivingeco/2019/08/porschetaycantrack-270x152.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px" /></noscript></p>
+<p class="gt-block">Разам з усёй гэтай афіцыйнай інфармацыяй выявы, апублікаваныя Porsche, выклікалі здагадкі аб некаторых характарыстыках Taycan, <strong>сярод іх сваю аўтаномію</strong>. </p>
+<p class="gt-block">Калі мы паглядзім на малюнак, які з'яўляецца ў пачатку гэтага запісу, мы ўбачым, што экран цэнтральнай кансолі Taycan паказвае, што аўтаномнасць аўтамабіля <strong>складае 286 км пры 75-працэнтным зарадзе акумулятара</strong>. Гэтая інфармацыя выклікае некаторыя спрэчкі ў сацыяльных сетках, паколькі, выкарыстоўваючы простае правіла трох, гэта азначала б, што <strong>Агульная аўтаномнасць Taycan складзе каля 382 км</strong>. Лічба значна ніжэйшая за тую, што прапануюць некаторыя яе канкурэнты. </p>
+<h2>Усяму ёсць тлумачэнне</h2>
+<p>Тым не менш, не трэба палохацца і рабіць паспешныя высновы, бо трэба прыняць да ўвагі некалькі меркаванняў, якія тлумачаць, чаму на гэтым малюнку запас ходу Taycan складае ўсяго 286 км пры 75-працэнтным зарадзе батарэі. </p>
+<p class="gt-block">Перш за ўсё, трэба памятаць, што будзе даступна некалькі версій Taycan <strong>з акумулятарамі рознай ёмістасці</strong>. Чакаецца, што базавая версія будзе інтэграваць батарэю <strong>80 кВт * г</strong>, а ў астатніх версіях так і будзе <strong>96 кВт * г</strong>. </p>
+<p>Нягледзячы на ​​​​тое, што мы не ведаем, якую з гэтых дзвюх версій Porsche выкарыстаў, каб зрабіць гэтыя скрыншоты, здаецца лагічным думаць, што гэта будзе больш высокая версія і, такім чынам, з 96 кВт.гадз. Таму ёсць і іншыя фактары, якія мы павінны ўлічваць. </p>
+<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes.jpg" decoding="async" alt="" width="1600" height="1006" class="aligncenter size-full wp-image-7359 img-responsive" srcset="https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes.jpg 1600w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-880x553.jpg 880w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-768x483.jpg 768w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-1024x644.jpg 1024w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-1220x767.jpg 1220w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-700x440.jpg 700w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-400x252.jpg 400w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-270x170.jpg 270w" sizes="(max-width: 1600px) 100vw, 1600px"><noscript><img decoding="async" src="https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes.jpg" alt="" width="1600" height="1006" class="aligncenter size-full wp-image-7359 img-responsive" srcset="https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes.jpg 1600w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-880x553.jpg 880w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-768x483.jpg 768w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-1024x644.jpg 1024w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-1220x767.jpg 1220w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-700x440.jpg 700w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-400x252.jpg 400w, https://i.bstr.es/drivingeco/2019/08/porschetaycandrivingmodes-270x170.jpg 270w" sizes="(max-width: 1600px) 100vw, 1600px" /></noscript></p>
+<p class="gt-block">Калі мы паглядзім на гэты іншы малюнак, на якім з'яўляецца экран панэлі прыбораў, мы ўбачым, што, як і ў іншых мадэлях Porsche, індыкатар справа <strong>паказвае розныя даступныя рэжымы ваджэння і той, які быў абраны</strong>. </p>
+<h2>Ключ - у рэжымах язды</h2>
+<p class="gt-block">Як мы бачым, можна выбраць адзін з 5 рэжымаў руху: <em>Range</em>, <em>нармальны</em>, <em>спорт</em>, <em>Спорт плюс</em> e <em>Чалавек</em>. быццё <em>спорт</em> той, які быў абраны падчас захопу. Як вынікае з яго назвы, гэты рэжым дазволіць больш рухомую і спартыўную язду, што лагічна <strong>будзе азначаць большае спажыванне і паменшыць аўтаномнасць аўтамабіля</strong>. </p>
+<p class="gt-block">Такім чынам, гэтыя 382 км аўтаномнасці з акумулятарам, зараджаным на 100 працэнтаў, - гэта тое, што мы можам праехаць з рэжымам <em>спорт</em> выбраны. Але мы не павінны забываць, што, калі мы хочам атрымаць асалоду ад большай аўтаноміі, ёсць два іншых рэжыму -<em>Range</em> y <em>нармальны</em>- што, безумоўна, <strong>Яны дазволяць нам пайсці значна далей</strong>. </p>
+<p><img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger.jpg" decoding="async" alt="" width="1920" height="1080" class="aligncenter size-full wp-image-7156 img-responsive" srcset="https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger.jpg 1920w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-880x495.jpg 880w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-768x432.jpg 768w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-1024x576.jpg 1024w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-1220x686.jpg 1220w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-1600x900.jpg 1600w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-700x394.jpg 700w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-400x225.jpg 400w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-270x152.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px"><noscript><img decoding="async" src="https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger.jpg" alt="" width="1920" height="1080" class="aligncenter size-full wp-image-7156 img-responsive" srcset="https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger.jpg 1920w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-880x495.jpg 880w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-768x432.jpg 768w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-1024x576.jpg 1024w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-1220x686.jpg 1220w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-1600x900.jpg 1600w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-700x394.jpg 700w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-400x225.jpg 400w, https://i.bstr.es/drivingeco/2019/08/porschetaycanendurancetestcharger-270x152.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px" /></noscript></p>
+<p class="gt-block">Нам давядзецца пачакаць да 4-га дня, каб даведацца ўсе падрабязнасці, але, з таго, што мы ведаем сёння, рэжым <em>Range</em> Гэта дазволіць аптымізаваць спажыванне энергіі, магчыма, знізіць магутнасць рухавіка і нават абмежаваць выкарыстанне кандыцыянера. Акрамя таго, як пракаментавана <a href="https://www.drivingeco.com/be/%D0%A2%D1%8D%D1%81%D1%82-%D0%BF%D0%B0%D1%81%D0%BA%D0%B0%D1%80%D1%8D%D0%BD%D0%BD%D1%8F-%D1%86%D0%B0%D0%BB%D0%BA%D0%B0%D0%BC-%D0%B7%D0%B0%D1%80%D0%B0%D0%B4%D0%B6%D0%B0%D0%BD%D0%B0%D0%B3%D0%B0-taycan/">відэа</a> апублікаваныя <em>Цалкам зараджайце</em>, у гэтым рэжыме <strong>задні спойлер будзе цалкам апушчаны</strong> каб максімальна паменшыць супраціў паветра. </p>
+<h2>Аўтаномнасць Taycan павінна складаць каля 500 км</h2>
+<p class="gt-block">Такім чынам, з адной з версій Taycan з акумулятарам на 96 кВт·г і з выкарыстаннем рэжыму <em>Range</em> o <em>нармальны</em>, не павінна быць цяжка дасягнуць далёкасці каля 500 км; як мы ўсе чакалі. Вядома, у абмен на зніжэнне прадукцыйнасці аўтамабіля, відавочна. </p>
+
+								<div id="widget"></div>		<!-- /1282139/WIDGET_HIGHMOTOR_700X365_2015 -->
+		<div id="div-gpt-ad-1666707087634-0" style="min-width: 600px; min-height: 300px;">
+		  <script type="rocketlazyloadscript">
+		    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1666707087634-0'); });
+		  </script>
+		</div>
+    
+    	
+										
+							</div><!-- fin .content-single -->
+									
+							
+	<div class="navigation-single">	<!-- NAVEGACION  -->			
+			        <div class="post-previous">
+	            <a href="https://www.drivingeco.com/be/%D0%BF%D1%80%D0%B0%D1%82%D0%B0%D1%82%D1%8B%D0%BF-audi-4x4-%D0%B2%D0%B5%D1%80%D0%B0%D1%81%D0%B5%D0%BD%D1%8C/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" class="img-responsive" alt="Audi прадставіць футурыстычны прататып 4×4 у верасні гэтага года" data-lazy-src="https://i.bstr.es/drivingeco/2019/08/audi4x4-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2019/08/audi4x4-135x100.jpg" width="135" height="100" class="img-responsive" alt="Audi presentará un futurista prototipo 4&#215;4 este próximo mes de septiembre"/></noscript></a>
+	            <div class="title"><a href="https://www.drivingeco.com/be/%D0%BF%D1%80%D0%B0%D1%82%D0%B0%D1%82%D1%8B%D0%BF-audi-4x4-%D0%B2%D0%B5%D1%80%D0%B0%D1%81%D0%B5%D0%BD%D1%8C/">Audi прадставіць футурыстычны прататып 4×4 у верасні гэтага года</a></div>
+	        </div>
+			        <div class="post-next">
+	            <a href="https://www.drivingeco.com/be/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-fiat-panda/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" class="img-responsive" alt="Электрычны Fiat Panda ўжо на працоўным стале FCA" data-lazy-src="https://i.bstr.es/drivingeco/2019/08/190305-fiat-concept-centoventi-hp-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2019/08/190305-fiat-concept-centoventi-hp-135x100.jpg" width="135" height="100" class="img-responsive" alt="El Fiat Panda eléctrico ya está en la mesa de trabajo de FCA"/></noscript></a>
+	            <div class="title"><a href="https://www.drivingeco.com/be/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-fiat-panda/">Электрычны Fiat Panda ўжо на працоўным стале FCA</a></div>
+	        </div>
+				</div>
+	
+	<div style="clear:both"></div>
+
+
+						
+													
+
+						</div>
+						
+						
+<div class="bloque-publicidad-ajustable-tres">
+	
+	
+
+	<div id="roba1"></div>
+	
+	
+
+	
+	    <div class="destacados-sidebar">
+		<p class="gt-block titulo-sidebar"><span class="icon-pin"></span>Папулярныя</p>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/probando-smartgyro-crossover-x2-pro-fusion-potencia-estilo/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					Prueba Smartgyro Crossover X2 Pro: зліццё магутнасці і стылю                </a>
+			</div>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/caldera-gas-bomba-calor-descubre-cual-mas-eficiente-contamina-menos/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="ацяпленне-цеплавой помпа-300х90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg" alt="calefaccion-bomba-calor-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					¿Caldera de gas or bomba de calor? Descubre cuál es más eficiente y contamina menos                </a>
+			</div>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/paneles-solares-inversion-sostenible-vale-pena-hacer/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="сонечныя панэлі-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg" alt="paneles-solares-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					Paneles solares: una inversión rentable y sostenible para el futuro                </a>
+			</div>
+		    </div>
+
+	
+		
+	<div id="roba2"></div>	<br>
+	<div id="roba3"></div>
+	<div id="roba4"></div>
+	
 </div>
 
-<script>
-    var userData = null;
-    const errorMessage = '';
-    // const redirectToPdf = true
-    // const emailValidate = 'Email verified successfully'
-    const emailValidate = '';
-    const targetUserId = "";
-    const isAdminLogin = false;
-    const redirectToPdf = 0;
-    let loginGoogleUrl = ''; 
-    
-    window.googleClientId = "215750535578-7o95b5iirbo138ng703pbvhvdrief8cs.apps.googleusercontent.com";
-    window.currentUserEmail = null;
-
-    // let loginFacebookUrl = '';
-</script>
-<script src="https://pvgis.com/assets/min-js/account/login.js?v=231220251137"></script>
-            </div>
-            <div class="register-content">
-                <div class="log-header">
-                    <span class="log-header-title" data-ts="pvgis.header.account_menu.registration">Рэгістрацыя</span>
-                    <span class="close-button" onclick="hideFormModal('register')">&times;</span>
-                </div>
-                <div class="container-fluid">
-                    <div class="bg-login"></div>
-                    <div class="registration-container">
-    <div class="row">
-        <div class="col-md-8 page-title">
-            <h2 data-ts="pvgis.registration.title">Старонка рэгістрацыі</h2>
-            <p class="to-login switch-auth-mode-container">
-                <span data-ts="pvgis.registration.already_account">
-                    Ужо ўліковы запіс?                </span>
-                <a href="/login" id="switch-to-login" data-ts="pvgis.registration.login">
-                    Я ўвайшоў у сістэму                </a>
-            </p>
-        </div>
-    </div>
-    <div class="row mb-15">
-        <div class="col-md-8 ">
-            <form id="registration-form" action="">
-                <div class="message-container">
-                    <div class="error-message-register">
-                                            </div>
-                </div>
-                <div class="radio-account-type">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <input type="radio" id="register-personnal" name="type" value-type="personnal" class="radio-pvgis">
-                            <label for="register-personnal" class="font-bold-condensed" data-ts="pvgis.registration.perso">
-                                Непрафесійны                            </label><br>
-                            <!-- <label for="personnal"><span class="description-radio" data-ts="pvgis.registration.perso_description">Асабісты праект</span></label> -->
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="radio" id="register-professional" name="type" value-type="professional" class="radio-pvgis">
-                            <label for="register-professional" class="font-bold-condensed" data-ts="pvgis.registration.pro">
-                                Прафесійны                            </label><br>
-                            <!-- <label for="professional"><span class="description-radio" data-ts="pvgis.registration.pro_description">Праекты маіх кліентаў</span></label> -->
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="radio" id="register-school" name="type" value-type="school" class="radio-pvgis">
-                            <label for="register-school" class="font-bold-condensed" data-ts="pvgis.account_info.other">
-                                Іншы                            </label><br>
-                            <!-- <label for="school"><span class="description-radio" data-ts="pvgis.registration.school_description">Школьныя праекты</span></label> -->
-                        </div>
-                    </div>
-                    <div class="error-message" style="padding-top: 10px;" data-ts="pvgis.registration.error.required">
-                        Гэта поле абавязковае.                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 user-info-container">
-                        <div class="form-group nickname-container hidden">
-                            <label for="register-pseudo"><span data-ts="pvgis.registration.pseudo">Мянушка</span></label>
-                            <input style="width: 95%;" type="text" class="form-control to-send" id="register-pseudo" name="pseudo">
-                            <div class="error-message">
-                                <span class="pseudo-required"></span>
-                                <span class="pseudo-already-used" data-ts="pvgis.registration.error.pseudo_already_used">Псеўда ўжо заняты.</span>
-                            </div>
-                        </div>
-                        <div class="form-group school-container">
-                            <label for="register-school-name"><span data-ts="pvgis.account_info.etablissement">Заснаванне</span></label>
-                            <input style="width: 95%;" type="text" class="form-control to-validate" id="register-school-name" name="school-name">
-                        </div>
-                        <div class="form-group company-container">
-                            <label for="register-company-name"><span data-ts="pvgis.registration.company">Кампанія</span></label>
-                            <input style="width: 95%;" type="text" class="form-control to-validate" id="register-company-name" name="company-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="register-last-name"><span data-ts="pvgis.registration.name">Імя</span><span class="required">*</span></label>
-                            <input style="width: 95%;" type="text" class="form-control to-validate" id="register-last-name" name="last-name">
-                            <div class="error-message">Гэта поле абавязковае.</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="register-first-name"><span data-ts="pvgis.registration.first_name">Імя</span><span class="required">*</span></label>
-                            <input style="width: 95%;" type="text" class="form-control to-validate" id="register-first-name" name="first-name">
-                            <div class="error-message">Гэта поле абавязковае.</div>
-                        </div>
-                        <div class="form-group country-container">
-                            <div class="dropdown-select-container">
-                                <label for="register-countryDropdownButton"><span data-ts="pvgis.registration.country">Краіна</span><span class="required">*</span></label>
-                                <div class="dropdown-select-button" id="register-countryDropdownButton">
-                                    <span id="register-selectedCountry"></span>
-                                </div>
-                                <ol class="dropdown-select-list" id="register-countryDropdownList">
-                                    <input type="text" class="search-input" id="register-countrySearchInput" placeholder="Пошук" data-tstype="placeholder" data-ts="pvgis.search">
-                                    <div class="error-message" data-ts="pvgis.registration.error.required">Гэта поле абавязковае.</div>
-                                    <div class="item-list-container" id="register-countryListContainer">
-                                    </div>
-                                </ol>
-                            </div>
-                        </div>
-                        <div class="form-group language-container">
-                            <div class="dropdown-select-container" >
-                                <label for="register-languageDropdownButton"><span data-ts="pvgis.registration.language">Мова</span><span class="required">*</span></label>
-                                <div class="dropdown-select-button" id="register-languageDropdownButton">
-                                    <span id="register-selectedLanguage"></span>
-                                </div>
-                                <ol class="dropdown-select-list" id="register-languageDropdownList">
-                                    <input type="text" class="search-input" id="register-languageSearchInput" placeholder="Пошук" data-tstype="placeholder" data-ts="pvgis.search">
-                                    <div class="error-message" data-ts="pvgis.registration.error.required">Гэта поле абавязковае.</div>
-                                    <div class="item-list-container" id="register-languageListContainer">
-                                    </div>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="register-email"><span data-ts="pvgis.registration.email">Электронная пошта</span><span class="required">*</span></label>
-                            <input type="email" class="form-control to-validate" id="register-email" name="email">
-                            <div class="error-message">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="register-password"><span data-ts="pvgis.registration.password">Пароль</span><span class="required">*</span></label>
-                            <div class="password-container">
-                                <div class="eye-toogler"><i id="register-toggle-password" class="bi bi-eye"></i></div>
-                                <input type="text" class="form-control to-validate" id="register-password" name="password">
-                            </div>
-                            <div class="error-message" data-ts="pvgis.registration.error.password">Пароль павінен змяшчаць не менш за 8 сімвалаў з вялікімі, малымі літарамі і лічбамі.</div>
-                        </div>
-                        <div class="form-group password-container">
-                            <label for="register-confirm-password"><span data-ts="pvgis.registration.confirm_password">Пацвердзіце пароль</span><span class="required">*</span></label>
-                            <div class="password-container">
-                                <div class="eye-toogler"><i id="register-toggle-password-confirm" class="bi bi-eye"></i></div>
-                                <input type="text" class="form-control to-validate" id="register-confirm-password" name="confirm-password">
-                            </div>
-                            <div class="error-message" data-ts="pvgis.registration.error.password_not_match">Паролі не супадаюць.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <input type="hidden" id="register-language" name="language" value="be">
-
-                <div class="form-group check-container register-accept-terms">
-                    <input type="checkbox" name="accept-cgu" class="checkbox-pvgis" id="accept-cgu">
-                    <label for="accept-cgu">
-                        <span>
-                            <a href="#" class="viewTermAndConditionAction" id="register-viewTermAndConditionAction" >
-                            <span data-ts="pvgis.i_accept_general">Я прымаю</span> 
-                            <span data-ts="pvgis.terms_and_conditions"> ўмовы</span> 
-                            <span data-ts="pvgis.of_use">
-                                выкарыстання                            </span>
-                            </a>
-                        </span>
-                    </label>
-                </div>
-
-                <div class="btn-container">
-                    <a   class="btn cancel-button"><span data-ts="pvgis.registration.cancel">Адмяніць</span></a>
-                    <button type="submit" id="register-submit-button" class="btn btn-submit disabled" disabled><i class="fas fa-spinner"></i> <span data-ts="pvgis.registration.register">Стварыце мой уліковы запіс</span></button>
-                </div>
-            </form>
-        </div>
-         <div class="col-md-4 md-pl-10">
-            <div class="tiers-registration-container">
-                <h3 data-ts="pvgis.registration.signup">Запісвайцеся</h3>
-                <h3 class="uppercase" data-ts="pvgis.registration.quickly">ХУТКА</h3>
-                <p data-ts="pvgis.registration.two_click">з вашым уліковым запісам GOOGLE, <br> стварыць уліковы запіс у 2 кліка</p>
-                <button type="button" id="google-registration-button" class="btn g-btn"><img src="https://cdn.pvgis.com/images/loading-ps.svg" data-src="https://cdn.pvgis.com/images/pvgis24/google.jpg" class="lazyLoad lazy-load-img" alt="S'inscrire a PVGIS avec Google"> <span data-ts="pvgis.registration.google_sign_in">Звяжыцеся з маім уліковым запісам Google</span></button>
+                    </div><!-- end #row -->
+                </div><!-- end .contenedor-ajustable -->
                 
-                <!-- <div class="divider">
-                    <span data-ts="pvgis.registration.or">ou</span>
-                </div>
-                <button type="button" class="btn fb-btn"><img src="https://cdn.pvgis.com/images/pvgis24/facebook.jpg" alt="S'inscrire a PVGIS avec Facebook"> <span data-ts="pvgis.registration.fb_sign">Зарэгіструйцеся праз Facebook</span></button> -->
-            </div>
-        </div> 
-    </div>
+				<div class="col-md-12">
+					<div id="comentarios">
 
-</div>
-<script>
-    $cartReference = null;
-    let registrationGoogleUrl = '';
-</script>                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="modal-extranet confirm-mail-modal mail-sent">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-8">
-                <div class="popup-container">
-                    <div class="row modal-extranet-content">
-                        <p class="mail-confirm-content">
-                            <span data-ts="pvgis.mail.confirm_text">Ліст для праверкі толькі што быў адпраўлены вам на адрас:</span><br>
-                            <span id="mail-to" class="font-condensed-oblique"></span><br>
-                            <span id="mail-thanks" data-ts="pvgis.mail.thanks">Націсніце на спасылку, каб пацвердзіць рэгістрацыю.</span>
-                        </p>
-                    </div>
-                    <div class="btn-container">
-                        <a href="/login" class="save-btn" data-ts="pvgis.mail.ok">OK</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>    
-    <script src="https://pvgis.com/assets/min-js/extranet/cgu-privacy-policy.js?v=231220251137"></script>
-        
-    <script src="https://pvgis.com/assets/min-js/carousel-banner.js?v=231220251137"></script>
-    <script>
-        let scriptBasePath = "https://pvgis.com/assets/min-js";
 
-        $(document).ready(function() {
-            lazyLoadImage()
-            $(".banner a").attr('target', `_blank`);
-            $(".banner a").attr('title', `Visit solardropshipping.com`);
-            $(".banner a").attr('href', `${env.SOLAR_DROP_SHIPPING}`);
-        })
-    </script>
-    <script src="https://pvgis.com/assets/min-js/checkout/cart.js?v=231220251137"></script>
+			<p>Каментары закрыты</p>
 
-    <!-- LOGIN MODAL -->
-            <script src="https://pvgis.com/assets/min-js/cms.js?v=231220251137"></script>
-        <section class="footer-cards-grid">
-    <a class="footer-card" href="/en/global-solar-calculator" data-cms-link c-key="global-solar-calculator">
-        <span class="footer-card-title" data-ts="pvgis.header.pvgis_why">
-             PVGIS.COM         </span>
-        <span class="footer-card-content" data-ts="pvgis.footer.pvgis_why_text">
-            Калькулятар сонечнай панэлі <br>
-Мадэляванне, прызначаныя для задавальнення патрэбаў спецыялістаў.        </span>
-    </a>
-    
-    <a class="footer-card" href="/en/solar-calculator-pvgis" data-cms-link c-key="solar-calculator-pvgis">
-        <span class="footer-card-title" data-ts="pvgis.calculation_tools">
-            Інструменты разліку        </span>
-        <span class="footer-card-content" data-ts="pvgis.footer.pvgis24_why_text">
-            Канчатковы бясплатны сонечны інструмент.        </span>
-    </a>
-    <a class="footer-card" href="/en/blog" data-cms-link c-key="pvgis-blog">
-        <span class="footer-card-title">
-            PVGIS.BLOG
-        </span>
-        <span class="footer-card-content" data-ts="pvgis.footer.pvgis_blog_text">
-            У аснове інфармацыі пра сонечную энергію.        </span>
-    </a>
-    <a class="footer-card" href="/en/ecosolar" data-cms-link c-key="pvgis-ecosolar">
-        <span class="footer-card-title">
-            Eco Solar Friendly        </span>
-        <span class="footer-card-content" data-ts="pvgis.footer.ecosolar_text">
-            Неабходная сертыфікацыя для сонечных мантажнікаў.        </span>
-    </a>
-    <div class="footer-card footer-highlight">
-        <span class="footer-card-title" data-ts="pvgis.banner.calculate_simulate_optimize">
-            РАЗЛІЧАЙЦЕ, СІМУЛЯВАЙЦЕ, АПТЫМІЗУЙЦЕ І КІРУЙЦЕ З дапамогай        </span>
-        <a href="/en/solar-financial-simulator" data-cms-link class="calculator-button" data-ts="pvgis.simulator.title">
-            Фінансавае мадэляванне        </a>
-    </div>
+	
+
+
+</div> <!-- end id comentarios-->											<!-- <div class="titulo-ancho">TE PUEDE INTERESAR</div> -->
+						
+
+
+									</div>
+
+
+				<div id="mega-inf"></div>
+            </div><!--fin de .row-->
+    	</article>
+
+
+
+	</div><!--fin de .container-fluid .single-->
+
 </section>
+</div> <!-- end main-content -->
 
-<footer id="footer" class="">
-    <div class="footer-top">
-        <p data-ts="pvgis.footer.pvgis_provider">PVGIS.COM Дае інфармацыю пра сонечную радыяцыю і прадукцыйнасць фотаэлектрычнай сістэмы для любога месца ў свеце.</p>
-    </div>
-    <div class="footer-content">
-        <div class="footer-section footer-section-1">
-            <ul>
-                <li>
-                    <a href="/en" data-cms-link data-ts="pvgis.footer.home">
-                        Дом                    </a>
-                </li>
-                <li>
-                    <a href="/en/pvgis24-features-benefits" data-cms-link data-ts="pvgis.header.pvgis24_why">
-                         PVGIS24 ?                    </a>
-                </li>
-                <li>
-                    <a href="/en/solar-financial-simulator" data-cms-link data-ts="pvgis.simulator.title">
-                        Фінансавае мадэляванне                    </a>
-                </li>
-                <li>
-                    <a href="/en/subscription" data-cms-link data-ts="pvgis.subscription.label">
-                        Падпіска                    </a>
-                </li>
-                <!-- <li>
-                    <a href="/en/for-solar-installers-and-engineering-firms" data-cms-link data-ts="pvgis.for_pros">
-                        Для ПЛЮСАЎ                    </a>
-                </li> -->
-            </ul>
-        </div>
-        <div class="footer-section footer-section-2">
-            <ul>
-                <li>
-                    <a href="/en/manual-5-3" data-cms-link data-ts="pvgis.footer.manual">
-                        Дапаможнік PVGIS 5.3                    </a>
-                </li>
-                <li>
-                    <a href="/en/solar-calculator-pvgis" data-cms-link data-ts="pvgis.calculation_tools">
-                        Інструменты разліку                    </a>
-                </li>
-                <li>
-                    <a href="/en/global-solar-calculator" data-cms-link data-ts="pvgis.header.pvgis_why">
-                         PVGIS.COM                     </a>
-                </li>
-                <li>
-                    <a href="/en/ecosolar" data-cms-link data-ts="pvgis.eco_solar_friendy">
-                        Eco Solar Friendly                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer-section footer-section-3">
-            <ul>
-                 <li>
-                    <a href="/en/cities-solar" data-cms-link data-ts="pvgis.header.cities_solar">
-                        Гарады сонечныя                    </a>
-                </li>
-                <li>
-                    <a href="/en/legal-notice" data-cms-link data-ts="pvgis.header.legal_notice">
-                        Прававая інфармацыя                    </a>
-                </li>
-                <li>
-                    <a href="#" onclick="displayCookiesPreferences()" data-ts="pvgis.header.cookies">
-                        Печыва                    </a>
-                </li>
-                <li>
-                    <a href="/en/acknowledgement" data-cms-link data-ts="pvgis.header.acknowledgments">
-                        Падзяка                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer-section footer-section-4">
-            <ul>
-                <li>
-                    <a href="/en/guide-complete-pvgis" data-cms-link data-ts="pvgis.guide.title">
-                        Поўны PVGIS Весці                    </a>
-                </li>
-                <li>
-                    <a href="/en/acces-pvgis" data-cms-link data-ts="pvgis.footer.find_pvgis">
-                        Знаходзіць PVGIS                    </a>
-                </li>
-                <li>
-                    <a href="/en/understand-tool-pvgis" data-cms-link data-ts="pvgis.footer.understand_pvgis">
-                        Разумець PVGIS                    </a>
-                </li>
-                <li>
-                    <a href="/en/estimation-production-solaire-pvgis" data-cms-link data-ts="pvgis.footer.use_pvgis">
-                        Ужываць PVGIS                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer-section footer-section-5">
-            <ul>
-                <li>
-                    <a href="/en/compare-photovoltaic-installations-pvgis" data-cms-link data-ts="pvgis.footer.compare_config">
-                        Параўнайце канфігурацыі                    </a>
-                </li>
-                <li>
-                    <a href="/en/solar-data-pvgis" data-cms-link data-ts="pvgis.footer.specific_data">
-                        Канкрэтныя дадзеныя                    </a>
-                </li>
-                <li>
-                    <a href="mailto:support@pvgis.com" data-ts="pvgis.footer.contact">
-                        Связацца                    </a>
-                </li>
-                <li class="sitemap-link">
-                    <a href="/en/sitemap" data-cms-link>
-                        Сайта                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer-section footer-section-6">
-            <ul>
-                <li class="user-actif-text">
-                    <p data-ts="pvgis.footer.user_actif"> * Актыўныя карыстальнікі па ўсім свеце <br> Крыніца: Analytics.google.com</p>
+	<footer data-rocket-location-hash="d8d170033ea958f3538208caa1adc50a">
+	
+		<div data-rocket-location-hash="66bb0135a95e6e923d1519a7a3b45a5d" class="tono">
+			<div data-rocket-location-hash="e34054dedc881748ea475e180cbaa267" class="row institucional"><ul id="menu-legal-pie" class=""><li id="menu-item-16547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16547"><a href="https://www.highmotor.com/">высокарухальныя</a></li>
+<li id="menu-item-21507" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21507"><a href="https://www.topventascoches.com/">Самыя папулярныя аўтамабілі</a></li>
+<li id="menu-item-51179" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51179"><a href="https://www.espaciofurgo.com/">Espacio Furgo</a></li>
+<li id="menu-item-32051" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32051"><a href="https://www.drivingeco.com/be/%D1%8E%D1%80%D1%8B%D0%B4%D1%8B%D1%87%D0%BD%D0%B0%D0%B5-%D0%B0%D0%BF%D0%B0%D0%B2%D1%8F%D1%88%D1%87%D1%8D%D0%BD%D0%BD%D0%B5/">Юрыдычнае паведамленне</a></li>
+<li id="menu-item-51824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51824"><a href="https://www.drivingeco.com/be/%D0%BF%D0%B0%D0%BB%D1%96%D1%82%D1%8B%D0%BA%D0%B0-%D0%BF%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D0%BD%D0%B0%D1%81%D1%86%D1%96/">палітыка прыватнасці</a></li>
+</ul></div>		</div>
+	</footer>
 
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- <div class="user-actif-text">
-       <p data-ts="pvgis.footer.user_actif"> * Актыўныя карыстальнікі па ўсім свеце <br> Крыніца: Analytics.google.com</p>
-    </div> -->
-    <div class="footer-bottom">
-        <p>&copy; COPYRIGHT 2025</p>
-    </div>
-</footer>
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="rocketlazyloadscript">//window.jQuery || document.write('<script data-minify="1" async src="https://www.drivingeco.com/be/wp-content/cache/min/1/ajax/libs/jquery/3.1.1/jquery.min.js?ver=1764074335"><\/script>')</script>
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js?ver=1764074336" crossorigin="anonymous"></script>
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js?ver=1764074336" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="rocketlazyloadscript" data-minify="1" async="" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/ie10-viewport-bug-workaround.min.js?ver=1764074336"></script>
+   
+ 
 
-<script src="https://pvgis.com/assets/min-js/footer_cards.js?v=231220251137"></script>
-<script src="https://pvgis.com/assets/min-js/footer.js?v=231220251137"></script>
-</body>
-</html>
+	
+
+
+   <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/drivingeco\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/drivingeco\/*","\/wp-content\/themes\/comun9\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div data-rocket-location-hash="ef0412c2d002189333535b916778d3ef" class="gtranslate_wrapper" id="gt-wrapper-36236419"></div><link data-minify="1" rel="stylesheet" id="fonts-kyalami-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/fonts-kyalami.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="bootstrap-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/bootstrap.min.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/comun9/style.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="child-style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/style.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="fontawesome-css" href="https://www.drivingeco.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1764074335" type="text/css" media="all">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.drivingeco.com/be","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" id="author-tracking-js-extra">
+/* <![CDATA[ */
+var author = {"name":"Javier Cantagalli"};
+var date = {"my":"August 2019"};
+var category = {"name":"Coches"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/js/analytics.js?ver=1764074336" id="author-tracking-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/jquery.sonar.min.js?ver=1764074336" id="jquery-sonar-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/lazy-load.min.js?ver=1764074336" id="wpcom-lazy-load-images-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script type="text/javascript" id="infinitedScrollHighmotor_js-js-extra">
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"https:\/\/www.drivingeco.com/be\/wp-admin\/admin-ajax.php","id_post":"7349","title_origin":"\u00bfCu\u00e1l ser\u00e1 la autonom\u00eda del Porsche Taycan? Esto es lo que sabemos","url_origin":"https:\/\/www.drivingeco.com/be\/cual-sera-realmente-autonomia-del-taycan\/"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/plugins/infinite-scroll-highmotor/includes/js/infiniteScrollHighmotor.js?ver=1764074336" id="infinitedScrollHighmotor_js-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/comment-reply.min.js?ver=6.8.1" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="gt_widget_script_36236419-js-before">
+/* <![CDATA[ */
+window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['36236419'] = {"default_language":"es","languages":["ar","eu","be","ca","zh-CN","zh-TW","hr","cs","da","nl","en","et","fr","gl","de","hu","it","ja","ko","ku","pl","pt","pa","ro","ru","sk","sl","es","tr"],"url_structure":"sub_directory","native_language_names":1,"detect_browser_language":1,"flag_style":"3d","wrapper_selector":"#gt-wrapper-36236419","alt_flags":[],"float_switcher_open_direction":"bottom","switcher_horizontal_position":"right","switcher_vertical_position":"bottom","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+/* ]]> */
+</script><script type="rocketlazyloadscript" data-rocket-src="https://www.drivingeco.com/wp-content/plugins/gtranslate/js/float.js?ver=6.8.1" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/cual-sera-realmente-autonomia-del-taycan/" data-gt-orig-domain="www.drivingeco.com" data-gt-widget-id="36236419" defer=""></script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="Play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script>
+
+<script type="rocketlazyloadscript">
+	new PerformanceObserver((entryList) => {
+	  for (const entry of entryList.getEntries()) {
+	    console.log('Layout shift:', entry);
+	  }
+	}).observe({type: 'layout-shift', buffered: true});		
+</script>
+
+  <script>var rocket_beacon_data = {"ajax_url":"https:\/\/www.drivingeco.com/be\/wp-admin\/admin-ajax.php","nonce":"c059362d59","url":"https:\/\/www.drivingeco.com/be\/cual-sera-realmente-autonomia-del-taycan","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800}</script><script data-name="wpr-wpr-beacon" src="https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js" async=""></script>
+
+ 
+
+<script data-cfasync="false" src="https://tdns4.gtranslate.net/tdn-bin/queue.js"></script></body></html><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1767184810 -->

@@ -1,5 +1,5 @@
    REFRESH(360 sec):
    file://localhost/Users/sarah/Documents/master_TAL/PPE/Projet-de-groupe-
-   PPE1/aspirations/be/be-108.html
+   PPE1/dumps-text/be/temp-utf8-108.html
 
    Enable JavaScript and cookies to continue

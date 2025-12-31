@@ -7,6 +7,39 @@
 ### bash main.sh be_sens1_autanomia tableau-be1 data_be.txt
 ### bash main.sh kr tableau-kr1 data_kr.txt
 
+# ===== MODE VERBOSE / DEBUG =====
+VERBOSE=0
+DEBUG=0
+
+usage() {
+  echo "Usage:"
+  echo "  $0 [-v] [-d] <urls> <tableau> [fichier_sens1 fichier_sens2]"
+  echo "  -v : verbose (messages lisibles)"
+  echo "  -d : debug (trace bash avec numéros de ligne)"
+  exit 1
+}
+
+# Parse options -v / -d
+while getopts ":vd" opt; do
+  case "$opt" in
+    v) VERBOSE=1 ;;
+    d) DEBUG=1 ;;
+    *) usage ;;
+  esac
+done
+shift $((OPTIND-1))
+
+log() { (( VERBOSE )) && echo "[INFO] $*" >&2; }
+die() { echo "[ERREUR] $*" >&2; exit 1; }
+
+if (( DEBUG )); then
+  # Affiche: fichier:ligne:fonction: commande
+  export PS4='+ ${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:-main}: '
+  set -x
+fi
+# =================================
+
+
 FICHIER_URLS=$1
 FICHIER_SORTIE=$2
 FICHIER_MOTS_SENS1=$3
@@ -24,6 +57,10 @@ if [[ ! -f "../URLs/$FICHIER_URLS.txt" ]]; then
 	echo "Erreur : le fichier ../URLs/$FICHIER_URLS.txt n'existe pas !"
 	exit 1
 fi
+
+log "URLs: ../URLs/$FICHIER_URLS.txt"
+log "Sortie: ../tableaux/$FICHIER_SORTIE.html"
+log "Sens1 fichier: $FICHIER_MOTS_SENS1 | Sens2 fichier: $FICHIER_MOTS_SENS2"
 
 # Déterminer la source des motifs (2 fichiers ou saisie terminal)
 MOTIFS_SENS1=()
@@ -58,6 +95,9 @@ UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Ge
 mkdir -p "../dumps-text/${FICHIER_URLS}"
 mkdir -p "../aspirations/${FICHIER_URLS}"
 mkdir -p "../contextes/${FICHIER_URLS}"
+mkdir -p "../tableaux"
+
+log "Création dossiers dumps/aspirations/contextes/tableaux pour $FICHIER_URLS"
 
 # === Fonction pour générer le badge du code HTTP ===
 generer_badge_code() {
@@ -155,6 +195,7 @@ TOTAL=$(wc -l < "../URLs/$FICHIER_URLS.txt")
 # === Génération des lignes du tableau ===
 while read -r line;
 do
+	log "[$n/$TOTAL] Traitement URL: $line"
 	CODE=$(curl -sL -A "$UA" -o /dev/null -w "%{http_code}\n" "$line")
 	[[ -z "$CODE" || "$CODE" == "000" ]] && CODE="-"
 
@@ -248,29 +289,45 @@ do
 				# Compter les mots
 				NB_MOTS=$(wc -w < "$FICHIER_TEXTE")
 				
-				# Compter les occurrences
-				OCCURRENCES=0
-				while IFS= read -r mot; do
-					mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+				# Compter les occurrences (2 sens)
+				OCC_SENS1=0
+				for mot in "${MOTIFS_SENS1[@]}"; do
+				mot=$(echo "$mot" | tr -d '\r\n ')
+				[[ -z "$mot" ]] && continue
+				count=$(grep -o ".*$mot.*" "$FICHIER_TEXTE" | grep -o "$mot" | wc -l)
+				OCC_SENS1=$((OCC_SENS1 + count))
+				done
+
+				OCC_SENS2=0
+				for mot in "${MOTIFS_SENS2[@]}"; do
+				mot=$(echo "$mot" | tr -d '\r\n ')
+				[[ -z "$mot" ]] && continue
+				count=$(grep -o ".*$mot.*" "$FICHIER_TEXTE" | grep -o "$mot" | wc -l)
+				OCC_SENS2=$((OCC_SENS2 + count))
+				done
+
+				# Contextes sens 1
+				if [[ "$OCC_SENS1" -gt 0 ]]; then
+				FICHIER_CONTEXTE1="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}-sens1.txt"
+				> "$FICHIER_CONTEXTE1"
+				for mot in "${MOTIFS_SENS1[@]}"; do
+					mot=$(echo "$mot" | tr -d '\r\n ')
 					[[ -z "$mot" ]] && continue
-					# Compter aussi les mots collés (ex: 자율주행차 contient 자율)
-					count=$(grep -o ".*$mot.*" "$FICHIER_TEXTE" | grep -o "$mot" | wc -l)
-					OCCURRENCES=$((OCCURRENCES + count))
-				done < "$FICHIER_MOTS"
-				
-				# Extraire les contextes si on a trouvé des occurrences
-				if [[ "$OCCURRENCES" -gt 0 ]]; then
-					FICHIER_CONTEXTE="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
-					> "$FICHIER_CONTEXTE"  # Créer le fichier vide
-					
-					while IFS= read -r mot; do
-						mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
-						[[ -z "$mot" ]] && continue
-						# Extraire contexte : mot + mot à gauche + mot à droite (avec ou sans espace)
-						# \S*\s* permet de capturer les mots collés (ex: 자율주행차)
-						grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE" 2>/dev/null || \
-						grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE"
-					done < "$FICHIER_MOTS"
+					grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE1" 2>/dev/null || \
+					grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE1"
+				done
+				fi
+
+				# Contextes sens 2
+				if [[ "$OCC_SENS2" -gt 0 ]]; then
+				FICHIER_CONTEXTE2="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}-sens2.txt"
+				> "$FICHIER_CONTEXTE2"
+				for mot in "${MOTIFS_SENS2[@]}"; do
+					mot=$(echo "$mot" | tr -d '\r\n ')
+					[[ -z "$mot" ]] && continue
+					grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE2" 2>/dev/null || \
+					grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE2"
+				done
 				fi
 				
 				rm -f "$FICHIER_UTF8"

@@ -1,0 +1,638 @@
+<!DOCTYPE html><html lang="be" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.3",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseenter","mouseout","mouseleave","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input","visibilitychange"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),this.F("domReady"),await this.T(),await this.j(),await this.I(),this.F("windowLoad"),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise((t=>setTimeout(t,500-Date.now()+this.lastTouchEnd))),this.H(),this.F("all"),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))}),{isRocket:!0})}o(){window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0}),{isRocket:!0}),window.addEventListener("pagehide",(()=>{this.onFirstUserAction=null}),{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",(function i(o){Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1})),event.preventDefault(),window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}))}),{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),this.savedUserEvents.length>0&&(t.stopPropagation(),t.stopImmediatePropagation()),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach((t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})))}U(){this.userEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0}))),this.savedUserEvents.forEach((t=>{t.target.dispatchEvent(new window[t.constructor.name](t.type,t))}))}m(){this.eventsMutationObserver=new MutationObserver((t=>{const e="return false";for(const i of t){if("attributes"===i.type){const t=i.target.getAttribute(i.attributeName);t&&t!==e&&(i.target.setAttribute("data-rocket-"+i.attributeName,t),i.target["rocket"+i.attributeName]=new Function("event",t),i.target.setAttribute(i.attributeName,e))}"childList"===i.type&&i.addedNodes.forEach((t=>{if(t.nodeType===Node.ELEMENT_NODE)for(const i of t.attributes)this.attributeEvents.includes(i.name)&&i.value&&""!==i.value&&(t.setAttribute("data-rocket-"+i.name,i.value),t["rocket"+i.name]=new Function("event",i.value),t.setAttribute(i.name,e))}))}})),this.eventsMutationObserver.observe(document,{subtree:!0,childList:!0,attributeFilter:this.attributeEvents})}H(){this.eventsMutationObserver.disconnect(),this.attributeEvents.forEach((t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach((e=>{e.setAttribute(t,e.getAttribute("data-rocket-"+t)),e.removeAttribute("data-rocket-"+t)}))}))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o})},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}F(t){"all"===t&&(EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener),this.savedEventListeners=this.savedEventListeners.filter((e=>{let i=e.type,o=e.target||window;return"domReady"===t&&"DOMContentLoaded"!==i&&"readystatechange"!==i||("windowLoad"===t&&"load"!==i&&"readystatechange"!==i&&"pageshow"!==i||(this.B(i,o)&&(i="rocket-"+i),e.remove?o.removeEventListener(i,e.func,e.options):o.addEventListener(i,e.func,e.options),!1))}))}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,(()=>{e[t].forEach((t=>t()))}),{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout((()=>i.bind(document)(o))):i.bind(document)(o)}return t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise((t=>{this.userActionTriggered?t():this.onFirstUserAction=t}))}async L(){return new Promise((t=>{document.addEventListener("DOMContentLoaded",(()=>{this.realDomReadyFired=!0,t()}),{isRocket:!0})}))}async I(){return this.realWindowLoadedFired?Promise.resolve():new Promise((t=>{window.addEventListener("load",t,{isRocket:!0})}))}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver((t=>{for(const e of t)e.addedNodes.forEach((t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise((e=>{const i=()=>{const i=this.pendingScripts.findIndex((e=>e.script===t));i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)}))})}))})),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async j(){await this.J(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.j()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.N(t,"preconnect")}async $(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",(()=>{i.setAttribute("data-rocket-status","failed-network"),e()}),{isRocket:!0}),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.$(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())}),{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.$(e),this.C(t)):Promise.resolve()}O(){this.N([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}N(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach((t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}})),document.head.appendChild(o)}W(){this.trash.forEach((t=>t.remove()))}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async G(){Date.now()-this.lastBreath>45&&(await this.J(),this.lastBreath=Date.now())}async J(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="uri-translation" content="on"><link rel="alternate" hreflang="es" href="https://www.drivingeco.com/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="ar" href="https://www.drivingeco.com/ar/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="eu" href="https://www.drivingeco.com/eu/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="be" href="https://www.drivingeco.com/be/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="ca" href="https://www.drivingeco.com/ca/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.drivingeco.com/zh-CN/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="zh-TW" href="https://www.drivingeco.com/zh-TW/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="hr" href="https://www.drivingeco.com/hr/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="cs" href="https://www.drivingeco.com/cs/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="da" href="https://www.drivingeco.com/da/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="nl" href="https://www.drivingeco.com/nl/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="en" href="https://www.drivingeco.com/en/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="et" href="https://www.drivingeco.com/et/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="fr" href="https://www.drivingeco.com/fr/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="gl" href="https://www.drivingeco.com/gl/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="de" href="https://www.drivingeco.com/de/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="hu" href="https://www.drivingeco.com/hu/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="it" href="https://www.drivingeco.com/it/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="ja" href="https://www.drivingeco.com/ja/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="ko" href="https://www.drivingeco.com/ko/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="ku" href="https://www.drivingeco.com/ku/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="pl" href="https://www.drivingeco.com/pl/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="pt" href="https://www.drivingeco.com/pt/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="pa" href="https://www.drivingeco.com/pa/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="ro" href="https://www.drivingeco.com/ro/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="ru" href="https://www.drivingeco.com/ru/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="sk" href="https://www.drivingeco.com/sk/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="sl" href="https://www.drivingeco.com/sl/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+<link rel="alternate" hreflang="tr" href="https://www.drivingeco.com/tr/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">
+
+	<!-- This site is optimized with the Yoast SEO plugin v25.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Мы пратэставалі Mercedes-Benz EQA 250: кампактны электрычны пазадарожнік у 5 варыянтах</title><link rel="preload" data-rocket-preload="" as="image" imagesrcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-270x153.jpg.webp 270w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg.webp 1920w" imagesizes="(max-width: 1210px) 100vw, 1210px" fetchpriority="high">
+	<meta name="description" content="З цаной ад 55.478 500 еўра Mercedes-Benz EQA з'яўляецца пачатковай мадэллю электрычнага дыяпазону брэнда, які аб'яўляе аб запасе ходу амаль у XNUMX км.">
+	<link rel="canonical" href="https://www.drivingeco.com/be/%D0%9C%D1%8B-%D0%BF%D1%80%D0%B0%D1%82%D1%8D%D1%81%D1%82%D0%B0%D0%B2%D0%B0%D0%BB%D1%96-%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BA%D1%82%D0%BD%D1%8B-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-Mercedes-Benz-EQA-250-5-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D1%9E/">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Мы пратэставалі Mercedes-Benz EQA 250: кампактны электрычны пазадарожнік у 5 варыянтах">
+	<meta property="og:description" content="З цаной ад 55.478 500 еўра Mercedes-Benz EQA з'яўляецца пачатковай мадэллю электрычнага дыяпазону брэнда, які аб'яўляе аб запасе ходу амаль у XNUMX км.">
+	<meta property="og:url" content="https://www.drivingeco.com/be/%D0%9C%D1%8B-%D0%BF%D1%80%D0%B0%D1%82%D1%8D%D1%81%D1%82%D0%B0%D0%B2%D0%B0%D0%BB%D1%96-%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BA%D1%82%D0%BD%D1%8B-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-Mercedes-Benz-EQA-250-5-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D1%9E/">
+	<meta property="og:site_name" content="Driving ECO">
+	<meta property="article:published_time" content="2023-04-14T12:01:39+00:00">
+	<meta property="article:modified_time" content="2023-09-25T08:18:45+00:00">
+	<meta property="og:image" content="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg">
+	<meta property="og:image:width" content="1920">
+	<meta property="og:image:height" content="1086">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="Antonio Roncero">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@roncero_antonio">
+	<meta name="twitter:label1" content="аўтар">
+	<meta name="twitter:data1" content="Антоніа Ронсэра">
+	<meta name="twitter:label2" content="Прыл. час чытання">
+	<meta name="twitter:data2" content="10 Minutos">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.drivingeco.com\/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves\/","url":"https:\/\/www.drivingeco.com/be\/%D0%9C%D1%8B-%D0%BF%D1%80%D0%B0%D1%82%D1%8D%D1%81%D1%82%D0%B0%D0%B2%D0%B0%D0%BB%D1%96-%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BA%D1%82%D0%BD%D1%8B-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-Mercedes-Benz-EQA-250-5-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D1%9E\/","name":"Мы пратэставалі Mercedes-Benz EQA 250: кампактны электрычны пазадарожнік у 5 варыянтах","isPartOf":{"@id":"https:\/\/www.drivingeco.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.drivingeco.com\/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves\/#primaryimage"},"image":{"@id":"https:\/\/www.drivingeco.com\/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves\/#primaryimage"},"thumbnailUrl":"https:\/\/i.bstr.es\/drivingeco\/2023\/03\/mercedes-benz-eqa_12.jpg","datePublished":"2023-04-14T12:01:39+00:00","dateModified":"2023-09-25T08:18:45+00:00","author":{"@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/46bf51601df8e6166625c67851a51e23"},"description":"З цаной ад 55.478 500 еўра Mercedes-Benz EQA з'яўляецца пачатковай мадэллю электрычнага дыяпазону брэнда, які аб'яўляе аб запасе ходу амаль у XNUMX км.","breadcrumb":{"@id":"https:\/\/www.drivingeco.com\/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves\/#breadcrumb"},"inLanguage":"be","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.drivingeco.com\/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves\/"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves\/#primaryimage","url":"https:\/\/i.bstr.es\/drivingeco\/2023\/03\/mercedes-benz-eqa_12.jpg","contentUrl":"https:\/\/i.bstr.es\/drivingeco\/2023\/03\/mercedes-benz-eqa_12.jpg","width":1920,"height":1086,"caption":"Mercedes Benz EQA 12"},{"@type":"BreadcrumbList","@id":"https:\/\/www.drivingeco.com\/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Галоўная","item":"https:\/\/www.drivingeco.com\/"},{"@type":"ListItem","position":2,"name":"Мы пратэставалі Mercedes-Benz EQA 250: кампактны электрычны пазадарожнік у 5 варыянтах"}]},{"@type":"WebSite","@id":"https:\/\/www.drivingeco.com\/#website","url":"https:\/\/www.drivingeco.com/be\/","name":"Driving ECO","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.drivingeco.com/be\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"be"},{"@type":"Person","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/46bf51601df8e6166625c67851a51e23","name":"Antonio Roncero","image":{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/www.drivingeco.com\/#\/schema\/person\/image\/","url":"https:\/\/secure.gravatar.com\/avatar\/03ccd41144fe96a2307d432c5ad149a9e88297c5481159eae7d35df2ddcc12b7?s=96&d=mm&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/03ccd41144fe96a2307d432c5ad149a9e88297c5481159eae7d35df2ddcc12b7?s=96&d=mm&r=g","caption":"Antonio Roncero"},"description":"Тэставанне аўтамабіляў і справаздачнасць аб свеце матораў больш за тры дзесяцігоддзі - гэта тое, што я лічу страсцю, а таксама працай. І лепшае яшчэ наперадзе, бачачы праблемы, з якімі сутыкаецца аўтамабільная прамысловасць, і хуткасць, з якой яна здольная іх адаптаваць і пераадольваць. Мы ўсё яшчэ тут, каб сказаць гэта.","sameAs":["arfdamon","https:\/\/x.com\/roncero_antonio"],"url":"https:\/\/www.drivingeco.com/be\/%D0%B0%D1%9E%D1%82%D0%B0%D1%80\/antonioroncero\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="https://i.bstr.es/">
+
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.drivingeco.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.1" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://www.drivingeco.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://www.drivingeco.com/wp-json/wp/v2/posts/51081">
+
+	<link rel="icon" type="image/png" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco-16x16.png">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco76x76.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco152x152.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco120x120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.drivingeco.com/wp-content/uploads/2018/08/drivingeco144x144.png">	
+<!-- incrementa -->	    <script type="rocketlazyloadscript" async="" data-rocket-type="text/javascript">
+            var a = new XMLHttpRequest();
+            a.open("GET","https://www.drivingeco.com/be/wp-content/themes/comun9/incrementa.php?id=51081&bd=drivingeco");
+            a.send(null);
+	   </script>
+			
+	    <script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"Product","name":"Mercedes-Benz EQA 2023","image":"https:\/\/i.bstr.es\/drivingeco\/2023\/03\/mercedes-benz-eqa_12-1024x579.jpg","description":"","brand":{"@type":"Thing","name":"EQA"},"review":{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"8","bestRating":"10"},"author":{"@type":"Person","name":"Antonio Roncero"}}}</script>
+
+	<!-- ## NXS/OG ## --><!-- ## NXSOGTAGS ## --><!-- ## NXS/OG ## -->
+
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+
+
+
+
+
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MGNRFSQ');</script>
+<!-- End Google Tag Manager -->
+
+
+<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGNRFSQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<script type="rocketlazyloadscript">var adTarget="marca=mercedes-benz;modelo=eqa;precio=22;";</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://tmadspot.s3.eu-west-3.amazonaws.com/ads/250199.js"></script>
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://t.seedtag.com/t/7860-6497-01.js"></script>
+
+
+		
+	
+	<!-- google adsense + adspot -->
+	<script type="rocketlazyloadscript">
+		var currentLang = document.getElementsByTagName('html')[0].getAttribute('lang');
+		console.log(currentLang);
+		if ( currentLang !== 'es' && currentLang !== 'es-ES' &&  currentLang !== 'pt' && currentLang !== 'pt-PT') {
+			var script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6543774410994713';
+			script.crossOrigin = 'anonymous';
+			document.head.appendChild(script);
+		}
+		else{
+			var script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://ssm.codes/smart-tag/drivingeco.js';
+			document.head.appendChild(script);
+
+		}
+	</script>
+	<!-- google adsense -->
+
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-CE3ZWTD17F"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+	gtag('config', 'G-CE3ZWTD17F', {
+	   'custom_map': {
+	     'dimension1': 'domain'
+	   }
+	});
+	
+	gtag('event', 'set_domain', {'domain': 'drivingeco.com'});
+</script>
+
+
+
+    
+
+         
+	
+  <style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.18.3" data-wpr-features="wpr_delay_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_automatic_lazy_rendering wpr_oci wpr_minify_css wpr_preload_links wpr_desktop"></head>
+  <body class="wp-singular post-template-default single single-post postid-51081 single-format-standard wp-theme-comun9 wp-child-theme-drivingeco probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves">
+  
+	
+	
+
+	
+	
+<nav class="navbar navbar-default" role="navigation">
+	<div class="row">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+   	<button class="navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="sr-only">Дысплей навігацыі</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://www.drivingeco.com/be/" aria-label="logo cabecera"></a>
+  </div>
+ 
+  <div id="navbar" class="navbar-collapse collapse">
+          <div class="menu-navbar-container"><ul id="menu-navbar" class="nav navbar-nav"><li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-135"><a href="https://www.drivingeco.com/be/">ініцыяванне</a></li>
+<li id="menu-item-56116" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56116"><a href="https://www.drivingeco.com/be/%D1%9E%D1%81%D1%82%D0%BE%D0%B9%D0%BB%D1%96%D0%B2%D0%B0%D1%81%D1%86%D1%8C/">Устойлівасць</a></li>
+<li id="menu-item-56118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56118"><a href="https://www.drivingeco.com/be/%D0%B4%D0%BE%D0%BC%D0%B0/">Хогар</a></li>
+<li id="menu-item-56229" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-56229"><a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/">мабільнасць</a></li>
+<li id="menu-item-56117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56117"><a href="https://www.drivingeco.com/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%BD%D1%8B-%D0%B3%D0%BE%D1%80%D0%B0%D0%B4/">Smart City</a></li>
+<li id="menu-item-16671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16671"><a href="https://www.drivingeco.com/be/%D0%BF%D0%BE%D1%88%D1%83%D0%BA-a/">пошук</a></li>
+<li id="menu-item-26509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26509"><a href="https://www.drivingeco.com/be/%D1%85%D1%82%D0%BE-%D0%BC%D1%8B/">Аб кампаніі</a></li>
+</ul></div>        </div><!--/.navbar-collapse -->
+    </div><!--/.row -->
+</nav>
+  
+
+    <div class="main-content">
+	<section>
+		
+	
+	<div class="container-fluid single" id="content-single">
+		<article>
+			<div class="row">
+					
+                                
+				<p class="gt-block etiquetas">
+					<a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/%D0%BC%D0%B5%D1%80%D1%81%D0%B5%D0%B4%D1%8D%D1%81-%D0%B1%D0%B5%D0%BD%D0%B7%D0%BE/%D1%8D%D0%BA%D0%B2/" rel="tag"><span class="icon-price-tag"></span>ЭКА</a> <a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/%D0%BC%D0%B5%D1%80%D1%81%D0%B5%D0%B4%D1%8D%D1%81-%D0%B1%D0%B5%D0%BD%D0%B7%D0%BE/" rel="tag"><span class="icon-price-tag"></span>Mercedes-Benz</a> <a href="https://www.drivingeco.com/be/%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B0%D1%81%D1%86%D1%8C/%D0%BC%D0%B0%D1%88%D1%8B%D0%BD%D1%8B/" rel="tag">Трэнеры</a> 				</p>
+                
+                
+                <h1 data-url="https://www.drivingeco.com/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/">Мы пратэставалі Mercedes-Benz EQA 250: кампактны электрычны пазадарожнік у 5 варыянтах</h1>
+                
+                	<div class="meta">
+		<div class="meta-post">
+			<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://secure.gravatar.com/avatar/03ccd41144fe96a2307d432c5ad149a9e88297c5481159eae7d35df2ddcc12b7?s=30&amp;d=mm&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/03ccd41144fe96a2307d432c5ad149a9e88297c5481159eae7d35df2ddcc12b7?s=60&amp;d=mm&amp;r=g 2x" class="avatar avatar-30 photo" height="30" width="30" decoding="async"><noscript><img alt='' src='https://secure.gravatar.com/avatar/03ccd41144fe96a2307d432c5ad149a9e88297c5481159eae7d35df2ddcc12b7?s=30&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/03ccd41144fe96a2307d432c5ad149a9e88297c5481159eae7d35df2ddcc12b7?s=60&#038;d=mm&#038;r=g 2x' class='avatar avatar-30 photo' height='30' width='30' decoding='async'/></noscript> Антоніа Ронсэра			&nbsp;&nbsp;&nbsp;<span class="icon-twitter"><a href="https://twitter.com/roncero_antonio" target="_blank">@roncero_antonio</a></span>&nbsp;&nbsp;&nbsp;
+			<span class="icon-calendar"></span> 14 Красавік 2023&nbsp;&nbsp;&nbsp;&nbsp;
+			<span class="icon-stopwatch"></span>9 мін.		</div>
+
+		<div class="social-likes">
+			<a href="https://www.facebook.com/share.php?u=https://www.drivingeco.com/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/" class="fa fa-facebook" target="_blank" aria-label="facebook"></a>
+			<a href="https://twitter.com/share?text=Probamos el Mercedes-Benz EQA 250: el SUV compacto eléctrico en 5 claves&amp;url=https://www.drivingeco.com/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/" class="fa fa-twitter" target="_blank" aria-label="twitter"></a>		
+			<a href="whatsapp://send?text=https://www.drivingeco.com/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/" class="fa fa-whatsapp" target="_blank" aria-label="whatsapp"></a>					
+		</div>
+	</div>
+
+		
+
+                
+                	                <div class="col-md-12">
+	                	<picture class="img-responsive aligncenter featured-image">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-270x153.jpg.webp 270w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg.webp 1920w" sizes="(max-width: 1210px) 100vw, 1210px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1220x690.jpg" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-270x153.jpg 270w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg 1920w" sizes="(max-width: 1210px) 100vw, 1210px" alt="Мы пратэставалі Mercedes-Benz EQA 250: кампактны электрычны пазадарожнік у 5 варыянтах" width="1220" height="690">
+</picture>
+
+					</div>
+								
+                <div class="center fullpubli">
+                	<div id="mega-sup"></div><div id="interstitial"></div><div id="sky-left"></div><div id="sky-right"></div>                 </div>
+			<!--</div> end .row 
+				
+			<div class="row"> -->			
+                <div class="contenedor-ajustable">
+                    <div id="row">
+                        <div class="contenido-autoajustable-tres">
+
+							
+							<div class="content-single">
+																	<div class="excerpt"><p>З цаной ад 55.478 500 еўра Mercedes-Benz EQA з'яўляецца пачатковай мадэллю электрычнага дыяпазону брэнда, які аб'яўляе аб запасе ходу амаль у XNUMX км.</p>
+</div>
+								
+									
+
+								<div id="botones-hc"></div>								
+								<p class="gt-block">El <a href="https://www.drivingeco.com/be/Mercedes-benz-%D0%BD%D0%BE%D0%B2%D1%8B%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D1%96%D1%96-eqa-%D0%B7-%D0%BF%D0%BE%D1%9E%D0%BD%D1%8B%D0%BC-%D0%BF%D1%80%D1%8B%D0%B2%D0%B0%D0%B4%D0%B0%D0%BC/" target="_blank" rel="noopener"><strong>Mercedes-Benz EQA</strong></a>, які мы можам лічыць <strong>электрычная версія Mercedes GLA</strong>, быў прадстаўлены ў 2021 г. Пасля лета 2022 г. ён атрымаў сур'ёзнае абнаўленне, якое не толькі значна палепшыла аўтаномнасць пачатковай версіі, EQA 250, змяніўшы тып выкарыстоўванага рухавіка, але і новыя версіі былі дададзены ў дыяпазон.</p>
+<p class="gt-block">У цяперашні час у дыяпазоне EQA ёсць чатыры варыянты на выбар у залежнасці ад рухальнай сістэмы (<strong>з адным рухавіком і пярэднім прывадам, або з двума рухавікамі і поўным прывадам</strong> у 4MATIC) і акумулятар. Вось версіі, іх кошт, магутнасць і зацверджаная аўтаномнасць:</p>
+<ul>
+<li><strong>EQA 250: </strong>190 HP і 492 км аўтаномнасці. Кошт: 55.478 XNUMX еўра</li>
+<li><strong>EQA 250+:</strong> 190 конскіх сіл і запас ходу 530 км. Кошт: 56.976 XNUMX еўра</li>
+<li><strong>EQA 400 4MATIC</strong>: 228 HP і 436 км аўтаномнасці. Кошт: 59.485 XNUMX еўра</li>
+<li><strong>EQA 350 4MATIC</strong>: 292 HP і 436 км аўтаномнасці. Кошт: 61.200 XNUMX еўра</li>
+</ul>
+<p>Знешне EQA выразна адрозніваецца ад GLA іншай, цалкам абліцаванай рашоткай радыятара са светлавой паласой, якая злучае фары як спераду, так і ззаду, а таксама спецыфічнымі дэкаратыўнымі элементамі ў салоне.</p>
+<h2><strong>1.- Кошт Mercedes EQA 250</strong></h2>
+<p class="gt-block">Па-першае, некаторыя меркаванні аб кошце Mercedes EQA 250. Ён каштуе больш за 55.000 XNUMX еўра. <strong>версія доступу, з 190 HP</strong>, максімальны крутоўны момант 385 Нм, акумулятар карыснай ёмістасцю 66,5 кВт.гадз <strong>і зацверджанай аўтаномнасцю 492 км</strong>. Акумулятар мае гарантыю 8 гадоў або 160.000 XNUMX км, і ва ўсіх версіях <strong>цеплавой помпа</strong> Гэта стандартна.</p>
+<p><picture fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-51090 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8.jpg" fetchpriority="high" decoding="async" alt="Mercedes Benz EQA 8" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+</picture>
+<noscript><picture fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-51090 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+<img fetchpriority="high" decoding="async" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8.jpg" alt="Mercedes Benz Eqa 8" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_8-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+</picture>
+</noscript></p>
+<p class="gt-block">Маючы на ​​ўвазе кошт тарыфу, можа ўзнікнуць спакуса выбраць <strong>EQA 250+, варыянт з найбольшай аўтаномнасцю ў дыяпазоне: 530 км</strong>, дзякуючы батарэі ёмістасцю 70,5 кВт/г. Нядрэнны варыянт, бо выдаткі не вельмі вялікія, 1.500 еўра. Але вы павінны мець на ўвазе, што вы атрымаеце «толькі» гэта, 38 км больш тэарэтычнай аўтаноміі - у рэчаіснасці гэта будзе крыху менш - паколькі абвешчаныя тыя ж функцыі, тая ж максімальная магутнасць зарадкі і абсталяванне таксама ідэнтычныя. І, паверце, розніца ў аўтаномнасці не будзе вырашальнай нават у далёкіх паездках, таму што і з тым, і з другім прыйдзецца спыняцца на падзарадку.</p>
+<p class="gt-block">Што ж тычыцца <strong>Версіі 4MATIC</strong>…Так, яны больш магутныя і з поўным прывадам. Але характарыстык 250 больш чым дастаткова, і ў 4MATIC ёсць дзве рэчы, якія працуюць супраць іх: больш высокі кошт (ад 4.000 да 6.000 еўра) і меншая аўтаномнасць з-за большага спажывання энергіі.</p>
+<p><picture decoding="async" class="aligncenter size-full wp-image-51086 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4.jpg" decoding="async" alt="Mercedes Benz EQA 4" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+</picture>
+<noscript><picture decoding="async" class="aligncenter size-full wp-image-51086 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+<img decoding="async" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4.jpg" alt="Mercedes Benz Eqa 4" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+</picture>
+</noscript></p>
+<p class="gt-block">Такім чынам, першая выснова такая <strong>250 - выдатны выбар, калі вы хочаце EQA</strong>, і калі ёсць дадатковы бюджэт, лепш выкарыстоўваць яго для камплектацыі абсталявання. У прыватнасці, я рэкамендую пакет асістэнта ваджэння, які за 2.500 еўра дадае заднія бакавыя падушкі бяспекі, сістэму прадухілення сутыкнення Pre-Safe Plus і актыўны асістэнт дыстанцыі Distronic, асістэнт захавання паласы руху і папярэджанне аб наяўнасці сляпых зон.</p>
+<h2><strong>2.- Кабіна Mercedes EQA</strong></h2>
+<p class="gt-block">Тут няма ніякіх сюрпрызаў: да лепшага і да горшага, у практычных і дызайнерскіх мэтах мы знаходзім інтэр'ер, амаль ідэнтычны салону Mercedes-Benz GLA. Самае лепшае, наколькі добра гэта працуе <strong>Мультымедыйная сістэма MBUX</strong>, з <strong>два экрана, якія могуць быць да 10,25 цаляў</strong> цудоўнай якасці з пункту гледжання раздзялення і лёгкасці перамяшчэння па меню, а таксама сістэма распазнання голасу, якая працуе вельмі добра. Знешні выгляд вельмі тэхналагічны, а становішча за рулём зручнае і натуральнае, з добрым падлакотнікам і падтрымкай бесправадной зарадкі мабільнага тэлефона.</p>
+<p><picture decoding="async" class="aligncenter size-full wp-image-51096 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-880x587.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1024x683.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-768x512.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1536x1024.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1220x813.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1600x1067.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-700x467.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-400x267.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-850x567.jpg.webp 850w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-212x141.jpg.webp 212w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-270x180.jpg.webp 270w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-220x146.jpg.webp 220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-182x121.jpg.webp 182w" sizes="(max-width: 1920px) 100vw, 1920px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14.jpg" decoding="async" alt="Mercedes Eq, Eqa, Amg Line, Mountain Grey Magno, Studioaufnahme // Mercedes Eq, Eqa, Amg Line, Mountain Grey Magno, Studio Shot" width="1920" height="1280" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-880x587.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1024x683.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-768x512.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1536x1024.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1220x813.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1600x1067.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-700x467.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-400x267.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-850x567.jpg 850w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-212x141.jpg 212w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-270x180.jpg 270w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-220x146.jpg 220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-182x121.jpg 182w" sizes="(max-width: 1920px) 100vw, 1920px">
+</picture>
+<noscript><picture decoding="async" class="aligncenter size-full wp-image-51096 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-880x587.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1024x683.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-768x512.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1536x1024.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1220x813.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1600x1067.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-700x467.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-400x267.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-850x567.jpg.webp 850w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-212x141.jpg.webp 212w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-270x180.jpg.webp 270w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-220x146.jpg.webp 220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-182x121.jpg.webp 182w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+<img decoding="async" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14.jpg" alt="Mercedes Eq, Eqa, Amg Line, Mountaingrau Magno, Studioaufnahme // Mercedes Eq, Eqa, Amg Line, Mountain Grey Magno, Studio Shot" width="1920" height="1280" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-880x587.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1024x683.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-768x512.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1536x1024.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1220x813.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-1600x1067.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-700x467.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-400x267.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-850x567.jpg 850w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-212x141.jpg 212w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-270x180.jpg 270w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-220x146.jpg 220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_14-182x121.jpg 182w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+</picture>
+</noscript></p>
+<p class="gt-block">Сэнсарная панэль кіравання, размешчаная на кансолі, не пераконвае ні мяне, ні <strong>элементы кіравання з сэнсарнымі паверхнямі на рулі</strong>: Я ўсё яшчэ лічу, што звычайныя кнопкі працуюць больш дакладна і менш адцягваюць увагу. І з улікам цаны аўтамабіля, лагатыпа, які з'яўляецца на рашотцы, і візуальнага адчування, якое ён прапануе, калі вы пачынаеце гуляць і даследаваць далей, вы выявіце матэрыялы, напрыклад, у ніжняй частцы дзвярэй або ў ніжняй частцы частка прыборнай панэлі, ад якой можна было чакаць больш высокай якасці.</p>
+<p class="gt-block">У параўнанні з версіямі GLA з рухавіком унутранага згарання горш за ўсё атрымліваюцца пасажыры на задніх сядзеннях. Губляецца не толькі магчымасць рэгулявання сядзення па даўжыні, але і становішча, якое даводзіцца прымаць пасажырам, становіцца больш нязручным, так як сядзенне размешчана бліжэй да падлогі, што прымушае іх мацней згінаць ногі. Ён таксама губляе <strong>ствол</strong>, не менш чым амаль 100 літраў ёмістасці, каб застацца ў <strong>340 Litros</strong>, што значна ніжэй за асноўныя альтэрнатывы з электрычным рухам. Аднак формы вельмі квадратныя, што дазваляе добра выкарыстоўваць наяўную прастору.</p>
+<h2><strong>3.- За рулём кампактнага электрычнага пазадарожніка</strong></h2>
+<p class="gt-block">Нягледзячы на ​​сваю вагу больш за 2 тоны, EQA 250 рухаецца з вялікай лёгкасцю... і з вялікай вытанчанасцю, да чаго электрычныя аўтамабілі ўжо прызвычаілі нас дзякуючы сваёй <strong>практычна імгненная рэакцыя на дросель і адсутнасць шуму </strong>. Разганяйцеся і набірайце хуткасць з сілай, калі вы моцна паскараецеся, незалежна ад абранай праграмы ваджэння, паміж якой ёсць прыкметныя адрозненні. The <strong>Максімальная хуткасць у рэжыме Eco абмежаваная 130 км/г</strong>, але дзякуючы сваёй хуткасці рэагавання гэта цалкам прыдатны рэжым, калі вы хочаце марнаваць мала энергіі, не звяртаючы ўвагі на правую нагу. З іншага боку, у спартыўным рэжыме вы бачыце большую здольнасць набіраць хуткасць за кошт значна меншага паскарэння.</p>
+<p><picture decoding="async" class="aligncenter size-full wp-image-51084 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2.jpg" decoding="async" alt="Mercedes Benz EQA 2" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+</picture>
+<noscript><picture decoding="async" class="aligncenter size-full wp-image-51084 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+<img decoding="async" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2.jpg" alt="Mercedes Benz Eqa 2" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+</picture>
+</noscript></p>
+<p class="gt-block">З пялёсткамі на рулі можна «гуляць» з розным <strong>ўзроўні аднаўлення энергіі</strong>, хоць таксама можна выбраць аўтаматычны рэжым. З даступных узроўняў той, які прапануе найбольшую здольнасць да аднаўлення, прызначаны для гарадской язды, захоўвае шмат, калі вы раптоўна здымаеце нагу з педалі газу. У пэўным сэнсе гэта працуе як у <strong>аўтамабілі, якія маюць функцыю «прапедаль».</strong>: Вы можаце выкарыстоўваць акселератар для рэгулявання тармажэння. Але запас, які дае ход педалі для язды такім чынам, вельмі малы, што робіць кіраванне крыху нязручным з выкарыстаннем гэтай сістэмы і рэжымаў з большай рэкуперацыяй энергіі.</p>
+<p>Практычны выпадак: вы разганяецеся пры выездзе на закругленне або ў паласу злучэння з аўтадарогай, і вам трэба спыніць разгон, не завяршыўшы манеўр: калі рэзка падняць правую нагу, машына моцна стрымліваецца і «ківае»; Каб гэтага не адбылося, трэба спыніць разгон, але трымаць педаль злёгку націснутай. У рэшце рэшт, я раблю выснову, што лепш дазволіць сістэме працаваць у аўтаматычным рэжыме (проста ўтрымлівайце рычаг на працягу некалькіх секунд) і кіраваць тым, колькі і як яна аднаўляе энергію ў залежнасці ад хуткасці, з якой вы падымаеце нагу педаль газу і нават з улікам адлегласці да наперадзе ідучага аўтамабіля. І ў яго гэта атрымліваецца даволі добра.</p>
+<p><picture decoding="async" class="aligncenter size-full wp-image-51088 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6.jpg" decoding="async" alt="Mercedes Benz EQA 6" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+</picture>
+<noscript><picture decoding="async" class="aligncenter size-full wp-image-51088 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+<img decoding="async" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6.jpg" alt="Mercedes Benz Eqa 6" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_6-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+</picture>
+</noscript></p>
+<p class="gt-block">У адваротным выпадку, <strong>EQA - гэта камфартабельны аўтамабіль са стандартнай падвескай для ціхага падарожжа</strong>, і лёгка кіраваць у любой сітуацыі <strong>Адчуванне тармазоў патрабуе пэўнага перыяду адаптацыі</strong>, з відавочнай розніцай паміж першай часткай ходу педалі і момантам, калі гідраўлічныя тармазы пачынаюць працаваць замест рэкуператыўнага тармажэння. Гэта таксама не асабліва спрытны аўтамабіль на пакручастых дарогах. Але не з-за недастатковай дакладнасці руля або празмернага руху кузава, а з-за вагі.</p>
+<h2><strong>4.- Спажыванне, перазарадка і аўтаномнасць</strong></h2>
+<p class="gt-block">Падтрымліваць a <strong>сярэдні расход каля 19 кВт/г/100 км</strong> з Mercedes-Benz EQA. Так, адтуль цяжка спусціцца, калі ў вас ёсць мясцовасць на карысць - роўная або з невялікімі няроўнасцямі, і ўсё, што ёсць, знаходзіцца ўніз -, вы карыстаецеся рэжымам Eco і ўважліва сочыце за кіраваннем. У гэтых умовах нам удалося зафіксаваць паездкі з спажываннем 17 кВт.гадз/100 км. На шашы самая аптымістычная лічба - каля 21 кВт.гадз/100 км. Вынік кажа нам пра аўтамабіль з умераным спажываннем, з якім вы можаце лічыць прабегі не больш за 325-350 км паміж падзарадкамі, калі вы збіраецеся падарожнічаць, вельмі зменлівыя ў залежнасці ад тэмпу і араграфіі.</p>
+<p><picture decoding="async" class="aligncenter size-full wp-image-51094 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg" decoding="async" alt="Mercedes Benz EQA 12" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+</picture>
+<noscript><picture decoding="async" class="aligncenter size-full wp-image-51094 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+<img decoding="async" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg" alt="Mercedes Benz Eqa 12" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_12-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+</picture>
+</noscript></p>
+<p class="gt-block">Выкарыстоўваючы разетку пастаяннага току з хуткай зарадкай, можна перайсці ад 10 да 80% ёмістасці батарэі за паўгадзіны, дзякуючы<strong> Ёмістасць EQA для падзарадкі магутнасцю да 100 кВт</strong>. У разетцы пераменнага току магутнасцю 11 кВт, якая дазваляе выкарыстоўваць стандартную аўтамабільную зарадную прыладу, пераход ад 10 да 100% зарада займае крыху менш за шэсць гадзін. Пры магутнасці 7,4 кВт гэты час павялічваецца амаль да 11 гадзін, у той час як у хатняй разетцы пры магутнасці 3,7 кВт гэты працэс можа заняць вечнасць: больш за 18 гадзін.</p>
+<h2><strong>5.- Альтэрнатывы Mercedes EQA</strong></h2>
+<p>Адной з першых альтэрнатыў Mercedes-Benz EQA са 100% электрычным рухам з'яўляецца GLA 250 і падключаны гібрыд, які каштуе крыху больш за 53.000 218 еўра, мае маркіроўку ZERO, магутнасць 60 конскіх сіл і можа праехаць каля 385 км ( камбінаваны цыкл WLTP ) у электрычным рэжыме; Акрамя таго, ён прапануе вялікую ёмістасць багажніка - XNUMX літраў.</p>
+<p class="gt-block">Але калі мы сканцэнтруемся на пазадарожніках гэтай катэгорыі з электрычным рухавіком, то ёсць навічок, які стварае сур'ёзныя праблемы для EQA... і астатніх электрычных пазадарожнікаў. Гаворка ідзе пра <a href="https://www.highmotor.com/probamos-byd-atto-3-suv-electrico-chino-compite-mejores.html" target="_blank" rel="noopener"><strong>BYD Atto 3</strong></a>, які мае цану ад крыху больш за 41.000 204 еўра, з 420 HP, аўтаномнасцю WLTP XNUMX км і вельмі поўным абсталяваннем. Таксама танней, чым EQA, які мы маем <a href="https://www.drivingeco.com/be/Lexus-ux-300e-%D0%B0%D1%82%D1%80%D1%8B%D0%BC%D0%B0%D1%9E-%D0%BD%D0%BE%D0%B2%D1%83%D1%8E-%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D1%8D%D1%8E%2C-%D1%8F%D0%BA%D0%B0%D1%8F-%D0%BF%D0%B0%D0%B2%D1%8F%D0%BB%D1%96%D1%87%D0%B2%D0%B0%D0%B5-%D0%B7%D0%B0%D0%BF%D0%B0%D1%81-%D1%85%D0%BE%D0%B4%D1%83-%D0%B4%D0%B0-450-%D0%BA%D0%BC/" target="_blank" rel="noopener"><strong>Lexus UX 300 e</strong></a>, з 204 л.з. і новым акумулятарам, каб дасягнуць аўтаноміі 450 км.</p>
+<p><picture decoding="async" class="aligncenter size-full wp-image-51085 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3.jpg" decoding="async" alt="Mercedes Benz EQA 3" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px">
+</picture>
+<noscript><picture decoding="async" class="aligncenter size-full wp-image-51085 img-responsive">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3.jpg.webp 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-880x498.jpg.webp 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1024x579.jpg.webp 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-768x434.jpg.webp 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1536x869.jpg.webp 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1220x690.jpg.webp 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1600x905.jpg.webp 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-700x396.jpg.webp 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-400x226.jpg.webp 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-270x153.jpg.webp 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+<img decoding="async" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3.jpg" alt="Mercedes Benz Eqa 3" width="1920" height="1086" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3.jpg 1920w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-880x498.jpg 880w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1024x579.jpg 1024w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-768x434.jpg 768w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1536x869.jpg 1536w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1220x690.jpg 1220w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-1600x905.jpg 1600w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-700x396.jpg 700w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-400x226.jpg 400w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-270x153.jpg 270w" sizes="(max-width: 1920px) 100vw, 1920px"/>
+</picture>
+</noscript></p>
+<p class="gt-block">Яшчэ адзін з нядаўна абноўленых электрычных пазадарожнікаў, палепшаных з пункту гледжання аўтаноміі з выкарыстаннем новых рухавікоў і акумулятараў большай ёмістасці, - гэта&nbsp; <a href="https://www.highmotor.com/volvo-xc40-c40-recharge-hasta-60-km-mas-autonomia-suv-electrico.html" target="_blank" rel="noopener"><strong>Volvo XC40</strong></a>, які выдае 238 конскіх сіл у аднаматорных версіях і праязджае 460 км на адной зарадцы. У адпаведнасці з EQA з пункту гледжання цаны, <a href="https://www.drivingeco.com/be/volkswagen-%D0%BF%D1%80%D0%B0%D0%B4%D0%B0%D0%B5-%D0%BD%D0%BE%D0%B2%D1%83%D1%8E-%D0%B2%D0%B5%D1%80%D1%81%D1%96%D1%8E-id4-%D0%B7-%D0%BF%D0%BE%D1%9E%D0%BD%D1%8B%D0%BC-%D0%BF%D1%80%D1%8B%D0%B2%D0%B0%D0%B4%D0%B0%D0%BC/" target="_blank" rel="noopener"><strong>VW ID.4</strong></a> Ён мае некалькі больш звыклы падыход; Версія з 204 л.з. і карыснай батарэяй на 77 кВт/гадз перавышае 520 км аўтаномнасці WLTP, мае багажнік больш за 540 літраў і даступная ад 52.500 XNUMX еўра.</p>
+<p>&nbsp;</p>
+<h3>Mercedes-Benz EQA – Галерэя малюнкаў</h3>
+<div class="gallery"><dl class="gallery-item">
+                    <dt class="gallery-icon landscape">
+                            <a href="https://www.drivingeco.com/be/%D0%9C%D1%8B-%D0%BF%D1%80%D0%B0%D1%82%D1%8D%D1%81%D1%82%D0%B0%D0%B2%D0%B0%D0%BB%D1%96-%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BA%D1%82%D0%BD%D1%8B-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-Mercedes-Benz-EQA-250-5-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D1%9E/mercedes-benz-eqa_1/"><picture decoding="async" class="attachment-gallery-thumbnail size-gallery-thumbnail">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-202x149.jpg.webp 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-135x100.jpg.webp 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-226x166.jpg.webp 226w" sizes="(max-width: 202px) 100vw, 202px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-202x149.jpg" decoding="async" width="202" height="149" alt="Mercedes Benz EQA 1" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-202x149.jpg 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-135x100.jpg 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-226x166.jpg 226w" sizes="(max-width: 202px) 100vw, 202px">
+</picture>
+<noscript><picture decoding="async" class="attachment-gallery-thumbnail size-gallery-thumbnail">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-202x149.jpg.webp 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-135x100.jpg.webp 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-226x166.jpg.webp 226w" sizes="(max-width: 202px) 100vw, 202px"/>
+<img decoding="async" width="202" height="149" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-202x149.jpg" alt="Mercedes Benz Eqa 1" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-202x149.jpg 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-135x100.jpg 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_1-226x166.jpg 226w" sizes="(max-width: 202px) 100vw, 202px"/>
+</picture>
+</noscript></a>
+                    </dt></dl><dl class="gallery-item">
+                    <dt class="gallery-icon landscape">
+                            <a href="https://www.drivingeco.com/be/%D0%9C%D1%8B-%D0%BF%D1%80%D0%B0%D1%82%D1%8D%D1%81%D1%82%D0%B0%D0%B2%D0%B0%D0%BB%D1%96-%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BA%D1%82%D0%BD%D1%8B-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-Mercedes-Benz-EQA-250-5-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D1%9E/mercedes-benz-eqa_2/"><picture decoding="async" class="attachment-gallery-thumbnail size-gallery-thumbnail">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-202x149.jpg.webp 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-135x100.jpg.webp 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-226x166.jpg.webp 226w" sizes="(max-width: 202px) 100vw, 202px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-202x149.jpg" decoding="async" width="202" height="149" alt="Mercedes Benz EQA 2" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-202x149.jpg 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-135x100.jpg 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-226x166.jpg 226w" sizes="(max-width: 202px) 100vw, 202px">
+</picture>
+<noscript><picture decoding="async" class="attachment-gallery-thumbnail size-gallery-thumbnail">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-202x149.jpg.webp 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-135x100.jpg.webp 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-226x166.jpg.webp 226w" sizes="(max-width: 202px) 100vw, 202px"/>
+<img decoding="async" width="202" height="149" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-202x149.jpg" alt="Mercedes Benz Eqa 2" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-202x149.jpg 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-135x100.jpg 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_2-226x166.jpg 226w" sizes="(max-width: 202px) 100vw, 202px"/>
+</picture>
+</noscript></a>
+                    </dt></dl><dl class="gallery-item">
+                    <dt class="gallery-icon landscape">
+                            <a href="https://www.drivingeco.com/be/%D0%9C%D1%8B-%D0%BF%D1%80%D0%B0%D1%82%D1%8D%D1%81%D1%82%D0%B0%D0%B2%D0%B0%D0%BB%D1%96-%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BA%D1%82%D0%BD%D1%8B-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-Mercedes-Benz-EQA-250-5-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D1%9E/mercedes-benz-eqa_3/"><picture decoding="async" class="attachment-gallery-thumbnail size-gallery-thumbnail">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-202x149.jpg.webp 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-135x100.jpg.webp 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-226x166.jpg.webp 226w" sizes="(max-width: 202px) 100vw, 202px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-202x149.jpg" decoding="async" width="202" height="149" alt="Mercedes Benz EQA 3" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-202x149.jpg 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-135x100.jpg 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-226x166.jpg 226w" sizes="(max-width: 202px) 100vw, 202px">
+</picture>
+<noscript><picture decoding="async" class="attachment-gallery-thumbnail size-gallery-thumbnail">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-202x149.jpg.webp 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-135x100.jpg.webp 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-226x166.jpg.webp 226w" sizes="(max-width: 202px) 100vw, 202px"/>
+<img decoding="async" width="202" height="149" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-202x149.jpg" alt="Mercedes Benz Eqa 3" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-202x149.jpg 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-135x100.jpg 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_3-226x166.jpg 226w" sizes="(max-width: 202px) 100vw, 202px"/>
+</picture>
+</noscript></a>
+                    </dt></dl><dl class="gallery-item">
+                    <dt class="gallery-icon landscape">
+                            <a href="https://www.drivingeco.com/be/%D0%9C%D1%8B-%D0%BF%D1%80%D0%B0%D1%82%D1%8D%D1%81%D1%82%D0%B0%D0%B2%D0%B0%D0%BB%D1%96-%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BA%D1%82%D0%BD%D1%8B-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-Mercedes-Benz-EQA-250-5-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D1%9E/mercedes-benz-eqa_4/"><picture decoding="async" class="attachment-gallery-thumbnail size-gallery-thumbnail">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-202x149.jpg.webp 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-135x100.jpg.webp 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-226x166.jpg.webp 226w" sizes="(max-width: 202px) 100vw, 202px">
+<img src="https://i.bstr.es/comun/1x1.trans.gif" data-lazy-src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-202x149.jpg" decoding="async" width="202" height="149" alt="Mercedes Benz EQA 4" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-202x149.jpg 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-135x100.jpg 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-226x166.jpg 226w" sizes="(max-width: 202px) 100vw, 202px">
+</picture>
+<noscript><picture decoding="async" class="attachment-gallery-thumbnail size-gallery-thumbnail">
+<source type="image/webp" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-202x149.jpg.webp 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-135x100.jpg.webp 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-226x166.jpg.webp 226w" sizes="(max-width: 202px) 100vw, 202px"/>
+<img decoding="async" width="202" height="149" src="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-202x149.jpg" alt="Mercedes Benz Eqa 4" srcset="https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-202x149.jpg 202w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-135x100.jpg 135w, https://i.bstr.es/drivingeco/2023/03/mercedes-benz-eqa_4-226x166.jpg 226w" sizes="(max-width: 202px) 100vw, 202px"/>
+</picture>
+</noscript></a>
+                    </dt></dl><div class="gallery-ver"><a href="https://www.drivingeco.com/be/%D0%9C%D1%8B-%D0%BF%D1%80%D0%B0%D1%82%D1%8D%D1%81%D1%82%D0%B0%D0%B2%D0%B0%D0%BB%D1%96-%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BA%D1%82%D0%BD%D1%8B-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-%D0%BF%D0%B0%D0%B7%D0%B0%D0%B4%D0%B0%D1%80%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-Mercedes-Benz-EQA-250-5-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D1%9E/mercedes-benz-eqa_1/">Глядзіце 18</a></div><br style="clear: both"></div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+								<div id="widget"></div>		<!-- /1282139/WIDGET_HIGHMOTOR_700X365_2015 -->
+		<div id="div-gpt-ad-1666707087634-0" style="min-width: 600px; min-height: 300px;">
+		  <script type="rocketlazyloadscript">
+		    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1666707087634-0'); });
+		  </script>
+		</div>
+    
+    	
+										
+							</div><!-- fin .content-single -->
+									
+							
+	<div class="navigation-single">	<!-- NAVEGACION  -->			
+			        <div class="post-previous">
+	            <a href="https://www.drivingeco.com/be/bmw-xm-label-red-%D0%B7%D0%B0%D1%85%D0%BE%D0%BF%D1%96%D1%86%D1%8C-%D0%B4%D1%83%D1%85-738-%D0%BB.%D0%B7/"><picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/04/BMW-XM-Label-Red-Front-135x100.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" alt="BMW XM Label Red захопіць дух сваімі 738 л.з" data-lazy-src="https://i.bstr.es/drivingeco/2023/04/BMW-XM-Label-Red-Front-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/04/BMW-XM-Label-Red-Front-135x100.jpg" width="135" height="100" alt="El BMW XM Label Red te cortará la respiración con sus 738 CV"/></noscript>
+</picture>
+</a>
+	            <div class="title"><a href="https://www.drivingeco.com/be/bmw-xm-label-red-%D0%B7%D0%B0%D1%85%D0%BE%D0%BF%D1%96%D1%86%D1%8C-%D0%B4%D1%83%D1%85-738-%D0%BB.%D0%B7/">BMW XM Label Red захопіць дух сваімі 738 л.з</a></div>
+	        </div>
+			        <div class="post-next">
+	            <a href="https://www.drivingeco.com/be/zeekr-x-%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6-%D0%9A%D1%96%D1%82%D0%B0%D0%B9-%D0%BA%D0%BE%D1%88%D1%82-%D1%81%D0%BA%D0%B0%D0%BD%D0%B4%D0%B0%D0%BB/"><picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/04/Zeekr-X-2023-Side-135x100.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%20100'%3E%3C/svg%3E" width="135" height="100" alt="Zeekr X паступае ў продаж у Кітаі са скандальнай цаной" data-lazy-src="https://i.bstr.es/drivingeco/2023/04/Zeekr-X-2023-Side-135x100.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/04/Zeekr-X-2023-Side-135x100.jpg" width="135" height="100" alt="El Zeekr X sale a la venta en China con un precio de escándalo"/></noscript>
+</picture>
+</a>
+	            <div class="title"><a href="https://www.drivingeco.com/be/zeekr-x-%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6-%D0%9A%D1%96%D1%82%D0%B0%D0%B9-%D0%BA%D0%BE%D1%88%D1%82-%D1%81%D0%BA%D0%B0%D0%BD%D0%B4%D0%B0%D0%BB/">Zeekr X паступае ў продаж у Кітаі са скандальнай цаной</a></div>
+	        </div>
+				</div>
+	
+	<div style="clear:both"></div>
+
+
+						
+													
+
+						</div>
+						
+						
+<div class="bloque-publicidad-ajustable-tres">
+	
+	
+
+	<div id="roba1"></div>
+	
+	
+
+	
+	    <div class="destacados-sidebar">
+		<p class="gt-block titulo-sidebar"><span class="icon-pin"></span>Папулярныя</p>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/probando-smartgyro-crossover-x2-pro-fusion-potencia-estilo/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/11/smartgyro-crossover-x2-pro-drivingeco-13-300x90.jpg" alt="smartgyro-crossover-x2-pro-drivingeco-13-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					Prueba Smartgyro Crossover X2 Pro: зліццё магутнасці і стылю                </a>
+			</div>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/caldera-gas-bomba-calor-descubre-cual-mas-eficiente-contamina-menos/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="ацяпленне-цеплавой помпа-300х90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/calefaccion-bomba-calor-300x90.jpg" alt="calefaccion-bomba-calor-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					¿Caldera de gas or bomba de calor? Descubre cuál es más eficiente y contamina menos                </a>
+			</div>
+		    		<div class="destacado-sidebar">
+            	<a href="https://www.drivingeco.com/be/paneles-solares-inversion-sostenible-vale-pena-hacer/" rel="nofollow">
+                    <picture class="img-responsive">
+<source type="image/webp" data-lazy-srcset="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg.webp">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2090'%3E%3C/svg%3E" alt="сонечныя панэлі-300x90" width="300" height="90" data-lazy-src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg"><noscript><img src="https://i.bstr.es/drivingeco/2023/09/paneles-solares-300x90.jpg" alt="paneles-solares-300x90" width="300" height="90"/></noscript>
+</picture>
+
+					Paneles solares: una inversión rentable y sostenible para el futuro                </a>
+			</div>
+		    </div>
+
+	
+		
+	<div id="roba2"></div>	<br>
+	<div id="roba3"></div>
+	<div id="roba4"></div>
+	
+</div>
+
+                    </div><!-- end #row -->
+                </div><!-- end .contenedor-ajustable -->
+                
+				<div class="col-md-12">
+					<div id="comentarios">
+
+
+
+			<p>Каментары закрыты</p>
+
+	
+
+
+</div> <!-- end id comentarios-->											<!-- <div class="titulo-ancho">TE PUEDE INTERESAR</div> -->
+						
+
+
+									</div>
+
+
+				<div id="mega-inf"></div>
+            </div><!--fin de .row-->
+    	</article>
+
+
+
+	</div><!--fin de .container-fluid .single-->
+
+</section>
+</div> <!-- end main-content -->
+
+	<footer data-wpr-lazyrender="1">
+	
+		<div class="tono">
+			<div class="row institucional"><ul id="menu-legal-pie" class=""><li id="menu-item-16547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16547"><a href="https://www.highmotor.com/">высокарухальныя</a></li>
+<li id="menu-item-21507" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21507"><a href="https://www.topventascoches.com/">Самыя папулярныя аўтамабілі</a></li>
+<li id="menu-item-51179" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51179"><a href="https://www.espaciofurgo.com/">Espacio Furgo</a></li>
+<li id="menu-item-32051" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32051"><a href="https://www.drivingeco.com/be/%D1%8E%D1%80%D1%8B%D0%B4%D1%8B%D1%87%D0%BD%D0%B0%D0%B5-%D0%B0%D0%BF%D0%B0%D0%B2%D1%8F%D1%88%D1%87%D1%8D%D0%BD%D0%BD%D0%B5/">Юрыдычнае паведамленне</a></li>
+<li id="menu-item-51824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51824"><a href="https://www.drivingeco.com/be/%D0%BF%D0%B0%D0%BB%D1%96%D1%82%D1%8B%D0%BA%D0%B0-%D0%BF%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D0%BD%D0%B0%D1%81%D1%86%D1%96/">палітыка прыватнасці</a></li>
+</ul></div>		</div>
+	</footer>
+
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="rocketlazyloadscript">//window.jQuery || document.write('<script data-minify="1" async src="https://www.drivingeco.com/be/wp-content/cache/min/1/ajax/libs/jquery/3.1.1/jquery.min.js?ver=1764074335"><\/script>')</script>
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js?ver=1764074336" crossorigin="anonymous"></script>
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js?ver=1764074336" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="rocketlazyloadscript" data-minify="1" async="" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/ie10-viewport-bug-workaround.min.js?ver=1764074336"></script>
+   
+ 
+
+	
+
+
+   <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/drivingeco\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/drivingeco\/*","\/wp-content\/themes\/comun9\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div class="gtranslate_wrapper" id="gt-wrapper-25852862"></div><link data-minify="1" rel="stylesheet" id="fonts-kyalami-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/fonts-kyalami.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="bootstrap-css" href="https://www.drivingeco.com/wp-content/cache/min/1/comun/bootstrap.min.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/comun9/style.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="child-style-css" href="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/style.css?ver=1764074335" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="fontawesome-css" href="https://www.drivingeco.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1764074335" type="text/css" media="all">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.drivingeco.com/be","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" id="author-tracking-js-extra">
+/* <![CDATA[ */
+var author = {"name":"Antonio Roncero"};
+var date = {"my":"April 2023"};
+var category = {"name":"Coches"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/themes/drivingeco/js/analytics.js?ver=1764074336" id="author-tracking-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/jquery.sonar.min.js?ver=1764074336" id="jquery-sonar-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/comun/lazy-load.min.js?ver=1764074336" id="wpcom-lazy-load-images-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script type="text/javascript" id="infinitedScrollHighmotor_js-js-extra">
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"https:\/\/www.drivingeco.com/be\/wp-admin\/admin-ajax.php","id_post":"51081","title_origin":"Probamos el Mercedes-Benz EQA 250: el SUV compacto el\u00e9ctrico en 5 claves","url_origin":"https:\/\/www.drivingeco.com/be\/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves\/"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-content/cache/min/1/wp-content/plugins/infinite-scroll-highmotor/includes/js/infiniteScrollHighmotor.js?ver=1764074336" id="infinitedScrollHighmotor_js-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.drivingeco.com/wp-includes/js/comment-reply.min.js?ver=6.8.1" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="gt_widget_script_25852862-js-before">
+/* <![CDATA[ */
+window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['25852862'] = {"default_language":"es","languages":["ar","eu","be","ca","zh-CN","zh-TW","hr","cs","da","nl","en","et","fr","gl","de","hu","it","ja","ko","ku","pl","pt","pa","ro","ru","sk","sl","es","tr"],"url_structure":"sub_directory","native_language_names":1,"detect_browser_language":1,"flag_style":"3d","wrapper_selector":"#gt-wrapper-25852862","alt_flags":[],"float_switcher_open_direction":"bottom","switcher_horizontal_position":"right","switcher_vertical_position":"bottom","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+/* ]]> */
+</script><script type="rocketlazyloadscript" data-rocket-src="https://www.drivingeco.com/wp-content/plugins/gtranslate/js/float.js?ver=6.8.1" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/probamos-mercedes-benz-eqa-250-suv-compacto-electrico-5-claves/" data-gt-orig-domain="www.drivingeco.com" data-gt-widget-id="25852862" defer=""></script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://www.drivingeco.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="Play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script>
+
+<script type="rocketlazyloadscript">
+	new PerformanceObserver((entryList) => {
+	  for (const entry of entryList.getEntries()) {
+	    console.log('Layout shift:', entry);
+	  }
+	}).observe({type: 'layout-shift', buffered: true});		
+</script>
+
+  
+
+ 
+
+<script data-cfasync="false" src="https://tdns4.gtranslate.net/tdn-bin/queue.js"></script></body></html><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1767175870 -->

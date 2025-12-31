@@ -1,0 +1,865 @@
+<!DOCTYPE html><html lang="be" class="no-js"><head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.3",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseenter","mouseout","mouseleave","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input","visibilitychange"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),this.F("domReady"),await this.T(),await this.j(),await this.I(),this.F("windowLoad"),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise((t=>setTimeout(t,500-Date.now()+this.lastTouchEnd))),this.H(),this.F("all"),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))}),{isRocket:!0})}o(){window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0}),{isRocket:!0}),window.addEventListener("pagehide",(()=>{this.onFirstUserAction=null}),{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",(function i(o){Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1})),event.preventDefault(),window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}))}),{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),this.savedUserEvents.length>0&&(t.stopPropagation(),t.stopImmediatePropagation()),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach((t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})))}U(){this.userEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0}))),this.savedUserEvents.forEach((t=>{t.target.dispatchEvent(new window[t.constructor.name](t.type,t))}))}m(){this.eventsMutationObserver=new MutationObserver((t=>{const e="return false";for(const i of t){if("attributes"===i.type){const t=i.target.getAttribute(i.attributeName);t&&t!==e&&(i.target.setAttribute("data-rocket-"+i.attributeName,t),i.target["rocket"+i.attributeName]=new Function("event",t),i.target.setAttribute(i.attributeName,e))}"childList"===i.type&&i.addedNodes.forEach((t=>{if(t.nodeType===Node.ELEMENT_NODE)for(const i of t.attributes)this.attributeEvents.includes(i.name)&&i.value&&""!==i.value&&(t.setAttribute("data-rocket-"+i.name,i.value),t["rocket"+i.name]=new Function("event",i.value),t.setAttribute(i.name,e))}))}})),this.eventsMutationObserver.observe(document,{subtree:!0,childList:!0,attributeFilter:this.attributeEvents})}H(){this.eventsMutationObserver.disconnect(),this.attributeEvents.forEach((t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach((e=>{e.setAttribute(t,e.getAttribute("data-rocket-"+t)),e.removeAttribute("data-rocket-"+t)}))}))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o})},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}F(t){"all"===t&&(EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener),this.savedEventListeners=this.savedEventListeners.filter((e=>{let i=e.type,o=e.target||window;return"domReady"===t&&"DOMContentLoaded"!==i&&"readystatechange"!==i||("windowLoad"===t&&"load"!==i&&"readystatechange"!==i&&"pageshow"!==i||(this.B(i,o)&&(i="rocket-"+i),e.remove?o.removeEventListener(i,e.func,e.options):o.addEventListener(i,e.func,e.options),!1))}))}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,(()=>{e[t].forEach((t=>t()))}),{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout((()=>i.bind(document)(o))):i.bind(document)(o)}return t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise((t=>{this.userActionTriggered?t():this.onFirstUserAction=t}))}async L(){return new Promise((t=>{document.addEventListener("DOMContentLoaded",(()=>{this.realDomReadyFired=!0,t()}),{isRocket:!0})}))}async I(){return this.realWindowLoadedFired?Promise.resolve():new Promise((t=>{window.addEventListener("load",t,{isRocket:!0})}))}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver((t=>{for(const e of t)e.addedNodes.forEach((t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise((e=>{const i=()=>{const i=this.pendingScripts.findIndex((e=>e.script===t));i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)}))})}))})),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async j(){await this.J(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.j()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.N(t,"preconnect")}async $(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",(()=>{i.setAttribute("data-rocket-status","failed-network"),e()}),{isRocket:!0}),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.$(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())}),{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.$(e),this.C(t)):Promise.resolve()}O(){this.N([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}N(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach((t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}})),document.head.appendChild(o)}W(){this.trash.forEach((t=>t.remove()))}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async G(){Date.now()-this.lastBreath>45&&(await this.J(),this.lastBreath=Date.now())}async J(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://www.espaciofurgo.com/xmlrpc.php">
+    <meta name="robots" content="max-image-preview:large">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="uri-translation" content="on"><link rel="alternate" hreflang="es" href="https://www.espaciofurgo.com/citroen-e-jumper/">
+<link rel="alternate" hreflang="ar" href="https://www.espaciofurgo.com/ar/citroen-e-jumper/">
+<link rel="alternate" hreflang="eu" href="https://www.espaciofurgo.com/eu/citroen-e-jumper/">
+<link rel="alternate" hreflang="be" href="https://www.espaciofurgo.com/be/citroen-e-jumper/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.espaciofurgo.com/zh-CN/citroen-e-jumper/">
+<link rel="alternate" hreflang="zh-TW" href="https://www.espaciofurgo.com/zh-TW/citroen-e-jumper/">
+<link rel="alternate" hreflang="hr" href="https://www.espaciofurgo.com/hr/citroen-e-jumper/">
+<link rel="alternate" hreflang="cs" href="https://www.espaciofurgo.com/cs/citroen-e-jumper/">
+<link rel="alternate" hreflang="da" href="https://www.espaciofurgo.com/da/citroen-e-jumper/">
+<link rel="alternate" hreflang="nl" href="https://www.espaciofurgo.com/nl/citroen-e-jumper/">
+<link rel="alternate" hreflang="en" href="https://www.espaciofurgo.com/en/citroen-e-jumper/">
+<link rel="alternate" hreflang="et" href="https://www.espaciofurgo.com/et/citroen-e-jumper/">
+<link rel="alternate" hreflang="fr" href="https://www.espaciofurgo.com/fr/citroen-e-jumper/">
+<link rel="alternate" hreflang="gl" href="https://www.espaciofurgo.com/gl/citroen-e-jumper/">
+<link rel="alternate" hreflang="de" href="https://www.espaciofurgo.com/de/citroen-e-jumper/">
+<link rel="alternate" hreflang="hu" href="https://www.espaciofurgo.com/hu/citroen-e-jumper/">
+<link rel="alternate" hreflang="it" href="https://www.espaciofurgo.com/it/citroen-e-jumper/">
+<link rel="alternate" hreflang="ja" href="https://www.espaciofurgo.com/ja/citroen-e-jumper/">
+<link rel="alternate" hreflang="ko" href="https://www.espaciofurgo.com/ko/citroen-e-jumper/">
+<link rel="alternate" hreflang="ku" href="https://www.espaciofurgo.com/ku/citroen-e-jumper/">
+<link rel="alternate" hreflang="pl" href="https://www.espaciofurgo.com/pl/citroen-e-jumper/">
+<link rel="alternate" hreflang="pt" href="https://www.espaciofurgo.com/pt/citroen-e-jumper/">
+<link rel="alternate" hreflang="pa" href="https://www.espaciofurgo.com/pa/citroen-e-jumper/">
+<link rel="alternate" hreflang="ro" href="https://www.espaciofurgo.com/ro/citroen-e-jumper/">
+<link rel="alternate" hreflang="ru" href="https://www.espaciofurgo.com/ru/citroen-e-jumper/">
+<link rel="alternate" hreflang="sk" href="https://www.espaciofurgo.com/sk/citroen-e-jumper/">
+<link rel="alternate" hreflang="sl" href="https://www.espaciofurgo.com/sl/citroen-e-jumper/">
+<link rel="alternate" hreflang="sv" href="https://www.espaciofurgo.com/sv/citroen-e-jumper/">
+<link rel="alternate" hreflang="tr" href="https://www.espaciofurgo.com/tr/citroen-e-jumper/">
+
+
+
+<!-- comienza SEO TVC -->
+<title>El Citroën ë-Jumper completa la gama de vhículos commerciales eléctricos de Citroën</title>
+<meta name="description" content="Citroën выпускае новы Citroën ë-Jumper, электрычную версію вялікага фургона брэнда з аўтаномнасцю да 224 км.">
+<meta name="robots" content="index,follow,noodp,noydir">
+<meta property="og:site_name" content="Espacio Furgo">
+<meta property="og:title" content="El Citroën ë-Jumper completa la gama de vhículos commerciales eléctricos de Citroën">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.espaciofurgo.com/be/Citroen-e-%D0%B4%D0%B6%D1%8D%D0%BC%D0%BF%D0%B5%D1%80/">
+<meta property="og:description" content="Citroën выпускае новы Citroën ë-Jumper, электрычную версію вялікага фургона брэнда з аўтаномнасцю да 224 км.">
+<meta property="og:image" content="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper_2-1024x556.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="556">
+<meta name="twitter:image" content="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper_2-1024x556.jpg">
+<meta name="twitter:title" content="El Citroën ë-Jumper completa la gama de vhículos commerciales eléctricos de Citroën">
+<meta name="twitter:url" content="https://www.espaciofurgo.com/be/Citroen-e-%D0%B4%D0%B6%D1%8D%D0%BC%D0%BF%D0%B5%D1%80/">
+<meta name="twitter:description" content="Citroën выпускае новы Citroën ë-Jumper, электрычную версію вялікага фургона брэнда з аўтаномнасцю да 224 км.">
+<meta name="twitter:card" content="summary">
+<link rel="hub" href="https://pubsubhubbub.appspot.com/">
+<!-- fin SEO TVC -->
+
+
+<link rel="dns-prefetch" href="https://static.addtoany.com/">
+<link rel="dns-prefetch" href="https://developers.google.com/">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://i.bstr.es/">
+<link rel="alternate" type="application/rss+xml" title="Espacio Furgo - Furgonetas, camper, comerciales &amp;raquo; Feed" href="https://www.espaciofurgo.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Espacio Furgo - Furgonetas, camper, comerciales &amp;raquo; Feed de los comentarios" href="https://www.espaciofurgo.com/comments/feed/">
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.espaciofurgo.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.1" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="font-awesome-css" href="https://www.espaciofurgo.com/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=6.0.5" type="text/css" media="all">
+<link rel="stylesheet" id="owl.carousel-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/owl.carousel.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-grid-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/grid.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="listings-frontend-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/frontend_styles.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="listings-add-car-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/add_a_car.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="light-gallery-css" href="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/css/frontend/lightgallery.min.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="stm_default_google_font-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C600%2C700%7COpen+Sans%3A300%2C400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/bootstrap.min.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-select2-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/select2.min.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-datetimepicker-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/jquery.stmdatetimepicker.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-jquery-ui-css-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/jquery-ui.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-default-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/fonts/default-icon-font/stm-icon.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-service-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/service-icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-boat-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/boat-icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-moto-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/motorcycle/icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-rental-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/rental/icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-magazine-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/magazine/magazine-icon-style.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-listing-two-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/listing_two/icons.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-auto-parts-icons-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/auto-parts/style.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-style-sass-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/app.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-style-dealer-two-sass-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/dealer_two/app.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-frontend-customizer-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/frontend_customizer.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-style-animation-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/css/animation.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="stm-theme-style-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/style.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="recent-posts-widget-with-thumbnails-public-style-css" href="https://www.espaciofurgo.com/wp-content/plugins/recent-posts-widget-with-thumbnails/public.css?ver=7.1.1" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='vc_lte_ie9-css' href='https://www.espaciofurgo.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css?ver=6.0.5' type='text/css' media='screen' />
+<![endif]-->
+<link rel="stylesheet" id="addtoany-css" href="https://www.espaciofurgo.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16" type="text/css" media="all">
+<link rel="stylesheet" id="colorbox-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo-child/css/colorbox.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="parent-style-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/style.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="child-style-css" href="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo-child/style.css?ver=2.5" type="text/css" media="all">
+<link rel="stylesheet" id="wpb-google-fonts-css" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro%3Aital%2Cwght%400%2C200%3B0%2C300%3B0%2C400%3B0%2C600%3B0%2C700%3B0%2C900%3B1%2C200%3B1%2C300%3B1%2C400%3B1%2C600%3B1%2C700%3B1%2C900&amp;display=swap&amp;ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="https://i.bstr.es/comun/fontawesome/css/all.min.css?ver=6.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="nouislider-css" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.css?ver=6.8.1" type="text/css" media="all">
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="addtoany-core-js-before">
+/* <![CDATA[ */
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_localize = {
+	Share: "Share",
+	Save: "Save",
+	Subscribe: "Subscribe",
+	Email: "Email",
+	Bookmark: "Bookmark",
+	ShowAll: "Show all",
+	ShowLess: "Show less",
+	FindServices: "Find service(s)",
+	FindAnyServiceToAddTo: "Instantly find any service to add to",
+	PoweredBy: "Powered by",
+	ShareViaEmail: "Share via email",
+	SubscribeViaEmail: "Subscribe via email",
+	BookmarkInYourBrowser: "Bookmark in your browser",
+	BookmarkInstructions: "Press Ctrl+D or \u2318+D to bookmark this page",
+	AddToYourFavorites: "Add to your favorites",
+	SendFromWebOrProgram: "Send from any email address or email program",
+	EmailProgram: "Email program",
+	More: "More&#8230;",
+	ThanksForSharing: "Thanks for sharing!",
+	ThanksForFollowing: "Thanks for following!"
+};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer="" data-rocket-src="https://static.addtoany.com/menu/page.js" id="addtoany-core-js"></script>
+<script type="text/javascript" defer="" src="https://www.espaciofurgo.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1" id="addtoany-jquery-js"></script>
+<script type="text/javascript" id="dsidefcv_js-js-extra">
+/* <![CDATA[ */
+var ajax_usuarios = {"url":"https:\/\/www.espaciofurgo.com/be\/wp-json\/lead\/usuarios"};
+/* ]]> */
+</script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/js/form_coche_vista.js?ver=1761218051" id="dsidefcv_js-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="sidefcv_js-js-extra">
+/* <![CDATA[ */
+var ajax_musuarios = {"url":"https:\/\/www.espaciofurgo.com/be\/wp-json\/lead\/musuarios"};
+/* ]]> */
+</script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/js/movil_form_coche_vista.js?ver=1761218051" id="sidefcv_js-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/classie.js?ver=1761218051" id="stm-classie-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo-child/js/popper.min.js?ver=6.8.1" id="popper-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo-child/js/bootstrap.min.js?ver=6.8.1" id="bootstrap-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/vivus.min.js?ver=2.5" id="vivus-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/jquery.cookie.js?ver=1761218051" id="jquery-cookie-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/jquery.cascadingdropdown.js?ver=1761218051" id="stm-cascadingdropdown-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/js/colorbox.js?ver=1761218051" id="colorbox-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/js/custom.js?ver=1761218051" id="ef-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/ajax/libs/noUiSlider/15.6.1/nouislider.min.js?ver=1761218051" id="nouislider-js" data-rocket-defer="" defer=""></script>
+<link rel="https://api.w.org/" href="https://www.espaciofurgo.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://www.espaciofurgo.com/wp-json/wp/v2/posts/2110"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.espaciofurgo.com/xmlrpc.php?rsd">
+<link rel="canonical" href="https://www.espaciofurgo.com/be/Citroen-e-%D0%B4%D0%B6%D1%8D%D0%BC%D0%BF%D0%B5%D1%80/">
+<link rel="shortlink" href="https://www.espaciofurgo.com/be/?p=2110">
+
+
+        <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+            var stm_lang_code = 'es';
+                        var ajaxurl = 'https://www.espaciofurgo.com/be/wp-admin/admin-ajax.php';
+            var stm_site_blog_id = "1";
+            var stm_added_to_compare_text = "Añadido para comparar";
+            var stm_removed_from_compare_text = "fue eliminado de comparación";
+
+                        var stm_already_added_to_compare_text = "You have already added 3 cars";
+                    </script>
+        
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZNFXXL');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) GA4 -->
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-HSRFHGJ3J7"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HSRFHGJ3J7');
+</script>
+
+<meta name="facebook-domain-verification" content="6020pd7i1uoz6bx6pwncxlz2ej9iap">
+
+
+
+
+
+	<script type="rocketlazyloadscript">var adTarget="marca=citroen;modelo=jumper;precio=28517;tipo=combustion;";</script>
+	
+	<script type="rocketlazyloadscript" data-rocket-src="https://tmadspot.s3.eu-west-3.amazonaws.com/ads/408590.js"></script>  
+	
+	
+
+        <!-- google adsense + adspot -->
+        <script type="rocketlazyloadscript">
+                var currentLang = document.getElementsByTagName('html')[0].getAttribute('lang');
+                console.log(currentLang);
+                if ( currentLang !== 'es' && currentLang !== 'es-ES' &&  currentLang !== 'pt' && currentLang !== 'pt-PT') {
+                        var script = document.createElement('script');
+                        script.async = true;
+                        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0089260600075656';
+                        script.crossOrigin = 'anonymous';
+                        document.head.appendChild(script);
+                        console.log('adsense');
+                }
+                else{
+                        var script = document.createElement('script');
+                        script.async = true;
+                        script.src = 'https://ssm.codes/smart-tag/espaciofurgo.js';
+                        document.head.appendChild(script);
+                        console.log('semseo');
+
+                }
+        </script>
+        <!-- google adsense -->
+
+
+
+
+<!-- publicidad --><!-- incrementa -->	    <script async="" type="text/javascript">
+            var a = new XMLHttpRequest();
+            a.open("GET","https://www.espaciofurgo.com/be/wp-content/themes/espaciofurgo-child/incrementa.php?id=2110&bd=espaciofurgo");
+            a.send(null);
+	   </script>
+	<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
+<style type="text/css" title="dynamic-css" class="options-output">.header-main{background-color: #514741;}#footer-main{background-color: #524740;}#footer-copyright{background-color: #524740;}</style>
+<!-- ## NXS/OG ## --><!-- ## NXSOGTAGS ## --><!-- ## NXS/OG ## -->
+
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+    <script type="rocketlazyloadscript">
+	    
+	    
+	    
+		// Función para extraer un valor por clave de un string tipo "clave=valor;"
+		function getValorClave(cadena, clave) {
+			let match = cadena.match(new RegExp(clave + "=([^;]+)"));
+			return match ? match[1] : null;
+		}
+		
+		var marca = getValorClave(adTarget, "marca");
+		var tiempoRefresh = (marca === "toyota") ? 180 : 180;
+		
+		setTimeout(function () {
+			location.reload();
+		}, tiempoRefresh * 1000);	  
+		
+	</script>
+
+	<meta name="generator" content="WP Rocket 3.18.3" data-wpr-features="wpr_delay_js wpr_defer_js wpr_minify_js wpr_image_dimensions wpr_preload_links wpr_desktop"></head>
+
+
+<body class="wp-singular post-template-default single single-post postid-2110 single-format-standard wp-theme-espaciofurgo wp-child-theme-espaciofurgo-child no_margin stm-template-car_dealer_two stm-user-not-logged-in header_remove_cart wpb-js-composer js-comp-ver-6.0.5 vc_responsive" ontouchstart="">
+		<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZNFXXL"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->	
+	<div data-rocket-location-hash="99bb46786fd5bd31bcd7bdc067ad247a" id="wrapper">
+                                    <div data-rocket-location-hash="ad5d2704be9f8ed6d3e8fb43045bc962" id="stm-boats-header">
+
+
+					                
+            
+                                                        <div data-rocket-location-hash="14cb77cabf1af5e0e20c8ad093bcb08a" id="header">
+                        
+<div class="header-listing  listing-nontransparent-header">
+
+    <div class="container header-inner-content">
+        <!--Logo-->
+        <div class="listing-logo-main" style="margin-top: 4px;">
+                            <a class="bloglogo" href="https://www.espaciofurgo.com/be/">
+                    <img width="418" height="126" src="https://www.espaciofurgo.com/wp-content/uploads/2021/02/logo_ESPACIO-FURGO_home-02.png" style="width: 200px;" title="Галоўная" alt="лагатып">
+                </a>
+                    </div>
+
+        <div class="listing-service-right clearfix">
+
+            <div class="listing-right-actions">
+
+                
+                                    <div class="pull-right">
+                        <a class="lOffer-compare" href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D1%86%D1%8C/" title="Глядзець у параўнанні">
+                            <span class="heading-font">параўнаць</span>
+                            <i class="list-icon stm-boats-icon-compare-boats"></i>
+                            <span class="list-badge"><span class="stm-current-cars-in-compare"></span></span>
+                        </a>
+                    </div>
+                
+            </div>
+
+            <ul class="listing-menu clearfix">
+                <li id="menu-item-1151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1151"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D1%86%D1%8F%D0%BF%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D1%96/">Уявіць</a></li>
+<li id="menu-item-1174" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1174"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BD%D0%BE%D0%B2%D1%8B%D1%8F-%D0%BC%D0%B0%D0%B4%D1%8D%D0%BB%D1%96/">Новыя мадэлі</a></li>
+<li id="menu-item-942" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-942"><a href="https://www.espaciofurgo.com/be/%D1%88%D1%82%D1%8D%D0%BA%D0%B5%D1%80/">Фіхас</a></li>
+<li id="menu-item-985" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-985"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/Prueba/">Тэсты</a></li>
+<li id="menu-item-68" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-68"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BA%D1%96%D1%80%D0%B0%D1%9E%D0%BD%D1%96%D1%86%D1%82%D0%B2%D0%B0-%D0%BF%D0%B0-%D0%BA%D1%83%D0%BF%D0%BB%D1%96/">Кіраўніцтва па куплі</a></li>
+<li id="menu-item-1363" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1363"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BA%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D1%96%D0%BD%D0%B3/">Караванінг</a></li>
+            </ul>
+        </div>
+    </div>
+</div>                    </div> <!-- id header -->
+                
+                            </div>
+                
+<div data-rocket-location-hash="247ed6f803b0dadb3af57e0a16849864" class="stm-boats-mobile-header">
+			<a class="bloglogo" href="https://www.espaciofurgo.com/be/">
+			<img width="418" height="126" src="https://www.espaciofurgo.com/wp-content/uploads/2021/02/logo_ESPACIO-FURGO_home-02.png" style="width: 200px;" title="Галоўная" alt="лагатып">
+		</a>
+	
+	<div data-rocket-location-hash="07c0548e1fd15e1a1a23e94e73001734" class="stm-menu-boats-trigger">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</div>
+
+<div data-rocket-location-hash="d2c026d278d91876ffc0002c71a8b61a" class="stm-boats-mobile-menu">
+	<div data-rocket-location-hash="c4961c3de85874c8c83c21082f8fa42b" class="inner">
+		<div class="inner-content">
+			<ul class="listing-menu heading-font clearfix">
+				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1151"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D1%86%D1%8F%D0%BF%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D1%96/">Уявіць</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1174"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BD%D0%BE%D0%B2%D1%8B%D1%8F-%D0%BC%D0%B0%D0%B4%D1%8D%D0%BB%D1%96/">Новыя мадэлі</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-942"><a href="https://www.espaciofurgo.com/be/%D1%88%D1%82%D1%8D%D0%BA%D0%B5%D1%80/">Фіхас</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-985"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/Prueba/">Тэсты</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-68"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BA%D1%96%D1%80%D0%B0%D1%9E%D0%BD%D1%96%D1%86%D1%82%D0%B2%D0%B0-%D0%BF%D0%B0-%D0%BA%D1%83%D0%BF%D0%BB%D1%96/">Кіраўніцтва па куплі</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1363"><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BA%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D1%96%D0%BD%D0%B3/">Караванінг</a></li>
+                
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a class="lOffer-compare" href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D1%86%D1%8C/" title="Глядзець у параўнанні">
+                            <span>параўнаць</span>
+                                                    </a>
+                    </li>
+                			</ul>
+					</div>
+	</div>
+</div>                            
+        	
+	<div data-rocket-location-hash="241382cab125432d637e78e638f09023" class="menu-stellantis">
+		<div data-rocket-location-hash="fabefb70abafd7f7298d8a8468759172" class="container-menu-stellantis">
+			<ul>
+				<li><a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D0%BC%D0%B5%D1%80%D1%86%D1%8B%D0%B9%D0%BD%D1%8B%D1%8F-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B%D1%8F-%D0%B0%D1%9E%D1%82%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%96/">Камерцыйныя электрамабілі FIAT PROFESSIONAL</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	
+	
+        
+                
+        
+        
+		<div id="main">
+
+		<div data-rocket-location-hash="f0dc02239a102ac3f5191d5243aef8cf" class="megabanner" id="mega_sup"></div>
+
+	<div data-rocket-location-hash="1fd884c2cb613190f0657c329a54f389" id="post-2110" class="post-2110 post type-post status-publish format-standard has-post-thumbnail hentry category-electrico category-furgones category-nuevos-modelos">
+		<div class="stm-single-post sticky-content">
+			<div data-rocket-location-hash="40297ec0c66602d6094b5c9d6a7df5f9" class="container">
+				
+
+	
+	<div data-rocket-location-hash="f616e1af5ca2a96aa485e3787ad68580" class="row">
+		<div class="col-md-9 col-sm-12 col-xs-12"><div class="sidebar-margin-top clearfix"></div>
+			<!--Title-->
+			<h1 class="post-title">El Citroën ë-Jumper completa la gama de vhículos commerciales eléctricos de Citroën</h1>
+
+			<!--Post thumbnail-->
+							<div class="post-thumbnail">
+					<picture class="img-responsive wp-post-image" decoding="async" fetchpriority="high">
+<source type="image/webp" srcset="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper_2-1110x577.jpg.webp 1110w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper_2-350x181.jpg.webp 350w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper_2-398x206.jpg.webp 398w" sizes="(max-width: 1110px) 100vw, 1110px">
+<img width="1110" height="577" src="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper_2-1110x577.jpg" alt="Citroën ë-Jumper" decoding="async" fetchpriority="high" srcset="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper_2-1110x577.jpg 1110w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper_2-350x181.jpg 350w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper_2-398x206.jpg 398w" sizes="(max-width: 1110px) 100vw, 1110px">
+</picture>
+				</div>
+			
+			<!--Blog meta-->
+			<div class="blog-meta clearfix">
+				<div class="left">
+					<div class="clearfix">
+						<div class="blog-meta-unit h6">
+							<i class="stm-icon-date"></i>
+							<span>Кастрычнік 19 2021</span>
+						</div>
+						<div class="blog-meta-unit h6">
+							<i class="stm-icon-author"></i>
+							<span>Антоніа Ронсэра</span>
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="blog-meta-unit h6">
+						<a href="https://www.espaciofurgo.com/be/Citroen-e-%D0%B4%D0%B6%D1%8D%D0%BC%D0%BF%D0%B5%D1%80/#respond" class="post_comments h6">
+							<i class="stm-icon-message"></i> Няма каментарыяў						</a>
+					</div>
+				</div>
+			</div>
+
+                            <div class="stm-excerpt">
+                    <p>Citroën выпускае новы Citroën ë-Jumper, электрычную версію вялікага фургона брэнда з аўтаномнасцю да 224 км.</p>
+                </div>
+            
+			<div class="post-content">
+				<p class="gt-block">Поўны асартымент! З прыходам в<strong>новы Citroën ë-Jumper</strong>, французскі брэнд прапануе як мінімум адну версію са 100% электрычным рухам ва ўсіх сваіх дыяпазонах камерцыйных аўтамабіляў. Такім чынам, новы ë-Jumper далучаецца да <a href="https://www.espaciofurgo.com/be/Citroen-%D0%BC%D0%BE%D0%B9-ami-%D0%B3%D1%80%D1%83%D0%B7/"><strong>Citroën My AMI Cargo</strong></a>, Каб <a href="https://www.espaciofurgo.com/be/%D1%84%D1%83%D1%80%D0%B3%D0%BE%D0%BD-Citroen-%D1%96-Berlingo/" target="_blank" rel="noopener"><strong>ë-Берлінга Ва</strong></a>ны інш <a href="https://www.espaciofurgo.com/be/citroen-actualiza-los-berlingo-jumpy-y-spacetourer/" target="_blank" rel="noopener"><strong>ë-Скакаць</strong></a>y.</p>
+<h2>Citroën ë-Jumper: кароткі і доўгі кузавы, аўтаномнасць да 224 км</h2>
+<p class="gt-block">Адаптацыя для працы ад электрычнасці не перашкаджае гаме Citroën ë-Jumper працягваць прапаноўваць шырокі выбар версій кузава, які мае версія з рухавікамі ўнутранага згарання. Яны блізкія да <strong>каля дваццаці варыянтаў, вынік спалучэння розных варыянтаў даўжыні, колавай базы, вышыні або канфігурацыі кузава</strong>. Дыяпазон аб'ёмаў грузаў <strong>ад 8 да 17 куб</strong>, З <strong>Грузападымальнасць да 1.265 тыс</strong>g.</p>
+<p>Ідэя заключаецца ў тым, каб адказаць на любыя патрэбы кампаній і самазанятых, а таксама мець магчымасць адаптавацца да любых пераўтварэнняў, такіх як машыны хуткай дапамогі, ізатэрмічныя аўтамабілі, мікрааўтобусы і г.д.</p>
+<p><picture decoding="async" class="aligncenter wp-image-2113 size-large">
+<source type="image/webp" srcset="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-1024x598.jpg.webp 1024w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-732x428.jpg.webp 732w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-768x449.jpg.webp 768w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-1536x898.jpg.webp 1536w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-798x466.jpg.webp 798w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-350x205.jpg.webp 350w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-280x165.jpg.webp 280w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper.jpg.webp 1920w" sizes="(max-width: 1024px) 100vw, 1024px">
+<img decoding="async" src="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-1024x598.jpg" alt="" width="1024" height="598" srcset="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-1024x598.jpg 1024w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-732x428.jpg 732w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-768x449.jpg 768w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-1536x898.jpg 1536w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-798x466.jpg 798w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-350x205.jpg 350w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper-280x165.jpg 280w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumper.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px">
+</picture>
+</p>
+<p class="gt-block">Меншыя версіі новага ë-Jumper (да L2) маюць a <strong>Акумулятар ёмістасцю 37 кВт/гадз забяспечвае запас ходу па WLTP да 117 км</strong>. У выпадку версій да L3 Van і L25 Chassis ёмістасць батарэі павялічваецца да <strong>70 кВт/г, павялічваючы запас ходу да 224 км</strong>. У любым выпадку гарантыя на акумулятар складае 8 гадоў або 160.000 70 км прабегу, гарантуючы, што ён падтрымлівае да XNUMX% сваёй зараднай ёмістасці.</p>
+<p class="gt-block">El <strong>Citroën ë-Jumpe цана</strong>r, без уліку скідак або дапамогі пры куплі, пачынаецца ад 70.990 XNUMX еўра.</p>
+<h2>Электрычная гама камерцыйных аўтамабіляў Citroën</h2>
+<p class="gt-block">У асартыменце камерцыйных аўтамабіляў Citröen з электрапрывадам ступень доступу - гэта самая ступень доступу <strong>Мой Ami Cargo</strong>. Яго аб'ём да 400 літраў і максімальная грузападымальнасць 140 кг робяць яго альтэрнатывай мабільнасці для кампаній або прафесіяналаў, якім неабходна перамяшчацца з максімальнай спрытам у вялікіх гарадах. <strong>Ён даступны ад 7.600 еўра</strong>.</p>
+<p><picture decoding="async" class="aligncenter wp-image-2111 size-large">
+<source type="image/webp" srcset="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo-1024x502.jpg.webp 1024w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo-873x428.jpg.webp 873w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo-768x376.jpg.webp 768w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo-1536x753.jpg.webp 1536w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo.jpg.webp 1920w" sizes="(max-width: 1024px) 100vw, 1024px">
+<img decoding="async" src="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo-1024x502.jpg" alt="" width="1024" height="502" srcset="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo-1024x502.jpg 1024w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo-873x428.jpg 873w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo-768x376.jpg 768w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo-1536x753.jpg 1536w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-berlingo.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px">
+</picture>
+</p>
+<p class="gt-block">El <strong>Citroën ë-Berlingo</strong>, кошт якога пачынаецца ад 20.590 4,4 еўра, дасягае аб'ёму грузу да 800 кубічных метраў, грузападымальнасцю да XNUMX кг, захоўваючы ўсю ўніверсальнасць выкарыстання, якой можа пахваліцца Berlingo. так<strong>Яго аўтаномнасць можа дасягаць 275 км</strong>, што робіць яго прыдатным як для перамяшчэння ў гарадскіх умовах, так і ў сельскай мясцовасці або прыгарадных маршрутах.</p>
+<p><picture loading="lazy" decoding="async" class="aligncenter size-large wp-image-2114">
+<source type="image/webp" srcset="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-1024x683.jpg.webp 1024w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-642x428.jpg.webp 642w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-180x120.jpg.webp 180w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-768x512.jpg.webp 768w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-1536x1024.jpg.webp 1536w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy.jpg.webp 1920w" sizes="auto, (max-width: 1024px) 100vw, 1024px">
+<img loading="lazy" decoding="async" src="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-1024x683.jpg" alt="" width="1024" height="683" srcset="https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-1024x683.jpg 1024w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-642x428.jpg 642w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-180x120.jpg 180w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-768x512.jpg 768w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-1536x1024.jpg 1536w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy-600x400.jpg 600w, https://i.bstr.es/espaciofurgo/2021/10/citroen-e-jumpy.jpg 1920w" sizes="auto, (max-width: 1024px) 100vw, 1024px">
+</picture>
+</p>
+<p class="gt-block">Адносна <strong>ë-Скакаць</strong>, як і ў выпадку з ë-Jumper, ён прапануецца з тым жа выбарам кузаваў і памераў, што і версіі з рухавіком унутранага згарання. Версіі XS маюць даўжыню да 4,60 метраў і грузавы аб'ём да 5,1 кубічных метраў. Даўжыня M дасягае 4,95 метра, а версіі XL - 5,30 метра і 6,6 кубічных метраў грузавога аддзялення. Акумулятары могуць быць на 50 або 75 кВт/г, і <strong>Кошт пачынаецца ад 36.190 XNUMX еўра</strong>.</p>
+				<div class="clearfix"></div>
+			</div>
+
+			
+			<div class="blog-meta-bottom">
+				<div class="clearfix">
+					<div class="left">
+						<!--Categories-->
+
+													<div class="post-metas">
+																<a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D1%82%D1%8B%D0%BF/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D1%8B%D1%87%D0%BD%D1%8B-e/"><span>электрычны</span></a>	
+																
+																<a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D1%81%D0%B5%D0%B3%D0%BC%D0%B5%D0%BD%D1%82-b/%D1%84%D1%83%D1%80%D0%B3%D0%BE%D0%BD%D1%8B-b/"><span>Фургоны</span></a>	
+																
+																<a href="https://www.espaciofurgo.com/be/%D0%BA%D0%B0%D1%82%D1%8D%D0%B3%D0%BE%D1%80%D1%8B%D1%8F/%D0%BD%D0%BE%D0%B2%D1%8B%D1%8F-%D0%BC%D0%B0%D0%B4%D1%8D%D0%BB%D1%96/"><span>Новыя мадэлі</span></a>	
+																
+														</div> <!-- .post-metas -->
+						
+					</div>
+
+					<div class="right">
+						<div class="stm-shareble stm-single-car-link">
+							<a href="#" class="car-action-unit stm-share" title="Адправіць гэтую" download="">
+								<i class="stm-icon-share"></i>
+								Адправіць гэтую							</a>
+															<div class="stm-a2a-popup">
+									<div class="addtoany_shortcode"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://www.espaciofurgo.com/citroen-e-jumper/" data-a2a-title="El Citroën ë-Jumper completa la gama de vehículos comerciales eléctricos de Citroën"><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.espaciofurgo.com%2Fcitroen-e-jumper%2F&amp;amp;linkname=El%20Citro%C3%ABn%20%C3%AB-Jumper%20completa%20la%20gama%20de%20veh%C3%ADculos%20comerciales%20el%C3%A9ctricos%20de%20Citro%C3%ABn" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.espaciofurgo.com%2Fcitroen-e-jumper%2F&amp;amp;linkname=El%20Citro%C3%ABn%20%C3%AB-Jumper%20completa%20la%20gama%20de%20veh%C3%ADculos%20comerciales%20el%C3%A9ctricos%20de%20Citro%C3%ABn" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.espaciofurgo.com%2Fcitroen-e-jumper%2F&amp;amp;linkname=El%20Citro%C3%ABn%20%C3%AB-Jumper%20completa%20la%20gama%20de%20veh%C3%ADculos%20comerciales%20el%C3%A9ctricos%20de%20Citro%C3%ABn" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fwww.espaciofurgo.com%2Fcitroen-e-jumper%2F&amp;amp;linkname=El%20Citro%C3%ABn%20%C3%AB-Jumper%20completa%20la%20gama%20de%20veh%C3%ADculos%20comerciales%20el%C3%A9ctricos%20de%20Citro%C3%ABn" title="E-mail" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div></div>								</div>
+													</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Author info-->
+			
+			<!--Comments-->
+			
+		</div>
+
+		<!--Sidebar-->
+		<div class="col-md-3 hidden-sm hidden-xs"><div id="sticky-sidebar">
+<aside id="execphp-4" class="widget widget-default widget_execphp">			<div class="execphpwidget">
+	<div class="robapaginas" id="roba_sup"></div>
+
+
+</div>
+		</aside>
+		<aside id="recent-posts-3" class="widget widget-default widget_recent_entries">
+		<div class="widget-title"><h4>Апошнія паведамленні</h4></div>
+		<ul>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%97%D1%96%D0%BC%D0%BE%D0%B2%D1%8B%D1%8F-%D1%88%D1%8B%D0%BD%D1%8B-%D1%96-%D0%BB%D0%B0%D0%BD%D1%86%D1%83%D0%B3%D1%96-%D0%B4%D0%BB%D1%8F-%D0%B0%D1%9E%D1%82%D0%B0%D1%84%D1%83%D1%80%D0%B3%D0%BE%D0%BD%D0%B0%D1%9E%3A-%D0%BA%D1%96%D1%80%D0%B0%D1%9E%D0%BD%D1%96%D1%86%D1%82%D0%B2%D0%B0-%D0%BF%D0%B0-%D0%B2%D1%8B%D0%B1%D0%B0%D1%80%D1%8B-%D0%BF%D0%B0%D0%BC%D1%96%D0%B6-MS-%D1%96-3PMSF-%D0%BD%D0%B0-2026-%D0%B3%D0%BE%D0%B4--%D1%82%D1%8B%D0%BF%D1%8B-%D0%BC%D0%B0%D1%86%D0%B0%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F--%D1%86%D1%96%D1%81%D0%BA-%D1%96-%D1%88%D1%82%D1%80%D0%B0%D1%84%D1%8B/">Зімовыя шыны і ланцугі для фургонаў/кемпераў: кіраўніцтва па выбары паміж M+S і 3PMSF на 2026 год, тыпы, мантаж, ціск і штрафы</a>
+									</li>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%90%D1%86%D1%8F%D0%BF%D0%BB%D0%B5%D0%BD%D0%BD%D0%B5-%D0%BF%D0%B5%D1%80%D0%B0%D0%B4-%D1%81%D0%BD%D0%BE%D0%BC-%D1%83-%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%85--%D0%B0%D1%9E%D1%82%D0%B0%D0%B4%D0%BE%D0%BC%D0%B0%D1%85-%D1%96-%D0%BA%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D0%B0%D1%85%3A-%D1%8D%D1%84%D0%B5%D0%BA%D1%82%D1%8B%D1%9E%D0%BD%D0%B0%D1%81%D1%86%D1%8C--%D0%B1%D1%8F%D1%81%D0%BF%D0%B5%D0%BA%D0%B0-%D1%96-%D0%BD%D0%B0%D0%B9%D0%BB%D0%B5%D0%BF%D1%88%D1%8B%D1%8F-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D1%8B%D0%BA%D1%96/">Ацяпленне перад сном у кемперах, аўтадомах і караванах: эфектыўнасць, бяспека і найлепшыя практыкі</a>
+									</li>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%A3%D1%81%D1%91--%D1%88%D1%82%D0%BE-%D0%B7%D0%BC%D0%B5%D0%BD%D1%96%D1%86%D1%86%D0%B0-%D0%B4%D0%BB%D1%8F-%D1%80%D1%8D%D0%B3%D1%96%D1%81%D1%82%D1%80%D0%B0%D1%86%D1%8B%D1%96-%D0%BA%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0-%D1%9E-2026-%D0%B3%D0%BE%D0%B4%D0%B7%D0%B5-%D1%9E-%D0%B3%D1%8D%D1%82%D1%8B%D0%BC-%D0%BD%D0%BE%D0%B2%D1%8B%D0%BC-%D0%BF%D0%B0%D0%BA%D1%80%D0%BE%D0%BA%D0%B0%D0%B2%D1%8B%D0%BC-%D0%BA%D1%96%D1%80%D0%B0%D1%9E%D0%BD%D1%96%D1%86%D1%82%D0%B2%D0%B5%3A-%D0%BC%D0%B0%D0%B4%D1%8B%D1%84%D1%96%D0%BA%D0%B0%D1%86%D1%8B%D1%96--%D1%82%D1%8D%D1%85%D0%B0%D0%B3%D0%BB%D1%8F%D0%B4-%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D0%B3%D0%B0-%D1%81%D1%80%D0%BE%D0%B4%D0%BA%D1%83-%28ITV%/">Усё, што зменіцца для рэгістрацыі кемпера ў 2026 годзе ў гэтым новым пакрокавым кіраўніцтве: мадыфікацыі, тэхагляд транспартнага сродку (ITV), тэхнічны пашпарт, дарожнае ўпраўленне (DGT) і страхаванне</a>
+									</li>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%A8%D0%BC%D0%B0%D1%82%D0%BC%D1%8D%D1%82%D0%B0%D0%B2%D1%8B-%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D1%8B-%D1%81%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%3A-%D0%BF%D1%80%D0%B0%D0%B2%D1%96%D0%BB%D1%8B-%D1%9E-%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%96--%D0%BF%D0%B5%D1%80%D0%B0%D0%B2%D0%B0%D0%B3%D1%96-%D1%96-%D1%80%D1%8D%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%8F-%D0%BF%D1%80%D1%8B%D0%BA%D0%BB%D0%B0%D0%B4%D1%8B/">Шматмэтавы транспартны сродак: што гэта такое, правілы ў Іспаніі, перавагі і рэальныя прыклады</a>
+									</li>
+											<li>
+					<a href="https://www.espaciofurgo.com/be/%D0%9F%D0%B0%D1%80%D0%BA%D0%BE%D1%9E%D0%BA%D0%B0-%D1%96-%D0%BD%D0%B0%D1%87%D0%BB%D0%B5%D0%B3-%D1%83-%D0%B0%D1%9E%D1%82%D0%B0%D0%B4%D0%BE%D0%BC%D0%B5-%D0%B0%D0%B1%D0%BE-%D0%BA%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D0%B0%D1%85-%D0%B7%D1%96%D0%BC%D0%BE%D0%B9-2025-%D0%B3%D0%BE%D0%B4%D0%B0%3A-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D1%8B%D1%87%D0%BD%D1%8B-%D1%8E%D1%80%D1%8B%D0%B4%D1%8B%D1%87%D0%BD%D1%8B-%D0%B4%D0%B0%D0%BF%D0%B0%D0%BC%D0%BE%D0%B6%D0%BD%D1%96%D0%BA-%D0%BF%D0%B0-%D0%BA%D0%B0%D0%BD%D0%B4%D1%8B%D1%86%D1%8B%D1%8F%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%BD%D1%96-%D0%BF%D0%B0%D0%B2%D0%B5%D1%82%D1%80%D0%B0-%D1%96-%D1%88%D1%82%D1%80%D0%B0%D1%84%D0%B0%D1%85/">Паркоўка (і начлег) з аўтадомам або караванам зімой: юрыдычны, практычны дапаможнік, інфармацыя аб клімат-кантролі... і штрафы</a>
+									</li>
+					</ul>
+
+		</aside><aside id="execphp-3" class="widget widget-default widget_execphp">			<div class="execphpwidget">	<div class="robapaginas" id="roba_inf"></div>
+
+</div>
+		</aside></div></div>	</div>
+			</div>
+		</div>
+	</div>
+		<div data-rocket-location-hash="e50fd8bef66401eb9b7350ee93480f34" class="megabanner" id="mega_inf"></div>
+
+</div> <!--main-->
+</div> <!--wrapper-->
+    <footer data-rocket-location-hash="f494df01ba302de63a8716a622972e1c" id="footer">
+        	
+		<div data-rocket-location-hash="1992fc26ed617aa3b5c5efcf3a228b98" id="footer-main">
+			<div data-rocket-location-hash="0cb2c4035892787432c8430a86a66971" class="footer_widgets_wrapper less_4">
+				<div class="container">
+					<div class="widgets cols_3 clearfix">
+						<aside id="text-2" class="widget widget_text"><div class="widget-wrapper">			<div class="textwidget"><p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3586" src="https://www.espaciofurgo.com/wp-content/uploads/2021/02/logo_ESPACIO-FURGO_home-02.png" alt="" width="145" height="67"></p>
+<p>EspacioFurgo te ofrece toda la información del sector de los Comerciales ligeros, los furgones y los pickups, con fichas de todos los modelos que se venden en España, guías de compra, actualidad, novedades, pruebas y un comparador para que aciertes al elegir cualquier транспартны сродак.</p>
+<p style="text-align:center;">
+	¡Síguenos en redes sociales!</p>
+<p style="text-align:center;">
+	<a style="margin-right:10px;" href="https://www.facebook.com/EspacioFurgo" target="_blank"><i class="fab fa-facebook fa-2x"> </i></a> <a style="margin-right:10px;" href="https://twitter.com/espaciofurgo" target="_blank"> <i class="fab fa-twitter fa-2x"></i> </a></p>
+</div>
+		</div></aside><aside id="nav_menu-2" class="widget widget_nav_menu"><div class="widget-wrapper"><div class="menu-footer-derecha-container"><ul id="menu-footer-derecha" class="menu"><li id="menu-item-1172" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1172"><a href="https://www.espaciofurgo.com/be/%D0%B7%D0%B2%D1%8F%D0%B7%D0%B0%D1%86%D1%86%D0%B0/">Кантакт</a></li>
+<li id="menu-item-1167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1167"><a href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D1%86%D1%8C/">Параўнайце</a></li>
+<li id="menu-item-6119" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6119"><a rel="privacy-policy" href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D0%BB%D1%96%D1%82%D1%8B%D0%BA%D0%B0-%D0%BF%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D0%BD%D0%B0%D1%81%D1%86%D1%96/">Палітыка прыватнасці</a></li>
+<li id="menu-item-6120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6120"><a href="https://www.espaciofurgo.com/be/%D1%8E%D1%80%D1%8B%D0%B4%D1%8B%D1%87%D0%BD%D0%B0%D0%B5-%D0%B0%D0%BF%D0%B0%D0%B2%D1%8F%D1%88%D1%87%D1%8D%D0%BD%D0%BD%D0%B5/">Юрыдычнае паведамленне</a></li>
+<li id="menu-item-6017" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6017"><a href="https://www.highmotor.com">высокарухальныя</a></li>
+<li id="menu-item-6018" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6018"><a href="https://www.drivingeco.com">DrivingECO</a></li>
+<li id="menu-item-6019" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6019"><a href="https://www.topventascoches.com">Самыя папулярныя аўтамабілі</a></li>
+</ul></div></div></aside>					</div>
+				</div>
+			</div>
+		</div>
+
+        
+
+
+				<div id="footer-copyright" style="background-color:#524740">
+
+			
+			<div data-rocket-location-hash="d10a093bc9997598de84f073be118389" class="container footer-copyright">
+				<div class="row">
+                    					<div class="col-md-8 col-sm-8">
+						<div class="clearfix">
+															<div class="copyright-text">© 2024 Espacio Furgo - Усе захаваныя правы</div>
+													</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="clearfix">
+							<div class="pull-right xs-pull-left">
+																<!-- Header top bar Socials -->
+															</div>
+						</div>
+					</div>
+                    				</div>
+			</div>
+		</div>
+	        <div data-rocket-location-hash="1ef49e5a7579447bc3a1bae3be60e04a" class="global-alerts"></div>        <!-- Searchform -->
+        <div data-rocket-location-hash="46456314cb947057541189af10b15243" class="modal" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal">
+	<div data-rocket-location-hash="fa32c31ebb77d3c356f89bc6a0fc5168" class="modal-dialog" role="document">
+		<div class="modal-content">
+		
+			<div class="modal-body heading_font">
+				<div class="search-title">пошук</div>
+				<form method="get" id="searchform" action="https://www.espaciofurgo.com/be/">
+				    <div class="search-wrapper">
+				        <input placeholder="Пачніце друкаваць тут ..." type="text" class="form-control search-input" value="" name="s" id="s">
+				        <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+				    </div>
+				</form>
+			</div>
+		
+		</div>
+	</div>
+</div>    </footer>
+
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/espaciofurgo\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/espaciofurgo-child\/*","\/wp-content\/themes\/espaciofurgo\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div data-rocket-location-hash="2cbd20c8de556ccd1dbde5df1ef269f8" class="gtranslate_wrapper" id="gt-wrapper-38812014"></div>    <script type="rocketlazyloadscript">
+        var currentAjaxUrl = 'https://www.espaciofurgo.com/be/citroen-e-jumper/';
+        var resetAllTxt = 'Reset All';
+        var prevText = 'Previous';
+        var nextText = 'Next';
+        var is_rental = '';
+        var file_type = 'file type noimg';
+        var file_size = 'file size big';
+        var max_img_quant = 'max imgs 3';
+        var currentLocale = 'es';
+        var noFoundSelect2      = 'No results found';
+
+
+        var filterRemoveHidden = 'e78973c003';
+        var addToCompare       = 'c37d233d31';
+        var addTestDrive       = 'a8ebf8ebd7';
+        var addTradeOffer      = '487a6286f4';
+        var loadMoreCars       = '2453d4c430';
+        var getCarPrice        = '69279a2aa4';
+        var addToFav           = 'd124ff90ca';
+        var getFav             = 'f87c544c33';
+        var dealerLoadCars     = '7e056af83b';
+        var dealerLoadReviews  = '519710ac72';
+        var submitReview       = '768182ccc5';
+        var restorePassword    = 'f28cc3846d';
+        var reportReview       = '10efd2fc88';
+        var loadDealersList    = '15a4b8747e';
+        var addACar            = '1f42f29ba9';
+        var getCarsInvtMap     = '8c9c103a7a';
+        var sellerPhone        = '7016307705';
+        var rentalCheckCar     = '85eb5ab271';
+        var availableCarDate   = '8aefafea92';
+        var stickyPostsMagazn  = 'a9dba66074';
+        var getEvents          = 'ec85230b6d';
+        var testDriveModal     = '9a84f1b81b';
+        var clearData          = 'ae5012c47f';
+        var invNoFilter        = 'cdd7ea5af9';
+        var valueMyCar         = 'b318a390c4';
+        var getFileSize        = 'f2445c9c2d';
+    </script>
+    <link rel="stylesheet" id="glg-photobox-style-css" href="https://www.espaciofurgo.com/wp-content/plugins/gallery-lightbox-slider/css/photobox/photobox.min.css?ver=1.0.0.41" type="text/css" media="">
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/jquery.cookie.js?ver=1761218051" id="jquery_cookie-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/owl.carousel.js?ver=1761218052" id="owl.carousel-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/lightgallery.min.js" id="light-gallery-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.3" id="jquery-ui-mouse-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/draggable.min.js?ver=1.13.3" id="jquery-ui-draggable-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/droppable.min.js?ver=1.13.3" id="jquery-ui-droppable-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/add_a_car.js?ver=1761218051" id="listings-add-car-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/slider.min.js?ver=1.13.3" id="jquery-ui-slider-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/init.js?ver=1761218051" id="listings-init-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/stm_vehicles_listing/assets/js/frontend/filter.js?ver=1761218051" id="listings-filter-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/comparar\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.espaciofurgo.com/be","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" id="author-tracking-js-extra">
+/* <![CDATA[ */
+var author = {"name":"Antonio Roncero"};
+var date = {"my":"October 2021"};
+var category = {"name":"El\u00e9ctrico | Furgones | Nuevos Modelos"};
+/* ]]> */
+</script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo-child/analytics.js?ver=1761218051" id="author-tracking-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.13.3" id="jquery-effects-core-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-includes/js/jquery/ui/effect-slide.min.js?ver=1.13.3" id="jquery-effects-slide-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery-migrate-1.2.1.min.js?ver=2.5" id="stm-jquerymigrate-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=6.0.5" id="isotope-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery.lazyload.min.js?ver=2.5" id="lazyload-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery.touch.punch.min.js?ver=2.5" id="stm-jquery-touch-punch-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/select2.full.min.js?ver=2.5" id="stm-select2-js-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery.uniform.min.js?ver=2.5" id="uniform-js-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/stm_dt_picker.js?ver=1761218051" id="stm-datetimepicker-js-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/typeahead.jquery.min.js?ver=2.5" id="typeahead-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/lg-video.js?ver=1761218051" id="lg-video-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="stm-theme-scripts-js-extra">
+/* <![CDATA[ */
+var stm_i18n = {"remove_from_compare":"Remove from compare","remove_from_favorites":"Remove from favorites"};
+/* ]]> */
+</script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/app.js?ver=1761218051" id="stm-theme-scripts-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/app-ajax.js?ver=1761218051" id="stm-theme-scripts-ajax-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/load-image.all.min.js?ver=2.5" id="stm-load-image-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/sell-a-car.js?ver=1761218051" id="stm-theme-sell-a-car-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/themes/espaciofurgo/assets/js/filter.js?ver=1761218051" id="stm-theme-script-filter-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js?ver=1761218051" id="stm_marker_cluster-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/themes/espaciofurgo/assets/js/jquery.mCustomScrollbar.concat.min.js?ver=2.5" id="custom_scrollbar-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/mystickysidebar/js/detectmobilebrowser.js?ver=1761218051" id="detectmobilebrowser-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="mystickysidebar-js-extra">
+/* <![CDATA[ */
+var mystickyside_name = {"mystickyside_string":"#sticky-sidebar","mystickyside_content_string":".sticky-content","mystickyside_margin_top_string":"90","mystickyside_margin_bot_string":"0","mystickyside_update_sidebar_height_string":"false","mystickyside_min_width_string":"795","device_desktop":"1","device_mobile":"1"};
+/* ]]> */
+</script>
+<script data-minify="1" type="text/javascript" src="https://www.espaciofurgo.com/wp-content/cache/min/1/wp-content/plugins/mystickysidebar/js/theia-sticky-sidebar.js?ver=1761218051" id="mystickysidebar-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" src="https://www.espaciofurgo.com/wp-content/plugins/gallery-lightbox-slider/js/jquery/photobox/jquery.photobox.min.js?ver=1.0.0.41" id="glg-photobox-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="gt_widget_script_38812014-js-before">
+/* <![CDATA[ */
+window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['38812014'] = {"default_language":"es","languages":["ar","eu","be","zh-CN","zh-TW","hr","cs","da","nl","en","et","fr","gl","de","hu","it","ja","ko","ku","pl","pt","pa","ro","ru","sk","sl","es","sv","tr"],"url_structure":"sub_directory","native_language_names":1,"detect_browser_language":1,"flag_style":"3d","wrapper_selector":"#gt-wrapper-38812014","alt_flags":[],"float_switcher_open_direction":"bottom","switcher_horizontal_position":"right","switcher_vertical_position":"top","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+/* ]]> */
+</script><script src="https://www.espaciofurgo.com/wp-content/plugins/gtranslate/js/float.js?ver=6.8.1" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/citroen-e-jumper/" data-gt-orig-domain="www.espaciofurgo.com" data-gt-widget-id="38812014" defer=""></script>
+<!--[if lt IE 9]><link rel="stylesheet" href="https://www.espaciofurgo.com/wp-content/plugins/gallery-lightbox-slider '/css/photobox/photobox.ie.css'.'"><![endif]-->
+
+<style type="text/css">
+#pbOverlay { background:rgba(0,0,0,.90)  none repeat scroll 0% 0% !important; }
+	.gallery-caption, .blocks-gallery-item figcaption { display: none !important; }	.pbWrapper > img{display: inline;}
+	#pbThumbsToggler {display: none !important;}
+</style>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">// <![CDATA[
+jQuery(document).ready(function($) {
+	/* START --- Gallery Lightbox Lite --- */
+	
+	/* Replace default title to more fancy :) */
+	$('.gallery img').each(function(i) {
+
+		$alt = $(this).attr('alt');
+
+		$(this).attr('alt', $alt.replace(/-|_/g, ' '));
+
+		$altnew = $(this).attr('alt').replace(/\b[a-z]/g, function(letter) {
+
+			    return letter.toUpperCase();
+
+			});
+
+		$(this).attr('alt', $altnew );
+
+	});
+
+		
+    function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+	/* Gutenberg Adaptive */
+	$('.blocks-gallery-item, .wp-block-image').each(function(i) {
+
+		var $blck = $(this).find('img'),
+		$isSrc = $blck.attr('src');
+
+		if (! $blck.closest('a').length) {
+			$blck.wrap('<a class="glg-a-custom-wrap" href="'+$isSrc+'"></a>');
+		}
+		else {
+			$blck.closest('a').addClass('glg-a-custom-wrap');
+		}
+
+        /* Sanitize */
+        if (typeof $blck.attr('alt') !== 'undefined' && $blck.attr('alt') !== '') {
+            $blck.attr('alt', escapeHtml($blck.attr('alt')));
+        }
+
+	});
+
+	
+	/* Initialize!
+	.glg-a-custom-wrap (Block Gallery)
+	.carousel-item:not(".bx-clone") > a:not(".icp_custom_link") (Image Carousel)
+	.gallery-item > dt > a (Native Gallery) */
+	$('.gallery, .ghozylab-gallery, .wp-block-gallery')
+		.photobox('.carousel-item > a:not(".icp_custom_link"),a.glg-a-custom-wrap, .gallery-item > dt > a, .gallery-item > div > a',{
+			autoplay: false,
+			time: 3000,
+			thumbs: true,
+			counter: ''
+		}, callback);
+		function callback(){
+		};
+
+});
+
+/* END --- Gallery Lightbox Lite --- */
+
+// ]]></script>
+
+
+    
+<div data-rocket-location-hash="a020bafd9dffde55efb738df2f923307" class="modal" id="get-car-price" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<form id="get-car-price-form" action="https://www.espaciofurgo.com/be/" method="post">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header modal-header-iconed">
+					<i class="stm-icon-steering_wheel"></i>
+					<h3 class="modal-title" id="myModalLabel">Запытаць цану аўтамабіля</h3>
+					<div class="test-drive-car-name">El Citroën ë-Jumper completa la gama de vhículos commerciales eléctricos de Citroën</div>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<div class="form-modal-label">Імя</div>
+								<input name="name" type="text">
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<div class="form-modal-label">E-mail</div>
+								<input name="email" type="email">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<div class="form-modal-label">Тэлефон</div>
+								<input name="phone" type="tel">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+                        <div class="col-md-7 col-sm-7">
+                                                    </div>
+						<div class="col-md-5 col-sm-5">
+							<button type="submit" class="stm-request-test-drive">Запыт</button>
+							<div class="stm-ajax-loader" style="margin-top:10px;">
+								<i class="stm-icon-load1"></i>
+							</div>
+						</div>
+					</div>
+					<div class="mg-bt-25px"></div>
+					<input name="vehicle_id" type="hidden" value="2110">
+				</div>
+			</div>
+		</div>
+	</form>
+</div><div data-rocket-location-hash="00f8e02255fbf1e6c15e586d727af8c5" class="single-add-to-compare">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-9">
+				<div class="single-add-to-compare-left">
+					<i class="add-to-compare-icon stm-icon-speedometr2"></i>
+					<span class="stm-title h5"></span>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<a href="https://www.espaciofurgo.com/be/%D0%BF%D0%B0%D1%80%D0%B0%D1%9E%D0%BD%D0%B0%D1%86%D1%8C/" class="compare-fixed-link pull-right heading-font">
+					параўнаць				</a>
+			</div>
+		</div>
+	</div>
+</div>        <div data-rocket-location-hash="1b360db324ea4b48401fe370980c50b7" class="modal_content"></div>
+<script>var rocket_beacon_data = {"ajax_url":"https:\/\/www.espaciofurgo.com/be\/wp-admin\/admin-ajax.php","nonce":"e674f608ab","url":"https:\/\/www.espaciofurgo.com/be\/citroen-e-jumper","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800}</script><script data-name="wpr-wpr-beacon" src="https://www.espaciofurgo.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js" async=""></script>
+
+<script data-cfasync="false" src="https://tdns5.gtranslate.net/tdn-bin/queue.js"></script></body></html><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1767168591 -->

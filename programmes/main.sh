@@ -65,27 +65,35 @@ log "Sens1 fichier: $FICHIER_MOTS_SENS1 | Sens2 fichier: $FICHIER_MOTS_SENS2"
 # Déterminer la source des motifs (2 fichiers ou saisie terminal)
 MOTIFS_SENS1=()
 MOTIFS_SENS2=()
+LABEL_SENS1=""
+LABEL_SENS2=""
 
 if [[ -n "$FICHIER_MOTS_SENS1" && -n "$FICHIER_MOTS_SENS2" && -f "$FICHIER_MOTS_SENS1" && -f "$FICHIER_MOTS_SENS2" ]]; then
-	# Charger fichiers (un par sens)
-	while IFS= read -r m; do
-		m=$(echo "$m" | tr -d '\r\n '); [[ -n "$m" ]] && MOTIFS_SENS1+=("$m")
-	done < "$FICHIER_MOTS_SENS1"
+  # Charger fichiers (un par sens)
+  while IFS= read -r m; do
+    m=$(echo "$m" | tr -d '\r\n ')
+    [[ -n "$m" ]] && MOTIFS_SENS1+=("$m")
+  done < "$FICHIER_MOTS_SENS1"
 
-	while IFS= read -r m; do
-		m=$(echo "$m" | tr -d '\r\n '); [[ -n "$m" ]] && MOTIFS_SENS2+=("$m")
-	done < "$FICHIER_MOTS_SENS2"
+  while IFS= read -r m; do
+    m=$(echo "$m" | tr -d '\r\n ')
+    [[ -n "$m" ]] && MOTIFS_SENS2+=("$m")
+  done < "$FICHIER_MOTS_SENS2"
+
+  # Demander les noms de colonnes (lemmes)
+  read -rp "Nom de colonne / lemme pour le sens 1 : " LABEL_SENS1
+  read -rp "Nom de colonne / lemme pour le sens 2 : " LABEL_SENS2
+  [[ -z "$LABEL_SENS1" ]] && LABEL_SENS1="sens 1"
+  [[ -z "$LABEL_SENS2" ]] && LABEL_SENS2="sens 2"
+
 else
-	# Sinon: demander à l'utilisateur
-	read -rp "Écris le mot 1 (sens 1) : " m1
-	read -rp "Écris le mot 2 (sens 2) : " m2
-	[[ -n "$m1" ]] && MOTIFS_SENS1+=("$m1")
-	[[ -n "$m2" ]] && MOTIFS_SENS2+=("$m2")
-fi
-
-if (( ${#MOTIFS_SENS1[@]} == 0 || ${#MOTIFS_SENS2[@]} == 0 )); then
-	echo "Erreur : il faut au moins un motif pour chaque sens (fichiers ou saisie)."
-	exit 1
+  # Sinon: demander à l'utilisateur (et ces mots deviennent les labels)
+  read -rp "Écris le mot 1 (sens 1) : " m1
+  read -rp "Écris le mot 2 (sens 2) : " m2
+  [[ -n "$m1" ]] && MOTIFS_SENS1+=("$m1")
+  [[ -n "$m2" ]] && MOTIFS_SENS2+=("$m2")
+  LABEL_SENS1="$m1"
+  LABEL_SENS2="$m2"
 fi
 
 n=1
@@ -113,7 +121,7 @@ generer_badge_code() {
 
 {
 # === Génération du head et du début du tableau ===
-cat << 'HEADER'
+cat << HEADER
 <!DOCTYPE html>
 <html>
 	<head>
@@ -181,8 +189,8 @@ cat << 'HEADER'
 										<th>Code HTTP</th>
 										<th>Encodage</th>
 										<th>Nb mots</th>
-										<th>Occ sens 1</th>
-										<th>Occ sens 2</th>
+										<th>Occ : ${LABEL_SENS1}</th>
+										<th>Occ : ${LABEL_SENS2}</th>
 										<th>Dump HTML</th>
 										<th>Dump Text</th>
 									</tr>

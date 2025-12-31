@@ -9,12 +9,14 @@
 
 FICHIER_URLS=$1
 FICHIER_SORTIE=$2
-FICHIER_MOTS=$3
+FICHIER_MOTS_SENS1=$3
+FICHIER_MOTS_SENS2=$4
 
-if (( $# != 3 )); 
-then
-	echo "Ce script a besoin de trois arguments pour fonctionner !"
-	echo "Usage: $0 <ENTRÉE_fichier_URLs> <SORTIE_fichier_tableau> <ENTRÉE_fichier_liste_mots>"
+if (( $# < 2 )); then
+	echo "Ce script a besoin d'au moins deux arguments !"
+	echo "Usage:"
+	echo "  $0 <ENTRÉE_fichier_URLs> <SORTIE_fichier_tableau> <fichier_sens1> <fichier_sens2>"
+	echo "  $0 <ENTRÉE_fichier_URLs> <SORTIE_fichier_tableau>"
 	exit 1
 fi
 
@@ -23,8 +25,29 @@ if [[ ! -f "../URLs/$FICHIER_URLS.txt" ]]; then
 	exit 1
 fi
 
-if [[ ! -f "$FICHIER_MOTS" ]]; then
-	echo "Erreur : le fichier $FICHIER_MOTS n'existe pas !"
+# Déterminer la source des motifs (2 fichiers ou saisie terminal)
+MOTIFS_SENS1=()
+MOTIFS_SENS2=()
+
+if [[ -n "$FICHIER_MOTS_SENS1" && -n "$FICHIER_MOTS_SENS2" && -f "$FICHIER_MOTS_SENS1" && -f "$FICHIER_MOTS_SENS2" ]]; then
+	# Charger fichiers (un par sens)
+	while IFS= read -r m; do
+		m=$(echo "$m" | tr -d '\r\n '); [[ -n "$m" ]] && MOTIFS_SENS1+=("$m")
+	done < "$FICHIER_MOTS_SENS1"
+
+	while IFS= read -r m; do
+		m=$(echo "$m" | tr -d '\r\n '); [[ -n "$m" ]] && MOTIFS_SENS2+=("$m")
+	done < "$FICHIER_MOTS_SENS2"
+else
+	# Sinon: demander à l'utilisateur
+	read -rp "Écris le mot 1 (sens 1) : " m1
+	read -rp "Écris le mot 2 (sens 2) : " m2
+	[[ -n "$m1" ]] && MOTIFS_SENS1+=("$m1")
+	[[ -n "$m2" ]] && MOTIFS_SENS2+=("$m2")
+fi
+
+if (( ${#MOTIFS_SENS1[@]} == 0 || ${#MOTIFS_SENS2[@]} == 0 )); then
+	echo "Erreur : il faut au moins un motif pour chaque sens (fichiers ou saisie)."
 	exit 1
 fi
 
@@ -118,7 +141,8 @@ cat << 'HEADER'
 										<th>Code HTTP</th>
 										<th>Encodage</th>
 										<th>Nb mots</th>
-										<th>Occurrences</th>
+										<th>Occ sens 1</th>
+										<th>Occ sens 2</th>
 										<th>Dump HTML</th>
 										<th>Dump Text</th>
 									</tr>
@@ -138,7 +162,8 @@ do
 	[[ -z "$ENCODAGE" ]] && ENCODAGE="-"
 
 	NB_MOTS="-"
-	OCCURRENCES="-"
+	OCC_SENS1="-"
+	OCC_SENS2="-"
 	LIEN_HTML="-"
 	LIEN_TEXT="-"
 	
@@ -158,28 +183,44 @@ do
 		NB_MOTS=$(wc -w < "$FICHIER_TEXTE")
 		
 		# Compter les occurrences
-		OCCURRENCES=0
-		while IFS= read -r mot; do
-			mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+		OCC_SENS1=0
+		for mot in "${MOTIFS_SENS1[@]}"; do
+			mot=$(echo "$mot" | tr -d '\r\n ')
 			[[ -z "$mot" ]] && continue
-			# Compter aussi les mots collés (ex: 자율주행차 contient 자율)
 			count=$(grep -o ".*$mot.*" "$FICHIER_TEXTE" | grep -o "$mot" | wc -l)
-			OCCURRENCES=$((OCCURRENCES + count))
-		done < "$FICHIER_MOTS"
+			OCC_SENS1=$((OCC_SENS1 + count))
+		done
+
+		OCC_SENS2=0
+		for mot in "${MOTIFS_SENS2[@]}"; do
+			mot=$(echo "$mot" | tr -d '\r\n ')
+			[[ -z "$mot" ]] && continue
+			count=$(grep -o ".*$mot.*" "$FICHIER_TEXTE" | grep -o "$mot" | wc -l)
+			OCC_SENS2=$((OCC_SENS2 + count))
+		done
 		
-		# Extraire les contextes si on a trouvé des occurrences
-		if [[ "$OCCURRENCES" -gt 0 ]]; then
-			FICHIER_CONTEXTE="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}.txt"
-			> "$FICHIER_CONTEXTE"  # Créer le fichier vide
-			
-			while IFS= read -r mot; do
-				mot=$(echo "$mot" | tr -d '\r\n ')  # Nettoyer le mot
+		# Contextes sens 1
+		if [[ "$OCC_SENS1" -gt 0 ]]; then
+			FICHIER_CONTEXTE1="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}-sens1.txt"
+			> "$FICHIER_CONTEXTE1"
+			for mot in "${MOTIFS_SENS1[@]}"; do
+				mot=$(echo "$mot" | tr -d '\r\n ')
 				[[ -z "$mot" ]] && continue
-				# Extraire contexte : mot + mot à gauche + mot à droite (avec ou sans espace)
-				# \S*\s* permet de capturer les mots collés (ex: 자율주행차)
-				grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE" 2>/dev/null || \
-				grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE"
-			done < "$FICHIER_MOTS"
+				grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE1" 2>/dev/null || \
+				grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE1"
+			done
+		fi
+
+		# Contextes sens 2
+		if [[ "$OCC_SENS2" -gt 0 ]]; then
+			FICHIER_CONTEXTE2="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${n}-sens2.txt"
+			> "$FICHIER_CONTEXTE2"
+			for mot in "${MOTIFS_SENS2[@]}"; do
+				mot=$(echo "$mot" | tr -d '\r\n ')
+				[[ -z "$mot" ]] && continue
+				grep -oP '\S+\s*'"$mot"'\S*(?:\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE2" 2>/dev/null || \
+				grep -oE '(\S+\s*)?'"$mot"'\S*(\s*\S+)?' "$FICHIER_TEXTE" >> "$FICHIER_CONTEXTE2"
+			done
 		fi
 	
 	# === SINON : essayer de convertir ===
@@ -244,7 +285,8 @@ do
 			<td>${BADGE_CODE}</td>
 			<td>${ENCODAGE}</td>
 			<td>${NB_MOTS}</td>
-			<td class=\"count-cell\">${OCCURRENCES}</td>
+			<td class=\"count-cell\">${OCC_SENS1}</td>
+			<td class=\"count-cell\">${OCC_SENS2}</td>
 			<td>${LIEN_HTML}</td>
 			<td>${LIEN_TEXT}</td>
 		</tr>"

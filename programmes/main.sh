@@ -162,6 +162,12 @@ cat << HEADER
 				font-weight: bold;
 				color: #667eea
 			}
+			.url-cell a { 
+				color: #667eea; 
+			}
+			.url-cell a:hover { 
+				color: #764ba2; 
+			}
 		</style>	
 	</head>
 
@@ -203,6 +209,7 @@ TOTAL=$(wc -l < "../URLs/$FICHIER_URLS.txt")
 # === Génération des lignes du tableau ===
 while read -r line;
 do
+	line=$(echo "$line" | tr -d '\r')
 	log "[$n/$TOTAL] Traitement URL: $line"
 	CODE=$(curl -sL -A "$UA" -o /dev/null -w "%{http_code}\n" "$line")
 	[[ -z "$CODE" || "$CODE" == "000" ]] && CODE="-"
@@ -346,7 +353,7 @@ do
 	BADGE_CODE=$(generer_badge_code "$CODE")	
 	echo "<tr>
 			<td>${n}</td>
-			<td class=\"url-cell\">${line}</td>
+			<td class=\"url-cell\"><a href=\"${line}\" target=\"_blank\" rel=\"noopener noreferrer\">${line}</a></td>
 			<td>${BADGE_CODE}</td>
 			<td>${ENCODAGE}</td>
 			<td>${NB_MOTS}</td>

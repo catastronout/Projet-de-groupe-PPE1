@@ -168,6 +168,62 @@ cat << HEADER
 			.url-cell a:hover { 
 				color: #764ba2; 
 			}
+			
+			/* MODE NUIT */
+			body.dark {
+			background: #0f172a;
+			color: #e2e8f0;
+			}
+
+			/* Cartes */
+			body.dark .card {
+			background: #111827;
+			color: #e2e8f0;
+			}
+
+			/* Tableau Bulma */
+			body.dark .table {
+			background: #111827;
+			color: #e2e8f0;
+			}
+
+			body.dark .table thead th {
+			background: #0b1220;
+			color: #e2e8f0;
+			}
+
+			body.dark .table td,
+			body.dark .table th {
+			background: #111827;
+			color: #e2e8f0;
+			border-color: #334155;
+			}
+
+			body.dark .table tbody tr:hover td {
+			background: #1f2937;
+			}
+
+			/* Liens */
+			body.dark .url-cell {
+			color: #cbd5e1;
+			}
+
+			body.dark .back-link,
+			body.dark .url-cell a {
+			color: #93c5fd;
+			}
+
+			body.dark .back-link:hover,
+			body.dark .url-cell a:hover {
+			color: #c4b5fd;
+			}
+			body.dark .footer {
+			background: #0b1220 !important;
+			color: #e2e8f0;
+			}
+			body.dark .footer .has-text-grey {
+			color: #94a3b8 !important;
+			}
 		</style>	
 	</head>
 
@@ -176,6 +232,7 @@ cat << HEADER
 			<div class="hero-body">
 				<div class="container has-text-centered">
 					<h1 class="title has-text-white">Tableau des résultats</h1>
+					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
 				</div>
 			</div>
 		</section>
@@ -387,6 +444,23 @@ cat << 'FOOTER'
 				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
 			</div>
 		</footer>
+		<script>
+			const btn = document.getElementById("themeToggle");
+			const saved = localStorage.getItem("theme");
+			if (saved === "dark") document.body.classList.add("dark");
+
+			function refreshLabel() {
+				const isDark = document.body.classList.contains("dark");
+				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+			}
+			refreshLabel();
+
+			btn.addEventListener("click", () => {
+				document.body.classList.toggle("dark");
+				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+				refreshLabel();
+			});
+		</script>
 	</body>
 </html>
 

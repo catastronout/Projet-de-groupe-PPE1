@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Concordancier - https://www.redeweb.com/be/%D1%86%D1%8F%D0%BF%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D1%96/%D0%A0%D0%B0%D1%88%D1%8D%D0%BD%D0%BD%D1%96-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D0%B9-%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%B4%D0%BD%D0%BE%D0%B9-%D0%B7%D0%B0%D1%80%D0%B0%D0%B4%D0%BA%D1%96-Wibotic-%D0%BF%D0%B0%D0%B2%D1%8F%D0%BB%D1%96%D1%87%D0%B2%D0%B0%D1%8E%D1%86%D1%8C-%D0%BF%D1%80%D0%B0%D0%B4%D1%83%D0%BA%D1%86%D1%8B%D0%B9%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%96-%D1%82%D1%8D%D1%80%D0%BC%D1%96%D0%BD-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B-%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D1%8D%D1%96-%D1%9E-%D0%BF%D0%B0%D1%80%D0%BA%D1%83-%D1%80%D0%BE%D0%B1%D0%B0%D1%82%D0%B0%D1%9E/</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    body { padding: 1.25rem; }
+    .kwic-left { text-align: right; width: 45%; font-family: monospace; font-size: 0.9rem; }
+    .kwic-kw   { text-align: center; width: 10%; font-family: monospace; font-weight: bold; }
+    .kwic-right{ text-align: left; width: 45%; font-family: monospace; font-size: 0.9rem; }
+    mark { padding: 0.1rem 0.2rem; }
+  </style>
+</head>
+<body>
+  <h1 class="title is-4">Concordancier (KWIC)</h1>
+  <p class="mb-3"><strong>URL :</strong> <a href="https://www.redeweb.com/be/%D1%86%D1%8F%D0%BF%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D1%96/%D0%A0%D0%B0%D1%88%D1%8D%D0%BD%D0%BD%D1%96-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D0%B9-%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%B4%D0%BD%D0%BE%D0%B9-%D0%B7%D0%B0%D1%80%D0%B0%D0%B4%D0%BA%D1%96-Wibotic-%D0%BF%D0%B0%D0%B2%D1%8F%D0%BB%D1%96%D1%87%D0%B2%D0%B0%D1%8E%D1%86%D1%8C-%D0%BF%D1%80%D0%B0%D0%B4%D1%83%D0%BA%D1%86%D1%8B%D0%B9%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%96-%D1%82%D1%8D%D1%80%D0%BC%D1%96%D0%BD-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B-%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D1%8D%D1%96-%D1%9E-%D0%BF%D0%B0%D1%80%D0%BA%D1%83-%D1%80%D0%BE%D0%B1%D0%B0%D1%82%D0%B0%D1%9E/" target="_blank" rel="noopener noreferrer">https://www.redeweb.com/be/%D1%86%D1%8F%D0%BF%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D1%96/%D0%A0%D0%B0%D1%88%D1%8D%D0%BD%D0%BD%D1%96-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D0%B9-%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%B4%D0%BD%D0%BE%D0%B9-%D0%B7%D0%B0%D1%80%D0%B0%D0%B4%D0%BA%D1%96-Wibotic-%D0%BF%D0%B0%D0%B2%D1%8F%D0%BB%D1%96%D1%87%D0%B2%D0%B0%D1%8E%D1%86%D1%8C-%D0%BF%D1%80%D0%B0%D0%B4%D1%83%D0%BA%D1%86%D1%8B%D0%B9%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%96-%D1%82%D1%8D%D1%80%D0%BC%D1%96%D0%BD-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B-%D0%B1%D0%B0%D1%82%D0%B0%D1%80%D1%8D%D1%96-%D1%9E-%D0%BF%D0%B0%D1%80%D0%BA%D1%83-%D1%80%D0%BE%D0%B1%D0%B0%D1%82%D0%B0%D1%9E/</a></p>
+  <p class="mb-5"><strong>Fenêtre :</strong> ±20 mots</p>
+
+  <div class="table-container">
+    <table class="table is-fullwidth is-striped">
+      <thead>
+        <tr>
+          <th>Catégorie</th>
+          <th>Gauche</th>
+          <th>Mot</th>
+          <th>Droite</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr><td class="has-text-grey">2</td><td class="kwic-left">а таксама змяншэння магчымасці кіравання і перазарадкі гэтых паркаў уручную шляхам змены персаналу і пастаяннай даступнасці Наступным крокам з'яўляецца павышэнне</td><td class="kwic-kw"><mark>аўтаномнасці</mark></td><td class="kwic-right">ў звычайных аперацыях якія могуць выконвацца без умяшання чалавека і менавіта тут WiBotic з'яўляецца Кіраванне аўтаномнасцю робатаў наступнага пакалення Кампанія</td></tr>
+<tr><td class="has-text-grey">2</td><td class="kwic-left">Наступным крокам з'яўляецца павышэнне аўтаномнасці ў звычайных аперацыях якія могуць выконвацца без умяшання чалавека і менавіта тут WiBotic з'яўляецца Кіраванне</td><td class="kwic-kw"><mark>аўтаномнасцю</mark></td><td class="kwic-right">робатаў наступнага пакалення Кампанія WiBotic якая базуецца ў Сіэтле штат Вашынгтон ЗША пастаўляе рашэнні для бесправадной зарадкі і аптымізацыі энергіі</td></tr>
+<tr><td class="has-text-grey">2</td><td class="kwic-left">C такім чынам дапамагаючы пераадолець абмежаванні цеплавога кіравання ва ўсім дыяпазоне магутнасці WiBotic пастаўляе рашэнне для дынамічнай зарадкі якое забяспечвае</td><td class="kwic-kw"><mark>аўтаномнасць</mark></td><td class="kwic-right">наступнага пакалення Гэтыя прылады пазбаўлены абмежаванняў працэсаў зарадкі якія кіруюцца ўручную і могуць дасягнуць новых узроўняў функцыянальнасці і прадукцыйнасці без</td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

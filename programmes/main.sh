@@ -96,6 +96,22 @@ log "URLs: ../URLs/$FICHIER_URLS.txt"
 log "Sortie: ../tableaux/$FICHIER_SORTIE.html"
 log "Sens1 fichier: $FICHIER_MOTS_SENS1 | Sens2 fichier: $FICHIER_MOTS_SENS2"
 
+# Vérifications des fichiers de motifs
+if [[ -n "$FICHIER_MOTS_SENS1" && -z "$FICHIER_MOTS_SENS2" ]] || \
+   [[ -z "$FICHIER_MOTS_SENS1" && -n "$FICHIER_MOTS_SENS2" ]]; then
+  echo "Erreur : il faut fournir soit 0 fichier de motifs, soit 2 fichiers (sens 1 et sens 2)." >&2
+  echo "Exemples valides :" >&2
+  echo "  $0 urls tableau" >&2
+  echo "  $0 urls tableau motifs_sens1.txt motifs_sens2.txt" >&2
+  exit 1
+fi
+
+if (( $# > 4 )); then
+  echo "Erreur : trop d'arguments." >&2
+  echo "Utilisation : $0 <urls> <tableau> [motifs_sens1 motifs_sens2]" >&2
+  exit 1
+fi
+
 
 # ===============================================
 #      DÉTERMINATION DE LA SOURCE DES MOTIFS     

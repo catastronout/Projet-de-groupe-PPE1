@@ -1,39 +1,175 @@
 <!DOCTYPE html>
 	<html>
-	<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Concordancier - https://be.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D1%8D%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BD%D0%B0%D1%86%D1%8B%D1%8F%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%BD%D0%B0%D1%8F_%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%8F_%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D0%B0%D1%9E_%D0%A0%D0%B0%D1%81%D1%96%D1%96</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-	<style>
-		body { padding: 1.25rem; }
-		.kwic-left { text-align: right; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		.kwic-kw   { text-align: center; width: 10%; font-family: monospace; font-weight: bold; }
-		.kwic-right{ text-align: left; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		mark { padding: 0.1rem 0.2rem; }
-	</style>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Concordancier - be-23</title>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+			<style>
+				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
+				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+
+				.back-link { color: #667eea }
+				.back-link:hover { color: #764ba2 }
+
+				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
+				.table tbody tr:hover td { background-color: #f5f3ff; }
+
+			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
+			.kwic-left  { text-align: right;  width: 44%; }
+			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
+			.kwic-right { text-align: left;   width: 44%; }
+			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+
+			.cat-col { white-space: nowrap; }
+
+			body.dark { background: #0f172a; color: #e2e8f0; }
+			body.dark .card { background: #111827; color: #e2e8f0; }
+			body.dark .table { background: #111827; color: #e2e8f0; }
+			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
+			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
+			body.dark .table tbody tr:hover td { background: #1f2937; }
+			body.dark .back-link { color: #93c5fd; }
+			body.dark .back-link:hover { color: #c4b5fd; }
+			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
+			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+
+			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
+		</style>
 	</head>
+
 	<body>
-	<h1 class="title is-4">Concordancier (KWIC)</h1>
-	<p class="mb-3"><strong>URL :</strong> <a href="https://be.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D1%8D%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BD%D0%B0%D1%86%D1%8B%D1%8F%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%BD%D0%B0%D1%8F_%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%8F_%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D0%B0%D1%9E_%D0%A0%D0%B0%D1%81%D1%96%D1%96" target="_blank" rel="noopener noreferrer">https://be.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D1%8D%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BD%D0%B0%D1%86%D1%8B%D1%8F%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%BD%D0%B0%D1%8F_%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%8F_%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D0%B0%D1%9E_%D0%A0%D0%B0%D1%81%D1%96%D1%96</a></p>
-	<p class="mb-5"><strong>Fenêtre :</strong> ±20 mots</p>
-	<div class="table-container">
-		<table class="table is-fullwidth is-striped">
-		<thead>
-			<tr><th>Catégorie</th><th>Gauche</th><th>Mot</th><th>Droite</th></tr>
-		</thead>
-		<tbody>
-	<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">BUTTON схаваць Пачатак 1 Стварэнне 2 Дзейнасць 3 Кіраўніцтва 4 Гл таксама 5 Зноскі 6 Спасылкі Пераключыць змест Федэральная нацыянальна-культурная</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">беларусаў Расіі 2 мовы Беларуская тарашкевіца Русский Правіць спасылкі Старонка Размовы беларуская Чытаць Правіць Правіць зыходнік Паказаць гісторыю Інструменты Інструменты</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">панэлі BUTTON схаваць 55 44 05 пн ш 37 38 01 у д HGЯO З Вікіпедыі свабоднай энцыклапедыі Федэральная нацыянальна-культурная</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">беларусаў Расіі Тып грамадская арганізацыя Дата заснавання 24 красавіка 1999 года Размяшчэнне Расія Расія Масква вул Новакузнецкая д 31 Вэб-сайт</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">КДБ па працы з дыяспарай 2 красавіка 1999 года ў Маскве адбыўся Устаноўчы з’езд пры ўдзеле дэлегатаў ад рэгіянальных нацыянальна-культурных</td><td class="kwic-kw"><mark>аўтаномій</mark></td><td class="kwic-right">РНКА і грамадскіх арганізацый беларусаў Рэспублікі Комі Рэспублікі Карэлія Краснадарскага края і іншых На З’ездзе прысутнічалі прадстаўнікі ўрадаў РФ і</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">Дзейнасць правіць правіць зыходнік 2 кастрычніка 2002 года на Другім з’ездзе быў абраны новы Савет з 43 чалавек прыняты Статут</td><td class="kwic-kw"><mark>Аўтаномія</mark></td><td class="kwic-right">складаецца з 13 РНКА якія ўключаюць больш за 70 арганізацый беларусаў У чэрвені 2011 года Аўтаномія перадала шэраг гісторыка-культурных каштоўнасцей</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">43 чалавек прыняты Статут Аўтаномія складаецца з 13 РНКА якія ўключаюць больш за 70 арганізацый беларусаў У чэрвені 2011 года</td><td class="kwic-kw"><mark>Аўтаномія</mark></td><td class="kwic-right">перадала шэраг гісторыка-культурных каштоўнасцей у фонды Нацыянальнай бібліятэкі Беларусі і музея ў Нясвіжы 1 Кіраўніцтва правіць правіць зыходнік Францыск Каўрыга</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">правіць правіць зыходнік Францыск Каўрыга Валерый Казакоў 2010-2015 Сяргей Кандыбовіч з 2015 2 Гл таксама правіць правіць зыходнік Беларуская нацыянальна-культурная</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">Нёман Зноскі 1 http naviny by rubrics culture 2011 06 13 ic news 117 369901 Архівавана 1 ліпеня 2011 2</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">правіць правіць зыходнік Сайт беларусаў у Маскве Узята з https be wikipedia org w index php title Федэральная нацыянальна-кул ьтурная</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">беларусаў Расіі oldid 4813945 Катэгорыі Арганізацыі паводле алфавіта Арганізацыі беларусаў Расіі Схаваная катэгорыя Старонкі з картамі Апошняе змяненне старонкі адбылося</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">Распрацоўшчыкі Статыстыка Заява пра cookie Мабільная версія Wikimedia Foundation Powered by MediaWiki BUTTON Пошук BUTTON Пошук Пераключыць змест Федэральная нацыянальна-культурная</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">беларусаў Расіі BUTTON 2 мовы Дадаць тэму</td></tr>
-      </tbody>
-		</table>
-	</div>
-	</body>
-	</html>
-	
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
+					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
+					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+				</div>
+			/div>
+		</section>
+
+    <section class="section">
+      <div class="container">
+        <p class="mb-4">
+          <a href="../../../index.html" class="back-link">Retour</a>
+          <span class="has-text-grey"> / </span>
+          <a href="../tableaux/be.html" class="back-link">Tableau</a>
+        </p>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="mb-2"><strong>URL :</strong> <a href="https://be.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D1%8D%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BD%D0%B0%D1%86%D1%8B%D1%8F%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%BD%D0%B0%D1%8F_%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%8F_%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D0%B0%D1%9E_%D0%A0%D0%B0%D1%81%D1%96%D1%96" target="_blank" rel="noopener noreferrer" class="back-link">https://be.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D1%8D%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BD%D0%B0%D1%86%D1%8B%D1%8F%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%BD%D0%B0%D1%8F_%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%8F_%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D0%B0%D1%9E_%D0%A0%D0%B0%D1%81%D1%96%D1%96</a></p>
+              <p class="mb-4"><strong>Occurrences :</strong> 8</p>
+            </div>
+
+            <div class="table-container">
+              <table class="table is-fullwidth is-hoverable is-striped">
+                <thead>
+                  <tr>
+                    <th>Catégorie</th>
+                    <th>Gauche</th>
+                    <th>Mot</th>
+                    <th>Droite</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">BUTTON схаваць Пачатак 1 Стварэнне 2 Дзейнасць 3 Кіраўніцтва 4 Гл таксама 5 Зноскі 6 Спасылкі Пераключыць змест Федэральная нацыянальна-культурная</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">беларусаў Расіі 2 мовы Беларуская тарашкевіца Русский Правіць спасылкі Старонка Размовы беларуская Чытаць Правіць Правіць зыходнік Паказаць гісторыю Інструменты Інструменты</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">панэлі BUTTON схаваць 55 44 05 пн ш 37 38 01 у д HGЯO З Вікіпедыі свабоднай энцыклапедыі Федэральная нацыянальна-культурная</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">беларусаў Расіі Тып грамадская арганізацыя Дата заснавання 24 красавіка 1999 года Размяшчэнне Расія Расія Масква вул Новакузнецкая д 31 Вэб-сайт</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">КДБ па працы з дыяспарай 2 красавіка 1999 года ў Маскве адбыўся Устаноўчы з’езд пры ўдзеле дэлегатаў ад рэгіянальных нацыянальна-культурных</td>
+					<td class="kwic-kw"><mark>аўтаномій</mark></td>
+					<td class="kwic-right">РНКА і грамадскіх арганізацый беларусаў Рэспублікі Комі Рэспублікі Карэлія Краснадарскага края і іншых На З’ездзе прысутнічалі прадстаўнікі ўрадаў РФ і</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">Дзейнасць правіць правіць зыходнік 2 кастрычніка 2002 года на Другім з’ездзе быў абраны новы Савет з 43 чалавек прыняты Статут</td>
+					<td class="kwic-kw"><mark>Аўтаномія</mark></td>
+					<td class="kwic-right">складаецца з 13 РНКА якія ўключаюць больш за 70 арганізацый беларусаў У чэрвені 2011 года Аўтаномія перадала шэраг гісторыка-культурных каштоўнасцей</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">43 чалавек прыняты Статут Аўтаномія складаецца з 13 РНКА якія ўключаюць больш за 70 арганізацый беларусаў У чэрвені 2011 года</td>
+					<td class="kwic-kw"><mark>Аўтаномія</mark></td>
+					<td class="kwic-right">перадала шэраг гісторыка-культурных каштоўнасцей у фонды Нацыянальнай бібліятэкі Беларусі і музея ў Нясвіжы 1 Кіраўніцтва правіць правіць зыходнік Францыск Каўрыга</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">правіць правіць зыходнік Францыск Каўрыга Валерый Казакоў 2010-2015 Сяргей Кандыбовіч з 2015 2 Гл таксама правіць правіць зыходнік Беларуская нацыянальна-культурная</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">Нёман Зноскі 1 http naviny by rubrics culture 2011 06 13 ic news 117 369901 Архівавана 1 ліпеня 2011 2</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">правіць правіць зыходнік Сайт беларусаў у Маскве Узята з https be wikipedia org w index php title Федэральная нацыянальна-кул ьтурная</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">беларусаў Расіі oldid 4813945 Катэгорыі Арганізацыі паводле алфавіта Арганізацыі беларусаў Расіі Схаваная катэгорыя Старонкі з картамі Апошняе змяненне старонкі адбылося</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">Распрацоўшчыкі Статыстыка Заява пра cookie Мабільная версія Wikimedia Foundation Powered by MediaWiki BUTTON Пошук BUTTON Пошук Пераключыць змест Федэральная нацыянальна-культурная</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">беларусаў Расіі BUTTON 2 мовы Дадаць тэму</td>
+				</tr>
+			
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+      <div class="content has-text-centered">
+        <p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
+
+      function refreshLabel() {
+        const isDark = document.body.classList.contains("dark");
+        btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+      }
+      refreshLabel();
+
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        refreshLabel();
+      });
+    </script>
+  </body>
+</html>

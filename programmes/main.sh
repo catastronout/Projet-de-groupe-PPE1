@@ -399,63 +399,157 @@ generer_concordancier_html_depuis_tsv() {
 		use strict; use warnings;
 		use Encode qw(decode FB_DEFAULT);
 
-		my ($tsv, $out, $url, $w) = @ARGV;
-		$url = decode("UTF-8", $url, FB_DEFAULT);
+		my ($tsv, $out, $url, $w, $urls_name, $idx) = @ARGV;
+		$url       = decode("UTF-8", $url, FB_DEFAULT);
+		$urls_name = decode("UTF-8", $urls_name, FB_DEFAULT);
 
 		open my $IN, "<:encoding(UTF-8)", $tsv or die "Cannot open $tsv\n";
 		my @rows;
 		while (my $line = <$IN>) {
-		chomp $line;
-		my ($cat, $left, $kw, $right) = split(/\t/, $line, 4);
-		$cat   //= ""; $left //= ""; $kw //= ""; $right //= "";
+			chomp $line;
+			my ($cat, $left, $kw, $right) = split(/\t/, $line, 4);
+			$cat   //= ""; $left //= ""; $kw //= ""; $right //= "";
 
-		for ($cat,$left,$kw,$right) { s/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g; }
+			for ($cat,$left,$kw,$right) { s/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g; }
 
-		push @rows, qq{<tr><td class="has-text-grey">$cat</td><td class="kwic-left">$left</td><td class="kwic-kw"><mark>$kw</mark></td><td class="kwic-right">$right</td></tr>};
-		}
-		close $IN;
+			push @rows, qq{
+				<tr>
+					<td class="has-text-grey cat-col">$cat</td>
+					<td class="kwic-left">$left</td>
+					<td class="kwic-kw"><mark>$kw</mark></td>
+					<td class="kwic-right">$right</td>
+				</tr>
+			};
+    	}
+    	close $IN;
+
+		my $n = scalar(@rows);
 
 		open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
 
 		print $OUT qq{<!DOCTYPE html>
 	<html>
-	<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Concordancier - $url</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-	<style>
-		body { padding: 1.25rem; }
-		.kwic-left { text-align: right; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		.kwic-kw   { text-align: center; width: 10%; font-family: monospace; font-weight: bold; }
-		.kwic-right{ text-align: left; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		mark { padding: 0.1rem 0.2rem; }
-	</style>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Concordancier - $urls_name-$idx</title>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+			<style>
+				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
+				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+
+				.back-link { color: #667eea }
+				.back-link:hover { color: #764ba2 }
+
+				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
+				.table tbody tr:hover td { background-color: #f5f3ff; }
+
+			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
+			.kwic-left  { text-align: right;  width: 44%; }
+			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
+			.kwic-right { text-align: left;   width: 44%; }
+			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+
+			.cat-col { white-space: nowrap; }
+
+			body.dark { background: #0f172a; color: #e2e8f0; }
+			body.dark .card { background: #111827; color: #e2e8f0; }
+			body.dark .table { background: #111827; color: #e2e8f0; }
+			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
+			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
+			body.dark .table tbody tr:hover td { background: #1f2937; }
+			body.dark .back-link { color: #93c5fd; }
+			body.dark .back-link:hover { color: #c4b5fd; }
+			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
+			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+
+			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
+		</style>
 	</head>
+
 	<body>
-	<h1 class="title is-4">Concordancier (KWIC)</h1>
-	<p class="mb-3"><strong>URL :</strong> <a href="$url" target="_blank" rel="noopener noreferrer">$url</a></p>
-	<p class="mb-5"><strong>Fenêtre :</strong> ±$w mots</p>
-	<div class="table-container">
-		<table class="table is-fullwidth is-striped">
-		<thead>
-			<tr><th>Catégorie</th><th>Gauche</th><th>Mot</th><th>Droite</th></tr>
-		</thead>
-		<tbody>
-	};
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
+					<p class="subtitle has-text-white is-6">Fenêtre : ±$w mots</p>
+					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+				</div>
+			/div>
+		</section>
 
-		if (@rows) { print $OUT join("\n", @rows), "\n"; }
-		else { print $OUT qq{<tr><td colspan="4">Aucune occurrence trouvée.</td></tr>\n}; }
+		<section class="section">
+			<div class="container">
+				<p class="mb-4">
+					<a href="../../../index.html" class="back-link">Retour</a>
+					<span class="has-text-grey"> / </span>
+					<a href="../tableaux/} . $urls_name . qq{.html" class="back-link">Tableau</a>
+				</p>
 
-		print $OUT qq{      </tbody>
-		</table>
-	</div>
+				<div class="card">
+					<div class="card-content">
+						<div class="content">
+							<p class="mb-2"><strong>URL :</strong> <a href="$url" target="_blank" rel="noopener noreferrer" class="back-link">$url</a></p>
+							<p class="mb-4"><strong>Occurrences :</strong> $n</p>
+						</div>
+
+						<div class="table-container">
+							<table class="table is-fullwidth is-hoverable is-striped">
+								<thead>
+									<tr>
+										<th>Catégorie</th>
+										<th>Gauche</th>
+										<th>Mot</th>
+										<th>Droite</th>
+									</tr>
+								</thead>
+								<tbody>
+};
+
+		if (@rows) {
+			print $OUT join("\n", @rows), "\n";
+		} else {
+			print $OUT qq{<tr><td colspan="4">Aucune occurrence trouvée.</td></tr>\n};
+		}
+
+		print $OUT qq{
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+			<div class="content has-text-centered">
+				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+			/div>
+		</footer>
+
+		<script>
+			const btn = document.getElementById("themeToggle");
+			const saved = localStorage.getItem("theme");
+			if (saved === "dark") document.body.classList.add("dark");
+
+			function refreshLabel() {
+				const isDark = document.body.classList.contains("dark");
+				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+			}
+			refreshLabel();
+
+			btn.addEventListener("click", () => {
+				document.body.classList.toggle("dark");
+				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+				refreshLabel();
+			});
+		</script>
 	</body>
-	</html>
-	};
+</html>
+};
 
-		close $OUT;
-	' "$tsv" "$out" "$url" "$CONTEXT_WORDS"
+	close $OUT;
+	' "$tsv" "$out" "$url" "$CONTEXT_WORDS" "$FICHIER_URLS" "$idx"
 
 	echo "$out"
 }

@@ -1,43 +1,207 @@
 <!DOCTYPE html>
 	<html>
-	<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Concordancier - https://novychas.online/zamezza/polskaja-katalonija</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-	<style>
-		body { padding: 1.25rem; }
-		.kwic-left { text-align: right; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		.kwic-kw   { text-align: center; width: 10%; font-family: monospace; font-weight: bold; }
-		.kwic-right{ text-align: left; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		mark { padding: 0.1rem 0.2rem; }
-	</style>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Concordancier - be-13</title>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+			<style>
+				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
+				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+
+				.back-link { color: #667eea }
+				.back-link:hover { color: #764ba2 }
+
+				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
+				.table tbody tr:hover td { background-color: #f5f3ff; }
+
+			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
+			.kwic-left  { text-align: right;  width: 44%; }
+			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
+			.kwic-right { text-align: left;   width: 44%; }
+			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+
+			.cat-col { white-space: nowrap; }
+
+			body.dark { background: #0f172a; color: #e2e8f0; }
+			body.dark .card { background: #111827; color: #e2e8f0; }
+			body.dark .table { background: #111827; color: #e2e8f0; }
+			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
+			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
+			body.dark .table tbody tr:hover td { background: #1f2937; }
+			body.dark .back-link { color: #93c5fd; }
+			body.dark .back-link:hover { color: #c4b5fd; }
+			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
+			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+
+			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
+		</style>
 	</head>
+
 	<body>
-	<h1 class="title is-4">Concordancier (KWIC)</h1>
-	<p class="mb-3"><strong>URL :</strong> <a href="https://novychas.online/zamezza/polskaja-katalonija" target="_blank" rel="noopener noreferrer">https://novychas.online/zamezza/polskaja-katalonija</a></p>
-	<p class="mb-5"><strong>Fenêtre :</strong> ±20 mots</p>
-	<div class="table-container">
-		<table class="table is-fullwidth is-striped">
-		<thead>
-			<tr><th>Catégorie</th><th>Gauche</th><th>Mot</th><th>Droite</th></tr>
-		</thead>
-		<tbody>
-	<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">руках Новы Час Online ПалітыкаГрамадстваЭканомікаЗамежжаКультураПовязь часоўАсобаСпорт Відэа BUTTON Пошук Facebook TikTok Instagram Telegram Twitter Одноклассники YouTube Польская Каталонія ці даб'ецца</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">Сілезія button Падзяліцца ў Facebook button Падзяліцца ў Telegram button Падзяліцца ў Twitter button Падзяліцца ў VK Спасылка без VPN</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">Алег Новікаў DEL DEL Падчас развіцця эскалацыі канфлікту паміж Польшчай і ЕС усё больш увагі ў прэсе надаецца Руху за</td><td class="kwic-kw"><mark>аўтаномію</mark></td><td class="kwic-right">Сілезіі RAS Руху за аўтаномію Сілезіі RAS Фота pda sports ru Руху за аўтаномію Сілезіі RAS Фота pda sports ru</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">развіцця эскалацыі канфлікту паміж Польшчай і ЕС усё больш увагі ў прэсе надаецца Руху за аўтаномію Сілезіі RAS Руху за</td><td class="kwic-kw"><mark>аўтаномію</mark></td><td class="kwic-right">Сілезіі RAS Фота pda sports ru Руху за аўтаномію Сілезіі RAS Фота pda sports ru У вачах польскага патрыёта Юзаф</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">увагі ў прэсе надаецца Руху за аўтаномію Сілезіі RAS Руху за аўтаномію Сілезіі RAS Фота pda sports ru Руху за</td><td class="kwic-kw"><mark>аўтаномію</mark></td><td class="kwic-right">Сілезіі RAS Фота pda sports ru У вачах польскага патрыёта Юзаф Пілсудскі амаль сакральная фігура Аднак думаецца нават самы фанатычны</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">Юзаф Пілсудскі амаль сакральная фігура Аднак думаецца нават самы фанатычны яго прыхільнік не ў захапленні ад прынятага ім рашэння даць</td><td class="kwic-kw"><mark>аўтаномію</mark></td><td class="kwic-right">Сілезіі З іншага боку магчыма на той час з боку Пілсудскага тактычна гэта быў правільны крок Горная Сілезія дзе жыло</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">магчыма на той час з боку Пілсудскага тактычна гэта быў правільны крок Горная Сілезія дзе жыло шмат этнічных немцаў атрымала</td><td class="kwic-kw"><mark>аўтаномію</mark></td><td class="kwic-right">ў ліпені 1920-га ў разгар польска-бальшавіцкай вайны калі Польшчы быў патрэбны моцны тыл Так ці інакш джын сілезскага аўтанамізму быў</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">разгар польска-бальшавіцкай вайны калі Польшчы быў патрэбны моцны тыл Так ці інакш джын сілезскага аўтанамізму быў выпушчаны І хаця сама</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">знікла пасля прыходу ў 1939 годзе гітлераўцаў і больш не аднаўлялася міф пра яе захаваўся Нездарма як толькі ў краіне</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">ініцыятывы за вяртанне рэгіёну даваеннага статус-кво Першыя выбары прынеслі аўтанамістам два мандаты ў Сейме Пазней на нейкі час Рух за</td><td class="kwic-kw"><mark>аўтаномію</mark></td><td class="kwic-right">Сілезіі маргіналізаваўся пакуль прыкладна з 2006-га не пачаў вяртацца ў вялікую палітыку набіраючы на выбарах каля 5 7 працэнтаў галасоў</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">вяртацца ў вялікую палітыку набіраючы на выбарах каля 5 7 працэнтаў галасоў мясцовых жыхароў Па выніках апошніх выбараў Рух за</td><td class="kwic-kw"><mark>аўтаномію</mark></td><td class="kwic-right">Сілезіі атрымаў чатыры мандаты ў краёвых саветах Трапіўшы ў заканадаўчыя органы аўтанамісты намагаюцца рэалізаваць праграму руху Увогуле яе кульмінацыя трансфармацыя</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">commons wikimedia org Сітуацыя кардынальна змянілася восенню калі пачаліся вядомыя працэсы ў Каталоніі Менавіта ў гэты час кіраўніцтва Руху за</td><td class="kwic-kw"><mark>аўтаномію</mark></td><td class="kwic-right">Сілезіі апублікавала заяву якая стала медыябомбай Самы вялікі інтарэс у публікі выклікаў наступны фрагмент рэзалюцыі Пат у адносінах паміж Барселонай</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">Як вядома раней Варшава вырашыла рэфармаваць судовую сістэму фактычна падпарадкаваўшы яе заканадаўчай уладзе і не жадае прымаць імігрантаў Яны прыхільнікі</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">павінны паехаць у Германію Рух трэба забараніць Гэта спроба адарваць частку тэрыторыі з берлінскага салона піша адзін з патрыятычных блогераў</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">Facebook button Падзяліцца ў Telegram button Падзяліцца ў Twitter button Падзяліцца ў VK Спасылка без VPN незалежнасць ЕС Польшча Каталонія</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">Сілезія Юзаф Пілсудскі RAS Шаноўныя чытачы Сёння лёс Новага Часу у вашых руках На жаль цяпер рэдакцыя перажывае надзвычай складаны</td></tr>
-      </tbody>
-		</table>
-	</div>
-	</body>
-	</html>
-	
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
+					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
+					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+				</div>
+			/div>
+		</section>
+
+    <section class="section">
+      <div class="container">
+        <p class="mb-4">
+          <a href="../../../index.html" class="back-link">Retour</a>
+          <span class="has-text-grey"> / </span>
+          <a href="../tableaux/be.html" class="back-link">Tableau</a>
+        </p>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="mb-2"><strong>URL :</strong> <a href="https://novychas.online/zamezza/polskaja-katalonija" target="_blank" rel="noopener noreferrer" class="back-link">https://novychas.online/zamezza/polskaja-katalonija</a></p>
+              <p class="mb-4"><strong>Occurrences :</strong> 12</p>
+            </div>
+
+            <div class="table-container">
+              <table class="table is-fullwidth is-hoverable is-striped">
+                <thead>
+                  <tr>
+                    <th>Catégorie</th>
+                    <th>Gauche</th>
+                    <th>Mot</th>
+                    <th>Droite</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">руках Новы Час Online ПалітыкаГрамадстваЭканомікаЗамежжаКультураПовязь часоўАсобаСпорт Відэа BUTTON Пошук Facebook TikTok Instagram Telegram Twitter Одноклассники YouTube Польская Каталонія ці даб'ецца</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">Сілезія button Падзяліцца ў Facebook button Падзяліцца ў Telegram button Падзяліцца ў Twitter button Падзяліцца ў VK Спасылка без VPN</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">Алег Новікаў DEL DEL Падчас развіцця эскалацыі канфлікту паміж Польшчай і ЕС усё больш увагі ў прэсе надаецца Руху за</td>
+					<td class="kwic-kw"><mark>аўтаномію</mark></td>
+					<td class="kwic-right">Сілезіі RAS Руху за аўтаномію Сілезіі RAS Фота pda sports ru Руху за аўтаномію Сілезіі RAS Фота pda sports ru</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">развіцця эскалацыі канфлікту паміж Польшчай і ЕС усё больш увагі ў прэсе надаецца Руху за аўтаномію Сілезіі RAS Руху за</td>
+					<td class="kwic-kw"><mark>аўтаномію</mark></td>
+					<td class="kwic-right">Сілезіі RAS Фота pda sports ru Руху за аўтаномію Сілезіі RAS Фота pda sports ru У вачах польскага патрыёта Юзаф</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">увагі ў прэсе надаецца Руху за аўтаномію Сілезіі RAS Руху за аўтаномію Сілезіі RAS Фота pda sports ru Руху за</td>
+					<td class="kwic-kw"><mark>аўтаномію</mark></td>
+					<td class="kwic-right">Сілезіі RAS Фота pda sports ru У вачах польскага патрыёта Юзаф Пілсудскі амаль сакральная фігура Аднак думаецца нават самы фанатычны</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">Юзаф Пілсудскі амаль сакральная фігура Аднак думаецца нават самы фанатычны яго прыхільнік не ў захапленні ад прынятага ім рашэння даць</td>
+					<td class="kwic-kw"><mark>аўтаномію</mark></td>
+					<td class="kwic-right">Сілезіі З іншага боку магчыма на той час з боку Пілсудскага тактычна гэта быў правільны крок Горная Сілезія дзе жыло</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">магчыма на той час з боку Пілсудскага тактычна гэта быў правільны крок Горная Сілезія дзе жыло шмат этнічных немцаў атрымала</td>
+					<td class="kwic-kw"><mark>аўтаномію</mark></td>
+					<td class="kwic-right">ў ліпені 1920-га ў разгар польска-бальшавіцкай вайны калі Польшчы быў патрэбны моцны тыл Так ці інакш джын сілезскага аўтанамізму быў</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">разгар польска-бальшавіцкай вайны калі Польшчы быў патрэбны моцны тыл Так ці інакш джын сілезскага аўтанамізму быў выпушчаны І хаця сама</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">знікла пасля прыходу ў 1939 годзе гітлераўцаў і больш не аднаўлялася міф пра яе захаваўся Нездарма як толькі ў краіне</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">ініцыятывы за вяртанне рэгіёну даваеннага статус-кво Першыя выбары прынеслі аўтанамістам два мандаты ў Сейме Пазней на нейкі час Рух за</td>
+					<td class="kwic-kw"><mark>аўтаномію</mark></td>
+					<td class="kwic-right">Сілезіі маргіналізаваўся пакуль прыкладна з 2006-га не пачаў вяртацца ў вялікую палітыку набіраючы на выбарах каля 5 7 працэнтаў галасоў</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">вяртацца ў вялікую палітыку набіраючы на выбарах каля 5 7 працэнтаў галасоў мясцовых жыхароў Па выніках апошніх выбараў Рух за</td>
+					<td class="kwic-kw"><mark>аўтаномію</mark></td>
+					<td class="kwic-right">Сілезіі атрымаў чатыры мандаты ў краёвых саветах Трапіўшы ў заканадаўчыя органы аўтанамісты намагаюцца рэалізаваць праграму руху Увогуле яе кульмінацыя трансфармацыя</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">commons wikimedia org Сітуацыя кардынальна змянілася восенню калі пачаліся вядомыя працэсы ў Каталоніі Менавіта ў гэты час кіраўніцтва Руху за</td>
+					<td class="kwic-kw"><mark>аўтаномію</mark></td>
+					<td class="kwic-right">Сілезіі апублікавала заяву якая стала медыябомбай Самы вялікі інтарэс у публікі выклікаў наступны фрагмент рэзалюцыі Пат у адносінах паміж Барселонай</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">Як вядома раней Варшава вырашыла рэфармаваць судовую сістэму фактычна падпарадкаваўшы яе заканадаўчай уладзе і не жадае прымаць імігрантаў Яны прыхільнікі</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">павінны паехаць у Германію Рух трэба забараніць Гэта спроба адарваць частку тэрыторыі з берлінскага салона піша адзін з патрыятычных блогераў</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">Facebook button Падзяліцца ў Telegram button Падзяліцца ў Twitter button Падзяліцца ў VK Спасылка без VPN незалежнасць ЕС Польшча Каталонія</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">Сілезія Юзаф Пілсудскі RAS Шаноўныя чытачы Да 2021 года Новы Час дапамагаў палітвязням атрымліваць незалежную інфармацыю А зараз мы самі</td>
+				</tr>
+			
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+      <div class="content has-text-centered">
+        <p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
+
+      function refreshLabel() {
+        const isDark = document.body.classList.contains("dark");
+        btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+      }
+      refreshLabel();
+
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        refreshLabel();
+      });
+    </script>
+  </body>
+</html>

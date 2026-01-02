@@ -1,39 +1,175 @@
 <!DOCTYPE html>
 	<html>
-	<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Concordancier - https://www.drivingeco.com/be/%D0%92%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-%D1%86%D1%8B%D0%BA%D0%BB-WLTP-%D1%83%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E/</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-	<style>
-		body { padding: 1.25rem; }
-		.kwic-left { text-align: right; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		.kwic-kw   { text-align: center; width: 10%; font-family: monospace; font-weight: bold; }
-		.kwic-right{ text-align: left; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		mark { padding: 0.1rem 0.2rem; }
-	</style>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Concordancier - be-86</title>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+			<style>
+				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
+				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+
+				.back-link { color: #667eea }
+				.back-link:hover { color: #764ba2 }
+
+				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
+				.table tbody tr:hover td { background-color: #f5f3ff; }
+
+			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
+			.kwic-left  { text-align: right;  width: 44%; }
+			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
+			.kwic-right { text-align: left;   width: 44%; }
+			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+
+			.cat-col { white-space: nowrap; }
+
+			body.dark { background: #0f172a; color: #e2e8f0; }
+			body.dark .card { background: #111827; color: #e2e8f0; }
+			body.dark .table { background: #111827; color: #e2e8f0; }
+			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
+			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
+			body.dark .table tbody tr:hover td { background: #1f2937; }
+			body.dark .back-link { color: #93c5fd; }
+			body.dark .back-link:hover { color: #c4b5fd; }
+			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
+			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+
+			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
+		</style>
 	</head>
+
 	<body>
-	<h1 class="title is-4">Concordancier (KWIC)</h1>
-	<p class="mb-3"><strong>URL :</strong> <a href="https://www.drivingeco.com/be/%D0%92%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-%D1%86%D1%8B%D0%BA%D0%BB-WLTP-%D1%83%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E/" target="_blank" rel="noopener noreferrer">https://www.drivingeco.com/be/%D0%92%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-%D1%86%D1%8B%D0%BA%D0%BB-WLTP-%D1%83%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E/</a></p>
-	<p class="mb-5"><strong>Fenêtre :</strong> ±20 mots</p>
-	<div class="table-container">
-		<table class="table is-fullwidth is-striped">
-		<thead>
-			<tr><th>Catégorie</th><th>Gauche</th><th>Mot</th><th>Droite</th></tr>
-		</thead>
-		<tbody>
-	<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">і больш дапушчальнага цыкла NEDC электрамабілі таксама будзе відаць закрануты гэтай зменай што будзе мець непасрэдны ўплыў на паказчыкі вашай</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">адзін з ключавых элементаў пры куплі электрамабіля Цыкл WLTP Ciclo WLTP Што такое цыкл WLTP і як ён працуе Праводзіцца</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">Электрамабілі будуць працягваць прапаноўваць тыя ж акумулятары і іх рэальная аўтаномнасць не будзе залежаць ад новага цыкла WLTP а Паказчыкі</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">будуць меншымі чым раней таму што ўмовы яго разліку будуць больш жорсткімі Ніжэй мы разбіраем змены ў аўтаномнасці самых прадаваных</td></tr>
-<tr><td class="has-text-grey">sens 2</td><td class="kwic-left">GTM-MGNRFSQ BUTTON Дысплей навігацыі ініцыяванне Устойлівасць Хогар мабільнасць Smart City пошук Аб кампаніі Трэнеры Вось як цыкл WLTP уплывае на</td><td class="kwic-kw"><mark>аўтаномнасць</mark></td><td class="kwic-right">электрамабіляў Начо Сальвадор 5 верасня 2018 2 мін Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў Уступленне ў сілу новага</td></tr>
-<tr><td class="has-text-grey">sens 2</td><td class="kwic-left">як цыкл WLTP уплывае на аўтаномнасць электрамабіляў Начо Сальвадор 5 верасня 2018 2 мін Вось як цыкл WLTP уплывае на</td><td class="kwic-kw"><mark>аўтаномнасць</mark></td><td class="kwic-right">электрамабіляў Уступленне ў сілу новага цыкла WLTP выклікала агульнае зніжэнне паказчыкаў аўтаномнасці электрамабіляў 1 верасня ст новыя правілы зацвярджэння WLTP</td></tr>
-<tr><td class="has-text-grey">sens 2</td><td class="kwic-left">2 мін Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў Уступленне ў сілу новага цыкла WLTP выклікала агульнае зніжэнне паказчыкаў</td><td class="kwic-kw"><mark>аўтаномнасці</mark></td><td class="kwic-right">электрамабіляў 1 верасня ст новыя правілы зацвярджэння WLTP цыкл які палегчыць некаторыя значна больш рэалістычныя лічбы спажывання і выкідаў Выпрабаванні</td></tr>
-<tr><td class="has-text-grey">sens 2</td><td class="kwic-left">выплаты падатку на рэгістрацыю Тым не менш новыя правілы зацвярджэння так гэта паўплывае на спажыванне электрамабіляў і такім чынам яго</td><td class="kwic-kw"><mark>аўтаномнасць</mark></td><td class="kwic-right">адзін з фактараў які найбольш уплывае на продаж электрамабіляў Цыкл WLTP Ciclo WLTP Электрамабілі будуць працягваць прапаноўваць тыя ж акумулятары</td></tr>
-<tr><td class="has-text-grey">sens 2</td><td class="kwic-left">які найбольш уплывае на продаж электрамабіляў Цыкл WLTP Ciclo WLTP Электрамабілі будуць працягваць прапаноўваць тыя ж акумулятары і іх рэальная</td><td class="kwic-kw"><mark>аўтаномнасць</mark></td><td class="kwic-right">не будзе залежаць ад новага цыкла WLTP а Паказчыкі аўтаноміі будуць меншымі чым раней таму што ўмовы яго разліку будуць</td></tr>
-<tr><td class="has-text-grey">sens 2</td><td class="kwic-left">а Паказчыкі аўтаноміі будуць меншымі чым раней таму што ўмовы яго разліку будуць больш жорсткімі Ніжэй мы разбіраем змены ў</td><td class="kwic-kw"><mark>аўтаномнасці</mark></td><td class="kwic-right">самых прадаваных электрамабіляў у Іспаніі Цыкл NEDC Цыкл WLTP Renault Zoe 300 км 300 км паводле першых ацэнак Renault Nissan</td></tr>
-      </tbody>
-		</table>
-	</div>
-	</body>
-	</html>
-	
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
+					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
+					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+				</div>
+			/div>
+		</section>
+
+    <section class="section">
+      <div class="container">
+        <p class="mb-4">
+          <a href="../../../index.html" class="back-link">Retour</a>
+          <span class="has-text-grey"> / </span>
+          <a href="../tableaux/be.html" class="back-link">Tableau</a>
+        </p>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="mb-2"><strong>URL :</strong> <a href="https://www.drivingeco.com/be/%D0%92%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-%D1%86%D1%8B%D0%BA%D0%BB-WLTP-%D1%83%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E/" target="_blank" rel="noopener noreferrer" class="back-link">https://www.drivingeco.com/be/%D0%92%D0%BE%D1%81%D1%8C-%D1%8F%D0%BA-%D1%86%D1%8B%D0%BA%D0%BB-WLTP-%D1%83%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5-%D0%BD%D0%B0-%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D0%BD%D0%B0%D1%81%D1%86%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E/</a></p>
+              <p class="mb-4"><strong>Occurrences :</strong> 8</p>
+            </div>
+
+            <div class="table-container">
+              <table class="table is-fullwidth is-hoverable is-striped">
+                <thead>
+                  <tr>
+                    <th>Catégorie</th>
+                    <th>Gauche</th>
+                    <th>Mot</th>
+                    <th>Droite</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">і больш дапушчальнага цыкла NEDC электрамабілі таксама будзе відаць закрануты гэтай зменай што будзе мець непасрэдны ўплыў на паказчыкі вашай</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">адзін з ключавых элементаў пры куплі электрамабіля Цыкл WLTP Ciclo WLTP Што такое цыкл WLTP і як ён працуе Праводзіцца</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">Электрамабілі будуць працягваць прапаноўваць тыя ж акумулятары і іх рэальная аўтаномнасць не будзе залежаць ад новага цыкла WLTP а Паказчыкі</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">будуць меншымі чым раней таму што ўмовы яго разліку будуць больш жорсткімі Ніжэй мы разбіраем змены ў аўтаномнасці самых прадаваных</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 2</td>
+					<td class="kwic-left">GTM-MGNRFSQ BUTTON Дысплей навігацыі ініцыяванне Устойлівасць Хогар мабільнасць Smart City пошук Аб кампаніі Трэнеры Вось як цыкл WLTP уплывае на</td>
+					<td class="kwic-kw"><mark>аўтаномнасць</mark></td>
+					<td class="kwic-right">электрамабіляў Начо Сальвадор 5 верасня 2018 2 мін Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў Уступленне ў сілу новага</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 2</td>
+					<td class="kwic-left">як цыкл WLTP уплывае на аўтаномнасць электрамабіляў Начо Сальвадор 5 верасня 2018 2 мін Вось як цыкл WLTP уплывае на</td>
+					<td class="kwic-kw"><mark>аўтаномнасць</mark></td>
+					<td class="kwic-right">электрамабіляў Уступленне ў сілу новага цыкла WLTP выклікала агульнае зніжэнне паказчыкаў аўтаномнасці электрамабіляў 1 верасня ст новыя правілы зацвярджэння WLTP</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 2</td>
+					<td class="kwic-left">2 мін Вось як цыкл WLTP уплывае на аўтаномнасць электрамабіляў Уступленне ў сілу новага цыкла WLTP выклікала агульнае зніжэнне паказчыкаў</td>
+					<td class="kwic-kw"><mark>аўтаномнасці</mark></td>
+					<td class="kwic-right">электрамабіляў 1 верасня ст новыя правілы зацвярджэння WLTP цыкл які палегчыць некаторыя значна больш рэалістычныя лічбы спажывання і выкідаў Выпрабаванні</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 2</td>
+					<td class="kwic-left">выплаты падатку на рэгістрацыю Тым не менш новыя правілы зацвярджэння так гэта паўплывае на спажыванне электрамабіляў і такім чынам яго</td>
+					<td class="kwic-kw"><mark>аўтаномнасць</mark></td>
+					<td class="kwic-right">адзін з фактараў які найбольш уплывае на продаж электрамабіляў Цыкл WLTP Ciclo WLTP Электрамабілі будуць працягваць прапаноўваць тыя ж акумулятары</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 2</td>
+					<td class="kwic-left">які найбольш уплывае на продаж электрамабіляў Цыкл WLTP Ciclo WLTP Электрамабілі будуць працягваць прапаноўваць тыя ж акумулятары і іх рэальная</td>
+					<td class="kwic-kw"><mark>аўтаномнасць</mark></td>
+					<td class="kwic-right">не будзе залежаць ад новага цыкла WLTP а Паказчыкі аўтаноміі будуць меншымі чым раней таму што ўмовы яго разліку будуць</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 2</td>
+					<td class="kwic-left">а Паказчыкі аўтаноміі будуць меншымі чым раней таму што ўмовы яго разліку будуць больш жорсткімі Ніжэй мы разбіраем змены ў</td>
+					<td class="kwic-kw"><mark>аўтаномнасці</mark></td>
+					<td class="kwic-right">самых прадаваных электрамабіляў у Іспаніі Цыкл NEDC Цыкл WLTP Renault Zoe 300 км 300 км паводле першых ацэнак Renault Nissan</td>
+				</tr>
+			
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+      <div class="content has-text-centered">
+        <p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
+
+      function refreshLabel() {
+        const isDark = document.body.classList.contains("dark");
+        btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+      }
+      refreshLabel();
+
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        refreshLabel();
+      });
+    </script>
+  </body>
+</html>

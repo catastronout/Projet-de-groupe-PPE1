@@ -1,38 +1,167 @@
 <!DOCTYPE html>
 	<html>
-	<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Concordancier - https://novychas.online/zamezza/shirokaja_a_tanom_ja_dzjakuj_n</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-	<style>
-		body { padding: 1.25rem; }
-		.kwic-left { text-align: right; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		.kwic-kw   { text-align: center; width: 10%; font-family: monospace; font-weight: bold; }
-		.kwic-right{ text-align: left; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		mark { padding: 0.1rem 0.2rem; }
-	</style>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Concordancier - be-19</title>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+			<style>
+				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
+				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+
+				.back-link { color: #667eea }
+				.back-link:hover { color: #764ba2 }
+
+				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
+				.table tbody tr:hover td { background-color: #f5f3ff; }
+
+			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
+			.kwic-left  { text-align: right;  width: 44%; }
+			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
+			.kwic-right { text-align: left;   width: 44%; }
+			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+
+			.cat-col { white-space: nowrap; }
+
+			body.dark { background: #0f172a; color: #e2e8f0; }
+			body.dark .card { background: #111827; color: #e2e8f0; }
+			body.dark .table { background: #111827; color: #e2e8f0; }
+			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
+			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
+			body.dark .table tbody tr:hover td { background: #1f2937; }
+			body.dark .back-link { color: #93c5fd; }
+			body.dark .back-link:hover { color: #c4b5fd; }
+			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
+			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+
+			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
+		</style>
 	</head>
+
 	<body>
-	<h1 class="title is-4">Concordancier (KWIC)</h1>
-	<p class="mb-3"><strong>URL :</strong> <a href="https://novychas.online/zamezza/shirokaja_a_tanom_ja_dzjakuj_n" target="_blank" rel="noopener noreferrer">https://novychas.online/zamezza/shirokaja_a_tanom_ja_dzjakuj_n</a></p>
-	<p class="mb-5"><strong>Fenêtre :</strong> ±20 mots</p>
-	<div class="table-container">
-		<table class="table is-fullwidth is-striped">
-		<thead>
-			<tr><th>Catégorie</th><th>Gauche</th><th>Mot</th><th>Droite</th></tr>
-		</thead>
-		<tbody>
-	<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">выдання у вашых руках Новы Час Online ПалітыкаГрамадстваЭканомікаЗамежжаКультураПовязь часоўАсобаСпорт Відэа BUTTON Пошук Facebook TikTok Instagram Telegram Twitter Одноклассники YouTube Шырокая</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">Дзякуй не трэба button Падзяліцца ў Facebook button Падзяліцца ў Telegram button Падзяліцца ў Twitter button Падзяліцца ў VK Спасылка</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">Замежжа05 02 2010 Алег Новікаў DEL DEL 10 студзеня жыхары двух французскіх заморскіх дэпартаментаў Марцініка і Гвіяна прагаласавалі супраць пашырэння</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">Пра дзівосныя завіхрэнні французскага посткаланіялізму журналіст НЧ Алег Новікаў размаўляе з французскім калегай Бярнардам Шмідтам які нядаўна пабываў на Марцініцы</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">які нядаўна пабываў на Марцініцы 6a508a60aa3bf9510ea6acb021c94b48 jpg 10 студзеня жыхары двух французскіх заморскіх дэпартаментаў Марцініка і Гвіяна прагаласавалі супраць пашырэння</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">Пра дзівосныя завіхрэнні французскага посткаланіялізму журналіст НЧ Алег Новікаў размаўляе з французскім калегай Бярнардам Шмідтам які нядаўна пабываў на Марцініцы</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">Бярнардам Шмідтам які нядаўна пабываў на Марцініцы Сыходзячы з рэалій постсавецкай палітыкі выбар жыхароў Марцінікі падаецца вельмі дзіўным Статус шырокай</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">як паказвае прыклад тых жа былых аўтаномных савецкіх рэспублік дае большыя магчымасці для мясцовай палітычнай эліты Здавалася так яно і</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">працэнтаў Можна казаць што гэта свядомы выбар большасці Які галоўны матыў такога выбару Каб зразумець чаму большасць прагаласавала супраць пашырэння</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">трэба вярнуцца ў мінулы год Дакладней прыгадаць вясну 2009 года калі Марцініку ахапіла агульная забастоўка арганізаваная прафсаюзамі Удзельнікі таксама пратэставалі</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">ў Францыі на праект Сарказі і вынікі рэферэндуму Правыя партыі кшталту Нацыянальнага Фронту і частка галістаў выступілі радыкальна супраць пашырэння</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">Яны пабачылі ў гэтым замах на інстытуты французскай рэспублікі для якой характэрны моцны цэнтралізм і універсальнасць праў для кожнага грамадзяніна</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">права прымаць канчатковае рашэнне па падпісаных у Парыжы законах Такім правам карыстаюцца некалькі астравоў у Палінезіі Менавіта такую форму шырокай</td><td class="kwic-kw"><mark>аўтаноміі</mark></td><td class="kwic-right">хочуць аўтанамісты і прыхільнікі незалежнасці Што тычыцца французскіх левых то яны былі цалкам на баку праціўнікаў Сарказі Па большасці іх</td></tr>
-      </tbody>
-		</table>
-	</div>
-	</body>
-	</html>
-	
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
+					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
+					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+				</div>
+			/div>
+		</section>
+
+    <section class="section">
+      <div class="container">
+        <p class="mb-4">
+          <a href="../../../index.html" class="back-link">Retour</a>
+          <span class="has-text-grey"> / </span>
+          <a href="../tableaux/be.html" class="back-link">Tableau</a>
+        </p>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="mb-2"><strong>URL :</strong> <a href="https://novychas.online/zamezza/shirokaja_a_tanom_ja_dzjakuj_n" target="_blank" rel="noopener noreferrer" class="back-link">https://novychas.online/zamezza/shirokaja_a_tanom_ja_dzjakuj_n</a></p>
+              <p class="mb-4"><strong>Occurrences :</strong> 7</p>
+            </div>
+
+            <div class="table-container">
+              <table class="table is-fullwidth is-hoverable is-striped">
+                <thead>
+                  <tr>
+                    <th>Catégorie</th>
+                    <th>Gauche</th>
+                    <th>Mot</th>
+                    <th>Droite</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">выдання у вашых руках Новы Час Online ПалітыкаГрамадстваЭканомікаЗамежжаКультураПовязь часоўАсобаСпорт Відэа BUTTON Пошук Facebook TikTok Instagram Telegram Twitter Одноклассники YouTube Шырокая</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">Дзякуй не трэба button Падзяліцца ў Facebook button Падзяліцца ў Telegram button Падзяліцца ў Twitter button Падзяліцца ў VK Спасылка</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">Замежжа05 02 2010 Алег Новікаў DEL DEL 10 студзеня жыхары двух французскіх заморскіх дэпартаментаў Марцініка і Гвіяна прагаласавалі супраць пашырэння</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">Пра дзівосныя завіхрэнні французскага посткаланіялізму журналіст НЧ Алег Новікаў размаўляе з французскім калегай Бярнардам Шмідтам які нядаўна пабываў на Марцініцы</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">які нядаўна пабываў на Марцініцы 6a508a60aa3bf9510ea6acb021c94b48 jpg 10 студзеня жыхары двух французскіх заморскіх дэпартаментаў Марцініка і Гвіяна прагаласавалі супраць пашырэння</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">Пра дзівосныя завіхрэнні французскага посткаланіялізму журналіст НЧ Алег Новікаў размаўляе з французскім калегай Бярнардам Шмідтам які нядаўна пабываў на Марцініцы</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">Бярнардам Шмідтам які нядаўна пабываў на Марцініцы Сыходзячы з рэалій постсавецкай палітыкі выбар жыхароў Марцінікі падаецца вельмі дзіўным Статус шырокай</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">як паказвае прыклад тых жа былых аўтаномных савецкіх рэспублік дае большыя магчымасці для мясцовай палітычнай эліты Здавалася так яно і</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">працэнтаў Можна казаць што гэта свядомы выбар большасці Які галоўны матыў такога выбару Каб зразумець чаму большасць прагаласавала супраць пашырэння</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">трэба вярнуцца ў мінулы год Дакладней прыгадаць вясну 2009 года калі Марцініку ахапіла агульная забастоўка арганізаваная прафсаюзамі Удзельнікі таксама пратэставалі</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">ў Францыі на праект Сарказі і вынікі рэферэндуму Правыя партыі кшталту Нацыянальнага Фронту і частка галістаў выступілі радыкальна супраць пашырэння</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">Яны пабачылі ў гэтым замах на інстытуты французскай рэспублікі для якой характэрны моцны цэнтралізм і універсальнасць праў для кожнага грамадзяніна</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">права прымаць канчатковае рашэнне па падпісаных у Парыжы законах Такім правам карыстаюцца некалькі астравоў у Палінезіі Менавіта такую форму шырокай</td>
+					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
+					<td class="kwic-right">хочуць аўтанамісты і прыхільнікі незалежнасці Што тычыцца французскіх левых то яны былі цалкам на баку праціўнікаў Сарказі Па большасці іх</td>
+				</tr>
+			
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+      <div class="content has-text-centered">
+        <p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
+
+      function refreshLabel() {
+        const isDark = document.body.classList.contains("dark");
+        btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+      }
+      refreshLabel();
+
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        refreshLabel();
+      });
+    </script>
+  </body>
+</html>

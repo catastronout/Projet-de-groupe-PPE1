@@ -1,38 +1,167 @@
 <!DOCTYPE html>
 	<html>
-	<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Concordancier - https://resaro.ai/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%BD%D0%B5/%D0%B3%D0%BB%D0%B0%D1%81%D0%B0%D1%80%D1%8B%D0%B9/%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%96</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-	<style>
-		body { padding: 1.25rem; }
-		.kwic-left { text-align: right; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		.kwic-kw   { text-align: center; width: 10%; font-family: monospace; font-weight: bold; }
-		.kwic-right{ text-align: left; width: 45%; font-family: monospace; font-size: 0.9rem; }
-		mark { padding: 0.1rem 0.2rem; }
-	</style>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Concordancier - be-11</title>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+			<style>
+				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
+				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+
+				.back-link { color: #667eea }
+				.back-link:hover { color: #764ba2 }
+
+				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
+				.table tbody tr:hover td { background-color: #f5f3ff; }
+
+			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
+			.kwic-left  { text-align: right;  width: 44%; }
+			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
+			.kwic-right { text-align: left;   width: 44%; }
+			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+
+			.cat-col { white-space: nowrap; }
+
+			body.dark { background: #0f172a; color: #e2e8f0; }
+			body.dark .card { background: #111827; color: #e2e8f0; }
+			body.dark .table { background: #111827; color: #e2e8f0; }
+			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
+			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
+			body.dark .table tbody tr:hover td { background: #1f2937; }
+			body.dark .back-link { color: #93c5fd; }
+			body.dark .back-link:hover { color: #c4b5fd; }
+			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
+			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+
+			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
+		</style>
 	</head>
+
 	<body>
-	<h1 class="title is-4">Concordancier (KWIC)</h1>
-	<p class="mb-3"><strong>URL :</strong> <a href="https://resaro.ai/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%BD%D0%B5/%D0%B3%D0%BB%D0%B0%D1%81%D0%B0%D1%80%D1%8B%D0%B9/%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%96" target="_blank" rel="noopener noreferrer">https://resaro.ai/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%BD%D0%B5/%D0%B3%D0%BB%D0%B0%D1%81%D0%B0%D1%80%D1%8B%D0%B9/%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%96</a></p>
-	<p class="mb-5"><strong>Fenêtre :</strong> ±20 mots</p>
-	<div class="table-container">
-		<table class="table is-fullwidth is-striped">
-		<thead>
-			<tr><th>Catégorie</th><th>Gauche</th><th>Mot</th><th>Droite</th></tr>
-		</thead>
-		<tbody>
-	<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">гісторыя 01 Наша каманда 02 Кар'ера 03 артыкула 01 Whitepapers 02 гласарый 03 1 Галоўная 2 Insights 3 гласарый 4</td><td class="kwic-kw"><mark>Аўтаномія</mark></td><td class="kwic-right">Аўтаномія BUTTON доля капіяваць спасылку Падзяліцца на LinkedIn Падзяліцца на Facebook Падзяліцца на X Падзяліцеся ў Whatsapp Аўтаномнасць у штучным</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">01 Наша каманда 02 Кар'ера 03 артыкула 01 Whitepapers 02 гласарый 03 1 Галоўная 2 Insights 3 гласарый 4 Аўтаномія</td><td class="kwic-kw"><mark>Аўтаномія</mark></td><td class="kwic-right">BUTTON доля капіяваць спасылку Падзяліцца на LinkedIn Падзяліцца на Facebook Падзяліцца на X Падзяліцеся ў Whatsapp Аўтаномнасць у штучным інтэлекце</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">адносіцца да ступені у якой сістэма можа прымаць рашэнні і здзяйсняць дзеянні без непасрэднага ўмяшання чалавека У кантэксце забеспячэння бяспекі</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">гэта не проста функцыя яна ўяўляе сабой змену адказнасці рызыкі і кантролю якія неабходна старанна ацэньваць асабліва калі сістэмы штучнага</td></tr>
-<tr><td class="has-text-grey">sens 1</td><td class="kwic-left">ўваходнымі дадзенымі Ацэнка сумеснай працы чалавека і машыны для забеспячэння значнага кантролю або нагляду з боку чалавека Важна адзначыць што</td><td class="kwic-kw"><mark>аўтаномія</mark></td><td class="kwic-right">павінна ацэньвацца не толькі з тэхнічнага пункту гледжання але і з пункту гледжання кіравання і этыкі Сістэмы якія дзейнічаюць незалежна</td></tr>
-<tr><td class="has-text-grey">sens 2</td><td class="kwic-left">гласарый 4 Аўтаномія Аўтаномія BUTTON доля капіяваць спасылку Падзяліцца на LinkedIn Падзяліцца на Facebook Падзяліцца на X Падзяліцеся ў Whatsapp</td><td class="kwic-kw"><mark>Аўтаномнасць</mark></td><td class="kwic-right">у штучным інтэлекце адносіцца да ступені у якой сістэма можа прымаць рашэнні і здзяйсняць дзеянні без непасрэднага ўмяшання чалавека У</td></tr>
-<tr><td class="has-text-grey">sens 2</td><td class="kwic-left">умовах ці адпавядае яна аперацыйным межам і ці мае яна механізмы бяспекі або перавызначэння для забеспячэння кантролю чалавека пры неабходнасці</td><td class="kwic-kw"><mark>Аўтаномнасць</mark></td><td class="kwic-right">павялічвае складанасць забеспячэння паколькі яна ўносіць нявызначанасць у паводзіны якая магла не быць відавочна запраграмавана або прадбачана Ключавыя мерапрыемствы па</td></tr>
-<tr><td class="has-text-grey">sens 2</td><td class="kwic-left">падсправаздачнасці і кантролю Гэта ўключае ў сябе забеспячэнне празрыстасці аўтаномных рашэнняў і магчымасць тлумачыць або абгрунтоўваць гэтыя рашэнні зацікаўленым бакам</td><td class="kwic-kw"><mark>Аўтаномнасць</mark></td><td class="kwic-right">часта класіфікуецца па ўзроўнях напрыклад у аўтаномных транспартных сродках прычым кожны ўзровень патрабуе рознай ступені гарантыі і кантролю Па меры</td></tr>
-      </tbody>
-		</table>
-	</div>
-	</body>
-	</html>
-	
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
+					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
+					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+				</div>
+			/div>
+		</section>
+
+    <section class="section">
+      <div class="container">
+        <p class="mb-4">
+          <a href="../../../index.html" class="back-link">Retour</a>
+          <span class="has-text-grey"> / </span>
+          <a href="../tableaux/be.html" class="back-link">Tableau</a>
+        </p>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="mb-2"><strong>URL :</strong> <a href="https://resaro.ai/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%BD%D0%B5/%D0%B3%D0%BB%D0%B0%D1%81%D0%B0%D1%80%D1%8B%D0%B9/%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%96" target="_blank" rel="noopener noreferrer" class="back-link">https://resaro.ai/be/%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%BD%D0%B5/%D0%B3%D0%BB%D0%B0%D1%81%D0%B0%D1%80%D1%8B%D0%B9/%D0%B0%D1%9E%D1%82%D0%B0%D0%BD%D0%BE%D0%BC%D1%96%D1%96</a></p>
+              <p class="mb-4"><strong>Occurrences :</strong> 7</p>
+            </div>
+
+            <div class="table-container">
+              <table class="table is-fullwidth is-hoverable is-striped">
+                <thead>
+                  <tr>
+                    <th>Catégorie</th>
+                    <th>Gauche</th>
+                    <th>Mot</th>
+                    <th>Droite</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">гісторыя 01 Наша каманда 02 Кар'ера 03 артыкула 01 Whitepapers 02 гласарый 03 1 Галоўная 2 Insights 3 гласарый 4</td>
+					<td class="kwic-kw"><mark>Аўтаномія</mark></td>
+					<td class="kwic-right">Аўтаномія BUTTON доля капіяваць спасылку Падзяліцца на LinkedIn Падзяліцца на Facebook Падзяліцца на X Падзяліцеся ў Whatsapp Аўтаномнасць у штучным</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">01 Наша каманда 02 Кар'ера 03 артыкула 01 Whitepapers 02 гласарый 03 1 Галоўная 2 Insights 3 гласарый 4 Аўтаномія</td>
+					<td class="kwic-kw"><mark>Аўтаномія</mark></td>
+					<td class="kwic-right">BUTTON доля капіяваць спасылку Падзяліцца на LinkedIn Падзяліцца на Facebook Падзяліцца на X Падзяліцеся ў Whatsapp Аўтаномнасць у штучным інтэлекце</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">адносіцца да ступені у якой сістэма можа прымаць рашэнні і здзяйсняць дзеянні без непасрэднага ўмяшання чалавека У кантэксце забеспячэння бяспекі</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">гэта не проста функцыя яна ўяўляе сабой змену адказнасці рызыкі і кантролю якія неабходна старанна ацэньваць асабліва калі сістэмы штучнага</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 1</td>
+					<td class="kwic-left">ўваходнымі дадзенымі Ацэнка сумеснай працы чалавека і машыны для забеспячэння значнага кантролю або нагляду з боку чалавека Важна адзначыць што</td>
+					<td class="kwic-kw"><mark>аўтаномія</mark></td>
+					<td class="kwic-right">павінна ацэньвацца не толькі з тэхнічнага пункту гледжання але і з пункту гледжання кіравання і этыкі Сістэмы якія дзейнічаюць незалежна</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 2</td>
+					<td class="kwic-left">гласарый 4 Аўтаномія Аўтаномія BUTTON доля капіяваць спасылку Падзяліцца на LinkedIn Падзяліцца на Facebook Падзяліцца на X Падзяліцеся ў Whatsapp</td>
+					<td class="kwic-kw"><mark>Аўтаномнасць</mark></td>
+					<td class="kwic-right">у штучным інтэлекце адносіцца да ступені у якой сістэма можа прымаць рашэнні і здзяйсняць дзеянні без непасрэднага ўмяшання чалавека У</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 2</td>
+					<td class="kwic-left">умовах ці адпавядае яна аперацыйным межам і ці мае яна механізмы бяспекі або перавызначэння для забеспячэння кантролю чалавека пры неабходнасці</td>
+					<td class="kwic-kw"><mark>Аўтаномнасць</mark></td>
+					<td class="kwic-right">павялічвае складанасць забеспячэння паколькі яна ўносіць нявызначанасць у паводзіны якая магла не быць відавочна запраграмавана або прадбачана Ключавыя мерапрыемствы па</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">sens 2</td>
+					<td class="kwic-left">падсправаздачнасці і кантролю Гэта ўключае ў сябе забеспячэнне празрыстасці аўтаномных рашэнняў і магчымасць тлумачыць або абгрунтоўваць гэтыя рашэнні зацікаўленым бакам</td>
+					<td class="kwic-kw"><mark>Аўтаномнасць</mark></td>
+					<td class="kwic-right">часта класіфікуецца па ўзроўнях напрыклад у аўтаномных транспартных сродках прычым кожны ўзровень патрабуе рознай ступені гарантыі і кантролю Па меры</td>
+				</tr>
+			
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+      <div class="content has-text-centered">
+        <p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
+
+      function refreshLabel() {
+        const isDark = document.body.classList.contains("dark");
+        btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+      }
+      refreshLabel();
+
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        refreshLabel();
+      });
+    </script>
+  </body>
+</html>

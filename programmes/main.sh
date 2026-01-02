@@ -286,53 +286,53 @@ generer_kwic_tsv() {
 	# - repérer les occurrences exactes des motifs
 	# - extraire une fenêtre de contexte de N mots à gauche et à droite
 	# - écrire le résultat dans un fichier TSV : LABEL \t GAUCHE \t MOT \t DROITE
- 	perl -Mutf8 -CS -e '
- 		use strict; use warnings;
-    	use Encode qw(decode FB_DEFAULT);
+perl -Mutf8 -CS -e '
+        use strict; use warnings;
+        use Encode qw(decode FB_DEFAULT);
 
-    	my ($txt, $out, $label, $joined, $w) = @ARGV;
+        my ($txt, $out, $label, $joined, $w) = @ARGV;
+        $label  = decode("UTF-8", $label,  FB_DEFAULT);
+        $joined = decode("UTF-8", $joined, FB_DEFAULT);
 
-		$label  = decode("UTF-8", $label,  FB_DEFAULT);
-		$joined = decode("UTF-8", $joined, FB_DEFAULT);
+        # 검색할 단어들 (자율, 자립 등)
+        my @motifs = grep { length($_) } split(/\x1F/, $joined);
+        
+        open my $IN, "<:encoding(UTF-8)", $txt or die "Cannot open $txt\n";
+        local $/;
+        my $content = <$IN>;
+        close $IN;
 
-		my @motifs = grep { length($_) } split(/\x1F/, $joined);
-		my %want;
-		for my $m (@motifs) {
-		my $k = lc($m);
-		$want{$k} = 1;
-		}
+        # 정규표현식 패턴 생성: (자율|자립)
+        my $pattern = join("|", map { quotemeta($_) } @motifs);
 
-		open my $IN, "<:raw", $txt or die "Cannot open $txt\n";
-		local $/;
-		my $bytes = <$IN>;
-		close $IN;
+        open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
 
-		my $data = decode("UTF-8", $bytes, FB_DEFAULT);
+        # 핵심 수정: 전체 텍스트에서 패턴이 포함된 위치를 찾음 (부분 일치)
+        while ($content =~ /($pattern)/gu) {
+            my $matched_word = $1;
+            my $pos = pos($content); # 매칭된 단어의 끝 위치
+            my $start_pos = $pos - length($matched_word);
 
-		my @tok = ($data =~ /[\p{L}\p{N}][\p{L}\p{N}\x{2019}\x{0027}\-]*/gu);
+            # 문맥 추출 (글자 수 기준이 아니라 주변 공백/단어 기반으로 추출하기 위해 
+            # 매칭 위치 앞뒤의 텍스트를 적절히 잘라냅니다)
+            
+            # 왼쪽 문맥: 매칭 위치 앞의 약 100글자 중 마지막 $w개의 어절
+            my $left_context_raw = substr($content, ($start_pos > 100 ? $start_pos - 100 : 0), ($start_pos > 100 ? 100 : $start_pos));
+            my @left_words = split(/\s+/, $left_context_raw);
+            my $left = join(" ", @left_words[ ( @left_words > $w ? @left_words - $w : 0 ) .. $#left_words ]);
 
-		open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
+            # 오른쪽 문맥: 매칭 위치 뒤의 약 100글자 중 첫 $w개의 어절
+            my $right_context_raw = substr($content, $pos, 100);
+            my @right_words = split(/\s+/, $right_context_raw);
+            my $right = join(" ", @right_words[ 0 .. ( @right_words > $w ? $w - 1 : $#right_words ) ]);
 
-		for (my $i=0; $i<@tok; $i++) {
-		my $t = $tok[$i];
-		next unless $want{ lc($t) };
+            # 탭 문자 제거 (TSV 구조 유지)
+            for ($left, $matched_word, $right) { s/\t/ /g; s/\n/ /g; s/\r//g; }
 
-		my $L = $i - $w; $L = 0 if $L < 0;
-		my $R = $i + $w; $R = $#tok if $R > $#tok;
-
-		my $left  = ($i > $L) ? join(" ", @tok[$L .. $i-1]) : "";
-		my $kw    = $tok[$i];
-		my $right = ($i < $R) ? join(" ", @tok[$i+1 .. $R]) : "";
-
-		$left  =~ s/\t/ /g;
-		$kw    =~ s/\t/ /g;
-		$right =~ s/\t/ /g;
-
-		print $OUT $label, "\t", $left, "\t", $kw, "\t", $right, "\n";
-		}
-
-		close $OUT;
-	' "$txt" "$out_tsv" "$label" "$motifs_joined" "$w"
+            print $OUT $label, "\t", $left, "\t", $matched_word, "\t", $right, "\n";
+        }
+        close $OUT;
+    ' "$txt" "$out_tsv" "$label" "$motifs_joined" "$w"
 }
 
 # =================================
@@ -560,45 +560,41 @@ generer_concordancier_html_depuis_tsv() {
 #      EXTRACTION TEXTE + KWIC TSV + CONCORDANCIER HTML     
 # ==========================================================
 extraire_et_compter() {
-	local html_src="$1"   # chemin du HTML aspiré
-	local idx="$2"        # numéro de l'URL
-	local url="$3"        # URL d'origine
+    local html_src="$1"
+    local idx="$2"
+    local url="$3"      
 
-	local FICHIER_TEXTE="../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt"
+    local FICHIER_TEXTE="../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt"
 
-	# Locale : évite des bugs sur certains caractères (UTF-8)
-	export LC_ALL=en_US.UTF-8
+    # html_src = ton fichier HTML local (aspiré/converti)
+	< "$html_src" trafilatura > "$FICHIER_TEXTE" 2>/dev/null
 
-	# 1) Tentative avec trafilatura (souvent meilleur sur le contenu "article")
-	#    On force l'encodage de sortie en UTF-8 via l'environnement + on écrit direct dans le dump
-	if command -v trafilatura >/dev/null 2>&1; then
-		trafilatura -u "$url" > "$FICHIER_TEXTE" 2>/dev/null
-	fi
-
-	# 2) Fallback lynx si trafilatura n'a rien sorti (fichier vide ou absent)
-	if [[ ! -s "$FICHIER_TEXTE" ]]; then
-		log_step "Trafilatura : KO → fallback lynx"
-		lynx -force_html -dump -nolist \
-			-assume_charset=utf-8 -display_charset=utf-8 \
-			"$html_src" > "$FICHIER_TEXTE" 2>/dev/null
-	else
-		log_step "Trafilatura : OK (dump texte produit)"
-	fi
-
-	# 3) Si on a du texte, on calcule tout
+	# Si le fichier texte existe ET n’est pas vide, on calcule tout
 	if [[ -s "$FICHIER_TEXTE" ]]; then
+		# Lien vers le dump TXT
 		LIEN_TEXT="<a href='../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt' style='color: #667eea;'>TXT</a>"
 
+		# Nombre de mots dans le dump
 		NB_MOTS=$(wc -w < "$FICHIER_TEXTE")
 
+		# Chemins des TSV (1 par sens + un TSV global fusionné)
+		local TSV1="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-sens1.tsv"
+		local TSV2="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-sens2.tsv"
 		local TSV_ALL="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-kwic.tsv"
 
+		# On appelle la fonction SANS $(...) pour que OCC_SENS1 et OCC_SENS2 soient bien mises à jour dans ce shell
 		generer_contextes_kwic "$idx" "$FICHIER_TEXTE" >/dev/null
+
+		# Génération du concordancier HTML à partir du TSV global
 		generer_concordancier_html_depuis_tsv "$idx" "$url" "$TSV_ALL" >/dev/null
 
+		# Lien vers le concordancier
 		LIEN_CONC="<a href='../concordances/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.html' style='color: #667eea;'>KWIC</a>"
+
 	else
-		log_step "Extraction texte : KO (dump vide)"
+		# Si lynx a échoué ou a produit un fichier vide : on met des tirets
+		# --- Messages d'information (VERBOSE) ----
+		log_step "Extraction texte : KO (fichier vide ou lynx a échoué)"
 		NB_MOTS="-"
 		OCC_SENS1="-"
 		OCC_SENS2="-"

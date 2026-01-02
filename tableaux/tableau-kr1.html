@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tableau des résultats</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+		<style>
+			.hero {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+				}
+			.card {
+				border-radius: 8px;
+				box-shadow: 0 2px 15px rgba(0,0,0,0.1)
+			}
+			.table thead th {
+				background-color: #f8f9fa;
+				color: #4a5568;
+				border-bottom: 2px solid #667eea;
+			}
+			.table tbody tr:hover {
+				background-color: #f5f3ff
+			}
+			.url-cell {
+				max-width: 350px;
+				word-break: break-all;
+				font-family: monospace;
+				font-size: 0.85rem;
+				color: #555
+			}
+			.back-link {
+				color: #667eea
+			}
+			.back-link:hover {
+				color: #764ba2
+			}
+			.count-cell {
+				font-weight: bold;
+				color: #667eea
+			}
+			.url-cell a { 
+				color: #667eea; 
+			}
+			.url-cell a:hover { 
+				color: #764ba2; 
+			}
+			
+			/* MODE NUIT */
+			body.dark {
+			background: #0f172a;
+			color: #e2e8f0;
+			}
+
+			/* Cartes */
+			body.dark .card {
+			background: #111827;
+			color: #e2e8f0;
+			}
+
+			/* Tableau Bulma */
+			body.dark .table {
+			background: #111827;
+			color: #e2e8f0;
+			}
+
+			body.dark .table thead th {
+			background: #0b1220;
+			color: #e2e8f0;
+			}
+
+			body.dark .table td,
+			body.dark .table th {
+			background: #111827;
+			color: #e2e8f0;
+			border-color: #334155;
+			}
+
+			body.dark .table tbody tr:hover td {
+			background: #1f2937;
+			}
+
+			/* Liens */
+			body.dark .url-cell {
+			color: #cbd5e1;
+			}
+
+			body.dark .back-link,
+			body.dark .url-cell a {
+			color: #93c5fd;
+			}
+
+			body.dark .back-link:hover,
+			body.dark .url-cell a:hover {
+			color: #c4b5fd;
+			}
+			body.dark .footer {
+			background: #0b1220 !important;
+			color: #e2e8f0;
+			}
+			body.dark .footer .has-text-grey {
+			color: #94a3b8 !important;
+			}
+		</style>	
+	</head>
+
+	<body>
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+					<h1 class="title has-text-white">Tableau des résultats</h1>
+					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+				</div>
+			</div>
+		</section>
+		
+		<section class="section">
+			<div class="container">
+				<p class="mb-4"><a href="../../../index.html" class="back-link">Retour</a></p>
+
+				<div class="card">
+					<div class="card-content">
+						<div class="table-container">
+							<table class="table is-fullwidth is-hoverable">				
+								<thead>
+									<tr>
+										<th>N°</th>
+										<th>URL</th>
+										<th>Code HTTP</th>
+										<th>Encodage</th>
+										<th>Nb mots</th>
+										<th>Occ : 자율</th>
+										<th>Occ : 자립</th>
+										<th>Dump HTML</th>
+										<th>Dump Text</th>
+									</tr>
+								</thead>
+								<tbody>
+<tr>
+			<td>1</td>
+			<td class="url-cell"><a href="https://www.g-enews.com/view.php?ud=2025113009182197130c8c1c064d_1" target="_blank" rel="noopener noreferrer">https://www.g-enews.com/view.php?ud=2025113009182197130c8c1c064d_1</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1494</td>
+			<td class="count-cell">8</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-1.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-1.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>2</td>
+			<td class="url-cell"><a href="https://daily.hankooki.com/news/articleView.html?idxno=1300634" target="_blank" rel="noopener noreferrer">https://daily.hankooki.com/news/articleView.html?idxno=1300634</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1142</td>
+			<td class="count-cell">1</td>
+			<td class="count-cell">4</td>
+			<td><a href='../aspirations/kr/kr-2.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-2.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>3</td>
+			<td class="url-cell"><a href="https://www.khan.co.kr/article/202511182136005" target="_blank" rel="noopener noreferrer">https://www.khan.co.kr/article/202511182136005</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    4025</td>
+			<td class="count-cell">4</td>
+			<td class="count-cell">5</td>
+			<td><a href='../aspirations/kr/kr-3.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-3.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>4</td>
+			<td class="url-cell"><a href="https://www.sedaily.com/NewsView/2H0HOB2PZV" target="_blank" rel="noopener noreferrer">https://www.sedaily.com/NewsView/2H0HOB2PZV</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    2378</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">2</td>
+			<td><a href='../aspirations/kr/kr-4.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-4.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>5</td>
+			<td class="url-cell"><a href="https://www.ggilbo.com/news/articleView.html?idxno=1124411" target="_blank" rel="noopener noreferrer">https://www.ggilbo.com/news/articleView.html?idxno=1124411</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2601</td>
+			<td class="count-cell">6</td>
+			<td class="count-cell">2</td>
+			<td><a href='../aspirations/kr/kr-5.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-5.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>6</td>
+			<td class="url-cell"><a href="https://www.g-enews.com/view.php?ud=202511192052104048fbbec65dfb_1" target="_blank" rel="noopener noreferrer">https://www.g-enews.com/view.php?ud=202511192052104048fbbec65dfb_1</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    3190</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">7</td>
+			<td><a href='../aspirations/kr/kr-6.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-6.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>7</td>
+			<td class="url-cell"><a href="https://www.hellot.net/news/article.html?no=107081" target="_blank" rel="noopener noreferrer">https://www.hellot.net/news/article.html?no=107081</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    2018</td>
+			<td class="count-cell">6</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-7.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-7.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>8</td>
+			<td class="url-cell"><a href="https://www.g-enews.com/view.php?ud=202511131431288269fbbec65dfb_1" target="_blank" rel="noopener noreferrer">https://www.g-enews.com/view.php?ud=202511131431288269fbbec65dfb_1</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1907</td>
+			<td class="count-cell">2</td>
+			<td class="count-cell">5</td>
+			<td><a href='../aspirations/kr/kr-8.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-8.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>9</td>
+			<td class="url-cell"><a href="https://dgmbc.com/NewsArticle/812236" target="_blank" rel="noopener noreferrer">https://dgmbc.com/NewsArticle/812236</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2786</td>
+			<td class="count-cell">2</td>
+			<td class="count-cell">40</td>
+			<td><a href='../aspirations/kr/kr-9.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-9.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>10</td>
+			<td class="url-cell"><a href="https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003187995&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news" target="_blank" rel="noopener noreferrer">https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003187995&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news</a></td>
+			<td></td>
+			<td>-</td>
+			<td>-</td>
+			<td class="count-cell">-</td>
+			<td class="count-cell">-</td>
+			<td><a href='../aspirations/kr/kr-10.html' style='color: #667eea;'>HTML</a></td>
+			<td>-</td>
+		</tr>
+<tr>
+			<td>11</td>
+			<td class="url-cell"><a href="https://www.energydaily.co.kr/news/articleView.html?idxno=160801" target="_blank" rel="noopener noreferrer">https://www.energydaily.co.kr/news/articleView.html?idxno=160801</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1354</td>
+			<td class="count-cell">1</td>
+			<td class="count-cell">9</td>
+			<td><a href='../aspirations/kr/kr-11.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-11.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>12</td>
+			<td class="url-cell"><a href="https://www.mt.co.kr/economy/2025/12/03/2025120223515282395" target="_blank" rel="noopener noreferrer">https://www.mt.co.kr/economy/2025/12/03/2025120223515282395</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1348</td>
+			<td class="count-cell">2</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-12.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-12.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>13</td>
+			<td class="url-cell"><a href="https://www.ablenews.co.kr/news/articleView.html?idxno=222323" target="_blank" rel="noopener noreferrer">https://www.ablenews.co.kr/news/articleView.html?idxno=222323</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    3157</td>
+			<td class="count-cell">4</td>
+			<td class="count-cell">20</td>
+			<td><a href='../aspirations/kr/kr-13.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-13.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>14</td>
+			<td class="url-cell"><a href="https://www.koit.co.kr/news/articleView.html?idxno=203241" target="_blank" rel="noopener noreferrer">https://www.koit.co.kr/news/articleView.html?idxno=203241</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1068</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-14.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-14.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>15</td>
+			<td class="url-cell"><a href="https://www.newspim.com/news/view/20251125000974" target="_blank" rel="noopener noreferrer">https://www.newspim.com/news/view/20251125000974</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2705</td>
+			<td class="count-cell">2</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-15.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-15.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>16</td>
+			<td class="url-cell"><a href="https://www.breaknews.com/1166318" target="_blank" rel="noopener noreferrer">https://www.breaknews.com/1166318</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1202</td>
+			<td class="count-cell">1</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-16.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-16.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>17</td>
+			<td class="url-cell"><a href="https://www.irobotnews.com/news/articleView.html?idxno=43569" target="_blank" rel="noopener noreferrer">https://www.irobotnews.com/news/articleView.html?idxno=43569</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1270</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">2</td>
+			<td><a href='../aspirations/kr/kr-17.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-17.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>18</td>
+			<td class="url-cell"><a href="https://www.onews.tv/news/articleView.html?idxno=198022" target="_blank" rel="noopener noreferrer">https://www.onews.tv/news/articleView.html?idxno=198022</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>     991</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">4</td>
+			<td><a href='../aspirations/kr/kr-18.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-18.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>19</td>
+			<td class="url-cell"><a href="https://www.newsis.com/view/NISX20251127_0003420067" target="_blank" rel="noopener noreferrer">https://www.newsis.com/view/NISX20251127_0003420067</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2422</td>
+			<td class="count-cell">1</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-19.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-19.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>20</td>
+			<td class="url-cell"><a href="https://www.yna.co.kr/view/AKR20251202077700053?input=1195m" target="_blank" rel="noopener noreferrer">https://www.yna.co.kr/view/AKR20251202077700053?input=1195m</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    2299</td>
+			<td class="count-cell">4</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-20.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-20.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>21</td>
+			<td class="url-cell"><a href="https://www.inews24.com/view/1913617" target="_blank" rel="noopener noreferrer">https://www.inews24.com/view/1913617</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>     840</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-21.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-21.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>22</td>
+			<td class="url-cell"><a href="https://edu.chosun.com/site/data/html_dir/2025/12/02/2025120280131.html" target="_blank" rel="noopener noreferrer">https://edu.chosun.com/site/data/html_dir/2025/12/02/2025120280131.html</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2256</td>
+			<td class="count-cell">19</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-22.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-22.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>23</td>
+			<td class="url-cell"><a href="https://www.ccdn.co.kr/news/articleView.html?idxno=1051961" target="_blank" rel="noopener noreferrer">https://www.ccdn.co.kr/news/articleView.html?idxno=1051961</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1007</td>
+			<td class="count-cell">4</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-23.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-23.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>24</td>
+			<td class="url-cell"><a href="https://www.etnews.com/20251203000304" target="_blank" rel="noopener noreferrer">https://www.etnews.com/20251203000304</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>     798</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-24.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-24.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>25</td>
+			<td class="url-cell"><a href="https://www.cctimes.kr/news/articleView.html?idxno=879519" target="_blank" rel="noopener noreferrer">https://www.cctimes.kr/news/articleView.html?idxno=879519</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>iso-8859-1</td>
+			<td>    1584</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-25.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-25.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>26</td>
+			<td class="url-cell"><a href="http://www.worktoday.co.kr/news/articleView.html?idxno=78018" target="_blank" rel="noopener noreferrer">http://www.worktoday.co.kr/news/articleView.html?idxno=78018</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>iso-8859-1</td>
+			<td>    1639</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-26.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-26.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>27</td>
+			<td class="url-cell"><a href="https://www.dt.co.kr/article/12033102?ref=naver" target="_blank" rel="noopener noreferrer">https://www.dt.co.kr/article/12033102?ref=naver</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2378</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">5</td>
+			<td><a href='../aspirations/kr/kr-27.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-27.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>28</td>
+			<td class="url-cell"><a href="https://www.newsgn.com/news/articleView.html?idxno=520759" target="_blank" rel="noopener noreferrer">https://www.newsgn.com/news/articleView.html?idxno=520759</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1050</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">2</td>
+			<td><a href='../aspirations/kr/kr-28.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-28.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>29</td>
+			<td class="url-cell"><a href="https://www.gukjenews.com/news/articleView.html?idxno=3446431" target="_blank" rel="noopener noreferrer">https://www.gukjenews.com/news/articleView.html?idxno=3446431</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1502</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-29.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-29.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>30</td>
+			<td class="url-cell"><a href="https://www.job-post.co.kr/news/articleView.html?idxno=194080" target="_blank" rel="noopener noreferrer">https://www.job-post.co.kr/news/articleView.html?idxno=194080</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>iso-8859-1</td>
+			<td>    1301</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">7</td>
+			<td><a href='../aspirations/kr/kr-30.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-30.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>31</td>
+			<td class="url-cell"><a href="https://www.mohw.go.kr/menu.es?mid=a10711041000" target="_blank" rel="noopener noreferrer">https://www.mohw.go.kr/menu.es?mid=a10711041000</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>-</td>
+			<td>    2657</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">36</td>
+			<td><a href='../aspirations/kr/kr-31.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-31.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>32</td>
+			<td class="url-cell"><a href="https://www.hankukdaily.co.kr/news/articleView.html?idxno=11886" target="_blank" rel="noopener noreferrer">https://www.hankukdaily.co.kr/news/articleView.html?idxno=11886</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>     859</td>
+			<td class="count-cell">7</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-32.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-32.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>33</td>
+			<td class="url-cell"><a href="https://www.sedaily.com/NewsView/2H1LLLKA44" target="_blank" rel="noopener noreferrer">https://www.sedaily.com/NewsView/2H1LLLKA44</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1965</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-33.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-33.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>34</td>
+			<td class="url-cell"><a href="https://www.sisafocus.co.kr/news/articleView.html?idxno=351292" target="_blank" rel="noopener noreferrer">https://www.sisafocus.co.kr/news/articleView.html?idxno=351292</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1600</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-34.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-34.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>35</td>
+			<td class="url-cell"><a href="https://www.kbsm.net/news/view.php?idx=499792" target="_blank" rel="noopener noreferrer">https://www.kbsm.net/news/view.php?idx=499792</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>     942</td>
+			<td class="count-cell">2</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-35.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-35.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>36</td>
+			<td class="url-cell"><a href="https://www.edujin.co.kr/news/articleView.html?idxno=51688" target="_blank" rel="noopener noreferrer">https://www.edujin.co.kr/news/articleView.html?idxno=51688</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1150</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-36.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-36.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>37</td>
+			<td class="url-cell"><a href="https://www.devtimes.co.kr/news/448009" target="_blank" rel="noopener noreferrer">https://www.devtimes.co.kr/news/448009</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1433</td>
+			<td class="count-cell">7</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-37.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-37.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>38</td>
+			<td class="url-cell"><a href="https://news.nate.com/view/20251203n31350" target="_blank" rel="noopener noreferrer">https://news.nate.com/view/20251203n31350</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>euc-kr</td>
+			<td>    3529</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-38.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-38.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>39</td>
+			<td class="url-cell"><a href="https://www.cbnews.kr/news/articleView.html?idxno=238270" target="_blank" rel="noopener noreferrer">https://www.cbnews.kr/news/articleView.html?idxno=238270</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1094</td>
+			<td class="count-cell">2</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-39.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-39.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>40</td>
+			<td class="url-cell"><a href="https://news.nate.com/view/20251203n26661" target="_blank" rel="noopener noreferrer">https://news.nate.com/view/20251203n26661</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>euc-kr</td>
+			<td>    3647</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-40.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-40.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>41</td>
+			<td class="url-cell"><a href="https://www.naewoeilbo.com/news/articleView.html?idxno=2258259" target="_blank" rel="noopener noreferrer">https://www.naewoeilbo.com/news/articleView.html?idxno=2258259</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>     743</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-41.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-41.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>42</td>
+			<td class="url-cell"><a href="https://www.newszoom.kr/1731240" target="_blank" rel="noopener noreferrer">https://www.newszoom.kr/1731240</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1467</td>
+			<td class="count-cell">13</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-42.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-42.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>43</td>
+			<td class="url-cell"><a href="https://news.nate.com/view/20251203n08922?mid=n1101" target="_blank" rel="noopener noreferrer">https://news.nate.com/view/20251203n08922?mid=n1101</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>euc-kr</td>
+			<td>    3095</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-43.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-43.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>44</td>
+			<td class="url-cell"><a href="https://www.m-i.kr/news/articleView.html?idxno=1310692" target="_blank" rel="noopener noreferrer">https://www.m-i.kr/news/articleView.html?idxno=1310692</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>iso-8859-1</td>
+			<td>    2495</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-44.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-44.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>45</td>
+			<td class="url-cell"><a href="http://www.hanbatilbo.com/news/articleView.html?idxno=305548" target="_blank" rel="noopener noreferrer">http://www.hanbatilbo.com/news/articleView.html?idxno=305548</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>iso-8859-1</td>
+			<td>     640</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-45.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-45.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>46</td>
+			<td class="url-cell"><a href="https://www.hyundai.com/worldwide/ko/company/ir/management-information/fair-trade/declaration-of-compliance" target="_blank" rel="noopener noreferrer">https://www.hyundai.com/worldwide/ko/company/ir/management-information/fair-trade/declaration-of-compliance</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>-</td>
+			<td>     580</td>
+			<td class="count-cell">6</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-46.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-46.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>47</td>
+			<td class="url-cell"><a href="https://www.mcee.go.kr/gg/web/board/read.do;jsessionid=ImMJc1a4jtqi52voE83ODAQ-s9yAjqAEG-9OG5l_.mehome1?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=2246&orgCd=&boardId=1757710&boardMasterId=228&boardCategoryId=&decorator=" target="_blank" rel="noopener noreferrer">https://www.mcee.go.kr/gg/web/board/read.do;jsessionid=ImMJc1a4jtqi52voE83ODAQ-s9yAjqAEG-9OG5l_.mehome1?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=2246&orgCd=&boardId=1757710&boardMasterId=228&boardCategoryId=&decorator=</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1110</td>
+			<td class="count-cell">9</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-47.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-47.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>48</td>
+			<td class="url-cell"><a href="http://www.200976.co.kr/news/447839" target="_blank" rel="noopener noreferrer">http://www.200976.co.kr/news/447839</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    2014</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">18</td>
+			<td><a href='../aspirations/kr/kr-48.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-48.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>49</td>
+			<td class="url-cell"><a href="https://www.ablenews.co.kr/news/articleView.html?idxno=226426" target="_blank" rel="noopener noreferrer">https://www.ablenews.co.kr/news/articleView.html?idxno=226426</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1334</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">17</td>
+			<td><a href='../aspirations/kr/kr-49.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-49.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>50</td>
+			<td class="url-cell"><a href="https://futurechosun.com/archives/135111" target="_blank" rel="noopener noreferrer">https://futurechosun.com/archives/135111</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1715</td>
+			<td class="count-cell">4</td>
+			<td class="count-cell">21</td>
+			<td><a href='../aspirations/kr/kr-50.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-50.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>51</td>
+			<td class="url-cell"><a href="https://www.khan.co.kr/article/202511052016005" target="_blank" rel="noopener noreferrer">https://www.khan.co.kr/article/202511052016005</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1865</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">18</td>
+			<td><a href='../aspirations/kr/kr-51.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-51.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>52</td>
+			<td class="url-cell"><a href="https://www.hani.co.kr/arti/society/society_general/1218648.html" target="_blank" rel="noopener noreferrer">https://www.hani.co.kr/arti/society/society_general/1218648.html</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1696</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">11</td>
+			<td><a href='../aspirations/kr/kr-52.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-52.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>53</td>
+			<td class="url-cell"><a href="https://www.yna.co.kr/view/AKR20251124066400030" target="_blank" rel="noopener noreferrer">https://www.yna.co.kr/view/AKR20251124066400030</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    2349</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">5</td>
+			<td><a href='../aspirations/kr/kr-53.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-53.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>54</td>
+			<td class="url-cell"><a href="https://www.ablenews.co.kr/news/articleView.html?idxno=225569" target="_blank" rel="noopener noreferrer">https://www.ablenews.co.kr/news/articleView.html?idxno=225569</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1550</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">30</td>
+			<td><a href='../aspirations/kr/kr-54.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-54.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>55</td>
+			<td class="url-cell"><a href="https://www.gcinnews.com/news/articleView.html?idxno=13047" target="_blank" rel="noopener noreferrer">https://www.gcinnews.com/news/articleView.html?idxno=13047</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1468</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">8</td>
+			<td><a href='../aspirations/kr/kr-55.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-55.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>56</td>
+			<td class="url-cell"><a href="https://www.busan.com/view/busan/view.php?code=20100309000080" target="_blank" rel="noopener noreferrer">https://www.busan.com/view/busan/view.php?code=20100309000080</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>     863</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">2</td>
+			<td><a href='../aspirations/kr/kr-56.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-56.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>57</td>
+			<td class="url-cell"><a href="https://www.chosun.com/site/data/html_dir/2018/10/28/2018102801347.html" target="_blank" rel="noopener noreferrer">https://www.chosun.com/site/data/html_dir/2018/10/28/2018102801347.html</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>       2</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-57.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-57.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>58</td>
+			<td class="url-cell"><a href="https://www.korea.kr/news/reporterView.do?newsId=148906037" target="_blank" rel="noopener noreferrer">https://www.korea.kr/news/reporterView.do?newsId=148906037</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2438</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">29</td>
+			<td><a href='../aspirations/kr/kr-58.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-58.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>59</td>
+			<td class="url-cell"><a href="https://nysc.or.kr/nysc/pages/documents_view.php?id=50&ckattempt=1" target="_blank" rel="noopener noreferrer">https://nysc.or.kr/nysc/pages/documents_view.php?id=50&ckattempt=1</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>-</td>
+			<td>       0</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-59.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-59.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>60</td>
+			<td class="url-cell"><a href="https://www.energydaily.co.kr/news/articleView.html?idxno=86337" target="_blank" rel="noopener noreferrer">https://www.energydaily.co.kr/news/articleView.html?idxno=86337</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1143</td>
+			<td class="count-cell">7</td>
+			<td class="count-cell">15</td>
+			<td><a href='../aspirations/kr/kr-60.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-60.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>61</td>
+			<td class="url-cell"><a href="https://www.sedaily.com/NewsView/1RZDJ87D6C" target="_blank" rel="noopener noreferrer">https://www.sedaily.com/NewsView/1RZDJ87D6C</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1759</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">8</td>
+			<td><a href='../aspirations/kr/kr-61.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-61.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>62</td>
+			<td class="url-cell"><a href="https://www.ssis.or.kr/lay1/bbs/S1T758C784/A/61/view.do?article_seq=125003" target="_blank" rel="noopener noreferrer">https://www.ssis.or.kr/lay1/bbs/S1T758C784/A/61/view.do?article_seq=125003</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2315</td>
+			<td class="count-cell">6</td>
+			<td class="count-cell">16</td>
+			<td><a href='../aspirations/kr/kr-62.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-62.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>63</td>
+			<td class="url-cell"><a href="https://www.gb.go.kr/Main/saemaul/page.do?mnu_uid=6792&dept_code=&dept_name=&BD_CODE=bbs_bodo&bdName=&cmd=2&Start=160&B_NUM=504946601&B_STEP=504946600&B_LEVEL=0&key=4&word=&p1=0&p2=0&V_NUM=12507&tbbscode1=bbs_bodo" target="_blank" rel="noopener noreferrer">https://www.gb.go.kr/Main/saemaul/page.do?mnu_uid=6792&dept_code=&dept_name=&BD_CODE=bbs_bodo&bdName=&cmd=2&Start=160&B_NUM=504946601&B_STEP=504946600&B_LEVEL=0&key=4&word=&p1=0&p2=0&V_NUM=12507&tbbscode1=bbs_bodo</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>     711</td>
+			<td class="count-cell">2</td>
+			<td class="count-cell">4</td>
+			<td><a href='../aspirations/kr/kr-63.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-63.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>64</td>
+			<td class="url-cell"><a href="https://www.suhyupnews.co.kr/news/articleView.html?idxno=2935" target="_blank" rel="noopener noreferrer">https://www.suhyupnews.co.kr/news/articleView.html?idxno=2935</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>iso-8859-1</td>
+			<td>    1172</td>
+			<td class="count-cell">8</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-64.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-64.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>65</td>
+			<td class="url-cell"><a href="https://www.energytimes.kr/news/articleView.html?idxno=43339" target="_blank" rel="noopener noreferrer">https://www.energytimes.kr/news/articleView.html?idxno=43339</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>iso-8859-1</td>
+			<td>     796</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">12</td>
+			<td><a href='../aspirations/kr/kr-65.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-65.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>66</td>
+			<td class="url-cell"><a href="https://www.usjournal.kr/news/newsview.php?ncode=1065583719028804http://www.gosnews.kr/default/index_view_page.php?part_idx=443&idx=8788" target="_blank" rel="noopener noreferrer">https://www.usjournal.kr/news/newsview.php?ncode=1065583719028804http://www.gosnews.kr/default/index_view_page.php?part_idx=443&idx=8788</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>       0</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-66.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-66.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>67</td>
+			<td class="url-cell"><a href="https://www.vietnam.vn/ko/viet-nam-tang-toc-chien-luoc-tham-vong-tu-chu-uav-robot-tu-hanh" target="_blank" rel="noopener noreferrer">https://www.vietnam.vn/ko/viet-nam-tang-toc-chien-luoc-tham-vong-tu-chu-uav-robot-tu-hanh</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    3973</td>
+			<td class="count-cell">4</td>
+			<td class="count-cell">7</td>
+			<td><a href='../aspirations/kr/kr-67.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-67.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>68</td>
+			<td class="url-cell"><a href="https://eiec.kdi.re.kr/policy/domesticView.do?ac=0000177492" target="_blank" rel="noopener noreferrer">https://eiec.kdi.re.kr/policy/domesticView.do?ac=0000177492</a></td>
+			<td></td>
+			<td>-</td>
+			<td>-</td>
+			<td class="count-cell">-</td>
+			<td class="count-cell">-</td>
+			<td><a href='../aspirations/kr/kr-68.html' style='color: #667eea;'>HTML</a></td>
+			<td>-</td>
+		</tr>
+<tr>
+			<td>69</td>
+			<td class="url-cell"><a href="https://marketin.edaily.co.kr/News/ReadE?newsId=01105366642394912" target="_blank" rel="noopener noreferrer">https://marketin.edaily.co.kr/News/ReadE?newsId=01105366642394912</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>     771</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-69.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-69.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>70</td>
+			<td class="url-cell"><a href="https://www.jahaewon.or.kr/common/business/business8.asp" target="_blank" rel="noopener noreferrer">https://www.jahaewon.or.kr/common/business/business8.asp</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>-</td>
+			<td>     508</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">19</td>
+			<td><a href='../aspirations/kr/kr-70.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-70.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>71</td>
+			<td class="url-cell"><a href="https://bookdramang.com/1231" target="_blank" rel="noopener noreferrer">https://bookdramang.com/1231</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1853</td>
+			<td class="count-cell">1</td>
+			<td class="count-cell">12</td>
+			<td><a href='../aspirations/kr/kr-71.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-71.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>72</td>
+			<td class="url-cell"><a href="https://www.senews.kr/33437" target="_blank" rel="noopener noreferrer">https://www.senews.kr/33437</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1106</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">5</td>
+			<td><a href='../aspirations/kr/kr-72.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-72.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>73</td>
+			<td class="url-cell"><a href="https://www.imedialife.co.kr/news/articleView.html?idxno=22985" target="_blank" rel="noopener noreferrer">https://www.imedialife.co.kr/news/articleView.html?idxno=22985</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>iso-8859-1</td>
+			<td>    2247</td>
+			<td class="count-cell">4</td>
+			<td class="count-cell">26</td>
+			<td><a href='../aspirations/kr/kr-73.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-73.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>74</td>
+			<td class="url-cell"><a href="https://www.snunews.com/news/articleView.html?idxno=30984" target="_blank" rel="noopener noreferrer">https://www.snunews.com/news/articleView.html?idxno=30984</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1700</td>
+			<td class="count-cell">1</td>
+			<td class="count-cell">53</td>
+			<td><a href='../aspirations/kr/kr-74.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-74.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>75</td>
+			<td class="url-cell"><a href="https://www.pointe.co.kr/news/articleView.html?idxno=64167" target="_blank" rel="noopener noreferrer">https://www.pointe.co.kr/news/articleView.html?idxno=64167</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>     806</td>
+			<td class="count-cell">9</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-75.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-75.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>76</td>
+			<td class="url-cell"><a href="http://www.snakorea.com/news/articleView.html?idxno=980376" target="_blank" rel="noopener noreferrer">http://www.snakorea.com/news/articleView.html?idxno=980376</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2817</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">2</td>
+			<td><a href='../aspirations/kr/kr-76.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-76.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>77</td>
+			<td class="url-cell"><a href="https://www.popcornnews.net/news/articleView.html?idxno=104268" target="_blank" rel="noopener noreferrer">https://www.popcornnews.net/news/articleView.html?idxno=104268</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>     939</td>
+			<td class="count-cell">7</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-77.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-77.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>78</td>
+			<td class="url-cell"><a href="https://www.dailydgnews.com/news/article.html?no=227651" target="_blank" rel="noopener noreferrer">https://www.dailydgnews.com/news/article.html?no=227651</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    2947</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-78.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-78.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>79</td>
+			<td class="url-cell"><a href="https://www.nongmin.com/article/20230910500044" target="_blank" rel="noopener noreferrer">https://www.nongmin.com/article/20230910500044</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>     987</td>
+			<td class="count-cell">1</td>
+			<td class="count-cell">20</td>
+			<td><a href='../aspirations/kr/kr-79.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-79.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>80</td>
+			<td class="url-cell"><a href="https://blog.naver.com/sejinhan66/222755358778" target="_blank" rel="noopener noreferrer">https://blog.naver.com/sejinhan66/222755358778</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>       7</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-80.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-80.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>81</td>
+			<td class="url-cell"><a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156049257&pageIndex=4954&repCodeType=&repCode=&startDate=2008-02-29&endDate=2019-12-07&srchWord=#pressRelease" target="_blank" rel="noopener noreferrer">https://www.korea.kr/briefing/pressReleaseView.do?newsId=156049257&pageIndex=4954&repCodeType=&repCode=&startDate=2008-02-29&endDate=2019-12-07&srchWord=#pressRelease</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1600</td>
+			<td class="count-cell">2</td>
+			<td class="count-cell">1</td>
+			<td><a href='../aspirations/kr/kr-81.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-81.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>82</td>
+			<td class="url-cell"><a href="https://www.ggpyeonghwa.com/534163" target="_blank" rel="noopener noreferrer">https://www.ggpyeonghwa.com/534163</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>     742</td>
+			<td class="count-cell">13</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-82.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-82.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>83</td>
+			<td class="url-cell"><a href="https://www.donga.com/news/Society/article/all/20251205/132912618/2" target="_blank" rel="noopener noreferrer">https://www.donga.com/news/Society/article/all/20251205/132912618/2</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2062</td>
+			<td class="count-cell">12</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-83.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-83.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>84</td>
+			<td class="url-cell"><a href="https://news.nate.com/view/20251205n28476" target="_blank" rel="noopener noreferrer">https://news.nate.com/view/20251205n28476</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>euc-kr</td>
+			<td>    3746</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-84.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-84.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>85</td>
+			<td class="url-cell"><a href="https://news.ebs.co.kr/ebsnews/allView/60671138/N" target="_blank" rel="noopener noreferrer">https://news.ebs.co.kr/ebsnews/allView/60671138/N</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1485</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-85.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-85.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>86</td>
+			<td class="url-cell"><a href="https://www.smedaily.co.kr/news/articleView.html?idxno=345916" target="_blank" rel="noopener noreferrer">https://www.smedaily.co.kr/news/articleView.html?idxno=345916</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1379</td>
+			<td class="count-cell">1</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-86.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-86.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>87</td>
+			<td class="url-cell"><a href="https://www.ajunews.com/view/20251205082939525" target="_blank" rel="noopener noreferrer">https://www.ajunews.com/view/20251205082939525</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1602</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-87.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-87.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>88</td>
+			<td class="url-cell"><a href="https://www.donga.com/news/Economy/article/all/20251203/132ews/articleView.html?idxno=830766" target="_blank" rel="noopener noreferrer">https://www.donga.com/news/Economy/article/all/20251203/132ews/articleView.html?idxno=830766</a></td>
+			<td><span class="tag is-danger is-light">404</span></td>
+			<td>UTF-8</td>
+			<td>     792</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-88.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-88.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>89</td>
+			<td class="url-cell"><a href="https://www.siminilbo.co.kr/news/newsview.php?ncode=1160290299875835" target="_blank" rel="noopener noreferrer">https://www.siminilbo.co.kr/news/newsview.php?ncode=1160290299875835</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    1436</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">3</td>
+			<td><a href='../aspirations/kr/kr-89.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-89.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>90</td>
+			<td class="url-cell"><a href="https://www.fntoday.co.kr/news/articleView.html?idxno=370898" target="_blank" rel="noopener noreferrer">https://www.fntoday.co.kr/news/articleView.html?idxno=370898</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>iso-8859-1</td>
+			<td>    2550</td>
+			<td class="count-cell">4</td>
+			<td class="count-cell">9</td>
+			<td><a href='../aspirations/kr/kr-90.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-90.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>91</td>
+			<td class="url-cell"><a href="https://biz.chosun.com/policy/policy_sub/2025/11/28/SY34LFJGXFAMDMXGXPGFZT7NZY/?utm_source=naver&utm_medium=original&utm_campaign=biz" target="_blank" rel="noopener noreferrer">https://biz.chosun.com/policy/policy_sub/2025/11/28/SY34LFJGXFAMDMXGXPGFZT7NZY/?utm_source=naver&utm_medium=original&utm_campaign=biz</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>       2</td>
+			<td class="count-cell">0</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-91.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-91.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>92</td>
+			<td class="url-cell"><a href="https://www.yna.co.kr/view/AKR20251206038900530?input=1195m" target="_blank" rel="noopener noreferrer">https://www.yna.co.kr/view/AKR20251206038900530?input=1195m</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    2640</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-92.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-92.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>93</td>
+			<td class="url-cell"><a href="https://www.edaily.co.kr/News/Read?newsId=04093446642395568&mediaCodeNo=257" target="_blank" rel="noopener noreferrer">https://www.edaily.co.kr/News/Read?newsId=04093446642395568&mediaCodeNo=257</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>    2344</td>
+			<td class="count-cell">8</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-93.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-93.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>94</td>
+			<td class="url-cell"><a href="https://news.kbs.co.kr/news/pc/view/view.do?ncd=8425503&ref=A" target="_blank" rel="noopener noreferrer">https://news.kbs.co.kr/news/pc/view/view.do?ncd=8425503&ref=A</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1657</td>
+			<td class="count-cell">5</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-94.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-94.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>95</td>
+			<td class="url-cell"><a href="https://www.joongang.co.kr/article/25387826" target="_blank" rel="noopener noreferrer">https://www.joongang.co.kr/article/25387826</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2795</td>
+			<td class="count-cell">9</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-95.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-95.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>96</td>
+			<td class="url-cell"><a href="https://www.news1.kr/society/education/5999441" target="_blank" rel="noopener noreferrer">https://www.news1.kr/society/education/5999441</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>     903</td>
+			<td class="count-cell">1</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-96.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-96.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>97</td>
+			<td class="url-cell"><a href="https://www.newsis.com/view/NISX20251226_0003455301" target="_blank" rel="noopener noreferrer">https://www.newsis.com/view/NISX20251226_0003455301</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2304</td>
+			<td class="count-cell">6</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-97.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-97.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>98</td>
+			<td class="url-cell"><a href="https://www.newsis.com/view/NISX20251222_0003450664" target="_blank" rel="noopener noreferrer">https://www.newsis.com/view/NISX20251222_0003450664</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    2270</td>
+			<td class="count-cell">8</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-98.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-98.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>99</td>
+			<td class="url-cell"><a href="https://news.mtn.co.kr/news-detail/2025122611153138628" target="_blank" rel="noopener noreferrer">https://news.mtn.co.kr/news-detail/2025122611153138628</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>utf-8</td>
+			<td>     557</td>
+			<td class="count-cell">3</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-99.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-99.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+<tr>
+			<td>100</td>
+			<td class="url-cell"><a href="https://www.hankyung.com/article/2025122659367" target="_blank" rel="noopener noreferrer">https://www.hankyung.com/article/2025122659367</a></td>
+			<td><span class="tag is-success is-light">200</span></td>
+			<td>UTF-8</td>
+			<td>    1238</td>
+			<td class="count-cell">8</td>
+			<td class="count-cell">0</td>
+			<td><a href='../aspirations/kr/kr-100.html' style='color: #667eea;'>HTML</a></td>
+			<td><a href='../dumps-text/kr/kr-100.txt' style='color: #667eea;'>TXT</a></td>
+		</tr>
+
+</tbody>
+							</table>
+						</div>
+					</div>				
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+			<div class="content has-text-centered">
+				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+			</div>
+		</footer>
+		<script>
+			const btn = document.getElementById("themeToggle");
+			const saved = localStorage.getItem("theme");
+			if (saved === "dark") document.body.classList.add("dark");
+
+			function refreshLabel() {
+				const isDark = document.body.classList.contains("dark");
+				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+			}
+			refreshLabel();
+
+			btn.addEventListener("click", () => {
+				document.body.classList.toggle("dark");
+				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+				refreshLabel();
+			});
+		</script>
+	</body>
+</html>
+

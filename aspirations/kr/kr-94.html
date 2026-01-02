@@ -12,7 +12,7 @@
 
 <!--  for global var  -->
 <script type="text/javascript">
-  var application = {"root_url":"https://news.kbs.co.kr","vod_cloud_front_url_block_international":"http://news-restrict.gscdn.kbs.co.kr","imagePath":"","resourcesPath":"/resources","root_domain":"news.kbs.co.kr","news_map_client_id":"udun63q80x","vod_api_url":"https://static.api.kbs.co.kr/play/1.2/sign","vodDefaultImage":"/resource/image/common/noimg_633_355.png","cdn_api_url_root":"https://static.api.kbs.co.kr","img_path_m_big":"https://img.kbs.co.kr/kbs/620/news.kbs.co.kr","cms_root_domain":"newscms.kbs.co.kr","vod_bucket":"newsvod.s3.kbs.co.kr","news_mobile_map_client_id":"vogmbm9h4v","jebo_root_url":"jebo.kbs.co.kr","defaultImage":"/resource/image/common/noimg_633_355.png","contextPath":"","rootDomain":"news.kbs.co.kr","img_path_m_sm":"https://img.kbs.co.kr/kbs/44/news.kbs.co.kr","img_path_m_thum":"https://img.kbs.co.kr/kbs/160/news.kbs.co.kr","resource_root_url":"//news.kbs.co.kr","vod_cloud_front_url":"http://news.play.kbs.co.kr","cms_url":"https://newscms.kbs.co.kr","image_bucket":"news-static-prod-kbs","rootUrlPrefix":"https://news.kbs.co.kr","stat_server_url":"stat.kbs.co.kr","api_server_url":"http://localhost/api"};
+  var application = {"root_url":"https://news.kbs.co.kr","vod_cloud_front_url_block_international":"http://news-restrict.gscdn.kbs.co.kr","imagePath":"","resourcesPath":"/resources","root_domain":"news.kbs.co.kr","news_map_client_id":"udun63q80x","vod_api_url":"https://static.api.kbs.co.kr/play/1.2/sign","vodDefaultImage":"/resource/image/common/noimg_633_355.png","cdn_api_url_root":"https://static.api.kbs.co.kr","img_path_m_big":"https://img.kbs.co.kr/kbs/620/news.kbs.co.kr","cms_root_domain":"newscms.kbs.co.kr","vod_bucket":"newsvod.s3.kbs.co.kr","news_mobile_map_client_id":"vogmbm9h4v","jebo_root_url":"jebo.kbs.co.kr","defaultImage":"/resource/image/common/noimg_633_355.png","contextPath":"","rootDomain":"news.kbs.co.kr","img_path_m_sm":"https://img.kbs.co.kr/kbs/44/news.kbs.co.kr","img_path_m_thum":"https://img.kbs.co.kr/kbs/160/news.kbs.co.kr","resource_root_url":"//news.kbs.co.kr","vod_cloud_front_url":"http://news.play.kbs.co.kr","stat_bucket":"news-statistics-prod","cms_url":"https://newscms.kbs.co.kr","image_bucket":"news-static-prod-kbs","rootUrlPrefix":"https://news.kbs.co.kr","stat_server_url":"stat.kbs.co.kr","api_server_url":"http://localhost/api"};
   var user = { loginOn: false };
   var noHeader = "false";
   var noFlashNews = "false";
@@ -185,7 +185,7 @@
 <link rel="stylesheet" type="text/css" href="/resource/css/pc/common/swiper-bundle.min.css">
 <link rel="stylesheet" type="text/css" href="/resource/css/pc/style.css">
 
-  <script src="/js/common/common.js?v=20260103032231"></script>
+  <script src="/js/common/common.js?v=20260103050652"></script>
   <script>
     /*******************************************************
      * 공통함수 영역 [s]
@@ -3229,7 +3229,7 @@ function printSection() {
     rptHeader += '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
     rptHeader += '<title>KBS NEWS</title>';
     rptHeader += '<link href="/resources/css/common.css" rel="stylesheet" type="text/css" media="screen, projection, print" />';
-    rptHeader += '<link href="/resources/css/print.css?v=20260103032231" rel="stylesheet" type="text/css" media="screen, projection, print" />';
+    rptHeader += '<link href="/resources/css/print.css?v=20260103050652" rel="stylesheet" type="text/css" media="screen, projection, print" />';
     rptHeader += '<style>';
     rptHeader += '	.det-news .article-summary {position:relative; margin:0 60px 54px 60px; font-size:17px; color:#000; line-height:30px; padding-left:15px; font-family:"Noto Sans Light"}';
     rptHeader += '  .det-news .article-summary:before {position:absolute; left:0; top:6px; bottom:5px; width:2px; background: #4d4d4d; content:""; display:block;}';
@@ -6407,26 +6407,8 @@ function displayRecNewsList() {
             
             
             <li class="ranks-list">
-              <a href="/news/view.do?ncd&#x3D;8449132" class="ranks-link">
-                <span class="rank-badge">2</span>
-                <p class="title">[단독] 강선우, ‘청년선거구’ 논의됐는데도 “후보 없다, 김경에 공천 주자”</p>
-              </a>
-            </li>
-            
-            
-            
-            <li class="ranks-list">
-              <a href="/news/view.do?ncd&#x3D;8448874" class="ranks-link">
-                <span class="rank-badge">3</span>
-                <p class="title">“동거하면 감옥행”…인도네시아 2억 8천만 국민 ‘발칵’ </p>
-              </a>
-            </li>
-            
-            
-            
-            <li class="ranks-list">
               <a href="/news/view.do?ncd&#x3D;8449313" class="ranks-link">
-                <span class="rank-badge">4</span>
+                <span class="rank-badge">2</span>
                 <p class="title">이혜훈, 폭언 이어 사적 심부름 논란…책에는 “갑의 횡포 막아야”</p>
               </a>
             </li>
@@ -6434,18 +6416,36 @@ function displayRecNewsList() {
             
             
             <li class="ranks-list">
-              <a href="/news/view.do?ncd&#x3D;8449146" class="ranks-link">
-                <span class="rank-badge">5</span>
-                <p class="title">“사우나 옆문 여니, 호텔급 대형 침실 나와”…강훈식이 공개한 사진 </p>
+              <a href="/news/view.do?ncd&#x3D;8449332" class="ranks-link">
+                <span class="rank-badge">3</span>
+                <p class="title">퇴직 4년 뒤 국민연금 수령…새해 연금 개혁은?</p>
               </a>
             </li>
             
             
             
             <li class="ranks-list">
-              <a href="/news/view.do?ncd&#x3D;8449332" class="ranks-link">
+              <a href="/news/view.do?ncd&#x3D;8449314" class="ranks-link">
+                <span class="rank-badge">4</span>
+                <p class="title">강선우 ‘거짓 해명’이 제명 결정타…김병기는 ‘구의원 뇌물’ 재조명</p>
+              </a>
+            </li>
+            
+            
+            
+            <li class="ranks-list">
+              <a href="/news/view.do?ncd&#x3D;8448874" class="ranks-link">
+                <span class="rank-badge">5</span>
+                <p class="title">“동거하면 감옥행”…인도네시아 2억 8천만 국민 ‘발칵’ </p>
+              </a>
+            </li>
+            
+            
+            
+            <li class="ranks-list">
+              <a href="/news/view.do?ncd&#x3D;8449328" class="ranks-link">
                 <span class="rank-badge">6</span>
-                <p class="title">퇴직 4년 뒤 국민연금 수령…새해 연금 개혁은?</p>
+                <p class="title">윤석열 집무실 사우나 현장 취재…호텔 같은 내실도 공개</p>
               </a>
             </li>
             

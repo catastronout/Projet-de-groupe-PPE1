@@ -1,3 +1,0 @@
-   #RSS feed for sejinhan66 Blog
-
-   IFRAME: mainFrame

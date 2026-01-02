@@ -371,31 +371,14 @@ generer_contextes_kwic() {
 	# Fudionne les contextes des deux sens dans un seul fichier TSV
 	cat "$TSV1" "$TSV2" > "$TSV_ALL" 2>/dev/null
 
-	# DEBUG locale
-	echo "DEBUG LOCALE: LC_ALL='$LC_ALL' LANG='$LANG'" >&2
-	echo "Test awk direct:" >&2
-	awk -F'\t' -v lab="аўтаномнасьць" '$1==lab {c++} END{print "match аўтаномнасьць:", c+0}' "$TSV_ALL" >&2
-	awk -F'\t' -v lab="$LABEL_SENS2" '$1==lab {c++} END{print "match LABEL_SENS2:", c+0}' "$TSV_ALL" >&2
-	awk -F'\t' '{c++} END{print "total lignes:", c+0}' "$TSV_ALL" >&2
-
 	# Comptage des occurrences = nb de lignes par label dans le TSV final
 	OCC_SENS1=$(LC_ALL=C awk -F'\t' -v lab="$LABEL_SENS1" '$1==lab {c++} END{print c+0}' "$TSV_ALL")
 	OCC_SENS2=$(LC_ALL=C awk -F'\t' -v lab="$LABEL_SENS2" '$1==lab {c++} END{print c+0}' "$TSV_ALL")
-
-	# DEBUG - ajoute ces lignes :
-	echo "DEBUG generer_contextes_kwic:" >&2
-	echo "  LABEL_SENS1='$LABEL_SENS1'" >&2
-	echo "  LABEL_SENS2='$LABEL_SENS2'" >&2
-	echo "  TSV_ALL='$TSV_ALL'" >&2
-	echo "  OCC_SENS1='$OCC_SENS1' OCC_SENS2='$OCC_SENS2'" >&2
-	echo "  Lignes dans TSV:" >&2
-	wc -l < "$TSV_ALL" >&2
 
 	# Renvoie le TSV global
  	echo "$TSV_ALL"
 }
 
-echo "DEBUG URL $n: OCC_SENS1=$OCC_SENS1, OCC_SENS2=$OCC_SENS2" >&2
 
 # ======================================
 #     CONCORDANCIER HTML DEPUIS TSV     
@@ -846,8 +829,6 @@ while read -r line; do
 		# Nettoyage (supprime le fichier temporaire s'il a été créé)
 		if (( TEMP_HTML )); then rm -f "$HTML_POUR_LYNX"; fi
 	fi
-
-	echo "DEBUG AVANT HTML: OCC_SENS1='$OCC_SENS1' OCC_SENS2='$OCC_SENS2'" >&2
 
 	# Écrire la ligne finale du tableau HTML
 	BADGE_CODE=$(generer_badge_code "$CODE")

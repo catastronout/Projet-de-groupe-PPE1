@@ -1,6 +1,39 @@
-<script type="text/javascript"></script>
+<script type="text/javascript">
+if(typeof(u_global_data)!='object') u_global_data={};
+function ug_clund(){
+	if(typeof(u_global_data.clunduse)!='undefined' && u_global_data.clunduse>0 || (u_global_data && u_global_data.is_u_main_h)){
+		if(typeof(console)=='object' && typeof(console.log)=='function') console.log('utarget already loaded');
+		return;
+	}
+	u_global_data.clunduse=1;
+	if('0'=='1'){
+		var d=new Date();d.setTime(d.getTime()+86400000);document.cookie='adbetnetshowed=2; path=/; expires='+d;
+		if(location.search.indexOf('clk2398502361292193773143=1')==-1){
+			return;
+		}
+	}else{
+		window.addEventListener("click", function(event){
+			if(typeof(u_global_data.clunduse)!='undefined' && u_global_data.clunduse>1) return;
+			if(typeof(console)=='object' && typeof(console.log)=='function') console.log('utarget click');
+			var d=new Date();d.setTime(d.getTime()+86400000);document.cookie='adbetnetshowed=1; path=/; expires='+d;
+			u_global_data.clunduse=2;
+			new Image().src = "//counter.yadro.ru/hit;ucoz_desktop_click?r"+escape(document.referrer)+(screen&&";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth||screen.pixelDepth))+";u"+escape(document.URL)+";"+Date.now();
+		});
+	}
+	
+	new Image().src = "//counter.yadro.ru/hit;desktop_click_load?r"+escape(document.referrer)+(screen&&";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth||screen.pixelDepth))+";u"+escape(document.URL)+";"+Date.now();
+}
+
+setTimeout(function(){
+	if(typeof(u_global_data.preroll_video_57322)=='object' && u_global_data.preroll_video_57322.active_video=='adbetnet') {
+		if(typeof(console)=='object' && typeof(console.log)=='function') console.log('utarget suspend, preroll active');
+		setTimeout(ug_clund,8000);
+	}
+	else ug_clund();
+},3000);
+</script>
 	<script type="text/javascript">new Image().src = "//counter.yadro.ru/hit;narodadst1?r"+escape(document.referrer)+(screen&&";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth||screen.pixelDepth))+";u"+escape(document.URL)+";"+Date.now();</script>
-	<script type="text/javascript">new Image().src = "//counter.yadro.ru/hit;narod_desktop_ad?r"+escape(document.referrer)+(screen&&";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth||screen.pixelDepth))+";u"+escape(document.URL)+";"+Date.now();</script><script type="text/javascript" src="//katecheta2.narod.ru/.s/src/jquery-3.3.1.min.js"></script><script type="text/javascript" src="//s253.ucoz.net/cgi/uutils.fcg?a=uSD&ca=2&ug=999&isp=0&r=0.309668309965797"></script>
+	<script type="text/javascript">new Image().src = "//counter.yadro.ru/hit;narod_desktop_ad?r"+escape(document.referrer)+(screen&&";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth||screen.pixelDepth))+";u"+escape(document.URL)+";"+Date.now();</script><script type="text/javascript" src="//katecheta2.narod.ru/.s/src/jquery-3.3.1.min.js"></script><script type="text/javascript" src="//s253.ucoz.net/cgi/uutils.fcg?a=uSD&ca=2&ug=999&isp=0&r=0.841038673730658"></script>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML><HEAD><TITLE>Касцёл</TITLE>
 

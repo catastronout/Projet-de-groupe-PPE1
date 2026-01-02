@@ -560,47 +560,45 @@ generer_concordancier_html_depuis_tsv() {
 #      EXTRACTION TEXTE + KWIC TSV + CONCORDANCIER HTML     
 # ==========================================================
 extraire_et_compter() {
-	local html_src="$1"   # chemin du HTML
+	local html_src="$1"   # chemin du HTML aspiré
 	local idx="$2"        # numéro de l'URL
-	local url="$3"        # URL d'origine 
+	local url="$3"        # URL d'origine
 
-	# Chemin du dump texte final
 	local FICHIER_TEXTE="../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt"
 
 	# Locale : évite des bugs sur certains caractères (UTF-8)
 	export LC_ALL=en_US.UTF-8
 
-	# Extraction du texte brut depuis le HTML
-	lynx -force_html -dump -nolist \
-       -assume_charset=utf-8 -display_charset=utf-8 \
-       "$html_src" > "$FICHIER_TEXTE" 2>/dev/null
+	# 1) Tentative avec trafilatura (souvent meilleur sur le contenu "article")
+	#    On force l'encodage de sortie en UTF-8 via l'environnement + on écrit direct dans le dump
+	if command -v trafilatura >/dev/null 2>&1; then
+		trafilatura -u "$url" > "$FICHIER_TEXTE" 2>/dev/null
+	fi
 
-	# Si le fichier texte existe ET n’est pas vide, on calcule tout
+	# 2) Fallback lynx si trafilatura n'a rien sorti (fichier vide ou absent)
+	if [[ ! -s "$FICHIER_TEXTE" ]]; then
+		log_step "Trafilatura : KO → fallback lynx"
+		lynx -force_html -dump -nolist \
+			-assume_charset=utf-8 -display_charset=utf-8 \
+			"$html_src" > "$FICHIER_TEXTE" 2>/dev/null
+	else
+		log_step "Trafilatura : OK (dump texte produit)"
+	fi
+
+	# 3) Si on a du texte, on calcule tout
 	if [[ -s "$FICHIER_TEXTE" ]]; then
-		# Lien vers le dump TXT
 		LIEN_TEXT="<a href='../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt' style='color: #667eea;'>TXT</a>"
 
-		# Nombre de mots dans le dump
 		NB_MOTS=$(wc -w < "$FICHIER_TEXTE")
 
-		# Chemins des TSV (1 par sens + un TSV global fusionné)
-		local TSV1="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-sens1.tsv"
-		local TSV2="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-sens2.tsv"
 		local TSV_ALL="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-kwic.tsv"
 
-		# On appelle la fonction SANS $(...) pour que OCC_SENS1 et OCC_SENS2 soient bien mises à jour dans ce shell
 		generer_contextes_kwic "$idx" "$FICHIER_TEXTE" >/dev/null
-
-		# Génération du concordancier HTML à partir du TSV global
 		generer_concordancier_html_depuis_tsv "$idx" "$url" "$TSV_ALL" >/dev/null
 
-		# Lien vers le concordancier
 		LIEN_CONC="<a href='../concordances/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.html' style='color: #667eea;'>KWIC</a>"
-
 	else
-		# Si lynx a échoué ou a produit un fichier vide : on met des tirets
-		# --- Messages d'information (VERBOSE) ----
-		log_step "Extraction texte : KO (fichier vide ou lynx a échoué)"
+		log_step "Extraction texte : KO (dump vide)"
 		NB_MOTS="-"
 		OCC_SENS1="-"
 		OCC_SENS2="-"

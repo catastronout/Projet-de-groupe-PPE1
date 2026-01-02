@@ -30,7 +30,7 @@
        고성능 N
        N 아카이브에서 맞이하는 10년의 퍼포먼스와, 그리고 그 이후를 향한 여정
        아이오닉 9, 편안한 동행을 위한 정교한 설계
-       아이오닉 라인�
+       아이오닉 라인업
        아이오닉 9, 편안한 동행을 위한 정교한 설계
        Be There With Hyundai 버스 이미지 예시
        스포�
@@ -159,7 +159,7 @@ Footer
 
      * 문의/법적고지 (BUTTON) 하위 메뉴 보기
           + 법적고지
-          + 쿠키정�
+          + 쿠키정책
           + 사이트맵
      * 기업소개 (BUTTON) 하위 메뉴 보기
           + 모델 히스토리
@@ -176,4 +176,4 @@ Footer
        Worldwide
        Facebook Instagram Youtube Twitter
 
-   ⓒ 2025 Hyundai Motor Company
+   ⓒ 2026 Hyundai Motor Company

@@ -2,7 +2,7 @@
 
 # --- UTILISATION ---
 # Ce script a besoin de deux arguments : un dossier de dumpe textuels (dumps-text) et un nom de langue (par exemple : kr)
-# Exemple pour lancer la commande : cd programmes; bash make_pals_corpus.sh ../dumps-text kr > ../pals/dump-kr.txt
+# Exemple pour lancer la commande : cd programmes; bash make_pals_corpus.sh ../dumps-text/kr kr > ../pals/dump-kr.txt
 
 VERBOSE=0
 

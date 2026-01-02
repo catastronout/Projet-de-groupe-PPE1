@@ -475,15 +475,15 @@ generer_concordancier_html_depuis_tsv() {
 					<p class="subtitle has-text-white is-6">Fenêtre : ±$w mots</p>
 					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
 				</div>
-			/div>
+			</div>
 		</section>
 
 		<section class="section">
 			<div class="container">
 				<p class="mb-4">
-					<a href="../../../index.html" class="back-link">Retour</a>
+					<a href="../../index.html" class="back-link">Retour</a>
 					<span class="has-text-grey"> / </span>
-					<a href="../tableaux/} . $urls_name . qq{.html" class="back-link">Tableau</a>
+					<a href="../../tableaux/tableau-} . $urls_name . qq{.html" class="back-link">Tableau</a>
 				</p>
 
 				<div class="card">
@@ -524,7 +524,7 @@ generer_concordancier_html_depuis_tsv() {
 		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
 			<div class="content has-text-centered">
 				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-			/div>
+			</div>
 		</footer>
 
 		<script>

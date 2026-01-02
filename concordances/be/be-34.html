@@ -46,35 +46,35 @@
 					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
 					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
 				</div>
-			/div>
+			</div>
 		</section>
 
-    <section class="section">
-      <div class="container">
-        <p class="mb-4">
-          <a href="../../../index.html" class="back-link">Retour</a>
-          <span class="has-text-grey"> / </span>
-          <a href="../tableaux/be.html" class="back-link">Tableau</a>
-        </p>
+		<section class="section">
+			<div class="container">
+				<p class="mb-4">
+					<a href="../../index.html" class="back-link">Retour</a>
+					<span class="has-text-grey"> / </span>
+					<a href="../../tableaux/tableau-be.html" class="back-link">Tableau</a>
+				</p>
 
-        <div class="card">
-          <div class="card-content">
-            <div class="content">
-              <p class="mb-2"><strong>URL :</strong> <a href="https://www.highmotor.com/be/%D0%A2%D1%8D%D1%81%D1%82-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E-19-%D0%BD%D1%96%D0%B6%D1%8D%D0%B9-%D0%B7%D0%B0-%D0%BD%D1%83%D0%BB%D1%8C.html" target="_blank" rel="noopener noreferrer" class="back-link">https://www.highmotor.com/be/%D0%A2%D1%8D%D1%81%D1%82-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E-19-%D0%BD%D1%96%D0%B6%D1%8D%D0%B9-%D0%B7%D0%B0-%D0%BD%D1%83%D0%BB%D1%8C.html</a></p>
-              <p class="mb-4"><strong>Occurrences :</strong> 12</p>
-            </div>
+				<div class="card">
+					<div class="card-content">
+						<div class="content">
+							<p class="mb-2"><strong>URL :</strong> <a href="https://www.highmotor.com/be/%D0%A2%D1%8D%D1%81%D1%82-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E-19-%D0%BD%D1%96%D0%B6%D1%8D%D0%B9-%D0%B7%D0%B0-%D0%BD%D1%83%D0%BB%D1%8C.html" target="_blank" rel="noopener noreferrer" class="back-link">https://www.highmotor.com/be/%D0%A2%D1%8D%D1%81%D1%82-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B0%D0%BC%D0%B0%D0%B1%D1%96%D0%BB%D1%8F%D1%9E-19-%D0%BD%D1%96%D0%B6%D1%8D%D0%B9-%D0%B7%D0%B0-%D0%BD%D1%83%D0%BB%D1%8C.html</a></p>
+							<p class="mb-4"><strong>Occurrences :</strong> 12</p>
+						</div>
 
-            <div class="table-container">
-              <table class="table is-fullwidth is-hoverable is-striped">
-                <thead>
-                  <tr>
-                    <th>Catégorie</th>
-                    <th>Gauche</th>
-                    <th>Mot</th>
-                    <th>Droite</th>
-                  </tr>
-                </thead>
-                <tbody>
+						<div class="table-container">
+							<table class="table is-fullwidth is-hoverable is-striped">
+								<thead>
+									<tr>
+										<th>Catégorie</th>
+										<th>Gauche</th>
+										<th>Mot</th>
+										<th>Droite</th>
+									</tr>
+								</thead>
+								<tbody>
 
 				<tr>
 					<td class="has-text-grey cat-col">sens 1</td>
@@ -172,36 +172,36 @@
 				</tr>
 			
 
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-      <div class="content has-text-centered">
-        <p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-      </div>
-    </footer>
+		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+			<div class="content has-text-centered">
+				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+			</div>
+		</footer>
 
-    <script>
-      const btn = document.getElementById("themeToggle");
-      const saved = localStorage.getItem("theme");
-      if (saved === "dark") document.body.classList.add("dark");
+		<script>
+			const btn = document.getElementById("themeToggle");
+			const saved = localStorage.getItem("theme");
+			if (saved === "dark") document.body.classList.add("dark");
 
-      function refreshLabel() {
-        const isDark = document.body.classList.contains("dark");
-        btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
-      }
-      refreshLabel();
+			function refreshLabel() {
+				const isDark = document.body.classList.contains("dark");
+				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+			}
+			refreshLabel();
 
-      btn.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-        refreshLabel();
-      });
-    </script>
-  </body>
+			btn.addEventListener("click", () => {
+				document.body.classList.toggle("dark");
+				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+				refreshLabel();
+			});
+		</script>
+	</body>
 </html>

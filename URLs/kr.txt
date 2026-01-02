@@ -18,7 +18,6 @@ https://www.onews.tv/news/articleView.html?idxno=198022
 https://www.newsis.com/view/NISX20251127_0003420067
 https://www.yna.co.kr/view/AKR20251202077700053?input=1195m
 https://www.inews24.com/view/1913617
-https://edu.chosun.com/site/data/html_dir/2025/12/02/2025120280131.html
 https://www.ccdn.co.kr/news/articleView.html?idxno=1051961
 https://www.etnews.com/20251203000304
 https://www.cctimes.kr/news/articleView.html?idxno=879519
@@ -32,14 +31,12 @@ https://www.sedaily.com/NewsView/2H1LLLKA44
 https://www.sisafocus.co.kr/news/articleView.html?idxno=351292
 https://www.kbsm.net/news/view.php?idx=499792
 https://www.edujin.co.kr/news/articleView.html?idxno=51688
-https://www.devtimes.co.kr/news/448009
 https://news.nate.com/view/20251203n31350
 https://www.cbnews.kr/news/articleView.html?idxno=238270
 https://www.naewoeilbo.com/news/articleView.html?idxno=2258259
 https://www.newszoom.kr/1731240
 https://news.nate.com/view/20251203n08922?mid=n1101
 https://www.m-i.kr/news/articleView.html?idxno=1310692
-http://www.hanbatilbo.com/news/articleView.html?idxno=305548
 https://www.mcee.go.kr/gg/web/board/read.do;jsessionid=ImMJc1a4jtqi52voE83ODAQ-s9yAjqAEG-9OG5l_.mehome1?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=2246&orgCd=&boardId=1757710&boardMasterId=228&boardCategoryId=&decorator=
 https://www.ablenews.co.kr/news/articleView.html?idxno=226426
 https://futurechosun.com/archives/135111
@@ -51,13 +48,12 @@ https://www.gcinnews.com/news/articleView.html?idxno=13047
 https://www.busan.com/view/busan/view.php?code=20100309000080
 https://www.chosun.com/site/data/html_dir/2018/10/28/2018102801347.html
 https://www.korea.kr/news/reporterView.do?newsId=148906037
-https://nysc.or.kr/nysc/pages/documents_view.php?id=50&ckattempt=1
 https://www.energydaily.co.kr/news/articleView.html?idxno=86337
 https://www.sedaily.com/NewsView/1RZDJ87D6C
 https://www.ssis.or.kr/lay1/bbs/S1T758C784/A/61/view.do?article_seq=125003
 https://www.suhyupnews.co.kr/news/articleView.html?idxno=2935
 https://www.energytimes.kr/news/articleView.html?idxno=43339
-https://www.usjournal.kr/news/newsview.php?ncode=1065583719028804http://www.gosnews.kr/default/index_view_page.php?part_idx=443&idx=8788
+http://www.gosnews.kr/default/index_view_page.php?part_idx=443&idx=8788
 https://www.vietnam.vn/ko/viet-nam-tang-toc-chien-luoc-tham-vong-tu-chu-uav-robot-tu-hanh
 https://marketin.edaily.co.kr/News/ReadE?newsId=01105366642394912
 https://www.jahaewon.or.kr/common/business/business8.asp
@@ -70,7 +66,6 @@ http://www.snakorea.com/news/articleView.html?idxno=980376
 https://www.popcornnews.net/news/articleView.html?idxno=104268
 https://www.dailydgnews.com/news/article.html?no=227651
 https://www.nongmin.com/article/20230910500044
-https://blog.naver.com/sejinhan66/222755358778
 https://www.korea.kr/briefing/pressReleaseView.do?newsId=156049257&pageIndex=4954&repCodeType=&repCode=&startDate=2008-02-29&endDate=2019-12-07&srchWord=#pressRelease
 https://www.ggpyeonghwa.com/534163
 https://www.donga.com/news/Society/article/all/20251205/132912618/2
@@ -81,7 +76,6 @@ https://www.ajunews.com/view/20251205082939525
 https://www.donga.com/news/Economy/article/all/20251203/132ews/articleView.html?idxno=830766
 https://www.siminilbo.co.kr/news/newsview.php?ncode=1160290299875835
 https://www.fntoday.co.kr/news/articleView.html?idxno=370898
-https://biz.chosun.com/policy/policy_sub/2025/11/28/SY34LFJGXFAMDMXGXPGFZT7NZY/?utm_source=naver&utm_medium=original&utm_campaign=biz
 https://www.yna.co.kr/view/AKR20251206038900530?input=1195m
 https://www.edaily.co.kr/News/Read?newsId=04093446642395568&mediaCodeNo=257
 https://news.kbs.co.kr/news/pc/view/view.do?ncd=8425503&ref=A
@@ -98,3 +92,9 @@ https://www.moneys.co.kr/article/2025122910511670992
 https://www.gjdream.com/news/articleView.html?idxno=665612
 https://zdnet.co.kr/view/?no=20251229172841
 https://www.newspim.com/news/view/20251231000140
+https://www.kwnews.co.kr/page/view/2026010110462568519
+https://www.lawtimes.co.kr/news/214653
+https://biz.heraldcorp.com/article/10646819?ref=naver
+https://www.newspim.com/news/view/20251231000261
+https://www.mediapen.com/news/view/1070113
+https://www.datasom.co.kr/news/articleView.html?idxno=207380

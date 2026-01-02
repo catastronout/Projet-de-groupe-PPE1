@@ -191,7 +191,7 @@
                 <p class="reporter">
                                         윤영균 기자
                                         <span class="input_dt">입력 2025-12-03 16:03:46</span>
-                                        <span class="hit">조회수 259</span>
+                                        <span class="hit">조회수 267</span>
                 </p>
                 <div class="pageFunction">
                     
@@ -341,7 +341,7 @@
                                 <div class="news-comment" id="comment">
                     <strong>여러분의 의견을 남겨주세요</strong>
                     <div class="text-area">
-                        <form method="post" action="/NewsArticle/812236" id="commentForm"><input type="hidden" name="csrf_token" value="80e736bc587fad139db01c70a69e538b94d8b26af245273111f431e241131908">
+                        <form method="post" action="/NewsArticle/812236" id="commentForm"><input type="hidden" name="csrf_token" value="facc93f484795365cf69a7e3eb18c89431474dc62ec10300617e8478b4219654">
                             <input type="hidden" id="cpassword" name="cpassword" value="">
                             <textarea name="content" placeholder="댓글을 입력해주세요."></textarea>
                             <div>
@@ -552,7 +552,7 @@
     </script>
     
                     <script type="text/javascript">
-            window.csrf_token = { csrf_token : '80e736bc587fad139db01c70a69e538b94d8b26af245273111f431e241131908' };
+            window.csrf_token = { csrf_token : 'facc93f484795365cf69a7e3eb18c89431474dc62ec10300617e8478b4219654' };
             $.ajaxSetup({
                 data: window.csrf_token,
                 complete: function(resp){
@@ -681,7 +681,7 @@ $(".news-comment").on('click', ".sort button", function() {
 
     $.redirect("/NewsArticle/" + articleId + "/sort", {
         sort: sort,
-        csrf_token: '80e736bc587fad139db01c70a69e538b94d8b26af245273111f431e241131908'
+        csrf_token: 'facc93f484795365cf69a7e3eb18c89431474dc62ec10300617e8478b4219654'
     }, 'post');
 })
 
@@ -788,7 +788,7 @@ $(".news-comment").on('click', ".commentDelete", function(e) {
                         url: "/NewsArticle/" + articleid + "/" + commentId + "/passCheck",
                         data:{
                             "pass":pwd,
-                            "csrf_token": '80e736bc587fad139db01c70a69e538b94d8b26af245273111f431e241131908',
+                            "csrf_token": 'facc93f484795365cf69a7e3eb18c89431474dc62ec10300617e8478b4219654',
                         },
                         success: function(data) {
                             if(data === "Y"){
@@ -805,7 +805,7 @@ $(".news-comment").on('click', ".commentDelete", function(e) {
                                                 btnClass: 'btn-danger',
                                                 action: function () {
                                                     $.redirect("/NewsArticle/" + articleid + "/" + commentId + "/delete", {
-                                                        csrf_token: '80e736bc587fad139db01c70a69e538b94d8b26af245273111f431e241131908',
+                                                        csrf_token: 'facc93f484795365cf69a7e3eb18c89431474dc62ec10300617e8478b4219654',
                                                     }, 'post');
                                                 }
                                             },

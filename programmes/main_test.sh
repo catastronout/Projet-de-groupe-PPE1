@@ -566,7 +566,8 @@ extraire_et_compter() {
 
     local FICHIER_TEXTE="../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt"
 
-    trafilatura -u "$url" > "$FICHIER_TEXTE" 2>/dev/null
+    # html_src = ton fichier HTML local (aspiré/converti)
+	< "$html_src" trafilatura > "$FICHIER_TEXTE" 2>/dev/null
 
 	# Si le fichier texte existe ET n’est pas vide, on calcule tout
 	if [[ -s "$FICHIER_TEXTE" ]]; then

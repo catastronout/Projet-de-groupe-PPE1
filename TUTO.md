@@ -71,3 +71,20 @@ python3 partition.py \
   -i ../pals/contexte-be-sens1_cleaned.txt \
   -i ../pals/contexte-be-sens2_cleaned.txt
 ```
+
+# 6. wordcloud
+
+```bash
+# Bélarussien
+wordcloud_cli \
+  --text ../pals/contexte-be-sens1_cleaned.txt \
+  --imagefile nuage_sens1.png \
+  --stopwords stopwords_be.txt \
+  --fontfile "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"
+
+wordcloud_cli \
+  --text ../pals/contexte-be-sens2_cleaned.txt \
+  --imagefile nuage_sens2.png \
+  --stopwords stopwords_be.txt \
+  --fontfile "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"
+  ```

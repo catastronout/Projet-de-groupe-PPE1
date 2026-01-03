@@ -181,6 +181,7 @@ mkdir -p "../aspirations/${FICHIER_URLS}"
 mkdir -p "../concordances/${FICHIER_URLS}"
 mkdir -p "../contextes/${FICHIER_URLS}"
 mkdir -p "../dumps-text/${FICHIER_URLS}"
+mkdir -p "../bigrammes/${FICHIER_URLS}"
 mkdir -p "../tableaux"
 
 
@@ -588,6 +589,12 @@ extraire_et_compter() {
 		# Génération du concordancier HTML à partir du TSV global
 		generer_concordancier_html_depuis_tsv "$idx" "$url" "$TSV_ALL" >/dev/null
 
+        # Génération des bigrammes
+        LIEN_BIGRAM=$(generer_bigrammes "$idx" "$FICHIER_TEXTE")
+
+        # Vérification robots.txt
+        ROBOTS_STATUS=$(verifier_robots_txt "$url")
+        
 		# Lien vers le concordancier
 		LIEN_CONC="<a href='../concordances/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.html' style='color: #667eea;'>KWIC</a>"
 
@@ -603,6 +610,97 @@ extraire_et_compter() {
 	fi
 }
 
+# ===============================
+#      GÉNÉRATION DES BIGRAMMES
+# ===============================
+generer_bigrammes() {
+	local idx="$1"              # numéro de l'URL
+	local fichier_texte="$2"    # texte brut
+
+	local BIGRAM_FILE="../bigrammes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt"
+	
+	# Si le fichier texte n'existe pas ou est vide, sortir
+	[[ ! -s "$fichier_texte" ]] && { echo "-"; return; }
+
+	# Construire le pattern pour grep 
+	local pattern=""
+	local first=true
+	for mot in "${MOTIFS_SENS1[@]}" "${MOTIFS_SENS2[@]}"; do
+		[[ -z "$mot" ]] && continue
+		if [[ "$first" == true ]]; then
+			pattern="$mot"
+			first=false
+		else
+			pattern="$pattern|$mot"
+		fi
+	done
+
+	[[ -z "$pattern" ]] && { echo "-"; return; }
+
+	# Extraction des bigrammes avec Perl
+	perl -Mutf8 -CS -e '
+		use strict; use warnings;
+		use Encode qw(decode FB_DEFAULT);
+
+		my ($txt, $out, $pattern_str) = @ARGV;
+		$pattern_str = decode("UTF-8", $pattern_str, FB_DEFAULT);
+
+		open my $IN, "<:encoding(UTF-8)", $txt or die "Cannot open $txt\n";
+		local $/;
+		my $content = <$IN>;
+		close $IN;
+
+		# Tokenisation
+		my @tokens = ($content =~ /[\p{L}\p{N}]+/gu);
+
+		my %bigrams;
+		# Créer les bigrammes
+		for (my $i = 0; $i < $#tokens; $i++) {
+			my $w1 = $tokens[$i];
+			my $w2 = $tokens[$i+1];
+			my $bigram = "$w1 $w2";
+			
+			# Vérifier si le bigramme contient un des motifs
+			if ($bigram =~ /($pattern_str)/i) {
+				$bigrams{$bigram}++;
+			}
+		}
+
+		# Écrire les résultats triés par fréquence
+		open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
+		for my $bg (sort { $bigrams{$b} <=> $bigrams{$a} } keys %bigrams) {
+			print $OUT $bigrams{$bg}, "\t", $bg, "\n";
+		}
+		close $OUT;
+	' "$fichier_texte" "$BIGRAM_FILE" "$pattern"
+
+	# Retourner le lien
+	if [[ -s "$BIGRAM_FILE" ]]; then
+		echo "<a href='../bigrammes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt' style='color: #667eea;'>Bigrammes</a>"
+	else
+		echo "-"
+	fi
+}
+
+# ==============================
+#      VÉRIFICATION ROBOTS.TXT
+# ==============================
+verifier_robots_txt() {
+	local url="$1"
+	
+	# Extraire le domaine de base (https://example.com)
+	local base_url=$(echo "$url" | perl -pe 's|^(https?://[^/]+).*|$1|')
+	local robots_url="${base_url}/robots.txt"
+	
+	# Télécharger robots.txt (timeout 5 secondes)
+	local code=$(curl -sL --max-time 5 -o /dev/null -w "%{http_code}" "$robots_url")
+	
+	if [[ "$code" == "200" ]]; then
+		echo "<span class=\"tag is-success is-light\">✓ Oui</span>"
+	else
+		echo "<span class=\"tag is-light\">✗ Non</span>"
+	fi
+}
 
 # ====================================
 #      Génération du tableau HTML     
@@ -673,6 +771,8 @@ cat << HEADER
                     <th>Dump HTML</th>
                     <th>Dump Text</th>
                     <th>Concord.</th>
+                    <th>Bigrammes</th>
+                    <th>Robots.txt</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -712,7 +812,7 @@ while read -r line; do
 			<td class=\"count-cell\">-</td>
 			<td>-</td>
 			<td>-</td>
-			<td>-</td>
+			<td>-</td>     
 		</tr>"
 		# Affiche la progression
 		echo -ne "Progression : $n/$TOTAL\r" >&2
@@ -738,6 +838,8 @@ while read -r line; do
 	LIEN_HTML="-"
 	LIEN_TEXT="-"
 	LIEN_CONC="-"
+    LIEN_BIGRAM="-"
+    ROBOTS_STATUS="-"
 
 	# Chemin pour la sauvegarde de la page HTML aspirée
 	FICHIER_HTML="../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html"
@@ -837,6 +939,8 @@ while read -r line; do
 		<td>${LIEN_HTML}</td>
 		<td>${LIEN_TEXT}</td>
 		<td>${LIEN_CONC}</td>
+        <td>${LIEN_BIGRAM}</td>
+        <td>${ROBOTS_STATUS}</td>
 	</tr>"
 
 	# Màj de la progression

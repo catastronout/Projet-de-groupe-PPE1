@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tableau des résultats</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+      .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
+      .card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+      .table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
+      .table tbody tr:hover { background-color: #f5f3ff }
+      .url-cell { max-width: 350px; word-break: break-all; font-family: monospace; font-size: 0.85rem; color: #555 }
+      .back-link { color: #667eea }
+      .back-link:hover { color: #764ba2 }
+      .count-cell { font-weight: bold; color: #667eea }
+      .url-cell a { color: #667eea; }
+      .url-cell a:hover { color: #764ba2; }
+
+      body.dark { background: #0f172a; color: #e2e8f0; }
+      body.dark .card { background: #111827; color: #e2e8f0; }
+      body.dark .table { background: #111827; color: #e2e8f0; }
+      body.dark .table thead th { background: #0b1220; color: #e2e8f0; }
+      body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
+      body.dark .table tbody tr:hover td { background: #1f2937; }
+      body.dark .url-cell { color: #cbd5e1; }
+      body.dark .back-link, body.dark .url-cell a { color: #93c5fd; }
+      body.dark .back-link:hover, body.dark .url-cell a:hover { color: #c4b5fd; }
+      body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
+      body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+    </style>
+  </head>
+
+  <body>
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title has-text-white">Tableau des résultats</h1>
+          <button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="mb-4"><a href="../../../index.html" class="back-link">Retour</a></p>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="table-container">
+              <table class="table is-fullwidth is-hoverable">
+                <thead>
+                  <tr>
+                    <th>N°</th>
+                    <th>URL</th>
+                    <th>Code HTTP</th>
+                    <th>Encodage</th>
+                    <th>Nb mots</th>
+                    <th>Occ : otonomi</th>
+                    <th>Occ : özerklik</th>
+                    <th>Dump HTML</th>
+                    <th>Dump Text</th>
+                    <th>Concord.</th>
+                  </tr>
+                </thead>
+                <tbody>
+<tr>
+		<td>1</td>
+		<td class="url-cell"><a href="https://tr.wiktionary.org/wiki/otonomi" target="_blank" rel="noopener noreferrer">https://tr.wiktionary.org/wiki/otonomi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     203</td>
+		<td class="count-cell">6</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-1.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-1.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-1.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>2</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Liberteryenizm" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Liberteryenizm</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    3557</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-2.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-2.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-2.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>3</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Özerklik" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Özerklik</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>      92</td>
+		<td class="count-cell">2</td>
+		<td class="count-cell">3</td>
+		<td><a href='../aspirations/tr/tr-3.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-3.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-3.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>4</td>
+		<td class="url-cell"><a href="https://shiftdelete.net/tesla-optimus-robotu-sahneden-dustu" target="_blank" rel="noopener noreferrer">https://shiftdelete.net/tesla-optimus-robotu-sahneden-dustu</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     344</td>
+		<td class="count-cell">4</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-4.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-4.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-4.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>5</td>
+		<td class="url-cell"><a href="https://www.nisanyansozluk.com/kelime/otonomi" target="_blank" rel="noopener noreferrer">https://www.nisanyansozluk.com/kelime/otonomi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>      10</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-5.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-5.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-5.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>6</td>
+		<td class="url-cell"><a href="https://www.teknotalk.com/hyundai-seri-uretime-hazir-otonom-mobilite-robot-platformu-mobed-tanitti-196754/" target="_blank" rel="noopener noreferrer">https://www.teknotalk.com/hyundai-seri-uretime-hazir-otonom-mobilite-robot-platformu-mobed-tanitti-196754/</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     639</td>
+		<td class="count-cell">5</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-6.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-6.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-6.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>7</td>
+		<td class="url-cell"><a href="https://www.peugeot.com.tr/peugeot-modelleri/3008.html" target="_blank" rel="noopener noreferrer">https://www.peugeot.com.tr/peugeot-modelleri/3008.html</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1093</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-7.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-7.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-7.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>8</td>
+		<td class="url-cell"><a href="https://www.aa.com.tr/tr/gundem/kume-vakfinin-raporuna-gore-suriyede-istikrar-dis-mudahalenin-sinirlanmasi-ve-ic-entegrasyonla-mumkun/3764643" target="_blank" rel="noopener noreferrer">https://www.aa.com.tr/tr/gundem/kume-vakfinin-raporuna-gore-suriyede-istikrar-dis-mudahalenin-sinirlanmasi-ve-ic-entegrasyonla-mumkun/3764643</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1094</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-8.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-8.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-8.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>9</td>
+		<td class="url-cell"><a href="https://ekonomi.haber7.com/foto-galeri/95077-savunma-fuarina-turk-damgasi-misirda-govde-gosterisi/p12" target="_blank" rel="noopener noreferrer">https://ekonomi.haber7.com/foto-galeri/95077-savunma-fuarina-turk-damgasi-misirda-govde-gosterisi/p12</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>      44</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-9.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-9.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-9.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>10</td>
+		<td class="url-cell"><a href="https://www.savunmasanayist.com/havelsan-misir-is-birligiyle-akrepi-gelistirdi/" target="_blank" rel="noopener noreferrer">https://www.savunmasanayist.com/havelsan-misir-is-birligiyle-akrepi-gelistirdi/</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     288</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-10.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-10.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-10.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>11</td>
+		<td class="url-cell"><a href="https://www.ulusavunma.com/avustralya-mq-28a-icin-930-milyon-dolarlik-sozlesme-imzaladi/" target="_blank" rel="noopener noreferrer">https://www.ulusavunma.com/avustralya-mq-28a-icin-930-milyon-dolarlik-sozlesme-imzaladi/</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     118</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-11.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-11.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-11.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>12</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Telkine_açıklık" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Telkine_açıklık</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     419</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-12.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-12.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-12.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>13</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/ATSOCAS" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/ATSOCAS</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     562</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-13.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-13.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-13.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>14</td>
+		<td class="url-cell"><a href="https://gazeteoksijen.com/otomobil/satislari-eriyen-tesla-alarm-durumunda-cin-tehdidi-buyuyor-avrupada-volkswagen-uce-katladi-257893" target="_blank" rel="noopener noreferrer">https://gazeteoksijen.com/otomobil/satislari-eriyen-tesla-alarm-durumunda-cin-tehdidi-buyuyor-avrupada-volkswagen-uce-katladi-257893</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     812</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-14.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-14.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-14.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>15</td>
+		<td class="url-cell"><a href="https://www.yenicagri.com/turkiye-ve-misirin-savunmadaki-is-birliginden-akrep-dogdu" target="_blank" rel="noopener noreferrer">https://www.yenicagri.com/turkiye-ve-misirin-savunmadaki-is-birliginden-akrep-dogdu</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     295</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-15.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-15.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-15.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>16</td>
+		<td class="url-cell"><a href="https://www.teknoburada.net/yapay-zeka-asistanli-telefonlara-hazir-miyiz/" target="_blank" rel="noopener noreferrer">https://www.teknoburada.net/yapay-zeka-asistanli-telefonlara-hazir-miyiz/</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     304</td>
+		<td class="count-cell">5</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-16.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-16.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-16.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>17</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Yapay_genel_zekâ" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Yapay_genel_zekâ</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1121</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-17.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-17.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-17.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>18</td>
+		<td class="url-cell"><a href="https://12punto.com.tr/yazarlar/hazal-papuccular/trumpin-dis-politikasi-ve-turkiye-105285" target="_blank" rel="noopener noreferrer">https://12punto.com.tr/yazarlar/hazal-papuccular/trumpin-dis-politikasi-ve-turkiye-105285</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     554</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-18.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-18.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-18.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>19</td>
+		<td class="url-cell"><a href="https://halktv.com.tr/ekonomi/tesla-ucuz-elektrikli-arabasi-model-qyu-duyurdu-953361h" target="_blank" rel="noopener noreferrer">https://halktv.com.tr/ekonomi/tesla-ucuz-elektrikli-arabasi-model-qyu-duyurdu-953361h</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     128</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-19.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-19.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-19.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>20</td>
+		<td class="url-cell"><a href="https://www.yeniankara.com.tr/bilim-ve-teknoloji/greyshark-internetiniz-asla-kesilmesin-diye-sahaya-iniyor-iste-okyanusun-yeni-muhafizi-143853" target="_blank" rel="noopener noreferrer">https://www.yeniankara.com.tr/bilim-ve-teknoloji/greyshark-internetiniz-asla-kesilmesin-diye-sahaya-iniyor-iste-okyanusun-yeni-muhafizi-143853</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     245</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-20.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-20.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-20.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>21</td>
+		<td class="url-cell"><a href="https://bigpara.hurriyet.com.tr/haberler/teknoloji-haberleri/hayalet-ihadan-onemli-basari_ID1621694/" target="_blank" rel="noopener noreferrer">https://bigpara.hurriyet.com.tr/haberler/teknoloji-haberleri/hayalet-ihadan-onemli-basari_ID1621694/</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     284</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-21.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-21.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-21.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>22</td>
+		<td class="url-cell"><a href="https://www.donanimhaber.com/hyundai-cok-amacli-tekerlekli-robotunu-tanitti--199346" target="_blank" rel="noopener noreferrer">https://www.donanimhaber.com/hyundai-cok-amacli-tekerlekli-robotunu-tanitti--199346</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     233</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-22.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-22.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-22.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>23</td>
+		<td class="url-cell"><a href="https://www.trhaber.com/dunya/gazze-de-robotik-savas-israil-katliam-icin-tum-varligini-seferber-etti-h947475.html" target="_blank" rel="noopener noreferrer">https://www.trhaber.com/dunya/gazze-de-robotik-savas-israil-katliam-icin-tum-varligini-seferber-etti-h947475.html</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     342</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-23.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-23.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-23.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>24</td>
+		<td class="url-cell"><a href="https://kelimeler.net/otonomi-kelimesinin-anlami-nedir#google_vignette" target="_blank" rel="noopener noreferrer">https://kelimeler.net/otonomi-kelimesinin-anlami-nedir#google_vignette</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     177</td>
+		<td class="count-cell">6</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-24.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-24.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-24.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>25</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Zoox_(şirket)" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Zoox_(şirket)</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     804</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-25.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-25.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-25.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>26</td>
+		<td class="url-cell"><a href="https://www.sp.k12.tr/otonomi/" target="_blank" rel="noopener noreferrer">https://www.sp.k12.tr/otonomi/</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    3533</td>
+		<td class="count-cell">6</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-26.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-26.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-26.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>27</td>
+		<td class="url-cell"><a href="https://www.stm.com.tr/tr/otonomi" target="_blank" rel="noopener noreferrer">https://www.stm.com.tr/tr/otonomi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     842</td>
+		<td class="count-cell">9</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-27.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-27.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-27.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>28</td>
+		<td class="url-cell"><a href="https://merlab.btu.edu.tr/tr/duyuru/detay/29684/elektrikli-araçlar-ve-otonomi-topluluğu-başkanı-ve-c-arf-takım-kaptanı-as-tvnin-konuğu-oldu" target="_blank" rel="noopener noreferrer">https://merlab.btu.edu.tr/tr/duyuru/detay/29684/elektrikli-araçlar-ve-otonomi-topluluğu-başkanı-ve-c-arf-takım-kaptanı-as-tvnin-konuğu-oldu</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>      44</td>
+		<td class="count-cell">2</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-28.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-28.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-28.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>29</td>
+		<td class="url-cell"><a href="https://acikerisim.ikcu.edu.tr/yayin/1740641&dil=2" target="_blank" rel="noopener noreferrer">https://acikerisim.ikcu.edu.tr/yayin/1740641&dil=2</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>      32</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-29.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-29.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-29.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>30</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Ototomi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Ototomi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    2066</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-30.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-30.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-30.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>31</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Özerklik_(siyaset)" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Özerklik_(siyaset)</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     136</td>
+		<td class="count-cell">3</td>
+		<td class="count-cell">3</td>
+		<td><a href='../aspirations/tr/tr-31.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-31.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-31.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>32</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Çekoslovakya%27nın_İşgali" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Çekoslovakya%27nın_İşgali</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1082</td>
+		<td class="count-cell">2</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-32.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-32.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-32.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>33</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Ülkelere_göre_özerk_bölgeler_listesi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Ülkelere_göre_özerk_bölgeler_listesi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    2894</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">2</td>
+		<td><a href='../aspirations/tr/tr-33.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-33.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-33.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>34</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Ulus_devlet" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Ulus_devlet</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     432</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-34.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-34.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-34.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>35</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Aşırı_sağ" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Aşırı_sağ</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    4676</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-35.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-35.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-35.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>36</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Anarşizm" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Anarşizm</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    5716</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-36.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-36.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-36.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>37</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Postmateryalizm" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Postmateryalizm</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1126</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-37.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-37.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-37.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>38</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Temistoklis_Sofulis" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Temistoklis_Sofulis</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     740</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-38.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-38.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-38.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>39</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Yeni_toplum" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Yeni_toplum</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     329</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-39.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-39.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-39.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>40</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Andrej_Hlinka" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Andrej_Hlinka</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1161</td>
+		<td class="count-cell">2</td>
+		<td class="count-cell">5</td>
+		<td><a href='../aspirations/tr/tr-40.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-40.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-40.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>41</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Kürtler" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Kürtler</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>   14173</td>
+		<td class="count-cell">2</td>
+		<td class="count-cell">3</td>
+		<td><a href='../aspirations/tr/tr-41.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-41.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-41.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>42</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Otomobilin_tarihi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Otomobilin_tarihi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>   12635</td>
+		<td class="count-cell">2</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-42.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-42.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-42.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>43</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Mürettebatsız_uzay_aracı" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Mürettebatsız_uzay_aracı</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    3499</td>
+		<td class="count-cell">2</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-43.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-43.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-43.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>44</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Finlandiya%27da_eğitim" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Finlandiya%27da_eğitim</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     454</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-44.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-44.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-44.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>45</td>
+		<td class="url-cell"><a href="https://www.hurriyet.com.tr/egitim/otonomi-nedir-otonomi-anlami-nedir-41819804" target="_blank" rel="noopener noreferrer">https://www.hurriyet.com.tr/egitim/otonomi-nedir-otonomi-anlami-nedir-41819804</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     229</td>
+		<td class="count-cell">13</td>
+		<td class="count-cell">4</td>
+		<td><a href='../aspirations/tr/tr-45.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-45.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-45.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>46</td>
+		<td class="url-cell"><a href="https://haymana.meb.gov.tr/dergi/sayi4/files/basic-html/page25.html" target="_blank" rel="noopener noreferrer">https://haymana.meb.gov.tr/dergi/sayi4/files/basic-html/page25.html</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     507</td>
+		<td class="count-cell">17</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-46.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-46.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-46.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>47</td>
+		<td class="url-cell"><a href="https://www.iqpluslanguageacademy.com/contentDetail.aspx?id=40" target="_blank" rel="noopener noreferrer">https://www.iqpluslanguageacademy.com/contentDetail.aspx?id=40</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     515</td>
+		<td class="count-cell">11</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-47.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-47.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-47.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>48</td>
+		<td class="url-cell"><a href="https://www.defenceturk.net/oncu-otonomi-ve-yapay-zeka-calismasi-shakey" target="_blank" rel="noopener noreferrer">https://www.defenceturk.net/oncu-otonomi-ve-yapay-zeka-calismasi-shakey</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     585</td>
+		<td class="count-cell">4</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-48.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-48.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-48.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>49</td>
+		<td class="url-cell"><a href="https://www.yeryuzupostasi.org/2024/03/24/isci-otonomisi-uzerine-miguel-amoros/" target="_blank" rel="noopener noreferrer">https://www.yeryuzupostasi.org/2024/03/24/isci-otonomisi-uzerine-miguel-amoros/</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    3304</td>
+		<td class="count-cell">39</td>
+		<td class="count-cell">3</td>
+		<td><a href='../aspirations/tr/tr-49.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-49.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-49.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>50</td>
+		<td class="url-cell"><a href="https://www.medyacuvali.com/yazilar/hilal-akbaba/otonomi-ve-ruh-sagligi" target="_blank" rel="noopener noreferrer">https://www.medyacuvali.com/yazilar/hilal-akbaba/otonomi-ve-ruh-sagligi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     369</td>
+		<td class="count-cell">10</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-50.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-50.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-50.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>51</td>
+		<td class="url-cell"><a href="https://www.akademikakil.com/universitelerimiz-ne-kadar-ozerk/fahriovali/" target="_blank" rel="noopener noreferrer">https://www.akademikakil.com/universitelerimiz-ne-kadar-ozerk/fahriovali/</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    5531</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">41</td>
+		<td><a href='../aspirations/tr/tr-51.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-51.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-51.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>52</td>
+		<td class="url-cell"><a href="https://bianet.org/yazi/ozerk-bolgesel-yonetim-ve-demokrasi-124116" target="_blank" rel="noopener noreferrer">https://bianet.org/yazi/ozerk-bolgesel-yonetim-ve-demokrasi-124116</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     754</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">7</td>
+		<td><a href='../aspirations/tr/tr-52.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-52.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-52.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>53</td>
+		<td class="url-cell"><a href="https://bianet.org/haber/demokratik-ozerklik-ne-anlama-geliyor-131483" target="_blank" rel="noopener noreferrer">https://bianet.org/haber/demokratik-ozerklik-ne-anlama-geliyor-131483</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     351</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">9</td>
+		<td><a href='../aspirations/tr/tr-53.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-53.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-53.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>54</td>
+		<td class="url-cell"><a href="https://www.makaleler.com/ozerklik-nedir#google_vignette" target="_blank" rel="noopener noreferrer">https://www.makaleler.com/ozerklik-nedir#google_vignette</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1590</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">53</td>
+		<td><a href='../aspirations/tr/tr-54.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-54.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-54.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>55</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Özerklik" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Özerklik</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>      92</td>
+		<td class="count-cell">2</td>
+		<td class="count-cell">3</td>
+		<td><a href='../aspirations/tr/tr-55.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-55.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-55.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>56</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Özerklik_(siyaset)" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Özerklik_(siyaset)</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     136</td>
+		<td class="count-cell">3</td>
+		<td class="count-cell">3</td>
+		<td><a href='../aspirations/tr/tr-56.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-56.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-56.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>57</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Avrupa_Yerel_Yönetimler_Özerklik_Şartı" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Avrupa_Yerel_Yönetimler_Özerklik_Şartı</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     527</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">4</td>
+		<td><a href='../aspirations/tr/tr-57.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-57.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-57.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>58</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Özerk_idari_bölüm" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Özerk_idari_bölüm</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>      75</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">4</td>
+		<td><a href='../aspirations/tr/tr-58.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-58.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-58.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>59</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Sekelistan_özerklik_hareketi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Sekelistan_özerklik_hareketi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1710</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">20</td>
+		<td><a href='../aspirations/tr/tr-59.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-59.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-59.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>60</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/1970_Irak-Kürt_Özerklik_Anlaşması" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/1970_Irak-Kürt_Özerklik_Anlaşması</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     494</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">4</td>
+		<td><a href='../aspirations/tr/tr-60.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-60.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-60.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>61</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Siyasi_özgürlük" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Siyasi_özgürlük</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>      89</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-61.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-61.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-61.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>62</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Åland_Özerklik_Günü" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Åland_Özerklik_Günü</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     276</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">7</td>
+		<td><a href='../aspirations/tr/tr-62.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-62.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-62.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>63</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Öz_belirleme_teorisi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Öz_belirleme_teorisi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1520</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">8</td>
+		<td><a href='../aspirations/tr/tr-63.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-63.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-63.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>64</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Hindistan%27ın_özerk_idari_bölümleri" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Hindistan%27ın_özerk_idari_bölümleri</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     100</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-64.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-64.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-64.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>65</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Demokratik_konfederalizm" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Demokratik_konfederalizm</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    2464</td>
+		<td class="count-cell">1</td>
+		<td class="count-cell">2</td>
+		<td><a href='../aspirations/tr/tr-65.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-65.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-65.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>66</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Hiyerarşi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Hiyerarşi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     835</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">5</td>
+		<td><a href='../aspirations/tr/tr-66.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-66.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-66.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>67</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/İspanya%27nın_özerk_toplulukları" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/İspanya%27nın_özerk_toplulukları</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     798</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">4</td>
+		<td><a href='../aspirations/tr/tr-67.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-67.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-67.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>68</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Kuzey_ve_Doğu_Suriye_Demokratik_Özerk_Yönetimi_Bölgesi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Kuzey_ve_Doğu_Suriye_Demokratik_Özerk_Yönetimi_Bölgesi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    4682</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-68.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-68.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-68.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>69</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Kürdistan_Bölgesel_Yönetimi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Kürdistan_Bölgesel_Yönetimi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    4122</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">6</td>
+		<td><a href='../aspirations/tr/tr-69.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-69.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-69.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>70</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Galiçya_Özerklik_Tüzüğü_(1936)" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Galiçya_Özerklik_Tüzüğü_(1936)</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     618</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">10</td>
+		<td><a href='../aspirations/tr/tr-70.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-70.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-70.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>71</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Acara_Özerk_Cumhuriyeti" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Acara_Özerk_Cumhuriyeti</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    2701</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">5</td>
+		<td><a href='../aspirations/tr/tr-71.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-71.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-71.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>72</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Bölgesel_devlet" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Bölgesel_devlet</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     116</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">2</td>
+		<td><a href='../aspirations/tr/tr-72.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-72.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-72.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>73</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Endülüs_(özerk_topluluk)" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Endülüs_(özerk_topluluk)</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     514</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-73.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-73.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-73.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>74</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Katalonya" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Katalonya</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    2113</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">5</td>
+		<td><a href='../aspirations/tr/tr-74.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-74.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-74.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>75</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/II._Abdülhamid_döneminde_toprak_kayıpları" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/II._Abdülhamid_döneminde_toprak_kayıpları</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    7812</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">7</td>
+		<td><a href='../aspirations/tr/tr-75.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-75.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-75.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>76</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Nahçıvan_Özerk_Cumhuriyeti" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Nahçıvan_Özerk_Cumhuriyeti</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1656</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">5</td>
+		<td><a href='../aspirations/tr/tr-76.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-76.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-76.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>77</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Federasyon" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Federasyon</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1326</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-77.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-77.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-77.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>78</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Sicilya_Özerk_Bölgesi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Sicilya_Özerk_Bölgesi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     628</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">2</td>
+		<td><a href='../aspirations/tr/tr-78.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-78.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-78.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>79</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Faroe_Adaları" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Faroe_Adaları</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1642</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-79.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-79.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-79.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>80</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Sardinya_Özerk_Bölgesi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Sardinya_Özerk_Bölgesi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     438</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">2</td>
+		<td><a href='../aspirations/tr/tr-80.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-80.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-80.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>81</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Dersim_İsyanı" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Dersim_İsyanı</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    4912</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">2</td>
+		<td><a href='../aspirations/tr/tr-81.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-81.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-81.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>82</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Sırbistan_Prensliği_(1817-1882)" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Sırbistan_Prensliği_(1817-1882)</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     311</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-82.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-82.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-82.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>83</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Hendek_operasyonları" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Hendek_operasyonları</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    7024</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">4</td>
+		<td><a href='../aspirations/tr/tr-83.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-83.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-83.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>84</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Ayrılıkçılık" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Ayrılıkçılık</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1746</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">3</td>
+		<td><a href='../aspirations/tr/tr-84.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-84.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-84.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>85</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Edirne_Antlaşması_(1829)" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Edirne_Antlaşması_(1829)</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1248</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-85.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-85.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-85.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>86</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Osmanlı_İmparatorluğu" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Osmanlı_İmparatorluğu</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>   22233</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">2</td>
+		<td><a href='../aspirations/tr/tr-86.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-86.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-86.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>87</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Egemenlik" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Egemenlik</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     505</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">0</td>
+		<td><a href='../aspirations/tr/tr-87.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-87.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-87.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>88</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Tanınmayan_veya_sınırlı_şekilde_tanınan_devletler_listesi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Tanınmayan_veya_sınırlı_şekilde_tanınan_devletler_listesi</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    6429</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-88.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-88.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-88.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>89</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Girit_İsyanı_(1897-1898)" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Girit_İsyanı_(1897-1898)</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    2473</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">5</td>
+		<td><a href='../aspirations/tr/tr-89.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-89.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-89.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>90</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Temmuz_2025_Suriye-Dürzi_çatışması" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Temmuz_2025_Suriye-Dürzi_çatışması</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1243</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-90.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-90.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-90.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>91</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Roma_İmparatorluğu" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Roma_İmparatorluğu</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    8639</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-91.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-91.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-91.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>92</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Katalan_milliyetçiliği" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Katalan_milliyetçiliği</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     247</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-92.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-92.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-92.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>93</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Sırp_İsyanları" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Sırp_İsyanları</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     705</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-93.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-93.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-93.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>94</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Benim_bedenim,_benim_kararım" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Benim_bedenim,_benim_kararım</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     107</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-94.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-94.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-94.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>95</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Gagavuzya_çatışmaları" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Gagavuzya_çatışmaları</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     680</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">10</td>
+		<td><a href='../aspirations/tr/tr-95.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-95.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-95.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>96</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Sincar" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Sincar</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     593</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">4</td>
+		<td><a href='../aspirations/tr/tr-96.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-96.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-96.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>97</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Benlik_kurgusu" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Benlik_kurgusu</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>    1581</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">12</td>
+		<td><a href='../aspirations/tr/tr-97.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-97.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-97.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>98</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Japonya%27nın_hükûmet_kararnamesi_ile_belirlenmiş_şehirleri" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Japonya%27nın_hükûmet_kararnamesi_ile_belirlenmiş_şehirleri</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     540</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">2</td>
+		<td><a href='../aspirations/tr/tr-98.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-98.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-98.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>99</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/Türkiye" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Türkiye</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>   19264</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">1</td>
+		<td><a href='../aspirations/tr/tr-99.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-99.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-99.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+<tr>
+		<td>100</td>
+		<td class="url-cell"><a href="https://tr.wikipedia.org/wiki/İmkansız_üçlü" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/İmkansız_üçlü</a></td>
+		<td><span class="tag is-success is-light">200</span></td>
+		<td>UTF-8</td>
+		<td>     897</td>
+		<td class="count-cell">0</td>
+		<td class="count-cell">4</td>
+		<td><a href='../aspirations/tr/tr-100.html' style='color: #667eea;'>HTML</a></td>
+		<td><a href='../dumps-text/tr/tr-100.txt' style='color: #667eea;'>TXT</a></td>
+		<td><a href='../concordances/tr/tr-100.html' style='color: #667eea;'>KWIC</a></td>
+	</tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+      <div class="content has-text-centered">
+        <p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
+
+      function refreshLabel() {
+        const isDark = document.body.classList.contains("dark");
+        btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+      }
+      refreshLabel();
+
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        refreshLabel();
+      });
+    </script>
+  </body>
+</html>

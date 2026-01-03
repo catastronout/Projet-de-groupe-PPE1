@@ -1,0 +1,37 @@
+Hyundai, Seri Üretime Hazır Otonom Mobilite Robot Platformu ‘MobED’i Tanıttı
+Hyundai Motor Grubu, Hyundai Motor Group Robotics LAB tarafından geliştirilen ilk seri üretim mobilite robot platformu MobED’i (Mobile Eccentric Droid), Japonya’nın Tokyo kentinde düzenlenen International Robot Exhibition 2025’te tanıttı.
+İlk kez Tüketici Elektroniği Fuarı (CES) 2022’de konsept olarak gösterildikten sonra yapay zekâ ile tamamen otonom ve seri üretime hazır hale getirilen MobED, 3–6 Aralık tarihleri boyunca düzenlenen iREX 2025 kapsamında sergileniyor. MobED’e dair tanıtım videoları ayrıca Grubun resmi YouTube kanalında da izlenebiliyor.
+Hyundai Motor Group Robotics LAB Başkanı konu ile ilgili “MobED, basit bir mobilite platformunun ötesinde, farklı endüstrilere ve günlük yaşama uyarlanabilir yeni nesil bir çözüm sunuyor. MobED, küresel robotik pazarında yeni standartlar belirleyecek ve insanların ve robotların bir arada yaşadığı geleceğe ivme kazandıracak” dedi.
+MobED’in Temel Özellikleri Nelerdir?
+MobED, üç temel temel unsurla tanımlanan yenilikçi bir robotik işlevsellik yaklaşımı sunuyor: Adaptif Mobilite, Sezgisel Otonomi ve Sınırsız Yolculuk .
+Adaptif Mobilite: Gelişmiş Teknoloji ile Yeniden Tanımlanan Hareket
+MobED, gelişmiş mekanizması sayesinde hassas duruş kontrolü ve kesintisiz zemin uyumu sunarak mobil robotik anlayışını yeniden tanımlıyor. Bu özellikler, Grubun otomotiv mühendisliği uzmanlığıyla güçlendirilerek farklı yüzeylerde üstün hareket kabiliyeti sağlıyor:
+• Üstün Kontrol Mekanizması: Eğimli veya engebeli yüzeylerde duruşu ve yüksekliği dinamik olarak ayarlayarak platformu aktif şekilde dengeliyor
+• Kesintisiz Zemin Geçişleri: Dar iç mekân geçişlerinden zorlu açık hava koşullarına kadar farklı ortamlara sorunsuz adapte oluyor
+• Otomotiv Sınıfı Mühendislik: Laboratuvar seviyesindeki hassasiyeti saha koşullarına ölçeklenebilir şekilde aktarıyor
+Adaptif hareket kabiliyeti sayesinde MobED, ortama özel robot tasarım ihtiyacını ortadan kaldırıyor.
+Sezgisel Otonomi: Robotik Teknolojisini Herkes İçin Erişilebilir Kılmak
+MobED, otonom navigasyonu sadeleştirerek teknik bilgi gerektirmeden kullanım kolaylığı sağlıyor:
+• Erişilebilir Kontrol Arayüzü: Geniş dokunmatik ekran kontrol cihazı ve sezgisel 3D UI/UX tasarımı
+• Güvenli Navigasyon: LiDAR ve kameraları birleştiren AI tabanlı sensörler ile engelleri algılama ve kaçınma
+• Güvenilir Otonomi: Kalabalık ve dar alanlarda dahi öngörülebilir, güvenli ve hassas hareket algoritmaları
+Sınırsız Yolculuk: Çok Amaçlı Kullanım Senaryoları
+Modüler bir platform olarak tasarlanan MobED, lojistikten video prodüksiyonuna kadar geniş kullanım alanlarına uyarlanabiliyor:
+• Özelleştirilebilir Modüler Yapı: Evrensel montaj rayları ve API desteği
+• İç ve Dış Mekân Uygunluğu: Tek platformla farklı ortamlarda kullanım maliyet verimliliği
+• Geleceğe Hazır Tasarım: Uzun vadeli dayanıklılık ve sürekli genişletilebilir yapı
+MobED, geleneksel robotların aksine tek bir platformla sınırsız uygulama olanağı sunuyor.
+Kaç Farklı MobED Modelleri:
+• MobED Pro: Gelişmiş otonomi, LiDAR-kamera füzyonu ve ‘follow-me’ (beni takip et) modu gibi ek sensörlerle donatılmış, özellikle ticari ve dış mekân operasyonları için geliştirilmiş model
+• MobED Basic: Araştırma ve geliştirme odaklı, otonomi bileşenleri önceden entegre edilmemiş, özelleştirmeye açık temel model
+Bu iki seçenek, farklı endüstrilerin değişen ihtiyaçlarına yanıt verilmesini sağlıyor.
+MobED Tasarımını Neler Tanımlıyor?
+MobED’in tasarımı, düz hatlar ve akıcı kıvrımların ahengini yansıtan ‘Refined Edge’ yaklaşımını somutlaştırıyor. Düz hatlar işlevsel sağlamlığı temsil ederken, entegre sensörler ve Drive-and-Lift (DnL) modülleri dengeli ve rafine bir estetik oluşturuyor.
+Yüksek kaliteli metal yüzey işçiliği, hareketli formlar arasında kusursuz geçişler sağlıyor ve dinamik hareketler sırasında tasarım bütünlüğünü öne çıkarıyor.
+MobED’i Bir Robotik Atılım Haline Getiren Mühendislik Yenilikleri
+MobED’in merkezinde, duruş kontrolü, sürüş ve yönlendirme motorlarını tek modülde birleştiren özel DnL yapısı bulunuyor. Eksantrik tabanlı duruş kontrol mekanizması, yüzey eğimlerine uyum sağlayarak yüksekliği dinamik biçimde ayarlıyor ve dengeli konumlanmayı sürdürüyor.
+Çok eklemli robotik sistemlerden ilham alan optimizasyon tabanlı kontrol algoritması ise bordür gibi engelleri aşarken stabiliteyi koruyor. LiDAR ve kamera sensörleri, hareketli nesne takibi, öngörülü rota oluşturma ve otonom engel kaçınma gibi işlevlerle güvenli navigasyon sağlıyor.
+Geniş dokunmatik ekranlı kontrolcü ve 3D arayüz, kendi kendine haritalama, konum belirleme ve otonom sürüş süreçlerini herkes için kolaylaştırıyor.
+MobED iREX 2025’te
+Hyundai Motor Group, MobED’i 3-6 Aralık tarihleri arasında iREX 2025 kapsamındaki standında sergiliyor. Ziyaretçiler, platformun farklı zeminlerdeki hareket kabiliyetini izleyebiliyor ve yükleme/boşaltma, teslimat, golf, kentsel ulaşım ve yayıncılık gibi senaryoları gerçek zamanlı uygulamalarla deneyimleyebiliyor.
+MobED’in seri üretimine 2026’nın ilk yarısında başlanması planlanıyor. Ürün detayları ve satın alma bilgileri Hyundai Motor Group Robotics LAB web sitesinde yer alıyor.

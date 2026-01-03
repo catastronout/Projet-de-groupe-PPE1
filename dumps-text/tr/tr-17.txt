@@ -1,0 +1,55 @@
+Yapay genel zekâ
+| Yapay zekâ |
+|---|
+| dizisinin bir parçası |
+Yapay genel zeka (YGZ), bir insanın yapabileceği herhangi bir zihinsel görevi başarıyla gerçekleştirebilecek bir makinenin zekasıdır. Günümüzdeki bazı yapay zeka araştırmalarının temel amacıdır ve bilimkurgu ve fütüroloji'de de ortak bir konudur. Bazı araştırmacılar Yapay genel zekâyı "güçlü yapay zekâ",[1] "tam yapay zekâ"[2] veya bir makinenin "genel akıllı eylem" gerçekleştirme kabiliyeti olarak adlandırmaktadır;[3] diğerleri ise sadece bilinci deneyimleyen makineler için "güçlü yapay zekâ" tabirini kullanmaktadır.
+Bazı kaynaklar güçlü yapay zekâ ile "uygulamalı yapay zekâ"[4] ("dar yapay zekâ"[1] veya "zayıf yapay zekâ"[5] olarak da bilinir) arasındaki ayrımı şöyle vurgular: yazılım kullanarak özel problem çözmek veya muhakeme görevlerini incelemek. Zayıf yapay zekâ, güçlü yapay zekâ'nın aksine, insan bilişsel yeteneklerinin tamamını gerçekleştirmeye yönelik değildir.
+2017 yılı itibarıyla dünya genelinde kırktan fazla kuruluş yapay genel zekâ hakkında aktif araştırmalar yapmaktadır.[6]
+Gereksinimler
+[değiştir | kaynağı değiştir]Zekâ için çeşitli kriterler belirlenmiştir (bunlardan en önemlisi Turing testi) ancak bugüne kadar herkesi tatmin edecek bir tanım belirlenememiştir.[7] Bununla birlikte, yapay zeka araştırmacıları arasında, genel bir zekâ'nın aşağıdakileri yapması gerektiği hususunda anlaşma vardır:[8]
+- Gerekçe, strateji kullanmak, bulmacaları çözmek ve belirsizlik altında karar vermek;
+- Bilgiyi temsil etmek, ortak bilgi dahil;
+- Planlama;
+- Makine öğrenimi;
+- Doğal dil ile iletişim kurmak;
+- ve tüm bu becerileri ortak hedeflere yönlendirmek.
+Diğer önemli yetenekler arasında, Duyu ve hareket etme (örneğin nesneleri taşıma ve kullanma) yeteneği de bulunur.[9] Bu, tehlikeyi tespit etme ve bunlara müdahale etme yeteneğini de içerir.[10] Zekâ konusundaki birçok disiplinlerarası yaklaşım (örneğin bilişsel bilim), hayal gücü (programlanamayan zihinsel imgeler ve kavramlar oluşturma kabiliyeti)[11] ve otonomi gibi ek özellikleri göz önünde bulundurma ihtiyacını vurgulamaya meyillidir.[12] Bu yeteneklerin çoğunu sergileyen bilgisayar tabanlı sistemler mevcuttur (örneğin hesaplamalı yaratıcılık, otomatik muhakeme, karar destek sistemi, robot, evrimsel hesaplama), ancak henüz hiçbiri insan seviyesinde değildir.
+Yapay genel zekâ'yı onaylayan testler[13]
+[değiştir | kaynağı değiştir]- Turing testi (Turing)
+- İkinci bir insana görünmeden bir makine ve bir insan konuşmalıdır, ikinci insan bu iki konuşundan hangisinin makine olduğunu anlamalıdır, eğer makine bu ikinci insanı kısıtlı süre içinde kandırıp kendini insan olarak düşündürürse testi geçer. Not: Turing zeka için yeterli bir test değildir, ama akıllı bir makinenin geçmesi gerekli olduğu bir testtir.
+- Kahve Testi (Wozniak)
+- Bir makine sıradan bir Amerikan evine girmek ve nasıl kahve yapılacağını bulması gereklidir: kahve makinesini bulmak, kahve bulmak, su eklemek, bir kupa bulmak ve uygun düğmelere basarak kahveyi demlemek.
+- Robot Kolej Öğrencisi Testi (Goertzel)
+- Bir makine bir üniversiteye kaydolur, insanların alacağı aynı sınıfları alıp geçer ve bir derece alır.
+- Görevlendirilme Testi (Nilsson)
+- Bir makine ekonomik olarak önemli bir işe girer ve o işi bir insan kadar iyi bir şekilde gerçekleştirir.
+- Düz paket mobilya testi (Tony Severyns)
+- Bir makine, mobilya paketini açmak ve bir araya getirmek zorundadır. Tüm armatürleri doğru şekilde yerleştirerek talimatları okumalı ve ürünü tanımlandığı şekilde monte etmelidir.
+İhtilaflar ve tehlikeler
+[değiştir | kaynağı değiştir]Yapılabilirlik
+[değiştir | kaynağı değiştir]Ağustos 2020 itibarıyla, yapılabilirliği henüz ispatlanamadığından dolayı YGZ çok spekülatif kalmaktadır.[14][15] Yapay genel zekanın yapılıp yapılamayacağı veya ne zaman meydana geleceği hakkında farklı görüşler vardır. Günümüze değin herhangi bir YGZ örneği görülmemiş olup, halen teorik bir çalışma alanıdır.
+İnsan varlığına karşı oluşturduğu tehdit
+[değiştir | kaynağı değiştir]Bu tez YGZ'nin varoluşsal bir tehdit oluşturduğunu ve bu tehdidin gereken ilgiyi görmediğini savunur. Bu görüşü savunmasıyla bilinen isimlerden en ünlüleri Elon Musk, Bill Gates ve Stephen hawking iken en önde gelen yapay zeka araştırmacısı ise Stuart J. Russell 'dir.
+Varoluşsal risk hakkında kaygılanan akademisyenlerin birçoğuna göre bu konuda mesafe almanın en iyi yolu 'kontrol problemini ' çözmeye yönelik büyük çaplı araştırmalar yapmaktır. Burada amaç sürekli biçimde kendini geliştiren yapay zekanın, süper-zeka seviyesine geldiğinde yıkıcı değil dostane davranma ihtimalini maksimize etmek için programcıların ne tür güvenlik önlemlerini, algoritmaları ve mimari yapıları uygulamaları gerektiği sorusuna yanıt bulmaktadır.[16][17]
+Acı riskleri
+[değiştir | kaynağı değiştir]Ana makale: Acı riskleri
+Acı riskleri hakkında araştırma yapan bazı aktivistler, başıbozuk bir YGZ'nin galaksiyi kolonize etmek gibi hedeflerine ulaşmak amacıyla bilim ve mühendislik alanlarında bir dizi ilginç başarılar elde edeceğini fakat bunu yaparken kendinden daha zayıf varlıkların acı çekmelerini önlemek gibi insanı değerlere saygı duymayabileceğine dikkat çekmişlerdir.[18]
+Kaynakça
+[değiştir | kaynağı değiştir]- ^ a b Kurzweil 2005, s. 260 or see Advanced Human Intelligence 30 Haziran 2011 tarihinde Wayback Machine sitesinde arşivlendi. Güçlü yapay zeka’yı "insan zekâsının seviyesindeki makine zekası" olarak tanımlamaktadır."
+- ^ "The Age of Artificial Intelligence: George John at TEDxLondonBusinessSchool 2013". 23 Ağustos 2019 tarihinde kaynağından arşivlendi. Erişim tarihi: 17 Şubat 2019.
+- ^ Newell & Simon 1976. Fiziksel sembol sistemi hipotezinde "insani seviye" zeka için kullandıkları terimdir.
+- ^ Encyclopædia Britannica Strong AI, applied AI, and cognitive simulation 15 Ekim 2007 tarihinde Wayback Machine sitesinde arşivlendi. or Jack Copeland What is artificial intelligence? 18 Ağustos 2007 tarihinde Wayback Machine sitesinde arşivlendi. on AlanTuring.net
+- ^ "The Open University on Strong and Weak AI". 25 Eylül 2009 tarihinde kaynağından arşivlendi. Erişim tarihi: 17 Şubat 2019.
+- ^ Baum, Seth. "Etik, Risk ve Politika Genel Yapay Zeka Projeleri Araştırması." (2017)
+- ^ AI kurucusu John McCarthy şöyle yazmıştır: “Genel olarak ne tür hesaplama işlemlerini akıllı olarak adlandırmak istediğimizi henüz karakterize edemiyoruz." McCarthy, John (2007). "Basic Questions". Stanford University. 15 Şubat 2019 tarihinde kaynağından arşivlendi. Erişim tarihi: 17 Şubat 2019.
+- ^ Bu akıllı özelliklerin listesi, aşağıdakiler dahil olmak üzere başlıca yapay zeka ders kitaplarının kapsadığı konulara dayanmaktadır: Russell & Norvig 2003, Luger & Stubblefield 2004, Poole, Mackworth & Goebel 1998 and Nilsson 1998.
+- ^ Pfeifer, R. and Bongard J. C., How the body shapes the way we think: a new view of intelligence (The MIT Press, 2007). 0-262-16239-3
+- ^ White, R. W. (1959). "Motivation reconsidered: The concept of competence". Psychological Review. 66 (5). ss. 297-333. doi:10.1037/h0040934.
+- ^ Johnson 1987
+- ^ deCharms, R. (1968). Personal causation. New York: Academic Press.
+- ^ Muehlhauser, Luke. "What is AGI?". Machine Intelligence Research Institute. 4 Ocak 2019 tarihinde kaynağından arşivlendi. Erişim tarihi: 1 Mayıs 2014.
+- ^ Boucher, Philip (March 2019). "Concluding remarks". How artificial intelligence works (PDF) (Report). European Parliamentary Research Service. Archived (PDF) from the original on 3 March 2020. Retrieved 3 March 2020. "Today's AI is powerful and useful, but remains far from speculated AGI or ASI."
+- ^ itu.int: Beyond Mad?: The Race For Artificial General Intelligence Archived 9 November 2020 at the Wayback Machine, "AGI represents a level of power that remains firmly in the realm of speculative fiction as on date." February 2, 2018, retrieved March 3, 2020
+- ^ Sotala, Kaj; Yampolskiy, Roman V . (19 December 2014). "Responses to catastrophic AGI risk: a survey". Physica Scripta. 90 (1): 018001. doi:10.1088/0031-8949/90/1/018001. ISSN 0031-8949.
+- ^ Bostrom, Nick (2014). Superintelligence: Paths, Dangers, Strategies (First ed.). ISBN 978-0199678112 .
+- ^ "Artificial Intelligence and Its Implications for Future Suffering" (PDF). June 2016. 31 Ekim 2020 tarihinde kaynağından (PDF) arşivlendi.

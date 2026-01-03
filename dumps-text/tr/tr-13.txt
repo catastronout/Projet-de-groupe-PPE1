@@ -1,0 +1,39 @@
+ATSOCAS
+ATSOCAS (Air Traffic Services Outside Controlled Airspace); bazı ülkelerde kontrolsüz hava sahalarında verilen hava trafik hizmetlerini (ATS) tanımlamakta kullanılan bir kavram. ATSOCAS şu hizmetleri kapsar:[1]
+- Basic Service
+- Traffic Service
+- Deconfliction Service
+- Procedural Service
+Basic Service
+[değiştir | kaynağı değiştir]Basic Service, uçuşların emniyetli ve verimli bir şekilde gerçekleşmesi için sağlanan bir hava trafik hizmetidir. Temel hizmet anlamına gelir. Basic service alan bir uçağa başlıca şu konularda bilgi ve tavsiye verilir:[2]
+- Meteoroloji
+- Tesis ve kolaylıkların durumu
+- Meydan durumları
+- Genel hava aktiviteleri
+- Uçuş emniyetini etkileyebilecek diğer bilgiler
+Basic service, bir pilota en fazla otonomi veren hizmettir.[3] Basic service alan bir uçak komutanı diğer hava taşıtları ile tehlikeli yakınlaşmadan kaçınma konusunda "tamamen" sorumludur.[2]
+Procedural Service
+[değiştir | kaynağı değiştir]Basic service'e ilaveten kontrolör yatay ve dikey düzlem ile zaman temelli direktifler vererek çakışmayı önleyici minimumların elde edilmesini sağlar. Ancak kontrolör sürveyans yapmadığı için,[4] bilgi sahibi olmadığı (unknown) bir taşıt hakkında trafik ve çakışmayı önleme (deconfliction) bilgisi sağlayamaz.[2] Procedural Service, kontrollü hava sahalarında bir kontrol hizmeti iken kontrolsüz hava sahalarında bir tavsiye hizmetidir.[5]
+Traffic Service
+[değiştir | kaynağı değiştir]Basic service'e ilaveten kontrolör sürveyans temelli trafik bilgisi vererek pilotlara yardımcı olur. Kontrolör bazı durumlarda, sıralama amacıyla baş ve irtifâ bilgisi verebilir ancak çakışmayı önleme minimumlarını sağlamak zorunda değildir ve çakışmayı önlemek tamamen pilotun sorumluluğundadır.[2]
+Traffic service alan uçak baş ve irtifâ değişikliklerini kontrolöre bildirmek zorundadır.
+Deconfliction Service
+[değiştir | kaynağı değiştir]Basic service'e ilaveten kontrolör "sürveyans (gözlem) temelli" bilgileri kullanarak, çakışmayı önlemek veya sıraya koymak amacıyla, hava araçlarına baş (istikâmet) ve irtifâ verir. Ancak çakışmayı önleme sorumluluğu tamamen pilota aittir.[2]
+Deconfliction mimima
+[değiştir | kaynağı değiştir]Deconfliction minima, "çakışmayı önleme minimumları" anlamına gelen bir havacılık kavramıdır. ATS birimlerinin bir kısmı bu hizmeti sağlar. ATS birimi hava araçlarını yatay ve dikey eksende yönlendirerek (baş ve irtifâ tavsiyesi vererek) hava araçları arasında aşağıdaki minimum mesafe ve yükseklik ayrımlarını sağlar:
+- 5 NM yatay, 3000 ft dikey
+- 3 NM yatay, 1000 ft dikey (diğer trafikler de aynı kontrolörden tavsiye alıyorsa. 500 ft. dikey [ilgili havacılık otoritelerinden onay gerekli])
+Eğer herhangi bir pilot ATSU tavsiyelerine uymamayı tercih ederse çakışmayı önleme sorumluluğu tamamen kendisine aittir. Ayrıca kontrolörlerin iş yükü, cihaz hataları veya farkları ile beklenmeyen manevralar yapan bilinmeyen trafikler nedeniyle, mimimumların her zaman sağlanamayabileceği göz önünde bulundurulmalıdır.
+| Birim | Basic Service | ALRS | Radar sürveyansı | Baş ve irtifâ direktifi | Deconfliction minima | |
+|---|---|---|---|---|---|---|
+| Basic Service | ATC / AFISO | Evet | Evet | Hayır | Hayır | Hayır |
+| Procedural Service | ATC | Evet | Evet | Hayır | Evet | Evet (sadece katılımcı trafiklerle) |
+| Traffic Service | ATC | Evet | Evet | Evet | Evet (sıralama amacıyla) | Hayır (zorunda değil) |
+| Deconfliction Service | ATC | Evet | Evet | Evet | Evet | Evet |
+Kaynakça
+[değiştir | kaynağı değiştir]- ^ "Air Traffic Services Outside Controlled Airspace". 26 Nisan 2015 tarihinde kaynağından arşivlendi. Erişim tarihi: 24 Şubat 2013.
+- ^ a b c d e CAP 413 11 Mart 2016 tarihinde Wayback Machine sitesinde arşivlendi., bölüm 1, sf 2
+- ^ ATSOCAS 7 Nisan 2013 tarihinde Wayback Machine sitesinde arşivlendi. Airspace & Safety Initiative (ASI)
+- ^ A Reference Guide to UK Phraseology. Airspace and Safety Initiative. s 1.
+- ^ Robson. s 85
+| Havacılık ile ilgili bu madde taslak seviyesindedir. Madde içeriğini genişleterek Vikipedi'ye katkı sağlayabilirsiniz. |

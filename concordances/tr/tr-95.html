@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Concordancier - tr-95</title>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+			<style>
+				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
+				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+
+				.back-link { color: #667eea }
+				.back-link:hover { color: #764ba2 }
+
+				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
+				.table tbody tr:hover td { background-color: #f5f3ff; }
+
+			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
+			.kwic-left  { text-align: right;  width: 44%; }
+			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
+			.kwic-right { text-align: left;   width: 44%; }
+			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+
+			.cat-col { white-space: nowrap; }
+
+			body.dark { background: #0f172a; color: #e2e8f0; }
+			body.dark .card { background: #111827; color: #e2e8f0; }
+			body.dark .table { background: #111827; color: #e2e8f0; }
+			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
+			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
+			body.dark .table tbody tr:hover td { background: #1f2937; }
+			body.dark .back-link { color: #93c5fd; }
+			body.dark .back-link:hover { color: #c4b5fd; }
+			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
+			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+
+			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
+		</style>
+	</head>
+
+	<body>
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
+					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
+					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<p class="mb-4">
+					<a href="../../index.html" class="back-link">Retour</a>
+					<span class="has-text-grey"> / </span>
+					<a href="../../tableaux/tableau-tr.html" class="back-link">Tableau</a>
+				</p>
+
+				<div class="card">
+					<div class="card-content">
+						<div class="content">
+							<p class="mb-2"><strong>URL :</strong> <a href="https://tr.wikipedia.org/wiki/Gagavuzya_çatışmaları" target="_blank" rel="noopener noreferrer" class="back-link">https://tr.wikipedia.org/wiki/Gagavuzya_çatışmaları</a></p>
+							<p class="mb-4"><strong>Occurrences :</strong> 10</p>
+						</div>
+
+						<div class="table-container">
+							<table class="table is-fullwidth is-hoverable is-striped">
+								<thead>
+									<tr>
+										<th>Catégorie</th>
+										<th>Gauche</th>
+										<th>Mot</th>
+										<th>Droite</th>
+									</tr>
+								</thead>
+								<tbody>
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left"> din Găgăuzia), Moldova SSC'si ile (sonradan bağımsız Moldova Cumhuriyeti) ve Moldova'da daha fazla</td>
+					<td class="kwic-kw"><mark>özerklik</mark></td>
+					<td class="kwic-right"> isteyen Gagavuz nüfusu arasında bir çatışmaydı. Sovyetler Birliği içinde kalmak amacıyla Moldova'da</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left"> ortaya çıkan Gagavuz ulusal hareketi, Gagavuz halkını ve onların çıkarlarını korumak için bölgesel</td>
+					<td class="kwic-kw"><mark>özerkliği</mark></td>
+					<td class="kwic-right"> gerekli olduğunu düşünmeye başladı. Benzer bir durum Moldavya'nın bugün Transdinyester olarak bilin</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left">a'nın bugün Transdinyester olarak bilinen Dinyester nehrinin doğu yakasında da gelişti. [1] Gagavuz</td>
+					<td class="kwic-kw"><mark>özerklik</mark></td>
+					<td class="kwic-right"> yanlılarının talepleri karşısında, Moldova Sovyet Sosyalist Cumhuriyeti Yüksek Sovyeti, Gagavuzları</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left">ın talepleri karşısında, Moldova Sovyet Sosyalist Cumhuriyeti Yüksek Sovyeti, Gagavuzların bölgesel</td>
+					<td class="kwic-kw"><mark>özerkliği</mark></td>
+					<td class="kwic-right"> konusunu incelemek üzere Gagavuz Halkı'nın temsilcilerinden oluşan bir komisyon kurdu. Moldova SSC'</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left">acak Gagavuz Özerk Sovyet Sosyalist Cumhuriyeti, 12 Kasım 1989'da Moldova Yüksek Sovyeti'ne Gagavuz</td>
+					<td class="kwic-kw"><mark>özerkliği</mark></td>
+					<td class="kwic-right">ni kabul etmesi yönünde baskı yapmak amacıyla ilan edildi, ancak ikincisi bu bildirgeyi bozarak yasa</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left">an etti. 27 Temmuz 1990'da, artık Halk Cephesi liderliğindeki Moldavya Yüksek Sovyeti, Gagavuzların</td>
+					<td class="kwic-kw"><mark>özerklik</mark></td>
+					<td class="kwic-right"> taleplerini resmen reddetti. Bu kararla karşı karşıya kalan Gagauz temsilcileri, 19 Ağustos 1990'da</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left">u. [2] 1994 Moldova parlamento seçimleri, Moldova'daki etnik azınlıklardan herhangi birine bölgesel</td>
+					<td class="kwic-kw"><mark>özerklik</mark></td>
+					<td class="kwic-right"> verilmesine veya ülkenin federalleştirilmesine şiddetle karşı çıkan Halk Cephesi yönetiminin sonunu</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left"> "Dinyester'in sol yakasındaki yerlere" ve "Moldova Cumhuriyeti'nin güneyindeki diğer bazı yerlere"</td>
+					<td class="kwic-kw"><mark>özerklik</mark></td>
+					<td class="kwic-right"> hakkını tesis ediyor; bu nihayet Gagavuzlara, büyük ölçüde 1992'den bu yana devam eden müzakereler</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left">nihayet Gagavuzlara, büyük ölçüde 1992'den bu yana devam eden müzakereler sonucunda hazırlanmış bir</td>
+					<td class="kwic-kw"><mark>özerklik</mark></td>
+					<td class="kwic-right"> statüsü verilmesine olanak sağladı [2] 23 Aralık 1994'te Moldova Parlamentosu "Gagavuzya'nın (Gagav</td>
+				</tr>
+			
+
+				<tr>
+					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="kwic-left">dic special al Găgăuziei (Gagauz-Yeri)), [2] 14 Ocak 1995'te yürürlüğe girerek modern Gagavuzya'nın</td>
+					<td class="kwic-kw"><mark>özerkliği</mark></td>
+					<td class="kwic-right">ni yasal olarak resmîleştirdi. [2] 5 Mart 1995'te, Moldova'nın 36 bölgesinde referandum yapıldı; bur</td>
+				</tr>
+			
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
+			<div class="content has-text-centered">
+				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
+			</div>
+		</footer>
+
+		<script>
+			const btn = document.getElementById("themeToggle");
+			const saved = localStorage.getItem("theme");
+			if (saved === "dark") document.body.classList.add("dark");
+
+			function refreshLabel() {
+				const isDark = document.body.classList.contains("dark");
+				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+			}
+			refreshLabel();
+
+			btn.addEventListener("click", () => {
+				document.body.classList.toggle("dark");
+				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+				refreshLabel();
+			});
+		</script>
+	</body>
+</html>

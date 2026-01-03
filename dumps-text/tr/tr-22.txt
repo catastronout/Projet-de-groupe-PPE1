@@ -1,0 +1,8 @@
+Şirketin Robotik Laboratuvarı tarafından geliştirilen dört tekerlekli kompakt makine, MobED (Mobile Eccentric Droid) adıyla biliniyor. Robot, kısa süre önce Tokyo’daki 2025 Uluslararası Robot Fuarı’nda (iREX 2025) sergilendi. İlk kez 2022’de Las Vegas’taki CES etkinliğinde gösterilen MobED, artık seri üretime hazır hale getirildi.
+MobED'in yetenekleri neler?
+Yapay zeka destekli rota planlama ve engel algılama özelliklerine sahip olan robot, çevresini algılamak için LiDAR ve kameraların birleşik kullanımından yararlanıyor. Ayrıca modüler yapısı sayesinde teslimat ve lojistikten araştırma, medya çalışmalarına ve golf ekipmanı taşıma gibi pek çok göreve uyarlanabiliyor.
+Şirket platformun iki versiyonla satışa çıkacağını duyurdu: temel ve profesyonel model. Profesyonel versiyonda tam otonom yapay zeka, LiDAR-kamera füzyonu, gelişmiş sensörler ve lojistik, teslimat veya denetim çalışanları için “beni takip et” modu bulunacak. Buna karşılık temel modelde hazır otonomi yazılımları yer almıyor. Bu sürümün daha çok kendi uygulamalarını geliştirmek isteyen araştırmacı ve geliştiricilere hitap ettiği belirtiliyor.
+Şirkete göre MobED Pro modeli 75 cm genişliğe, 115 cm uzunluğa ve 65 cm yüksekliğe sahip. Temel model ise aynı genişlik ve uzunluğu korurken yaklaşık 43 cm’lik daha düşük bir yüksekliğe sahip olacak şekilde tasarlanmış. Her iki robot da 47 ila 57 kilogram arasında yük taşıyabiliyor.
+Bunlara ek olarak robot, en az 4 saatlik çalışma sunan 1,47 kWh kapasiteli bir bataryayla güçlendiriliyor. Batarya, yüzde 10’dan yüzde 90 seviyesine 2,5 saatin altında şarj olabiliyor.
+MobED'in ticari satışlarının 2026'nın ilk yarısında başlayacağı belirtiliyor.
+Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:

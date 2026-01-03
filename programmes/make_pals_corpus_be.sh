@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # --- UTILISATION ---
-# Ce script a besoin de deux arguments : un dossier de dumps textuels et un nom de langue
-# Exemple : cd programmes; bash make_pals_corpus.sh ../dumps-text/be be > ../pals/dump-be.txt
-# Exemple : cd programmes; bash make_pals_corpus.sh ../dumps-text/kr kr > ../pals/dump-kr.txt
+# Ce script a besoin de deux arguments : un dossier et un nom de langue
+# Pour dumps-text :
+#   bash make_pals_corpus.sh ../dumps-text/be be > ../pals/dump-be.txt
+# Pour contextes (fichiers TSV) :
+#   bash make_pals_corpus.sh ../contextes/be be > ../pals/contexte-be.txt
 
 VERBOSE=0
 
@@ -42,7 +44,16 @@ log "Dossier ../pals prêt"
 
 FILES_FOUND=0
 
-for file in "$DOSSIER/$LANG"-*.txt; do
+# Déterminer le type de fichiers à traiter selon le dossier
+if [[ "$DOSSIER" == *"contextes"* ]]; then
+    # Pour le dossier contextes : chercher les fichiers TSV (kwic)
+    PATTERN="$DOSSIER/$LANG"-*-kwic.tsv
+else
+    # Pour dumps-text : chercher les fichiers TXT
+    PATTERN="$DOSSIER/$LANG"-*.txt
+fi
+
+for file in $PATTERN; do
     if [[ ! -f "$file" ]]; then
         continue
     fi
@@ -50,6 +61,25 @@ for file in "$DOSSIER/$LANG"-*.txt; do
     FILES_FOUND=1
     log "Traitement du fichier : $file"
 
+    # Si c'est un fichier TSV (contextes), extraire les colonnes 2, 3, 4
+    if [[ "$file" == *.tsv ]]; then
+        # Extraire contexte gauche (col 2) + mot (col 3) + contexte droit (col 4)
+        cut -f2,3,4 "$file" | tr '\t' ' ' | perl -CSD -Mutf8 -ne '
+            use utf8;
+            use open qw(:std :utf8);
+            
+            if (/^\s*$/) { print "\n"; next; }
+            
+            while (/([가-힣]+|[A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+(?:[\x{0027}\x{2019}\-][A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+)*|[0-9]+(?:-[A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+)?)/g) {
+                print lc($1) . "\n";
+            }
+            print "\n";
+        '
+        echo ""
+        continue
+    fi
+
+    # Sinon, traitement normal pour les fichiers TXT
     # Utiliser perl pour une meilleure gestion de l'UTF-8 et du cyrillique
     perl -CSD -Mutf8 -ne '
         use utf8;
@@ -92,7 +122,7 @@ for file in "$DOSSIER/$LANG"-*.txt; do
 done
 
 if (( ! FILES_FOUND )); then
-    echo "Aucun fichier correspondant à $DOSSIER/$LANG-*.txt" >&2
+    echo "Aucun fichier correspondant à $PATTERN" >&2
     exit 1
 fi
 

@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # --- UTILISATION ---
-# Ce script a besoin de deux arguments : un dossier de dumps textuels et un nom de langue
-# Exemple : cd programmes; bash make_pals_corpus.sh ../dumps-text/be be > ../pals/dump-be.txt
-# Exemple : cd programmes; bash make_pals_corpus.sh ../dumps-text/kr kr > ../pals/dump-kr.txt
+# Ce script a besoin de deux arguments : un dossier et un nom de langue
+# Pour dumps-text :
+#   bash make_pals_corpus.sh ../dumps-text/be be > ../pals/dump-be.txt
+# Pour contextes (fichiers TSV) :
+#   bash make_pals_corpus.sh ../contextes/be be > ../pals/contexte-be.txt
 
 VERBOSE=0
 
@@ -13,7 +15,7 @@ if [[ "$1" == "-v" ]]; then
     shift
 fi
 
-DOSSIER=$1
+INPUT=$1
 LANG=$2
 
 if [ "$#" -ne 2 ]; then
@@ -31,8 +33,8 @@ log "Dossier fourni : $DOSSIER"
 log "Langue fournie : $LANG"
 
 # Vérification du dossier
-if [[ ! -d "$DOSSIER" ]]; then
-    echo "Erreur : le dossier $DOSSIER n'existe pas" >&2
+if [[ ! -d "$INPUT" && ! -f "$INPUT" ]]; then
+    echo "Erreur : $INPUT n'est ni un fichier ni un dossier valide" >&2
     exit 1
 fi
 
@@ -42,14 +44,53 @@ log "Dossier ../pals prêt"
 
 FILES_FOUND=0
 
-for file in "$DOSSIER/$LANG"-*.txt; do
-    if [[ ! -f "$file" ]]; then
-        continue
+FILES=()
+
+if [[ -f "$INPUT" ]]; then
+    # Cas 1 : fichier unique
+    FILES=("$INPUT")
+    log "Entrée : fichier unique"
+
+elif [[ -d "$INPUT" ]]; then
+    # Cas 2 : dossier (comportement actuel)
+    log "Entrée : dossier"
+
+    if [[ "$INPUT" == *"contextes"* ]]; then
+        FILES=("$INPUT/$LANG"-*-kwic.tsv)
+    else
+        FILES=("$INPUT/$LANG"-*.txt)
     fi
+fi
+
+FILES_FOUND=0
+
+for file in "${FILES[@]}"; do
+    [[ ! -f "$file" ]] && continue
+    FILES_FOUND=1
+    log "Traitement du fichier : $file"
 
     FILES_FOUND=1
     log "Traitement du fichier : $file"
 
+    # Si c'est un fichier TSV (contextes), extraire les colonnes 2, 3, 4
+    if [[ "$file" == *.tsv ]]; then
+        # Extraire contexte gauche (col 2) + mot (col 3) + contexte droit (col 4)
+        cut -f2,3,4 "$file" | tr '\t' ' ' | perl -CSD -Mutf8 -ne '
+            use utf8;
+            use open qw(:std :utf8);
+            
+            if (/^\s*$/) { print "\n"; next; }
+            
+            while (/([가-힣]+|[A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+(?:[\x{0027}\x{2019}\-][A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+)*|[0-9]+(?:-[A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+)?)/g) {
+                print lc($1) . "\n";
+            }
+            print "\n";
+        '
+        echo ""
+        continue
+    fi
+
+    # Sinon, traitement normal pour les fichiers TXT
     # Utiliser perl pour une meilleure gestion de l'UTF-8 et du cyrillique
     perl -CSD -Mutf8 -ne '
         use utf8;
@@ -92,7 +133,7 @@ for file in "$DOSSIER/$LANG"-*.txt; do
 done
 
 if (( ! FILES_FOUND )); then
-    echo "Aucun fichier correspondant à $DOSSIER/$LANG-*.txt" >&2
+    echo "Aucun fichier correspondant à $PATTERN" >&2
     exit 1
 fi
 

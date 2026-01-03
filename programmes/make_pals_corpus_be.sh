@@ -15,7 +15,7 @@ if [[ "$1" == "-v" ]]; then
     shift
 fi
 
-DOSSIER=$1
+INPUT=$1
 LANG=$2
 
 if [ "$#" -ne 2 ]; then
@@ -33,8 +33,8 @@ log "Dossier fourni : $DOSSIER"
 log "Langue fournie : $LANG"
 
 # Vérification du dossier
-if [[ ! -d "$DOSSIER" ]]; then
-    echo "Erreur : le dossier $DOSSIER n'existe pas" >&2
+if [[ ! -d "$INPUT" && ! -f "$INPUT" ]]; then
+    echo "Erreur : $INPUT n'est ni un fichier ni un dossier valide" >&2
     exit 1
 fi
 
@@ -44,19 +44,30 @@ log "Dossier ../pals prêt"
 
 FILES_FOUND=0
 
-# Déterminer le type de fichiers à traiter selon le dossier
-if [[ "$DOSSIER" == *"contextes"* ]]; then
-    # Pour le dossier contextes : chercher les fichiers TSV (kwic)
-    PATTERN="$DOSSIER/$LANG"-*-kwic.tsv
-else
-    # Pour dumps-text : chercher les fichiers TXT
-    PATTERN="$DOSSIER/$LANG"-*.txt
+FILES=()
+
+if [[ -f "$INPUT" ]]; then
+    # Cas 1 : fichier unique
+    FILES=("$INPUT")
+    log "Entrée : fichier unique"
+
+elif [[ -d "$INPUT" ]]; then
+    # Cas 2 : dossier (comportement actuel)
+    log "Entrée : dossier"
+
+    if [[ "$INPUT" == *"contextes"* ]]; then
+        FILES=("$INPUT/$LANG"-*-kwic.tsv)
+    else
+        FILES=("$INPUT/$LANG"-*.txt)
+    fi
 fi
 
-for file in $PATTERN; do
-    if [[ ! -f "$file" ]]; then
-        continue
-    fi
+FILES_FOUND=0
+
+for file in "${FILES[@]}"; do
+    [[ ! -f "$file" ]] && continue
+    FILES_FOUND=1
+    log "Traitement du fichier : $file"
 
     FILES_FOUND=1
     log "Traitement du fichier : $file"

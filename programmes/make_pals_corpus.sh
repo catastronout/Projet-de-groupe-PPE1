@@ -81,7 +81,7 @@ for file in "${FILES[@]}"; do
             
             if (/^\s*$/) { print "\n"; next; }
             
-            while (/([가-힣]+|[A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+(?:[\x{0027}\x{2019}\-][A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+)*|[0-9]+(?:-[A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+)?)/g) {
+            while (/([가-힣]+|[A-Za-zÇçĞğİıÖöŞşÜüА-Яа-яЁёІіЎўЄєҐґ]+(?:[\x{0027}\x{2019}\-][A-Za-zÇçĞğİıÖöŞşÜüА-Яа-яЁёІіЎўЄєҐґ]+)*|[0-9]+(?:-[A-Za-zÇçĞğİıÖöŞşÜüА-Яа-яЁёІіЎўЄєҐґ]+)?)/g) {
                 print lc($1) . "\n";
             }
             print "\n";
@@ -104,7 +104,7 @@ for file in "${FILES[@]}"; do
         
         # Insérer des marqueurs de fin de phrase AVANT la tokenisation
         # Détecte : point/!/? suivi d'\''un espace et d'\''une majuscule (cyrillique ou latine)
-        s/([.!?])\s+([A-ZА-ЯЁІЎЄҐ])/$1\n\n$2/g;
+        s/([.!?])\s+([A-ZÇĞİÖŞÜА-ЯЁІЎЄҐ])/$1\n\n$2/g;
         
         # Tokenisation adaptée aux différentes langues :
         # - Coréen (Hangul) : 가-힣
@@ -115,7 +115,7 @@ for file in "${FILES[@]}"; do
         
         # Parcourir chaque "segment" (séparé par les marqueurs de fin de phrase)
         for my $segment (split /\n\n/) {
-            while ($segment =~ /([가-힣]+|[A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+(?:[\x{0027}\x{2019}\-][A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+)*|[0-9]+(?:-[A-Za-zА-Яа-яЁёІіЎўЄєҐґ]+)?)/g) {
+            while ($segment =~ /([가-힣]+|[A-Za-zÇçĞğİıÖöŞşÜüА-Яа-яЁёІіЎўЄєҐґ]+(?:[\x{0027}\x{2019}\-][A-Za-zÇçĞğİıÖöŞşÜüА-Яа-яЁёІіЎўЄєҐґ]+)*|[0-9]+(?:-[A-Za-zÇçĞğİıÖöŞşÜüА-Яа-яЁёІіЎўЄєҐґ]+)?)/g) {
                 my $word = $1;
                 # Conversion en minuscules (fonctionne pour cyrillique ET latin grâce à Perl)
                 $word = lc($word);

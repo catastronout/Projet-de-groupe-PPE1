@@ -69,7 +69,8 @@ python cooccurrents.py ../pals/dump-be.txt \
 # Bélarussien
 python3 partition.py \
   -i ../pals/contexte-be-sens1_cleaned.txt \
-  -i ../pals/contexte-be-sens2_cleaned.txt
+  -i ../pals/contexte-be-sens2_cleaned.txt \
+  >> partition-be.txt
 ```
 
 # 6. wordcloud

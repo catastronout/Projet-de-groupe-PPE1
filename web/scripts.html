@@ -827,7 +827,7 @@ python cooccurrents.py ../pals/dump-tr.txt \
                         <pre><code class="language-bash"># Nuage de mots - Sens 1
 
   wordcloud_cli \
-    --text ../pals/contexte-ve-sens1_cleaned.txt \
+    --text ../pals/contexte-be-sens1_cleaned.txt \
     --imagefile ../pals/nuage-be-sens1.png \
     --width 2000 \
     --height 1000 \
@@ -838,7 +838,7 @@ python cooccurrents.py ../pals/dump-tr.txt \
 
 # Nuage de mots - Sens 2
   wordcloud_cli \
-    --text ../pals/contexte-ve-sens2_cleaned.txt \
+    --text ../pals/contexte-be-sens2_cleaned.txt \
     --imagefile ../pals/nuage-be-sens2.png \
     --width 2000 \
     --height 1000 \
@@ -854,19 +854,27 @@ python cooccurrents.py ../pals/dump-tr.txt \
                             <span class="code-lang"><span class="dot"></span>bash</span>
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
-                        <pre><code class="language-bash"># Nuage de mots - Sens 1 (자율)
-wordcloud_cli \
-  --text ../pals/contexte-kr-sens1_cleaned.txt \
-  --imagefile nuage-kr-sens1.png \
-  --stopwords stopwords_kr.txt \
-    --fontfile /System/Library/Fonts/AppleGothic.ttf
+                        <pre><code class="language-bash"># Nuage de mots - Sens 1
+  wordcloud_cli \
+    --text ../pals/contexte-kr-sens1_cleaned.txt \
+    --imagefile ../pals/nuage-kr-sens1.png \
+    --width 2000 \
+    --height 1000 \
+    --background white \
+    --margin 5 \
+    --scale 2 \
+    --stopwords ../pals/stopwords_kr.txt
 
-# Nuage de mots - Sens 2 (자립)
-wordcloud_cli \
-  --text ../pals/pals-kr-sens2_cleaned.txt \
-  --imagefile nuage-kr-sens2.png \
-  --stopwords stopwords_kr.txt \
-  --fontfile /System/Library/Fonts/AppleGothic.ttf</code></pre>
+# Nuage de mots - Sens 2
+  wordcloud_cli \
+    --text ../pals/contexte-kr-sens2_cleaned.txt \
+    --imagefile ../pals/nuage-kr-sens2.png \
+    --width 2000 \
+    --height 1000 \
+    --background white \
+    --margin 5 \
+    --scale 2 \
+    --stopwords ../pals/stopwords_kr.txt</code></pre>
                     </div>
                 </div>
                 <div class="tab-content" id="tr6">
@@ -875,17 +883,27 @@ wordcloud_cli \
                             <span class="code-lang"><span class="dot"></span>bash</span>
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
-                        <pre><code class="language-bash"># Nuage de mots - Sens 1 (otonomi)
-wordcloud_cli \
-  --text ../pals/pals-tr-sens1.txt \
-  --imagefile nuage-tr-sens1.png \
-  --stopwords stopwords_tr.txt
+                        <pre><code class="language-bash"># Nuage de mots - Sens 1 
+  wordcloud_cli \
+    --text ../pals/contexte-tr-sens1_cleaned.txt \
+    --imagefile ../pals/nuage-tr-sens1.png \
+    --width 2000 \
+    --height 1000 \
+    --background white \
+    --margin 5 \
+    --scale 2 \
+    --stopwords ../pals/stopwords_tr.txt
 
-# Nuage de mots - Sens 2 (özerklik)
-wordcloud_cli \
-  --text ../pals/pals-tr-sens2.txt \
-  --imagefile nuage-tr-sens2.png \
-  --stopwords stopwords_tr.txt</code></pre>
+# Nuage de mots - Sens 2
+  wordcloud_cli \
+    --text ../pals/contexte-tr-sens2_cleaned.txt \
+    --imagefile ../pals/nuage-tr-sens2.png \
+    --width 2000 \
+    --height 1000 \
+    --background white \
+    --margin 5 \
+    --scale 2 \
+    --stopwords ../pals/stopwords_tr.txt</code></pre>
                     </div>
                 </div>
             </div>
@@ -894,7 +912,7 @@ wordcloud_cli \
     </main>
 
     <footer>
-        <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2024-2025</p>
+        <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
     </footer>
 
     <!-- Highlight.js -->

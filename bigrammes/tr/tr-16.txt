@@ -1,8 +1,8 @@
 2	otonomiye sahip
 2	yüksek otonomiye
-1	Otonomi Tartışması
-1	yüksek otonomiyle
-1	otonomiye duyulan
-1	oranı otonomiye
 1	otonomiyle kullanıcı
+1	yüksek otonomiyle
+1	oranı otonomiye
 1	ve Otonomi
+1	Otonomi Tartışması
+1	otonomiye duyulan

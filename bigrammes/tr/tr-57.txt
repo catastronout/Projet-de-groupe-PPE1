@@ -1,6 +1,6 @@
-2	Yönetimler Özerklik
 2	Özerklik Şartı
+2	Yönetimler Özerklik
 1	Fransa Özerklik
+1	otoriteden özerkliğini
 1	özerkliğini garanti
 1	Özerklik Avrupa
-1	otoriteden özerkliğini

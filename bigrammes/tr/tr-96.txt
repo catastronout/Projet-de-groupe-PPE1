@@ -1,5 +1,5 @@
 3	özerklik ilan
 2	demokratik özerklik
-1	Özerklik hiçbir
-1	12 Özerklik
 1	bölgede özerklik
+1	12 Özerklik
+1	Özerklik hiçbir

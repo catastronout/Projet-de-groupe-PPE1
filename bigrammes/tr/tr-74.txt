@@ -1,10 +1,10 @@
 1	bir özerklik
-1	bölge özerklik
-1	e özerklik
+1	özerkliğine karşın
 1	özerklik elde
 1	özerklik yolunda
-1	idari özerkliğine
-1	özerkliğine karşın
+1	bölge özerklik
 1	siyasal özerklik
 1	özerklik kabul
 1	özerklik statüsü
+1	e özerklik
+1	idari özerkliğine

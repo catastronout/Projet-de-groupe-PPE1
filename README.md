@@ -9,7 +9,11 @@ Dépôt Git du **projet encadré PPE1** réalisé dans le cadre du Master 1 TAL.
 
 - **YEJI LEE**  
   🔗 https://github.com/45004142-code  
-- *(À compléter)* Votre nom — lien GitHub
+- **Sarah NART**
+  🔗 https://github.com/catastronout
+- **Umut Gazi BAŞAL**
+  🔗 https://github.com/basalumutgazi
+
 
 ---
 

@@ -1,83 +1,321 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title>Concordancier - tr-79</title>
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-			<style>
-				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
-				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concordancier - tr-79</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
 
-				.back-link { color: #667eea }
-				.back-link:hover { color: #764ba2 }
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
 
-				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
-				.table tbody tr:hover td { background-color: #f5f3ff; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
-			.kwic-left  { text-align: right;  width: 44%; }
-			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
-			.kwic-right { text-align: left;   width: 44%; }
-			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
 
-			.cat-col { white-space: nowrap; }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
 
-			body.dark { background: #0f172a; color: #e2e8f0; }
-			body.dark .card { background: #111827; color: #e2e8f0; }
-			body.dark .table { background: #111827; color: #e2e8f0; }
-			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
-			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
-			body.dark .table tbody tr:hover td { background: #1f2937; }
-			body.dark .back-link { color: #93c5fd; }
-			body.dark .back-link:hover { color: #c4b5fd; }
-			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
-			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
-		</style>
-	</head>
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
 
-	<body>
-		<section class="hero is-small">
-			<div class="hero-body">
-				<div class="container has-text-centered">
-    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
-					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
-					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
-				</div>
-			</div>
-		</section>
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
 
-		<section class="section">
-			<div class="container">
-				<p class="mb-4">
-					<a href="../../index.html" class="back-link">Retour</a>
-					<span class="has-text-grey"> / </span>
-					<a href="../../tableaux/tableau-tr.html" class="back-link">Tableau</a>
-				</p>
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
 
-				<div class="card">
-					<div class="card-content">
-						<div class="content">
-							<p class="mb-2"><strong>URL :</strong> <a href="https://ankaenstitusu.com/ozerklik-ulusal-uniter-merkezi-devleti-cokertir/" target="_blank" rel="noopener noreferrer" class="back-link">https://ankaenstitusu.com/ozerklik-ulusal-uniter-merkezi-devleti-cokertir/</a></p>
-							<p class="mb-4"><strong>Occurrences :</strong> 80</p>
-						</div>
+      .nav-links a:hover { color: var(--primary); }
 
-						<div class="table-container">
-							<table class="table is-fullwidth is-hoverable is-striped">
-								<thead>
-									<tr>
-										<th>Catégorie</th>
-										<th>Gauche</th>
-										<th>Mot</th>
-										<th>Droite</th>
-									</tr>
-								</thead>
-								<tbody>
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: "Instrument Serif", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header .subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary-dark);
+      }
+
+      .info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .info-card p {
+        margin-bottom: 0.75rem;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-card strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .info-card a {
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cat-col {
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .kwic-left, .kwic-kw, .kwic-right {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.85rem;
+      }
+
+      .kwic-left {
+        text-align: right;
+        width: 44%;
+      }
+
+      .kwic-kw {
+        text-align: center;
+        width: 12%;
+        font-weight: 700;
+      }
+
+      .kwic-right {
+        text-align: left;
+        width: 44%;
+      }
+
+      mark {
+        background: rgba(102, 126, 234, 0.2);
+        color: var(--primary-dark);
+        padding: 0.12rem 0.25rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      body.dark mark {
+        background: rgba(147, 197, 253, 0.25);
+        color: #93c5fd;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+        .kwic-left, .kwic-kw, .kwic-right { font-size: 0.75rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../../index.html#projet">Projet</a>
+          <a href="../../index.html#langues">Langues</a>
+          <a href="../../index.html#equipe">Contributeurs</a>
+          <a href="../../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Concordancier KWIC</h1>
+      <p class="subtitle">Fenêtre contextuelle : ±20 mots</p>
+    </header>
+
+    <main>
+      <div class="breadcrumb">
+        <a href="../../index.html">Accueil</a>
+        <span> / </span>
+        <a href="../../tableaux/tr.html">Tableau tr</a>
+        <span> / </span>
+        <span>Concordancier 79</span>
+      </div>
+
+      <div class="info-card">
+        <p><strong>URL :</strong> <a href="https://ankaenstitusu.com/ozerklik-ulusal-uniter-merkezi-devleti-cokertir/" target="_blank" rel="noopener noreferrer">https://ankaenstitusu.com/ozerklik-ulusal-uniter-merkezi-devleti-cokertir/</a></p>
+        <p><strong>Occurrences trouvées :</strong> 80</p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Catégorie</th>
+                <th>Contexte gauche</th>
+                <th>Mot-clé</th>
+                <th>Contexte droit</th>
+              </tr>
+            </thead>
+            <tbody>
 
 				<tr>
-					<td class="has-text-grey cat-col">otonomi</td>
+					<td class="cat-col">otonomi</td>
 					<td class="kwic-left">öze dayalı ve özü esas alan bir durumu ifade etmekte ve batı dillerinde kendi başına bağımsız hareket etme durumunu belirten</td>
 					<td class="kwic-kw"><mark>otonomi</mark></td>
 					<td class="kwic-right">sözcüğü ile tanımlanmaktadır. Eski Türkçe de bu durumu ifade etmek için kullanılan muhtariyet kavramı da bir anlamda durumun açıklığa kavuşturulmasında</td>
@@ -85,7 +323,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">otonomi</td>
+					<td class="cat-col">otonomi</td>
 					<td class="kwic-left">geldiği için, Türk idare yapılanmasının en küçük birimi olan köylerde birimi temsil eden yönetici kişiye muhtar adı verilmiştir. Muhtariyet ve</td>
 					<td class="kwic-kw"><mark>otonomi</mark></td>
 					<td class="kwic-right">sözlük açısından aynı anlama gelirken, Türk dil devrimi sonrasında yabancı kökenli kavramlar yerine öz Türkçe karşılıklar bulunurken otonominin karşılığı olarak</td>
@@ -93,7 +331,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">otonomi</td>
+					<td class="cat-col">otonomi</td>
 					<td class="kwic-left">Muhtariyet ve otonomi sözlük açısından aynı anlama gelirken, Türk dil devrimi sonrasında yabancı kökenli kavramlar yerine öz Türkçe karşılıklar bulunurken</td>
 					<td class="kwic-kw"><mark>otonominin</mark></td>
 					<td class="kwic-right">karşılığı olarak özerklik sözcüğü öz kavramından hareket edilerek, Türk dilinin yeni bir sözcük olarak kullanılmaya başlanmıştır. Köylerde muhtarın en küçük</td>
@@ -101,7 +339,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">otonomi</td>
+					<td class="cat-col">otonomi</td>
 					<td class="kwic-left">durumu yerel özellikler dikkate alınarak sadece işlerin yürütülmesiyle ilgili olarak tanınmıştır. Muhtar üzerinden köylere tanınmış olan muhtariyetin aslında batılı anlamda</td>
 					<td class="kwic-kw"><mark>otonomi</mark></td>
 					<td class="kwic-right">kavramı doğrultusunda bürokrasinin dışında kalan bir hareket serbestîsini ifade ettiğini bu aşamada dikkate almak gerekmektedir. Eski Türkçe muhtariyetin, Türkçe dil</td>
@@ -109,7 +347,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ÇÖKERTİR Prof. Dr. Anıl ÇEÇEN Tarihsel bir dönemece sürüklenen Türkiye Cumhuriyeti, içinde bulunduğu en kritik aşamada, Güneydoğu sorunu üzerinden bir</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">tartışmasına sahne olmaktadır. Osmanlı İmparatorluğu sonrası dönemde, kuzey Mezopotamya’da gündeme getirilen bağımsız Kürdistan devletinin önünü açabilmek üzere, başta bölücü terör</td>
@@ -117,7 +355,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Kürdistan devletinin önünü açabilmek üzere, başta bölücü terör örgütü olmak üzere bütün bölücü ve federasyoncu kesimler ağız birliği ile bir</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">şarkısı söylemeye başlamışlardır. Bir oldubitti yaratarak yeni bir ulus devletin önünü açabilmek üzere Türk kamuoyuna bu söylemi kabul ettirmeye yönelmişlerdir.</td>
@@ -125,7 +363,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">olduğunun açıklığa kavuşturulması gerekmekte ve bu konuda siyasal manipülasyonlar doğrultusunda yaratılmak istenen kafa karışıklığı ve her türlü spekülasyonun önlenmesi gerekmektedir.</td>
 					<td class="kwic-kw"><mark>Özerklik;</mark></td>
 					<td class="kwic-right">kavram olarak öz kökünden gelmekte ve bir benlik ile kendi olma halinin çekirdek durumunu açıklamaktadır. Özü ile hareket etmek demek,</td>
@@ -133,7 +371,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">durumunu açıklamaktadır. Özü ile hareket etmek demek, işin esasını dikkate almak ve öze öncelik vermek anlamına gelmektedir. Öz kavramından türetilen</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">ise öze dayalı ve özü esas alan bir durumu ifade etmekte ve batı dillerinde kendi başına bağımsız hareket etme durumunu</td>
@@ -141,7 +379,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">sözlük açısından aynı anlama gelirken, Türk dil devrimi sonrasında yabancı kökenli kavramlar yerine öz Türkçe karşılıklar bulunurken otonominin karşılığı olarak</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">sözcüğü öz kavramından hareket edilerek, Türk dilinin yeni bir sözcük olarak kullanılmaya başlanmıştır. Köylerde muhtarın en küçük yerel idari birimin</td>
@@ -149,7 +387,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">bürokrasinin dışında kalan bir hareket serbestîsini ifade ettiğini bu aşamada dikkate almak gerekmektedir. Eski Türkçe muhtariyetin, Türkçe dil devrimi sonrasında</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">kavramı ile ifade edilmeye başlanmasından sonra özerlik kavramının daha fazla kullanılmaya başladığı ve kamu yönetimi içerisinde bir serbest hareket etme</td>
@@ -157,7 +395,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">üst ilişkisinin genel bir geçerliliğe sahip bulunmaktadır. Son dönemlerde batı merkezli ülkelerden kaynaklanan tutum değişikliği doğrultusunda, bazı kamu kurumlarında da</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">statüsünün devreye sokulduğu görülmektedir. Bu nedenle, bir kamu kuruluşunun devletin merkezi iktidarının ya da yönetiminin müdahalelerine uğramadan, kendi işlerini yönetebilmesini</td>
@@ -165,7 +403,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">kuruluşunun devletin merkezi iktidarının ya da yönetiminin müdahalelerine uğramadan, kendi işlerini yönetebilmesini sağlayan yetki ve kurumlar ile donatılmış olma durumu</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">olarak ifade edilmeye başlanmıştır. Kamu kurumlarının daha üst bir makama bağlı olmadan hareket edebilme statüsü, özerklik olarak tanımlanırken, kendi kaynakları</td>
@@ -173,7 +411,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ile donatılmış olma durumu özerklik olarak ifade edilmeye başlanmıştır. Kamu kurumlarının daha üst bir makama bağlı olmadan hareket edebilme statüsü,</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">olarak tanımlanırken, kendi kaynakları ile ayakta kalan ve kendi işlerini yürütebilen kurumların mali özerkliği bulunduğu da öne sürülmüştür. Özerklik idari</td>
@@ -181,7 +419,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">makama bağlı olmadan hareket edebilme statüsü, özerklik olarak tanımlanırken, kendi kaynakları ile ayakta kalan ve kendi işlerini yürütebilen kurumların mali</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">bulunduğu da öne sürülmüştür. Özerklik idari olduğu kadar mali ya da hukuki boyutlara sahip olmakta ve belirli bir serbestlik alanının</td>
@@ -189,7 +427,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">statüsü, özerklik olarak tanımlanırken, kendi kaynakları ile ayakta kalan ve kendi işlerini yürütebilen kurumların mali özerkliği bulunduğu da öne sürülmüştür.</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">idari olduğu kadar mali ya da hukuki boyutlara sahip olmakta ve belirli bir serbestlik alanının ya da durumunu ifade ederken</td>
@@ -197,7 +435,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">bir üst ya da yabancı kurumun müdahalesi olmadan yönetebilen bir kamu kurumunun ya da bölgenin veya ülkenin bulunduğu statüye hukuken</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">tanımı getirilmektedir. Özerk bir statüye sahip olan kurumlar, bölgeler ya da ülkeler tamamen kendi inisiyatifleri doğrultusunda hareket edebilmekte ve hiçbir</td>
@@ -205,7 +443,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">müdahale olmadan kendi geleceklerini belirleyerek, gerekirse hiçbir kişi ya da makama sormadan kendi kendilerini yönetebilme hakkı ve yetkisine sahip olabilmektedirler.</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">durumu, eskilerin deyimi ile tam bir muhtariyeti ifade etmekte ve gerekirse, kendi başına hareket ederek kendi geleceğini tam bağımsız bir</td>
@@ -213,7 +451,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">bir muhtariyeti ifade etmekte ve gerekirse, kendi başına hareket ederek kendi geleceğini tam bağımsız bir çizgide belirleyebilme yeteneğini de içermektedir.</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">statüleri mutlak anlamda tam bağımsız olabileceği gibi, içinde bulunulan durumlara göre değişen farklı yapılarda sınırlı ya da daraltılmış bir hareket</td>
@@ -221,7 +459,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">gibi, içinde bulunulan durumlara göre değişen farklı yapılarda sınırlı ya da daraltılmış bir hareket alanının da temsil edebilmektedir. Tam anlamıyla</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">olabileceği gibi yarım ya da kısıtlı özerklik hali durumları da hukuk belgeleriyle bir statü olarak belirlenebilir. Yasalar ya da antlaşmalar</td>
@@ -229,7 +467,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">yapılarda sınırlı ya da daraltılmış bir hareket alanının da temsil edebilmektedir. Tam anlamıyla özerklik olabileceği gibi yarım ya da kısıtlı</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">hali durumları da hukuk belgeleriyle bir statü olarak belirlenebilir. Yasalar ya da antlaşmalar aracılığı ile ortaya çıkarılmış olan özerk yapıların</td>
@@ -237,7 +475,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">serbestîsine sahip olacağı, ülkeden ülkeye değiştiği gibi var olan durumlara göre de farklılık göstermektedir. Bu nedenle, kesin hatlarıyla belirlenmiş bir</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">durumu ya da statüsü, daha şimdiye kadar dünya devletleri ya da uluslararası kuruluşlar arasında gündeme gelmemiştir. Bu nedenle dünyanın çeşitli</td>
@@ -245,7 +483,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">kuruluşlar arasında gündeme gelmemiştir. Bu nedenle dünyanın çeşitli ülkelerinde devletlerin ülke koşullarına örgütlenmesi sırasında gerekli olan hareket serbestliğinin sağlanabilmesi doğrultusunda</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">statüleri ya kamu kurumları açısından devlet bürokrasisi içerisinde, ya da ülke yönetimi açısından memleketin belirli alanlarının özel yetkiler ile ya</td>
@@ -253,7 +491,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">bürokrasisi içerisinde, ya da ülke yönetimi açısından memleketin belirli alanlarının özel yetkiler ile ya da farklı hukuki statülerde donatılmaları çerçevesinde</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">uygulamaları görülmektedir. Daha çok güçlü ve büyük devletlerin çatısı altında gündeme gelen özerklik uygulamaları ya devlet bürokrasisinin ağır işlemesine karşı</td>
@@ -261,7 +499,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ya da farklı hukuki statülerde donatılmaları çerçevesinde özerklik uygulamaları görülmektedir. Daha çok güçlü ve büyük devletlerin çatısı altında gündeme gelen</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">uygulamaları ya devlet bürokrasisinin ağır işlemesine karşı bazı kamu kurumlarını daha aktif hale getirmek için, ya da merkezi devlete bağlı</td>
@@ -269,7 +507,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">topraklarının geleceğe dönük bir doğrultuda yeni devletlerin oluşturulması amacıyla bölünebilmesini önceden sağlayacak elverişli bir ortamda yeni bir yapılanmaya gidilmesi doğrultusunda</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">uygulamalarının gündeme getirildiği anlaşılmaktadır. Devlet merkezlerinin güç durumuna göre ülkeden ülkeye değişen bu gibi durumlar için, kesin bir belirleme yapabilmenin</td>
@@ -277,7 +515,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">durumuna göre ülkeden ülkeye değişen bu gibi durumlar için, kesin bir belirleme yapabilmenin son derece zor olduğu bir dönüşüm döneminde</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">durumları ya da statüleri ile kesin bir belirleme yapabilmenin son derece zor olduğu açıktır. Bu nedenle hiç kimse ya da</td>
@@ -285,7 +523,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">zor olduğu açıktır. Bu nedenle hiç kimse ya da kesimin kendi çıkarları doğrultusunda geliştirdiği yeni siyasal yapılanma projelerini kamuoyuna saf</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">projeleri olarak sunma hakkı bulunmadığı gibi, her özerklik isteği ya da yaklaşımının çok farklı ve konjonktürel nedenlere dayalı olduğu da</td>
@@ -293,7 +531,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">da kesimin kendi çıkarları doğrultusunda geliştirdiği yeni siyasal yapılanma projelerini kamuoyuna saf özerklik projeleri olarak sunma hakkı bulunmadığı gibi, her</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">isteği ya da yaklaşımının çok farklı ve konjonktürel nedenlere dayalı olduğu da dikkate alınmak durumundadır. Özerklik adına proje geliştiren ya</td>
@@ -301,7 +539,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">hakkı bulunmadığı gibi, her özerklik isteği ya da yaklaşımının çok farklı ve konjonktürel nedenlere dayalı olduğu da dikkate alınmak durumundadır.</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">adına proje geliştiren ya da açılım yapmak isteyen siyasal merkezlerin, son derece kaypak ve değişken bir kavrama dayalı olarak kamuoyunu</td>
@@ -309,7 +547,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">isteyen siyasal merkezlerin, son derece kaypak ve değişken bir kavrama dayalı olarak kamuoyunu belirleyemeyeceklerini de bilmeleri gerekmektedir. Günümüzün tartışmaları doğrultusunda</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">kavramı, ya idari reform yapımı sırasında kamu yönetiminin bazı kesimlerini merkezi idarenin yönetimi dışında bırakabilmek için ya da büyük ve</td>
@@ -317,7 +555,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">oluşturulmak istenen Büyük Orta Doğu ya da Büyük İsrail projelerinin taşeronlarının desteğini de alarak, Türkiye Cumhuriyeti ulus devletine zorla bir</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">projesini dayatmaya çalışmaktadırlar. Sanki ezilen halk kitlelerinin masum isteğiymiş gibi kamuoyuna lanse edilen bu tür özerklik taleplerinin, doğrudan doğruya Türkiye</td>
@@ -325,7 +563,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ulus devletine zorla bir özerklik projesini dayatmaya çalışmaktadırlar. Sanki ezilen halk kitlelerinin masum isteğiymiş gibi kamuoyuna lanse edilen bu tür</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">taleplerinin, doğrudan doğruya Türkiye Cumhuriyetinin bölünmesi projesinin yeni bir adımıdır. Osmanlı İmparatorluğunu yok eden Balkanizasyon projesinin özerklik görünümü altında Türkiye</td>
@@ -333,7 +571,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">edilen bu tür özerklik taleplerinin, doğrudan doğruya Türkiye Cumhuriyetinin bölünmesi projesinin yeni bir adımıdır. Osmanlı İmparatorluğunu yok eden Balkanizasyon projesinin</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">görünümü altında Türkiye Cumhuriyetinin tasfiyesinde de kullanılmak istendiği ve Anadolu üzerinden Anadolu ve Orta Doğu ülkelerine getirilmek için çalışıldığı her</td>
@@ -341,7 +579,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">üzerinden Anadolu ve Orta Doğu ülkelerine getirilmek için çalışıldığı her geçen gün daha fazla ortaya çıkmaktadır. Türk kamuoyu hala masum</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">masallarıyla uyutulmağa çalışılmakta, daha ileri bir demokrasiye geçiş için özerkliğin ön koşul olduğu, Türk ulusuna zorla benimsetilmeye çalışılmaktadır. Güneydoğu üzerinden</td>
@@ -349,7 +587,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">geçen gün daha fazla ortaya çıkmaktadır. Türk kamuoyu hala masum özerklik masallarıyla uyutulmağa çalışılmakta, daha ileri bir demokrasiye geçiş için</td>
 					<td class="kwic-kw"><mark>özerkliğin</mark></td>
 					<td class="kwic-right">ön koşul olduğu, Türk ulusuna zorla benimsetilmeye çalışılmaktadır. Güneydoğu üzerinden gündeme getirilen özerklik taleplerinin, Türkiye’nin bütün bölgeleri için geçerli olacağı,</td>
@@ -357,7 +595,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">çalışılmakta, daha ileri bir demokrasiye geçiş için özerkliğin ön koşul olduğu, Türk ulusuna zorla benimsetilmeye çalışılmaktadır. Güneydoğu üzerinden gündeme getirilen</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">taleplerinin, Türkiye’nin bütün bölgeleri için geçerli olacağı, aslında Misakı Milli sınırlarının anlamını yitirdiği ve bu nedenle Lozan Antlaşmasının geride kaldığı,</td>
@@ -365,7 +603,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">daha demokratik doğrultuda geçerli kılınması gerektiği, destekleyici düşünceler olarak kamuoyuna yansıtılmaktadır. Bu doğrultuda; bölücü, işbirlikçi ve mandacı çevrelerin sürekli olarak</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">şarkıları söyledikleri görülmektedir. Türkiye Cumhuriyetinin geçmişten gelen bin yıllık devlet geleneğini ve birikimini görmekten aciz kalan bu art niyetli kesimlerin,</td>
@@ -373,7 +611,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">geçmişten gelen bin yıllık devlet geleneğini ve birikimini görmekten aciz kalan bu art niyetli kesimlerin, gizli projelerini örtbas etmek için</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">türkülerini söylemeye devam etmeleri, bütün çabalara rağmen etkili olamamış ve istedikleri gibi Misakı Milli sınırları içerisindeki üniter devlet yapısını parçalayamamışlardır.</td>
@@ -381,7 +619,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">işgal yöntemleri ile bölücü senaryolar getirilmeye çalışılırken Türkiye’de demokrasi açıkça bölücü ve dağıtıcı senaryolar için uygulama alanına dönüştürülmektedir. Bu durumda</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">isteklerinin doğrudan Türkiye Cumhuriyetinin ulusal ve üniter yapısına ters düştüğü ve özerkli üzerinden eyaletler oluşturmak ve sonraki aşamada bölgesel bir</td>
@@ -389,7 +627,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ters düştüğü ve özerkli üzerinden eyaletler oluşturmak ve sonraki aşamada bölgesel bir federasyona yönelmek isteyen bölücü, işbirlikçi ve mandacı çevrelerin</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">talepleri ile federasyon kapısını açmaya çaba gösterdikleri artık inkâr edilemeyecek bir doğrultuda belli olmuştur. Eyaletler üzerinden federasyona yönelmek isteyenler son</td>
@@ -397,7 +635,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">inkâr edilemeyecek bir doğrultuda belli olmuştur. Eyaletler üzerinden federasyona yönelmek isteyenler son zamanlarda bir araya gelerek yeni bir anayasa üzerinden</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">yapılanmasını ve bölgesel otonom yönetim statüsünün tanınmasını amaçladıkları görülmektedir. Türk devletinin ulusal ve üniter modeline açıkça aykırı düşen bu tür</td>
@@ -405,7 +643,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">konusunda almış oldukları kararlara da ters düşmektedir. Devletin kurucu iradesini temsil eden Erzurum ve Sivas Kongresi kararlarına doğrudan ters düşen</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">taleplerinin ve eyalet oluşturma projelerinin, Türk devletini var eden ulusal kamu hukuku açısından kabul edilmesi hiçbir biçimde mümkün değildir. Kendi</td>
@@ -413,7 +651,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">bir federasyon peşinde koşanlar, Türkiye Cumhuriyeti devletini var eden Erzurum ve Sivas Kongreleri benzeri milli kongreler toplamadan ve Anadolu halkının,</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">istenen bölgelerinde oturan kesimlerinin halk oylamaları ile onayları alınmadan hiçbir kişi ya da makam Türk devletinin Kuva-yi Milliye’den ve kurucu</td>
@@ -421,7 +659,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">devletinin Kuva-yi Milliye’den ve kurucu milli iradeden gelen devlet modelini bozma hakkına sahip değildir. Türkiye Cumhuriyetini yok edecek kadar tehlikeli</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">isteklerinin masumiyet görünümünün en büyük dayanağı olan Avrupa Birliği sürecinin ortaya koymuş olduğu Avrupa Yerel Yönetimler Özerklik Şartının bütünüyle masaya</td>
@@ -429,7 +667,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">edecek kadar tehlikeli özerklik isteklerinin masumiyet görünümünün en büyük dayanağı olan Avrupa Birliği sürecinin ortaya koymuş olduğu Avrupa Yerel Yönetimler</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartının bütünüyle masaya yatırılarak, her maddesinin Türk Devletinin ulusal üniter ve merkezi modeli açısından ele alınarak tartışılmasında, ulusal yarar vardır.</td>
@@ -437,7 +675,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">maddesinin Türk Devletinin ulusal üniter ve merkezi modeli açısından ele alınarak tartışılmasında, ulusal yarar vardır. Bu tür tartışmalar yapılmadan ve</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">ile ilgili her konu bütün açıklığı ile ve dünyadaki değişik uygulamalarıyla siyasal gündeme getirilmeden, var olan devlet modelinin değiştirilmesi Türkiye’nin</td>
@@ -445,7 +683,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">için kullanılmış ama çeyrek yüzyıllık bir zaman diliminde sonuç alınamayınca, terör destekli bölücü hareket Türk devletine dış destekler aracılığı ile</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">statüsünün tanınması isteğini dayatmıştır. Avrupa Birliği üzerinden, Türkiye’ye özerklik statüsü dayatılırken, Avrupa Yerel Yönetimler Özerklik Şartı hukuki bir belge olarak</td>
@@ -453,7 +691,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">alınamayınca, terör destekli bölücü hareket Türk devletine dış destekler aracılığı ile özerklik statüsünün tanınması isteğini dayatmıştır. Avrupa Birliği üzerinden, Türkiye’ye</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">statüsü dayatılırken, Avrupa Yerel Yönetimler Özerklik Şartı hukuki bir belge olarak öne çıkarılmakta ve böylece bölücü özerklik projesine masum ve</td>
@@ -461,7 +699,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">devletine dış destekler aracılığı ile özerklik statüsünün tanınması isteğini dayatmıştır. Avrupa Birliği üzerinden, Türkiye’ye özerklik statüsü dayatılırken, Avrupa Yerel Yönetimler</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartı hukuki bir belge olarak öne çıkarılmakta ve böylece bölücü özerklik projesine masum ve meşru bir görünüm kazandırılmak istenmektedir. Orta</td>
@@ -469,7 +707,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Birliği üzerinden, Türkiye’ye özerklik statüsü dayatılırken, Avrupa Yerel Yönetimler Özerklik Şartı hukuki bir belge olarak öne çıkarılmakta ve böylece bölücü</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">projesine masum ve meşru bir görünüm kazandırılmak istenmektedir. Orta Çağ döneminde olduğu gibi yeniden bütün Avrupa kıtasını beş yüz kent</td>
@@ -477,7 +715,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">gibi yeniden bütün Avrupa kıtasını beş yüz kent devletine dönüştürme projesinin yasal belgesi olarak hazırlanmış olan bu Avrupa Yerel Yönetimler</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartının ana hedefi kentler ile başkentler arasındaki bağları koparmak ve böylece, başkent merkezli ulus devletleri ortadan kaldırarak, kentleri geleceğin küçük</td>
@@ -485,7 +723,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">istenmektedir. Aydınlanma öncesinde ortaçağ dönemini kent devletleri ile geçiren Avrupa kıtasının, ulus devletleri geride bırakarak bütünleşebilmesi için Avrupa Yerel Yönetimler</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartı kabul edilmiş ve Avrupa Birliği üyesi olan bütün ulus devletlere birlik yönetimi ile küreselci güçler tarafından dayatılmıştır. Küresel sermaye</td>
@@ -493,7 +731,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">açarken, kentler üzerinden yerelleşme dönemini başlatmış ve bütün kentlerin içinde bulundukları ulus devletlerden bağımsız olarak dışa açılmaları sağlanmış ve böylece</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">statüsü, başkentlerin by-pass edilmesinde açıkça kullanılmağa çalışılmıştır. Ulus devletler ayakta kaldıkça ve bunların başkentleri güçlü merkezi konumlarını korudukça, ulus devletlerarası</td>
@@ -501,7 +739,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">süreci ile küreselleşme sürecini tamamlamayı düşünmüşlerdir. Ulus devletlerin geride bırakılabilmesi ve ulus devletler döneminin bitirilmesi için, kentler üzerinden küçük bölgelerin</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">istenmiş ve böylece eyalet devletçiklerin oluşturulması ile ulus devletlerden federasyonlara geçişin sağlanabileceği düşünülmüştür. Avrupa’nın ulus devletleri bu küresel zorlamaya karşı,</td>
@@ -509,7 +747,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ulus devletlerden federasyonlara geçişin sağlanabileceği düşünülmüştür. Avrupa’nın ulus devletleri bu küresel zorlamaya karşı, tıpkı Kopenhag Kriterlerinde olduğu gibi, yerel yönetimler</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">şartını görünüşte imzalamışlar ama kendi parlamentolarından geçirerek yasal bir statü tanımadıkları için, Avrupa Yerel Yönetimler Özerklik Şartı başta Avrupa Birliği</td>
@@ -517,7 +755,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">olduğu gibi, yerel yönetimler özerklik şartını görünüşte imzalamışlar ama kendi parlamentolarından geçirerek yasal bir statü tanımadıkları için, Avrupa Yerel Yönetimler</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartı başta Avrupa Birliği üyesi olan ulus devletler tarafından uygulamaya geçirilmemiştir. Avrupalılar kendi uygulamadıkları bir antlaşmayı, Yugoslavya gibi bir dağılma</td>
@@ -525,7 +763,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">uygulamışlardır. Emperyalizme hevesli ve alışkan olan Avrupa Devletlerinin, ABD ve İsrail ile bir araya gelerek Türkiye’ye güneydoğu üzerinden yerel yönetimler</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">şartını dayatmaları tam bir samimiyetsizlik ve kötü niyet örneği olarak, emperyalizmin ve Siyonizm’in kara tarihindeki yerini almıştır. Kendileri için düşünmedikleri</td>
@@ -533,7 +771,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">şartını dayatmaları tam bir samimiyetsizlik ve kötü niyet örneği olarak, emperyalizmin ve Siyonizm’in kara tarihindeki yerini almıştır. Kendileri için düşünmedikleri</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">yolu ile dağılma projesini Türkiye gibi kendilerinden saymadıkları ülkelere baskı ile uygulatmaya çalışmaları emperyalizmin devam ettiğini açıkça ortaya koymaktadır. Avrupa</td>
@@ -541,7 +779,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">dağılma projesini Türkiye gibi kendilerinden saymadıkları ülkelere baskı ile uygulatmaya çalışmaları emperyalizmin devam ettiğini açıkça ortaya koymaktadır. Avrupa Yerel Yönetimler</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartı incelendiğinde; yirmi civarında maddeden oluştuğu, 15 Ekim 1985 tarihinde imzaya açıldığı, Türkiye Cumhuriyetinin ise Avrupa Birliğine uyum paketleri çerçevesinde</td>
@@ -549,7 +787,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">edilmiştir. Yerel yönetimlerin temel yetki ve sorumluluklarının anayasa ve yasalar ile belirlenmesi ve yerel yönetimlere belirle alanlarda yetkilerin aktarılmasıyla beraber</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">alanının genişletilmesi de gene prensip olarak antlaşma hükümleri içinde yer almıştır. Yerel yönetimlere ayrıca yasal boşluk durumlarında da takdir hakkı</td>
@@ -557,7 +795,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">kullanılması sırasında diğer kamu makamları ya da otoritelerinin karışma, müdahale ya da denetim gibi haklarının bulunmadığı açıkça belirtilerek yerel yönetimlerin</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">daha da mutlaklaştırılmak istenmiştir. Hiçbir biçimde yerel yönetimlere tanınmış olan yetkilerin sınırlanamayacağı ya da kullanılmasının önlenemeyeceği gene bir güvence şartı</td>
@@ -565,7 +803,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">önerileri alınmadan planlama yapılamayacağı ifade edilmiştir. Yerel yönetimlerin sınırlarının o bölgedeki halka danışılmadan sınırlarının değiştirilemeyeceği gene ayrı bir madde olarak</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">şartında yer almıştır. Yerel yönetimlerin kendi iç örgütlenmesini serbestçe yapabilmesi, yerel gereksinmeler doğrultusunda örgütlenmelere gitmesi gene ayrı maddeler ile güvence</td>
@@ -573,7 +811,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">yolu açarak bunların tıpkı Yugoslavya örneğinde olduğu gibi zaman içerisinde dağılmalarını kolaylaştırmaktadır. Uluslararası kuruluşlar ile serbestçe ilişki kuracak yerel yönetimlerin</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">bu nedenle bir anlamda ulus devletlerin bağımsızlığı gibi otonom ve tam anlamıyla özerk bir yapılanmanın önünü açmaktadır. Avrupa Yerel Yönetimler</td>
@@ -581,7 +819,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">bu nedenle bir anlamda ulus devletlerin bağımsızlığı gibi otonom ve tam anlamıyla özerk bir yapılanmanın önünü açmaktadır. Avrupa Yerel Yönetimler</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartının, ulus devletler açısından en tehlikeli bölümü; yerel yönetimlere mali özerklik tanıyan ilgili maddesidir. Bu madde, yerel yönetimlere tıpkı devletler</td>
@@ -589,7 +827,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">anlamıyla özerk bir yapılanmanın önünü açmaktadır. Avrupa Yerel Yönetimler Özerklik Şartının, ulus devletler açısından en tehlikeli bölümü; yerel yönetimlere mali</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">tanıyan ilgili maddesidir. Bu madde, yerel yönetimlere tıpkı devletler gibi serbestçe kullanabilecekleri yeterli mali kaynaklar sağlanmasını amir bir hüküm olarak</td>
@@ -597,7 +835,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">tanınmaktadır. Zayıf kalan yerel yönetimlerin korunması ve gereksinmelerinin karşılanabilmesi açısından esnek uygulamalar yolu ile ek kaynaklar yaratılabileceği gene ilgili mali</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">maddesinde dile getirilmiştir. Merkezi yönetimin mali tahsislerde yerel yönetimlerin isteklerine öncelik tanıyacağı da ayrı bir hüküm ile ifade edilmiştir. Yerel</td>
@@ -605,7 +843,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">bir koşula bağlanmayacağı, sermaye piyasasına yerel yönetimlerin girerek kendi bölgelerine sermaye yatırımlarının aktarılabilmesi için çalışmalarının mümkün olacağı da gene mali</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">ile ilgili maddede açıkça ifade edilmiştir. Özerk yerel yönetimlerin kendilerini koruma hakkı olduğu ve bu doğrultuda yargı yolu ile her</td>
@@ -613,7 +851,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">taraf olan devletlere bu antlaşmadan çekilme hakkı da tanınmıştır. Özellikle Türkiye gibi Avrupa Birliğine üye olamayan ülkeler açısından, Avrupa Birliği</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartının bağlayıcılığı ciddi bir tartışma konusudur. Bir hukuk devleti olarak Türkiye Cumhuriyetinin eşit üye olarak içene alınmadığı Avrupa Birliği sürecinde</td>
@@ -621,7 +859,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">devleti olarak Türkiye Cumhuriyetinin eşit üye olarak içene alınmadığı Avrupa Birliği sürecinde bu birliğin kıtasal oluşum antlaşması olarak yerel yönetimler</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">şartının Türkiye açısından geçerli olmadığı öne sürülebilecektir. Avrupa kıtasının birliği için yapılan bir uluslararası antlaşmaya Türkiye’nin birlik dışında bırakılmış bir</td>
@@ -629,7 +867,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">bırakılmış bir ülke olarak bağlı kalması hukuken sakınca yaratmakta ve Türk devletinin kurucu iradeden gelen, merkezi-ulusal-üniter devlet modelini tehdit etmektedir.</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">statüsü ve uygulamaları açısından en yasal belge olarak ortaya konan Avrupa Yerel Yönetimler Özerklik Şartının açıkça ulusal-üniter-merkezi devlet yapılarının ortadan</td>
@@ -637,7 +875,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">gelen, merkezi-ulusal-üniter devlet modelini tehdit etmektedir. Özerklik statüsü ve uygulamaları açısından en yasal belge olarak ortaya konan Avrupa Yerel Yönetimler</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartının açıkça ulusal-üniter-merkezi devlet yapılarının ortadan kaldırılmasını hedeflediği şimdiye kadarki uygulamalardan anlaşıldığına göre; Avrupa Birliği dışında bırakılan Türkiye Cumhuriyeti açısından</td>
@@ -645,7 +883,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Avrupa Birliği dışında bırakılan Türkiye Cumhuriyeti açısından bağlayıcılığı kalmamıştır. Türk Devleti isterse söz konusu antlaşmanın ilgili son hükümlerinden yararlanarak bu</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">şartına taraf olma konumundan vazgeçebilir. Kuzey Irak bölgesindeki kukla devlet benzeri bir yapılanmayı Türkiye’nin güneydoğusunda gündeme getirerek, Türkiye Cumhuriyetini yeniden</td>
@@ -653,7 +891,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">benzeri bir yapılanmayı Türkiye’nin güneydoğusunda gündeme getirerek, Türkiye Cumhuriyetini yeniden Sevr Antlaşmasına mahkûm etmek isteyen emperyal ve işbirlikçi bölücü çevrelerin,</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">görünümlü eyalet devleti oluşturma planlarına Türk devletinin olumlu bakması mümkün değildir. Her devlet gibi Türkiye Cumhuriyeti devleti de ulusal-üniter-merkezi devlet</td>
@@ -661,7 +899,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">kendi yapısını koruyacaktır. Bu nedenle, Avrupa devletlerinin göstermelik olarak imzaladıkları ama sıra kendilerine geldiği zaman kesinlikle uygulamadıkları Avrupa Yerel Yönetimler</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Şartının uygulamaya geçirilmesini, dost ve müttefik görünümlü düşmanların Türkiye’den beklemeleri gerçeklere ters düşmektedir. Türkiye Cumhuriyeti, Yugoslavya gibi sonradan oluşturulan bir</td>
@@ -669,7 +907,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">güç merkezi olduğu artık iyice ortaya çıkmıştır. Kimse bu gerçeği görmezden gelerek kendini aldatmasın ve Türk devletinin de Yugoslavya benzeri</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">masalları ile uyutularak tasfiye edileceği umutlarına kapılmasın. Dünya devlerine karşı verilen bir ulusal kurtuluş savaşı ile ortaya çıkan Türkiye Cumhuriyeti</td>
@@ -677,7 +915,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">kurtuluş savaşı ile ortaya çıkan Türkiye Cumhuriyeti gerekirse Türk halkının vereceği yeni bir ulusal kurtuluş mücadelesi ile yoluna devam edebilecektir.</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">kavramının bölünme, parçalanma ve dağılma anlamına geldiği artık kesinleşmiştir. Bu durumda, Türkiye’nin ulus devletten eyalet devletçiklerine kaydırma projesi olan özerklik</td>
@@ -685,7 +923,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Özerklik kavramının bölünme, parçalanma ve dağılma anlamına geldiği artık kesinleşmiştir. Bu durumda, Türkiye’nin ulus devletten eyalet devletçiklerine kaydırma projesi olan</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">oyununa gelmeyeceği açıktır. Özerklik olmaz ama toplumsal gereksinmeler doğrultusunda, yerel yönetimlerin güçlendirilmesi ve bazı alanlarda yetkilerinin genişletilmesi, ulusal-üniter-merkezi yapıyı bozmayacak</td>
@@ -693,7 +931,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ve dağılma anlamına geldiği artık kesinleşmiştir. Bu durumda, Türkiye’nin ulus devletten eyalet devletçiklerine kaydırma projesi olan özerklik oyununa gelmeyeceği açıktır.</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">olmaz ama toplumsal gereksinmeler doğrultusunda, yerel yönetimlerin güçlendirilmesi ve bazı alanlarda yetkilerinin genişletilmesi, ulusal-üniter-merkezi yapıyı bozmayacak düzeyde yeni yasal düzenlemeler</td>
@@ -701,7 +939,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">korunabilmesi açısından sakıncalar yaratabilir. Bu nedenle, yerel yönetimlerin güçlendirilmesi ve ihtiyaç duyulan bazı alanlarda yetkilerinin genişletilmesi yasal düzenlemeler çerçevesinde yapılmalıdır.</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">olmayacak ama yerel yönetimlerin yetkilerinin artırılması yolu ile güçlendirilmesi ülkenin gereksinmeleri doğrultusunda sağlanacaktır. Bu nedenle mandacı, işbirlikçi ve bölücüler korosunun</td>
@@ -709,43 +947,38 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">olmayacak ama yerel yönetimlerin yetkilerinin artırılması yolu ile güçlendirilmesi ülkenin gereksinmeleri doğrultusunda sağlanacaktır. Bu nedenle mandacı, işbirlikçi ve bölücüler korosunun</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">şarkılarına artık bir son vermeleri gerekmektedir. - ROMALILARIN ANKARA ANITI - 26 Mayıs 2025 - KAMUSAL CUMHURİYET Mİ YOKSA KARŞI</td>
 				</tr>
 			
 
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
 
-		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-			<div class="content has-text-centered">
-				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-			</div>
-		</footer>
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+    </footer>
 
-		<script>
-			const btn = document.getElementById("themeToggle");
-			const saved = localStorage.getItem("theme");
-			if (saved === "dark") document.body.classList.add("dark");
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
 
-			function refreshLabel() {
-				const isDark = document.body.classList.contains("dark");
-				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
-			}
-			refreshLabel();
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      }
+      updateBtn();
 
-			btn.addEventListener("click", () => {
-				document.body.classList.toggle("dark");
-				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-				refreshLabel();
-			});
-		</script>
-	</body>
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        updateBtn();
+      });
+    </script>
+  </body>
 </html>

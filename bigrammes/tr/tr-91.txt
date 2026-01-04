@@ -1,2 +1,2 @@
-1	özerklik tanımıştır
 1	kurmadan özerklik
+1	özerklik tanımıştır

@@ -1,11 +1,11 @@
 2	değiştir otonomi
 2	otonomi 9
-1	çoğulu otonomiler
-1	hâli otonomiyi
-1	geniş otonomiler
 1	otonomi belirtme
-1	otonomiler verdiler
 1	özerklik Bizans
-1	otonomiyi çoğulu
+1	geniş otonomiler
+1	hâli otonomiyi
 1	düzenle otonomi
 1	otonomiler özerklik
+1	otonomiyi çoğulu
+1	çoğulu otonomiler
+1	otonomiler verdiler

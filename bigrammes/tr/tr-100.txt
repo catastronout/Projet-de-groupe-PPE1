@@ -1,7 +1,7 @@
 2	parasal özerklik
-1	özerklik mevcuttu
-1	politikası özerkliğine
-1	özerkliğine yol
-1	özerkliği arasındaki
 1	politikası özerkliği
+1	özerkliğine yol
+1	özerklik mevcuttu
 1	özerklik sınırlıydı
+1	özerkliği arasındaki
+1	politikası özerkliğine

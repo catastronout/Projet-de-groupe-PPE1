@@ -1,83 +1,321 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title>Concordancier - tr-59</title>
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-			<style>
-				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
-				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concordancier - tr-59</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
 
-				.back-link { color: #667eea }
-				.back-link:hover { color: #764ba2 }
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
 
-				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
-				.table tbody tr:hover td { background-color: #f5f3ff; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
-			.kwic-left  { text-align: right;  width: 44%; }
-			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
-			.kwic-right { text-align: left;   width: 44%; }
-			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
 
-			.cat-col { white-space: nowrap; }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
 
-			body.dark { background: #0f172a; color: #e2e8f0; }
-			body.dark .card { background: #111827; color: #e2e8f0; }
-			body.dark .table { background: #111827; color: #e2e8f0; }
-			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
-			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
-			body.dark .table tbody tr:hover td { background: #1f2937; }
-			body.dark .back-link { color: #93c5fd; }
-			body.dark .back-link:hover { color: #c4b5fd; }
-			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
-			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
-		</style>
-	</head>
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
 
-	<body>
-		<section class="hero is-small">
-			<div class="hero-body">
-				<div class="container has-text-centered">
-    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
-					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
-					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
-				</div>
-			</div>
-		</section>
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
 
-		<section class="section">
-			<div class="container">
-				<p class="mb-4">
-					<a href="../../index.html" class="back-link">Retour</a>
-					<span class="has-text-grey"> / </span>
-					<a href="../../tableaux/tableau-tr.html" class="back-link">Tableau</a>
-				</p>
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
 
-				<div class="card">
-					<div class="card-content">
-						<div class="content">
-							<p class="mb-2"><strong>URL :</strong> <a href="https://tr.wikipedia.org/wiki/Sekelistan_özerklik_hareketi" target="_blank" rel="noopener noreferrer" class="back-link">https://tr.wikipedia.org/wiki/Sekelistan_özerklik_hareketi</a></p>
-							<p class="mb-4"><strong>Occurrences :</strong> 20</p>
-						</div>
+      .nav-links a:hover { color: var(--primary); }
 
-						<div class="table-container">
-							<table class="table is-fullwidth is-hoverable is-striped">
-								<thead>
-									<tr>
-										<th>Catégorie</th>
-										<th>Gauche</th>
-										<th>Mot</th>
-										<th>Droite</th>
-									</tr>
-								</thead>
-								<tbody>
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: "Instrument Serif", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header .subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary-dark);
+      }
+
+      .info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .info-card p {
+        margin-bottom: 0.75rem;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-card strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .info-card a {
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cat-col {
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .kwic-left, .kwic-kw, .kwic-right {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.85rem;
+      }
+
+      .kwic-left {
+        text-align: right;
+        width: 44%;
+      }
+
+      .kwic-kw {
+        text-align: center;
+        width: 12%;
+        font-weight: 700;
+      }
+
+      .kwic-right {
+        text-align: left;
+        width: 44%;
+      }
+
+      mark {
+        background: rgba(102, 126, 234, 0.2);
+        color: var(--primary-dark);
+        padding: 0.12rem 0.25rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      body.dark mark {
+        background: rgba(147, 197, 253, 0.25);
+        color: #93c5fd;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+        .kwic-left, .kwic-kw, .kwic-right { font-size: 0.75rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../../index.html#projet">Projet</a>
+          <a href="../../index.html#langues">Langues</a>
+          <a href="../../index.html#equipe">Contributeurs</a>
+          <a href="../../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Concordancier KWIC</h1>
+      <p class="subtitle">Fenêtre contextuelle : ±20 mots</p>
+    </header>
+
+    <main>
+      <div class="breadcrumb">
+        <a href="../../index.html">Accueil</a>
+        <span> / </span>
+        <a href="../../tableaux/tr.html">Tableau tr</a>
+        <span> / </span>
+        <span>Concordancier 59</span>
+      </div>
+
+      <div class="info-card">
+        <p><strong>URL :</strong> <a href="https://tr.wikipedia.org/wiki/Sekelistan_özerklik_hareketi" target="_blank" rel="noopener noreferrer">https://tr.wikipedia.org/wiki/Sekelistan_özerklik_hareketi</a></p>
+        <p><strong>Occurrences trouvées :</strong> 20</p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Catégorie</th>
+                <th>Contexte gauche</th>
+                <th>Mot-clé</th>
+                <th>Contexte droit</th>
+              </tr>
+            </thead>
+            <tbody>
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Sekelistan</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">hareketi Sekelistan, Romanya'nın merkezinde, Erdel'de tarihi ve etnografik bir bölgedir. Romanya'daki Macar siyasi örgütlerinin birincil hedefi, Sekel özerkliğini elde etmektir.</td>
@@ -85,7 +323,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Sekelistan özerklik hareketi Sekelistan, Romanya'nın merkezinde, Erdel'de tarihi ve etnografik bir bölgedir. Romanya'daki Macar siyasi örgütlerinin birincil hedefi, Sekel</td>
 					<td class="kwic-kw"><mark>özerkliğini</mark></td>
 					<td class="kwic-right">elde etmektir. Sekeller, Romanya Macarlarının yaklaşık yarısını oluşturuyor. Romanya'nın 2011 nüfus sayımından elde edilen resmi verilere göre, Mureş, Harghita ve</td>
@@ -93,7 +331,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">önemli siyasi örgütü, Romanya'daki tüm Macarları (sadece Sekel topraklarında yaşayanları değil) temsil etmeyi taahhüt eden Romanya Macarları Demokratik İttifakı'dır. Macar</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">talebi, 1993'ten beri programlarının bir parçası olmuştur.[1] 2014 yılında, Macar Sivil Partisi, Romanya Macarları Demokratik Birliği ile Macar özerkliği için</td>
@@ -101,7 +339,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Macar özerkliği talebi, 1993'ten beri programlarının bir parçası olmuştur.[1] 2014 yılında, Macar Sivil Partisi, Romanya Macarları Demokratik Birliği ile Macar</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">için işbirliği ve ortak destek konusunda bir anlaşma imzaladı.[2] Eylül 2014'te Macar Demokratik Birliği, Sekelistan'ın (Ținutul Secuiesc) özerkliği için taslak</td>
@@ -109,7 +347,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ile Macar özerkliği için işbirliği ve ortak destek konusunda bir anlaşma imzaladı.[2] Eylül 2014'te Macar Demokratik Birliği, Sekelistan'ın (Ținutul Secuiesc)</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">için taslak projesini (Macar Yurttaş Partisi ile ortaklaşa yazılmış) sundu.[3] Macar Transilvanya Halk Partisi de bunu destekliyor.[4] Olaylar [değiştir |</td>
@@ -117,7 +355,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">| kaynağı değiştir]Sekelistan merkezli bir örgüt olan Sekel Ulusal Konseyi, 15 Mart 2006'da Odorheiu Secuiesc'te 4.000 ila 10.000 kişinin katıldığı[5]</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">lehine barışçıl bir gösteri düzenledi. Bundan beş gün önce, Başkan Traian Băsescu, ona 15 Mart gösterilerinin barışçıl karakteri konusunda güvence</td>
@@ -125,7 +363,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Bundan beş gün önce, Başkan Traian Băsescu, ona 15 Mart gösterilerinin barışçıl karakteri konusunda güvence veren ve ayrıca kısaca UCM'nin</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">vizyonunu sunan Jenő Szász (Odorheiu Secuiesc belediye başkanı ve Macar Yurttaş Birliği başkanı) ile bir araya geldi. 16 Mart'ta Băsescu</td>
@@ -133,7 +371,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">bir araya geldi. Băsescu, Romanya idari sisteminin daha ademi merkeziyetçi olması gerektiğini, ancak Sekelistan'a Romanya'daki herhangi bir bölgeden daha fazla</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">verilmeden sadece simetrik bir şekilde olması gerektiğini ilan etti. 12 Şubat 2007'de Macaristan Cumhurbaşkanı László Sólyom Romanya'yı ziyaret etti ve</td>
@@ -141,7 +379,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">12 Şubat 2007'de Macaristan Cumhurbaşkanı László Sólyom Romanya'yı ziyaret etti ve Băsescu ile bir araya geldi. Tartışmalarda azınlık hakları ve</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">gibi tartışmalı konular da yer aldı. Băsescu, Romanya'daki Sekeller'in durumunun Avrupa Birliği standartlarına tam olarak uygun olduğuna dikkat çekti. Ayrıca</td>
@@ -149,7 +387,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">tartışmalı konular da yer aldı. Băsescu, Romanya'daki Sekeller'in durumunun Avrupa Birliği standartlarına tam olarak uygun olduğuna dikkat çekti. Ayrıca bölgesel</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">için bir referandumun yasa dışı olacağından bahsetti ve Sekel girişimini kamuoyunun bir testi olarak değil, Romanya yasalarının bir testi olarak</td>
@@ -157,7 +395,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">olarak nitelendirdi.[7] Romanya İçişleri Bakanlığı gayrı resmi bir anket düzenlemenin yasa dışı olmadığını söyledi.[8] 10 Mart 2013'te binlerce kişi Sekel</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">için gösteri yapmak için toplandı.[9] Yürüyüşe László Tőkés de katıldı.[10] Protesto, Sekel Özgürlük Günü'nde (Macarca: Székely szabadság napja) düzenlendi.[9][10] Bu</td>
@@ -165,7 +403,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Ulusal Konseyi tarafından kurulmuştu.[11] 2013 sonbaharında, Sekelistan'da binlerce insanla 53 km (33 mil) uzunluğunda bir insan zinciri oluşturan "Büyük Sekel'in</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Yürüyüşü" düzenlendi.[12] 10 Mart 2014'te, yine Sekel Özgürlük Günü'nde, binlerce kişi Târgu Mureș'te Sekel özerkliği için gösteri yaptı.[13] 2015 yılında</td>
@@ -173,7 +411,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">insan zinciri oluşturan "Büyük Sekel'in Özerklik Yürüyüşü" düzenlendi.[12] 10 Mart 2014'te, yine Sekel Özgürlük Günü'nde, binlerce kişi Târgu Mureș'te Sekel</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">için gösteri yaptı.[13] 2015 yılında Sekel Özerklik Günü ilan edildi. 2016 yılında her Ekim ayının son Pazar günü kutlanmaya başlandı.[14][15]</td>
@@ -181,7 +419,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">düzenlendi.[12] 10 Mart 2014'te, yine Sekel Özgürlük Günü'nde, binlerce kişi Târgu Mureș'te Sekel özerkliği için gösteri yaptı.[13] 2015 yılında Sekel</td>
 					<td class="kwic-kw"><mark>Özerklik</mark></td>
 					<td class="kwic-right">Günü ilan edildi. 2016 yılında her Ekim ayının son Pazar günü kutlanmaya başlandı.[14][15] Aralık 2019'da Macar Demokratik İttifakı'nın iki milletvekili,</td>
@@ -189,7 +427,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ilan edildi. 2016 yılında her Ekim ayının son Pazar günü kutlanmaya başlandı.[14][15] Aralık 2019'da Macar Demokratik İttifakı'nın iki milletvekili, Sekelistan'ın</td>
 					<td class="kwic-kw"><mark>özerkliğini</mark></td>
 					<td class="kwic-right">destekleyen bir yasa tasarısı sundu.[16] 28 Nisan 2020'de Sosyal Demokrat Parti'nin (PSD) en fazla sandalyeye sahip olduğu Temsilciler Meclisi (Romanya</td>
@@ -197,7 +435,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">ve etnik köken/milliyet temelli onur hakkının ihlali nedeniyle 5.000 Rumen leyi para cezasına çarptırıldı.[25] Anayasal sorunlar [değiştir | kaynağı değiştir]Romanya'da</td>
 					<td class="kwic-kw"><mark>özerkliğe</mark></td>
 					<td class="kwic-right">karşı argümanlardan birine göre, girişim anayasaya aykırı olacaktır,[26] çünkü Romanya Anayasası'nın 1. Maddesine göre "Romanya bir ulus devlettir, egemen ve</td>
@@ -205,7 +443,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Anayasası'nın 1. Maddesine göre "Romanya bir ulus devlettir, egemen ve bağımsız, üniter ve bölünmezdir".[27] Bu yüzden Romanya'nın herhangi bir bölümünün</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">anayasaya aykırıdır. Böyle bir bakış açısı Romanya Akademisi,[28] Romanya'daki hukukçular[29] ve Kaloşvar Belediye Başkanı Emil Boc da dahil olmak üzere</td>
@@ -213,7 +451,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Emil Boc da dahil olmak üzere birçok Rumen siyasetçi tarafından benimsenmiştir.[30] Siyasi partilerin görüşleri [değiştir | kaynağı değiştir]Sekelistan için bölgesel</td>
 					<td class="kwic-kw"><mark>özerklik,</mark></td>
 					<td class="kwic-right">eski cumhurbaşkanı Emil Constantinescu liderliğindeki Halkın Hareket Partisi tarafından desteklendi.[31] Ocak 2018'de Romanya Başbakanı Mihai Tudose, bir televizyon röportajında Sekel</td>
@@ -221,7 +459,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">Tudose, bir televizyon röportajında Sekel topluluğunu "Sekel bayrağını [Sekelistan'daki kurumlara] asarlarsa, [bu bayrakları taşıyan insanlar] onun yanında asılcaklar. Sekeller için</td>
 					<td class="kwic-kw"><mark>özerklik</mark></td>
 					<td class="kwic-right">söz konusu değil." diyerek tehdit etti.[32][33] Ayrıca, "Bir Rumen ve başbakan olarak, Romanya'nın bir bölümünün özerkliği ile ilgili her türlü</td>
@@ -229,43 +467,38 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">özerklik</td>
+					<td class="cat-col">özerklik</td>
 					<td class="kwic-left">yanında asılcaklar. Sekeller için özerklik söz konusu değil." diyerek tehdit etti.[32][33] Ayrıca, "Bir Rumen ve başbakan olarak, Romanya'nın bir bölümünün</td>
 					<td class="kwic-kw"><mark>özerkliği</mark></td>
 					<td class="kwic-right">ile ilgili her türlü diyaloğu reddediyorum. Romanya devletinin birliğini ve bölünmezliğini birinci paragraftan garanti altına alan bu ülkenin Anayasası'nın ihlalidir."[34]</td>
 				</tr>
 			
 
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
 
-		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-			<div class="content has-text-centered">
-				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-			</div>
-		</footer>
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+    </footer>
 
-		<script>
-			const btn = document.getElementById("themeToggle");
-			const saved = localStorage.getItem("theme");
-			if (saved === "dark") document.body.classList.add("dark");
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
 
-			function refreshLabel() {
-				const isDark = document.body.classList.contains("dark");
-				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
-			}
-			refreshLabel();
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      }
+      updateBtn();
 
-			btn.addEventListener("click", () => {
-				document.body.classList.toggle("dark");
-				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-				refreshLabel();
-			});
-		</script>
-	</body>
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        updateBtn();
+      });
+    </script>
+  </body>
 </html>

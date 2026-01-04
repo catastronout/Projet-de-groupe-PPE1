@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Analyse Biélorusse — Projet PPE1</title>
+    <title>Analyse Coréen — Projet PPE1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -400,6 +400,22 @@
             .nav-links { display: none; }
             .clouds-grid { grid-template-columns: 1fr; }
         }
+
+        /* Drapeaux */
+        .flag {
+            display: inline-block;
+            width: 1.4em;
+            height: 1em;
+            margin-right: 0.4em;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            vertical-align: -0.1em;
+            border-radius: 2px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .flag-kr { background-image: url("flags/kr.svg"); }
     </style>
 </head>
 <body>
@@ -419,7 +435,7 @@
 
     <!-- Header -->
     <header class="page-header">
-        <span class="lang-badge">🇰🇷 자율</span>
+        <span class="lang-badge"><span class="flag flag-kr"></span>한국어</span>
         <h1>Analyse Coréen</h1>
         <p>Étude comparative des deux sens du mot « autonomie » en coréen : 
            <strong>자율</strong> vs <strong>자립</strong>.</p>

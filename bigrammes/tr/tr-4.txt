@@ -2,6 +2,6 @@
 1	otonomi etkinliğinde
 1	bu otonomi
 1	oldu Otonomi
+1	Ancak Otonomi
 1	mağazasında Otonomi
 1	Otonomi Yoktu
-1	Ancak Otonomi

@@ -1,7 +1,7 @@
 2	Özerklik oyununa
 1	özerklikler şartının
-1	tartışılabiliyorsa özerklik
-1	darbe Özerklik
-1	yönetimler özerklikler
-1	2016 Özerklik
 1	özerklik sistemi
+1	darbe Özerklik
+1	2016 Özerklik
+1	tartışılabiliyorsa özerklik
+1	yönetimler özerklikler

@@ -1,9 +1,9 @@
 2	için özerklik
 1	özerklik önerilerini
-1	Özerkliği değiştir
-1	özerklik fikrini
-1	özerkliğini ilan
-1	in özerkliğini
-1	in Özerkliği
 1	özerklik Almanya
 1	koruyacak özerklik
+1	özerkliğini ilan
+1	özerklik fikrini
+1	in Özerkliği
+1	Özerkliği değiştir
+1	in özerkliğini

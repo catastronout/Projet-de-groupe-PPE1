@@ -1,4 +1,4 @@
 1	otonomi seviyelerine
 1	farklı otonomi
-1	fazla otonomiye
 1	otonomiye sahip
+1	fazla otonomiye

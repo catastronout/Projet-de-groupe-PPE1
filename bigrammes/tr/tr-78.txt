@@ -1,4 +1,4 @@
 1	özerklik verilmiş
-1	idare özerklik
-1	idari özerklik
 1	özerklik sağlayarak
+1	idari özerklik
+1	idare özerklik

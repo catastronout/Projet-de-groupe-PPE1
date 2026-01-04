@@ -125,3 +125,19 @@ wordcloud_cli \
   --stopwords stopwords_be.txt \
   --fontfile "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"
   ```
+  
+```bash
+  # Coréen
+wordcloud_cli \      
+  --text ../pals/contexte-kr-sens1_cleaned.txt \
+  --stopwords stopwords_kr.txt \
+  --imagefile nuage-kr-sens1.png \
+  --fontfile /System/Library/Fonts/AppleGothic.ttf
+  
+wordcloud_cli \      
+  --text ../pals/contexte-kr-sens2_cleaned.txt \
+  --stopwords stopwords_kr.txt \
+  --imagefile nuage-kr-sens2.png \
+  --fontfile /System/Library/Fonts/AppleGothic.ttf  
+  
+  

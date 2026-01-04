@@ -1,0 +1,1548 @@
+#!/bin/bash
+
+
+# =====================
+#      UTILISATION     
+# =====================
+# 1. Se déplacer dans le répertoire miniprojet/programmes
+# 2. Lancer le script `main.sh` comme suit : bash main.sh <urls> <tableau> [fichier_sens1 fichier_sens2 = facultatifs]
+#   Exemples :
+#     `bash main.sh be tableau-be1 data_sens1.txt data_sens2.txt`
+#     `bash main.sh kr tableau-kr1`
+
+
+# ============================== 
+#      MODE VERBOSE / DEBUG     
+# ==============================
+# Utilisation :
+#    `-v`  : VERBOSE (affiche des messages lisibles, commençant par [INFO])
+#    `-d`  : DEBUG (affiche la trace complète d'exécution bash)
+#    `-vd` : possibilité de combiner les modes VERBOSE et DEBUG
+
+# Par défaut, les variables VERBOSE et DEBUG n'affiche rien (0)
+VERBOSE=0
+DEBUG=0
+
+# Fonction de log
+# Affiche un message seulement si VERBOSE = 1
+# Les messages sont envoyés sur stderr
+log() { (( VERBOSE )) && echo "[INFO] $*" >&2; }
+# Affichage pour les encodages
+log_step() { (( VERBOSE )) && echo "       ↳ $*" >&2; }
+
+# Fonction d'affichage de l'aide
+# Appelée en cas d'erreur ou d'option invalide
+usage() {
+	echo "Utilisation :"
+	echo "  $0 [-v] [-d] <urls> <tableau> [fichier_sens1 fichier_sens2]"
+	echo "  -v : verbose (messages lisibles)"
+	echo "  -d : debug (trace bash)"
+	exit 1
+}
+
+# Permet l'implémentation des options `-v` et `-d`, + de l'aide
+while getopts ":vd" opt; do
+	case "$opt" in
+		v) VERBOSE=1 ;;
+		d) DEBUG=1 ;;
+    	*) usage ;;
+	esac
+done
+
+# Supprimer les options déjà traitées
+shift $((OPTIND-1))
+
+# Active le mode DEBUG : affiche chaque commande exécutée, avec le nom du fichier, le n° de la ligne et la fonction
+if (( DEBUG )); then
+	export PS4='+ ${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:-main}: '
+	set -x
+fi
+
+
+# ====================================
+#      RÉCUPERATION DES ARGUMENTS     
+# ====================================
+# S1 : nom du fichier contenant les URLs (sans l'extention .txt)
+# S2 : nom du fichier HTML de sortie (sans l'extension .html)
+# S3 : fichier listants les formes du lemme 1 (facultatif -- avec son extention)
+# S4 : fichier listant les formes du lemme 2 (facultatif -- avec son extention)
+FICHIER_URLS=$1
+FICHIER_SORTIE=$2
+FICHIER_MOTS_SENS1=$3
+FICHIER_MOTS_SENS2=$4
+
+
+# ====================================
+#      VÉRIFICATION DES ARGUMENTS     
+# ====================================
+# Vérification du nombre d'arguments (minimum 2)
+if (( $# < 2 )); then
+	echo "Ce script a besoin d'au moins deux arguments !"
+	echo "Utilisation :"
+	echo "  $0 <ENTRÉE_fichier_URLs> <SORTIE_fichier_tableau> <fichier_sens1> <fichier_sens2>"
+	echo "ou"
+	echo "  $0 <ENTRÉE_fichier_URLs> <SORTIE_fichier_tableau>"
+	exit 1
+fi
+  
+# Vérification de l'existence du fichier d'URLs
+if [[ ! -f "../URLs/$FICHIER_URLS.txt" ]]; then
+	echo "Erreur : le fichier ../URLs/$FICHIER_URLS.txt n'existe pas !"
+	exit 1
+fi
+
+# --- Messages d'information (VERBOSE) ----
+log "URLs: ../URLs/$FICHIER_URLS.txt"
+log "Sortie: ../tableaux/$FICHIER_SORTIE.html"
+log "Sens1 fichier: $FICHIER_MOTS_SENS1 | Sens2 fichier: $FICHIER_MOTS_SENS2"
+
+# Vérifications des fichiers de motifs
+if [[ -n "$FICHIER_MOTS_SENS1" && -z "$FICHIER_MOTS_SENS2" ]] || \
+   [[ -z "$FICHIER_MOTS_SENS1" && -n "$FICHIER_MOTS_SENS2" ]]; then
+  echo "Erreur : il faut fournir soit 0 fichier de motifs, soit 2 fichiers (sens 1 et sens 2)." >&2
+  echo "Exemples valides :" >&2
+  echo "  $0 urls tableau" >&2
+  echo "  $0 urls tableau motifs_sens1.txt motifs_sens2.txt" >&2
+  exit 1
+fi
+
+if (( $# > 4 )); then
+  echo "Erreur : trop d'arguments." >&2
+  echo "Utilisation : $0 <urls> <tableau> [motifs_sens1 motifs_sens2]" >&2
+  exit 1
+fi
+
+
+# ===============================================
+#      DÉTERMINATION DE LA SOURCE DES MOTIFS     
+# ===============================================
+# Motifs = mots cherchés dans les textes
+# Tableaux contenant les formes pour chaque lemme
+MOTIFS_SENS1=()
+MOTIFS_SENS2=()
+# Libellés des colonnes dans le tableau HTML
+LABEL_SENS1=""
+LABEL_SENS2=""
+
+# Variable globale pour le mode KWIC
+# Cette variable est utilisée par la fonction generer_kwic_tsv()
+KWIC_MODE=""
+
+# ----- Cas 1 : deux fichiers de motifs sont fournis en arguments -----
+# On vérifie que ces fichiers existent 
+if [[ -n "$FICHIER_MOTS_SENS1" && -n "$FICHIER_MOTS_SENS2" && -f "$FICHIER_MOTS_SENS1" && -f "$FICHIER_MOTS_SENS2" ]]; then
+    # Mode pour langues à déclinaisons (turc, biélorusse)
+    KWIC_MODE="word"
+    log "Mode KWIC : word (langues à déclinaisons)"
+
+    # Lecture du fichier des motifs du lemme 1
+	while IFS= read -r m; do
+		# Nettoyage : suppression des retours chariot, sauts de ligne et espaces
+    	m=$(echo "$m" | tr -d '\r\n ')
+		# Ajout du mot au tableau seulement s'il n'est pas vide
+    	[[ -n "$m" ]] && MOTIFS_SENS1+=("$m")
+  	done < "$FICHIER_MOTS_SENS1"
+
+	# Même chose pour le lemme 2
+	while IFS= read -r m; do
+    	m=$(echo "$m" | tr -d '\r\n ')
+    	[[ -n "$m" ]] && MOTIFS_SENS2+=("$m")
+  	done < "$FICHIER_MOTS_SENS2"
+
+	# Input user : choisir le nom des colonnes pour le tableau HTML
+	read -rp "Nom de colonne / lemme pour le sens 1 : " LABEL_SENS1
+	read -rp "Nom de colonne / lemme pour le sens 2 : " LABEL_SENS2
+	# Valeurs par défaut si l'utilisateur ne saisit rien
+	[[ -z "$LABEL_SENS1" ]] && LABEL_SENS1="sens 1"
+	[[ -z "$LABEL_SENS2" ]] && LABEL_SENS2="sens 2"
+# ----- Cas 2 : aucun fichier de motifs fournis -----
+else
+	# Mode pour le coréen (100 caractères)
+    KWIC_MODE="char"
+    log "Mode KWIC : char (coréen)"
+
+    echo "═══════════════════════════════════════════════════════════════════" >&2
+    echo "  Mode langues sans déclinaisons (coréen)" >&2
+    echo "  Si vous voulez chercher un mot dans une langue à déclinaisons" >&2
+    echo "  (turc, biélorusse), quittez (Ctrl+C) et relancez avec les" >&2
+    echo "  fichiers de déclinaisons en argument." >&2
+	echo "" >&2
+    echo "   bash main.sh <urls> <tableau> fichier_sens1.txt fichier_sens2.txt" >&2
+    echo "═══════════════════════════════════════════════════════════════════" >&2
+    echo "" >&2
+
+	# Input user : motif à chercher (pour le coréen)
+	read -rp "Écris le mot 1 (sens 1) : " m1
+	read -rp "Écris le mot 2 (sens 2) : " m2
+	# Ajout des mots aux tableaux correspondants
+	[[ -n "$m1" ]] && MOTIFS_SENS1+=("$m1")
+	[[ -n "$m2" ]] && MOTIFS_SENS2+=("$m2")
+	# Ces mots servent aussi de libellés pour les colonnes dans le tableau HTML
+	LABEL_SENS1="$m1"
+	LABEL_SENS2="$m2"
+fi
+
+# Afficher le mode sélectionné
+log "KWIC_MODE = $KWIC_MODE"
+
+# Initialisation du compteur d'URLs, pour numéroter les lignes du tableau et des fichiers générés
+n=1
+
+# User Agent utilisé par curl pour simuler un navigateur réel
+# (évite certains refus côté serveur)
+UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+# Taille du contexte KWIC (Key Word in Context) : nombre de mots à gauche et à droite
+CONTEXT_WORDS=20
+
+# Création des répertoires nécessaires au bon fonctionnement du script :
+# - aspirations  : pages HTML aspirées
+# - concordances : fichiers HTML de concordanciers (KWIC)
+# - contextes    : fichiers de contextes textuels
+# - dumps-text   : texte brut extrait des pages HTML
+# - tableaux     : tableaux HTML 
+mkdir -p "../aspirations/${FICHIER_URLS}"
+mkdir -p "../concordances/${FICHIER_URLS}"
+mkdir -p "../contextes/${FICHIER_URLS}"
+mkdir -p "../dumps-text/${FICHIER_URLS}"
+mkdir -p "../bigrammes/${FICHIER_URLS}"
+mkdir -p "../tableaux"
+
+
+# --- Messages d'information (VERBOSE) ----
+log "Création dossiers dumps/aspirations/contextes/tableaux/concordances pour $FICHIER_URLS"
+
+
+# =========================================
+#      AFFICHAGE BADGES ENCODAGES HTML     
+# =========================================
+# Fonction pour afficher les badges pour les encodages dans le tableau HTML
+generer_badge_code() {
+	# Variable locale qui prend le code HTTP en argument
+	local code="$1"
+	# Si aucun code n'est fourni, affiche `000` par défaut
+	[[ -z "$code" ]] && code="000"
+
+	# Mise en page des badges en fonction des codes HTML récupérés
+	if [[ "$code" =~ ^2 ]]; then        # le code HTML commence par 2
+    	echo "<span class=\"tag is-success\">${code}</span>"
+	elif [[ "$code" =~ ^3 ]]; then      # le code HTML commence par 3
+    	echo "<span class=\"tag is-warning\">${code}</span>"
+	elif [[ "$code" =~ ^4 ]]; then      # le code HTML commence par 4
+    	echo "<span class=\"tag is-danger\">${code}</span>"
+	elif [[ "$code" =~ ^5 ]]; then      # le code HTML commence par 5
+    	echo "<span class=\"tag is-danger\">${code}</span>"
+	else
+    	echo "<span class=\"tag is-light\">${code}</span>"
+	fi
+
+    	#echo "<span class=\"tag is-info is-light\">${code}</span>"
+}
+
+
+# ==============================================
+#      NORMALISATION ENCODAGE HTML EN UTF-8     
+# ==============================================
+# Fonction qui force un encodage UTF-8 dans un fichier HTML
+# Permet d'éviter les problèmes d'affichage (mojibake) (lors de l'extraction)
+forcer_charset_utf8_html() {
+	local f="$1"
+	# Remplace toutes les déclarations de charset existantes par "utf-8"
+	perl -i -pe 's/(charset\s*=\s*)["'\'']?[^"'\'' >;]+/${1}utf-8/ig' "$f"
+	# Si aucune déclaration de chatset existe dans le fichier
+	if ! grep -qi "charset" "$f"; then
+		# On injecte explicitement la balise `<meta charset="utf-8">`
+    	perl -0777 -i -pe 's/<head([^>]*)>/<head$1>\n<meta charset="utf-8">/i' "$f"
+  	fi
+}
+
+
+# =======================================
+#      MANIPULATION DE TABLEAUX BASH     
+# =======================================
+# Join le contenu d'un tableau Bash en une seule chaîne avec un délimiteur donné
+# Compatible avec les anciennnes versions de Bash
+# Utilisation : 
+#   join_array "|" MOTIFS_SENS1
+#     renvoie par exemple : mot1|mot2|mot3
+join_array() {
+	local delim="$1"
+	local array_name="$2"
+	local out=""
+	local x
+
+	# Récupère le contenu du tableau dont le nom est dans $array_name et le place dans les paramètres positionnels ($1, $2, ...)
+	eval "set -- \"\${${array_name}[@]}\""
+	# Parcourt chaque élément du tableau
+  	for x in "$@"; do
+		# Nettoyage : supprime les retours charriot, les sauts de ligne et les espaces
+    	x=$(echo "$x" | tr -d '\r\n ')
+		# Ignore les éléments vides
+    	[[ -z "$x" ]] && continue
+		# Si c'est le 1e élément : pas de délimiteur
+		# Sinon, on ajoute le délimiteur avant
+    	if [[ -z "$out" ]]; then out="$x"; else out="${out}${delim}${x}"; fi
+  	done
+	# Affiche la chaîne finale, sans retour à la ligne
+  	printf "%s" "$out"
+}
+
+# ============================
+#      KWIC TSV generator     
+# ============================
+# Produit un TSV : LABEL \t LEFT \t KW \t RIGHT
+# Chaque ligne aura 4 colonnes séparées par des tab : 1) label, 2) contexte gauche, 3) mot trouvé, 4) contexte droit
+#
+# Deux modes disponibles (contrôlés par la variable globale KWIC_MODE) :
+#   KWIC_MODE="char"  → Mode coréen : utilise pykospacing + 100 caractères
+#   KWIC_MODE="word"  → Mode turc/biélorusse : mots complets, pas de coupure
+generer_kwic_tsv() {
+	# Variables locales :
+	# $1 : fichier texte source
+	# $2 : chemin du TSV à écrire
+	# S3 : label
+	# $4 : motifs concaténés dans une seule chaîne, séparés par \x1F
+	# $5 : taille de fenêtre (nb de mots à gauche et à droite)
+  	local txt="$1"
+  	local out_tsv="$2"
+	local label="$3"
+  	local motifs_joined="$4"
+  	local w="$5"
+
+	# Vérifier le mode (défaut: "word" pour langues à déclinaisons)
+    local mode="${KWIC_MODE:-word}"
+
+	# Tokenisation + KWIC
+	# Pour chaque motif :
+	# - découper le texte en tokens
+	# - repérer les occurrences exactes des motifs
+	# - extraire une fenêtre de contexte de N mots à gauche et à droite
+	# - écrire le résultat dans un fichier TSV : LABEL \t GAUCHE \t MOT \t DROITE
+
+    if [[ "$mode" == "char" ]]; then
+        # ============================================
+        # MODE CORÉEN : 100 caractères de contexte
+        # ============================================
+		log_step "KWIC mode: char (coréen avec pykospacing)"
+
+		# Créer un fichier temporaire avec le texte traité par pykospacing
+        local txt_spaced="${txt}.spaced.tmp"
+        python3 korean_spacing.py "$txt" > "$txt_spaced" 2>/dev/null
+
+		# Si pykospacing a échoué, utiliser le fichier original
+        if [[ ! -s "$txt_spaced" ]]; then
+            log_step "pykospacing a échoué, utilisation du fichier original"
+            cp "$txt" "$txt_spaced"
+        fi
+
+		perl -Mutf8 -CS -e '
+			use strict; use warnings;
+			use Encode qw(decode FB_DEFAULT);
+
+			my ($txt, $out, $label, $joined, $w) = @ARGV;
+			$label  = decode("UTF-8", $label,  FB_DEFAULT);
+			$joined = decode("UTF-8", $joined, FB_DEFAULT);
+
+			# 검색할 단어들 (자율, 자립 등)
+			my @motifs = grep { length($_) } split(/\x1F/, $joined);
+				
+			open my $IN, "<:encoding(UTF-8)", $txt or die "Cannot open $txt\n";
+			local $/;
+			my $content = <$IN>;
+			close $IN;
+
+			# 정규표현식 패턴 생성: (자율|자립)
+			my $pattern = join("|", map { quotemeta($_) } @motifs);
+
+			open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
+
+			# 핵심 수정: 전체 텍스트에서 패턴이 포함된 위치를 찾음 (부분 일치)
+			while ($content =~ /($pattern)/gu) {
+				my $matched_word = $1;
+				my $pos = pos($content); # 매칭된 단어의 끝 위치
+				my $start_pos = $pos - length($matched_word);
+
+				# 문맥 추출 (글자 수 기준이 아니라 주변 공백/단어 기반으로 추출하기 위해 
+				# 매칭 위치 앞뒤의 텍스트를 적절히 잘라냅니다)
+					
+				# 왼쪽 문맥: 매칭 위치 앞의 약 100글자 중 마지막 $w개의 어절
+				my $left_context_raw = substr($content, ($start_pos > 100 ? $start_pos - 100 : 0), ($start_pos > 100 ? 100 : $start_pos));
+				my @left_words = split(/\s+/, $left_context_raw);
+				my $left = join(" ", @left_words[ ( @left_words > $w ? @left_words - $w : 0 ) .. $#left_words ]);
+
+				# 오른쪽 문맥: 매칭 위치 뒤의 약 100글자 중 첫 $w개의 어절
+				my $right_context_raw = substr($content, $pos, 100);
+				my @right_words = split(/\s+/, $right_context_raw);
+				my $right = join(" ", @right_words[ 0 .. ( @right_words > $w ? $w - 1 : $#right_words ) ]);
+
+				# 탭 문자 제거 (TSV 구조 유지)
+				for ($left, $matched_word, $right) { s/\t/ /g; s/\n/ /g; s/\r//g; }
+
+				print $OUT $label, "\t", $left, "\t", $matched_word, "\t", $right, "\n";
+			}
+			close $OUT;
+		' "$txt" "$out_tsv" "$label" "$motifs_joined" "$w"
+	else
+        # ============================================
+        # MODE TURC/BIÉLORUSSE : Mots complets
+        # ============================================
+        perl -Mutf8 -CS -e '
+            use strict; use warnings;
+            use Encode qw(decode FB_DEFAULT);
+
+            my ($txt, $out, $label, $joined, $w) = @ARGV;
+            $label  = decode("UTF-8", $label,  FB_DEFAULT);
+            $joined = decode("UTF-8", $joined, FB_DEFAULT);
+
+            my @motifs = grep { length($_) } split(/\x1F/, $joined);
+            
+            open my $IN, "<:encoding(UTF-8)", $txt or die "Cannot open $txt\n";
+            local $/;
+            my $content = <$IN>;
+            close $IN;
+
+            # Tokeniser le texte en mots (tableau simple de strings)
+            my @tokens;
+            while ($content =~ /(\S+)/g) {
+                push @tokens, $1;
+            }
+
+            my $pattern = join("|", map { quotemeta($_) } @motifs);
+            my $regex = qr/($pattern)/i;
+
+            open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
+
+            # Parcourir chaque token et chercher les motifs
+            for (my $i = 0; $i < scalar(@tokens); $i++) {
+                my $token = $tokens[$i];
+                
+                # Vérifier si le token contient un des motifs
+                if ($token =~ $regex) {
+                    # Contexte gauche : $w mots COMPLETS avant
+                    my $left_start = ($i - $w > 0) ? $i - $w : 0;
+                    my $left = "";
+                    for (my $j = $left_start; $j < $i; $j++) {
+                        $left .= $tokens[$j] . " ";
+                    }
+                    $left =~ s/\s+$//;  # Supprimer espace final
+
+                    # Contexte droit : $w mots COMPLETS après
+                    my $right_end = ($i + $w < scalar(@tokens) - 1) ? $i + $w : scalar(@tokens) - 1;
+                    my $right = "";
+                    for (my $j = $i + 1; $j <= $right_end; $j++) {
+                        $right .= $tokens[$j] . " ";
+                    }
+                    $right =~ s/\s+$//;  # Supprimer espace final
+
+                    # Nettoyage
+                    for ($left, $token, $right) { s/\t/ /g; s/\n/ /g; s/\r//g; }
+
+                    print $OUT $label, "\t", $left, "\t", $token, "\t", $right, "\n";
+                }
+            }
+            close $OUT;
+        ' "$txt" "$out_tsv" "$label" "$motifs_joined" "$w"
+    fi	
+}
+
+# =================================
+#      Génération des contextes    
+# =================================
+# Crée les fichiers de contexte KWIC au format TSV
+# - génère un fichier TSV pour chaque sens
+# - concatène les deux dans un TSV global
+# - calcule le nb d'occurrences par sens
+generer_contextes_kwic() {
+	local idx="$1"              # idx : numéro de l'URL
+	local fichier_texte="$2"    # fichier_texte : texte brut extrait depuis le HTML
+
+	# \x1F est une délimitation rare pour concaténer les motifs
+	# Permet d'éviter les collisions
+	local DELIM=$'\x1F'
+	local motifs1 motifs2
+	# Concatène les tableaux de motifs en une seule chaîne
+	motifs1=$(join_array "$DELIM" "MOTIFS_SENS1")
+	motifs2=$(join_array "$DELIM" "MOTIFS_SENS2")
+
+	# Fichiers TSV de sortie
+	local TSV1="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-sens1.tsv"
+	local TSV2="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-sens2.tsv"
+	local TSV_ALL="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-kwic.tsv"
+
+	# Initiatlisation des fichiers TSV (vides)
+	: > "$TSV1"
+	: > "$TSV2"
+	: > "$TSV_ALL"
+
+	# Génère les contextes KWIC uniquement si les motifs sont définis
+	[[ -n "$motifs1" ]] && generer_kwic_tsv "$fichier_texte" "$TSV1" "$LABEL_SENS1" "$motifs1" "$CONTEXT_WORDS"
+	[[ -n "$motifs2" ]] && generer_kwic_tsv "$fichier_texte" "$TSV2" "$LABEL_SENS2" "$motifs2" "$CONTEXT_WORDS"
+
+	# Fudionne les contextes des deux sens dans un seul fichier TSV
+	cat "$TSV1" "$TSV2" > "$TSV_ALL" 2>/dev/null
+
+	# Comptage des occurrences = nb de lignes par label dans le TSV final
+	OCC_SENS1=$(LC_ALL=C awk -F'\t' -v lab="$LABEL_SENS1" '$1==lab {c++} END{print c+0}' "$TSV_ALL")
+	OCC_SENS2=$(LC_ALL=C awk -F'\t' -v lab="$LABEL_SENS2" '$1==lab {c++} END{print c+0}' "$TSV_ALL")
+
+	# Renvoie le TSV global
+ 	echo "$TSV_ALL"
+}
+
+
+# ======================================
+#     CONCORDANCIER HTML DEPUIS TSV     
+# ======================================
+generer_concordancier_html_depuis_tsv() {
+	local idx="$1"
+	local url="$2"
+	local tsv="$3"
+	local out="../concordances/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.html"
+
+	perl -Mutf8 -CS -e '
+		use strict; use warnings;
+		use Encode qw(decode FB_DEFAULT);
+
+		my ($tsv, $out, $url, $w, $urls_name, $idx) = @ARGV;
+		$url       = decode("UTF-8", $url, FB_DEFAULT);
+		$urls_name = decode("UTF-8", $urls_name, FB_DEFAULT);
+
+		open my $IN, "<:encoding(UTF-8)", $tsv or die "Cannot open $tsv\n";
+		my @rows;
+		while (my $line = <$IN>) {
+			chomp $line;
+			my ($cat, $left, $kw, $right) = split(/\t/, $line, 4);
+			$cat   //= ""; $left //= ""; $kw //= ""; $right //= "";
+
+			for ($cat,$left,$kw,$right) { s/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g; }
+
+			push @rows, qq{
+				<tr>
+					<td class="cat-col">$cat</td>
+					<td class="kwic-left">$left</td>
+					<td class="kwic-kw"><mark>$kw</mark></td>
+					<td class="kwic-right">$right</td>
+				</tr>
+			};
+    	}
+    	close $IN;
+
+		my $n = scalar(@rows);
+
+		open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
+
+		print $OUT qq{<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concordancier - $urls_name-$idx</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital\@0;1&family=DM+Sans:wght\@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
+
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover { color: var(--primary); }
+
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: "Instrument Serif", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header .subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary-dark);
+      }
+
+      .info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .info-card p {
+        margin-bottom: 0.75rem;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-card strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .info-card a {
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cat-col {
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .kwic-left, .kwic-kw, .kwic-right {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.85rem;
+      }
+
+      .kwic-left {
+        text-align: right;
+        width: 44%;
+      }
+
+      .kwic-kw {
+        text-align: center;
+        width: 12%;
+        font-weight: 700;
+      }
+
+      .kwic-right {
+        text-align: left;
+        width: 44%;
+      }
+
+      mark {
+        background: rgba(102, 126, 234, 0.2);
+        color: var(--primary-dark);
+        padding: 0.12rem 0.25rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      body.dark mark {
+        background: rgba(147, 197, 253, 0.25);
+        color: #93c5fd;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      \@media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+        .kwic-left, .kwic-kw, .kwic-right { font-size: 0.75rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../../index.html#projet">Projet</a>
+          <a href="../../index.html#langues">Langues</a>
+          <a href="../../index.html#equipe">Contributeurs</a>
+          <a href="../../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Concordancier KWIC</h1>
+      <p class="subtitle">Fenêtre contextuelle : ±$w mots</p>
+    </header>
+
+    <main>
+      <div class="breadcrumb">
+        <a href="../../index.html">Accueil</a>
+        <span> / </span>
+        <a href="../../tableaux/$urls_name.html">Tableau $urls_name</a>
+        <span> / </span>
+        <span>Concordancier $idx</span>
+      </div>
+
+      <div class="info-card">
+        <p><strong>URL :</strong> <a href="$url" target="_blank" rel="noopener noreferrer">$url</a></p>
+        <p><strong>Occurrences trouvées :</strong> $n</p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Catégorie</th>
+                <th>Contexte gauche</th>
+                <th>Mot-clé</th>
+                <th>Contexte droit</th>
+              </tr>
+            </thead>
+            <tbody>
+};
+
+		if (@rows) {
+			print $OUT join("\n", @rows), "\n";
+		} else {
+			print $OUT qq{<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 2rem;">Aucune occurrence trouvée.</td></tr>\n};
+		}
+
+		print $OUT qq{
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
+
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      }
+      updateBtn();
+
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        updateBtn();
+      });
+    </script>
+  </body>
+</html>
+};
+
+	close $OUT;
+	' "$tsv" "$out" "$url" "$CONTEXT_WORDS" "$FICHIER_URLS" "$idx"
+
+	echo "$out"
+}
+
+# ==========================================================
+#      EXTRACTION TEXTE + KWIC TSV + CONCORDANCIER HTML     
+# ==========================================================
+extraire_et_compter() {
+    local html_src="$1"
+    local idx="$2"
+    local url="$3"      
+
+    local FICHIER_TEXTE="../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt"
+
+    # html_src = ton fichier HTML local (aspiré/converti)
+	< "$html_src" trafilatura > "$FICHIER_TEXTE" 2>/dev/null
+
+	# Si le fichier texte existe ET n’est pas vide, on calcule tout
+	if [[ -s "$FICHIER_TEXTE" ]]; then
+		# Lien vers le dump TXT
+		LIEN_TEXT="<a href='../dumps-text/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt' style='color: #667eea;'>TXT</a>"
+
+		# Nombre de mots dans le dump
+		NB_MOTS=$(wc -w < "$FICHIER_TEXTE")
+
+		# Chemins des TSV (1 par sens + un TSV global fusionné)
+		local TSV1="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-sens1.tsv"
+		local TSV2="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-sens2.tsv"
+		local TSV_ALL="../contextes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}-kwic.tsv"
+
+		# On appelle la fonction SANS $(...) pour que OCC_SENS1 et OCC_SENS2 soient bien mises à jour dans ce shell
+		generer_contextes_kwic "$idx" "$FICHIER_TEXTE" >/dev/null
+
+		# Génération du concordancier HTML à partir du TSV global
+		generer_concordancier_html_depuis_tsv "$idx" "$url" "$TSV_ALL" >/dev/null
+
+        # Génération des bigrammes
+        LIEN_BIGRAM=$(generer_bigrammes "$idx" "$FICHIER_TEXTE")
+
+        # Vérification robots.txt
+        ROBOTS_STATUS=$(verifier_robots_txt "$url")
+        
+		# Lien vers le concordancier
+		LIEN_CONC="<a href='../concordances/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.html' style='color: #667eea;'>KWIC</a>"
+
+	else
+		# Si lynx a échoué ou a produit un fichier vide : on met des tirets
+		# --- Messages d'information (VERBOSE) ----
+		log_step "Extraction texte : KO (fichier vide ou lynx a échoué)"
+		NB_MOTS="-"
+		OCC_SENS1="-"
+		OCC_SENS2="-"
+		LIEN_TEXT="-"
+		LIEN_CONC="-"
+	fi
+}
+
+# ===============================
+#      GÉNÉRATION DES BIGRAMMES
+# ===============================
+generer_bigrammes() {
+	local idx="$1"              # numéro de l'URL
+	local fichier_texte="$2"    # texte brut
+
+	local BIGRAM_FILE="../bigrammes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt"
+	
+	# Si le fichier texte n'existe pas ou est vide, sortir
+	[[ ! -s "$fichier_texte" ]] && { echo "-"; return; }
+
+	# Construire le pattern pour grep 
+	local pattern=""
+	local first=true
+	for mot in "${MOTIFS_SENS1[@]}" "${MOTIFS_SENS2[@]}"; do
+		[[ -z "$mot" ]] && continue
+		if [[ "$first" == true ]]; then
+			pattern="$mot"
+			first=false
+		else
+			pattern="$pattern|$mot"
+		fi
+	done
+
+	[[ -z "$pattern" ]] && { echo "-"; return; }
+
+	# Extraction des bigrammes avec Perl
+	perl -Mutf8 -CS -e '
+		use strict; use warnings;
+		use Encode qw(decode FB_DEFAULT);
+
+		my ($txt, $out, $pattern_str) = @ARGV;
+		$pattern_str = decode("UTF-8", $pattern_str, FB_DEFAULT);
+
+		open my $IN, "<:encoding(UTF-8)", $txt or die "Cannot open $txt\n";
+		local $/;
+		my $content = <$IN>;
+		close $IN;
+
+		# Tokenisation
+		my @tokens = ($content =~ /[\p{L}\p{N}]+/gu);
+
+		my %bigrams;
+		# Créer les bigrammes
+		for (my $i = 0; $i < $#tokens; $i++) {
+			my $w1 = $tokens[$i];
+			my $w2 = $tokens[$i+1];
+			my $bigram = "$w1 $w2";
+			
+			# Vérifier si le bigramme contient un des motifs
+			if ($bigram =~ /($pattern_str)/i) {
+				$bigrams{$bigram}++;
+			}
+		}
+
+		# Écrire les résultats triés par fréquence
+		open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
+		for my $bg (sort { $bigrams{$b} <=> $bigrams{$a} } keys %bigrams) {
+			print $OUT $bigrams{$bg}, "\t", $bg, "\n";
+		}
+		close $OUT;
+	' "$fichier_texte" "$BIGRAM_FILE" "$pattern"
+
+	# Retourner le lien
+	if [[ -s "$BIGRAM_FILE" ]]; then
+		echo "<a href='../bigrammes/${FICHIER_URLS}/${FICHIER_URLS}-${idx}.txt' style='color: #667eea;'>Bigrammes</a>"
+	else
+		echo "-"
+	fi
+}
+
+# ==============================
+#      VÉRIFICATION ROBOTS.TXT
+# ==============================
+verifier_robots_txt() {
+	local url="$1"
+	
+	# Extraire le domaine de base (https://example.com)
+	local base_url=$(echo "$url" | perl -pe 's|^(https?://[^/]+).*|$1|')
+	local robots_url="${base_url}/robots.txt"
+	
+	# Télécharger robots.txt (timeout 5 secondes)
+	local code=$(curl -sL --max-time 5 -o /dev/null -w "%{http_code}" "$robots_url")
+	
+	if [[ "$code" == "200" ]]; then
+		echo "<span class=\"tag is-success\">✓ Oui</span>"
+	else
+		echo "<span class=\"tag is-light\">✗ Non</span>"
+	fi
+}
+
+# ====================================
+#      Génération du tableau HTML     
+# ==================================== 
+
+{
+cat << HEADER
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tableau ${FICHIER_URLS} — Projet PPE1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
+
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-family: 'Instrument Serif', serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover { color: var(--primary); }
+
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      /* Header */
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: 'Instrument Serif', serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header p {
+        color: var(--text-muted);
+      }
+
+      /* Main */
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        transition: gap 0.2s;
+      }
+
+      .back-link:hover { gap: 0.75rem; }
+
+      /* Table card */
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .url-cell {
+        max-width: 300px;
+        word-break: break-all;
+        font-family: monospace;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .url-cell a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .url-cell a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .count-cell {
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      /* Tags / Badges */
+      .tag {
+        display: inline-block;
+        padding: 0.25rem 0.6rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .tag.is-success { background: rgba(16, 185, 129, 0.15); color: #059669; }
+      .tag.is-warning { background: rgba(245, 158, 11, 0.15); color: #d97706; }
+      .tag.is-danger { background: rgba(239, 68, 68, 0.15); color: #dc2626; }
+      .tag.is-light { background: var(--border); color: var(--text-muted); }
+
+      body.dark .tag.is-success { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+      body.dark .tag.is-warning { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+      body.dark .tag.is-danger { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+      /* Links in table */
+      td a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      td a:hover {
+        color: var(--primary-dark);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../index.html#projet">Projet</a>
+          <a href="../index.html#langues">Langues</a>
+          <a href="../index.html#equipe">Contributeurs </a>
+          <a href="../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Tableau ${FICHIER_URLS}</h1>
+      <p>Résultats de l'analyse pour ${LABEL_SENS1} / ${LABEL_SENS2}</p>
+    </header>
+
+    <main>
+      <a href="../index.html#langues" class="back-link">← Retour aux langues</a>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>N°</th>
+                <th>URL</th>
+                <th>Code HTTP</th>
+                <th>Encodage</th>
+                <th>Nb mots</th>
+                <th>Occ :<br>${LABEL_SENS1}</th>
+                <th>Occ :<br>${LABEL_SENS2}</th>
+                <th>Dump HTML</th>
+                <th>Dump Text</th>
+                <th>Concord.</th>
+                <th>Bigrammes</th>
+                <th>Robots.txt</th>
+              </tr>
+            </thead>
+            <tbody>
+HEADER
+
+
+# Permet d'afficher la progression de traitement des URLs
+TOTAL=$(wc -l < "../URLs/$FICHIER_URLS.txt")
+
+
+# ==============================================
+#      BOUCLE POUR LA GÉNÉRATION DU TABLEAU    
+# ==============================================
+# Boucle qui lit le fichier ligne pas ligne
+while read -r line; do
+	line=$(echo "$line" | tr -d '\r')
+	# --- Messages d'information (VERBOSE) ----
+	log "[$n/$TOTAL] Traitement URL: $line"
+
+	# Récupération du code HTML de l'URL
+	CODE=$(curl -sL --max-time 20 -A "$UA" -o /dev/null -w "%{http_code}" "$line")
+	# Si curl ne renvoie rien, on affiche "000"
+	[[ -z "$CODE" ]] && CODE="000"
+
+	# Si curl n'a pas réussi (000), remplir la ligne du tableau avec des "-", et passer à l'URL suivante
+	if [[ "$CODE" == "000" ]]; then
+		# Badge coloré selon le code HTML
+		BADGE_CODE=$(generer_badge_code "$CODE")
+		# Écrire la ligne HTML
+		echo "<tr>
+			<td>${n}</td>
+			<td class=\"url-cell\"><a href=\"${line}\" target=\"_blank\" rel=\"noopener noreferrer\">${line}</a></td>
+			<td>${BADGE_CODE}</td>
+			<td>-</td>
+			<td>-</td>
+			<td class=\"count-cell\">-</td>
+			<td class=\"count-cell\">-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>     
+		</tr>"
+		# Affiche la progression
+		echo -ne "Progression : $n/$TOTAL\r" >&2
+		# Incrémente le compteur d'URLs
+		n=$((n+1))
+		continue
+	fi
+
+	# Récupérer l'encodage déclaré dans les headers
+	ENCODAGE=$(curl -sIL -L -A "$UA" "$line" | tr -d '\r' | grep -i -o 'charset=[^;[:space:]]*' | head -n1 | cut -d= -f2)
+	# Si pas trouvé : "-"
+	[[ -z "$ENCODAGE" ]] && ENCODAGE="-"
+	# Variable "affichée" 
+	ENCODAGE_AFFICHE="$ENCODAGE"
+
+	# --- Messages d'information (VERBOSE) ----
+	log_step "Encodage (header) : $ENCODAGE"
+
+	# Valeurs par défaut si extraction/compteurs échoue
+	NB_MOTS="-"
+	OCC_SENS1="-"
+	OCC_SENS2="-"
+	LIEN_HTML="-"
+	LIEN_TEXT="-"
+	LIEN_CONC="-"
+    LIEN_BIGRAM="-"
+    ROBOTS_STATUS="-"
+
+	# Chemin pour la sauvegarde de la page HTML aspirée
+	FICHIER_HTML="../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html"
+	# Aspiration du HTML complet
+	curl -sL --compressed -A "$UA" "$line" > "$FICHIER_HTML"
+	# Lien HTML cliquable dans le tableau
+	LIEN_HTML="<a href='../aspirations/${FICHIER_URLS}/${FICHIER_URLS}-${n}.html' style='color: #667eea;'>HTML</a>"
+
+	# Si le fichier HTML n'est pas vide, on continue vers l'extration du texte + KWIC
+	if [[ -s "$FICHIER_HTML" ]]; then
+		# Détecte l'encodage "réel" via file
+		ENCODAGE_DETECTE=$(file -b --mime-encoding "$FICHIER_HTML")
+
+		# --- Messages d'information (VERBOSE) ----
+		log_step "Encodage (file)   : $ENCODAGE_DETECTE"
+
+		# Par défaut, lynx travaille sur le fichier aspiré
+		HTML_POUR_LYNX="$FICHIER_HTML"
+		# Supprime le fichier temporaire s'il a été crée
+		TEMP_HTML=0
+
+		# Si le serveur dit "UTF-8", on force un meta charset utf-8, et on travaille sur une copie temporaire
+		if [[ "$ENCODAGE" =~ [Uu][Tt][Ff]-8 ]]; then
+			# --- Messages d'information (VERBOSE) ----
+			log_step "Choix : header annonce UTF-8 → on force <meta charset=utf-8> et on extrait avec lynx"
+			ENCODAGE_AFFICHE="UTF-8"
+			# Création d'une copie temporaire (dans dumps-text)
+			HTML_POUR_LYNX="../dumps-text/${FICHIER_URLS}/temp-utf8-${n}.html"
+			cp "$FICHIER_HTML" "$HTML_POUR_LYNX"
+			TEMP_HTML=1
+			# Corrige/injecte <meta charset="utf-8"> dans le HTML
+			forcer_charset_utf8_html "$HTML_POUR_LYNX"
+			# Lynx → txt + calcule nb mots + calcule OCC + génère concordancier
+			extraire_et_compter "$HTML_POUR_LYNX" "$n" "$line"
+		else
+			# Si le fichier est déjà lisible comme UTF-8
+			if iconv -f UTF-8 -t UTF-8 "$FICHIER_HTML" >/dev/null 2>&1; then
+				# --- Messages d'information (VERBOSE) ----
+				log_step "Cas B : le HTML est déjà valide en UTF-8 (iconv UTF-8→UTF-8 OK)"
+				ENCODAGE_AFFICHE="UTF-8"
+				# Idem
+				HTML_POUR_LYNX="../dumps-text/${FICHIER_URLS}/temp-utf8-${n}.html"
+				cp "$FICHIER_HTML" "$HTML_POUR_LYNX"
+				TEMP_HTML=1
+				forcer_charset_utf8_html "$HTML_POUR_LYNX"
+				extraire_et_compter "$HTML_POUR_LYNX" "$n" "$line"
+			else
+				# On choisit un encodage à utiliser :
+				# - d'abord : headers (ENCODAGE)
+				# - sinon   : encodage détecté par file (ENCODAGE_DETECTE)
+				# - sinon.  : fallback windows-1251
+				ENC_UTILISE="$ENCODAGE"
+				ENC_UTILISE=$(echo "$ENC_UTILISE" | tr '[:upper:]' '[:lower:]')
+				ENC_UTILISE=${ENC_UTILISE%%;*}
+				ENC_UTILISE=${ENC_UTILISE%%,*}
+				if [[ -z "$ENC_UTILISE" || "$ENC_UTILISE" == "-" ]]; then
+				ENC_UTILISE="$ENCODAGE_DETECTE"
+				fi
+				if [[ "$ENC_UTILISE" == "binary" || "$ENC_UTILISE" == "unknown-8bit" || -z "$ENC_UTILISE" ]]; then
+				ENC_UTILISE="windows-1251"
+				fi
+
+				log_step "Conversion nécessaire → encodage utilisé : $ENC_UTILISE"
+
+				# Fichier temporaire
+				HTML_POUR_LYNX="../dumps-text/${FICHIER_URLS}/temp-utf8-${n}.html"
+				TEMP_HTML=1
+
+				# Conversion de l'encodage d'origine en UTF-8
+				if iconv -f "$ENC_UTILISE" -t UTF-8 "$FICHIER_HTML" > "$HTML_POUR_LYNX" 2>/dev/null; then
+					log_step "Conversion réussie ($ENC_UTILISE → UTF-8)"
+					# Si la conversion a produit qqch de non vide
+					if [[ -s "$HTML_POUR_LYNX" ]]; then
+						# On force la balise meta en UTF-8
+						ENCODAGE_AFFICHE="UTF-8"
+						forcer_charset_utf8_html "$HTML_POUR_LYNX"
+						# Extration texte + comptages + KWIC
+						extraire_et_compter "$HTML_POUR_LYNX" "$n" "$line"
+					fi
+				fi
+			fi
+		fi
+		# Nettoyage (supprime le fichier temporaire s'il a été créé)
+		if (( TEMP_HTML )); then rm -f "$HTML_POUR_LYNX"; fi
+	fi
+
+	# Écrire la ligne finale du tableau HTML
+	BADGE_CODE=$(generer_badge_code "$CODE")
+	echo "<tr>
+		<td>${n}</td>
+		<td class=\"url-cell\"><a href=\"${line}\" target=\"_blank\" rel=\"noopener noreferrer\">${line}</a></td>
+		<td>${BADGE_CODE}</td>
+		<td>${ENCODAGE_AFFICHE}</td>
+		<td>${NB_MOTS}</td>
+		<td class=\"count-cell\">${OCC_SENS1}</td>
+		<td class=\"count-cell\">${OCC_SENS2}</td>
+		<td>${LIEN_HTML}</td>
+		<td>${LIEN_TEXT}</td>
+		<td>${LIEN_CONC}</td>
+        <td>${LIEN_BIGRAM}</td>
+        <td>${ROBOTS_STATUS}</td>
+	</tr>"
+
+	# Màj de la progression
+	echo -ne "Progression : $n/$TOTAL\r" >&2
+	# URL suivante
+	n=$((n+1))
+
+done < "../URLs/$FICHIER_URLS.txt"
+
+# Message final dans le terminal
+echo -e "\n✓ Terminé ! $((n-1)) URLs traitées." >&2
+
+# Ajout de la fin du HTML
+cat << 'FOOTER'
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+    </footer>
+
+    <script>
+      const btn = document.getElementById('themeToggle');
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.body.classList.add('dark');
+
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+      }
+      updateBtn();
+
+      btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        updateBtn();
+      });
+    </script>
+  </body>
+</html>
+FOOTER
+
+} > "../tableaux/$FICHIER_SORTIE.html"

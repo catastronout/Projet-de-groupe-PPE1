@@ -64,3 +64,39 @@ python3 cooccurrents.py \
 
 Et La même commande a été utilisée pour le mot « 자립 », en modifiant uniquement la valeur de l’option --target.
 
+## 30 décembre
+
+**Sarah** : Aujourd’hui, j’ai repris le script principal (main) pour y intégrer plusieurs fonctionnalités qu’on avait dans main_kr.sh. Ça m’a pris un moment parce qu’il fallait tout fusionner proprement, sans redondances, pour que tout tourne bien peu importe la langue.
+
+Pour le bélarussien, j’ai fusionné les deux fichiers texte (les deux sens du mot) en un seul tableau avec deux colonnes d’occurrences, une pour chaque sens. C’est plus clair comme ça, on voit direct les différences.
+
+J’ai aussi ajouté une liste de mots spécifiques au bélarussien pour repérer les occurrences dans le corpus. Et j’ai intégré un mode verbose/debug, super pratique pour suivre ce que fait le script et comprendre où ça plante. J’ai aussi un peu bossé sur la lisibilité : noms de colonnes plus clairs et liens cliquables dans les tableaux pour checker les sources plus vite.
+
+## 31 décembre
+
+**Sarah** : J’ai continué le script en bossant surtout sur le mode verbose. Je l’ai amélioré pour qu’il affiche l’encodage des fichiers traités, parce qu’on a eu pas mal de soucis avec des pages en Windows-1251 qui passaient mal en UTF-8, donc perte de données.
+
+Maintenant, pour chaque URL, le script affiche le charset des headers HTTP, l’encodage détecté (avec file), et il balance un message clair quand y a un souci d’encodage. Grâce à ça, j’ai mieux capté pourquoi certaines pages posaient problème et j’ai pu documenter les cas à traiter à la main.
+
+## 1e janvier
+
+**Sarah** : J’ai bossé sur la génération du concordancier. J’ai ajouté des vérifs automatiques : combien de fichiers sont traités, si les motifs sont bien trouvés, etc. Ça évite d’avoir un résultat tout pété ou incomplet.
+
+J’en ai profité pour nettoyer un peu le code, virer des doublons qui traînaient depuis plusieurs itérations, et solidifier le tout. Niveau affichage, j’ai standardisé le style des concordanciers avec Bulma, pour que ça soit propre et uniforme entre toutes les langues.
+
+## 2 janvier
+
+**Sarah** : Journée un peu galère. Surtout des bugs avec le corpus coréen : certaines occurrences étaient plus détectées correctement. En plus, des blocs intermédiaires plantaient parfois.
+
+Après pas mal de tests et d’essais, Yeji a réussi à trouver et corriger le souci. Une fois que c’était réglé, j’ai relancé toute la chaîne : make_pals, extraction des cooccurrents, partition du corpus, etc. Bref, beaucoup d’ajustements, de relances et de mini-fixes pour que tout tourne bien.
+
+
+## 3-4 janvier
+
+**Sarah** : Je me suis concentrée sur le site web du projet, surtout sur la page d’analyse du bélarussien. J’ai posé les bases du design général : typographie, couleurs, grilles, pour que toutes les pages aient une cohérence visuelle et que ça ne donne pas un effet brouillon entre les langues.
+
+Ensuite, j’ai intégré les résultats du pipeline sur la page bélarussienne : tableaux, nuages de mots, et les premiers commentaires d’analyse. J’ai fait en sorte que la structure de la page suive la logique de l’analyse, avec d’abord les données, ensuite les visualisations, puis l’interprétation, tout en gardant l’ensemble clair et agréable à lire.
+
+Le lendemain, j’ai repris le texte analytique pour qu’il soit bien aligné avec les résultats obtenus, que ce soit sur les cooccurrences, les spécificités lexicales ou les nuages. J’ai fait attention à rester rigoureuse dans les interprétations, surtout pour les nuages de mots, histoire d’éviter les surinterprétations.
+
+J’ai terminé par une série de tests pour vérifier la navigation et l’affichage des différents éléments : liens, images, tableaux, graphiques. Tout semble bien en place, la page tient la route, et le projet commence vraiment à prendre sa forme finale.

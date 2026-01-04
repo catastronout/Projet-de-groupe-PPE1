@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Analyse Biélorusse — Projet PPE1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js pour les graphiques -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --accent: #f093fb;
+            --bg: #fafafa;
+            --bg-card: #ffffff;
+            --text: #1a1a2e;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+            --shadow-hover: 0 8px 32px rgba(102, 126, 234, 0.2);
+            --radius: 16px;
+            --radius-sm: 8px;
+            --sens1: #667eea;
+            --sens2: #f093fb;
+        }
+
+        body.dark {
+            --bg: #0f0f1a;
+            --bg-card: #1a1a2e;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #2d2d44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .theme-toggle {
+            background: var(--border);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        .page-header {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+        }
+
+        .lang-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .page-header h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Main */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* Word clouds grid */
+        .clouds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .cloud-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .cloud-card-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cloud-card-header .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .cloud-card-header .dot.sens1 { background: var(--sens1); }
+        .cloud-card-header .dot.sens2 { background: var(--sens2); }
+
+        .cloud-card-header h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.25rem;
+        }
+
+        .cloud-card-header .word {
+            margin-left: auto;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .cloud-image {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            color: var(--text-muted);
+        }
+
+        .cloud-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .cloud-placeholder {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .cloud-placeholder .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-card .value {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-card .label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Charts */
+        .chart-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .chart-card h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+        }
+
+        /* Table */
+        .table-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .table-card-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .table-card-header h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.25rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th, .data-table td {
+            padding: 0.875rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table th {
+            background: var(--bg);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table tbody tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .data-table .word {
+            font-weight: 600;
+        }
+
+        .data-table .positive {
+            color: var(--sens1);
+            font-weight: 600;
+        }
+
+        .data-table .negative {
+            color: var(--sens2);
+            font-weight: 600;
+        }
+
+        /* Links */
+        .action-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.875rem 1.5rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .clouds-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Autonomie</a>
+            <div class="nav-links">
+                <a href="../index.html#projet">Projet</a>
+                <a href="../index.html#langues">Langues</a>
+                <a href="../index.html#equipe">Équipe</a>
+                <a href="../scripts.html">Scripts</a>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <span class="lang-badge">🇧🇾 Беларуская мова</span>
+        <h1>Analyse Biélorusse</h1>
+        <p>Étude comparative des deux sens du mot « autonomie » en biélorusse : 
+           <strong>аўтаномія</strong> vs <strong>аўтаномнасьць</strong>.</p>
+    </header>
+
+    <main>
+        <!-- Stats -->
+        <section>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="value">XXX</div>
+                    <div class="label">URLs analysées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">XXX</div>
+                    <div class="label">Occurrences sens 1</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">XXX</div>
+                    <div class="label">Occurrences sens 2</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">XXX</div>
+                    <div class="label">Tokens total</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Word Clouds -->
+        <section>
+            <div class="section-header">
+                <h2>☁️ Nuages de mots</h2>
+                <p>Visualisation des termes les plus fréquents dans les contextes de chaque sens.</p>
+            </div>
+
+            <div class="clouds-grid">
+                <div class="cloud-card">
+                    <div class="cloud-card-header">
+                        <span class="dot sens1"></span>
+                        <h3>Sens 1</h3>
+                        <span class="word">аўтаномія</span>
+                    </div>
+                    <div class="cloud-image">
+                        <!-- Remplacer par l'image réelle -->
+                        <div class="cloud-placeholder">
+                            <div class="icon">🖼️</div>
+                            <p>Remplacer par :<br><code>nuage-be-sens1.png</code></p>
+                        </div>
+                        <!-- <img src="../images/nuage-be-sens1.png" alt="Nuage de mots sens 1"> -->
+                    </div>
+                </div>
+
+                <div class="cloud-card">
+                    <div class="cloud-card-header">
+                        <span class="dot sens2"></span>
+                        <h3>Sens 2</h3>
+                        <span class="word">аўтаномнасьць</span>
+                    </div>
+                    <div class="cloud-image">
+                        <!-- Remplacer par l'image réelle -->
+                        <div class="cloud-placeholder">
+                            <div class="icon">🖼️</div>
+                            <p>Remplacer par :<br><code>nuage-be-sens2.png</code></p>
+                        </div>
+                        <!-- <img src="../images/nuage-be-sens2.png" alt="Nuage de mots sens 2"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequency Chart -->
+        <section>
+            <div class="section-header">
+                <h2>📊 Distribution des occurrences</h2>
+                <p>Comparaison de la fréquence des deux sens dans le corpus.</p>
+            </div>
+
+            <div class="chart-card">
+                <h3>Occurrences par URL</h3>
+                <div class="chart-container">
+                    <canvas id="freqChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partition Results -->
+        <section>
+            <div class="section-header">
+                <h2>🎯 Spécificités lexicales (partition.py)</h2>
+                <p>Mots caractéristiques de chaque sens selon l'indice de Lafon.</p>
+            </div>
+
+            <div class="table-card">
+                <div class="table-card-header">
+                    <h3>Top 20 des mots spécifiques</h3>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mot</th>
+                            <th>Total</th>
+                            <th>Sens 1</th>
+                            <th>Spécif. 1</th>
+                            <th>Sens 2</th>
+                            <th>Spécif. 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Exemple de données - à remplacer par les vraies données -->
+                        <tr>
+                            <td class="word">дзяржава</td>
+                            <td>45</td>
+                            <td>38</td>
+                            <td class="positive">+4.23</td>
+                            <td>7</td>
+                            <td class="negative">-4.23</td>
+                        </tr>
+                        <tr>
+                            <td class="word">электрамабіль</td>
+                            <td>32</td>
+                            <td>5</td>
+                            <td class="negative">-3.87</td>
+                            <td>27</td>
+                            <td class="positive">+3.87</td>
+                        </tr>
+                        <tr>
+                            <td class="word">нацыянальны</td>
+                            <td>28</td>
+                            <td>24</td>
+                            <td class="positive">+3.54</td>
+                            <td>4</td>
+                            <td class="negative">-3.54</td>
+                        </tr>
+                        <!-- Ajouter plus de lignes -->
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: var(--text-muted); font-style: italic;">
+                                Remplacer par les données de partition-be.tsv
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Actions -->
+        <div class="action-links">
+            <a href="../tableaux/tableau-be.html" class="btn btn-primary">📋 Voir le tableau complet</a>
+            <a href="../concordances/be/" class="btn btn-secondary">📖 Concordances</a>
+            <a href="../index.html#langues" class="btn btn-secondary">← Retour aux langues</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2024-2025</p>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const btn = document.getElementById('themeToggle');
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark') document.body.classList.add('dark');
+
+        function updateBtn() {
+            btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        }
+        updateBtn();
+
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+            updateBtn();
+        });
+
+        // Chart.js - Frequency chart
+        // Remplacer ces données par les vraies données
+        const ctx = document.getElementById('freqChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['URL 1', 'URL 2', 'URL 3', 'URL 4', 'URL 5', 'URL 6', 'URL 7', 'URL 8', 'URL 9', 'URL 10'],
+                datasets: [
+                    {
+                        label: 'аўтаномія (sens 1)',
+                        data: [12, 8, 15, 5, 10, 7, 14, 3, 9, 11],
+                        backgroundColor: 'rgba(102, 126, 234, 0.7)',
+                        borderColor: 'rgba(102, 126, 234, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'аўтаномнасьць (sens 2)',
+                        data: [3, 6, 2, 12, 4, 9, 1, 15, 7, 5],
+                        backgroundColor: 'rgba(240, 147, 251, 0.7)',
+                        borderColor: 'rgba(240, 147, 251, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: getComputedStyle(document.body).getPropertyValue('--text').trim() || '#1a1a2e',
+                            font: { family: 'DM Sans' }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#6b7280' },
+                        grid: { color: 'rgba(107, 114, 128, 0.1)' }
+                    },
+                    y: {
+                        ticks: { color: '#6b7280' },
+                        grid: { color: 'rgba(107, 114, 128, 0.1)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

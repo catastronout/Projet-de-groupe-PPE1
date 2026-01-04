@@ -1,72 +1,787 @@
 <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Autonomie — Projet PPE1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --accent: #f093fb;
+            --bg: #fafafa;
+            --bg-card: #ffffff;
+            --text: #1a1a2e;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+            --shadow-hover: 0 8px 32px rgba(102, 126, 234, 0.2);
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
 
-<html>
+        body.dark {
+            --bg: #0f0f1a;
+            --bg-card: #1a1a2e;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #2d2d44;
+            --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 8px 32px rgba(102, 126, 234, 0.3);
+        }
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Miniprojet PPE1</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <style>
-            .hero {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-            }
-            .card {
-                border-radius: 8px;
-                box-shadow: 0 2px 15px rgba(0,0,0,0.1)
-            }
-            .button.is-primary {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                border: none;
-            }
-            .button.is-primary:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-            }
-        </style>
-    </head>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <body>
-        <section class="hero is-small">
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <h1 class="title has-text-white">Projet PPE1</h1>
-                        <p class="subtitle has-text-white-ter">La vie des mots sur le Web</p>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            transition: all 0.3s;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            padding: 0 0.1em;
+            margin: 0 -0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: var(--border);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(118, 75, 162, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 80%, rgba(240, 147, 251, 0.05) 0%, transparent 40%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(2%, 2%) rotate(1deg); }
+            66% { transform: translate(-1%, 1%) rotate(-1deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .gradient {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-style: italic;
+            padding: 0 0.1em;
+            margin: 0 -0.1em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-words {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .word-chip {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .word-chip:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .word-chip .flag {
+            margin-right: 0.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Pipeline */
+        .pipeline {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .pipeline-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .pipeline-step {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: 'DM Sans', monospace;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .pipeline-step:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .pipeline-step .num {
+            width: 24px;
+            height: 24px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .pipeline-arrow {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+        }
+
+        /* Language Cards */
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .lang-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .lang-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .lang-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .lang-flag {
+            font-size: 2.5rem;
+        }
+
+        .lang-card h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .lang-card .native {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .lang-words {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .lang-word {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+        }
+
+        .lang-word-text {
+            font-weight: 600;
+        }
+
+        .lang-word-meaning {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .lang-card-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            overflow: hidden;
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .role {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .team-card .lang-badge {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg);
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pipeline-steps {
+                flex-direction: column;
+            }
+
+            .pipeline-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Drapeaux */
+        .flag {
+        display: inline-block;
+        width: 1.4em;
+        height: 1em;
+        margin-right: 0.4em;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: -0.1em;
+        border-radius: 2px;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+        /* Biélorussie – blanc rouge blanc */
+        .flag-by-wrw {
+        background-image: url("flags/be.svg");
+        }
+
+        /* Corée du Sud */
+        .flag-kr {
+        background-image: url("flags/kr.svg");
+        }
+
+        /* Turquie */
+        .flag-tr {
+        background-image: url("flags/tr.svg");
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Autonomie</a>
+            <div class="nav-links">
+                <a href="#projet">Projet</a>
+                <a href="#langues">Langues</a>
+                <a href="#equipe">Contributeurs</a>
+                <a href="scripts.html">Scripts</a>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">M1 TAL — PPE1 2025-2026</span>
+            <h1>La vie du mot<br><span class="gradient">Autonomie</span><br>sur le Web</h1>
+            <p class="hero-subtitle">
+                Étude comparative de l'usage du concept d'autonomie à travers trois langues : 
+                le bélarussien, le coréen et le turc.
+            </p>
+            <div class="hero-words">
+                <span class="word-chip">
+                    <span class="flag flag-by-wrw"></span> аўтаномія
+                </span>
+
+                <span class="word-chip">
+                    <span class="flag flag-by-wrw"></span> аўтаномнасьць
+                </span>
+
+                <span class="word-chip">
+                    <span class="flag flag-kr"></span> 자율
+                </span>
+
+                <span class="word-chip">
+                    <span class="flag flag-kr"></span> 자립
+                </span>
+
+                <span class="word-chip">
+                    <span class="flag flag-tr"></span> otonomi
+                </span>
+
+                <span class="word-chip">
+                    <span class="flag flag-tr"></span> özerklik
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Projet -->
+    <section id="projet">
+        <div class="section-header">
+            <h2>Le Projet</h2>
+            <p>Constitution d'un corpus multilingue et analyse linguistique à l'aide d'outils Unix et Python.</p>
+        </div>
+
+        <div class="pipeline">
+            <h3 style="text-align: center; margin-bottom: 2rem; font-family: 'Instrument Serif', serif;">Chaîne de traitement</h3>
+            <div class="pipeline-steps">
+                <div class="pipeline-step">
+                    <span class="num">1</span>
+                    <span>main.sh</span>
+                </div>
+                <span class="pipeline-arrow">→</span>
+                <div class="pipeline-step">
+                    <span class="num">2</span>
+                    <span>concat_contextes.sh</span>
+                </div>
+                <span class="pipeline-arrow">→</span>
+                <div class="pipeline-step">
+                    <span class="num">3</span>
+                    <span>make_pals_corpus.sh</span>
+                </div>
+                <span class="pipeline-arrow">→</span>
+                <div class="pipeline-step">
+                    <span class="num">4</span>
+                    <span>cooccurrents.py</span>
+                </div>
+                <span class="pipeline-arrow">→</span>
+                <div class="pipeline-step">
+                    <span class="num">5</span>
+                    <span>partition.py</span>
+                </div>
+                <span class="pipeline-arrow">→</span>
+                <div class="pipeline-step">
+                    <span class="num">6</span>
+                    <span>wordcloud</span>
                 </div>
             </div>
-        </section>
-        
-        <section class="section">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div class="column is-8">
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="content">
-                                    <p>Le but de ce projet est :</p>
-                                    <ul>
-                                        <li>étudier l’usage un mot et ses “variations” en plusieurs langues sur le Web,</li>
-                                        <li>l'constituer un corpus multilingue,</li>
-                                        <li>constitution à l’aide d’outils Unix .</li>
-                                    </ul>
-                                    <p>Toutes ces informations sont rassemblées dans les tableaux suivants :</p>
-                                    <p class="has-text-centered mt-5"><a href="tableaux/tableau-be1.html" class="button is-primary is-medium">Bélarussien sens 1</a></p>
-                                    <p class="has-text-centered mt-5"><a href="tableaux/tableau-be2.html" class="button is-primary is-medium">Bélarussien sens 2</a></p>
-                                    <p class="has-text-centered mt-5"><a href="tableaux/tableau-kr.html" class="button is-primary is-medium">Coréen</a></p>
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-muted);">
+                <a href="scripts.html" style="color: var(--primary);">Voir le détail des scripts →</a>
+            </p>
+        </div>
+    </section>
 
-                                </div>
-                            </div>
-                        </div>
+    <!-- Langues -->
+    <section id="langues">
+        <div class="section-header">
+            <h2>Les Langues</h2>
+            <p>Explorez les résultats pour chaque langue étudiée.</p>
+        </div>
+
+        <div class="lang-grid">
+            <!-- Bélarussien -->
+            <div class="lang-card">
+                <div class="lang-card-header">
+                    <span class="lang-flag">🇧🇾</span>
+                    <div>
+                        <h3>Biélorusse</h3>
+                        <span class="native">Беларуская мова</span>
                     </div>
                 </div>
+                <div class="lang-words">
+                    <div class="lang-word">
+                        <span class="lang-word-text">аўтаномія</span>
+                        <span class="lang-word-meaning">sens 1</span>
+                    </div>
+                    <div class="lang-word">
+                        <span class="lang-word-text">аўтаномнасьць</span>
+                        <span class="lang-word-meaning">sens 2</span>
+                    </div>
+                </div>
+                <div class="lang-card-actions">
+                    <a href="tableaux/tableau-be.html" class="btn btn-primary">Tableau</a>
+                    <a href="analyses/analyse-be.html" class="btn btn-secondary">Analyse</a>
+                </div>
             </div>
-        </section>
 
-        <footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-            <div class="content has-text-centered">
-                <p class="is-size-7 has-text-gray">Projet PPE1 - M1 TAL</p>
+            <!-- Coréen -->
+            <div class="lang-card">
+                <div class="lang-card-header">
+                    <span class="lang-flag">🇰🇷</span>
+                    <div>
+                        <h3>Coréen</h3>
+                        <span class="native">한국어</span>
+                    </div>
+                </div>
+                <div class="lang-words">
+                    <div class="lang-word">
+                        <span class="lang-word-text">자율</span>
+                        <span class="lang-word-meaning">jayul — autonomie</span>
+                    </div>
+                    <div class="lang-word">
+                        <span class="lang-word-text">자립</span>
+                        <span class="lang-word-meaning">jarip — indépendance</span>
+                    </div>
+                </div>
+                <div class="lang-card-actions">
+                    <a href="tableaux/tableau-kr.html" class="btn btn-primary">Tableau</a>
+                    <a href="analyses/analyse-kr.html" class="btn btn-secondary">Analyse</a>
+                </div>
             </div>
-        </footer>
-    </body>
 
+            <!-- Turc -->
+            <div class="lang-card">
+                <div class="lang-card-header">
+                    <span class="lang-flag">🇹🇷</span>
+                    <div>
+                        <h3>Turc</h3>
+                        <span class="native">Türkçe</span>
+                    </div>
+                </div>
+                <div class="lang-words">
+                    <div class="lang-word">
+                        <span class="lang-word-text">otonomi</span>
+                        <span class="lang-word-meaning">emprunt</span>
+                    </div>
+                    <div class="lang-word">
+                        <span class="lang-word-text">özerklik</span>
+                        <span class="lang-word-meaning">natif turc</span>
+                    </div>
+                </div>
+                <div class="lang-card-actions">
+                    <a href="tableaux/tableau-tr.html" class="btn btn-primary">Tableau</a>
+                    <a href="analyses/analyse-tr.html" class="btn btn-secondary">Analyse</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipe -->
+    <section id="equipe">
+        <div class="section-header">
+            <h2>Contributeurs</h2>
+            <p>Membres du groupe ayant participés au projet</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar">
+                    <!-- Placeholder - remplacer par l'image Notion -->
+                    🦊
+                </div>
+                <h3>Sarah</h3>
+                <span class="lang-badge">🇧🇾 Biélorusse</span>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <!-- Placeholder -->
+                    🌸
+                </div>
+                <h3>Yeji</h3>
+                <span class="lang-badge">🇰🇷 Coréen</span>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <!-- Placeholder -->
+                    🌙
+                </div>
+                <h3>Umut-Gazi</h3>
+                <span class="lang-badge">🇹🇷 Turc</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://github.com/votre-repo">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const btn = document.getElementById('themeToggle');
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark') document.body.classList.add('dark');
+
+        function updateBtn() {
+            btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        }
+        updateBtn();
+
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+            updateBtn();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
 </html>

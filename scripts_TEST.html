@@ -421,15 +421,6 @@
         .flag-by-wrw { background-image: url("flags/be.svg"); }
         .flag-kr { background-image: url("flags/kr.svg"); }
         .flag-tr { background-image: url("flags/tr.svg"); }
-
-        /* Liens lisibles en dark mode */
-        body.dark a {
-            color: #ffffff;
-        }
-
-        body.dark a:hover {
-            color: var(--accent);
-        }
     </style>
 </head>
 <body>
@@ -440,7 +431,7 @@
             <div class="nav-links">
                 <a href="index.html#projet">Projet</a>
                 <a href="index.html#langues">Langues</a>
-                <a href="index.html#equipe">Contributeurs</a>
+                <a href="index.html#equipe">Équipe</a>
                 <a href="scripts.html" class="active">Scripts</a>
                 <button class="theme-toggle" id="themeToggle">🌙</button>
             </div>
@@ -477,7 +468,7 @@
             <div class="script-header">
                 <span class="num">1</span>
                 <h2>main.sh</h2>
-                <span class="badge">VERBOSE</span> <span class="badge">DEBUG</span>
+                <span class="badge">VERBOSE</span>
             </div>
             <p class="script-description">
                 Script principal qui aspire les pages web, extrait le texte, génère les concordances KWIC 
@@ -485,23 +476,15 @@
             </p>
 
             <div class="note">
-                <span class="note-icon">⚠️</span>
-                <div class="note-content">
-                    <strong>Prérequis :</strong> <code>pip install trafilatura</code> → pour l'extraction du texte des pages web.
-                </div>
-            </div>
-
-            <div class="note">
                 <span class="note-icon">💡</span>
                 <div class="note-content">
-                    <strong>Mode verbose disponible :</strong> Ajoutez <code>-v</code> → pour voir les détails d'exécution.<br>
-                    <strong>Mode debug disponible :</strong> Ajoutez <code>-d</code> → pour pour afficher la trace complète de l’exécution.
+                    <strong>Mode verbose disponible :</strong> Ajoutez <code>-v</code> pour voir les détails d'exécution.
                 </div>
             </div>
 
             <div class="tabbed-code">
                 <div class="code-tabs">
-                    <button class="code-tab active" data-tab="be1"><span class="flag flag-by-wrw"></span>Bélarussien</button>
+                    <button class="code-tab active" data-tab="be1"><span class="flag flag-by-wrw"></span>Biélorusse</button>
                     <button class="code-tab" data-tab="kr1"><span class="flag flag-kr"></span>Coréen</button>
                     <button class="code-tab" data-tab="tr1"><span class="flag flag-tr"></span>Turc</button>
                 </div>
@@ -512,7 +495,10 @@
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
                         <pre><code class="language-bash"># Avec fichiers de formes fléchies
-bash main.sh be tableau-be data_be1.txt data_be2.txt</code></pre>
+bash main.sh be tableau-be data_be1.txt data_be2.txt
+
+# Sans fichiers (saisie interactive)
+bash main.sh be tableau-be</code></pre>
                     </div>
                 </div>
                 <div class="tab-content" id="kr1">
@@ -521,7 +507,10 @@ bash main.sh be tableau-be data_be1.txt data_be2.txt</code></pre>
                             <span class="code-lang"><span class="dot"></span>bash</span>
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
-                        <pre><code class="language-bash"># Sans fichiers (saisie interactive)
+                        <pre><code class="language-bash"># Avec fichiers de formes
+bash main.sh kr tableau-kr data_kr1.txt data_kr2.txt
+
+# Sans fichiers (saisie interactive)
 bash main.sh kr tableau-kr</code></pre>
                     </div>
                 </div>
@@ -531,8 +520,11 @@ bash main.sh kr tableau-kr</code></pre>
                             <span class="code-lang"><span class="dot"></span>bash</span>
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
-                        <pre><code class="language-bash"># Avec fichiers de formes fléchies
-bash main.sh tr tableau-tr data_tr1.txt data_tr2.txt</code></pre>
+                        <pre><code class="language-bash"># Avec fichiers de formes
+bash main.sh tr tableau-tr data_tr1.txt data_tr2.txt
+
+# Sans fichiers (saisie interactive)
+bash main.sh tr tableau-tr</code></pre>
                     </div>
                 </div>
             </div>
@@ -551,7 +543,7 @@ bash main.sh tr tableau-tr data_tr1.txt data_tr2.txt</code></pre>
 
             <div class="tabbed-code">
                 <div class="code-tabs">
-                    <button class="code-tab active" data-tab="be2"><span class="flag flag-by-wrw"></span>Bélarussien</button>
+                    <button class="code-tab active" data-tab="be2"><span class="flag flag-by-wrw"></span>Biélorusse</button>
                     <button class="code-tab" data-tab="kr2"><span class="flag flag-kr"></span>Coréen</button>
                     <button class="code-tab" data-tab="tr2"><span class="flag flag-tr"></span>Turc</button>
                 </div>
@@ -605,7 +597,7 @@ bash main.sh tr tableau-tr data_tr1.txt data_tr2.txt</code></pre>
 
             <div class="tabbed-code">
                 <div class="code-tabs">
-                    <button class="code-tab active" data-tab="be3"><span class="flag flag-by-wrw"></span>Bélarussien</button>
+                    <button class="code-tab active" data-tab="be3"><span class="flag flag-by-wrw"></span>Biélorusse</button>
                     <button class="code-tab" data-tab="kr3"><span class="flag flag-kr"></span>Coréen</button>
                     <button class="code-tab" data-tab="tr3"><span class="flag flag-tr"></span>Turc</button>
                 </div>
@@ -667,7 +659,7 @@ bash make_pals_corpus.sh ../pals/contexte-tr-sens2.txt tr > ../pals/pals-tr-sens
 
             <div class="tabbed-code">
                 <div class="code-tabs">
-                    <button class="code-tab active" data-tab="be4"><span class="flag flag-by-wrw"></span>Bélarussien</button>
+                    <button class="code-tab active" data-tab="be4"><span class="flag flag-by-wrw"></span>Biélorusse</button>
                     <button class="code-tab" data-tab="kr4"><span class="flag flag-kr"></span>Coréen</button>
                     <button class="code-tab" data-tab="tr4"><span class="flag flag-tr"></span>Turc</button>
                 </div>
@@ -751,7 +743,7 @@ python cooccurrents.py ../pals/dump-tr.txt \
 
             <div class="tabbed-code">
                 <div class="code-tabs">
-                    <button class="code-tab active" data-tab="be5"><span class="flag flag-by-wrw"></span>Bélarussien</button>
+                    <button class="code-tab active" data-tab="be5"><span class="flag flag-by-wrw"></span>Biélorusse</button>
                     <button class="code-tab" data-tab="kr5"><span class="flag flag-kr"></span>Coréen</button>
                     <button class="code-tab" data-tab="tr5"><span class="flag flag-tr"></span>Turc</button>
                 </div>
@@ -808,13 +800,13 @@ python cooccurrents.py ../pals/dump-tr.txt \
             <div class="note">
                 <span class="note-icon">⚠️</span>
                 <div class="note-content">
-                    <strong>Prérequis :</strong> <code>pip install wordcloud</code> → pour la génération des nuages de mots.
+                    <strong>Prérequis :</strong> <code>pip install wordcloud</code> et une police supportant les caractères de la langue.
                 </div>
             </div>
 
             <div class="tabbed-code">
                 <div class="code-tabs">
-                    <button class="code-tab active" data-tab="be6"><span class="flag flag-by-wrw"></span>Bélarussien</button>
+                    <button class="code-tab active" data-tab="be6"><span class="flag flag-by-wrw"></span>Biélorusse</button>
                     <button class="code-tab" data-tab="kr6"><span class="flag flag-kr"></span>Coréen</button>
                     <button class="code-tab" data-tab="tr6"><span class="flag flag-tr"></span>Turc</button>
                 </div>

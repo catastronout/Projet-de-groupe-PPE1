@@ -1,8 +1,14 @@
-Nişanyan Sözlük
-ç
-ğ
-ı
-ö
-ş
-ü
-ileri arama
+TÜRKİYE İNSANSIZ SİSTEMLERDEKİ İDDİASINI DENİZLERE TAŞIYOR
+Dünya silahlı insansız hava aracı (SİHA) pazarında lider olan Türk savunma sanayisi, bu başarısını denizlere taşımak için emin adımlar atıyor.
+Türkiye, denizlerdeki stratejik çıkarlarını korumak için bir "kuvvet çarpanı" olarak görülen silahlı insansız deniz araçlarının (SİDA) gelişimini teşvik etti.
+Bu süreçte ortaya çıkan ilk araç ULAQ SİDA oldu. ULAQ SİDA'nın aralık ayında Türk Deniz Kuvvetlerine teslim edilmesi platform açısından önemli bir kilometre taşı oldu. Buna paralel olarak, Katar Sahil Güvenlik Komutanlığına bir adet ULAQ 11 PSV/ISR botu teslim edildi. Söz konusu teslimat, Türkiye'nin ilk silahlı insansız deniz aracı ihracatı olarak kayıtlara geçti.
+Bu iki gelişme, ULAQ silahlı insansız deniz araçlarına ilgiyi önemli ölçüde artırdı. Otonomi kabiliyetleriyle ön plana çıkan ULAQ SİDA'nın gerçek son kullanıcıyla operasyonel ortamda buluşması, sistemin teknoloji olgunluk seviyesini üst düzeye taşıdı, sahadan alınan olumlu kullanıcı geri bildirimleri sayesinde sistem farklı coğrafyalardaki potansiyel kullanıcıların da dikkatini çekti. Bu gelişme, ULAQ özelindeki iş geliştirme faaliyetlerinin hız kazanmasında belirleyici rol oynadı.
+Tüm bu gelişmeler ışığında, Ares Tersanesi ve ULAQ Global, Milli Savunma Bakanlığı izni çerçevesinde, yurt içi ve dışındaki birçok dost ve müttefik ülkeyle iş geliştirme faaliyetleri yürütüyor.
+Öncelik Türk Deniz Kuvvetleri ve Sahil Güvenlik Komutanlığı ihtiyaçlarını karşılamak olmakla birlikte, Körfez coğrafyasında çeşitli ülkelerle farklı yeteneklere sahip ULAQ insansız deniz araçları özelinde görüşmeler devam ediyor. İş geliştirme faaliyetleri yalnızca Körfez ülkeleriyle sınırlı kalmayıp, Uzak Doğu ülkeleriyle de farklı iş modelleri üzerinde görüşülüyor. 2026 yılı boyunca yeni ihracat sözleşmelerinin kamuoyuyla paylaşılması bekleniyor.
+- Yeni versiyonlar ve operasyonel konseptler geliştiriliyor
+ULAQ SİDA'nın ana odak noktalarından birini modülerlik oluşturuyor. Aynı platformun farklı faydalı yüklerle donatılarak çeşitli görevleri icra edebilmesi, ULAQ'ın en önemli avantajları arasında yer alıyor. Faydalı yüklerin platforma entegrasyonu ve bu sistemlerin uzaktan ya da otonom olarak görev icra edebilmesi, yeni faydalı yüklerin ortaya çıkmasıyla birlikte süreklilik arz eden bir gelişim sürecini beraberinde getiriyor. Bu kapsamda, farklı faydalı yük üreticileri ile çalışmalar devam ediyor. Yeni versiyonlar ve yeni operasyonel konseptler geliştiriliyor.
+Platformlarda odaklanılan bir diğer kritik alan ise otonomi seviyesi. Katar Sahil Güvenlik Komutanlığına bir yıl önce teslim edilen prototip ULAQ, bir yılı aşkın süredir sahada aktif olarak kullanılıyor. Gerçek kullanıcıyla buluşan ULAQ platformundan elde edilen saha geri bildirimleri düzenli olarak analiz ediliyor. Bu operasyonel tecrübe doğrultusunda, son kullanıcıdan alınan geri bildirimler sayesinde tasarım, otonomi kabiliyetleri ve özellikle platform içi yedeklilik konularında önemli iyileştirmeler gerçekleştirildi. Katar'a teslim edilen iki ULAQ ile birlikte bu gelişim sürecinin artarak devam edeceği öngörülüyor.
+- Öncelik yola yerli motorla devam etmek
+ULAQ platformlarında TÜMOSAN tarafından geliştirilen yerli motor kullanımına geçilmesi, bir tedarik tercihinin yanı sıra sürdürülebilirlik, tedarik güvenliği ve operasyonel bağımsızlık açısından stratejik bir adım oluşturuyor. Bu doğrultuda, ULAQ sınıfı platformlarda yerli motorla yola devam edilmesi temel öncelikler arasında yer alıyor.
+Motorun yanı sıra silah sistemi de yerli, ancak yerlileştirme yaklaşımı bunlarla sınırlı değil. Sevk sistemleri, güç ve enerji yönetimi, otonomiye ilişkin kritik alt sistemler, görev bilgisayarları ve belirli faydalı yük alt bileşenleri başta olmak üzere, platform genelinde yerli ve milli katkı oranını artırmaya yönelik çalışmalar sürdürülüyor. Bu süreçte hem mevcut yerli tedarikçilerle derinleşen işbirlikleri kuruluyor hem de yeni yerli çözüm sağlayıcıları sisteme entegre ediliyor.
+Yürütülen çalışmalarla yalnızca yerli komponent kullanımı değil, tasarım, entegrasyon ve karar verme yetkinliklerinin de ülkede kalıcı hale gelmesi amaçlanıyor. Bu doğrultuda, ULAQ ailesinin gelecek versiyonlarında yerlilik oranının kademeli olarak artırılmasını hedefleniyor.

@@ -1,2 +1,2 @@
-1	özerklik verilmiş
 1	eyaletlerinde özerklik
+1	özerklik verilmiş

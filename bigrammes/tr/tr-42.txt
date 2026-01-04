@@ -1,4 +1,4 @@
-1	otonomisi ve
-1	otonomiye sahipti
 1	yolculuk otonomisi
+1	otonomisi ve
 1	bir otonomiye
+1	otonomiye sahipti

@@ -1,8 +1,11 @@
-Güvenlik Doğrulaması
-Sayın Kullanıcımız,
-Yoğun sorgular nedeniyle sistem performansımız etkilenmektedir.
-Hizmete devam edebilmek için lütfen tek seferlik doğrulama işlemini yapınız.
-Teşekkürler.
-Sürükleyerek doğrulayın
-Doğrulama başarılı olduğunda otomatik olarak asıl sayfanıza yönlendirileceksiniz.
-60
+Silahlı insansız deniz araçlarında ilk teslimat ve ihracat
+Türkiye, savunma sanayisinde insansız sistemlerde elde ettiği tecrübeyi deniz platformlarına taşıyarak yeni bir aşamaya geçti. Silahlı insansız deniz araçları (SİDA) alanında geliştirilen ULAQ, hem ilk teslimat hem de ilk ihracatla dikkati çekti.
+Türkiye’nin bu alandaki ilk platformu olan ULAQ SİDA, aralık ayında Türk Deniz Kuvvetlerine teslim edilerek önemli bir kilometre taşını geride bıraktı. Buna paralel olarak Katar Sahil Güvenlik Komutanlığına bir adet ULAQ 11 PSV/ISR botu teslim edildi. Bu teslimat, Türkiye’nin silahlı insansız deniz araçlarındaki ilk ihracatı olarak kayıtlara geçti.
+İLK TESLİMAT VE İLK İHRACAT
+Bu iki gelişme, ULAQ platformlarına yönelik ilgiyi artırdı. Otonomi kabiliyetleriyle öne çıkan sistemin gerçek son kullanıcıyla operasyonel ortamda buluşması, teknoloji olgunluk seviyesinin yükselmesini sağladı. Sahadan alınan olumlu geri bildirimlerin, farklı coğrafyalardaki potansiyel kullanıcıların da dikkatini çektiği belirtildi.
+Ares Tersanesi ve ULAQ Global, Milli Savunma Bakanlığı izni çerçevesinde yurt içi ve yurt dışındaki dost ve müttefik ülkelerle iş geliştirme faaliyetlerini sürdürüyor. Öncelik Türk Deniz Kuvvetleri ve Sahil Güvenlik Komutanlığının ihtiyaçlarının karşılanması olurken, Körfez ülkeleri başta olmak üzere farklı bölgelerle temaslar devam ediyor. 2026 yılı içinde yeni ihracat sözleşmelerinin kamuoyuna duyurulması bekleniyor.
+OTONOMİ VE YERLİLİK VURGUSU
+ULAQ platformlarının öne çıkan özellikleri arasında modüler yapı ve yüksek otonomi seviyesi yer alıyor. Farklı faydalı yüklerle donatılabilen platform, çeşitli görev profillerine uyum sağlayabiliyor. Katar Sahil Güvenlik Komutanlığı tarafından aktif olarak kullanılan ULAQ’tan elde edilen saha geri bildirimleri doğrultusunda tasarım, otonomi kabiliyetleri ve platform içi yedeklilik alanlarında önemli iyileştirmeler yapıldı.
+Platformlarda TÜMOSAN tarafından geliştirilen yerli motorun kullanımına geçilmesi de stratejik bir adım olarak değerlendiriliyor. Sevk sistemleri, güç ve enerji yönetimi ile kritik alt bileşenlerde yerlilik oranının artırılmasına yönelik çalışmalar sürerken, ULAQ ailesinin gelecek versiyonlarında yerli ve milli katkı oranının kademeli olarak yükseltilmesi hedefleniyor.
+Kaynak:GÜVEN ERDOĞAN
+Türkçe karakter kullanılmayan ve büyük harflerle yazılmış yorumlar onaylanmamaktadır.

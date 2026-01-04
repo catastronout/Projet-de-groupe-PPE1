@@ -1,6 +1,6 @@
-1	Demokratik Özerkliğin
-1	4 Özerklik
-1	Özerkliğin Ekonomik
-1	Özerklik doğrudan
 1	Mantığımız otonomici
 1	otonomici bir
+1	Demokratik Özerkliğin
+1	Özerkliğin Ekonomik
+1	Özerklik doğrudan
+1	4 Özerklik

@@ -1,2 +1,2 @@
-1	bir otonomi
 1	otonomi sunacak
+1	bir otonomi

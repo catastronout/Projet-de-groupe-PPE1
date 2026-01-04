@@ -1,8 +1,8 @@
-2	yürütülen Otonomi
-2	Otonomi derslerinde
 2	sınıfların otonomi
 2	otonomi salonu
-1	otonomi sınıfları
-1	olacaktır Otonomi
+2	yürütülen Otonomi
+2	Otonomi derslerinde
 1	Otonomi sınıfı
 1	bulunan otonomi
+1	otonomi sınıfları
+1	olacaktır Otonomi

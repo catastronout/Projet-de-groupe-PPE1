@@ -13,11 +13,6 @@ bash main.sh be tableau-be data_be1.txt data_be2.txt
 - Sans ces fichiers (il faudra rentrer les deux lemmes dans le terminal) :
 
 ```bash
-# Bélarussien
-bash main.sh be tableau-be
-```
-
-```bash
 # Coréen
 bash main.sh kr tableau-kr
 ```
@@ -27,7 +22,6 @@ bash main.sh kr tableau-kr
 ```bash
 # Bélarussien
 bash concat_contexte_par_sens.sh ../contextes/be be
-```
 
 # Coréen
 bash concat_contexte_par_sens.sh ../contextes/kr kr 
@@ -42,9 +36,7 @@ bash concat_contexte_par_sens.sh ../contextes/kr kr
 ```bash
 # Bélarussien
 bash make_pals_corpus.sh ../dumps-text/be/ be > ../pals/dump-be.txt
-```
 
-```bash
 # Coréen
 bash make_pals_corpus.sh ../dumps-text/kr/ kr > ../pals/dump-kr.txt
 ```
@@ -55,9 +47,7 @@ bash make_pals_corpus.sh ../dumps-text/kr/ kr > ../pals/dump-kr.txt
 # Bélarussien
 bash make_pals_corpus_be.sh ../pals/contexte-be-sens1.txt be > ../pals/pals-be-sens1.txt
 bash make_pals_corpus_be.sh ../pals/contexte-be-sens2.txt be > ../pals/pals-be-sens2.txt
-```
 
-```bash
 # Coréen
 bash make_pals_corpus_copy.sh ../pals/contexte-kr-sens1.txt kr > ../pals/pals-kr-sens1.txt
 bash make_pals_corpus_copy.sh ../pals/contexte-kr-sens2.txt kr > ../pals/pals-kr-sens2.txt

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Analyse Coréen — Projet PPE1</title>
+    <title>Analyse bélarussien - Projet PPE1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -142,9 +142,24 @@
             max-width: 600px;
             margin: 0 auto;
             position: relative;
+        line-height: 1.8;
         }
 
-        /* Main */
+        .page-header p strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .ortho-note {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -169,7 +184,36 @@
             color: var(--text-muted);
         }
 
-        /* Word clouds grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-card .value {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-card .label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
         .clouds-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -216,63 +260,16 @@
         }
 
         .cloud-image {
-            width: 100%;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 2rem;
             background: var(--bg);
-            color: var(--text-muted);
         }
 
         .cloud-image img {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
+            height: auto;
+            display: block;
         }
 
-        .cloud-placeholder {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .cloud-placeholder .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Stats grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-
-        .stat-card .value {
-            font-family: 'Instrument Serif', serif;
-            font-size: 2.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-card .label {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 0.25rem;
-        }
-
-        /* Charts */
         .chart-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -350,7 +347,47 @@
             font-weight: 600;
         }
 
-        /* Links */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .insight-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .insight-card h4 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .insight-card ul {
+            list-style: none;
+            color: var(--text-muted);
+        }
+
+        .insight-card li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .insight-card li::before {
+            content: "→";
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+
         .action-links {
             display: flex;
             gap: 1rem;
@@ -438,7 +475,7 @@
         <span class="lang-badge"><span class="flag flag-kr"></span>한국어</span>
         <h1>Analyse Coréen</h1>
         <p>Étude comparative des deux sens du mot « autonomie » en coréen : 
-           <strong>자율</strong> vs <strong>자립</strong>.</p>
+           <strong>자율</strong> (autonomie normative) vs <strong>자립</strong> (autonomie matérielle/existentielle).</p>
     </header>
 
     <main>
@@ -459,7 +496,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="word-clouds">
             <div class="section-header">
                 <h2>☁️ Nuages de mots</h2>
@@ -504,24 +541,147 @@
         <!-- Frequency Chart -->
         <section>
             <div class="section-header">
-                <h2>📊 Distribution des occurrences</h2>
-                <p>Comparaison de la fréquence des deux sens dans le corpus.</p>
+                <h2>🔍 Insights clés</h2>
+                <p>Différences majeures observées dans l'usage des 2 termes:</p>
             </div>
 
-            <div class="chart-card">
-                <h3>Occurrences par URL</h3>
-                <div class="chart-container">
-                    <canvas id="freqChart"></canvas>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <h4>🤖 자율 : politique/technologique</h4>
+                <ul>
+                    <li>활동 (activité), 운영 (gestion / fonctionnement)</li>
+                    <li>주행 (conduite)</li>
+                    <li>로봇 (robot)</li>
+                    <li>Situations liées aux systèmes, technologies et fonctions organisationnelles</li>
+                </ul>
+        </div>
+
+        <div class="insight-card">
+            <h4>💪 자립 : social/individuel</h4>
+            <ul>
+                <li>장애인 (personnes en situation de handicap)</li>
+                <li>생활 (vie quotidienne)</li>
+                <li>에너지 (énergie)</li>
+                <li>교육 (éducation), 지원 (soutien / aide)</li>
+                <li>Indépendance quotidienne et l'autonomie individuelle</li>
+            </ul>
+        </div>
+
+        <div class="insight-card">
+            <h4>📊 Distribution</h4>
+            <ul>
+                <li>자율 : 260 occurrences</li>
+                <li>자립 : 393 occurrences</li>
+                <li>자립 est utilisé plus fréquemment que 자율 dans le corpus</li>
+                <li>Contextes très distincts</li>
+                <li>Pas d'ambiguïté observée</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+        <!-- Mots spécifiques Chart -->
+<section>
+    <div class="section-header">
+        <h2>📊 Top 10 des mots les plus caractéristiques de chaque sens (partition.py)</h2>
+        <p>Les 5 premiers mots présentés en <span style="color: #E39FCF; font-weight: bold;">rose</span> (주행 « conduite », 학교 « école », 점검 « inspection », 기반 « base / infrastructure », 운영 « fonctionnement / gestion ») s'utilisent principalement avec <strong>자율</strong>, tandis que les 5 autres mots présentés en <span style="color: #6B9BD1; font-weight: bold;">bleu</span> (지원 « soutien », 자립준비청년 « jeunes en préparation à l’autonomie », 장애인 « personnes en situation de handicap », 보호 « protection », 자립지원 « soutien à l’autonomie ») s'utilisent principalement avec <strong>자립</strong>.</p>
+    </div>
+
+    <div style="max-width: 1200px; margin: 0 auto; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+        <!-- Chart container -->
+        <div style="position: relative; padding-left: 150px; padding-right: 20px;">
+            
+            <!-- Y-axis labels and bars -->
+            <div style="position: relative;">
+                
+                <!-- 자율 (핑크색) 상위 5개 -->
+                <div style="margin-bottom: 12px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">주행</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #E39FCF; height: 40px; width: calc(9.77 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+9.77</div>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Partition Results -->
-        <section>
-            <div class="section-header">
-                <h2>🎯 Spécificités lexicales (partition.py)</h2>
-                <p>Mots caractéristiques de chaque sens selon l'indice de Lafon.</p>
+                <div style="margin-bottom: 12px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">학교</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #E5AAD4; height: 40px; width: calc(8.99 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+8.99</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 12px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">점검</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #E8B5D9; height: 40px; width: calc(6.64 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+6.64</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 12px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">기반</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #EBC0DE; height: 40px; width: calc(4.38 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+4.38</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 25px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">운영</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #EECBE3; height: 40px; width: calc(3.68 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+3.68</div>
+                    </div>
+                </div>
+
+                <!-- 자립 (파란색) 하위 5개 -->
+                <div style="margin-bottom: 12px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">지원</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #6B9BD1; height: 40px; width: calc(15.22 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+15.22</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 12px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">자립준비청년</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #7BA5D6; height: 40px; width: calc(14.77 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+14.77</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 12px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">장애인</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #8BB0DB; height: 40px; width: calc(12.22 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+12.22</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 12px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">보호</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #9ABBE0; height: 40px; width: calc(11.86 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+11.86</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 12px; display: flex; align-items: center; position: relative;">
+                    <div style="position: absolute; left: -140px; width: 130px; text-align: right; font-size: 16px; font-weight: 500;">자립지원</div>
+                    <div style="width: 100%; position: relative;">
+                        <div style="background: #AAC6E5; height: 40px; width: calc(9.92 / 15.22 * 70%); display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 14px; border-radius: 4px;">+9.92</div>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- X-axis -->
+            <div style="margin-top: 10px; border-top: 2px solid #333; position: relative; height: 30px;">
+                <div style="position: absolute; left: 0%; top: 5px; font-size: 12px; color: #666;">0</div>
+                <div style="position: absolute; left: 14%; top: 5px; font-size: 12px; color: #666;">+3</div>
+                <div style="position: absolute; left: 28%; top: 5px; font-size: 12px; color: #666;">+6</div>
+                <div style="position: absolute; left: 42%; top: 5px; font-size: 12px; color: #666;">+9</div>
+                <div style="position: absolute; left: 56%; top: 5px; font-size: 12px; color: #666;">+12</div>
+                <div style="position: absolute; left: 70%; top: 5px; font-size: 12px; color: #666;">+15</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
             <div class="table-card">
                 <div class="table-card-header">
@@ -713,7 +873,6 @@
         <!-- Actions -->
         <div class="action-links">
             <a href="../tableaux/tableau-kr.html" class="btn btn-primary">📋 Voir le tableau complet</a>
-            <a href="../concordances/kr/" class="btn btn-secondary">📖 Concordances</a>
             <a href="../index.html#langues" class="btn btn-secondary">← Retour aux langues</a>
         </div>
     </main>

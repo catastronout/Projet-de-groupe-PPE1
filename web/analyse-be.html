@@ -139,7 +139,7 @@
 
         .page-header p {
             color: var(--text-muted);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             position: relative;
         line-height: 1.8;
@@ -170,18 +170,47 @@
             margin-bottom: 4rem;
         }
 
-        .section-header {
-            margin-bottom: 2rem;
+        .text-content {
+            max-width: 900px;
+            margin: 0 auto 3rem;
         }
 
-        .section-header h2 {
+        .text-content h2 {
             font-family: 'Instrument Serif', serif;
             font-size: 2rem;
-            margin-bottom: 0.5rem;
+            margin: 3rem 0 1.5rem;
         }
 
-        .section-header p {
-            color: var(--text-muted);
+        .text-content h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+        }
+
+        .text-content h4 {
+            font-weight: 600;
+            font-size: 1.15rem;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .text-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .text-content ul {
+            margin: 1rem 0 1.5rem 2rem;
+            line-height: 1.8;
+        }
+
+        .text-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .text-content strong {
+            font-weight: 600;
+            color: var(--primary);
         }
 
         .stats-grid {
@@ -218,6 +247,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
+            margin: 3rem 0;
         }
 
         .cloud-card {
@@ -276,7 +306,7 @@
             border-radius: var(--radius);
             padding: 2rem;
             box-shadow: var(--shadow);
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
 
         .chart-card h3 {
@@ -297,6 +327,7 @@
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+            margin: 2rem 0;
         }
 
         .table-card-header {
@@ -351,7 +382,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin: 2rem 0;
         }
 
         .insight-card {
@@ -424,6 +455,23 @@
             border-color: var(--primary);
         }
 
+        /* Drapeaux */
+        .flag {
+        display: inline-block;
+        width: 1.4em;
+        height: 1em;
+        margin-right: 0.4em;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: -0.1em;
+        border-radius: 2px;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+        /* Biélorussie – blanc rouge blanc */
+        .flag-by-wrw { background-image: url("flags/be.svg"); }
+
         /* Footer */
         footer {
             text-align: center;
@@ -436,23 +484,8 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .clouds-grid { grid-template-columns: 1fr; }
+         .page-header h1 { font-size: 2rem; }
         }
-
-        /* Drapeaux */
-        .flag {
-            display: inline-block;
-            width: 1.4em;
-            height: 1em;
-            margin-right: 0.4em;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            vertical-align: -0.1em;
-            border-radius: 2px;
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .flag-by-wrw { background-image: url("flags/be.svg"); }
     </style>
 </head>
 <body>
@@ -473,17 +506,18 @@
     <!-- Header -->
     <header class="page-header">
         <span class="lang-badge"><span class="flag flag-by-wrw"></span> Беларуская мова</span>
-        <h1>Analyse Bélarussien</h1>
+        <h1>Analyse comparative : аўтаномія vs аўтаномнасьць</h1>
         <p>Étude comparative des deux sens du mot « autonomie » en bélarussien : 
            <strong>аўтаномія</strong> (autonomie politique/territoriale) vs <strong>аўтаномнасць</strong> (autonomie technique/fonctionnelle).</p>
-        <div class="ortho-note">
-            📝 Note : аўтаномнасьць et аўтаномнасць sont des variantes orthographiques du même terme
-        </div>
     </header>
 
     <main>
-        <!-- Stats -->
+        <!-- INTRODUCTION -->
         <section>
+            <div class="text-content">
+                <h2>Introduction</h2>
+                <p>Cette analyse porte sur l'usage du concept d'autonomie en bélarussien à travers deux lexèmes distincts : <strong>аўтаномія</strong> et <strong>аўтаномнасць</strong> (avec sa variante orthographique аўтаномнасьць). Notre corpus comprend 25,221 mots analysés, avec 232 occurrences du premier terme et 212 du second, soit une distribution relativement équilibrée, qui cache cependant des différences sémantiques profondes.</p>
+            </div>
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="value">232</div>
@@ -500,74 +534,68 @@
             </div>
         </section>
 
-        <!-- Word Clouds -->
+        <!-- SECTION 1 -->
         <section>
-            <div class="section-header">
-                <h2>☁️ Nuages de mots</h2>
-                <p>Visualisation des termes les plus fréquents dans les contextes de chaque sens.</p>
-            </div>
-
-            <div class="clouds-grid">
-                <div class="cloud-card">
-                    <div class="cloud-card-header">
-                        <span class="dot sens1"></span>
-                        <h3>Sens 1 : Politique</h3>
-                        <span class="word">аўтаномія</span>
-                    </div>
-                    <div class="cloud-image">
-                        <img src="pals/nuage-be-sens1.png" alt="Nuage de mots аўтаномія">
-                    </div>
-                </div>
-
-                <div class="cloud-card">
-                    <div class="cloud-card-header">
-                        <span class="dot sens2"></span>
-                        <h3>Sens 2 : Technique</h3>
-                        <span class="word">аўтаномнасьць / аўтаномнасць</span>
-                    </div>
-                    <div class="cloud-image">
-                        <img src="pals/nuage-be-sens2.png" alt="Nuage de mots ўтаномнасьць / аўтаномнасць">
-                    </div>
-                </div>
+            <div class="text-content">
+                <h2>1. Distinction orthographique et morphologique</h2>
+                <p>Avant d'aborder l'analyse sémantique, il convient de noter que аўтаномнасць (orthographe officielle) et аўтаномнасьць (norme taraškievica) sont deux graphies du même lexème, reflétant deux normes concurrentes : la variante classique emploie souvent la séquence -сьць là où l’orthographe officielle a -сць. Cette variation est essentiellement orthographique et n’implique pas un changement de sens, mais elle témoigne de la tension linguistique liée au sort du bélarussien, en lien avec l'histoire du pays et le contexte politique de ces 20 dernières années.</p>
             </div>
         </section>
 
-        <!-- Frequency Chart -->
+         <!-- SECTION 2 -->
         <section>
-            <div class="section-header">
-                <h2>🔍 Insights clés</h2>
-                <p>Différences majeures observées dans l'usage des 2 termes:</p>
+            <div class="text-content">
+                <h2>2. Deux univers sémantiques distincts</h2>
+                
+                <h3>2.1 аўтаномія : autonomie politique, juridique, nationale et culturelle</h3>
+                <p>L'analyse des cooccurrences révèle que <strong>аўтаномія</strong> s'inscrit massivement dans un registre politique, historique et institutionnel. Les termes les plus spécifiques confirment cette orientation :</p>
+                <ul>
+                    <li><strong>нацыянальна-культурная</strong> (national-culturel ou ethnico-culturel, spécificité +29.86) : ce cooccurrent extrêmement marqué indique que l'autonomie est avant tout pensée dans sa dimension ethno-culturelle</li>
+                    <li><strong>царквы</strong> (église, +6.42) : la présence de ce terme suggère des discussions sur l'autonomie ecclésiastique, notamment dans un contexte orthodoxe (une minorité catholique est également présente au Bélarus)</li>
+                    <li><strong>палітычная</strong> (politique, +6.06) : confirmation explicite de la dimension politique du concept</li>
+                    <li><strong>дзяржава</strong> (État), <strong>расеі</strong> (Russie, +3.75), <strong>беларусаў</strong> (Bélarussiens, +3.84)</li>
+                </ul>
+
+                <h3>2.2 аўтаномнасць : autonomie technique et fonctionnelle</h3>
+                <p>À l'inverse, <strong>аўтаномнасць</strong> renvoie quasi exclusivement au domaine technique, et plus précisément aux véhicules électriques. Cette spécialisation est remarquable :</p>
+                <ul>
+                    <li><strong>павялічвае</strong> (augmente, +19.74) : verbe quantificateur, qui suggère l'amélioration des performances en lien avec l'autonomie des batteries</li>
+                    <li><strong>wltp</strong> (+15.80) : acronyme du protocole de mesure "Worldwide Harmonised Light Vehicles Test Procedure"</li>
+                    <li><strong>км</strong> (kilomètres, +15.14) : unité de mesure de l'autonomie des véhicules</li>
+                    <li><strong>электрамабіль</strong> (véhicule électrique, +11.30)</li>
+                    <li>Noms de marques : <strong>Tesla</strong> (+9.87), <strong>Hyundai</strong> (+8.95), <strong>Kona</strong> (+10.12)</li>
+                    <li>Composants techniques : <strong>батарэі</strong> (batteries, +5.69), <strong>акумулятар</strong> (accumulateur, +5.66), <strong>квт</strong>  (kWh, +7.21)</li>
+                </ul>
             </div>
 
+            <!-- INSIGHTS-->
             <div class="insights-grid">
                 <div class="insight-card">
                     <h4>🏛️ аўтаномія : politique</h4>
                     <ul>
-                        <li>нацыянальна-культурная (nationale/ethnique et culturelle, 29.86)</li>
+                        <li>нацыянальна-культурная (29.86)</li>
                         <li>царквы (église, 6.42)</li>
                         <li>дзяржава (État)</li>
-                        <li>статус (status), незалежнасць (indépendance)</li>
+                        <li>статус, незалежнасць</li>
                         <li>Contexte historique et territorial</li>
                     </ul>
                 </div>
-
                 <div class="insight-card">
                     <h4>🔋 аўтаномнасць : technique</h4>
                     <ul>
                         <li>павялічвае (augmente, 19.74)</li>
-                        <li>wltp, км (kilomètres, 15.80)</li>
+                        <li>wltp, км (15.80, 15.14)</li>
                         <li>электрамабіль (véhicules électriques)</li>
-                        <li>акумулятар (batterie), батарэі (batteries)</li>
+                        <li>акумулятар, батарэі</li>
                         <li>Tesla, Hyundai, Kona</li>
                     </ul>
                 </div>
-
                 <div class="insight-card">
                     <h4>📊 Distribution</h4>
                     <ul>
                         <li>аўтаномія : 232 occurrences</li>
                         <li>аўтаномнасць : 212 occurrences</li>
-                        <li>Usage équilibré dans le corpus</li>
+                        <li>Usage équilibré</li>
                         <li>Contextes très distincts</li>
                         <li>Pas d'ambiguïté observée</li>
                     </ul>
@@ -575,13 +603,33 @@
             </div>
         </section>
 
-        <!-- Top cooccurrences -->
+        <!-- SECTION 3 -->
         <section>
-            <div class="section-header">
-                <h2>🎯 Spécificités lexicales</h2>
-                <p>Top 15 des mots les plus caractéristiques de chaque sens (partition.py)</p>
+            <div class="text-content">
+                <h2>3. Analyse des spécificités lexicales</h2>
+                
+                <h3>3.1 Méthode</h3>
+                <p>Les spécificités ont été calculées selon l'indice de Lafon, qui mesure la sur-représentation ou sous-représentation d'un terme dans une partition du corpus par rapport à son usage global. Un indice positif élevé indique une forte association avec le sens considéré.</p>
+
+                <h3>3.2 Polarisation sémantique</h3>
+                <p>La polarisation est très nette. Aucun terme n'apparaît comme fortement spécifique aux deux sens simultanément, ce qui suggère une <strong>séparation étanche des domaines d'usage</strong>.</p>
+                
+                <p><strong>Pour аўтаномія</strong> :</p>
+                <ul>
+                    <li>Champ lexical politique : дзяржава, палітычная</li>
+                    <li>Dimension collective : народ, нацыянальны, культурны</li>
+                    <li>Aspect historique et institutionnel : царква, статус, незалежнасць</li>
+                </ul>
+
+                <p><strong>Pour аўтаномнасць</strong> :</p>
+                <ul>
+                    <li>Champ lexical technique : электрычны, батарэя, акумулятар, зарадка</li>
+                    <li>Mesures et performances : км, квт, павялічвае</li>
+                    <li>Marques commerciales : Tesla, Hyundai, Kona, Opel</li>
+                </ul>
             </div>
 
+            <!-- GRAPHIQUE-->
             <div class="chart-card">
                 <h3>Mots spécifiques à chaque sens</h3>
                 <div class="chart-container">
@@ -589,6 +637,7 @@
                 </div>
             </div>
 
+            <!-- TABLEAU-->
             <div class="table-card">
                 <div class="table-card-header">
                     <h3>Détails des spécificités (Top 20)</h3>
@@ -598,7 +647,7 @@
                         <tr>
                             <th>Mot</th>
                             <th>Total</th>
-                             <th>аўтаномія</th>
+                            <th>аўтаномія</th>
                             <th>Spécif.</th>
                             <th>аўтаномнасць</th>
                             <th>Spécif.</th>
@@ -628,12 +677,103 @@
                     </tbody>
                 </table>
             </div>
+
+            <div class="text-content">
+                <h3>3.3 Absence d'ambiguïté</h3>
+                <p>Dans notre corpus, la séparation est très nette et nous n’observons pas d’ambiguïté notable. Contrairement à d'autres langues où "autonomie" peut créer des confusions (notamment en français où l'autonomie d'une région et celle d'une batterie utilisent le même terme), le bélarussien a développé une spécialisation lexicale claire.</p>
+            </div>
         </section>
+
+        <!-- SECTION 4 -->
+        <section>
+            <div class="text-content">
+                <h2>4. Implications sociolinguistiques : le poids du contexte historique</h2>
+                <p>L'usage de <strong>аўтаномія</strong> dans un contexte majoritairement politique n'est pas anodin pour le Bélarus, pays dont l'histoire est marquée par :</p>
+                <ul>
+                    <li>Les débats sur l'autonomie culturelle bélarussienne au sein de l'Empire russe puis de l'URSS</li>
+                    <li>Les questions d'autodétermination nationale</li>
+                    <li>L'autonomie religieuse (notamment des Églises orthodoxes)</li>
+                </ul>
+                <p>La très forte spécificité de <strong>нацыянальна-культурная</strong> (+29.86) suggère que l'autonomie est avant tout pensée dans sa dimension ethno-culturelle, ce qui résonne avec l'histoire de la construction nationale bélarussienne.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 5 - NUAGES DE MOTS -->
+        <section>
+            <div class="text-content">
+                <h2>5. Analyse des nuages de mots</h2>
+                <p>Les nuages de mots constituent ici un outil exploratoire et illustratif. Ils permettent de visualiser les tendances lexicales dominantes dans les contextes d’apparition de chaque terme, sans prétendre à une analyse discursive fine. Les observations ci-dessous suivent donc des indices lexicaux globaux, et ne prétendent pas à une interprétation exhaustive des usages.</p>
+            </div>
+
+            <!-- NUAGES (déjà complet) -->
+            <div class="clouds-grid">
+                <div class="cloud-card">
+                    <div class="cloud-card-header">
+                        <span class="dot sens1"></span>
+                        <h3>Sens 1 : Politique</h3>
+                        <span class="word">аўтаномія</span>
+                    </div>
+                    <div class="cloud-image">
+                        <img src="pals/nuage-be-sens1.png" alt="Nuage de mots аўтаномія">
+                    </div>
+                </div>
+
+                <div class="cloud-card">
+                    <div class="cloud-card-header">
+                        <span class="dot sens2"></span>
+                        <h3>Sens 2 : Technique</h3>
+                        <span class="word">аўтаномнасць</span>
+                    </div>
+                    <div class="cloud-image">
+                        <img src="pals/nuage-be-sens2.png" alt="Nuage de mots аўтаномнасць">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-content">
+                <h3>5.1 Nuage 1 : аўтаномія</h3>
+                <p>Le nuage associé à аўтаномія met en évidence la prédominance de plusieurs types de lexèmes :</p>
+                <ul>
+                    <li><strong>Substantifs abstraits et institutionnels</strong>, souvent marqués par les suffixes -ія / -ыя, caractéristiques du vocabulaire politique et juridique : арганізацыя (organisation), канстытуцыя (constitution), федэрацыя (fédération)</li>
+                    <li><strong>Adjectifs ethnico-culturels et politiques</strong> : беларускі (bélarussien), нацыянальны (national / ethnique), культурны (culturel)</li>
+                    <li><strong>Substantifs collectifs et territoriaux</strong> : народ (peuple), дзяржава (État), краіна (pays), рэспубліка (république), тэрыторыя (territoire), qui ancrent le terme dans une réflexion à l’échelle de groupes humains, d’institutions et d’espaces politiques</li>
+                </ul>
+                <p>Le nuage fait également apparaître des références géographiques et comparatives (Каталонія [Catalogne], Комі [Komi], Сілезія [Silésie], Расея [Russie]), suggérant que l’autonomie est envisagée dans des contextes autres que le seul cas du Bélarus, avec l'exemple d'autres modèles politiques ou administratifs. Ces éléments renforcent l’inscription de аўтаномія dans un registre politique, historique et institutionnel.</p>
+
+                <h3>5.2 Nuage 2 : аўтаномнасць</h3>
+                <p>Le nuage correspondant à аўтаномнасць présente une configuration lexicale nettement différente :</p>
+                <ul>
+                    <li><strong>Termes techniques liés à l’énergie et aux performances</strong> : акумулятар (accumulateur), батарэі (batteries), зарадка (charge), ёмістасць (capacité), магутнасць (puissance)</li>
+                    <li><strong>Unités de mesure et indicateurs quantitatifs</strong> : км (km), квт (kW), квтгадз (kWh), qui renvoient explicitement à l’évaluation chiffrée de l’autonomie</li>
+                    <li><strong>Sigles, anglicismes et noms propres</strong> : WLTP (Worldwide Harmonised Light Vehicles Test Procedure — protocole de mesure), EPA (Environmental Protection Agency — l'agence états-unienne de protection de l'environnement), Tesla, Hyundai, Polestar, Kona, Model S), caractéristiques de discours techniques et de descriptions de produits.</li>
+                </ul>
+                <p>L’ensemble de ces éléments indique que аўтаномнасць est majoritairement employé dans des contextes techniques, et plus précisément dans le domaine de l’automobile électrique, où l’autonomie désigne une propriété mesurable et fonctionnelle des dispositifs.</p>
+            </div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section>
+            <div class="text-content">
+                <h2>6. Conclusions</h2>
+
+            <div class="text-content">
+                <h3>6.1 Synthèse</h3>
+                <p>L’analyse conjointe des spécificités lexicales et des nuages de mots met en évidence une forte spécialisation sémantique entre 2 lexèmes morphologiquement apparentés :</p>
+                <ul>
+                    <li>аўтаномія renvoie principalement à l’autonomie politique, culturelle ou territoriale, dans une perspective collective, institutionnelle et historique</li>
+                    <li>аўтаномнасць désigne une autonomie technique ou énergétique, associée à des objets, des performances et des mesures quantitatives, notamment dans le domaine des véhicules électriques</li>
+                </ul>
+                <p>Dans le corpus étudié, cette spécialisation apparaît très stable et ne laisse aucune place à des usages ambigus.</p>
+
+                <h3>6.2 Intérêt linguistique</h3>
+                <p>Cette répartition fonctionnelle constitue un exemple clair de désambiguïsation lexicale au sein du bélarussien. Là où d’autres langues, comme le français, mobilisent un même lexème polysémique dont l’interprétation dépendra fortement du contexte, le bélarussien recourt à deux formes distinctes, chacune associée à un champ d’usage bien circonscrit. Cette précision terminologique réduit le risque d’ambiguïté et illustre la capacité de la langue à différencier lexicalement des réalités conceptuelles proches mais fonctionnellement distinctes.</p>
+            </div>
+        </section>
+
 
         <!-- Actions -->
         <div class="action-links">
             <a href="../tableaux/tableau-be.html" class="btn btn-primary">📋 Voir le tableau complet</a>
-            <a href="../concordances/be/" class="btn btn-secondary">📖 Concordances</a>
             <a href="../index.html#langues" class="btn btn-secondary">← Retour aux langues</a>
         </div>
     </main>

@@ -1,83 +1,321 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title>Concordancier - kr-21</title>
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-			<style>
-				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
-				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concordancier - kr-21</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
 
-				.back-link { color: #667eea }
-				.back-link:hover { color: #764ba2 }
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
 
-				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
-				.table tbody tr:hover td { background-color: #f5f3ff; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
-			.kwic-left  { text-align: right;  width: 44%; }
-			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
-			.kwic-right { text-align: left;   width: 44%; }
-			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
 
-			.cat-col { white-space: nowrap; }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
 
-			body.dark { background: #0f172a; color: #e2e8f0; }
-			body.dark .card { background: #111827; color: #e2e8f0; }
-			body.dark .table { background: #111827; color: #e2e8f0; }
-			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
-			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
-			body.dark .table tbody tr:hover td { background: #1f2937; }
-			body.dark .back-link { color: #93c5fd; }
-			body.dark .back-link:hover { color: #c4b5fd; }
-			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
-			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
-		</style>
-	</head>
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
 
-	<body>
-		<section class="hero is-small">
-			<div class="hero-body">
-				<div class="container has-text-centered">
-    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
-					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
-					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
-				</div>
-			</div>
-		</section>
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
 
-		<section class="section">
-			<div class="container">
-				<p class="mb-4">
-					<a href="../../index.html" class="back-link">Retour</a>
-					<span class="has-text-grey"> / </span>
-					<a href="../../tableaux/tableau-kr.html" class="back-link">Tableau</a>
-				</p>
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
 
-				<div class="card">
-					<div class="card-content">
-						<div class="content">
-							<p class="mb-2"><strong>URL :</strong> <a href="https://edu.chosun.com/site/data/html_dir/2025/12/02/2025120280131.html" target="_blank" rel="noopener noreferrer" class="back-link">https://edu.chosun.com/site/data/html_dir/2025/12/02/2025120280131.html</a></p>
-							<p class="mb-4"><strong>Occurrences :</strong> 17</p>
-						</div>
+      .nav-links a:hover { color: var(--primary); }
 
-						<div class="table-container">
-							<table class="table is-fullwidth is-hoverable is-striped">
-								<thead>
-									<tr>
-										<th>Catégorie</th>
-										<th>Gauche</th>
-										<th>Mot</th>
-										<th>Droite</th>
-									</tr>
-								</thead>
-								<tbody>
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: "Instrument Serif", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header .subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary-dark);
+      }
+
+      .info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .info-card p {
+        margin-bottom: 0.75rem;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-card strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .info-card a {
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cat-col {
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .kwic-left, .kwic-kw, .kwic-right {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.85rem;
+      }
+
+      .kwic-left {
+        text-align: right;
+        width: 44%;
+      }
+
+      .kwic-kw {
+        text-align: center;
+        width: 12%;
+        font-weight: 700;
+      }
+
+      .kwic-right {
+        text-align: left;
+        width: 44%;
+      }
+
+      mark {
+        background: rgba(102, 126, 234, 0.2);
+        color: var(--primary-dark);
+        padding: 0.12rem 0.25rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      body.dark mark {
+        background: rgba(147, 197, 253, 0.25);
+        color: #93c5fd;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+        .kwic-left, .kwic-kw, .kwic-right { font-size: 0.75rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../../index.html#projet">Projet</a>
+          <a href="../../index.html#langues">Langues</a>
+          <a href="../../index.html#equipe">Contributeurs</a>
+          <a href="../../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Concordancier KWIC</h1>
+      <p class="subtitle">Fenêtre contextuelle : ±20 mots</p>
+    </header>
+
+    <main>
+      <div class="breadcrumb">
+        <a href="../../index.html">Accueil</a>
+        <span> / </span>
+        <a href="../../tableaux/kr.html">Tableau kr</a>
+        <span> / </span>
+        <span>Concordancier 21</span>
+      </div>
+
+      <div class="info-card">
+        <p><strong>URL :</strong> <a href="https://edu.chosun.com/site/data/html_dir/2025/12/02/2025120280131.html" target="_blank" rel="noopener noreferrer">https://edu.chosun.com/site/data/html_dir/2025/12/02/2025120280131.html</a></p>
+        <p><strong>Occurrences trouvées :</strong> 17</p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Catégorie</th>
+                <th>Contexte gauche</th>
+                <th>Mot-clé</th>
+                <th>Contexte droit</th>
+              </tr>
+            </thead>
+            <tbody>
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">문을 열고, 기숙사와 교실 환경을 새롭게 정비하며 ‘배움이 살아 있는 학교’로 스스로 길을 냈다. 그 과정 속에서 화산중학교는 전국 최초</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">중학교이자 농어촌 혁신학교의 대표 모델로 도약했다. 학생이 스스로 배우고, 교사가 함께 성장하고, 지역사회가 더해지는 ‘배움의 공동체’. 화산중학교가 어떻게 위기를 기회로</td>
@@ -85,7 +323,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">가 본격적으로 문을 열게 됐지요. 그때부터 화산중학교는 지역의 교육 중심지로 자리 잡기 시작했습니다. 1995년에는 학교법인이 화봉학원으로 변경되었고, 2005년에는 한국 최초의</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">중학교로 지정되면서 큰 전환점이 찾아왔습니다. 교육과정과 학생선발, 학교 운영 전반에서 자율성이 주어지자 전국의 학생들이 화산을 찾아오기 시작했고, 이곳에서 새로운 배움의</td>
@@ -93,7 +331,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">했습니다. 1995년에는 학교법인이 화봉학원으로 변경되었고, 2005년에는 한국 최초의 자율중학교로 지정되면서 큰 전환점이 찾아왔습니다. 교육과정과 학생선발, 학교 운영 전반에서</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">성이 주어지자 전국의 학생들이 화산을 찾아오기 시작했고, 이곳에서 새로운 배움의 경험을 얻게 됐습니다. 전교생 기숙사 생활을 도입한 것도 큰 변화였습니다.</td>
@@ -101,7 +339,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">‘전국의 아이들을 미래의 리더로 키우자’는 새로운 길을 선택했습니다. 대규모 강당과 기숙사를 신축하고, 전국 학생들이 찾아올 수 있는 교육과정을 만들었습니다. 2005년</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">학교 지정 이후에는 주소 이전 없이 전국 어디서든 지원이 가능해졌고, 지금은 매년 1,100명 이상의 학생들이 문을 두드리는 학교가 되었습니다. 지금의</td>
@@ -109,7 +347,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">1,100명 이상의 학생들이 문을 두드리는 학교가 되었습니다. 지금의 화산중학교는 60여 년 동안 이어진 전통과 혁신이 함께 살아 있는 학교입니다. 농어촌</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">학교의 대표 모델로 자리 잡았고, 앞으로도 공교육을 선도하는 중등교육 기관으로 계속 성장해 나가고자 합니다. - - 화산중학교의 교육 목표와 철학은</td>
@@ -117,7 +355,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">이 가치를 바탕으로, 전통을 지키면서도 변화에 열려 있는 글로벌 인재를 기르고자 합니다. 그래서 학교가 추구하는 인재상도 바른 품성, 창의적 사고,</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">성, 미래 준비력이라는 네 가지로 정리했습니다. 이 목표를 이루기 위해 학교는 ‘생활 속 책임교육’을 가장 소중하게 생각합니다. 학생들이 스스로 목표를</td>
@@ -125,7 +363,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">있도록 돕는 것. 그것이 화산중학교가 지켜온 교육의 중심 철학입니다. - - 화산중학교만의 교육과정과 학업 프로그램의 특징은 무엇입니까? 화산중학교는 전국 단위</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">중학교로서 폭넓은 교육자율성을 바탕으로 학생 맞춤형 교육과정을 운영하고 있습니다. 영어·수학은 소인수 수업과 탄력적 시수로 개별 학습을 세밀하게 지원하며, 모든 교과는</td>
@@ -133,7 +371,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">그것이 화산중학교가 지켜온 교육의 중심 철학입니다. - - 화산중학교만의 교육과정과 학업 프로그램의 특징은 무엇입니까? 화산중학교는 전국 단위 자율중학교로서 폭넓은 교육</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">성을 바탕으로 학생 맞춤형 교육과정을 운영하고 있습니다. 영어·수학은 소인수 수업과 탄력적 시수로 개별 학습을 세밀하게 지원하며, 모든 교과는 전용 교실에서</td>
@@ -141,7 +379,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">소인수 수업과 탄력적 시수로 개별 학습을 세밀하게 지원하며, 모든 교과는 전용 교실에서 프로젝트·탐구 중심 수업으로 진행됩니다. 학생 주도 프로그램도 강점입니다.</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">동아리, 국제문화 이해교육, 진로탐색 활동, 학업역량 캠프뿐 아니라 ‘화산 모의 유엔총회’, ‘수학 창의성 행사’, ‘과학 구조물 대회’, ‘주제별 독서토론’ 등</td>
@@ -149,7 +387,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">잔디 운동장과 산책길 등 자연 친화적 공간도 큰 장점입니다. 전교생이 생활하는 기숙사 역시 중요한 배움터로, 약 280명의 학생이 생활·학습을 함께하며</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">성과 공동체성을 키우고 있습니다. 또한 ‘공감터 화담’, ‘스마트 교실’, ‘디지털 모둠탐구실’, ‘락밴드연습실’ 등 다양한 창의 공간을 통해 학생들이 토론·발표·동아리 활동을</td>
@@ -157,7 +395,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">율성과 공동체성을 키우고 있습니다. 또한 ‘공감터 화담’, ‘스마트 교실’, ‘디지털 모둠탐구실’, ‘락밴드연습실’ 등 다양한 창의 공간을 통해 학생들이 토론·발표·동아리 활동을</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">적으로 이어가고 있습니다. 화산중학교의 모든 시설은 학생들이 스스로 배우고 성장할 수 있도록 설계된 공간입니다. - 학생들의 학업 성취도를 향상시키기 위해</td>
@@ -165,7 +403,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">변화로 이어지는 수업 혁신의 기반이 되고 있습니다. - - 화산중학교의 주요 성과나 수상 내역에 대해 소개해 주시겠습니까? 화산중학교는 전국 최초의</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">중학교이자 농촌형 자율학교의 대표 모델로 인정받고 있습니다. 자율학교 지정(2005) 이후 선진형 교과교실제 운영으로 6년 연속 교육부 ‘교과교실제 우수학교’에 선정됐고, ‘100</td>
@@ -173,7 +411,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">수업 혁신의 기반이 되고 있습니다. - - 화산중학교의 주요 성과나 수상 내역에 대해 소개해 주시겠습니까? 화산중학교는 전국 최초의 자율중학교이자 농촌형</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">학교의 대표 모델로 인정받고 있습니다. 자율학교 지정(2005) 이후 선진형 교과교실제 운영으로 6년 연속 교육부 ‘교과교실제 우수학교’에 선정됐고, ‘100대 교육과정 우수학교’</td>
@@ -181,7 +419,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">- - 화산중학교의 주요 성과나 수상 내역에 대해 소개해 주시겠습니까? 화산중학교는 전국 최초의 자율중학교이자 농촌형 자율학교의 대표 모델로 인정받고 있습니다.</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">학교 지정(2005) 이후 선진형 교과교실제 운영으로 6년 연속 교육부 ‘교과교실제 우수학교’에 선정됐고, ‘100대 교육과정 우수학교’, 한국언론인협회 ‘대한민국 고객감동 교육부</td>
@@ -189,7 +427,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">지역을 살리고 미래를 여는 새로운 공교육 모델로 자리매김하는 것이 우리의 비전입니다. [K-사학을 찾아] ㉗ 전북 화산중학교 : 전국이 주목하는 농어촌</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">학교 장희주 조선에듀 기자 jhj@chosun.com - 대한사립학교장회 공동기획 관련뉴스 - [K-사학을 찾아] ㉖ 남원서진여자고등학교: 학생의 꿈과 배움, 행복을 디자인하는 학</td>
@@ -197,7 +435,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">찾아] ⑧ 인천재능고등학교 : AI 창의 융합 인재의 산실 - [K-사학을 찾아] ⑦ 영화국제관광고등학교 : 학생이 곧 학교가 되는 ‘</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">성장문화학교’ - [K-사학을 찾아] ⑥ 부산예술고등학교 : 지역을 넘어 세계적 예술 인재를 육성하다 - [K-사학을 찾아] ⑤ 화성고등학교 : 성실과</td>
@@ -205,43 +443,38 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">영명학교 : 교사답게, 부모처럼, 친구같이… 아이들의 가슴 뛰는 배움터 - [K-사학을 찾아] ㉔ 배영고등학교 : 스스로 꿈을 설계하고 도전하는 ‘</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">형 배움터’ - [K-사학을 찾아] ㉓ 한국철도고등학교 : 철도 산업을 선도하는 유일무이 교육 현장 - [K-사학을 찾아] ㉒ 문성중학교 :</td>
 				</tr>
 			
 
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
 
-		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-			<div class="content has-text-centered">
-				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-			</div>
-		</footer>
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+    </footer>
 
-		<script>
-			const btn = document.getElementById("themeToggle");
-			const saved = localStorage.getItem("theme");
-			if (saved === "dark") document.body.classList.add("dark");
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
 
-			function refreshLabel() {
-				const isDark = document.body.classList.contains("dark");
-				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
-			}
-			refreshLabel();
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      }
+      updateBtn();
 
-			btn.addEventListener("click", () => {
-				document.body.classList.toggle("dark");
-				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-				refreshLabel();
-			});
-		</script>
-	</body>
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        updateBtn();
+      });
+    </script>
+  </body>
 </html>

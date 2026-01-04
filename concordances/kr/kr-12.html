@@ -1,83 +1,321 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title>Concordancier - kr-12</title>
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-			<style>
-				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
-				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concordancier - kr-12</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
 
-				.back-link { color: #667eea }
-				.back-link:hover { color: #764ba2 }
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
 
-				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
-				.table tbody tr:hover td { background-color: #f5f3ff; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
-			.kwic-left  { text-align: right;  width: 44%; }
-			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
-			.kwic-right { text-align: left;   width: 44%; }
-			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
 
-			.cat-col { white-space: nowrap; }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
 
-			body.dark { background: #0f172a; color: #e2e8f0; }
-			body.dark .card { background: #111827; color: #e2e8f0; }
-			body.dark .table { background: #111827; color: #e2e8f0; }
-			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
-			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
-			body.dark .table tbody tr:hover td { background: #1f2937; }
-			body.dark .back-link { color: #93c5fd; }
-			body.dark .back-link:hover { color: #c4b5fd; }
-			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
-			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
-		</style>
-	</head>
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
 
-	<body>
-		<section class="hero is-small">
-			<div class="hero-body">
-				<div class="container has-text-centered">
-    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
-					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
-					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
-				</div>
-			</div>
-		</section>
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
 
-		<section class="section">
-			<div class="container">
-				<p class="mb-4">
-					<a href="../../index.html" class="back-link">Retour</a>
-					<span class="has-text-grey"> / </span>
-					<a href="../../tableaux/tableau-kr.html" class="back-link">Tableau</a>
-				</p>
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
 
-				<div class="card">
-					<div class="card-content">
-						<div class="content">
-							<p class="mb-2"><strong>URL :</strong> <a href="https://www.ablenews.co.kr/news/articleView.html?idxno=222323" target="_blank" rel="noopener noreferrer" class="back-link">https://www.ablenews.co.kr/news/articleView.html?idxno=222323</a></p>
-							<p class="mb-4"><strong>Occurrences :</strong> 16</p>
-						</div>
+      .nav-links a:hover { color: var(--primary); }
 
-						<div class="table-container">
-							<table class="table is-fullwidth is-hoverable is-striped">
-								<thead>
-									<tr>
-										<th>Catégorie</th>
-										<th>Gauche</th>
-										<th>Mot</th>
-										<th>Droite</th>
-									</tr>
-								</thead>
-								<tbody>
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: "Instrument Serif", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header .subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary-dark);
+      }
+
+      .info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .info-card p {
+        margin-bottom: 0.75rem;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-card strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .info-card a {
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cat-col {
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .kwic-left, .kwic-kw, .kwic-right {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.85rem;
+      }
+
+      .kwic-left {
+        text-align: right;
+        width: 44%;
+      }
+
+      .kwic-kw {
+        text-align: center;
+        width: 12%;
+        font-weight: 700;
+      }
+
+      .kwic-right {
+        text-align: left;
+        width: 44%;
+      }
+
+      mark {
+        background: rgba(102, 126, 234, 0.2);
+        color: var(--primary-dark);
+        padding: 0.12rem 0.25rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      body.dark mark {
+        background: rgba(147, 197, 253, 0.25);
+        color: #93c5fd;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+        .kwic-left, .kwic-kw, .kwic-right { font-size: 0.75rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../../index.html#projet">Projet</a>
+          <a href="../../index.html#langues">Langues</a>
+          <a href="../../index.html#equipe">Contributeurs</a>
+          <a href="../../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Concordancier KWIC</h1>
+      <p class="subtitle">Fenêtre contextuelle : ±20 mots</p>
+    </header>
+
+    <main>
+      <div class="breadcrumb">
+        <a href="../../index.html">Accueil</a>
+        <span> / </span>
+        <a href="../../tableaux/kr.html">Tableau kr</a>
+        <span> / </span>
+        <span>Concordancier 12</span>
+      </div>
+
+      <div class="info-card">
+        <p><strong>URL :</strong> <a href="https://www.ablenews.co.kr/news/articleView.html?idxno=222323" target="_blank" rel="noopener noreferrer">https://www.ablenews.co.kr/news/articleView.html?idxno=222323</a></p>
+        <p><strong>Occurrences trouvées :</strong> 16</p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Catégorie</th>
+                <th>Contexte gauche</th>
+                <th>Mot-clé</th>
+                <th>Contexte droit</th>
+              </tr>
+            </thead>
+            <tbody>
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">지원을 직접 신청하면 지방정부가 전문가 평가를 통해 서비스를 맞춤형으로 제공한다. 또한 지원을 받을 기관과 보조인을 장애인이 직접 선택할 수 있어</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">성과 만족도가 매우 높다. LSS는 개인 활동 보조 외에도 다음과 같은 10대 주요 지원 서비스를 제공한다. ▲상담 및 개인 맞춤</td>
@@ -85,7 +323,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">페달 조정과 손 조작 운전장치 설치를 지원하며, 비용은 대부분 지방정부가 부담한다. 이와 같은 조치는 단순한 이동권 보장을 넘어, 장애인의 사회적</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">성과 자립 생활을 실현하는 중요한 기반이 된다. 성인 대상 시설형 거주는 자립이 어려운 성인 장애인을 위해 제공되는 생활 시설로, LSS</td>
@@ -93,7 +331,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">LSS 법에 따라 생활 보조와 일상 관리, 사회적 활동이 통합적으로 이루어지는 공간이다. 이 시설은 보통 소규모로 구성되어 있으며, 장애인의 생활습관과</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">성을 최대한 보장하면서도 필요 시 24시간 지원이 가능하도록 설계되어 있다. 예를 들어, 시설에서는 성인 발달장애인들이 각자의 방과 공동생활 공간을 함께</td>
@@ -101,7 +339,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자율</td>
+					<td class="cat-col">자율</td>
 					<td class="kwic-left">국가가 적극적으로 뒷받침하는 좋은 사례다. 우리나라의 장애인 복지 정책 설계에도 중요한 시사점을 제공한다. 특히 우리나라의 장애인 활동지원 서비스 개선에 있어</td>
 					<td class="kwic-kw"><mark>자율</mark></td>
 					<td class="kwic-right">성 증대, 맞춤형 서비스 강화, 지원 인력의 전문성 및 서비스 품질 향상, 제도 운영의 투명성과 평가 체계의 표준화가 필요한 점을</td>
@@ -109,7 +347,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">정 장애인을 위한 지원 및 서비스 법(Lagen om stöd och service till vissa funktionshindrade, 이하 LSS)'은 장애인의 사회적 참여와</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">을 법적 권리로 명확히 보장하면서 장애인 복지의 패러다임을 크게 바꾸었다. LSS는 크게 세 가지 장애 그룹을 대상으로 한다. 첫 번째는</td>
@@ -117,7 +355,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">장애가 지속된 사람, 마지막으로는 일상생활에서 큰 어려움을 겪는 신체적·정신적 중증 장애를 가진 사람이다. 이들에게 제공되는 지원은 단순한 돌봄 차원을 넘어,</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">생활을 보장하고 사회 구성원으로서의 적극적 참여를 촉진하는 것이 목표다. LSS의 개인 활동 보조 서비스는 장애인의 구체적 욕구를 반영하여 철저히 맞춤형으로</td>
@@ -125,7 +363,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">가정을 방문한다. 이러한 서비스는 가족 구성원의 번아웃을 예방하고, 돌봄 지속 가능성을 높이는 데 중요한 역할을 한다. 특별 주거지는 중증 장애인이</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">적인 생활을 영위할 수 있도록 LSS 제도 하에서 제공되는 맞춤형 주거 서비스이다. 이 주거지는 일반적인 주택 구조를 기반으로 하되, 이동</td>
@@ -133,7 +371,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">응급 대응도 가능하도록 운영된다. 예를 들어, 한 특별 주거지에서는 발달장애 성인 4명이 각자의 방에서 생활하면서 매일 함께 요리하거나 산책을 나가며,</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">적인 삶을 영위하는 동시에 공동체 일원으로서의 정체성도 유지하고 있다. 이러한 주거 형태는 장애인이 지역사회 내에서 존엄과 자립을 보장받으며 살아갈 수</td>
@@ -141,7 +379,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">함께 요리하거나 산책을 나가며, 자립적인 삶을 영위하는 동시에 공동체 일원으로서의 정체성도 유지하고 있다. 이러한 주거 형태는 장애인이 지역사회 내에서 존엄과</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">을 보장받으며 살아갈 수 있는 핵심 기반으로 작용하고 있다. 이동 지원은 앞서 언급한 교통보조 서비스와 연계되며, 장애인의 상황에 따라 특수</td>
@@ -149,7 +387,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">조정과 손 조작 운전장치 설치를 지원하며, 비용은 대부분 지방정부가 부담한다. 이와 같은 조치는 단순한 이동권 보장을 넘어, 장애인의 사회적 자율성과</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right"> 생활을 실현하는 중요한 기반이 된다. 성인 대상 시설형 거주는 자립이 어려운 성인 장애인을 위해 제공되는 생활 시설로, LSS 법에</td>
@@ -157,7 +395,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">이와 같은 조치는 단순한 이동권 보장을 넘어, 장애인의 사회적 자율성과 자립 생활을 실현하는 중요한 기반이 된다. 성인 대상 시설형 거주는</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">이 어려운 성인 장애인을 위해 제공되는 생활 시설로, LSS 법에 따라 생활 보조와 일상 관리, 사회적 활동이 통합적으로 이루어지는 공간이다.</td>
@@ -165,7 +403,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">프로그램에 참여하고, 저녁에는 담당 사회복지사 및 생활보조인과 함께 일정을 계획한다. 이러한 시설은 단순한 보호의 공간을 넘어, 성인 장애인의 지속 가능한</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">생활을 위한 중간 단계의 거주모델로 기능하고 있다. 일상생활 보조는 장애인이 식사, 세면, 의복 착용, 정리 정돈, 건강관리 등 일상생활의 기본적인</td>
@@ -173,7 +411,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">마친 뒤 직장에 출근하며, 퇴근 후에는 함께 식사를 준비하고 주간 계획을 점검한다. 이러한 일상 보조는 장애인의 생활 리듬을 안정적으로 유지하고,</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">성과 자존감을 높이는 데 기여한다. 직업 및 여가 활동 지원 항목은 장애인이 사회 속에서 생산적이고 즐거운 일상을 영위할 수 있도록</td>
@@ -181,7 +419,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">및 코칭이 제공된다. 여가 활동 지원은 스포츠, 문화, 예술 프로그램 등으로 구성되며, 지역사회 시설이나 기관과 협력하여 접근성을 높인다. 또한 장애인의</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">을 돕기 위해 LSS는 장애인보조공학기구 지원 제도를 운영한다. 휠체어, 보행기, 의사소통 보조기구 등 장애인이 일상생활에서 필요로 하는 보조기구를 제공하고, 지속적인</td>
@@ -189,7 +427,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">오남용이나 품질 관리와 같은 현실적 문제도 있다. 하지만 이는 지속적인 평가와 제도 개선으로 극복해 가고 있다. 스웨덴의 LSS 제도는 장애인의</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">과 참여를 '권리'로 명확히 규정하고, 장애인이 동등한 사회 구성원으로서 살 수 있도록 국가가 적극적으로 뒷받침하는 좋은 사례다. 우리나라의 장애인 복지</td>
@@ -197,43 +435,38 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">투명성과 평가 체계의 표준화가 필요한 점을 스웨덴 사례를 통해 배울 수 있을 것이다. 앞으로 우리나라도 스웨덴의 사례를 참고하여 장애인의 실질적인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">과 사회 참여 보장을 위한 제도적 기반을 더욱 강화하고, 지속 가능한 재정 마련과 서비스 질 관리를 위한 투명한 시스템 구축이라는</td>
 				</tr>
 			
 
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
 
-		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-			<div class="content has-text-centered">
-				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-			</div>
-		</footer>
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+    </footer>
 
-		<script>
-			const btn = document.getElementById("themeToggle");
-			const saved = localStorage.getItem("theme");
-			if (saved === "dark") document.body.classList.add("dark");
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
 
-			function refreshLabel() {
-				const isDark = document.body.classList.contains("dark");
-				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
-			}
-			refreshLabel();
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      }
+      updateBtn();
 
-			btn.addEventListener("click", () => {
-				document.body.classList.toggle("dark");
-				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-				refreshLabel();
-			});
-		</script>
-	</body>
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        updateBtn();
+      });
+    </script>
+  </body>
 </html>

@@ -1,83 +1,321 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title>Concordancier - kr-49</title>
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-			<style>
-				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
-				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concordancier - kr-49</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
 
-				.back-link { color: #667eea }
-				.back-link:hover { color: #764ba2 }
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
 
-				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
-				.table tbody tr:hover td { background-color: #f5f3ff; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
-			.kwic-left  { text-align: right;  width: 44%; }
-			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
-			.kwic-right { text-align: left;   width: 44%; }
-			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
 
-			.cat-col { white-space: nowrap; }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
 
-			body.dark { background: #0f172a; color: #e2e8f0; }
-			body.dark .card { background: #111827; color: #e2e8f0; }
-			body.dark .table { background: #111827; color: #e2e8f0; }
-			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
-			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
-			body.dark .table tbody tr:hover td { background: #1f2937; }
-			body.dark .back-link { color: #93c5fd; }
-			body.dark .back-link:hover { color: #c4b5fd; }
-			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
-			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
-		</style>
-	</head>
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
 
-	<body>
-		<section class="hero is-small">
-			<div class="hero-body">
-				<div class="container has-text-centered">
-    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
-					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
-					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
-				</div>
-			</div>
-		</section>
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
 
-		<section class="section">
-			<div class="container">
-				<p class="mb-4">
-					<a href="../../index.html" class="back-link">Retour</a>
-					<span class="has-text-grey"> / </span>
-					<a href="../../tableaux/tableau-kr.html" class="back-link">Tableau</a>
-				</p>
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
 
-				<div class="card">
-					<div class="card-content">
-						<div class="content">
-							<p class="mb-2"><strong>URL :</strong> <a href="https://www.ablenews.co.kr/news/articleView.html?idxno=225569" target="_blank" rel="noopener noreferrer" class="back-link">https://www.ablenews.co.kr/news/articleView.html?idxno=225569</a></p>
-							<p class="mb-4"><strong>Occurrences :</strong> 18</p>
-						</div>
+      .nav-links a:hover { color: var(--primary); }
 
-						<div class="table-container">
-							<table class="table is-fullwidth is-hoverable is-striped">
-								<thead>
-									<tr>
-										<th>Catégorie</th>
-										<th>Gauche</th>
-										<th>Mot</th>
-										<th>Droite</th>
-									</tr>
-								</thead>
-								<tbody>
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: "Instrument Serif", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header .subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary-dark);
+      }
+
+      .info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .info-card p {
+        margin-bottom: 0.75rem;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-card strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .info-card a {
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cat-col {
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .kwic-left, .kwic-kw, .kwic-right {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.85rem;
+      }
+
+      .kwic-left {
+        text-align: right;
+        width: 44%;
+      }
+
+      .kwic-kw {
+        text-align: center;
+        width: 12%;
+        font-weight: 700;
+      }
+
+      .kwic-right {
+        text-align: left;
+        width: 44%;
+      }
+
+      mark {
+        background: rgba(102, 126, 234, 0.2);
+        color: var(--primary-dark);
+        padding: 0.12rem 0.25rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      body.dark mark {
+        background: rgba(147, 197, 253, 0.25);
+        color: #93c5fd;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+        .kwic-left, .kwic-kw, .kwic-right { font-size: 0.75rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../../index.html#projet">Projet</a>
+          <a href="../../index.html#langues">Langues</a>
+          <a href="../../index.html#equipe">Contributeurs</a>
+          <a href="../../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Concordancier KWIC</h1>
+      <p class="subtitle">Fenêtre contextuelle : ±20 mots</p>
+    </header>
+
+    <main>
+      <div class="breadcrumb">
+        <a href="../../index.html">Accueil</a>
+        <span> / </span>
+        <a href="../../tableaux/kr.html">Tableau kr</a>
+        <span> / </span>
+        <span>Concordancier 49</span>
+      </div>
+
+      <div class="info-card">
+        <p><strong>URL :</strong> <a href="https://www.ablenews.co.kr/news/articleView.html?idxno=225569" target="_blank" rel="noopener noreferrer">https://www.ablenews.co.kr/news/articleView.html?idxno=225569</a></p>
+        <p><strong>Occurrences trouvées :</strong> 18</p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Catégorie</th>
+                <th>Contexte gauche</th>
+                <th>Mot-clé</th>
+                <th>Contexte droit</th>
+              </tr>
+            </thead>
+            <tbody>
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">【에이블뉴스 이슬기 기자】경기도가 지난 30일 장애인의 지역사회</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">기반 구축과 조성을 위해 공‘경기도 장애인자립지원협의체’를 구성, 실효적인 자립지원 정책 추진을 위한 협력체계를 구축했다. 협의체는 경기복지재단, 경기주택도시공사(GH), 경기남부</td>
@@ -85,7 +323,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">【에이블뉴스 이슬기 기자】경기도가 지난 30일 장애인의 지역사회 자립기반 구축과 조성을 위해 공‘경기도 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">지원협의체’를 구성, 실효적인 자립지원 정책 추진을 위한 협력체계를 구축했다. 협의체는 경기복지재단, 경기주택도시공사(GH), 경기남부 지역장애인보건의료센터, 한국장애인개발원 등</td>
@@ -93,7 +331,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">【에이블뉴스 이슬기 기자】경기도가 지난 30일 장애인의 지역사회 자립기반 구축과 조성을 위해 공‘경기도 장애인자립지원협의체’를 구성, 실효적인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">지원 정책 추진을 위한 협력체계를 구축했다. 협의체는 경기복지재단, 경기주택도시공사(GH), 경기남부 지역장애인보건의료센터, 한국장애인개발원 등 분야별 전문가, 장애인단체 관계자</td>
@@ -101,7 +339,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">택도시공사(GH), 경기남부 지역장애인보건의료센터, 한국장애인개발원 등 분야별 전문가, 장애인단체 관계자 및 장애인 부모 등 총 15명으로 구성됐다. 이번 협의체는 경기도 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">생활 지원계획 수립 시 장애인 당사자 및 관련 단체 등 현장 의견 반영과 사회적 자원의 연계가 필요하다는 제안을 경기도가 수용한</td>
@@ -109,7 +347,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">의견 반영과 사회적 자원의 연계가 필요하다는 제안을 경기도가 수용한 데 따른 것이다. 주거공간, 일자리 및 건강정보, 활동지원 서비스 등 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">지원 체계 구축을 위해서는 여러 관계 기관의 유기적인 협업이 필요하지만 그동안 기관 간의 협업은 관심도 높은 이슈에 대해서만 단기적으로 운영되거나</td>
@@ -117,7 +355,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">그동안 기관 간의 협업은 관심도 높은 이슈에 대해서만 단기적으로 운영되거나 일회성 운영에 그쳐 체계적인 자원의 연계 등은 부족했다. 회의는 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">지원 체계 구축 및 효율적인 자립정책 발굴을 주요 의제로 삼아 진행됐다. ‘2025년 경기도 장애인 자립생활 지원정책’, ‘경기도 장애인 자립욕구 실태</td>
@@ -125,7 +363,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">높은 이슈에 대해서만 단기적으로 운영되거나 일회성 운영에 그쳐 체계적인 자원의 연계 등은 부족했다. 회의는 장애인 자립지원 체계 구축 및 효율적인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">정책 발굴을 주요 의제로 삼아 진행됐다. ‘2025년 경기도 장애인 자립생활 지원정책’, ‘경기도 장애인 자립욕구 실태 현황’, ‘장애인 지역사회 자립지원 시범사업’</td>
@@ -133,7 +371,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">자원의 연계 등은 부족했다. 회의는 장애인 자립지원 체계 구축 및 효율적인 자립정책 발굴을 주요 의제로 삼아 진행됐다. ‘2025년 경기도 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">생활 지원정책’, ‘경기도 장애인 자립욕구 실태 현황’, ‘장애인 지역사회 자립지원 시범사업’ 에 대한 전문가 및 수행기관의 사례 발표를 통해 장애인</td>
@@ -141,7 +379,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">회의는 장애인 자립지원 체계 구축 및 효율적인 자립정책 발굴을 주요 의제로 삼아 진행됐다. ‘2025년 경기도 장애인 자립생활 지원정책’, ‘경기도 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">욕구 실태 현황’, ‘장애인 지역사회 자립지원 시범사업’ 에 대한 전문가 및 수행기관의 사례 발표를 통해 장애인 자립의 현 주소를 파악하고</td>
@@ -149,7 +387,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">및 효율적인 자립정책 발굴을 주요 의제로 삼아 진행됐다. ‘2025년 경기도 장애인 자립생활 지원정책’, ‘경기도 장애인 자립욕구 실태 현황’, ‘장애인 지역사회</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">지원 시범사업’ 에 대한 전문가 및 수행기관의 사례 발표를 통해 장애인 자립의 현 주소를 파악하고 기관별로 보유하고 있는 자원의 효율적인</td>
@@ -157,7 +395,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">자립생활 지원정책’, ‘경기도 장애인 자립욕구 실태 현황’, ‘장애인 지역사회 자립지원 시범사업’ 에 대한 전문가 및 수행기관의 사례 발표를 통해 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">의 현 주소를 파악하고 기관별로 보유하고 있는 자원의 효율적인 협업방향에 대한 다각적인 의견 교환이 이뤄졌다. 도는 앞으로 기관별 장애인 자립지원을</td>
@@ -165,7 +403,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">장애인 자립의 현 주소를 파악하고 기관별로 보유하고 있는 자원의 효율적인 협업방향에 대한 다각적인 의견 교환이 이뤄졌다. 도는 앞으로 기관별 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">지원을 위한 중점 시책과 상호 필요사항을 공유해 실효성 높은 자립지원 정책을 발굴할 계획이다. 협의체는 반기별 1회 이상 정기적으로 개최해 자립지원</td>
@@ -173,7 +411,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">효율적인 협업방향에 대한 다각적인 의견 교환이 이뤄졌다. 도는 앞으로 기관별 장애인 자립지원을 위한 중점 시책과 상호 필요사항을 공유해 실효성 높은</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">지원 정책을 발굴할 계획이다. 협의체는 반기별 1회 이상 정기적으로 개최해 자립지원 관련 현안 사항을 논의할 예정이다. 김훈 경기도 복지국장은 “장애인의</td>
@@ -181,7 +419,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">장애인 자립지원을 위한 중점 시책과 상호 필요사항을 공유해 실효성 높은 자립지원 정책을 발굴할 계획이다. 협의체는 반기별 1회 이상 정기적으로 개최해</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">지원 관련 현안 사항을 논의할 예정이다. 김훈 경기도 복지국장은 “장애인의 지역사회 자립을 위해서는 자립생활에 대한 당사자 욕구를 파악한 후 다양한</td>
@@ -189,7 +427,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">정책을 발굴할 계획이다. 협의체는 반기별 1회 이상 정기적으로 개최해 자립지원 관련 현안 사항을 논의할 예정이다. 김훈 경기도 복지국장은 “장애인의 지역사회</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">을 위해서는 자립생활에 대한 당사자 욕구를 파악한 후 다양한 사회적 자원의 체계적인 연계가 필요하다”며 “관계 기관과의 협업을 견고히 해서 사회·경제·문화적</td>
@@ -197,7 +435,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">계획이다. 협의체는 반기별 1회 이상 정기적으로 개최해 자립지원 관련 현안 사항을 논의할 예정이다. 김훈 경기도 복지국장은 “장애인의 지역사회 자립을 위해서는</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">생활에 대한 당사자 욕구를 파악한 후 다양한 사회적 자원의 체계적인 연계가 필요하다”며 “관계 기관과의 협업을 견고히 해서 사회·경제·문화적 변화에 따라</td>
@@ -205,7 +443,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">욕구를 파악한 후 다양한 사회적 자원의 체계적인 연계가 필요하다”며 “관계 기관과의 협업을 견고히 해서 사회·경제·문화적 변화에 따라 요구되는 맞춤형 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">생활 지원정책을 수립해 정책에 반영하겠다”라고 말했다. 한편 경기도는 지난 4월 ‘장애인 스스로 삶을 선택하는 기회의 경기도’를 비전으로 장애인 일자리·소득 등</td>
@@ -213,43 +451,38 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">삶을 선택하는 기회의 경기도’를 비전으로 장애인 일자리·소득 등 3대 영역 43개 사업에 1조 6000억 원을 투입하는 내용의 ‘2025년 경기도 장애인</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">생활 지원계획’을 발표한 바 있다. -장애인 곁을 든든하게 지켜주는 대안언론 에이블뉴스(ablenews.co.kr)- -에이블뉴스 기사 제보 및 보도자료 발송 ablenews@ab</td>
 				</tr>
 			
 
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
 
-		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-			<div class="content has-text-centered">
-				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-			</div>
-		</footer>
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+    </footer>
 
-		<script>
-			const btn = document.getElementById("themeToggle");
-			const saved = localStorage.getItem("theme");
-			if (saved === "dark") document.body.classList.add("dark");
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
 
-			function refreshLabel() {
-				const isDark = document.body.classList.contains("dark");
-				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
-			}
-			refreshLabel();
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      }
+      updateBtn();
 
-			btn.addEventListener("click", () => {
-				document.body.classList.toggle("dark");
-				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-				refreshLabel();
-			});
-		</script>
-	</body>
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        updateBtn();
+      });
+    </script>
+  </body>
 </html>

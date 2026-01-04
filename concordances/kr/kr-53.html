@@ -1,83 +1,321 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title>Concordancier - kr-53</title>
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-			<style>
-				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
-				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concordancier - kr-53</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
 
-				.back-link { color: #667eea }
-				.back-link:hover { color: #764ba2 }
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
 
-				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
-				.table tbody tr:hover td { background-color: #f5f3ff; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
-			.kwic-left  { text-align: right;  width: 44%; }
-			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
-			.kwic-right { text-align: left;   width: 44%; }
-			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
 
-			.cat-col { white-space: nowrap; }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
 
-			body.dark { background: #0f172a; color: #e2e8f0; }
-			body.dark .card { background: #111827; color: #e2e8f0; }
-			body.dark .table { background: #111827; color: #e2e8f0; }
-			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
-			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
-			body.dark .table tbody tr:hover td { background: #1f2937; }
-			body.dark .back-link { color: #93c5fd; }
-			body.dark .back-link:hover { color: #c4b5fd; }
-			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
-			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
-		</style>
-	</head>
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
 
-	<body>
-		<section class="hero is-small">
-			<div class="hero-body">
-				<div class="container has-text-centered">
-    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
-					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
-					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
-				</div>
-			</div>
-		</section>
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
 
-		<section class="section">
-			<div class="container">
-				<p class="mb-4">
-					<a href="../../index.html" class="back-link">Retour</a>
-					<span class="has-text-grey"> / </span>
-					<a href="../../tableaux/tableau-kr.html" class="back-link">Tableau</a>
-				</p>
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
 
-				<div class="card">
-					<div class="card-content">
-						<div class="content">
-							<p class="mb-2"><strong>URL :</strong> <a href="https://www.korea.kr/news/reporterView.do?newsId=148906037" target="_blank" rel="noopener noreferrer" class="back-link">https://www.korea.kr/news/reporterView.do?newsId=148906037</a></p>
-							<p class="mb-4"><strong>Occurrences :</strong> 26</p>
-						</div>
+      .nav-links a:hover { color: var(--primary); }
 
-						<div class="table-container">
-							<table class="table is-fullwidth is-hoverable is-striped">
-								<thead>
-									<tr>
-										<th>Catégorie</th>
-										<th>Gauche</th>
-										<th>Mot</th>
-										<th>Droite</th>
-									</tr>
-								</thead>
-								<tbody>
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: "Instrument Serif", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header .subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary-dark);
+      }
+
+      .info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .info-card p {
+        margin-bottom: 0.75rem;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-card strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .info-card a {
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cat-col {
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .kwic-left, .kwic-kw, .kwic-right {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.85rem;
+      }
+
+      .kwic-left {
+        text-align: right;
+        width: 44%;
+      }
+
+      .kwic-kw {
+        text-align: center;
+        width: 12%;
+        font-weight: 700;
+      }
+
+      .kwic-right {
+        text-align: left;
+        width: 44%;
+      }
+
+      mark {
+        background: rgba(102, 126, 234, 0.2);
+        color: var(--primary-dark);
+        padding: 0.12rem 0.25rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      body.dark mark {
+        background: rgba(147, 197, 253, 0.25);
+        color: #93c5fd;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+        .kwic-left, .kwic-kw, .kwic-right { font-size: 0.75rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../../index.html#projet">Projet</a>
+          <a href="../../index.html#langues">Langues</a>
+          <a href="../../index.html#equipe">Contributeurs</a>
+          <a href="../../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Concordancier KWIC</h1>
+      <p class="subtitle">Fenêtre contextuelle : ±20 mots</p>
+    </header>
+
+    <main>
+      <div class="breadcrumb">
+        <a href="../../index.html">Accueil</a>
+        <span> / </span>
+        <a href="../../tableaux/kr.html">Tableau kr</a>
+        <span> / </span>
+        <span>Concordancier 53</span>
+      </div>
+
+      <div class="info-card">
+        <p><strong>URL :</strong> <a href="https://www.korea.kr/news/reporterView.do?newsId=148906037" target="_blank" rel="noopener noreferrer">https://www.korea.kr/news/reporterView.do?newsId=148906037</a></p>
+        <p><strong>Occurrences trouvées :</strong> 26</p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Catégorie</th>
+                <th>Contexte gauche</th>
+                <th>Mot-clé</th>
+                <th>Contexte droit</th>
+              </tr>
+            </thead>
+            <tbody>
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">양육을 해야 한다는 것이다. 이러한 부모의 양육은 자녀를 독립적인 어른으로 길러내고 본인의 삶을 주체적으로 영위할 수 있게 만든다. 이는 ‘</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년’들에게도 공통적으로 적용되는 사안이다. 자립준비청년이란 아동양육시설, 공동생활가정, 가정 위탁 등의 보호를 받다가 통상 만 18세 이후 보호종료가 되어 홀로서기에 나서는</td>
@@ -85,7 +323,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">것이다. 이러한 부모의 양육은 자녀를 독립적인 어른으로 길러내고 본인의 삶을 주체적으로 영위할 수 있게 만든다. 이는 ‘자립준비청년’들에게도 공통적으로 적용되는 사안이다.</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년이란 아동양육시설, 공동생활가정, 가정 위탁 등의 보호를 받다가 통상 만 18세 이후 보호종료가 되어 홀로서기에 나서는 청년을 말한다. 이들에게 부모란</td>
@@ -93,7 +331,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">가정 위탁 등의 보호를 받다가 통상 만 18세 이후 보호종료가 되어 홀로서기에 나서는 청년을 말한다. 이들에게 부모란 시설이자 사회이다. 사회는</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년들이 충분한 준비를 마친 뒤 세상에 나아가 주체적인 삶을 꾸려갈 수 있도록 해야 한다. | | ‘죽고 싶다고 생각해 본</td>
@@ -101,7 +339,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">비슷한 나이대의 청년이었다. 아직까지도 부모의 품속에서 살아가고 있는 내가 그들의 심정을 가늠할 수나 있을까 하는 생각에 가슴이 아렸다. 한국보건사회연구원의 ‘보호종료아동</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right"> 실태 및 욕구조사’(2020)에 따르면 보호종료아동 3104명 중 ‘죽고 싶다고 생각해 본 경험이 있다’고 답한 비율은 50.0%였다. 이는 일반 청년</td>
@@ -109,7 +347,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">않으면 악의 고리는 계속해서 순환될 것이다. 그렇다면 그 근본적인 문제란 무엇이고, 이는 어떤 식의 지원을 통해 해결할 수 있을까? ‘</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년협회’ 주우진(28) 회장과의 인터뷰를 통해 자립준비청년들의 목소리를 들어봤다. | | 자립준비청년협회 홈페이지. 협회 소개를 비롯한 정보들이 담겨있다. | 자립준비청년협회</td>
@@ -117,7 +355,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">순환될 것이다. 그렇다면 그 근본적인 문제란 무엇이고, 이는 어떤 식의 지원을 통해 해결할 수 있을까? ‘자립준비청년협회’ 주우진(28) 회장과의 인터뷰를 통해</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년들의 목소리를 들어봤다. | | 자립준비청년협회 홈페이지. 협회 소개를 비롯한 정보들이 담겨있다. | 자립준비청년협회는 아동양육시설, 공동생활가정, 위탁 가정 출신 자립지원</td>
@@ -125,7 +363,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">문제란 무엇이고, 이는 어떤 식의 지원을 통해 해결할 수 있을까? ‘자립준비청년협회’ 주우진(28) 회장과의 인터뷰를 통해 자립준비청년들의 목소리를 들어봤다. | |</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년협회 홈페이지. 협회 소개를 비롯한 정보들이 담겨있다. | 자립준비청년협회는 아동양육시설, 공동생활가정, 위탁 가정 출신 자립지원청년(멘토)과 자립준비청년(멘티) 당사자들이</td>
@@ -133,7 +371,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">있을까? ‘자립준비청년협회’ 주우진(28) 회장과의 인터뷰를 통해 자립준비청년들의 목소리를 들어봤다. | | 자립준비청년협회 홈페이지. 협회 소개를 비롯한 정보들이 담겨있다. |</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년협회는 아동양육시설, 공동생활가정, 위탁 가정 출신 자립지원청년(멘토)과 자립준비청년(멘티) 당사자들이 직접 2021년에 설립한 협회로 경제적, 정서적, 사회적 자립을 함께</td>
@@ -141,7 +379,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">해 자립준비청년들의 목소리를 들어봤다. | | 자립준비청년협회 홈페이지. 협회 소개를 비롯한 정보들이 담겨있다. | 자립준비청년협회는 아동양육시설, 공동생활가정, 위탁 가정 출신</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">지원청년(멘토)과 자립준비청년(멘티) 당사자들이 직접 2021년에 설립한 협회로 경제적, 정서적, 사회적 자립을 함께하는 최초의 자립준비청년 당사자 단체이다. 자립준비청년이었던 주</td>
@@ -149,7 +387,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">소리를 들어봤다. | | 자립준비청년협회 홈페이지. 협회 소개를 비롯한 정보들이 담겨있다. | 자립준비청년협회는 아동양육시설, 공동생활가정, 위탁 가정 출신 자립지원청년(멘토)과</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년(멘티) 당사자들이 직접 2021년에 설립한 협회로 경제적, 정서적, 사회적 자립을 함께하는 최초의 자립준비청년 당사자 단체이다. 자립준비청년이었던 주 회장은 보호종료 이후</td>
@@ -157,7 +395,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">. | 자립준비청년협회는 아동양육시설, 공동생활가정, 위탁 가정 출신 자립지원청년(멘토)과 자립준비청년(멘티) 당사자들이 직접 2021년에 설립한 협회로 경제적, 정서적, 사회적</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">을 함께하는 최초의 자립준비청년 당사자 단체이다. 자립준비청년이었던 주 회장은 보호종료 이후 본인의 자립 과정을 개인 SNS에 업로드하곤 했는데, 이를 본</td>
@@ -165,7 +403,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left"> 아동양육시설, 공동생활가정, 위탁 가정 출신 자립지원청년(멘토)과 자립준비청년(멘티) 당사자들이 직접 2021년에 설립한 협회로 경제적, 정서적, 사회적 자립을 함께하는 최초의</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년 당사자 단체이다. 자립준비청년이었던 주 회장은 보호종료 이후 본인의 자립 과정을 개인 SNS에 업로드하곤 했는데, 이를 본 자립준비청년들이 SNS 메신저를</td>
@@ -173,7 +411,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">위탁 가정 출신 자립지원청년(멘토)과 자립준비청년(멘티) 당사자들이 직접 2021년에 설립한 협회로 경제적, 정서적, 사회적 자립을 함께하는 최초의 자립준비청년 당사자 단체이다.</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년이었던 주 회장은 보호종료 이후 본인의 자립 과정을 개인 SNS에 업로드하곤 했는데, 이를 본 자립준비청년들이 SNS 메신저를 통해 그들의 고민을</td>
@@ -181,7 +419,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">당사자들이 직접 2021년에 설립한 협회로 경제적, 정서적, 사회적 자립을 함께하는 최초의 자립준비청년 당사자 단체이다. 자립준비청년이었던 주 회장은 보호종료 이후 본인의</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right"> 과정을 개인 SNS에 업로드하곤 했는데, 이를 본 자립준비청년들이 SNS 메신저를 통해 그들의 고민을 전해왔다고 한다. 가끔 한두 건 오던</td>
@@ -189,7 +427,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">자립을 함께하는 최초의 자립준비청년 당사자 단체이다. 자립준비청년이었던 주 회장은 보호종료 이후 본인의 자립 과정을 개인 SNS에 업로드하곤 했는데, 이를 본</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년들이 SNS 메신저를 통해 그들의 고민을 전해왔다고 한다. 가끔 한두 건 오던 연락은 시간이 지날수록 점점 늘어났고 이후에는 100여 건에</td>
@@ -197,7 +435,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">고민을 전해왔다고 한다. 가끔 한두 건 오던 연락은 시간이 지날수록 점점 늘어났고 이후에는 100여 건에 이를 정도였다. 이에 주 회장은</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년들이 겪고 있는 문제가 개인의 의지 문제가 아닌 사회와 시스템의 문제라고 느꼈고 주위의 보호종료아동들과 함께 협회를 설립하게 됐다. | |</td>
@@ -205,7 +443,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">겪고 있는 문제가 개인의 의지 문제가 아닌 사회와 시스템의 문제라고 느꼈고 주위의 보호종료아동들과 함께 협회를 설립하게 됐다. | | ‘</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년협회’ 주우진 회장과 비대면 인터뷰를 진행했다. | 자립준비청년협회는 ‘경제적’, ‘심리·정서적’, ‘사회적’ 지원의 삼박자가 이루어져야만 진정한 문제 해결이 가능하다고 주</td>
@@ -213,7 +451,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">아닌 사회와 시스템의 문제라고 느꼈고 주위의 보호종료아동들과 함께 협회를 설립하게 됐다. | | ‘자립준비청년협회’ 주우진 회장과 비대면 인터뷰를 진행했다. |</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년협회는 ‘경제적’, ‘심리·정서적’, ‘사회적’ 지원의 삼박자가 이루어져야만 진정한 문제 해결이 가능하다고 주장한다. 경제적인 지원은 꼭 필요한 것이지만 이것만으로는 근본적</td>
@@ -221,7 +459,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">“심리·정서적 지원을 위해 시작된 마음공간 바우처 등의 사업들이 있다. 그러나 당사자들의 지원률이 굉장히 낮아 활용 자체에 어려움이 있다. 정부에서는 우선적으로</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년들의 니즈를 정확히 파악한 뒤 사업 내용이나 지원 방안 등을 수립할 필요가 있다”고 답하며 사업의 이용률을 높여야 한다고 강조했다. 또한</td>
@@ -229,7 +467,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">파악한 뒤 사업 내용이나 지원 방안 등을 수립할 필요가 있다”고 답하며 사업의 이용률을 높여야 한다고 강조했다. 또한 “시설 등에서 자란</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년들은 마주해온 환경이나 사람들이 한정적이다. 그렇기 때문에 사회에서 어떤 식으로 행동하고 처신해야 하는지 명확히 알지 못하고 막연한 두려움에 빠지곤 한다.</td>
@@ -237,7 +475,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">질문에는 “제대로 활성화되고 있는 사업이 사실상 없는 상황이기 때문에 새롭게 만들어야 한다”고 단호하게 답하기도 했다. | | 지난 8월부터 보호종료아동의</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">수당이 35만 원으로 늘었다.(출처=복지로 홈페이지) | 자립준비청년들에 대한 경제적 지원은 계속해서 확대되고 있다. 지난 6월에는 자립준비청년 지원에 대한 현행 제도를</td>
@@ -245,7 +483,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">없는 상황이기 때문에 새롭게 만들어야 한다”고 단호하게 답하기도 했다. | | 지난 8월부터 보호종료아동의 자립수당이 35만 원으로 늘었다.(출처=복지로 홈페이지) |</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년들에 대한 경제적 지원은 계속해서 확대되고 있다. 지난 6월에는 자립준비청년 지원에 대한 현행 제도를 개선·보완하는 내용의 ‘아동복지법 개정안’이 시행돼 보호종료</td>
@@ -253,7 +491,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">| | 지난 8월부터 보호종료아동의 자립수당이 35만 원으로 늘었다.(출처=복지로 홈페이지) | 자립준비청년들에 대한 경제적 지원은 계속해서 확대되고 있다. 지난 6월에는</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년 지원에 대한 현행 제도를 개선·보완하는 내용의 ‘아동복지법 개정안’이 시행돼 보호종료 기간이 만 18세에서 만 24세로 증가했으며, 지난 8월에는 자립수당이</td>
@@ -261,7 +499,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">6월에는 자립준비청년 지원에 대한 현행 제도를 개선·보완하는 내용의 ‘아동복지법 개정안’이 시행돼 보호종료 기간이 만 18세에서 만 24세로 증가했으며, 지난 8월에는</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">수당이 월 30만 원에서 35만 원으로 올랐다. 내년에는 5만 원을 확충해 40만 원으로 지급할 예정이라고 한다. 이 외에도 의료비 지원이나</td>
@@ -269,7 +507,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">원으로 올랐다. 내년에는 5만 원을 확충해 40만 원으로 지급할 예정이라고 한다. 이 외에도 의료비 지원이나 심리·정서 지원의 확대도 이루어지고 있다.</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년 지원에 관한 소식이 들려올 때마다 첫 번째로 언급되는 것은 경제적 지원인 것 같다. 어느 정도의 예산을 확충하는가에 대해 집중적으로</td>
@@ -277,43 +515,38 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">자립</td>
+					<td class="cat-col">자립</td>
 					<td class="kwic-left">언급되는 것은 경제적 지원인 것 같다. 어느 정도의 예산을 확충하는가에 대해 집중적으로 논하고 여타 지원 사안들은 부가적인 것으로 넘기곤 한다.</td>
 					<td class="kwic-kw"><mark>자립</mark></td>
 					<td class="kwic-right">준비청년들이 겪는 근본적인 문제가 무엇인가에 대해 들으며 체계적 지원의 중요성을 깨닫게 됐다. 사회의 시각으로 그들을 바라볼 것이 아니라 그들의 시각으로</td>
 				</tr>
 			
 
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
 
-		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-			<div class="content has-text-centered">
-				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-			</div>
-		</footer>
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+    </footer>
 
-		<script>
-			const btn = document.getElementById("themeToggle");
-			const saved = localStorage.getItem("theme");
-			if (saved === "dark") document.body.classList.add("dark");
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
 
-			function refreshLabel() {
-				const isDark = document.body.classList.contains("dark");
-				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
-			}
-			refreshLabel();
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      }
+      updateBtn();
 
-			btn.addEventListener("click", () => {
-				document.body.classList.toggle("dark");
-				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-				refreshLabel();
-			});
-		</script>
-	</body>
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        updateBtn();
+      });
+    </script>
+  </body>
 </html>

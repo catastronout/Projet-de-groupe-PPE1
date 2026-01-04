@@ -1,9 +1,9 @@
 2	Sezgisel Otonomi
+1	Gelişmiş otonomi
+1	Güvenilir Otonomi
+1	Otonomi Kalabalık
 1	otonomi bileşenleri
 1	Otonomi Robotik
-1	otonomi LiDAR
-1	Güvenilir Otonomi
-1	Otonomi ve
-1	Otonomi Kalabalık
 1	odaklı otonomi
-1	Gelişmiş otonomi
+1	Otonomi ve
+1	otonomi LiDAR

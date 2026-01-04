@@ -1,2 +1,2 @@
-1	otonomi seviyesine
 1	5 otonomi
+1	otonomi seviyesine

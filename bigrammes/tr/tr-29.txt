@@ -1,8 +1,8 @@
-1	bekleniyor OTONOMİ
-1	yüksek otonomi
-1	otonomi seviyesi
-1	otonomi kabiliyetleri
 1	tasarım otonomi
 1	Otonomi kabiliyetleriyle
+1	otonomi kabiliyetleri
+1	yüksek otonomi
 1	OTONOMİ VE
+1	otonomi seviyesi
+1	bekleniyor OTONOMİ
 1	artırdı Otonomi

@@ -1,7 +1,7 @@
 2	bölgesel özerklik
-1	özerklik alt
 1	özerklik veya
 1	makamdan özerklik
 1	özerkliklere ayrılabilir
 1	özerklik ve
+1	özerklik alt
 1	yerel özerkliklere

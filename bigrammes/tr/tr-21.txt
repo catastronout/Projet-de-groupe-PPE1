@@ -1,2 +1,2 @@
-1	otonomi altyapısı
 1	ve otonomi
+1	otonomi altyapısı

@@ -124,9 +124,17 @@ MOTIFS_SENS2=()
 LABEL_SENS1=""
 LABEL_SENS2=""
 
+# Variable globale pour le mode KWIC
+# Cette variable est utilisée par la fonction generer_kwic_tsv()
+KWIC_MODE=""
+
 # ----- Cas 1 : deux fichiers de motifs sont fournis en arguments -----
 # On vérifie que ces fichiers existent 
 if [[ -n "$FICHIER_MOTS_SENS1" && -n "$FICHIER_MOTS_SENS2" && -f "$FICHIER_MOTS_SENS1" && -f "$FICHIER_MOTS_SENS2" ]]; then
+    # Mode pour langues à déclinaisons (turc, biélorusse)
+    KWIC_MODE="word"
+    log "Mode KWIC : word (langues à déclinaisons)"
+
     # Lecture du fichier des motifs du lemme 1
 	while IFS= read -r m; do
 		# Nettoyage : suppression des retours chariot, sauts de ligne et espaces
@@ -149,6 +157,20 @@ if [[ -n "$FICHIER_MOTS_SENS1" && -n "$FICHIER_MOTS_SENS2" && -f "$FICHIER_MOTS_
 	[[ -z "$LABEL_SENS2" ]] && LABEL_SENS2="sens 2"
 # ----- Cas 2 : aucun fichier de motifs fournis -----
 else
+	# Mode pour le coréen (100 caractères)
+    KWIC_MODE="char"
+    log "Mode KWIC : char (coréen)"
+
+    echo "═══════════════════════════════════════════════════════════════════" >&2
+    echo "  Mode langues sans déclinaisons (coréen)" >&2
+    echo "  Si vous voulez chercher un mot dans une langue à déclinaisons" >&2
+    echo "  (turc, biélorusse), quittez (Ctrl+C) et relancez avec les" >&2
+    echo "  fichiers de déclinaisons en argument." >&2
+	echo "" >&2
+    echo "   bash main.sh <urls> <tableau> fichier_sens1.txt fichier_sens2.txt" >&2
+    echo "═══════════════════════════════════════════════════════════════════" >&2
+    echo "" >&2
+
 	# Input user : motif à chercher (pour le coréen)
 	read -rp "Écris le mot 1 (sens 1) : " m1
 	read -rp "Écris le mot 2 (sens 2) : " m2
@@ -160,6 +182,8 @@ else
 	LABEL_SENS2="$m2"
 fi
 
+# Afficher le mode sélectionné
+log "KWIC_MODE = $KWIC_MODE"
 
 # Initialisation du compteur d'URLs, pour numéroter les lignes du tableau et des fichiers générés
 n=1
@@ -201,18 +225,18 @@ generer_badge_code() {
 
 	# Mise en page des badges en fonction des codes HTML récupérés
 	if [[ "$code" =~ ^2 ]]; then        # le code HTML commence par 2
-    	echo "<span class=\"tag is-success is-light\">${code}</span>"
+    	echo "<span class=\"tag is-success\">${code}</span>"
 	elif [[ "$code" =~ ^3 ]]; then      # le code HTML commence par 3
-    	echo "<span class=\"tag is-info is-light\">${code}</span>"
+    	echo "<span class=\"tag is-warning\">${code}</span>"
 	elif [[ "$code" =~ ^4 ]]; then      # le code HTML commence par 4
-    	echo "<span class=\"tag is-danger is-light\">${code}</span>"
+    	echo "<span class=\"tag is-danger\">${code}</span>"
 	elif [[ "$code" =~ ^5 ]]; then      # le code HTML commence par 5
-    	echo "<span class=\"tag is-warning is-light\">${code}</span>"
-	elif [[ "$code" == "000" ]]; then   # le code HTML est `000`
-    	echo "<span class=\"tag is-light has-text-grey-light\">000</span>"
+    	echo "<span class=\"tag is-danger\">${code}</span>"
 	else
     	echo "<span class=\"tag is-light\">${code}</span>"
-  	fi
+	fi
+
+    	#echo "<span class=\"tag is-info is-light\">${code}</span>"
 }
 
 
@@ -268,6 +292,10 @@ join_array() {
 # ============================
 # Produit un TSV : LABEL \t LEFT \t KW \t RIGHT
 # Chaque ligne aura 4 colonnes séparées par des tab : 1) label, 2) contexte gauche, 3) mot trouvé, 4) contexte droit
+#
+# Deux modes disponibles (contrôlés par la variable globale KWIC_MODE) :
+#   KWIC_MODE="char"  → Mode coréen : utilise pykospacing + 100 caractères
+#   KWIC_MODE="word"  → Mode turc/biélorusse : mots complets, pas de coupure
 generer_kwic_tsv() {
 	# Variables locales :
 	# $1 : fichier texte source
@@ -281,59 +309,140 @@ generer_kwic_tsv() {
   	local motifs_joined="$4"
   	local w="$5"
 
+	# Vérifier le mode (défaut: "word" pour langues à déclinaisons)
+    local mode="${KWIC_MODE:-word}"
+
 	# Tokenisation + KWIC
 	# Pour chaque motif :
 	# - découper le texte en tokens
 	# - repérer les occurrences exactes des motifs
 	# - extraire une fenêtre de contexte de N mots à gauche et à droite
 	# - écrire le résultat dans un fichier TSV : LABEL \t GAUCHE \t MOT \t DROITE
-perl -Mutf8 -CS -e '
-        use strict; use warnings;
-        use Encode qw(decode FB_DEFAULT);
 
-        my ($txt, $out, $label, $joined, $w) = @ARGV;
-        $label  = decode("UTF-8", $label,  FB_DEFAULT);
-        $joined = decode("UTF-8", $joined, FB_DEFAULT);
+    if [[ "$mode" == "char" ]]; then
+        # ============================================
+        # MODE CORÉEN : 100 caractères de contexte
+        # ============================================
+		log_step "KWIC mode: char (coréen avec pykospacing)"
 
-        # 검색할 단어들 (자율, 자립 등)
-        my @motifs = grep { length($_) } split(/\x1F/, $joined);
-        
-        open my $IN, "<:encoding(UTF-8)", $txt or die "Cannot open $txt\n";
-        local $/;
-        my $content = <$IN>;
-        close $IN;
+		# Créer un fichier temporaire avec le texte traité par pykospacing
+        local txt_spaced="${txt}.spaced.tmp"
+        python3 korean_spacing.py "$txt" > "$txt_spaced" 2>/dev/null
 
-        # 정규표현식 패턴 생성: (자율|자립)
-        my $pattern = join("|", map { quotemeta($_) } @motifs);
+		# Si pykospacing a échoué, utiliser le fichier original
+        if [[ ! -s "$txt_spaced" ]]; then
+            log_step "pykospacing a échoué, utilisation du fichier original"
+            cp "$txt" "$txt_spaced"
+        fi
 
-        open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
+		perl -Mutf8 -CS -e '
+			use strict; use warnings;
+			use Encode qw(decode FB_DEFAULT);
 
-        # 핵심 수정: 전체 텍스트에서 패턴이 포함된 위치를 찾음 (부분 일치)
-        while ($content =~ /($pattern)/gu) {
-            my $matched_word = $1;
-            my $pos = pos($content); # 매칭된 단어의 끝 위치
-            my $start_pos = $pos - length($matched_word);
+			my ($txt, $out, $label, $joined, $w) = @ARGV;
+			$label  = decode("UTF-8", $label,  FB_DEFAULT);
+			$joined = decode("UTF-8", $joined, FB_DEFAULT);
 
-            # 문맥 추출 (글자 수 기준이 아니라 주변 공백/단어 기반으로 추출하기 위해 
-            # 매칭 위치 앞뒤의 텍스트를 적절히 잘라냅니다)
+			# 검색할 단어들 (자율, 자립 등)
+			my @motifs = grep { length($_) } split(/\x1F/, $joined);
+				
+			open my $IN, "<:encoding(UTF-8)", $txt or die "Cannot open $txt\n";
+			local $/;
+			my $content = <$IN>;
+			close $IN;
+
+			# 정규표현식 패턴 생성: (자율|자립)
+			my $pattern = join("|", map { quotemeta($_) } @motifs);
+
+			open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
+
+			# 핵심 수정: 전체 텍스트에서 패턴이 포함된 위치를 찾음 (부분 일치)
+			while ($content =~ /($pattern)/gu) {
+				my $matched_word = $1;
+				my $pos = pos($content); # 매칭된 단어의 끝 위치
+				my $start_pos = $pos - length($matched_word);
+
+				# 문맥 추출 (글자 수 기준이 아니라 주변 공백/단어 기반으로 추출하기 위해 
+				# 매칭 위치 앞뒤의 텍스트를 적절히 잘라냅니다)
+					
+				# 왼쪽 문맥: 매칭 위치 앞의 약 100글자 중 마지막 $w개의 어절
+				my $left_context_raw = substr($content, ($start_pos > 100 ? $start_pos - 100 : 0), ($start_pos > 100 ? 100 : $start_pos));
+				my @left_words = split(/\s+/, $left_context_raw);
+				my $left = join(" ", @left_words[ ( @left_words > $w ? @left_words - $w : 0 ) .. $#left_words ]);
+
+				# 오른쪽 문맥: 매칭 위치 뒤의 약 100글자 중 첫 $w개의 어절
+				my $right_context_raw = substr($content, $pos, 100);
+				my @right_words = split(/\s+/, $right_context_raw);
+				my $right = join(" ", @right_words[ 0 .. ( @right_words > $w ? $w - 1 : $#right_words ) ]);
+
+				# 탭 문자 제거 (TSV 구조 유지)
+				for ($left, $matched_word, $right) { s/\t/ /g; s/\n/ /g; s/\r//g; }
+
+				print $OUT $label, "\t", $left, "\t", $matched_word, "\t", $right, "\n";
+			}
+			close $OUT;
+		' "$txt" "$out_tsv" "$label" "$motifs_joined" "$w"
+	else
+        # ============================================
+        # MODE TURC/BIÉLORUSSE : Mots complets
+        # ============================================
+        perl -Mutf8 -CS -e '
+            use strict; use warnings;
+            use Encode qw(decode FB_DEFAULT);
+
+            my ($txt, $out, $label, $joined, $w) = @ARGV;
+            $label  = decode("UTF-8", $label,  FB_DEFAULT);
+            $joined = decode("UTF-8", $joined, FB_DEFAULT);
+
+            my @motifs = grep { length($_) } split(/\x1F/, $joined);
             
-            # 왼쪽 문맥: 매칭 위치 앞의 약 100글자 중 마지막 $w개의 어절
-            my $left_context_raw = substr($content, ($start_pos > 100 ? $start_pos - 100 : 0), ($start_pos > 100 ? 100 : $start_pos));
-            my @left_words = split(/\s+/, $left_context_raw);
-            my $left = join(" ", @left_words[ ( @left_words > $w ? @left_words - $w : 0 ) .. $#left_words ]);
+            open my $IN, "<:encoding(UTF-8)", $txt or die "Cannot open $txt\n";
+            local $/;
+            my $content = <$IN>;
+            close $IN;
 
-            # 오른쪽 문맥: 매칭 위치 뒤의 약 100글자 중 첫 $w개의 어절
-            my $right_context_raw = substr($content, $pos, 100);
-            my @right_words = split(/\s+/, $right_context_raw);
-            my $right = join(" ", @right_words[ 0 .. ( @right_words > $w ? $w - 1 : $#right_words ) ]);
+            # Tokeniser le texte en mots (tableau simple de strings)
+            my @tokens;
+            while ($content =~ /(\S+)/g) {
+                push @tokens, $1;
+            }
 
-            # 탭 문자 제거 (TSV 구조 유지)
-            for ($left, $matched_word, $right) { s/\t/ /g; s/\n/ /g; s/\r//g; }
+            my $pattern = join("|", map { quotemeta($_) } @motifs);
+            my $regex = qr/($pattern)/i;
 
-            print $OUT $label, "\t", $left, "\t", $matched_word, "\t", $right, "\n";
-        }
-        close $OUT;
-    ' "$txt" "$out_tsv" "$label" "$motifs_joined" "$w"
+            open my $OUT, ">:encoding(UTF-8)", $out or die "Cannot write $out\n";
+
+            # Parcourir chaque token et chercher les motifs
+            for (my $i = 0; $i < scalar(@tokens); $i++) {
+                my $token = $tokens[$i];
+                
+                # Vérifier si le token contient un des motifs
+                if ($token =~ $regex) {
+                    # Contexte gauche : $w mots COMPLETS avant
+                    my $left_start = ($i - $w > 0) ? $i - $w : 0;
+                    my $left = "";
+                    for (my $j = $left_start; $j < $i; $j++) {
+                        $left .= $tokens[$j] . " ";
+                    }
+                    $left =~ s/\s+$//;  # Supprimer espace final
+
+                    # Contexte droit : $w mots COMPLETS après
+                    my $right_end = ($i + $w < scalar(@tokens) - 1) ? $i + $w : scalar(@tokens) - 1;
+                    my $right = "";
+                    for (my $j = $i + 1; $j <= $right_end; $j++) {
+                        $right .= $tokens[$j] . " ";
+                    }
+                    $right =~ s/\s+$//;  # Supprimer espace final
+
+                    # Nettoyage
+                    for ($left, $token, $right) { s/\t/ /g; s/\n/ /g; s/\r//g; }
+
+                    print $OUT $label, "\t", $left, "\t", $token, "\t", $right, "\n";
+                }
+            }
+            close $OUT;
+        ' "$txt" "$out_tsv" "$label" "$motifs_joined" "$w"
+    fi	
 }
 
 # =================================
@@ -696,7 +805,7 @@ verifier_robots_txt() {
 	local code=$(curl -sL --max-time 5 -o /dev/null -w "%{http_code}" "$robots_url")
 	
 	if [[ "$code" == "200" ]]; then
-		echo "<span class=\"tag is-success is-light\">✓ Oui</span>"
+		echo "<span class=\"tag is-success\">✓ Oui</span>"
 	else
 		echo "<span class=\"tag is-light\">✗ Non</span>"
 	fi
@@ -709,73 +818,299 @@ verifier_robots_txt() {
 {
 cat << HEADER
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tableau des résultats</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Tableau ${FICHIER_URLS} — Projet PPE1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
-      .card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
-      .table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
-      .table tbody tr:hover { background-color: #f5f3ff }
-      .url-cell { max-width: 350px; word-break: break-all; font-family: monospace; font-size: 0.85rem; color: #555 }
-      .back-link { color: #667eea }
-      .back-link:hover { color: #764ba2 }
-      .count-cell { font-weight: bold; color: #667eea }
-      .url-cell a { color: #667eea; }
-      .url-cell a:hover { color: #764ba2; }
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
 
-      body.dark { background: #0f172a; color: #e2e8f0; }
-      body.dark .card { background: #111827; color: #e2e8f0; }
-      body.dark .table { background: #111827; color: #e2e8f0; }
-      body.dark .table thead th { background: #0b1220; color: #e2e8f0; }
-      body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
-      body.dark .table tbody tr:hover td { background: #1f2937; }
-      body.dark .url-cell { color: #cbd5e1; }
-      body.dark .back-link, body.dark .url-cell a { color: #93c5fd; }
-      body.dark .back-link:hover, body.dark .url-cell a:hover { color: #c4b5fd; }
-      body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
-      body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-family: 'Instrument Serif', serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover { color: var(--primary); }
+
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      /* Header */
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: 'Instrument Serif', serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header p {
+        color: var(--text-muted);
+      }
+
+      /* Main */
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        transition: gap 0.2s;
+      }
+
+      .back-link:hover { gap: 0.75rem; }
+
+      /* Table card */
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .url-cell {
+        max-width: 300px;
+        word-break: break-all;
+        font-family: monospace;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .url-cell a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .url-cell a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .count-cell {
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      /* Tags / Badges */
+      .tag {
+        display: inline-block;
+        padding: 0.25rem 0.6rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .tag.is-success { background: rgba(16, 185, 129, 0.15); color: #059669; }
+      .tag.is-warning { background: rgba(245, 158, 11, 0.15); color: #d97706; }
+      .tag.is-danger { background: rgba(239, 68, 68, 0.15); color: #dc2626; }
+      .tag.is-light { background: var(--border); color: var(--text-muted); }
+
+      body.dark .tag.is-success { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+      body.dark .tag.is-warning { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+      body.dark .tag.is-danger { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+      /* Links in table */
+      td a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      td a:hover {
+        color: var(--primary-dark);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+      }
     </style>
   </head>
 
   <body>
-    <section class="hero is-small">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title has-text-white">Tableau des résultats</h1>
-          <button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
+    <nav>
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../index.html#projet">Projet</a>
+          <a href="../index.html#langues">Langues</a>
+          <a href="../index.html#equipe">Contributeurs </a>
+          <a href="../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
         </div>
       </div>
-    </section>
+    </nav>
 
-    <section class="section">
-      <div class="container">
-        <p class="mb-4"><a href="../../../index.html" class="back-link">Retour</a></p>
+    <header class="page-header">
+      <h1>Tableau ${FICHIER_URLS}</h1>
+      <p>Résultats de l'analyse pour ${LABEL_SENS1} / ${LABEL_SENS2}</p>
+    </header>
 
-        <div class="card">
-          <div class="card-content">
-            <div class="table-container">
-              <table class="table is-fullwidth is-hoverable">
-                <thead>
-                  <tr>
-                    <th>N°</th>
-                    <th>URL</th>
-                    <th>Code HTTP</th>
-                    <th>Encodage</th>
-                    <th>Nb mots</th>
-                    <th>Occ : ${LABEL_SENS1}</th>
-                    <th>Occ : ${LABEL_SENS2}</th>
-                    <th>Dump HTML</th>
-                    <th>Dump Text</th>
-                    <th>Concord.</th>
-                    <th>Bigrammes</th>
-                    <th>Robots.txt</th>
-                  </tr>
-                </thead>
-                <tbody>
+    <main>
+      <a href="../index.html#langues" class="back-link">← Retour aux langues</a>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>N°</th>
+                <th>URL</th>
+                <th>Code HTTP</th>
+                <th>Encodage</th>
+                <th>Nb mots</th>
+                <th>Occ :<br>${LABEL_SENS1}</th>
+                <th>Occ :<br>${LABEL_SENS2}</th>
+                <th>Dump HTML</th>
+                <th>Dump Text</th>
+                <th>Concord.</th>
+                <th>Bigrammes</th>
+                <th>Robots.txt</th>
+              </tr>
+            </thead>
+            <tbody>
 HEADER
 
 
@@ -955,35 +1290,30 @@ echo -e "\n✓ Terminé ! $((n-1)) URLs traitées." >&2
 
 # Ajout de la fin du HTML
 cat << 'FOOTER'
-                </tbody>
-              </table>
-            </div>
-          </div>
+            </tbody>
+          </table>
         </div>
       </div>
-    </section>
+    </main>
 
-    <footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-      <div class="content has-text-centered">
-        <p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-      </div>
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
     </footer>
 
     <script>
-      const btn = document.getElementById("themeToggle");
-      const saved = localStorage.getItem("theme");
-      if (saved === "dark") document.body.classList.add("dark");
+      const btn = document.getElementById('themeToggle');
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.body.classList.add('dark');
 
-      function refreshLabel() {
-        const isDark = document.body.classList.contains("dark");
-        btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
       }
-      refreshLabel();
+      updateBtn();
 
-      btn.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-        refreshLabel();
+      btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        updateBtn();
       });
     </script>
   </body>

@@ -1,83 +1,321 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title>Concordancier - be-38</title>
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-			<style>
-				.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) }
-				.card { border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1) }
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concordancier - be-38</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #667eea;
+        --primary-dark: #764ba2;
+        --accent: #f093fb;
+        --bg: #fafafa;
+        --bg-card: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6b7280;
+        --border: #e5e7eb;
+        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --shadow: 0 4px 24px rgba(102, 126, 234, 0.12);
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
 
-				.back-link { color: #667eea }
-				.back-link:hover { color: #764ba2 }
+      body.dark {
+        --bg: #0f0f1a;
+        --bg-card: #1a1a2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #2d2d44;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      }
 
-				.table thead th { background-color: #f8f9fa; color: #4a5568; border-bottom: 2px solid #667eea; }
-				.table tbody tr:hover td { background-color: #f5f3ff; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-			.kwic-left, .kwic-kw, .kwic-right { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.9rem; }
-			.kwic-left  { text-align: right;  width: 44%; }
-			.kwic-kw    { text-align: center; width: 12%; font-weight: 700; }
-			.kwic-right { text-align: left;   width: 44%; }
-			mark { padding: 0.12rem 0.25rem; border-radius: 4px; }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+      }
 
-			.cat-col { white-space: nowrap; }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
 
-			body.dark { background: #0f172a; color: #e2e8f0; }
-			body.dark .card { background: #111827; color: #e2e8f0; }
-			body.dark .table { background: #111827; color: #e2e8f0; }
-			body.dark .table thead th { background: #0b1220; color: #e2e8f0; border-color: #334155; }
-			body.dark .table td, body.dark .table th { background: #111827; color: #e2e8f0; border-color: #334155; }
-			body.dark .table tbody tr:hover td { background: #1f2937; }
-			body.dark .back-link { color: #93c5fd; }
-			body.dark .back-link:hover { color: #c4b5fd; }
-			body.dark .footer { background: #0b1220 !important; color: #e2e8f0; }
-			body.dark .footer .has-text-grey { color: #94a3b8 !important; }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-			body.dark mark { background: rgba(147,197,253,0.25); color: #e2e8f0; }
-		</style>
-	</head>
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+      }
 
-	<body>
-		<section class="hero is-small">
-			<div class="hero-body">
-				<div class="container has-text-centered">
-    				<h1 class="title has-text-white">Concordancier (KWIC)</h1>
-					<p class="subtitle has-text-white is-6">Fenêtre : ±20 mots</p>
-					<button id="themeToggle" class="button is-light is-small mt-2">🌙 Mode sombre</button>
-				</div>
-			</div>
-		</section>
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
 
-		<section class="section">
-			<div class="container">
-				<p class="mb-4">
-					<a href="../../index.html" class="back-link">Retour</a>
-					<span class="has-text-grey"> / </span>
-					<a href="../../tableaux/tableau-be.html" class="back-link">Tableau</a>
-				</p>
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
 
-				<div class="card">
-					<div class="card-content">
-						<div class="content">
-							<p class="mb-2"><strong>URL :</strong> <a href="https://indeksonline.net/be/mustafa-i-reagon-kurtit-per-asociacionin-pika-e-7-e-marreveshjes-tende-instalon-autonomine-politiko-territoriale-te-komunitetit-serb/" target="_blank" rel="noopener noreferrer" class="back-link">https://indeksonline.net/be/mustafa-i-reagon-kurtit-per-asociacionin-pika-e-7-e-marreveshjes-tende-instalon-autonomine-politiko-territoriale-te-komunitetit-serb/</a></p>
-							<p class="mb-4"><strong>Occurrences :</strong> 4</p>
-						</div>
+      .nav-links a:hover { color: var(--primary); }
 
-						<div class="table-container">
-							<table class="table is-fullwidth is-hoverable is-striped">
-								<thead>
-									<tr>
-										<th>Catégorie</th>
-										<th>Gauche</th>
-										<th>Mot</th>
-										<th>Droite</th>
-									</tr>
-								</thead>
-								<tbody>
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+      }
+
+      .theme-toggle:hover { transform: scale(1.1); }
+
+      .page-header {
+        padding: 7rem 2rem 3rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-family: "Instrument Serif", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header .subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--primary-dark);
+      }
+
+      .info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .info-card p {
+        margin-bottom: 0.75rem;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-card strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .info-card a {
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      thead th {
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--primary);
+        white-space: nowrap;
+      }
+
+      tbody td {
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+      }
+
+      tbody tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cat-col {
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .kwic-left, .kwic-kw, .kwic-right {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.85rem;
+      }
+
+      .kwic-left {
+        text-align: right;
+        width: 44%;
+      }
+
+      .kwic-kw {
+        text-align: center;
+        width: 12%;
+        font-weight: 700;
+      }
+
+      .kwic-right {
+        text-align: left;
+        width: 44%;
+      }
+
+      mark {
+        background: rgba(102, 126, 234, 0.2);
+        color: var(--primary-dark);
+        padding: 0.12rem 0.25rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      body.dark mark {
+        background: rgba(147, 197, 253, 0.25);
+        color: #93c5fd;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 2rem; }
+        .kwic-left, .kwic-kw, .kwic-right { font-size: 0.75rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">Autonomie</a>
+        <div class="nav-links">
+          <a href="../../index.html#projet">Projet</a>
+          <a href="../../index.html#langues">Langues</a>
+          <a href="../../index.html#equipe">Contributeurs</a>
+          <a href="../../scripts.html">Scripts</a>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Concordancier KWIC</h1>
+      <p class="subtitle">Fenêtre contextuelle : ±20 mots</p>
+    </header>
+
+    <main>
+      <div class="breadcrumb">
+        <a href="../../index.html">Accueil</a>
+        <span> / </span>
+        <a href="../../tableaux/be.html">Tableau be</a>
+        <span> / </span>
+        <span>Concordancier 38</span>
+      </div>
+
+      <div class="info-card">
+        <p><strong>URL :</strong> <a href="https://indeksonline.net/be/mustafa-i-reagon-kurtit-per-asociacionin-pika-e-7-e-marreveshjes-tende-instalon-autonomine-politiko-territoriale-te-komunitetit-serb/" target="_blank" rel="noopener noreferrer">https://indeksonline.net/be/mustafa-i-reagon-kurtit-per-asociacionin-pika-e-7-e-marreveshjes-tende-instalon-autonomine-politiko-territoriale-te-komunitetit-serb/</a></p>
+        <p><strong>Occurrences trouvées :</strong> 4</p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Catégorie</th>
+                <th>Contexte gauche</th>
+                <th>Mot-clé</th>
+                <th>Contexte droit</th>
+              </tr>
+            </thead>
+            <tbody>
 
 				<tr>
-					<td class="has-text-grey cat-col">аўтаномія</td>
+					<td class="cat-col">аўтаномія</td>
 					<td class="kwic-left">Мустафа рэагуе на Курці наконт Асацыяцыі: Пункт 7 вашага пагаднення ўстанаўлівае палітычна-тэрытарыяльную</td>
 					<td class="kwic-kw"><mark>аўтаномію</mark></td>
 					<td class="kwic-right">сербскай абшчыны Былы прэм'ер-міністр краіны Іса Мустафа адрэагаваў на заявы цяперашняга прэм'ер-міністра Альбіна Курці наконт абвінавачванняў у тым, што ў</td>
@@ -85,7 +323,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">аўтаномія</td>
+					<td class="cat-col">аўтаномія</td>
 					<td class="kwic-left">доўгім паведамленні ў Facebook заяўляе, што Курці памыляецца ў гэтай пазіцыі, і менавіта ён, зыходзячы з базавага пагаднення, усталёўвае палітычна-тэрытарыяльную</td>
 					<td class="kwic-kw"><mark>аўтаномію</mark></td>
 					<td class="kwic-right">сербскай супольнасці. Вось яго поўная рэакцыя: Дарагія сябры, Каментуючы Пагадненне 2013 года і Дакумент аб прынцыпах 2015 года, Курці ў</td>
@@ -93,7 +331,7 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">аўтаномія</td>
+					<td class="cat-col">аўтаномія</td>
 					<td class="kwic-left">дэ-юрэ), спасылаецца на Рэзалюцыю 1244 і робіць статус незалежнасці Косава непрадузятым для бакоў?! Пункт 7 пагаднення спадара Курці ўстанаўлівае палітычна-тэрытарыяльную</td>
 					<td class="kwic-kw"><mark>аўтаномію</mark></td>
 					<td class="kwic-right">сербскай абшчыны, межы аўтаноміі і арбітраж адносна канстытуцыйнага ладу краіны (як гэта вызначана ў праекце статута). Гэта гарантуе афіцыйны статус</td>
@@ -101,43 +339,38 @@
 			
 
 				<tr>
-					<td class="has-text-grey cat-col">аўтаномія</td>
+					<td class="cat-col">аўтаномія</td>
 					<td class="kwic-left">1244 і робіць статус незалежнасці Косава непрадузятым для бакоў?! Пункт 7 пагаднення спадара Курці ўстанаўлівае палітычна-тэрытарыяльную аўтаномію сербскай абшчыны, межы</td>
 					<td class="kwic-kw"><mark>аўтаноміі</mark></td>
 					<td class="kwic-right">і арбітраж адносна канстытуцыйнага ладу краіны (як гэта вызначана ў праекце статута). Гэта гарантуе афіцыйны статус Сербскай праваслаўнай царквы, які</td>
 				</tr>
 			
 
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
 
-		<footer class="footer" style="padding: 1.5rem; background-color: #f9f9f9">
-			<div class="content has-text-centered">
-				<p class="is-size-7 has-text-grey">Miniprojet PPE1 - M1 TAL</p>
-			</div>
-		</footer>
+    <footer>
+      <p>Projet PPE1 — M1 TAL — Université Sorbonne Nouvelle — 2025-2026</p>
+    </footer>
 
-		<script>
-			const btn = document.getElementById("themeToggle");
-			const saved = localStorage.getItem("theme");
-			if (saved === "dark") document.body.classList.add("dark");
+    <script>
+      const btn = document.getElementById("themeToggle");
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark");
 
-			function refreshLabel() {
-				const isDark = document.body.classList.contains("dark");
-				btn.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
-			}
-			refreshLabel();
+      function updateBtn() {
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      }
+      updateBtn();
 
-			btn.addEventListener("click", () => {
-				document.body.classList.toggle("dark");
-				localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-				refreshLabel();
-			});
-		</script>
-	</body>
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+        updateBtn();
+      });
+    </script>
+  </body>
 </html>

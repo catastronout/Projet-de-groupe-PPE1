@@ -460,7 +460,7 @@
             <div class="pipeline-flow">
                 <a href="#main" class="pipeline-node"><span class="step">1</span>main.sh</a>
                 <span class="pipeline-arrow">→</span>
-                <a href="#concat" class="pipeline-node"><span class="step">2</span>concat_contextes.sh</a>
+                <a href="#concat" class="pipeline-node"><span class="step">2</span>concat_contextes_par_sens.sh</a>
                 <span class="pipeline-arrow">→</span>
                 <a href="#pals" class="pipeline-node"><span class="step">3</span>make_pals_corpus.sh</a>
                 <span class="pipeline-arrow">→</span>
@@ -538,11 +538,11 @@ bash main.sh tr tableau-tr data_tr1.txt data_tr2.txt</code></pre>
             </div>
         </section>
 
-        <!-- Script 2: concat_contextes.sh -->
+        <!-- Script 2: concat_contextes_par_sens.sh -->
         <section id="concat" class="script-section">
             <div class="script-header">
                 <span class="num">2</span>
-                <h2>concat_contextes.sh</h2>
+                <h2>concat_contextes_par_sens.sh</h2>
             </div>
             <p class="script-description">
                 Concatène les fichiers TSV de contextes par sens, créant deux fichiers TXT 
@@ -561,7 +561,7 @@ bash main.sh tr tableau-tr data_tr1.txt data_tr2.txt</code></pre>
                             <span class="code-lang"><span class="dot"></span>bash</span>
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
-                        <pre><code class="language-bash">bash concat_contextes.sh ../contextes/be be
+                        <pre><code class="language-bash">bash concat_contextes_par_sens.sh ../contextes/be be
 # → Crée ../pals/contexte-be-sens1.txt
 # → Crée ../pals/contexte-be-sens2.txt</code></pre>
                     </div>
@@ -572,7 +572,7 @@ bash main.sh tr tableau-tr data_tr1.txt data_tr2.txt</code></pre>
                             <span class="code-lang"><span class="dot"></span>bash</span>
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
-                        <pre><code class="language-bash">bash concat_contextes.sh ../contextes/kr kr
+                        <pre><code class="language-bash">bash concat_contextes_par_sens.sh ../contextes/kr kr
 # → Crée ../pals/contexte-kr-sens1.txt
 # → Crée ../pals/contexte-kr-sens2.txt</code></pre>
                     </div>
@@ -583,7 +583,7 @@ bash main.sh tr tableau-tr data_tr1.txt data_tr2.txt</code></pre>
                             <span class="code-lang"><span class="dot"></span>bash</span>
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
-                        <pre><code class="language-bash">bash concat_contextes.sh ../contextes/tr tr
+                        <pre><code class="language-bash">bash concat_contextes_par_sens.sh ../contextes/tr tr
 # → Crée ../pals/contexte-tr-sens1.txt
 # → Crée ../pals/contexte-tr-sens2.txt</code></pre>
                     </div>
@@ -619,8 +619,8 @@ bash main.sh tr tableau-tr data_tr1.txt data_tr2.txt</code></pre>
 bash make_pals_corpus.sh ../dumps-text/be/ be > ../pals/dump-be.txt
 
 # Pour les fichiers contextes
-bash make_pals_corpus.sh ../pals/contexte-be-sens1.txt be > ../pals/pals-be-sens1.txt
-bash make_pals_corpus.sh ../pals/contexte-be-sens2.txt be > ../pals/pals-be-sens2.txt</code></pre>
+bash make_pals_corpus.sh ../pals/contexte-be-sens1.txt be > ../pals/contexte-be-sens1_cleaned.txt
+bash make_pals_corpus.sh ../pals/contexte-be-sens2.txt be > ../pals/contexte-be-sens2_cleaned.txt</code></pre>
                     </div>
                 </div>
                 <div class="tab-content" id="kr3">
@@ -633,8 +633,8 @@ bash make_pals_corpus.sh ../pals/contexte-be-sens2.txt be > ../pals/pals-be-sens
 bash make_pals_corpus.sh ../dumps-text/kr/ kr > ../pals/dump-kr.txt
 
 # Pour les fichiers contextes
-bash make_pals_corpus.sh ../pals/contexte-kr-sens1.txt kr > ../pals/pals-kr-sens1.txt
-bash make_pals_corpus.sh ../pals/contexte-kr-sens2.txt kr > ../pals/pals-kr-sens2.txt</code></pre>
+bash make_pals_corpus.sh ../pals/contexte-kr-sens1.txt kr > ../pals/contexte-kr-sens1_cleaned.txt
+bash make_pals_corpus.sh ../pals/contexte-kr-sens2.txt kr > ../pals/contexte-kr-sens2_cleaned.txt</code></pre>
                     </div>
                 </div>
                 <div class="tab-content" id="tr3">
@@ -647,8 +647,8 @@ bash make_pals_corpus.sh ../pals/contexte-kr-sens2.txt kr > ../pals/pals-kr-sens
 bash make_pals_corpus.sh ../dumps-text/tr/ tr > ../pals/dump-tr.txt
 
 # Pour les fichiers contextes
-bash make_pals_corpus.sh ../pals/contexte-tr-sens1.txt tr > ../pals/pals-tr-sens1.txt
-bash make_pals_corpus.sh ../pals/contexte-tr-sens2.txt tr > ../pals/pals-tr-sens2.txt</code></pre>
+bash make_pals_corpus.sh ../pals/contexte-tr-sens1.txt tr > ../pals/contexte-tr-sens1_cleaned.txt
+bash make_pals_corpus.sh ../pals/contexte-tr-sens2.txt tr > ../pals/contexte-tr-sens2_cleaned.txt</code></pre>
                     </div>
                 </div>
             </div>
@@ -682,7 +682,7 @@ python cooccurrents.py ../pals/dump-be.txt \
   --target аўтаномія \
   -l 10 \
   -s i \
-  > cooc-autanomiya.tsv
+  > ../pals/cooc-autanomiya.tsv
 
 # Sens 2 : аўтаномнасьць (avec variante orthographique)
 python cooccurrents.py ../pals/dump-be.txt \
@@ -690,7 +690,7 @@ python cooccurrents.py ../pals/dump-be.txt \
   --match-mode regex \
   -l 10 \
   -s i \
-  > cooc-autanomnast.tsv</code></pre>
+  > ../pals/cooc-autanomnast.tsv</code></pre>
                     </div>
                 </div>
                 <div class="tab-content" id="kr4">
@@ -704,14 +704,14 @@ python cooccurrents.py ../pals/dump-kr.txt \
   --target 자율 \
   -l 10 \
   -s i \
-  > cooc-jayul.tsv
+  > ../pals/cooc-jayul.tsv
 
 # Sens 2 : 자립
 python cooccurrents.py ../pals/dump-kr.txt \
   --target 자립 \
   -l 10 \
   -s i \
-  > cooc-jarip.tsv</code></pre>
+  > ../pals/cooc-jarip.tsv</code></pre>
                     </div>
                 </div>
                 <div class="tab-content" id="tr4">
@@ -725,14 +725,14 @@ python cooccurrents.py ../pals/dump-tr.txt \
   --target otonomi \
   -l 10 \
   -s i \
-  > cooc-otonomi.tsv
+  > ../pals/cooc-otonomi.tsv
 
 # Sens 2 : özerklik
 python cooccurrents.py ../pals/dump-tr.txt \
   --target özerklik \
   -l 10 \
   -s i \
-  > cooc-ozerklik.tsv</code></pre>
+  > ../pals/cooc-ozerklik.tsv</code></pre>
                     </div>
                 </div>
             </div>
@@ -762,8 +762,8 @@ python cooccurrents.py ../pals/dump-tr.txt \
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
                         <pre><code class="language-bash">python3 partition.py \
-  -i ../pals/pals-be-sens1.txt \
-  -i ../pals/pals-be-sens2.txt \
+  -i ../pals/contexte-be-sens1_cleaned.txt \
+  -i ../pals/contexte-be-sens2_cleaned.txt \
   > partition-be.tsv</code></pre>
                     </div>
                 </div>
@@ -774,8 +774,8 @@ python cooccurrents.py ../pals/dump-tr.txt \
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
                         <pre><code class="language-bash">python3 partition.py \
-  -i ../pals/pals-kr-sens1.txt \
-  -i ../pals/pals-kr-sens2.txt \
+  -i ../pals/contexte-kr-sens1_cleaned.txt \
+  -i ../pals/contexte-kr-sens2_cleaned.txt \
   > partition-kr.tsv</code></pre>
                     </div>
                 </div>
@@ -786,8 +786,8 @@ python cooccurrents.py ../pals/dump-tr.txt \
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
                         <pre><code class="language-bash">python3 partition.py \
-  -i ../pals/pals-tr-sens1.txt \
-  -i ../pals/pals-tr-sens2.txt \
+  -i ../pals/contexte-tr-sens1_cleaned.txt \
+  -i ../pals/contexte-tr-sens2_cleaned.txt \
   > partition-tr.tsv</code></pre>
                     </div>
                 </div>
@@ -825,18 +825,27 @@ python cooccurrents.py ../pals/dump-tr.txt \
                             <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                         </div>
                         <pre><code class="language-bash"># Nuage de mots - Sens 1
-wordcloud_cli \
-  --text ../pals/pals-be-sens1.txt \
-  --imagefile nuage-be-sens1.png \
-  --stopwords stopwords_be.txt \
-  --fontfile "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"
+
+  wordcloud_cli \
+    --text ../pals/contexte-ve-sens1_cleaned.txt \
+    --imagefile ../pals/nuage-be-sens1.png \
+    --width 2000 \
+    --height 1000 \
+    --background white \
+    --margin 5 \
+    --scale 2 \
+    --stopwords ../pals/stopwords_be.txt
 
 # Nuage de mots - Sens 2
-wordcloud_cli \
-  --text ../pals/pals-be-sens2.txt \
-  --imagefile nuage-be-sens2.png \
-  --stopwords stopwords_be.txt \
-  --fontfile "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"</code></pre>
+  wordcloud_cli \
+    --text ../pals/contexte-ve-sens2_cleaned.txt \
+    --imagefile ../pals/nuage-be-sens2.png \
+    --width 2000 \
+    --height 1000 \
+    --background white \
+    --margin 5 \
+    --scale 2 \
+    --stopwords ../pals/stopwords_be.txt</code></pre>
                     </div>
                 </div>
                 <div class="tab-content" id="kr6">

@@ -19060,8 +19060,7 @@ gppi
 friedrich
 alexander-universit
 t
-erlangen-n
-rnberg
+erlangen-nürnberg
 fau
 інстытут
 v-dem
@@ -183527,8 +183526,7 @@ n
 асартыменце
 камерцыйных
 аўтамабіляў
-citr
-en
+citröen
 з
 электрапрывадам
 ступень
@@ -183939,8 +183937,7 @@ van
 ў
 іншых
 электрамабілях
-citr
-en
+citröen
 berlingo
 таксама
 прапануе
@@ -183960,8 +183957,7 @@ eco
 2
 і
 прыкладанне
-mycitr
-en
+mycitröen
 гэта
 дазваляе
 атрымаць
@@ -184137,8 +184133,7 @@ xnumx
 iii
 план
 
-citr
-en
+citröen
 прапануе
 фінансаванне
 якое

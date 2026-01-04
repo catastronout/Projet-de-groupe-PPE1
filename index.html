@@ -215,18 +215,27 @@
 
         .word-chip .flag {
             margin-right: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .word-chip .flag svg {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         /* Sections */
         section {
-            padding: 6rem 2rem;
+            padding: 3rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-header h2 {
@@ -512,19 +521,13 @@
     }
 
         /* Biélorussie – blanc rouge blanc */
-        .flag-by-wrw {
-        background-image: url("flags/be.svg");
-        }
+        .flag-by-wrw { background-image: url("flags/be.svg"); }
 
         /* Corée du Sud */
-        .flag-kr {
-        background-image: url("flags/kr.svg");
-        }
+        .flag-kr { background-image: url("flags/kr.svg"); }
 
         /* Turquie */
-        .flag-tr {
-        background-image: url("flags/tr.svg");
-        }
+        .flag-tr { background-image: url("flags/tr.svg"); }
     </style>
 </head>
 <body>
@@ -636,7 +639,7 @@
             <!-- Bélarussien -->
             <div class="lang-card">
                 <div class="lang-card-header">
-                    <span class="lang-flag">🇧🇾</span>
+                    <span class="flag flag-by-wrw" style="width: 2.5rem; height: 1.8rem;"></span>
                     <div>
                         <h3>Biélorusse</h3>
                         <span class="native">Беларуская мова</span>
@@ -661,7 +664,7 @@
             <!-- Coréen -->
             <div class="lang-card">
                 <div class="lang-card-header">
-                    <span class="lang-flag">🇰🇷</span>
+                    <span class="flag flag-kr" style="width: 2.5rem; height: 1.8rem;"></span>
                     <div>
                         <h3>Coréen</h3>
                         <span class="native">한국어</span>
@@ -686,7 +689,7 @@
             <!-- Turc -->
             <div class="lang-card">
                 <div class="lang-card-header">
-                    <span class="lang-flag">🇹🇷</span>
+                    <span class="flag flag-tr" style="width: 2.5rem; height: 1.8rem;"></span>
                     <div>
                         <h3>Turc</h3>
                         <span class="native">Türkçe</span>
@@ -724,7 +727,7 @@
                     🦊
                 </div>
                 <h3>Sarah</h3>
-                <span class="lang-badge">🇧🇾 Biélorusse</span>
+                <span class="lang-badge"><span class="flag flag-by-wrw"></span> Biélorusse</span>
             </div>
 
             <div class="team-card">
@@ -733,7 +736,7 @@
                     🌸
                 </div>
                 <h3>Yeji</h3>
-                <span class="lang-badge">🇰🇷 Coréen</span>
+                <span class="lang-badge"><span class="flag flag-kr"></span> Coréen</span>
             </div>
 
             <div class="team-card">
@@ -742,7 +745,7 @@
                     🌙
                 </div>
                 <h3>Umut-Gazi</h3>
-                <span class="lang-badge">🇹🇷 Turc</span>
+                <span class="lang-badge"><span class="flag flag-tr"></span> Turc</span>
             </div>
         </div>
     </section>

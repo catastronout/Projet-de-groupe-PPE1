@@ -17,12 +17,21 @@ bash main.sh be tableau-be data_be1.txt data_be2.txt
 bash main.sh be tableau-be
 ```
 
+```bash
+# Coréen
+bash main.sh kr tableau-kr
+```
+
 # 2. html_to_contexts.sh
 
 ```bash
 # Bélarussien
- bash html_to_contexts.sh ../contextes/be be
- ```
+bash concat_contexte_par_sens.sh ../contextes/be be
+```
+
+# Coréen
+bash concat_contexte_par_sens.sh ../contextes/kr kr 
+```
 
  # 3. make_pals_corpus.sh
 
@@ -35,12 +44,23 @@ bash main.sh be tableau-be
 bash make_pals_corpus.sh ../dumps-text/be/ be > ../pals/dump-be.txt
 ```
 
+```bash
+# Coréen
+bash make_pals_corpus.sh ../dumps-text/kr/ kr > ../pals/dump-kr.txt
+```
+
 - Pour les fichiers contextes :
 
 ```bash
 # Bélarussien
 bash make_pals_corpus_be.sh ../pals/contexte-be-sens1.txt be > ../pals/pals-be-sens1.txt
 bash make_pals_corpus_be.sh ../pals/contexte-be-sens2.txt be > ../pals/pals-be-sens2.txt
+```
+
+```bash
+# Coréen
+bash make_pals_corpus_copy.sh ../pals/contexte-kr-sens1.txt kr > ../pals/pals-kr-sens1.txt
+bash make_pals_corpus_copy.sh ../pals/contexte-kr-sens2.txt kr > ../pals/pals-kr-sens2.txt
 ```
 
 # 4. cooccurrents.py
@@ -63,6 +83,24 @@ python cooccurrents.py ../pals/dump-be.txt \
   > cooc-autanomnast.tsv
 ```
 
+```bash
+# Coréen
+## sens 1
+python3.11 cooccurrents.py ../pals/dump-kr.txt \
+  --target 자율 \
+  -l 10 \
+  -s i \
+  > cooc-자율.tsv
+
+# Coréen
+## sens 2
+python3.11 cooccurrents.py ../pals/dump-kr.txt \
+  --target 자립 \
+  -l 10 \
+  -s i \
+  > cooc-자립.tsv
+```
+
 # 5 partition.py
 
 ```bash
@@ -71,6 +109,14 @@ python3 partition.py \
   -i ../pals/contexte-be-sens1_cleaned.txt \
   -i ../pals/contexte-be-sens2_cleaned.txt \
   >> partition-be.txt
+```
+
+```bash
+# Coréen
+python3.11 partition.py \
+  -i ../pals/contexte-kr-sens1.txt \        
+  -i ../pals/contexte-kr-sens2.txt \        
+  >> partition-kr.txt
 ```
 
 # 6. wordcloud

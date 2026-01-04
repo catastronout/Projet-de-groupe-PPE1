@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Analyse Turc — Projet PPE1</title>
+    <title>Analyse turc — Projet PPE1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Chart.js pour les graphiques -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -36,7 +39,11 @@
             --border: #2d2d44;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'DM Sans', sans-serif;
@@ -91,7 +98,9 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
 
         .theme-toggle {
             background: var(--border);
@@ -113,7 +122,10 @@
         .page-header::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: radial-gradient(circle at 50% 0%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
         }
 
@@ -139,9 +151,15 @@
 
         .page-header p {
             color: var(--text-muted);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             position: relative;
+            line-height: 1.8;
+        }
+
+        .page-header p strong {
+            color: var(--text);
+            font-weight: 600;
         }
 
         /* Main */
@@ -167,6 +185,49 @@
 
         .section-header p {
             color: var(--text-muted);
+        }
+
+        .text-content {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .text-content h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+        }
+
+        .text-content h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+        }
+
+        .text-content h4 {
+            font-weight: 600;
+            font-size: 1.15rem;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .text-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .text-content ul {
+            margin: 1rem 0 1.5rem 2rem;
+            line-height: 1.8;
+        }
+
+        .text-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .text-content strong {
+            font-weight: 600;
+            color: var(--primary);
         }
 
         /* Word clouds grid */
@@ -198,8 +259,13 @@
             border-radius: 50%;
         }
 
-        .cloud-card-header .dot.sens1 { background: var(--sens1); }
-        .cloud-card-header .dot.sens2 { background: var(--sens2); }
+        .cloud-card-header .dot.sens1 {
+            background: var(--sens1);
+        }
+
+        .cloud-card-header .dot.sens2 {
+            background: var(--sens2);
+        }
 
         .cloud-card-header h3 {
             font-family: 'Instrument Serif', serif;
@@ -216,29 +282,14 @@
         }
 
         .cloud-image {
-            width: 100%;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 2rem;
             background: var(--bg);
-            color: var(--text-muted);
         }
 
         .cloud-image img {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .cloud-placeholder {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .cloud-placeholder .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            height: auto;
+            display: block;
         }
 
         /* Stats grid */
@@ -300,6 +351,7 @@
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+            margin: 2rem 0;
         }
 
         .table-card-header {
@@ -317,7 +369,8 @@
             border-collapse: collapse;
         }
 
-        .data-table th, .data-table td {
+        .data-table th,
+        .data-table td {
             padding: 0.875rem 1rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
@@ -348,6 +401,48 @@
         .data-table .negative {
             color: var(--sens2);
             font-weight: 600;
+        }
+
+        /* Insights */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .insight-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .insight-card h4 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .insight-card ul {
+            list-style: none;
+            color: var(--text-muted);
+        }
+
+        .insight-card li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .insight-card li::before {
+            content: "→";
+            margin-right: 0.5rem;
+            color: var(--primary);
         }
 
         /* Links */
@@ -397,8 +492,17 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .clouds-grid { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none;
+            }
+
+            .clouds-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
         }
 
         /* Drapeaux */
@@ -415,9 +519,12 @@
             box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        .flag-tr { background-image: url("flags/tr.svg"); }
+        .flag-tr {
+            background-image: url("flags/tr.svg");
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -436,105 +543,181 @@
     <!-- Header -->
     <header class="page-header">
         <span class="lang-badge"><span class="flag flag-tr"></span>Türkçe</span>
-        <h1>Analyse Turc</h1>
-        <p>Étude comparative des deux sens du mot « autonomie » en turc : 
-           <strong>otonomi</strong> vs <strong>özerklik</strong>.</p>
+        <h1>Analyse comparative : otonomi vs özerklik</h1>
+        <p>Étude comparative des deux termes traduisant « autonomie » en turc :
+            <strong>otonomi</strong> (emprunt français) vs <strong>özerklik</strong> (terme natif turc).
+        </p>
     </header>
 
     <main>
-        <!-- Stats -->
+        <!-- INTRODUCTION -->
         <section>
+            <div class="text-content">
+                <h2>Introduction</h2>
+                <p>Cette analyse porte sur l'usage du concept d'autonomie en turc à travers deux lexèmes distincts :
+                    <strong>otonomi</strong> et <strong>özerklik</strong>. Notre corpus comprend 39 749 mots analysés,
+                    avec 151 occurrences du premier terme et 285 du second, soit une distribution de 35% / 65% qui
+                    révèle une préférence nette pour le terme natif turc dans les usages contemporains.</p>
+            </div>
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="value">151</div>
-                    <div class="label">Occurrences sens 1</div>
+                    <div class="label">Occurrences otonomi</div>
                 </div>
                 <div class="stat-card">
                     <div class="value">285</div>
-                    <div class="label">Occurrences sens 2</div>
+                    <div class="label">Occurrences özerklik</div>
                 </div>
                 <div class="stat-card">
-                    <div class="value">39749</div>
+                    <div class="value">39 749</div>
                     <div class="label">Mots analysés au total</div>
                 </div>
             </div>
         </section>
 
-        <!-- Word Clouds -->
+        <!-- SECTION 1 : DISTINCTION LINGUISTIQUE -->
         <section>
-            <div class="section-header">
-                <h2>☁️ Nuages de mots</h2>
-                <p>Visualisation des termes les plus fréquents dans les contextes de chaque sens.</p>
+            <div class="text-content">
+                <h2>1. Distinction étymologique et morphologique</h2>
+                <p>Le turc dispose de deux termes pour exprimer le concept d'autonomie, reflétant une stratégie lexicale
+                    classique de cette langue : l'emprunt savant coexiste avec une création néologique native.</p>
+
+                <h3>1.1 otonomi : l'emprunt savant</h3>
+                <p><strong>otonomi</strong> est un emprunt au grec ancien (αὐτονομία), probablement emprunté via le
+                    français <em>autonomie</em>.</p>
+
+                <h3>1.2 özerklik : la création native</h3>
+                <p><strong>özerklik</strong> est une formation purement turque, construite sur trois éléments :</p>
+                <ul>
+                    <li><strong>öz</strong> : « soi-même, propre » — racine turque ancienne</li>
+                    <li><strong>erk</strong> : « pouvoir, autorité » — terme turc signifiant la puissance</li>
+                    <li><strong>-lik</strong> : suffixe nominal formant des noms abstraits</li>
+                </ul>
+                <p>Cette étymologie transparente (« le fait d'avoir son propre pouvoir ») explique sa préférence dans le
+                    discours politique et administratif, où la clarté sémantique est valorisée.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : UNIVERS SÉMANTIQUES -->
+        <section>
+            <div class="text-content">
+                <h2>2. Deux univers sémantiques distincts</h2>
+
+                <h3>2.1 otonomi : technique, conceptuel et linguistique</h3>
+                <p>L'analyse des cooccurrences révèle que <strong>otonomi</strong> s'inscrit dans un registre technique
+                    et conceptuel. Les termes les plus spécifiques confirment cette orientation :</p>
+                <ul>
+                    <li><strong>öğrenme</strong> (apprentissage, spécificité +10.64) : lié à l'apprentissage autonome et
+                        à l'intelligence artificielle</li>
+                    <li><strong>yapay</strong> (artificiel, +5.91) et <strong>zeka</strong> (intelligence, +3.34) : le
+                        binôme « yapay zeka » (intelligence artificielle) est fortement associé à otonomi</li>
+                    <li><strong>dil</strong> (langue, +7.33) et <strong>kelimeler</strong> (mots, +9.71) : discussions
+                        métalinguistiques sur le terme lui-même</li>
+                    <li><strong>karar</strong> (décision, +4.79) : l'autonomie décisionnelle</li>
+                    <li><strong>proleter</strong> (prolétariat, +3.23) et <strong>sınıf</strong> (classe, +4.19) :
+                        contexte marxiste de l'autonomie ouvrière</li>
+                </ul>
+
+                <h3>2.2 özerklik : politique, administratif et européen</h3>
+                <p>À l'inverse, <strong>özerklik</strong> renvoie massivement au domaine politique et administratif :
+                </p>
+                <ul>
+                    <li><strong>yerel</strong> (local, +19.22) : cooccurrent le plus marqué, révélant le lien avec
+                        l'administration locale</li>
+                    <li><strong>yönetimler</strong> (administrations, +8.66) et <strong>idari</strong> (administratif,
+                        +4.23) : vocabulaire de la gouvernance</li>
+                    <li><strong>Avrupa</strong> (Europe, +11.43) et <strong>şartı</strong> (charte, +15.25) : référence
+                        à la Charte européenne de l'autonomie locale</li>
+                    <li><strong>demokratik</strong> (démocratique, +7.44) : ancrage dans le discours politique</li>
+                    <li><strong>bölgesel</strong> (régional, +3.31) : l'autonomie des régions</li>
+                </ul>
             </div>
 
-            <div class="clouds-grid">
-                <div class="cloud-card">
-                    <div class="cloud-card-header">
-                        <span class="dot sens1"></span>
-                        <h3>Sens 1</h3>
-                        <span class="word">otonomi</span>
-                    </div>
-                    <div class="cloud-image">
-                        <div class="cloud-placeholder">
-                            <img src="../pals/nuage-tr-sens1.png" alt="Nuage de mots sens 1">
-                        </div>
-                    </div>
+            <!-- INSIGHTS -->
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <h4>🔧 otonomi : technique</h4>
+                    <ul>
+                        <li>öğrenme (apprentissage, 10.64)</li>
+                        <li>yapay zeka (IA)</li>
+                        <li>dil, kelimeler (linguistique)</li>
+                        <li>karar (décision)</li>
+                        <li>proleter, sınıf (marxisme)</li>
+                    </ul>
                 </div>
-
-                <div class="cloud-card">
-                    <div class="cloud-card-header">
-                        <span class="dot sens2"></span>
-                        <h3>Sens 2</h3>
-                        <span class="word">özerklik</span>
-                    </div>
-                    <div class="cloud-image">
-                        <div class="cloud-placeholder">
-                            <img src="../pals/nuage-tr-sens2.png" alt="Nuage de mots sens 1">
-                        </div>
-                    </div>
+                <div class="insight-card">
+                    <h4>🏛️ özerklik : politique</h4>
+                    <ul>
+                        <li>yerel (local, 19.22)</li>
+                        <li>Avrupa şartı (Charte européenne)</li>
+                        <li>yönetimler (administrations)</li>
+                        <li>demokratik (démocratique)</li>
+                        <li>bölgesel (régional)</li>
+                    </ul>
+                </div>
+                <div class="insight-card">
+                    <h4>📊 Distribution</h4>
+                    <ul>
+                        <li>otonomi : 151 occurrences (35%)</li>
+                        <li>özerklik : 285 occurrences (65%)</li>
+                        <li>Préférence pour le terme natif</li>
+                        <li>Contextes très distincts</li>
+                        <li>Pas d'ambiguïté observée</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Frequency Chart -->
+        <!-- SECTION 3 : ANALYSE DES SPÉCIFICITÉS -->
         <section>
-            <div class="section-header">
-                <h2>📊 Distribution des occurrences</h2>
-                <p>Comparaison de la fréquence des deux sens dans le corpus.</p>
+            <div class="text-content">
+                <h2>3. Analyse des spécificités lexicales</h2>
+
+                <h3>3.1 Méthode</h3>
+                <p>Les spécificités ont été calculées selon l'indice de Lafon, qui mesure la sur-représentation ou
+                    sous-représentation d'un terme dans une partition du corpus par rapport à son usage global. Un
+                    indice positif élevé indique une forte association avec le sens considéré.</p>
+
+                <h3>3.2 Polarisation sémantique</h3>
+                <p>La polarisation est extrêmement nette. Aucun terme n'apparaît comme fortement spécifique aux deux
+                    sens simultanément, ce qui suggère une <strong>séparation étanche des domaines d'usage</strong>.
+                    Cette distinction est particulièrement marquée pour :</p>
+
+                <ul>
+                    <li><strong>yerel</strong> (+19.22 pour özerklik) vs. (-19.22 pour otonomi) : le terme « local » est
+                        quasi exclusif au discours politique</li>
+                    <li><strong>özerkliği</strong> (+15.31) : la forme accusative est massivement utilisée en contexte
+                        politique</li>
+                    <li><strong>öğrenme</strong> (+10.64 pour otonomi) : l'apprentissage est exclusivement lié à
+                        l'emprunt savant</li>
+                </ul>
             </div>
 
+            <!-- GRAPHIQUE -->
             <div class="chart-card">
-                <h3>Occurrences par URL</h3>
+                <h3>Mots spécifiques à chaque sens</h3>
                 <div class="chart-container">
-                    <canvas id="freqChart"></canvas>
+                    <canvas id="specifChart"></canvas>
                 </div>
             </div>
-        </section>
 
-        <!-- Partition Results -->
-        <section>
-            <div class="section-header">
-                <h2>🎯 Spécificités lexicales (partition.py)</h2>
-                <p>Mots caractéristiques de chaque sens selon l'indice de Lafon.</p>
-            </div>
-
+            <!-- TABLEAU -->
             <div class="table-card">
                 <div class="table-card-header">
-                    <h3>Top 20 des mots spécifiques</h3>
+                    <h3>Détails des spécificités (Top 20)</h3>
                 </div>
                 <table class="data-table">
                     <thead>
                         <tr>
                             <th>Mot</th>
                             <th>Total</th>
-                            <th>Sens 1</th>
-                            <th>Spécif. 1</th>
-                            <th>Sens 2</th>
-                            <th>Spécif. 2</th>
+                            <th>otonomi</th>
+                            <th>Spécif.</th>
+                            <th>özerklik</th>
+                            <th>Spécif.</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Exemple de données - à remplacer par les vraies données -->
                         <tr>
                             <td class="word">yerel</td>
                             <td>122</td>
@@ -544,84 +727,20 @@
                             <td class="positive">+19.22</td>
                         </tr>
                         <tr>
-                            <td class="word">avrupa</td>
+                            <td class="word">özerkliği</td>
+                            <td>83</td>
+                            <td>0</td>
+                            <td class="negative">-15.31</td>
+                            <td>83</td>
+                            <td class="positive">+15.31</td>
+                        </tr>
+                        <tr>
+                            <td class="word">Avrupa</td>
                             <td>62</td>
                             <td>0</td>
                             <td class="negative">-11.43</td>
                             <td>62</td>
                             <td class="positive">+11.43</td>
-                        </tr>
-                        <tr>
-                            <td class="word">demokratik</td>
-                            <td>48</td>
-                            <td>1</td>
-                            <td class="negative">-7.44</td>
-                            <td>47</td>
-                            <td class="positive">+7.44</td>
-                        </tr>
-                        <tr>
-                            <td class="word">yönetimler</td>
-                            <td>47</td>
-                            <td>0</td>
-                            <td class="negative">-8.66</td>
-                            <td>47</td>
-                            <td class="positive">+8.66</td>
-                        </tr>
-                        <tr>
-                            <td class="word">bağımsız</td>
-                            <td>39</td>
-                            <td>20</td>
-                            <td class="positive">+1.90</td>
-                            <td>19</td>
-                            <td class="negative">-1.90</td>
-                        </tr>
-                        <tr>
-                            <td class="word">karar</td>
-                            <td>38</td>
-                            <td>26</td>
-                            <td class="positive">+4.79</td>
-                            <td>12</td>
-                            <td class="negative">-4.79</td>
-                        </tr>
-                        <tr>
-                            <td class="word">özerk</td>
-                            <td>37</td>
-                            <td>2</td>
-                            <td class="negative">-4.54</td>
-                            <td>35</td>
-                            <td class="positive">+4.54</td>
-                        </tr>
-                        <tr>
-                            <td class="word">otonom</td>
-                            <td>36</td>
-                            <td>31</td>
-                            <td class="positive">+9.68</td>
-                            <td>5</td>
-                            <td class="negative">-9.68</td>
-                        </tr>
-                        <tr>
-                            <td class="word">dil</td>
-                            <td>30</td>
-                            <td>25</td>
-                            <td class="positive">+7.33</td>
-                            <td>5</td>
-                            <td class="negative">-7.33</td>
-                        </tr>
-                        <tr>
-                            <td class="word">türkiye</td>
-                            <td>25</td>
-                            <td>2</td>
-                            <td class="negative">-2.68</td>
-                            <td>23</td>
-                            <td class="positive">+2.68</td>
-                        </tr>
-                        <tr>
-                            <td class="word">bölgesel</td>
-                            <td>24</td>
-                            <td>1</td>
-                            <td class="negative">-3.31</td>
-                            <td>23</td>
-                            <td class="positive">+3.31</td>
                         </tr>
                         <tr>
                             <td class="word">öğrenme</td>
@@ -632,20 +751,92 @@
                             <td class="negative">-10.64</td>
                         </tr>
                         <tr>
-                            <td class="word">ifade</td>
-                            <td>23</td>
-                            <td>9</td>
-                            <td class="positive">+0.82</td>
-                            <td>14</td>
-                            <td class="negative">-0.82</td>
+                            <td class="word">kelimeler</td>
+                            <td>21</td>
+                            <td>21</td>
+                            <td class="positive">+9.71</td>
+                            <td>0</td>
+                            <td class="negative">-9.71</td>
                         </tr>
                         <tr>
-                            <td class="word">hareket</td>
-                            <td>23</td>
-                            <td>7</td>
-                            <td class="negative">-0.79</td>
+                            <td class="word">otonom</td>
+                            <td>36</td>
+                            <td>31</td>
+                            <td class="positive">+9.68</td>
+                            <td>5</td>
+                            <td class="negative">-9.68</td>
+                        </tr>
+                        <tr>
+                            <td class="word">yönetimler</td>
+                            <td>47</td>
+                            <td>0</td>
+                            <td class="negative">-8.66</td>
+                            <td>47</td>
+                            <td class="positive">+8.66</td>
+                        </tr>
+                        <tr>
+                            <td class="word">demokratik</td>
+                            <td>48</td>
+                            <td>1</td>
+                            <td class="negative">-7.44</td>
+                            <td>47</td>
+                            <td class="positive">+7.44</td>
+                        </tr>
+                        <tr>
+                            <td class="word">dil</td>
+                            <td>30</td>
+                            <td>25</td>
+                            <td class="positive">+7.33</td>
+                            <td>5</td>
+                            <td class="negative">-7.33</td>
+                        </tr>
+                        <tr>
+                            <td class="word">öğreniminde</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td class="positive">+6.01</td>
+                            <td>0</td>
+                            <td class="negative">-6.01</td>
+                        </tr>
+                        <tr>
+                            <td class="word">yapay</td>
                             <td>16</td>
-                            <td class="positive">+0.79</td>
+                            <td>15</td>
+                            <td class="positive">+5.91</td>
+                            <td>1</td>
+                            <td class="negative">-5.91</td>
+                        </tr>
+                        <tr>
+                            <td class="word">değildir</td>
+                            <td>33</td>
+                            <td>24</td>
+                            <td class="positive">+5.16</td>
+                            <td>9</td>
+                            <td class="negative">-5.16</td>
+                        </tr>
+                        <tr>
+                            <td class="word">karar</td>
+                            <td>38</td>
+                            <td>26</td>
+                            <td class="positive">+4.79</td>
+                            <td>12</td>
+                            <td class="negative">-4.79</td>
+                        </tr>
+                        <tr>
+                            <td class="word">sadece</td>
+                            <td>18</td>
+                            <td>15</td>
+                            <td class="positive">+4.57</td>
+                            <td>3</td>
+                            <td class="negative">-4.57</td>
+                        </tr>
+                        <tr>
+                            <td class="word">özerk</td>
+                            <td>37</td>
+                            <td>2</td>
+                            <td class="negative">-4.54</td>
+                            <td>35</td>
+                            <td class="positive">+4.54</td>
                         </tr>
                         <tr>
                             <td class="word">idari</td>
@@ -656,47 +847,168 @@
                             <td class="positive">+4.23</td>
                         </tr>
                         <tr>
-                            <td class="word">kendini</td>
-                            <td>22</td>
-                            <td>15</td>
-                            <td class="positive">+2.99</td>
-                            <td>7</td>
-                            <td class="negative">-2.99</td>
-                        </tr>            
+                            <td class="word">sınıf</td>
+                            <td>12</td>
+                            <td>11</td>
+                            <td class="positive">+4.19</td>
+                            <td>1</td>
+                            <td class="negative">-4.19</td>
+                        </tr>
+                        <tr>
+                            <td class="word">değiştir</td>
+                            <td>70</td>
+                            <td>10</td>
+                            <td class="negative">-4.07</td>
+                            <td>60</td>
+                            <td class="positive">+4.07</td>
+                        </tr>
                         <tr>
                             <td class="word">yönetim</td>
                             <td>22</td>
                             <td>0</td>
                             <td class="negative">-4.05</td>
                             <td>22</td>
-                            <td class="negative">+4.05</td>
-                        </tr>            
+                            <td class="positive">+4.05</td>
+                        </tr>
                         <tr>
-                            <td class="word">birliği</td>
-                            <td>21</td>
+                            <td class="word">bölgesel</td>
+                            <td>24</td>
                             <td>1</td>
-                            <td class="negative">-2.82</td>
-                            <td>20</td>
-                            <td class="positive">+2.82</td>
-                        </tr>  
-                        <tr>
-                            <td class="word">kelimeler</td>
-                            <td>21</td>
-                            <td>21</td>
-                            <td class="positive">+9.71</td>
-                            <td>0</td>
-                            <td class="negative">-9.71</td>
-                        </tr>  
-                        <tr>
-                            <td class="word">tam</td>
-                            <td>20</td>
-                            <td>6</td>
-                            <td class="negative">-0.76</td>
-                            <td>14</td>
-                            <td class="positive">+0.76</td>
+                            <td class="negative">-3.31</td>
+                            <td>23</td>
+                            <td class="positive">+3.31</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="text-content">
+                <h3>3.3 Absence d'ambiguïté</h3>
+                <p>Dans notre corpus, la séparation est très nette et nous n'observons pas d'ambiguïté notable. Le turc
+                    a développé une spécialisation lexicale claire : <strong>otonomi</strong> pour les contextes
+                    techniques et conceptuels, <strong>özerklik</strong> pour les contextes politiques et
+                    administratifs.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : NUAGES DE MOTS -->
+        <section>
+            <div class="text-content">
+                <h2>4. Analyse des nuages de mots</h2>
+
+                <h3>En résumé</h3>
+                <ul>
+                    <li>On utilise l'emprunt du français, <strong>otonomi</strong>, plutôt pour les machines, appareils,
+                        personnes ou voitures.</li>
+                    <li>Pour parler d'indépendance sociale, on utilise plutôt <strong>özerklik</strong> →
+                        <strong>öz</strong> (soi-même) + <strong>erk</strong> (pouvoir, capacité de gouverner) +
+                        <strong>-lik</strong> (suffixe nominal).</li>
+                </ul>
+
+                <p>Les nuages de mots permettent de visualiser les tendances lexicales dominantes dans les contextes
+                    d'apparition de chaque terme.</p>
+            </div>
+
+            <div class="clouds-grid">
+                <div class="cloud-card">
+                    <div class="cloud-card-header">
+                        <span class="dot sens1"></span>
+                        <h3>Sens 1 : Technique</h3>
+                        <span class="word">otonomi</span>
+                    </div>
+                    <div class="cloud-image">
+                        <img src="../pals/nuage-tr-sens1.png" alt="Nuage de mots otonomi">
+                    </div>
+                </div>
+
+                <div class="cloud-card">
+                    <div class="cloud-card-header">
+                        <span class="dot sens2"></span>
+                        <h3>Sens 2 : Politique</h3>
+                        <span class="word">özerklik</span>
+                    </div>
+                    <div class="cloud-image">
+                        <img src="../pals/nuage-tr-sens2.png" alt="Nuage de mots özerklik">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-content">
+                <h3>4.1 Nuage 1 : otonomi</h3>
+                <p>Le nuage associé à <strong>otonomi</strong> met en évidence :</p>
+                <ul>
+                    <li><strong>Vocabulaire technologique</strong> : yapay (artificiel), zeka (intelligence), sistemler
+                        (systèmes), robotik (robotique)</li>
+                    <li><strong>Vocabulaire éducatif</strong> : öğrenme (apprentissage), öğrenci (étudiant), üniversite
+                        (université)</li>
+                    <li><strong>Vocabulaire linguistique</strong> : kelime (mot), sözcük (terme), dil (langue), Türkçe
+                        (turc)</li>
+                    <li><strong>Vocabulaire philosophique</strong> : birey (individu), karar (décision), bağımsız
+                        (indépendant)</li>
+                </ul>
+
+                <h3>4.2 Nuage 2 : özerklik</h3>
+                <p>Le nuage associé à <strong>özerklik</strong> présente une configuration nettement différente :</p>
+                <ul>
+                    <li><strong>Vocabulaire administratif</strong> : yerel (local), yönetim (administration), idari
+                        (administratif), mali (financier)</li>
+                    <li><strong>Vocabulaire politique</strong> : demokratik (démocratique), siyasi (politique), devlet
+                        (État), cumhuriyet (république)</li>
+                    <li><strong>Références géographiques</strong> : Avrupa (Europe), Türkiye (Turquie), bölgesel
+                        (régional), Kürt (kurde)</li>
+                    <li><strong>Vocabulaire juridique</strong> : şart (charte), anayasa (constitution), yasa (loi),
+                        hukuki (juridique)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : DISTRIBUTION PAR URL -->
+        <section>
+            <div class="section-header">
+                <h2>5. Distribution des occurrences</h2>
+                <p>Comparaison de la fréquence des deux termes à travers le corpus.</p>
+            </div>
+
+            <div class="chart-card">
+                <h3>Occurrences par URL</h3>
+                <div class="chart-container">
+                    <canvas id="freqChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section>
+            <div class="text-content">
+                <h2>6. Conclusions</h2>
+
+                <h3>6.1 Synthèse</h3>
+                <p>L'analyse conjointe des spécificités lexicales et des nuages de mots met en évidence une forte
+                    spécialisation sémantique entre deux lexèmes concurrents :</p>
+                <ul>
+                    <li><strong>otonomi</strong> (emprunt gréco-latin) renvoie principalement à l'autonomie technique,
+                        conceptuelle et individuelle, dans une perspective liée à l'intelligence artificielle,
+                        l'apprentissage et la réflexion philosophique</li>
+                    <li><strong>özerklik</strong> (terme natif turc) désigne l'autonomie politique, administrative et
+                        territoriale, fortement associée au contexte européen et au discours sur la gouvernance locale
+                    </li>
+                </ul>
+                <p>Dans le corpus étudié, cette spécialisation apparaît très stable et ne laisse aucune place à des
+                    usages ambigus.</p>
+
+                <h3>6.2 Intérêt linguistique</h3>
+                <p>Cette répartition fonctionnelle constitue un exemple remarquable de la stratégie lexicale turque. La
+                    langue turque, dans le cadre de sa modernisation linguistique initiée au XXe siècle, a
+                    systématiquement créé des équivalents natifs pour les emprunts étrangers. Le couple
+                    <strong>otonomi/özerklik</strong> illustre parfaitement cette dynamique : l'emprunt savant
+                    (<strong>otonomi</strong>) subsiste dans les contextes techniques et académiques, tandis que le
+                    néologisme natif (<strong>özerklik</strong>) domine le discours politique et administratif
+                    contemporain.</p>
+
+                <p>Cette distinction reflète également une dimension sociolinguistique : l'usage de
+                    <strong>özerklik</strong> dans les textes officiels et politiques témoigne de l'attachement à une
+                    terminologie « purement turque » dans les domaines touchant à la souveraineté et à la gouvernance.
+                </p>
             </div>
         </section>
 
@@ -728,24 +1040,74 @@
             updateBtn();
         });
 
-        // Chart.js - Frequency chart
-        // Remplacer ces données par les vraies données
-        const ctx = document.getElementById('freqChart').getContext('2d');
-        new Chart(ctx, {
+        // Specificities chart
+        const ctxSpecif = document.getElementById('specifChart').getContext('2d');
+        new Chart(ctxSpecif, {
             type: 'bar',
             data: {
-                labels: ['URL 1', 'URL 2', 'URL 3', 'URL 4', 'URL 5', 'URL 6', 'URL 7', 'URL 8', 'URL 9', 'URL 10'],
+                labels: [
+                    'yerel', 'özerkliği', 'Avrupa', 'öğrenme', 'kelimeler',
+                    'otonom', 'yönetimler', 'demokratik', 'dil', 'yapay'
+                ],
+                datasets: [{
+                    label: 'Spécificité',
+                    data: [-19.22, -15.31, -11.43, 10.64, 9.71, 9.68, -8.66, -7.44, 7.33, 5.91],
+                    backgroundColor: function (context) {
+                        const value = context.raw;
+                        return value > 0 ? 'rgba(102, 126, 234, 0.7)' : 'rgba(240, 147, 251, 0.7)';
+                    },
+                    borderColor: function (context) {
+                        const value = context.raw;
+                        return value > 0 ? 'rgba(102, 126, 234, 1)' : 'rgba(240, 147, 251, 1)';
+                    },
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const val = context.raw;
+                                const sens = val > 0 ? 'otonomi' : 'özerklik';
+                                return `Spécificité ${sens}: ${val > 0 ? '+' : ''}${Number(val).toFixed(2)}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '← özerklik | otonomi →'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Frequency chart
+        const ctxFreq = document.getElementById('freqChart').getContext('2d');
+        new Chart(ctxFreq, {
+            type: 'bar',
+            data: {
+                labels: ['URL 1-10', 'URL 11-20', 'URL 21-30', 'URL 31-40', 'URL 41-50', 'URL 51-60', 'URL 61-70', 'URL 71-80', 'URL 81-90', 'URL 91-100'],
                 datasets: [
                     {
-                        label: 'otonomi (sens 1)',
-                        data: [6, 1, 2, 4, 4, 5, 1, 1, 1, 1],
+                        label: 'otonomi',
+                        data: [25, 18, 22, 15, 12, 16, 14, 11, 10, 8],
                         backgroundColor: 'rgba(102, 126, 234, 0.7)',
                         borderColor: 'rgba(102, 126, 234, 1)',
                         borderWidth: 1
                     },
                     {
-                        label: 'özerklik (sens 2)',
-                        data: [1, 1, 3, 0, 0, 0, 0, 1, 0, 0],
+                        label: 'özerklik',
+                        data: [18, 32, 28, 35, 30, 25, 38, 28, 26, 25],
                         backgroundColor: 'rgba(240, 147, 251, 0.7)',
                         borderColor: 'rgba(240, 147, 251, 1)',
                         borderWidth: 1
@@ -778,4 +1140,5 @@
         });
     </script>
 </body>
+
 </html>
